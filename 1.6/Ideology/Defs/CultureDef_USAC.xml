@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
     <!-- USAC 企业文化 -->
     <CultureDef>
         <defName>USAC_Culture</defName>
@@ -42,5 +41,4 @@
             </li>
         </styleItemTags>
     </CultureDef>
-
 </Defs>
