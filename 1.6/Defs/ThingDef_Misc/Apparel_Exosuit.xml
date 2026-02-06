@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="ApparelBase">
+    <defName>USAC_Apparel_ExoSkeleton</defName>
+    <label>hardiman powered unit</label>
+    <description>A powered exoskeleton suit driven by an electric motor. It allows the wearer to lift and operate heavy weapons and equipment, and features bulletproof plate mounting points for protection. Its design dates back to the Cold War era on ancient Earth and may be the earliest known prototype of a powered exoskeleton suit.</description>
+    <techLevel>Industrial</techLevel>
+    <!-- <recipeMaker>
+      <workSpeedStat>WorkSpeedGlobal</workSpeedStat>
+      <effectWorking>ConstructMetal</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <researchPrerequisite>DMS_MechBasis</researchPrerequisite>
+      <recipeUsers>
+        <li>DMS_TableMachinePrinter</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+    </recipeMaker> -->
+    <costList>
+      <Plasteel>150</Plasteel>
+      <Uranium>40</Uranium>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <tradeTags>
+      <li>USAC_Armor</li>
+    </tradeTags>
+    <graphicData>
+      <texPath>Things/Apparel/ExoSkeleton/Apparel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <thingCategories>
+      <li>ApparelArmor</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToMake>80000</WorkToMake>
+      <Mass>27</Mass>
+      <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.6</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.6</ArmorRating_Heat>
+      <Insulation_Cold>10</Insulation_Cold>
+      <Insulation_Heat>-10</Insulation_Heat>
+      <EquipDelay>40</EquipDelay>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>-0.5</MoveSpeed>
+      <FFF_MassCarryCapacity>175</FFF_MassCarryCapacity>
+    </equippedStatOffsets>
+    <apparel>
+      <bodyPartGroups>
+        <li>Hands</li>
+        <li>Feet</li>
+				<li>Neck</li>
+				<li>Shoulders</li>
+				<li>Torso</li>
+        <li>Legs</li>
+        <li>Arms</li>
+      </bodyPartGroups>
+      <renderNodeProperties>
+        <li>
+          <debugLabel>exosuit top</debugLabel>
+          <nodeClass>Fortified.PawnRenderNode_ApparelColor</nodeClass>
+          <workerClass>PawnRenderNodeWorker_Apparel_Body</workerClass>
+          <parentTagDef>ApparelBody</parentTagDef>
+          <baseLayer>60</baseLayer>
+          <drawSize>1.5</drawSize>
+          <pawnType>Any</pawnType>
+          <useGraphic>true</useGraphic>
+          <shaderTypeDef>CutoutComplex</shaderTypeDef>
+          <texPath>Things/Apparel/HardimanSuit/apparel_top</texPath>
+          <drawData>
+            <defaultData>
+              <layer>80</layer>
+              <offset>(0,0,0)</offset>
+            </defaultData>
+            <dataSouth>
+              <layer>50</layer>
+            </dataSouth>
+          </drawData>
+        </li>
+        <li>
+          <debugLabel>exosuit bottom</debugLabel>
+          <nodeClass>Fortified.PawnRenderNode_ApparelColor</nodeClass>
+          <workerClass>PawnRenderNodeWorker_Apparel_Body</workerClass>
+          <parentTagDef>ApparelBody</parentTagDef>
+          <baseLayer>-2</baseLayer>
+          <drawSize>1.5</drawSize>
+          <pawnType>Any</pawnType>
+          <useGraphic>true</useGraphic>
+          <shaderTypeDef>CutoutComplex</shaderTypeDef>
+          <texPath>Things/Apparel/HardimanSuit/apparel</texPath>
+          <drawData>
+            <defaultData>
+              <layer>-5</layer>
+              <offset>(0,0,0)</offset>
+            </defaultData>
+          </drawData>
+        </li>
+      </renderNodeProperties>
+      <blocksAddedPartWoundGraphics>false</blocksAddedPartWoundGraphics>
+      <layers>
+        <li>Shell</li>
+      </layers>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+      <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+      <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+    </apparel>
+    <modExtensions>
+      <li Class="Fortified.ApparelExtension">
+        <pawnCapacityMinLevels>
+          <li>
+            <capacity>Moving</capacity>
+            <minLevel>0.5</minLevel>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <minLevel>0.5</minLevel>
+          </li>
+        </pawnCapacityMinLevels>
+      </li>
+    </modExtensions>
+  </ThingDef>
+</Defs>

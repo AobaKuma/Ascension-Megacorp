@@ -79,13 +79,19 @@
     </equippedStatOffsets>
     <apparel>
       <wornGraphicPath>Things/Apparel/AssaultHelmet/headgear</wornGraphicPath>
+      <drawData>
+        <scale>0.9</scale>
+        <defaultData>
+          <layer>70</layer>
+        </defaultData>
+      </drawData>
       <tags>
         <li>USAC_HelmetAssault</li>
       </tags>
     </apparel>
   </ThingDef>
 
-  
+
   <ThingDef ParentName="USAC_HelmetBase">
     <defName>USAC_Apparel_HeavyHelmet</defName>
     <label>Heavy helmet</label>
@@ -113,7 +119,7 @@
     </apparel>
   </ThingDef>
 
-  
+
   <ThingDef ParentName="USAC_HelmetBase">
     <defName>USAC_Apparel_MeleeHelmet</defName>
     <label>Gladiator helmet</label>
@@ -129,8 +135,7 @@
       <StuffEffectMultiplierInsulation_Heat>0.18</StuffEffectMultiplierInsulation_Heat>
       <EquipDelay>1.75</EquipDelay>
     </statBases>
-    <equippedStatOffsets>
-    </equippedStatOffsets>
+    <equippedStatOffsets />
     <apparel>
       <wornGraphicPath>Things/Apparel/MeleeHelmet/headgear</wornGraphicPath>
       <tags>
@@ -139,7 +144,7 @@
     </apparel>
   </ThingDef>
 
-  
+
   <ThingDef ParentName="USAC_HelmetBase">
     <defName>USAC_Apparel_NightVisionHelmet</defName>
     <label>Night vision helmet</label>
@@ -155,8 +160,7 @@
       <StuffEffectMultiplierInsulation_Heat>0.18</StuffEffectMultiplierInsulation_Heat>
       <EquipDelay>1.75</EquipDelay>
     </statBases>
-    <equippedStatOffsets>
-    </equippedStatOffsets>
+    <equippedStatOffsets />
     <apparel>
       <wornGraphicPath>Things/Apparel/NightHelmet/headgear</wornGraphicPath>
       <tags>

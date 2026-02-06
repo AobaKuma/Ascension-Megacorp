@@ -96,7 +96,9 @@
       <li Class="CompProperties_EquippableAbility">
         <abilityDef>USAC_GrenadeLauncher</abilityDef>
       </li>
-      <li><compClass>CompQuality</compClass></li>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
       <li Class="CompProperties_Forbiddable" />
       <li Class="CompProperties_Styleable" />
       <li Class="CompProperties_Biocodable" />
@@ -115,7 +117,153 @@
         </offsets>
       </li>
       <li Class="Fortified.HeavyEquippableExtension">
-        <EquippableDef>AverageHumanCanUse</EquippableDef>
+        <EquippableDef>LightAutomatroid</EquippableDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="USAC_BaseGun">
+    <defName>USAC_Gun_OSW</defName>
+    <label>objective sniper weapon</label>
+    <description>Project OSW M109 "Payload", A sniper grenade launcher carried and used by exoskeleton infantrymen, capable of firing shaped charge grenades to precisely strike and damage the surface armor and external sensors of targets.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/USAC_Gun_OSW</texPath>
+      <drawSize>1.4</drawSize>
+    </graphicData>
+    <weaponClasses>
+      <li>LongShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <Mass>8.3</Mass>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <equippedStatOffsets>
+      <HuntingStealth>0.2</HuntingStealth>
+      <ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
+    </equippedStatOffsets>
+    <costList>
+      <Plasteel>95</Plasteel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>USAC_Bullet_GrenadeRound</defaultProjectile>
+        <warmupTime>2.2</warmupTime>
+        <forcedMissRadius>2</forcedMissRadius>
+        <range>44.9</range>
+        <soundCast>RocketswarmLauncher_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>USAC_SGL</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+        <def>MF_StandardMuzzleFalsh</def>
+        <drawSize>(0.3,0.3)</drawSize>
+        <offsets>
+          <li>(0.65,0)</li>
+        </offsets>
+      </li>
+      <li Class="Fortified.HeavyEquippableExtension">
+        <EquippableDef>LightAutomatroid</EquippableDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <ThingDef ParentName="USAC_BaseGun">
+    <defName>USAC_Gun_ACSW</defName>
+    <label>advanced crew service weapon</label>
+    <description>Project ACSW M307 "Terminator", A lightweight automatic grenade launcher that can fire fragmentation grenades in succession to kill infantry. require exoskeleton to carrying ammunition and handheld.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/WeaponRanged/USAC_Gun_ACSW</texPath>
+      <drawSize>1.4</drawSize>
+    </graphicData>
+    <weaponClasses>
+      <li>LongShots</li>
+    </weaponClasses>
+    <statBases>
+      <Mass>10.05</Mass>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+    <equippedStatOffsets>
+      <ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
+    </equippedStatOffsets>
+    <costList>
+      <Plasteel>120</Plasteel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+    </costList>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>USAC_Bullet_GrenadeRound</defaultProjectile>
+        <warmupTime>1.1</warmupTime>
+        <range>37.9</range>
+        <forcedMissRadius>5</forcedMissRadius>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>RocketswarmLauncher_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>USAC_AGL</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <modExtensions>
+      <li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">
+        <def>MF_StandardMuzzleFalsh</def>
+        <drawSize>(0.3,0.3)</drawSize>
+        <offsets>
+          <li>(0.65,0)</li>
+        </offsets>
+      </li>
+      <li Class="Fortified.HeavyEquippableExtension">
+        <EquippableDef>LightAutomatroid</EquippableDef>
       </li>
     </modExtensions>
   </ThingDef>

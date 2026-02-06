@@ -215,7 +215,7 @@
           <texPath>Things/Mech/paraman</texPath>
           <shaderType>CutoutComplex</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.75</drawSize>
+          <drawSize>1.9</drawSize>
         </bodyGraphicData>
       </li>
     </lifeStages>
