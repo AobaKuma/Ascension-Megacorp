@@ -25,7 +25,7 @@
       <li>USAC_Armor</li>
     </tradeTags>
     <graphicData>
-      <texPath>Things/Apparel/ExoSkeleton/Apparel</texPath>
+      <texPath>Things/Apparel/HardimanSuit/Icon</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <thingCategories>
