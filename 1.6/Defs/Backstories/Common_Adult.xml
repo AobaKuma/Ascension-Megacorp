@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!--============================== 非戰鬥人員 ============================-->
+	<BackstoryDef>
+		<defName>USAC_Civilian01</defName>
+		<title>Resource Gatherer</title>
+		<titleShort>Gatherer</titleShort>
+		<description>[PAWN_nameDef] spent years extracting valuable resources from harsh rimworld environments. [PAWN_pronoun] developed keen instincts for locating mineral deposits and managing heavy excavation equipment. [PAWN_pronoun] is accustomed to backbreaking labor and harsh working conditions that would exhaust ordinary colonists.</description>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>USAC_Common</li>
+			<li>Pioneer</li>
+		</spawnCategories>
+		<skillGains>
+			<Mining>7</Mining>
+			<Construction>4</Construction>
+			<Animals>3</Animals>
+		</skillGains>
+		<requiredWorkTags>
+			<li>ManualDumb</li>
+		</requiredWorkTags>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+	</BackstoryDef>
+
+    <BackstoryDef>
+        <defName>USAC_Civilian02</defName>
+        <title>Survival Expert</title>
+        <titleShort>Survivalist</titleShort>
+        <description>[PAWN_nameDef] participated in the grand colonization and came to a rimworld. [PAWN_pronoun] is one of the most experienced colonists in the Colonization Force, having participated in numerous successful and failed colonization attempts in their lifetime.</description>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>USAC_Common</li>
+            <li>Pioneer</li>
+        </spawnCategories>
+        <skillGains>
+            <Animals>9</Animals>
+            <Plants>4</Plants>
+            <Medicine>3</Medicine>
+        </skillGains>
+        <requiredWorkTags>
+            <li>ManualDumb</li>
+        </requiredWorkTags>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+    </BackstoryDef>
+</Defs>

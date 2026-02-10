@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <BackstoryDef>
+        <defName>USAC_Military01</defName>
+        <title>Reformed Bandit</title>
+        <titleShort>Bandit</titleShort>
+        <description>[PAWN_nameDef] failed as a bandit and was unfortunately captured by a colonial group. While serving a labor sentence, [PAWN_nameDef] realized how much better the life of these people had and decided to stay after being released from prison.</description>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>USAC_Fighter</li>
+            <li>Mili_Standard</li>
+        </spawnCategories>
+        <skillGains>
+            <Medicine>4</Medicine>
+            <Shooting>8</Shooting>
+            <Melee>12</Melee>
+        </skillGains>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>USAC_Military02</defName>
+        <title>Retired Medic</title>
+        <titleShort>Medic</titleShort>
+        <description>[PAWN_nameDef] served as a medic in the Armed Forces and retired from military life prematurely after a serious injury.</description>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>USAC_Fighter</li>
+            <li>Civil_Expert</li>
+        </spawnCategories>
+        <skillGains>
+            <Shooting>8</Shooting>
+            <Medicine>16</Medicine>
+        </skillGains>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>USAC_Military03</defName>
+        <title>Correctional Officer</title>
+        <titleShort>Deputy</titleShort>
+        <description>[PAWN_nameDef] was a security for guarding the bandits and raiders who were captured, Supervising them until they were free to go after serving their sentences.</description>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>USAC_Fighter</li>
+            <li>Mili_Standard</li>
+        </spawnCategories>
+        <skillGains>
+            <Social>8</Social>
+            <Shooting>8</Shooting>
+            <Melee>8</Melee>
+        </skillGains>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>USAC_Military04</defName>
+        <title>Fired Bodyguard</title>
+        <titleShort>Bodyguard</titleShort>
+        <description>[PAWN_nameDef] was once a bodyguard for military contractor groups, but was laid off because Automatroids proved to be stronger in competitive combat capability. [PAWN_nameDef] eventually had to follow a frontier project to the rimworld to seek a living.</description>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>USAC_Fighter</li>
+            <li>Mili_Standard</li>
+        </spawnCategories>
+        <skillGains>
+            <Shooting>10</Shooting>
+            <Melee>10</Melee>
+        </skillGains>
+        <disabledWorkTags>
+            <li>Animals</li>
+            <li>Mining</li>
+        </disabledWorkTags>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>USAC_Military05</defName>
+        <title>Struggling Mercenary</title>
+        <titleShort>Mercenary</titleShort>
+        <description>[PAWN_nameDef] was a mercenary in armed groups. However, Automatroids have squeezed out the mercenaries' living space with both superior combat power and cost efficiency. [PAWN_nameDef] proved that [PAWN_pronoun]'s blood and sweat could be cheaper than an Automatroid's lubricant oil.</description>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>USAC_Fighter</li>
+            <li>Mili_Standard</li>
+        </spawnCategories>
+        <skillGains>
+            <Shooting>15</Shooting>
+            <Melee>15</Melee>
+        </skillGains>
+        <disabledWorkTags>
+            <li>Mining</li>
+            <li>Plants</li>
+            <li>Animals</li>
+            <li>Artistic</li>
+            <li>Intellectual</li>
+        </disabledWorkTags>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>USAC_Military06</defName>
+        <title>Frontier Worker</title>
+        <titleShort>Worker</titleShort>
+        <description>The profits and opportunities brought by frontier projects attracted many unemployed laborers like [PAWN_nameDef]. Like many others following the frontier project, [PAWN_nameDef] signed liability waivers to come to the rimworld.</description>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>USAC_Fighter</li>
+            <li>Pioneer</li>
+        </spawnCategories>
+        <skillGains>
+            <Mining>6</Mining>
+            <Construction>6</Construction>
+            <Crafting>4</Crafting>
+        </skillGains>
+        <forcedTraits>
+            <Intellectual>-8</Intellectual>
+        </forcedTraits>
+        <requiredWorkTags>
+            <li>ManualDumb</li>
+        </requiredWorkTags>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>USAC_Military07</defName>
+        <title>Megacorp Coroner</title>
+        <titleShort>Coroner</titleShort>
+        <description>[PAWN_nameDef] worked for a megacorporation as a forensic assistant accepting credit collateral. Unlike those with special interests, [PAWN_nameDef] was pushed to the brink of collapse by daily work pressure, but also honed advanced medical skills in the process.</description>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>USAC_Fighter</li>
+            <li>Civil_Expert</li>
+        </spawnCategories>
+        <skillGains>
+            <Medicine>12</Medicine>
+            <Intellectual>4</Intellectual>
+            <Crafting>8</Crafting>
+        </skillGains>
+        <disabledWorkTags>
+            <li>Construction</li>
+            <li>Mining</li>
+            <li>Animals</li>
+            <li>Artistic</li>
+        </disabledWorkTags>
+        <forcedTraits>
+            <Social>-15</Social>
+        </forcedTraits>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>USAC_Military08</defName>
+        <title>Automatroid Maintenance Tech</title>
+        <titleShort>Mech Tech</titleShort>
+        <description>As technology and Automatroids continued to iterate, [PAWN_nameDef] was eventually laid off from maintaining Automatroids. However, in an era where Automatroids run rampant, the laid-off [PAWN_nameDef] remains an important talent for mercenaries, pirates, and private armed groups.</description>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>USAC_Fighter</li>
+            <li>Civil_Expert</li>
+        </spawnCategories>
+        <skillGains>
+            <Crafting>10</Crafting>
+            <Intellectual>8</Intellectual>
+            <Medicine>13</Medicine>
+        </skillGains>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>USAC_Military09</defName>
+        <title>Lawless Rogue</title>
+        <titleShort>Rogue</titleShort>
+        <description>[PAWN_nameDef] came to the rimworld with a frontier project, doing whatever [PAWN_pronoun] wanted. Because [PAWN_pronoun] offended many people and violated most contract terms, [PAWN_pronoun] is now being hunted. But this kind of life is exactly what [PAWN_pronoun] pursues.</description>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>USAC_Fighter</li>
+            <li>Mili_Standard</li>
+        </spawnCategories>
+        <skillGains>
+            <Shooting>7</Shooting>
+            <Melee>5</Melee>
+        </skillGains>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>USAC_Military10</defName>
+        <title>Retired General</title>
+        <titleShort>General</titleShort>
+        <description>[PAWN_nameDef] was once a high-ranking official in the military, but became a political scapegoat in the factional struggles within the military and military-industrial complex. Although [PAWN_nameDef] kept [PAWN_pronoun]'s life through military connections, [PAWN_pronoun] had to follow a frontier project to the rimworld.</description>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>USAC_Fighter</li>
+            <li>Mili_Standard</li>
+        </spawnCategories>
+        <skillGains>
+            <Shooting>10</Shooting>
+            <Melee>7</Melee>
+            <Social>10</Social>
+            <Intellectual>5</Intellectual>
+        </skillGains>
+        <disabledWorkTags>
+            <li>Mining</li>
+            <li>Plants</li>
+            <li>Artistic</li>
+            <li>Animals</li>
+        </disabledWorkTags>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>USAC_Military11</defName>
+        <title>Traumatized Veteran</title>
+        <titleShort>Veteran</titleShort>
+        <description>[PAWN_nameDef] dedicated [PAWN_pronoun]'s youth to [PAWN_pronoun]'s country. However, the brutality of the battlefield left [PAWN_nameDef] with post-traumatic stress disorder. After the war, [PAWN_pronoun] received no proper treatment, and the difficulties of daily life forced [PAWN_pronoun] to come to the rimworld to seek a living.</description>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>USAC_Fighter</li>
+            <li>Mili_Standard</li>
+        </spawnCategories>
+        <skillGains>
+            <Shooting>5</Shooting>
+            <Melee>5</Melee>
+        </skillGains>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>USAC_Military12</defName>
+        <title>Automatroid Godfather</title>
+        <titleShort>Godfather</titleShort>
+        <description>[PAWN_nameDef] once hired and sheltered technicians to help Automatroids learn the knowledge of self-maintenance. [PAWN_pronoun] also frequently taught Automatroids life philosophy. [PAWN_pronoun]'s powerful Automatroid armed group is viewed as an eyesore by many, but none can shake [PAWN_pronoun]'s position.</description>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>USAC_Fighter</li>
+            <li>Civil_Expert</li>
+        </spawnCategories>
+        <skillGains>
+            <Intellectual>7</Intellectual>
+            <Social>18</Social>
+        </skillGains>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+    </BackstoryDef>
+
+</Defs>

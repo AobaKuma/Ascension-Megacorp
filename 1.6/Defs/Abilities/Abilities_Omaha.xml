@@ -3,8 +3,8 @@
 
   <AbilityDef>
     <defName>USAC_MICLIC</defName>
-    <label>占位符</label>
-    <description>占位符</description>
+    <label>liner charges rocket</label>
+    <description>A type of linear mine-clearing explosive, which is delivered from a safe distance and detonated remotely by a rocket-guided explosive rope, is widely used to quickly clear safe passageways in minefields.</description>
     <iconPath>UI/Abilities/MICLIC</iconPath>
     <cooldownTicksRange>3600</cooldownTicksRange>
     <verbProperties>

@@ -5,16 +5,6 @@
     <label>hardiman powered unit</label>
     <description>A powered exoskeleton suit driven by an electric motor. It allows the wearer to lift and operate heavy weapons and equipment, and features bulletproof plate mounting points for protection. Its design dates back to the Cold War era on ancient Earth and may be the earliest known prototype of a powered exoskeleton suit.</description>
     <techLevel>Industrial</techLevel>
-    <!-- <recipeMaker>
-      <workSpeedStat>WorkSpeedGlobal</workSpeedStat>
-      <effectWorking>ConstructMetal</effectWorking>
-      <soundWorking>Recipe_Machining</soundWorking>
-      <researchPrerequisite>DMS_MechBasis</researchPrerequisite>
-      <recipeUsers>
-        <li>DMS_TableMachinePrinter</li>
-      </recipeUsers>
-      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
-    </recipeMaker> -->
     <costList>
       <Plasteel>150</Plasteel>
       <Uranium>40</Uranium>

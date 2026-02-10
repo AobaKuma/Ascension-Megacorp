@@ -131,7 +131,10 @@
       <li>USAC_HelmetAssault</li>
       <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Tactical</li>
     </apparelTags>
-    <apparelMoney>800~1500</apparelMoney>
+    <apparelMoney>800~2500</apparelMoney>
+    <apparelRequired>
+      <li>USAC_Apparel_ExoSkeleton</li>
+    </apparelRequired>
     <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
     <weaponTags>
       <li>USAC_LMG</li>
@@ -146,7 +149,7 @@
       <li>USAC_HelmetAssault</li>
       <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Tactical</li>
     </apparelTags>
-    <apparelMoney>800~1500</apparelMoney>
+    <apparelMoney>800~2500</apparelMoney>
     <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
     <weaponTags>
       <li>USAC_DMR</li>
@@ -161,7 +164,10 @@
       <li>USAC_HelmetAssault</li>
       <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Tactical</li>
     </apparelTags>
-    <apparelMoney>800~1500</apparelMoney>
+    <apparelMoney>800~3500</apparelMoney>
+    <apparelRequired>
+      <li>USAC_Apparel_ExoSkeleton</li>
+    </apparelRequired>
     <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
     <weaponTags>
       <li>USAC_OICW</li>
