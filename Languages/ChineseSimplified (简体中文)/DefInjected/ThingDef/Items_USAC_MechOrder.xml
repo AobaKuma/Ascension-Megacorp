@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: M7 "Cobalt" order -->
+  <USAC_MechOrder_Cobalt.label>M7「钴蓝」订单</USAC_MechOrder_Cobalt.label>
+  <!-- EN: A USAC military contract for one M7 "Cobalt" cargo mech. When purchased, an inactive mech will be delivered via drop pod. -->
+  <USAC_MechOrder_Cobalt.description>USAC军事合约，购买一台M7「钴蓝」货运机兵。购买後，一台未启动的机兵将通过空投舱送达。</USAC_MechOrder_Cobalt.description>
+  
+  <!-- EN: XM3 "Gonk" order -->
+  <USAC_MechOrder_Gonk.label>XM3「冈克」订单</USAC_MechOrder_Gonk.label>
+  <!-- EN: A USAC military contract for one XM3 "Gonk" heavy artillery mech. When purchased, an inactive mech will be delivered via drop pod. -->
+  <USAC_MechOrder_Gonk.description>USAC军事合约，购买一台XM3「冈克」重型火炮机兵。购买後，一台未启动的机兵将通过空投舱送达。</USAC_MechOrder_Gonk.description>
+  
+  <!-- EN: M110 "Omaha" order -->
+  <USAC_MechOrder_Omaha.label>M110「奥马哈」订单</USAC_MechOrder_Omaha.label>
+  <!-- EN: A USAC military contract for one M110 "Omaha" amphibious assault mech. When purchased, an inactive mech will be delivered via drop pod. -->
+  <USAC_MechOrder_Omaha.description>USAC军事合约，购买一台M110「奥马哈」两栖突击机兵。购买後，一台未启动的机兵将通过空投舱送达。</USAC_MechOrder_Omaha.description>
+  
+  <!-- EN: M939 "Paraman" order -->
+  <USAC_MechOrder_Paraman.label>M939「伞兵」订单</USAC_MechOrder_Paraman.label>
+  <!-- EN: A USAC military contract for one M939 "Paraman" airborne unit. When purchased, an inactive mech will be delivered via drop pod. -->
+  <USAC_MechOrder_Paraman.description>USAC军事合约，购买一台M939「伞兵」空降机兵。购买後，一台未启动的机兵将通过空投舱送达。</USAC_MechOrder_Paraman.description>
+  
+  <!-- EN: M88 "Rocky" order -->
+  <USAC_MechOrder_Rocky.label>M88「洛基」订单</USAC_MechOrder_Rocky.label>
+  <!-- EN: A USAC military contract for one M88 "Rocky" synthetic infantry unit. When purchased, an inactive mech will be delivered via drop pod. -->
+  <USAC_MechOrder_Rocky.description>USAC军事合约，购买一台M88「洛基」合成步兵机兵。购买後，一台未启动的机兵将通过空投舱送达。</USAC_MechOrder_Rocky.description>
+  
+</LanguageData>

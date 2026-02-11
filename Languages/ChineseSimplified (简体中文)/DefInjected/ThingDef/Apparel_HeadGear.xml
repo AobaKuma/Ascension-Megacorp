@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Assault helmet -->
+  <USAC_Apparel_AssaultHelmet.label>突击头盔</USAC_Apparel_AssaultHelmet.label>
+  <!-- EN: todo -->
+  <USAC_Apparel_AssaultHelmet.description>轻型突击头盔，提供基本保护。</USAC_Apparel_AssaultHelmet.description>
+  
+  <!-- EN: Heavy helmet -->
+  <USAC_Apparel_HeavyHelmet.label>重型头盔</USAC_Apparel_HeavyHelmet.label>
+  <!-- EN: todo -->
+  <USAC_Apparel_HeavyHelmet.description>重型头盔，提供强大的头部保护。</USAC_Apparel_HeavyHelmet.description>
+  
+  <!-- EN: Gladiator helmet -->
+  <USAC_Apparel_MeleeHelmet.label>角斗士头盔</USAC_Apparel_MeleeHelmet.label>
+  <!-- EN: todo -->
+  <USAC_Apparel_MeleeHelmet.description>专为近距离战斗设计的头盔。</USAC_Apparel_MeleeHelmet.description>
+  
+  <!-- EN: Night vision helmet -->
+  <USAC_Apparel_NightVisionHelmet.label>夜视头盔</USAC_Apparel_NightVisionHelmet.label>
+  <!-- EN: todo -->
+  <USAC_Apparel_NightVisionHelmet.description>配备夜视装置的高级头盔。</USAC_Apparel_NightVisionHelmet.description>
+  
+</LanguageData>

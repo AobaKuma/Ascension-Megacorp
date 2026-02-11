@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN:
+    <li>r_deityType(p=5)->[corpGod] of [corpDomain]</li>
+    <li>r_deityType(p=3)->[corpGod] of [memeConcept]</li>
+    <li>corpGod->Patron</li>
+    <li>corpGod->Guardian</li>
+    <li>corpGod->Overseer</li>
+    <li>corpGod->Arbiter</li>
+    <li>corpGod->Executor</li>
+    <li>corpGod->Administrator</li>
+    <li>corpDomain->Profit</li>
+    <li>corpDomain->Commerce</li>
+    <li>corpDomain->Industry</li>
+    <li>corpDomain->Contracts</li>
+    <li>corpDomain->Acquisitions</li>
+    <li>corpDomain->Logistics</li>
+    <li>corpDomain->Operations</li>
+    <li>corpDomain->Resources</li>
+  -->
+  <DeityTypeMaker_USAC.rulePack.rulesStrings>
+    <li>r_deityType(p=5)->[corpGod] of [corpDomain]</li>
+    <li>r_deityType(p=3)->[corpGod] of [memeConcept]</li>
+    <li>corpGod->赞助人</li>
+    <li>corpGod->保护者</li>
+    <li>corpGod->监督者</li>
+    <li>corpGod->仲裁者</li>
+    <li>corpGod->执行者</li>
+    <li>corpGod->管理者</li>
+    <li>corpDomain->利润</li>
+    <li>corpDomain->商业</li>
+    <li>corpDomain->工业</li>
+    <li>corpDomain->合同</li>
+    <li>corpDomain->收购</li>
+    <li>corpDomain->物流</li>
+    <li>corpDomain->运营</li>
+    <li>corpDomain->资源</li>
+  </DeityTypeMaker_USAC.rulePack.rulesStrings>
+  
+  <!-- EN: memeLeaderNoun(priority=1)->[cultureLeaderNoun] -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.0>memeLeaderNoun(priority=1)->[cultureLeaderNoun]</LeaderTitleMaker_USAC.rulePack.rulesStrings.0>
+  <!-- EN: r_leaderTitle(p=6)->[cultureLeaderAdjective] [cultureLeaderNoun] -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.1>r_leaderTitle(p=6)->[cultureLeaderAdjective] [cultureLeaderNoun]</LeaderTitleMaker_USAC.rulePack.rulesStrings.1>
+  <!-- EN: r_leaderTitle(p=3)->[cultureLeaderTitle] -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.2>r_leaderTitle(p=3)->[cultureLeaderTitle]</LeaderTitleMaker_USAC.rulePack.rulesStrings.2>
+  <!-- EN: cultureLeaderAdjective->chief -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.3>cultureLeaderAdjective->首席</LeaderTitleMaker_USAC.rulePack.rulesStrings.3>
+  <!-- EN: cultureLeaderAdjective->senior -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.4>cultureLeaderAdjective->高级</LeaderTitleMaker_USAC.rulePack.rulesStrings.4>
+  <!-- EN: cultureLeaderAdjective->executive -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.5>cultureLeaderAdjective->执行</LeaderTitleMaker_USAC.rulePack.rulesStrings.5>
+  <!-- EN: cultureLeaderAdjective->managing -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.6>cultureLeaderAdjective->总</LeaderTitleMaker_USAC.rulePack.rulesStrings.6>
+  <!-- EN: cultureLeaderAdjective->general -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.7>cultureLeaderAdjective->常务</LeaderTitleMaker_USAC.rulePack.rulesStrings.7>
+  <!-- EN: cultureLeaderNoun->officer -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.8>cultureLeaderNoun->官</LeaderTitleMaker_USAC.rulePack.rulesStrings.8>
+  <!-- EN: cultureLeaderNoun->director -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.9>cultureLeaderNoun->董事</LeaderTitleMaker_USAC.rulePack.rulesStrings.9>
+  <!-- EN: cultureLeaderNoun->president -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.10>cultureLeaderNoun->总裁</LeaderTitleMaker_USAC.rulePack.rulesStrings.10>
+  <!-- EN: cultureLeaderNoun->chairman -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.11>cultureLeaderNoun->主席</LeaderTitleMaker_USAC.rulePack.rulesStrings.11>
+  <!-- EN: cultureLeaderNoun->manager -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.12>cultureLeaderNoun->经理</LeaderTitleMaker_USAC.rulePack.rulesStrings.12>
+  <!-- EN: cultureLeaderTitle->CEO -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.13>cultureLeaderTitle->首席执行官</LeaderTitleMaker_USAC.rulePack.rulesStrings.13>
+  <!-- EN: cultureLeaderTitle->CFO -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.14>cultureLeaderTitle->首席财务官</LeaderTitleMaker_USAC.rulePack.rulesStrings.14>
+  <!-- EN: cultureLeaderTitle->COO -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.15>cultureLeaderTitle->首席营运官</LeaderTitleMaker_USAC.rulePack.rulesStrings.15>
+  <!-- EN: cultureLeaderTitle->CTO -->
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.16>cultureLeaderTitle->首席技术官</LeaderTitleMaker_USAC.rulePack.rulesStrings.16>
+  
+  <!-- EN:
+    <li>name->[corpDeityPrefix][corpDeityEnd]</li>
+    <li>name->[corpDeityPrefix]-[corpDeityMid][corpDeityEnd]</li>
+    <li>corpDeityPrefix->Profit</li>
+    <li>corpDeityPrefix->Market</li>
+    <li>corpDeityPrefix->Capital</li>
+    <li>corpDeityPrefix->Asset</li>
+    <li>corpDeityPrefix->Equity</li>
+    <li>corpDeityPrefix->Index</li>
+    <li>corpDeityPrefix->Venture</li>
+    <li>corpDeityPrefix->Merger</li>
+    <li>corpDeityPrefix->Dividend</li>
+    <li>corpDeityPrefix->Stock</li>
+    <li>corpDeityMid->a</li>
+    <li>corpDeityMid->o</li>
+    <li>corpDeityMid->i</li>
+    <li>corpDeityMid->u</li>
+    <li>corpDeityEnd->us</li>
+    <li>corpDeityEnd->on</li>
+    <li>corpDeityEnd->ex</li>
+    <li>corpDeityEnd->or</li>
+    <li>corpDeityEnd->ax</li>
+    <li>corpDeityEnd->ix</li>
+    <li>corpDeityEnd(p=3)-></li>
+  -->
+  <NamerDeity_USAC.rulePack.rulesStrings>
+    <li>name->[corpDeityPrefix][corpDeityEnd]</li>
+    <li>name->[corpDeityPrefix]-[corpDeityMid][corpDeityEnd]</li>
+    <li>corpDeityPrefix->利润</li>
+    <li>corpDeityPrefix->市场</li>
+    <li>corpDeityPrefix->资本</li>
+    <li>corpDeityPrefix->资产</li>
+    <li>corpDeityPrefix->股权</li>
+    <li>corpDeityPrefix->指数</li>
+    <li>corpDeityPrefix->风险投资</li>
+    <li>corpDeityPrefix->合并</li>
+    <li>corpDeityPrefix->红利</li>
+    <li>corpDeityPrefix->股票</li>
+    <li>corpDeityMid->a</li>
+    <li>corpDeityMid->o</li>
+    <li>corpDeityMid->i</li>
+    <li>corpDeityMid->u</li>
+    <li>corpDeityEnd->us</li>
+    <li>corpDeityEnd->on</li>
+    <li>corpDeityEnd->ex</li>
+    <li>corpDeityEnd->or</li>
+    <li>corpDeityEnd->ax</li>
+    <li>corpDeityEnd->ix</li>
+    <li>corpDeityEnd(p=3)-></li>
+  </NamerDeity_USAC.rulePack.rulesStrings>
+  
+  <!-- EN:
+    <li>festivalName(p=5)->[corpEvent] [corpEventType]</li>
+    <li>festivalName(p=3)->[corpEventType] of [corpEventTheme]</li>
+    <li>corpEvent->Annual</li>
+    <li>corpEvent->Quarterly</li>
+    <li>corpEvent->Corporate</li>
+    <li>corpEvent->Executive</li>
+    <li>corpEvent->Strategic</li>
+    <li>corpEventType->Summit</li>
+    <li>corpEventType->Gala</li>
+    <li>corpEventType->Convention</li>
+    <li>corpEventType->Conference</li>
+    <li>corpEventType->Assembly</li>
+    <li>corpEventType->Ceremony</li>
+    <li>corpEventTheme->Excellence</li>
+    <li>corpEventTheme->Achievement</li>
+    <li>corpEventTheme->Innovation</li>
+    <li>corpEventTheme->Progress</li>
+    <li>corpEventTheme->Unity</li>
+    <li>corpEventTheme->Prosperity</li>
+  -->
+  <NamerFestival_USAC.rulePack.rulesStrings>
+    <li>festivalName(p=5)->[corpEvent] [corpEventType]</li>
+    <li>festivalName(p=3)->[corpEventType] of [corpEventTheme]</li>
+    <li>corpEvent->年度</li>
+    <li>corpEvent->季度</li>
+    <li>corpEvent->企业</li>
+    <li>corpEvent->执行</li>
+    <li>corpEvent->战略</li>
+    <li>corpEventType->峰会</li>
+    <li>corpEventType->盛会</li>
+    <li>corpEventType->大会</li>
+    <li>corpEventType->会议</li>
+    <li>corpEventType->集会</li>
+    <li>corpEventType->典礼</li>
+    <li>corpEventTheme->卓越</li>
+    <li>corpEventTheme->成就</li>
+    <li>corpEventTheme->创新</li>
+    <li>corpEventTheme->进步</li>
+    <li>corpEventTheme->团结</li>
+    <li>corpEventTheme->繁荣</li>
+  </NamerFestival_USAC.rulePack.rulesStrings>
+  
+  <!-- EN:
+    <li>r_ideoName(p=5)->[corpPrefix] [corpSuffix]</li>
+    <li>r_ideoName(p=3)->[corpPrefix][corpSuffix]ism</li>
+    <li>r_ideoName(p=2)->The [corpConcept]</li>
+    <li>corpPrefix->United</li>
+    <li>corpPrefix->Global</li>
+    <li>corpPrefix->Stellar</li>
+    <li>corpPrefix->Orbital</li>
+    <li>corpPrefix->Corporate</li>
+    <li>corpPrefix->Industrial</li>
+    <li>corpPrefix->Strategic</li>
+    <li>corpSuffix->Initiative</li>
+    <li>corpSuffix->Directive</li>
+    <li>corpSuffix->Protocol</li>
+    <li>corpSuffix->Mandate</li>
+    <li>corpSuffix->Doctrine</li>
+    <li>corpSuffix->Standard</li>
+    <li>corpConcept->Syndicate</li>
+    <li>corpConcept->Consortium</li>
+    <li>corpConcept->Conglomerate</li>
+    <li>corpConcept->Corporation</li>
+    <li>corpConcept->Enterprise</li>
+    <li>globalHyphenPrefix->astro</li>
+    <li>globalHyphenPrefix->stello</li>
+    <li>globalHyphenPrefix->corpo</li>
+    <li>globalHyphenPrefix->mega</li>
+  -->
+  <NamerIdeo_USAC.rulePack.rulesStrings>
+    <li>r_ideoName(p=5)->[corpPrefix] [corpSuffix]</li>
+    <li>r_ideoName(p=3)->[corpPrefix][corpSuffix]主义</li>
+    <li>r_ideoName(p=2)->The [corpConcept]</li>
+    <li>corpPrefix->联合</li>
+    <li>corpPrefix->全球</li>
+    <li>corpPrefix->恒星</li>
+    <li>corpPrefix->轨道</li>
+    <li>corpPrefix->企业</li>
+    <li>corpPrefix->工业</li>
+    <li>corpPrefix->战略</li>
+    <li>corpSuffix->倡议</li>
+    <li>corpSuffix->指令</li>
+    <li>corpSuffix->协议</li>
+    <li>corpSuffix->命令</li>
+    <li>corpSuffix->教义</li>
+    <li>corpSuffix->标准</li>
+    <li>corpConcept->辛迪加</li>
+    <li>corpConcept->联盟</li>
+    <li>corpConcept->集团</li>
+    <li>corpConcept->公司</li>
+    <li>corpConcept->企业</li>
+    <li>globalHyphenPrefix->天体</li>
+    <li>globalHyphenPrefix->恒星</li>
+    <li>globalHyphenPrefix->企业</li>
+    <li>globalHyphenPrefix->巨型</li>
+  </NamerIdeo_USAC.rulePack.rulesStrings>
+  
+</LanguageData>

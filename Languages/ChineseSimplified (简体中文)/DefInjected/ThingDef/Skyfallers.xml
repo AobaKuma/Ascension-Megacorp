@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: crate (incoming) -->
+  <USAC_CrateIncoming.label>箱子(进来)</USAC_CrateIncoming.label>
+  
+  <!-- EN: mech (incoming) -->
+  <USAC_MechIncoming.label>机甲(进来)</USAC_MechIncoming.label>
+  
+</LanguageData>

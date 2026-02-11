@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN:
+    <li>r_name->[prefix] [suffix]</li>
+    <li>r_name->[prefix]-[suffix]</li>
+    <li>r_name->[prefix] [suffix] [grouptype]</li>
+    <li>r_name->[prefix]-[suffix] [grouptype]</li>
+    <li>r_name->[prefix] [grouptype]</li>
+    <li>r_name->[suffix] [grouptype]</li>
+    <li>prefix->Apogee</li>
+    <li>prefix->Zenith</li>
+    <li>prefix->Apex</li>
+    <li>prefix->Ascent</li>
+    <li>prefix->Summit</li>
+    <li>prefix->Vertex</li>
+    <li>prefix->Pinnacle</li>
+    <li>prefix->Meridian</li>
+    <li>suffix->Dynamics</li>
+    <li>suffix->Industries</li>
+    <li>suffix->Solutions</li>
+    <li>suffix->Systems</li>
+    <li>suffix->Corp</li>
+    <li>suffix->Holdings</li>
+    <li>suffix->Ventures</li>
+    <li>suffix->Group</li>
+    <li>grouptype->PMC</li>
+    <li>grouptype->Division</li>
+    <li>grouptype->Contractors</li>
+    <li>grouptype->Security</li>
+    <li>grouptype->Operations</li>
+  -->
+  <USAC_NamerFaction.rulePack.rulesStrings>
+    <li>r_name->[prefix] [suffix]</li>
+    <li>r_name->[prefix]-[suffix]</li>
+    <li>r_name->[prefix] [suffix] [grouptype]</li>
+    <li>r_name->[prefix]-[suffix] [grouptype]</li>
+    <li>r_name->[prefix] [grouptype]</li>
+    <li>r_name->[suffix] [grouptype]</li>
+    <li>prefix->近地点</li>
+    <li>prefix->顶点</li>
+    <li>prefix->顶点</li>
+    <li>prefix->上升</li>
+    <li>prefix->峰会</li>
+    <li>prefix->顶点</li>
+    <li>prefix->最高峰</li>
+    <li>prefix->子午线</li>
+    <li>suffix->动力系统</li>
+    <li>suffix->工业</li>
+    <li>suffix->解决方案</li>
+    <li>suffix->系统</li>
+    <li>suffix->公司</li>
+    <li>suffix->控股</li>
+    <li>suffix->风险投资</li>
+    <li>suffix->集团</li>
+    <li>grouptype->私营军事公司</li>
+    <li>grouptype->部门</li>
+    <li>grouptype->承包商</li>
+    <li>grouptype->安全</li>
+    <li>grouptype->运营</li>
+  </USAC_NamerFaction.rulePack.rulesStrings>
+  
+  <!-- EN:
+    <li>r_name->[sitetype]-[number]</li>
+    <li>r_name->[sitetype] [greek]</li>
+    <li>r_name->[prefix] [sitetype]</li>
+    <li>r_name->Outpost [greek]-[number]</li>
+    <li>r_name->Site [number]</li>
+    <li>r_name->Facility [greek]</li>
+    <li>sitetype->Depot</li>
+    <li>sitetype->Outpost</li>
+    <li>sitetype->Station</li>
+    <li>sitetype->Base</li>
+    <li>sitetype->Hub</li>
+    <li>sitetype->Node</li>
+    <li>prefix->Forward</li>
+    <li>prefix->Primary</li>
+    <li>prefix->Secondary</li>
+    <li>prefix->Remote</li>
+    <li>greek->Alpha</li>
+    <li>greek->Beta</li>
+    <li>greek->Gamma</li>
+    <li>greek->Delta</li>
+    <li>greek->Epsilon</li>
+    <li>greek->Zeta</li>
+    <li>greek->Theta</li>
+    <li>greek->Omega</li>
+    <li>number->01</li>
+    <li>number->02</li>
+    <li>number->03</li>
+    <li>number->07</li>
+    <li>number->09</li>
+    <li>number->12</li>
+    <li>number->17</li>
+    <li>number->21</li>
+  -->
+  <USAC_NamerSettlement.rulePack.rulesStrings>
+    <li>r_name->[sitetype]-[number]</li>
+    <li>r_name->[sitetype] [greek]</li>
+    <li>r_name->[prefix] [sitetype]</li>
+    <li>r_name->哨站 [greek]-[number]</li>
+    <li>r_name->场地 [number]</li>
+    <li>r_name->设施 [greek]</li>
+    <li>sitetype->仓库</li>
+    <li>sitetype->哨站</li>
+    <li>sitetype->站点</li>
+    <li>sitetype->基地</li>
+    <li>sitetype->枢纽</li>
+    <li>sitetype->节点</li>
+    <li>prefix->前线</li>
+    <li>prefix->主要</li>
+    <li>prefix->次要</li>
+    <li>prefix->偏远</li>
+    <li>greek->Alpha</li>
+    <li>greek->Beta</li>
+    <li>greek->Gamma</li>
+    <li>greek->Delta</li>
+    <li>greek->Epsilon</li>
+    <li>greek->Zeta</li>
+    <li>greek->Theta</li>
+    <li>greek->Omega</li>
+    <li>number->01</li>
+    <li>number->02</li>
+    <li>number->03</li>
+    <li>number->07</li>
+    <li>number->09</li>
+    <li>number->12</li>
+    <li>number->17</li>
+    <li>number->21</li>
+  </USAC_NamerSettlement.rulePack.rulesStrings>
+
+</LanguageData>

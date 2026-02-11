@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <!-- USAC Faction -->
+
+    <!-- EN: A Rising Giant -->
+  <USAC_FactionName>飞升巨企</USAC_FactionName>
+
+    <!-- EN: A giant corporation that emerged from the enlightenment of the world, after the departure of the colonial fleet, it monopolized the local energy industry through information and technological advantages, and rapidly expanded through cultural hegemony.  -->
+  <USAC_FactionDesc>来自启迪世界崛起的巨企，在殖民舰队离开之後透过讯息与技术优势来垄断当地的能源产业，并且透过文化霸权来快速的扩张。</USAC_FactionDesc>
+
+    <!-- Body Bag -->
+
+    <!-- EN: Contains: {0} -->
+  <USAC_CorpseBag_Contains>装有: {0}</USAC_CorpseBag_Contains>
+
+    <!-- EN: Value: {0} -->
+  <USAC_CorpseBag_Value>价值: {0}</USAC_CorpseBag_Value>
+
+    <!-- EN: Empty -->
+  <USAC_CorpseBag_Empty>空</USAC_CorpseBag_Empty>
+
+    <!-- EN: Eject the body -->
+  <USAC_CorpseBag_Eject>弹出屍体</USAC_CorpseBag_Eject>
+
+    <!-- EN: Ejects the body from the bag.  -->
+  <USAC_CorpseBag_EjectDesc>将屍体从袋子中弹出。</USAC_CorpseBag_EjectDesc>
+
+    <!-- EN: Pack {0} into body bags -->
+  <USAC_CorpseBag_PackCorpse>打包 {0} 到屍体袋</USAC_CorpseBag_PackCorpse>
+
+    <!-- EN: Body bag value -->
+  <USAC_CorpseBag_Currency>屍体袋价值</USAC_CorpseBag_Currency>
+
+    <!-- EN: Total market value of body bags. USAC traders accept body bags as currency. -->
+  <USAC_CorpseBag_CurrencyDesc>屍体袋的总市场价值。USAC贸易商接受屍体袋作为货币。</USAC_CorpseBag_CurrencyDesc>
+
+    <!-- Message -->
+
+    <!-- EN: USAC hostility has been reset to neutral. -->
+  <USAC_HostilityReset>USAC敌对状态已重置为中立。</USAC_HostilityReset>
+
+    <!-- EN: The USAC faction has reset its hostility. They are now neutral towards you. -->
+  <USAC_HostilityResetDesc>USAC派系已重置其敌对状态。他们现在对你保持中立。</USAC_HostilityResetDesc>
+
+    <!-- Illegal Mining Drop -->
+
+    <!-- EN: Deep Resources in Range: -->
+  <USAC_ResourcesInRange>范围内深层资源:</USAC_ResourcesInRange>
+
+    <!-- EN: Mining Target: {0} -->
+  <USAC_MiningTarget>挖掘目标: {0}</USAC_MiningTarget>
+
+    <!-- EN: Mining Progress: {0} -->
+  <USAC_MiningPortionProgress>挖掘进度: {0}</USAC_MiningPortionProgress>
+
+    <!-- EN: No Deep Resources in Range -->
+  <USAC_NoResourcesInRange>范围内无深层资源</USAC_NoResourcesInRange>
+
+    <!-- EN: Stored Minerals: -->
+  <USAC_StoredMineralsHeader>已存储矿物:</USAC_StoredMineralsHeader>
+
+    <!-- EN: Evacuation Countdown: {0} -->
+  <USAC_ExtractionCountdown>撤离倒计时: {0}</USAC_ExtractionCountdown>
+
+    <!-- EN: USAC mining machine is preparing to evacuate.  -->
+  <USAC_MiningRigExtracting>USAC采矿机正在准备撤离。</USAC_MiningRigExtracting>
+
+    <!-- EN: USAC Mining Raid Failed. No valid deep resource found. -->
+  <USAC_MiningRaidFailed>USAC盗采空降触发失败。未找到有效的深层资源。</USAC_MiningRaidFailed>
+
+    <!-- Maintenance System -->
+
+    <!-- EN: Maintenance -->
+  <USAC_Readiness>整备</USAC_Readiness>
+
+    <!-- EN: Daily Consumption Percentage: {0}% -->
+  <USAC_ReadinessConsumption>每日消耗百分比: {0}%</USAC_ReadinessConsumption>
+
+    <!-- Mech Trade -->
+
+    <!-- EN: {0} Delivered via drop pod. -->
+  <USAC_MechDelivered>{0} 已通过空投舱送达。</USAC_MechDelivered>
+
+    <!-- EN: Call in Mech Drop -->
+  <USAC_UseMechOrder>呼叫机兵空投</USAC_UseMechOrder>
+
+    <!-- EN: Requires Biotech DLC.  -->
+  <USAC_RequiresBiotech>需要生物科技DLC。</USAC_RequiresBiotech>
+
+    <!-- Mech control not activated -->
+
+    <!-- EN: Control {0} -->
+  <USAC_ControlMech>控制 {0}</USAC_ControlMech>
+
+    <!-- EN: Unable to reach the mech. -->
+  <USAC_ControlMech_NoPath>无法到达机兵。</USAC_ControlMech_NoPath>
+
+    <!-- EN: Not a mechanic. -->
+  <USAC_ControlMech_NotMechanitor>不是机械师。</USAC_ControlMech_NotMechanitor>
+
+    <!-- EN: Requires {0} bandwidth. -->
+  <USAC_ControlMech_NeedBandwidth>需要 {0} 带宽。</USAC_ControlMech_NeedBandwidth>
+
+    <!-- EN: Destroy the mech -->
+  <USAC_DeactivatedMech_Destroy>销毁机兵</USAC_DeactivatedMech_Destroy>
+
+    <!-- EN: {0} is now controlled by {1}.  -->
+  <USAC_MechControlled>{0} 现在由 {1} 控制。</USAC_MechControlled>
+
+    <!-- EN: Hibernate -->
+  <USAC_DeactivateMech>休眠</USAC_DeactivateMech>
+
+    <!-- EN: Puts the mech into hibernation mode. It can be moved and reactivated later. -->
+  <USAC_DeactivateMechDesc>让机兵进入休眠模式。可以搬运移动并在之後重新激活。</USAC_DeactivateMechDesc>
+
+    <!-- EN: {0} Hibernated. -->
+  <USAC_MechDeactivated>{0} 已进入休眠模式。</USAC_MechDeactivated>
+
+    <!-- Credit Bonds -->
+
+    <!-- EN: USAC Credit Bonds -->
+  <USAC_Bond_Label>USAC信用债券</USAC_Bond_Label>
+
+    <!-- EN: A special type of paper made of high-strength fibers, a physical registered certificate issued by USAC corporate dealers in transactions with the ground forces. Its surface is printed with special ink, featuring exquisite anti-counterfeiting marks and the registered owner's information. \n\nAfter the acquisition of goods and the sale of equipment, the remaining residual value can be used to purchase this certificate with fixed purchasing power for the next transaction. Because the certificate is registered, it cannot be used by anyone other than the registered owner. Therefore, this highly durable piece of paper is of virtually no practical use to other factions in the Edge World.  -->
+  <USAC_Bond_Desc>一种由高韧度纤维制成的特殊纸张，是USAC企业经销商与地面阵营交易时所印发的实体记名凭证，其表面采用特殊油墨印刷，具有精美的防伪标识与记名所有者讯息。\n\n在商品收购与装备销售後，结余的剩余价值能被用来买入这种具备固定购买力的凭证用於下次交易。由於凭证具有记名性因此无法由记名所有人以外的人使用，因此对边缘世界中的其他阵营来说，这张十分耐磨损的纸基本没有任何实际用途。</USAC_Bond_Desc>
+
+    <!-- USAC Monetary System -->
+
+    <!-- EN: USAC Currency -->
+  <USAC_Currency_Label>USAC货币</USAC_Currency_Label>
+
+    <!-- EN: Lower Bag: {0} (Including Bonds x{1}) -->
+  <USAC_Currency_LabelFull>距下袋: {0} (含债券x{1})</USAC_Currency_LabelFull>
+
+    <!-- EN: Bonds x{0} -->
+  <USAC_Currency_LabelBondOnly>债券 x{0}</USAC_Currency_LabelBondOnly>
+
+    <!-- EN: Lower Bag: {0} -->
+  <USAC_Currency_LabelCorpseBagOnly>距下袋: {0}</USAC_Currency_LabelCorpseBagOnly>
+
+    <!-- EN: USAC Currency -->
+  <USAC_Currency_LabelEmpty>USAC货币</USAC_Currency_LabelEmpty>
+
+    <!-- EN: Total value of currency used in transactions with USAC merchants. Includes the value of body bags and credit bonds. USAC traders only accept body bags and credit bonds as currency. Bonds are consumed first during transactions; body bags are consumed only when bonds are insufficient (starting with the lowest value).  -->
+  <USAC_Currency_Desc>用於与USAC商人交易的货币总价值。包含屍体袋价值和信用债券价值。USAC贸易商只接受屍体袋和信用债券作为货币。\n\n交易时优先消耗债券，债券不足时再消耗屍体袋（从价值最小的开始）。</USAC_Currency_Desc>
+
+    <!-- EN: - - - Value Details - - - -->
+  <USAC_Currency_Breakdown>--- 价值明细 ---</USAC_Currency_Breakdown>
+
+    <!-- EN: Total Body Bag Value: {0} -->
+  <USAC_Currency_CorpseBagValue>屍体袋总价值: {0}</USAC_Currency_CorpseBagValue>
+
+    <!-- EN: Credit Bonds: {0} (Value {1}) -->
+  <USAC_Currency_BondValue>信用债券: {0}张 (价值 {1})</USAC_Currency_BondValue>
+
+    <!-- EN: Total Currency: {0} -->
+  <USAC_Currency_TotalValue>货币总计: {0}</USAC_Currency_TotalValue>
+
+    <!-- EN: Minimum Body Bag Value: {0} -->
+  <USAC_Currency_SmallestBag>最小屍体袋价值: {0}</USAC_Currency_SmallestBag>
+
+    <!-- EN: Available Until Next Bag: {0} -->
+  <USAC_Currency_UntilNextBag>距下袋可用: {0}</USAC_Currency_UntilNextBag>
+
+    <!-- Consumable Interaction -->
+    <!-- EN: The target must be a machine. -->
+  <MessageTargetMustBeMechanoid>目标必须是机械体。</MessageTargetMustBeMechanoid>
+
+    <!-- EN: The target must be an allied machine. -->
+  <MessageTargetMustBePlayerMech>目标必须是己方机械体。</MessageTargetMustBePlayerMech>
+
+    <!-- EN: {0} has been fully charged. -->
+  <USAC_MessageMechCharged>已为 {0} 充满电量。</USAC_MessageMechCharged>
+
+    <!-- EN: All damage to {0} has been repaired. -->
+  <USAC_MessageMechRepaired>已修复 {0} 的所有损伤。</USAC_MessageMechRepaired>
+
+    <!-- Merchant ship arrives -->
+
+    <!-- EN: {0} ({1}) has entered communication orbit. {2} -->
+  <TraderArrival>{0} ({1}) 已进入通讯轨道。{2}</TraderArrival>
+
+    <!-- EN: They come from {FACTION}. -->
+  <TraderArrivalFromFaction>他们来自{FACTION}。</TraderArrivalFromFaction>
+
+    <!-- EN: They do not belong to any known faction. -->
+  <TraderArrivalNoFaction>他们不属於任何已知派系。</TraderArrivalNoFaction>
+
+  <!-- UNUSED -->
+  <USAC_FactionName>飞升巨企</USAC_FactionName>
+  <USAC_FactionDesc>来自启迪世界崛起的巨企，在殖民舰队离开之後透过讯息与技术优势来垄断当地的能源产业，并且透过文化霸权来快速的扩张。</USAC_FactionDesc>
+  <USAC_CorpseBag_Contains>装有: {0}</USAC_CorpseBag_Contains>
+  <USAC_CorpseBag_Value>价值: {0}</USAC_CorpseBag_Value>
+  <USAC_CorpseBag_Empty>空</USAC_CorpseBag_Empty>
+  <USAC_CorpseBag_Eject>弹出屍体</USAC_CorpseBag_Eject>
+  <USAC_CorpseBag_EjectDesc>将屍体从袋子中弹出。</USAC_CorpseBag_EjectDesc>
+  <USAC_CorpseBag_PackCorpse>打包 {0} 到屍体袋</USAC_CorpseBag_PackCorpse>
+  <USAC_CorpseBag_Currency>屍体袋价值</USAC_CorpseBag_Currency>
+  <USAC_CorpseBag_CurrencyDesc>屍体袋的总市场价值。USAC贸易商接受屍体袋作为货币。</USAC_CorpseBag_CurrencyDesc>
+  <USAC_HostilityReset>USAC敌对状态已重置为中立。</USAC_HostilityReset>
+  <USAC_HostilityResetDesc>USAC派系已重置其敌对状态。他们现在对你保持中立。</USAC_HostilityResetDesc>
+  <USAC_ResourcesInRange>范围内深层资源:</USAC_ResourcesInRange>
+  <USAC_MiningTarget>挖掘目标: {0}</USAC_MiningTarget>
+  <USAC_MiningPortionProgress>挖掘进度: {0}</USAC_MiningPortionProgress>
+  <USAC_NoResourcesInRange>范围内无深层资源</USAC_NoResourcesInRange>
+  <USAC_StoredMineralsHeader>已存储矿物:</USAC_StoredMineralsHeader>
+  <USAC_ExtractionCountdown>撤离倒计时: {0}</USAC_ExtractionCountdown>
+  <USAC_MiningRigExtracting>USAC采矿机正在准备撤离。</USAC_MiningRigExtracting>
+  <USAC_MiningRaidFailed>USAC盗采空降触发失败。未找到有效的深层资源。</USAC_MiningRaidFailed>
+  <USAC_Readiness>整备</USAC_Readiness>
+  <USAC_ReadinessConsumption>每日消耗百分比: {0}%</USAC_ReadinessConsumption>
+  <USAC_MechDelivered>{0} 已通过空投舱送达。</USAC_MechDelivered>
+  <USAC_UseMechOrder>呼叫机兵空投</USAC_UseMechOrder>
+  <USAC_RequiresBiotech>需要生物科技DLC。</USAC_RequiresBiotech>
+  <USAC_ControlMech>控制 {0}</USAC_ControlMech>
+  <USAC_ControlMech_NoPath>无法到达机兵。</USAC_ControlMech_NoPath>
+  <USAC_ControlMech_NotMechanitor>不是机械师。</USAC_ControlMech_NotMechanitor>
+  <USAC_ControlMech_NeedBandwidth>需要 {0} 带宽。</USAC_ControlMech_NeedBandwidth>
+  <USAC_DeactivatedMech_Destroy>销毁机兵</USAC_DeactivatedMech_Destroy>
+  <USAC_MechControlled>{0} 现在由 {1} 控制。</USAC_MechControlled>
+  <USAC_DeactivateMech>休眠</USAC_DeactivateMech>
+  <USAC_DeactivateMechDesc>让机兵进入休眠模式。可以搬运移动并在之後重新激活。</USAC_DeactivateMechDesc>
+  <USAC_MechDeactivated>{0} 已进入休眠模式。</USAC_MechDeactivated>
+  <USAC_Bond_Label>USAC信用债券</USAC_Bond_Label>
+  <USAC_Bond_Desc>一种由高韧度纤维制成的特殊纸张，是USAC企业经销商与地面阵营交易时所印发的实体记名凭证，其表面采用特殊油墨印刷，具有精美的防伪标识与记名所有者讯息。\n\n在商品收购与装备销售後，结余的剩余价值能被用来买入这种具备固定购买力的凭证用於下次交易。由於凭证具有记名性因此无法由记名所有人以外的人使用，因此对边缘世界中的其他阵营来说，这张十分耐磨损的纸基本没有任何实际用途。</USAC_Bond_Desc>
+  <USAC_Currency_Label>USAC货币</USAC_Currency_Label>
+  <USAC_Currency_LabelFull>距下袋: {0} (含债券x{1})</USAC_Currency_LabelFull>
+  <USAC_Currency_LabelBondOnly>债券 x{0}</USAC_Currency_LabelBondOnly>
+  <USAC_Currency_LabelCorpseBagOnly>距下袋: {0}</USAC_Currency_LabelCorpseBagOnly>
+  <USAC_Currency_LabelEmpty>USAC货币</USAC_Currency_LabelEmpty>
+  <USAC_Currency_Desc>用於与USAC商人交易的货币总价值。包含屍体袋价值和信用债券价值。USAC贸易商只接受屍体袋和信用债券作为货币。\n\n交易时优先消耗债券，债券不足时再消耗屍体袋（从价值最小的开始）。</USAC_Currency_Desc>
+  <USAC_Currency_Breakdown>--- 价值明细 ---</USAC_Currency_Breakdown>
+  <USAC_Currency_CorpseBagValue>屍体袋总价值: {0}</USAC_Currency_CorpseBagValue>
+  <USAC_Currency_BondValue>信用债券: {0}张 (价值 {1})</USAC_Currency_BondValue>
+  <USAC_Currency_TotalValue>货币总计: {0}</USAC_Currency_TotalValue>
+  <USAC_Currency_SmallestBag>最小屍体袋价值: {0}</USAC_Currency_SmallestBag>
+  <USAC_Currency_UntilNextBag>距下袋可用: {0}</USAC_Currency_UntilNextBag>
+  <MessageTargetMustBeMechanoid>目标必须是机械体。</MessageTargetMustBeMechanoid>
+  <MessageTargetMustBePlayerMech>目标必须是己方机械体。</MessageTargetMustBePlayerMech>
+  <USAC_MessageMechCharged>已为 {0} 充满电量。</USAC_MessageMechCharged>
+  <USAC_MessageMechRepaired>已修复 {0} 的所有损伤。</USAC_MessageMechRepaired>
+
+</LanguageData>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: USAC mech supplier arrival -->
+  <USAC_MechSupplierArrival.label>USAC机兵商船到访</USAC_MechSupplierArrival.label>
+  <!-- EN: USAC mech supplier -->
+  <USAC_MechSupplierArrival.letterLabel>USAC机兵商船</USAC_MechSupplierArrival.letterLabel>
+  <!-- EN: A USAC mech supplier ship has entered orbit. They are willing to trade mechs and weapons for corpse bags, mech wrecks, components, and hemogen packs.\n\nUse the comms console to contact them. -->
+  <USAC_MechSupplierArrival.letterText>一艘USAC机兵补给船已进入轨道。他们愿意用机兵和武器交换封包屍体、机兵残骸、冲压零件和血包。\n\n使用通讯台联系他们。</USAC_MechSupplierArrival.letterText>
+  
+  <!-- EN: USAC mining raid -->
+  <USAC_MiningRaid.label>USAC采矿袭击</USAC_MiningRaid.label>
+  <!-- EN: USAC mining raid -->
+  <USAC_MiningRaid.letterLabel>USAC采矿袭击</USAC_MiningRaid.letterLabel>
+  <!-- EN: USAC has detected valuable deep resources on your map. They are deploying a mining rig with mech escorts to extract them.\n\nDestroy the mining rig or eliminate the escorts to stop the operation. -->
+  <USAC_MiningRaid.letterText>USAC已侦测到你的地图上存在宝贵的深层资源。他们正在部署采矿钻机与机械体护卫队来开采这些资源。\n\n摧毁采矿钻机或消灭护卫队以停止此次行动。</USAC_MiningRaid.letterText>
+  
+</LanguageData>

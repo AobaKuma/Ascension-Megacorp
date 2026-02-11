@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: mineclearing line segment -->
+  <USAC_MICLIC_Segment.label>扫雷线段</USAC_MICLIC_Segment.label>
+  
+  <!-- EN: flying -->
+  <USAC_PawnFlyer_Shovel.label>飞行</USAC_PawnFlyer_Shovel.label>
+  
+  <!-- EN: mineclearing rocket -->
+  <USAC_Projectile_MICLIC.label>扫雷火箭</USAC_Projectile_MICLIC.label>
+  
+  <!-- EN: towed mineclearing rocket -->
+  <USAC_Projectile_MICLIC_Towed.label>被拖曳的扫雷火箭</USAC_Projectile_MICLIC_Towed.label>
+  
+</LanguageData>

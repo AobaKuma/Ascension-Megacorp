@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Body tattoo -->
+  <USAC_HumanlikeMech.root.children.0.children.0.debugLabel>身体刺青</USAC_HumanlikeMech.root.children.0.children.0.debugLabel>
+  <!-- EN: Wounds - pre apparel -->
+  <USAC_HumanlikeMech.root.children.0.children.1.debugLabel>伤口 - 衣着前</USAC_HumanlikeMech.root.children.0.children.1.debugLabel>
+  <!-- EN: Baby swaddle -->
+  <USAC_HumanlikeMech.root.children.0.children.2.debugLabel>婴儿包裹</USAC_HumanlikeMech.root.children.0.children.2.debugLabel>
+  <!-- EN: Apparel root -->
+  <USAC_HumanlikeMech.root.children.0.children.3.debugLabel>服装根目录</USAC_HumanlikeMech.root.children.0.children.3.debugLabel>
+  <!-- EN: Wounds - post apparel -->
+  <USAC_HumanlikeMech.root.children.0.children.4.debugLabel>伤口 - 衣着後</USAC_HumanlikeMech.root.children.0.children.4.debugLabel>
+  <!-- EN: Head stump -->
+  <USAC_HumanlikeMech.root.children.1.debugLabel>头部残端</USAC_HumanlikeMech.root.children.1.debugLabel>
+  <!-- EN: Head tattoo -->
+  <USAC_HumanlikeMech.root.children.2.children.0.debugLabel>头部刺青</USAC_HumanlikeMech.root.children.2.children.0.debugLabel>
+  <!-- EN: Head wounds -->
+  <USAC_HumanlikeMech.root.children.2.children.3.debugLabel>头部伤口</USAC_HumanlikeMech.root.children.2.children.3.debugLabel>
+  <!-- EN: Apparel root -->
+  <USAC_HumanlikeMech.root.children.2.children.4.debugLabel>服装根目录</USAC_HumanlikeMech.root.children.2.children.4.debugLabel>
+  <!-- EN: Status overlay -->
+  <USAC_HumanlikeMech.root.children.2.children.6.debugLabel>状态覆盖</USAC_HumanlikeMech.root.children.2.children.6.debugLabel>
+  <!-- EN: Weapon/carried thing -->
+  <USAC_HumanlikeMech.root.children.3.debugLabel>武器/携带物品</USAC_HumanlikeMech.root.children.3.debugLabel>
+  
+</LanguageData>

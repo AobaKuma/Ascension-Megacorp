@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: mechlink kill switch -->
+  <USAC_TempMechlinkKillSwitch.label>机械连接杀死开关</USAC_TempMechlinkKillSwitch.label>
+  <!-- EN: Destroys the mechlink upon user death by overloading the interface. -->
+  <USAC_TempMechlinkKillSwitch.description>用户死亡时通过过载界面销毁机械连接。</USAC_TempMechlinkKillSwitch.description>
+  
+  <!-- EN: temporary mechlink -->
+  <USAC_TempMechlinkTrigger.label>临时机械连接</USAC_TempMechlinkTrigger.label>
+  <!-- EN: Subscription-based bandwidth control service via USAC satellite network. Provides 6 bandwidth. Lost upon brain death or service expiration. -->
+  <USAC_TempMechlinkTrigger.description>通过USAC卫星网络提供的基於订阅的带宽控制服务。提供6个带宽。脑死亡或服务过期时丧失。</USAC_TempMechlinkTrigger.description>
+  
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: readiness -->
+  <USAC_Readiness.label>整备</USAC_Readiness.label>
+  <!-- EN: A measure of the mechanoid's operational readiness. Low readiness causes decreased combat effectiveness. Resupply with industrial components. -->
+  <USAC_Readiness.description>机兵的整备度，代表其运作状态。低整备度会导致战斗效能下降。可使用零部件补给。</USAC_Readiness.description>
+  
+</LanguageData>

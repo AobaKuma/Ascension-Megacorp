@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: disposable battery -->
+  <USAC_DisposableBattery.label>一次性充电电池</USAC_DisposableBattery.label>
+  <!-- EN: A disposable battery designed to rapidly charge mechanoids. To prevent safety hazards from unauthorized modification, it is designed to short-circuit and self-destruct after a single use. -->
+  <USAC_DisposableBattery.description>一种圆形的一次性电池，能够快速为机械体充满电，为避免用户将充电装置私自改造重复使用造成安全隐患，该电池被设计为在放电结束後自动短路熔毁。</USAC_DisposableBattery.description>
+  <!-- EN: Use battery to charge mechanoid -->
+  <USAC_DisposableBattery.comps.CompUsable.useLabel>使用电池为机械体充电</USAC_DisposableBattery.comps.CompUsable.useLabel>
+  
+  <!-- EN: disposable repair tool -->
+  <USAC_DisposableRepairTool.label>一次性维修工具</USAC_DisposableRepairTool.label>
+  <!-- EN: A square nano-storage container that releases nanomachines to analyze and repair damaged structures. Designed for single-use to ensure safety and corporate compliance. -->
+  <USAC_DisposableRepairTool.description>一种方形的奈米储存容器，能够释放奈米机器并自动分析目标结构来修补受损部位，为避免用户私自改造造成安全隐患，因此该工具被设计为一次性使用。</USAC_DisposableRepairTool.description>
+  <!-- EN: Use kit to repair mechanoid -->
+  <USAC_DisposableRepairTool.comps.CompUsable.useLabel>使用工具组修复机械体</USAC_DisposableRepairTool.comps.CompUsable.useLabel>
+  
+</LanguageData>

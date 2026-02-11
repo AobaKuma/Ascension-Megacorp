@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: armour plate -->
+  <USAC_ArmourPlate.label>装甲板</USAC_ArmourPlate.label>
+  
+  <!-- EN: Battery -->
+  <USAC_Battery.label>电池</USAC_Battery.label>
+  
+  <!-- EN: chassis -->
+  <USAC_Chassis.label>底盘</USAC_Chassis.label>
+  
+  <!-- EN: integrated sensor -->
+  <USAC_CompactSenser.label>集成传感器</USAC_CompactSenser.label>
+  
+  <!-- EN: phased scanning sensor -->
+  <USAC_HeadRadar.label>相控扫描传感器</USAC_HeadRadar.label>
+  
+  <!-- EN: chassis -->
+  <USAC_HeavyChassis.label>重型底盘</USAC_HeavyChassis.label>
+  
+</LanguageData>

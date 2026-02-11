@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: neuro-booster dependence -->
+  <USAC_NeuroBoosterAddiction.label>神经助推剂依赖</USAC_NeuroBoosterAddiction.label>
+  <!-- EN: Permanent alteration of neural pathways. Withdrawal causes severe instability and lethal neural collapse. -->
+  <USAC_NeuroBoosterAddiction.description>神经通路的永久改变。戒断会导致严重的不稳定性和致命的神经崩溃。</USAC_NeuroBoosterAddiction.description>
+  <!-- EN: unmet -->
+  <USAC_NeuroBoosterAddiction.stages.unmet.label>未满足</USAC_NeuroBoosterAddiction.stages.unmet.label>
+  
+  <!-- EN: neural enhancement -->
+  <USAC_NeuroBoosterHigh.label>神经增强</USAC_NeuroBoosterHigh.label>
+  <!-- EN: Enhanced neural pathways via nanomachines. Increases bandwidth and consciousness at the cost of pain. -->
+  <USAC_NeuroBoosterHigh.description>通过纳米机器增强的神经通路。以疼痛为代价增加带宽和意识。</USAC_NeuroBoosterHigh.description>
+  <!-- EN: layer 1 -->
+  <USAC_NeuroBoosterHigh.stages.layer_1.label>层级 1</USAC_NeuroBoosterHigh.stages.layer_1.label>
+  <!-- EN: layer 2 -->
+  <USAC_NeuroBoosterHigh.stages.layer_2.label>层级 2</USAC_NeuroBoosterHigh.stages.layer_2.label>
+  <!-- EN: layer 3 -->
+  <USAC_NeuroBoosterHigh.stages.layer_3.label>层级 3</USAC_NeuroBoosterHigh.stages.layer_3.label>
+  <!-- EN: layer 4 -->
+  <USAC_NeuroBoosterHigh.stages.layer_4.label>层级 4</USAC_NeuroBoosterHigh.stages.layer_4.label>
+  <!-- EN: layer 5 -->
+  <USAC_NeuroBoosterHigh.stages.layer_5.label>层级 5</USAC_NeuroBoosterHigh.stages.layer_5.label>
+  <!-- EN: layer 6 -->
+  <USAC_NeuroBoosterHigh.stages.layer_6.label>层级 6</USAC_NeuroBoosterHigh.stages.layer_6.label>
+  <!-- EN: layer 7 -->
+  <USAC_NeuroBoosterHigh.stages.layer_7.label>层级 7</USAC_NeuroBoosterHigh.stages.layer_7.label>
+  <!-- EN: layer 8 -->
+  <USAC_NeuroBoosterHigh.stages.layer_8.label>层级 8</USAC_NeuroBoosterHigh.stages.layer_8.label>
+  <!-- EN: layer 9 -->
+  <USAC_NeuroBoosterHigh.stages.layer_9.label>层级 9</USAC_NeuroBoosterHigh.stages.layer_9.label>
+  <!-- EN: layer 10 -->
+  <USAC_NeuroBoosterHigh.stages.layer_10.label>层级 10</USAC_NeuroBoosterHigh.stages.layer_10.label>
+  <!-- EN: layer 11 -->
+  <USAC_NeuroBoosterHigh.stages.layer_11.label>层级 11</USAC_NeuroBoosterHigh.stages.layer_11.label>
+  <!-- EN: layer 12 -->
+  <USAC_NeuroBoosterHigh.stages.layer_12.label>层级 12</USAC_NeuroBoosterHigh.stages.layer_12.label>
+  <!-- EN: layer 13 -->
+  <USAC_NeuroBoosterHigh.stages.layer_13.label>层级 13</USAC_NeuroBoosterHigh.stages.layer_13.label>
+  <!-- EN: layer 14 -->
+  <USAC_NeuroBoosterHigh.stages.layer_14.label>层级 14</USAC_NeuroBoosterHigh.stages.layer_14.label>
+  <!-- EN: layer 15 -->
+  <USAC_NeuroBoosterHigh.stages.layer_15.label>层级 15</USAC_NeuroBoosterHigh.stages.layer_15.label>
+  <!-- EN: layer 16 -->
+  <USAC_NeuroBoosterHigh.stages.layer_16.label>层级 16</USAC_NeuroBoosterHigh.stages.layer_16.label>
+  <!-- EN: layer 17 -->
+  <USAC_NeuroBoosterHigh.stages.layer_17.label>层级 17</USAC_NeuroBoosterHigh.stages.layer_17.label>
+  <!-- EN: layer 18 -->
+  <USAC_NeuroBoosterHigh.stages.layer_18.label>层级 18</USAC_NeuroBoosterHigh.stages.layer_18.label>
+  <!-- EN: layer 19 -->
+  <USAC_NeuroBoosterHigh.stages.layer_19.label>层级 19</USAC_NeuroBoosterHigh.stages.layer_19.label>
+  <!-- EN: layer 20 -->
+  <USAC_NeuroBoosterHigh.stages.layer_20.label>层级 20</USAC_NeuroBoosterHigh.stages.layer_20.label>
+  
+</LanguageData>

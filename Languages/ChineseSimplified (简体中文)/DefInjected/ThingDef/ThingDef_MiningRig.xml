@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: assault mining rig -->
+  <USAC_HeavyMiningRig.label>USAC重型采矿机</USAC_HeavyMiningRig.label>
+  <!-- EN: A heavy-duty vertical excavation platform, deployed via orbital drop, is powered by an internal radioactive nuclear battery and possesses vertical take-off and landing capabilities for flexible redeployment and return to orbit. It achieves highly automated excavation efficiency and effectively prevents pest infestations by pressurizing and pumping shallow groundwater into deep ore veins to fracture them and extracting the ore-mixed mud. However, contaminated wastewater containing heavy metals and radioactivity is discharged in large quantities during the ore screening process, causing severe environmental pollution. -->
+  <USAC_HeavyMiningRig.description>等待添加</USAC_HeavyMiningRig.description>
+  
+  <!-- EN: mining rig (incoming) -->
+  <USAC_MiningRigIncoming.label>采矿机（降落中）</USAC_MiningRigIncoming.label>
+  
+  <!-- EN: mining rig (leaving) -->
+  <USAC_MiningRigLeaving.label>采矿机（撤离中）</USAC_MiningRigLeaving.label>
+  
+</LanguageData>

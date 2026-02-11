@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Open Supply Crate -->
+  <USAC_OpenCrate>打开物资箱</USAC_OpenCrate>
+  <!-- EN: Supply Crate Opened -->
+  <USAC_CrateOpened>已打开物资箱</USAC_CrateOpened>
+  <!-- UNUSED -->
+  <USAC_OpenCrate>打开物资箱</USAC_OpenCrate>
+  <USAC_CrateOpened>已打开物资箱</USAC_CrateOpened>
+
+</LanguageData>

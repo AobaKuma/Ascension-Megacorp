@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: elite -->
+  <USAC_Elite.label>精英</USAC_Elite.label>
+  <!-- EN: elites -->
+  <USAC_Elite.labelPlural>精英</USAC_Elite.labelPlural>
+  
+  <!-- EN: executive -->
+  <USAC_Executive.label>执行官</USAC_Executive.label>
+  <!-- EN: executives -->
+  <USAC_Executive.labelPlural>执行官</USAC_Executive.labelPlural>
+  
+  <!-- EN: heavy -->
+  <USAC_Heavy.label>重装兵</USAC_Heavy.label>
+  <!-- EN: heavies -->
+  <USAC_Heavy.labelPlural>重装兵</USAC_Heavy.labelPlural>
+  
+  <!-- EN: rifleman -->
+  <USAC_Rifleman.label>步枪兵</USAC_Rifleman.label>
+  <!-- EN: riflemen -->
+  <USAC_Rifleman.labelPlural>步枪兵</USAC_Rifleman.labelPlural>
+  
+  <!-- EN: sniper -->
+  <USAC_Sniper.label>狙击手</USAC_Sniper.label>
+  <!-- EN: snipers -->
+  <USAC_Sniper.labelPlural>狙击手</USAC_Sniper.labelPlural>
+  
+</LanguageData>

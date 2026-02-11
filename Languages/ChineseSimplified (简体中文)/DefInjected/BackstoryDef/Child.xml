@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Since [PAWN_nameDef] grew up in a gravity-free environment, [PAWN_pronoun] childhood was spent undergoing rehabilitation and gravity exposure treatments. Although these treatments have allowed [PAWN_pronoun] to move regularly in a normal gravity environment, [PAWN_pronoun] physical condition is still far inferior compared to other children of the same age. -->
+  <USAC_CivilianChild01.description>由於[PAWN_nameDef]在失重环境中长大，[PAWN_pronoun]的童年是在进行康复和重力暴露治疗中度过的。虽然这些治疗使[PAWN_pronoun]能够在正常重力环境中规律地活动，但[PAWN_pronoun]的身体状况仍然远低於同龄儿童。</USAC_CivilianChild01.description>
+  <!-- EN: Low G Adjuster -->
+  <USAC_CivilianChild01.title>低重力调整者</USAC_CivilianChild01.title>
+  <!-- EN: Adjuster -->
+  <USAC_CivilianChild01.titleShort>调整者</USAC_CivilianChild01.titleShort>
+  
+  <!-- EN: [PAWN_nameDef]'s family was unable to repay their loans and were forced to come to the rimworld with [PAWN_pronoun] parents. The harsh rimworld mercilessly took the lives of [PAWN_nameDef]'s parents. [PAWN_nameDef] also found [PAWN_pronoun]self inexplicably inheriting the family's debt. -->
+  <USAC_CivilianChild05.description>[PAWN_nameDef]的家族无法偿还贷款，并被迫来到边缘世界务工。残酷的边缘世界无情地夺走了[PAWN_nameDef]父母的生命。[PAWN_nameDef]还发现[PAWN_pronoun]自己继承了一笔难以付清的家族债务。</USAC_CivilianChild05.description>
+  <!-- EN: Debt Inheritor -->
+  <USAC_CivilianChild05.title>债务继承者</USAC_CivilianChild05.title>
+  <!-- EN: Debt Child -->
+  <USAC_CivilianChild05.titleShort>债二代</USAC_CivilianChild05.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] signed an organ donation contract early on, stipulating donation of healthy organs upon adulthood. But clever [PAWN_nameDef] quickly used the contract money to establish connections and joined a frontier project to escape to the rimworld and evade the donation contract. -->
+  <USAC_CivilianChild06.description>[PAWN_nameDef]早年签署了器官捐献合同，规定成年後捐献健康器官。但聪慧的[PAWN_nameDef]很快利用合同款项建立关系，加入边疆项目逃往边缘世界躲避捐献合同。</USAC_CivilianChild06.description>
+  <!-- EN: Organ Dodger -->
+  <USAC_CivilianChild06.title>器官逃避者</USAC_CivilianChild06.title>
+  <!-- EN: Dodger -->
+  <USAC_CivilianChild06.titleShort>逃避者</USAC_CivilianChild06.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] is the descendant of a colonial fleet that settled the rimworld. After the colonial fleet departed, the influence brought by megacorporations intensified [PAWN_nameDef]'s safe living costs. [PAWN_pronoun] was forced to learn how to shoot guns at an early age. -->
+  <USAC_CivilianChild07.description>[PAWN_nameDef]是定居边缘世界的殖民舰队的後代。殖民舰队撤离後，巨型企业带来的影响加剧了[PAWN_nameDef]的安全生活成本。因此[PAWN_pronoun]被迫在很小的年纪就学会了如何开枪。</USAC_CivilianChild07.description>
+  <!-- EN: Colonist Descendant -->
+  <USAC_CivilianChild07.title>殖民者後代</USAC_CivilianChild07.title>
+  <!-- EN: Colonist Child -->
+  <USAC_CivilianChild07.titleShort>殖民儿童</USAC_CivilianChild07.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] grew up under excellent family conditions and received a fine education. However, talent saturation and blocked advancement paths forced [PAWN_nameDef] to seek opportunities in the distant rimworld. -->
+  <USAC_CivilianChild08.description>[PAWN_nameDef]的家庭条件十分优渥，让[PAWN_pronoun]接受良好的教育。然而人才饱和以及被封闭的晋升途径迫使[PAWN_nameDef]不得不在遥远的边缘世界寻求机会。</USAC_CivilianChild08.description>
+  <!-- EN: Middle-Class Child -->
+  <USAC_CivilianChild08.title>中产阶级儿童</USAC_CivilianChild08.title>
+  <!-- EN: Privileged Child -->
+  <USAC_CivilianChild08.titleShort>特权儿童</USAC_CivilianChild08.titleShort>
+  
+  <!-- EN: Young [PAWN_nameDef] pursued the dream of being an adventurer, secretly participating in a frontier project to come to the rimworld without telling anyone. [PAWN_pronoun] quickly learned how cruel the reality behind [PAWN_pronoun]'s dreams truly was. -->
+  <USAC_CivilianChild09.description>年轻的[PAWN_nameDef]追求冒险家的梦想，没有告诉任何人就私自参加了边疆项目来到边缘世界。[PAWN_pronoun]很快就明白了[PAWN_pronoun]梦想背後的现实是多麽残酷。</USAC_CivilianChild09.description>
+  <!-- EN: Young Adventurer -->
+  <USAC_CivilianChild09.title>年轻的冒险家</USAC_CivilianChild09.title>
+  <!-- EN: Adventurer -->
+  <USAC_CivilianChild09.titleShort>冒险家</USAC_CivilianChild09.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] was born out of wedlock in the colonial fleet stationed on the planet's surface, and his biological father is unknown. Fortunately, the soldiers stationed in the camp treated [PAWN_pronoun] as one of their own, allowing [PAWN_pronoun] to have a relatively complete childhood -->
+  <USAC_MilitaryChild01.description>[PAWN_nameDef]的生父身份不详。军事驻地的士兵将[PAWN_pronoun]视作自己的孩子对待，让[PAWN_pronoun]拥有了相对完整的童年</USAC_MilitaryChild01.description>
+  <!-- EN: Bastard Child -->
+  <USAC_MilitaryChild01.title>私生子</USAC_MilitaryChild01.title>
+  <!-- EN: Child -->
+  <USAC_MilitaryChild01.titleShort>儿童</USAC_MilitaryChild01.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] spent childhood searching for survival materials during the day, and shelted in an abandoned mobile dragoon wreck shell in the war zone until [PAWN_pronoun] body grew too large to fit inside. -->
+  <USAC_MilitaryChild04.description>[PAWN_nameDef]童年时期围绕着在白天寻找生存物资，以及晚上在战区的废弃龙骑兵残骸中避难，这一直持续到[PAWN_pronoun]的身体长得太大而无法再容纳其中。</USAC_MilitaryChild04.description>
+  <!-- EN: Dragoon Shell Refugee -->
+  <USAC_MilitaryChild04.title>龙骑庇护之子</USAC_MilitaryChild04.title>
+  <!-- EN: Wreck Refugee -->
+  <USAC_MilitaryChild04.titleShort>残骸难民</USAC_MilitaryChild04.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] was born in a conflict zone where nationalism was rising. Due to the exceptional combat talent [PAWN_pronoun] displayed, [PAWN_nameDef] eventually became a mercenary. [PAWN_pronoun] rarely thinks about anything beyond combat. -->
+  <USAC_MilitaryChild05.description>[PAWN_nameDef]出生在民族主义兴起的冲突地带。并靠着表现出的卓越才能成为一位完整活到战争结束的佣兵。由於战场的残酷现实，[PAWN_pronoun]很少思考战斗以外的任何事情。</USAC_MilitaryChild05.description>
+  <!-- EN: Child of War -->
+  <USAC_MilitaryChild05.title>战争之子</USAC_MilitaryChild05.title>
+  <!-- EN: War Child -->
+  <USAC_MilitaryChild05.titleShort>战争儿童</USAC_MilitaryChild05.titleShort>
+  
+  <!-- EN: Due to his outstanding performance in the Colonial Military Academy, [PAWN_nameDef] was trained as an Officer Cadet during his childhood. [PAWN_nameDef] achieved the rank of Warrant Officer upon reaching adulthood. -->
+  <USAC_OfficerChild01.description>由於军事学院的学贷，[PAWN_nameDef]在童年时期被培训为军官学员。[PAWN_nameDef]成年後获得了准尉军衔。</USAC_OfficerChild01.description>
+  <!-- EN: Officer Cadet -->
+  <USAC_OfficerChild01.title>军官学员</USAC_OfficerChild01.title>
+  <!-- EN: Cadet -->
+  <USAC_OfficerChild01.titleFemale>军官学员</USAC_OfficerChild01.titleFemale>
+  <!-- EN: Cadet -->
+  <USAC_OfficerChild01.titleShort>学员</USAC_OfficerChild01.titleShort>
+  <!-- EN: Cadet -->
+  <USAC_OfficerChild01.titleShortFemale>学员</USAC_OfficerChild01.titleShortFemale>
+  
+  <!-- EN: [PAWN_nameDef] grew up on a colonial planet full of turmoil and used [PAWN_pronoun] flexible skills as messenger on the frontline battlefields full of electromagnetic interference and hostile fire. After the war, [PAWN_pronoun] was able to return to school for an education. -->
+  <USAC_OfficerChild02.description>[PAWN_nameDef]在殖民行星的动荡年代长大，在充满电磁干扰和敌对火力的前线战场上以[PAWN_pronoun]灵活的技能充当信使。战争结束後[PAWN_pronoun]能够回到学校接受教育。</USAC_OfficerChild02.description>
+  <!-- EN: Child Orderly -->
+  <USAC_OfficerChild02.title>儿童勤务兵</USAC_OfficerChild02.title>
+  <!-- EN: Orderly -->
+  <USAC_OfficerChild02.titleShort>勤务兵</USAC_OfficerChild02.titleShort>
+  
+  <!-- EN: [PAWN_nameDef]'s parents were declared Missing in Action during their deployment while they were very young. Due to the Military Martyrdom Clause of the Colonial Fleet, they received a scholarship to support them through the Officer Academy Course. -->
+  <USAC_OfficerChild03.description>[PAWN_nameDef]的父母在[PAWN_pronoun]还很小的时候在任务中失踪。由於无法证明死亡，[PAWN_pronoun]不得不背负债务偿还双亲的军事装备租借费用。</USAC_OfficerChild03.description>
+  <!-- EN: Son of Martyrs -->
+  <USAC_OfficerChild03.title>烈士之子</USAC_OfficerChild03.title>
+  <!-- EN: Daughter of Martyrs -->
+  <USAC_OfficerChild03.titleFemale>烈士之女</USAC_OfficerChild03.titleFemale>
+  <!-- EN: Martyrs' Child -->
+  <USAC_OfficerChild03.titleShort>烈士之子</USAC_OfficerChild03.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] thought Automatroids were cool from childhood and eagerly studied Automatroid-related knowledge despite difficult circumstances. Eventually, [PAWN_nameDef]'s performance earned an invitation letter from the academic faction. -->
+  <USAC_OfficerChild06.description>[PAWN_nameDef]从童年起就认为机兵很酷，尽管环境困难，[PAWN_pronoun]仍然积极学习机兵相关知识。最终[PAWN_nameDef]的表现为[PAWN_pronoun]赢得了来自学术派系的实习邀请信。</USAC_OfficerChild06.description>
+  <!-- EN: Automatroid Enthusiast -->
+  <USAC_OfficerChild06.title>机兵爱好者</USAC_OfficerChild06.title>
+  <!-- EN: Tech Enthusiast -->
+  <USAC_OfficerChild06.titleShort>机兵宅</USAC_OfficerChild06.titleShort>
+
+</LanguageData>

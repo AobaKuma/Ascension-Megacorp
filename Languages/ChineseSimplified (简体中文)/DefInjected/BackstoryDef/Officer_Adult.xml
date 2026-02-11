@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: [PAWN_nameDef] was a weapons controller at a Command and Control Facility. [PAWN_nameDef] was temporarily laid off due to a lack of maintenance parts for the control system and had to cross-train as a weapons system operator for the task force's autonomous robots at the weapons control station to mitigate friendly fire incidents. -->
+  <DMS_Officer01.description>[PAWN_nameDef]是指挥控制设施的武器管制员。由於控制系统的维护零件缺乏，[PAWN_nameDef]被暂时解雇，不得不接受交叉培训，在武器控制站担任特遣队机兵的武器系统操作员，以减轻友军误伤事件。</DMS_Officer01.description>
+  <!-- EN: Weapon Systems Officer -->
+  <DMS_Officer01.title>武器系统官员</DMS_Officer01.title>
+  <!-- EN: Wizzo -->
+  <DMS_Officer01.titleShort>射控官</DMS_Officer01.titleShort>
+  
+  <!-- EN: Due to the immense time required to cross galaxies without FTL technology, by the time the Colonial Forces arrive at their target planet entire generations have passed and rendered their initial data obsolete. [PAWN_nameDef] had to research and catalog the changes in the planet's xenology and climate that occurred while their ship was in transit -->
+  <DMS_Officer02.description>由於没有超光速技术跨越星系所需的巨大时间，当边疆计画的第一支舰队抵达目标行星时，整个世代已经过去，使得[PAWN_pronoun]的初始数据过时。[PAWN_nameDef]不得不研究和编目[PAWN_pronoun]们所在行星的异生物学和气候变化。</DMS_Officer02.description>
+  <!-- EN: Xeno Researcher -->
+  <DMS_Officer02.title>异种研究员</DMS_Officer02.title>
+  <!-- EN: Researcher -->
+  <DMS_Officer02.titleShort>研究员</DMS_Officer02.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] worked for the Medical Department of the Colonial Forces. Due to disputes regarding prisoner's medical rights on-world, [PAWN_nameDef] had to stay planetside until the situation was resolved. -->
+  <DMS_Officer03.description>[PAWN_nameDef]在军工复合体的医疗部门工作。由於有机素材的缺乏，[PAWN_nameDef]不得不留在行星表面直到情况解决。</DMS_Officer03.description>
+  <!-- EN: Itinerant Doctor -->
+  <DMS_Officer03.title>巡回医生</DMS_Officer03.title>
+  <!-- EN: Doctor -->
+  <DMS_Officer03.titleShort>医生</DMS_Officer03.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] worked for the Astro-mechanical Design Department of the Colonial Forces and made adjustments and optimizations to the Automatroid fleet for the local colony. -->
+  <DMS_Officer04.description>[PAWN_nameDef]在军工复合体的机兵设计部门工作，为殖民地的机兵零件与参数进行调整和优化。</DMS_Officer04.description>
+  <!-- EN: Automatroid engineer -->
+  <DMS_Officer04.title>机兵工程师</DMS_Officer04.title>
+  <!-- EN: Engineer -->
+  <DMS_Officer04.titleShort>工程师</DMS_Officer04.titleShort>
+  
+  <!-- EN: [PAWN_nameDef] worked for the diplomatic department of the Colonial Forces. [PAWN_nameDef] was posted to various outposts on the planet to provide contacts with friendly local militias and mercenary groups alike. -->
+  <DMS_Officer05.description>[PAWN_nameDef]在佣兵部队的外交部门工作。[PAWN_nameDef]被派驻到行星上的各个前哨站，以提供当地民兵和佣兵集团的联络渠道。</DMS_Officer05.description>
+  <!-- EN: Military Attaché -->
+  <DMS_Officer05.title>军事武官</DMS_Officer05.title>
+  <!-- EN: Attaché -->
+  <DMS_Officer05.titleShort>武官</DMS_Officer05.titleShort>
+  
+</LanguageData>
