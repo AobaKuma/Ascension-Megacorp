@@ -20,8 +20,8 @@
     <li>corpDomain->Resources</li>
   -->
   <DeityTypeMaker_USAC.rulePack.rulesStrings>
-    <li>r_deityType(p=5)->[corpGod] of [corpDomain]</li>
-    <li>r_deityType(p=3)->[corpGod] of [memeConcept]</li>
+    <li>r_deityType(p=5)->[corpDomain][corpGod]</li>
+    <li>r_deityType(p=3)->[memeConcept][corpGod]</li>
     <li>corpGod->贊助人</li>
     <li>corpGod->保護者</li>
     <li>corpGod->監督者</li>
@@ -41,21 +41,21 @@
   <!-- EN: memeLeaderNoun(priority=1)->[cultureLeaderNoun] -->
   <LeaderTitleMaker_USAC.rulePack.rulesStrings.0>memeLeaderNoun(priority=1)->[cultureLeaderNoun]</LeaderTitleMaker_USAC.rulePack.rulesStrings.0>
   <!-- EN: r_leaderTitle(p=6)->[cultureLeaderAdjective] [cultureLeaderNoun] -->
-  <LeaderTitleMaker_USAC.rulePack.rulesStrings.1>r_leaderTitle(p=6)->[cultureLeaderAdjective] [cultureLeaderNoun]</LeaderTitleMaker_USAC.rulePack.rulesStrings.1>
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.1>r_leaderTitle(p=6)->[cultureLeaderAdjective][cultureLeaderNoun]</LeaderTitleMaker_USAC.rulePack.rulesStrings.1>
   <!-- EN: r_leaderTitle(p=3)->[cultureLeaderTitle] -->
   <LeaderTitleMaker_USAC.rulePack.rulesStrings.2>r_leaderTitle(p=3)->[cultureLeaderTitle]</LeaderTitleMaker_USAC.rulePack.rulesStrings.2>
   <!-- EN: cultureLeaderAdjective->chief -->
-  <LeaderTitleMaker_USAC.rulePack.rulesStrings.3>cultureLeaderAdjective->首席</LeaderTitleMaker_USAC.rulePack.rulesStrings.3>
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.3>cultureLeaderAdjective->區域特許</LeaderTitleMaker_USAC.rulePack.rulesStrings.3>
   <!-- EN: cultureLeaderAdjective->senior -->
-  <LeaderTitleMaker_USAC.rulePack.rulesStrings.4>cultureLeaderAdjective->高級</LeaderTitleMaker_USAC.rulePack.rulesStrings.4>
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.4>cultureLeaderAdjective->武裝部執行</LeaderTitleMaker_USAC.rulePack.rulesStrings.4>
   <!-- EN: cultureLeaderAdjective->executive -->
-  <LeaderTitleMaker_USAC.rulePack.rulesStrings.5>cultureLeaderAdjective->執行</LeaderTitleMaker_USAC.rulePack.rulesStrings.5>
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.5>cultureLeaderAdjective->常任理事</LeaderTitleMaker_USAC.rulePack.rulesStrings.5>
   <!-- EN: cultureLeaderAdjective->managing -->
   <LeaderTitleMaker_USAC.rulePack.rulesStrings.6>cultureLeaderAdjective->總</LeaderTitleMaker_USAC.rulePack.rulesStrings.6>
   <!-- EN: cultureLeaderAdjective->general -->
   <LeaderTitleMaker_USAC.rulePack.rulesStrings.7>cultureLeaderAdjective->常務</LeaderTitleMaker_USAC.rulePack.rulesStrings.7>
   <!-- EN: cultureLeaderNoun->officer -->
-  <LeaderTitleMaker_USAC.rulePack.rulesStrings.8>cultureLeaderNoun->官</LeaderTitleMaker_USAC.rulePack.rulesStrings.8>
+  <LeaderTitleMaker_USAC.rulePack.rulesStrings.8>cultureLeaderNoun->指揮官</LeaderTitleMaker_USAC.rulePack.rulesStrings.8>
   <!-- EN: cultureLeaderNoun->director -->
   <LeaderTitleMaker_USAC.rulePack.rulesStrings.9>cultureLeaderNoun->董事</LeaderTitleMaker_USAC.rulePack.rulesStrings.9>
   <!-- EN: cultureLeaderNoun->president -->
@@ -146,8 +146,8 @@
     <li>corpEventTheme->Prosperity</li>
   -->
   <NamerFestival_USAC.rulePack.rulesStrings>
-    <li>festivalName(p=5)->[corpEvent] [corpEventType]</li>
-    <li>festivalName(p=3)->[corpEventType] of [corpEventTheme]</li>
+    <li>festivalName(p=5)->[corpEvent][corpEventType]</li>
+    <li>festivalName(p=3)->[corpEventTheme][corpEventType]</li>
     <li>corpEvent->年度</li>
     <li>corpEvent->季度</li>
     <li>corpEvent->企業</li>
@@ -195,9 +195,9 @@
     <li>globalHyphenPrefix->mega</li>
   -->
   <NamerIdeo_USAC.rulePack.rulesStrings>
-    <li>r_ideoName(p=5)->[corpPrefix] [corpSuffix]</li>
+    <li>r_ideoName(p=5)->[corpPrefix][corpSuffix]</li>
     <li>r_ideoName(p=3)->[corpPrefix][corpSuffix]主義</li>
-    <li>r_ideoName(p=2)->The [corpConcept]</li>
+    <li>r_ideoName(p=2)->超級[corpConcept]</li>
     <li>corpPrefix->聯合</li>
     <li>corpPrefix->全球</li>
     <li>corpPrefix->恆星</li>

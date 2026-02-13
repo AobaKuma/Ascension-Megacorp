@@ -31,19 +31,17 @@
     <li>grouptype->Operations</li>
   -->
   <USAC_NamerFaction.rulePack.rulesStrings>
-    <li>r_name->[prefix] [suffix]</li>
-    <li>r_name->[prefix]-[suffix]</li>
-    <li>r_name->[prefix] [suffix] [grouptype]</li>
-    <li>r_name->[prefix]-[suffix] [grouptype]</li>
-    <li>r_name->[prefix] [grouptype]</li>
-    <li>r_name->[suffix] [grouptype]</li>
+    <li>r_name->[prefix][suffix]</li>
+    <li>r_name->[prefix][suffix][grouptype]</li>
+    <li>r_name->[prefix][grouptype]</li>
+    <li>r_name->[suffix][grouptype]</li>
     <li>prefix->近地點</li>
     <li>prefix->頂點</li>
     <li>prefix->頂點</li>
     <li>prefix->上升</li>
     <li>prefix->峰會</li>
     <li>prefix->頂點</li>
-    <li>prefix->最高峰</li>
+    <li>prefix->巔峰</li>
     <li>prefix->子午線</li>
     <li>suffix->動力系統</li>
     <li>suffix->工業</li>
@@ -54,8 +52,8 @@
     <li>suffix->風險投資</li>
     <li>suffix->集團</li>
     <li>grouptype->私營軍事公司</li>
-    <li>grouptype->部門</li>
-    <li>grouptype->承包商</li>
+    <li>grouptype->資源開發部門</li>
+    <li>grouptype->軍工業承包商</li>
     <li>grouptype->安全</li>
     <li>grouptype->運營</li>
   </USAC_NamerFaction.rulePack.rulesStrings>
@@ -96,11 +94,11 @@
   -->
   <USAC_NamerSettlement.rulePack.rulesStrings>
     <li>r_name->[sitetype]-[number]</li>
-    <li>r_name->[sitetype] [greek]</li>
-    <li>r_name->[prefix] [sitetype]</li>
-    <li>r_name->哨站 [greek]-[number]</li>
-    <li>r_name->場地 [number]</li>
-    <li>r_name->設施 [greek]</li>
+    <li>r_name->[sitetype][greek]</li>
+    <li>r_name->[prefix][sitetype]</li>
+    <li>r_name->[greek]-[number]哨站</li>
+    <li>r_name->[number]設施</li>
+    <li>r_name->[greek]設施</li>
     <li>sitetype->倉庫</li>
     <li>sitetype->哨站</li>
     <li>sitetype->站點</li>

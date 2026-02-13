@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
     <!-- USAC 派系 - 飞升巨企军事承包集团 -->
@@ -6,7 +6,7 @@
     <FactionDef ParentName="FactionBase">
         <defName>USAC_Faction</defName>
         <label>United Stellar Armament Company</label>
-        <description>A group of resource development companies and armed trading groups driven by profit, originating from a planet that was enlightend by colonization and gained abilities to reach interstellar, countless massive corporations have created this man-eating Leviathan through military hegemony and commercial mergers and acquisitions on their home planet. Their purpose on this world is to gain a foothold  and prepare for a total ground control.</description>
+        <description>A group of resource development companies and armed trading groups driven by profit, originating from a planet that was enlightend by colonization and gained abilities to reach interstellar, countless massive corporations have created this man-eating Leviathan through military hegemony and commercial mergers and acquisitions on their home planet. Their purpose on this world is to gain a foothold and prepare for a total ground control.</description>
         <pawnSingular>operative</pawnSingular>
         <pawnsPlural>operatives</pawnsPlural>
         <categoryTag>USAC</categoryTag>
@@ -15,10 +15,12 @@
         <requiredCountAtGameStart>1</requiredCountAtGameStart>
         <maxCountAtGameStart>1</maxCountAtGameStart>
         <canMakeRandomly>true</canMakeRandomly>
-        <canSiege>false</canSiege>
+        <canSiege>true</canSiege>
         <canStageAttacks>true</canStageAttacks>
         <leaderTitle>executive</leaderTitle>
+        <rescueesCanJoin>true</rescueesCanJoin>
         <leaderForceGenerateNewPawn>true</leaderForceGenerateNewPawn>
+        <canRequestOrbitalTrader>true</canRequestOrbitalTrader>
         <fixedLeaderKinds>
             <li>USAC_Executive</li>
         </fixedLeaderKinds>
@@ -27,15 +29,60 @@
         <techLevel>Spacer</techLevel>
         <factionNameMaker>USAC_NamerFaction</factionNameMaker>
         <colorSpectrum>
-            <li>(0.2, 0.6, 0.9)</li>
-            <li>(0.1, 0.4, 0.7)</li>
+            <li>(0.8, 0.8, 0.8)</li>
         </colorSpectrum>
+        <fixedIdeo>true</fixedIdeo>
         <naturalEnemy>false</naturalEnemy>
         <mustStartOneEnemy>false</mustStartOneEnemy>
         <hidden>false</hidden>
-        <allowedCultures MayRequire="Ludeon.RimWorld.Ideology">
+        <allowedCultures MayRequire="Ludeon.RimWorld.Ideology" Inherit="false">
             <li>USAC_Culture</li>
         </allowedCultures>
+        <structureMemeWeights Inherit="false">
+            <Structure_OriginChristian MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginChristian>
+            <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Ideological>
+        </structureMemeWeights>
+        <requiredMemes>
+            <li>Supremacist</li>
+            <li>Individualist</li>
+            <li>Proselytizer</li>
+            <li>HumanPrimacy</li>
+        </requiredMemes>
+        <disallowedMemes>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Structure_Animist</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">FleshPurity</li>
+        </disallowedMemes>
+        <disallowedPrecepts>
+            <li MayRequire="Ludeon.RimWorld.Ideology">DrugUse_Prohibited</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">DrugUse_MedicalOnly</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Abhorrent</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Horrible</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_Prohibited</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_Horrible</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_SpouseOnly_Strict</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_SpouseOnly_Moderate</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_SpouseOnly_Mild</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Research_None</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Research_ExtremelySlow</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Research_VerySlow</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Research_Slow</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_Abhorrent</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_HorribleNoSell</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">DrugUse_Prohibited</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">DrugUse_MedicalOnly</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_NoRules</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_NoRules</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_CoveringAnythingButGroinDisapproved</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_CoveringAnythingButGroinDisapproved</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_Mandatory</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_Mandatory</li>
+        </disallowedPrecepts>
+        <styles>
+            <li>USAC_Segments</li>
+        </styles>
         <arrivalLayerWhitelist>
             <li>Surface</li>
             <li MayRequire="Ludeon.RimWorld.Odyssey">Orbit</li>
@@ -50,15 +97,15 @@
             <li>
                 <categories>
                     <li>Offworld</li>
-					<li>USAC_Common</li>
+                    <li>USAC_Common</li>
                 </categories>
                 <commonality>0.7</commonality>
             </li>
             <li>
                 <categories>
-					<li>USAC_Common</li>
-					<li>USAC_Officer</li>
-					<li>Outlander</li>
+                    <li>USAC_Common</li>
+                    <li>USAC_Officer</li>
+                    <li>Outlander</li>
                 </categories>
                 <commonality>0.3</commonality>
             </li>

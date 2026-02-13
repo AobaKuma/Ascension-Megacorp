@@ -1,5 +1,14 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+	<ThingStyleDef>
+		<defName>Apparel_USACFlakVest</defName>
+		<wornGraphicPath>Things/Style/USAC/Apparel/flakVest/apparel</wornGraphicPath>
+		<graphicData>
+			<texPath>Things/Style/USAC/Apparel/flakVest/icon</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingStyleDef>
+
 	<ThingStyleDef>
 		<defName>Gun_USACRevolver</defName>
 		<graphicData>
@@ -21,6 +30,7 @@
 		<graphicData>
 			<texPath>Things/Style/USAC/HeavySMG</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(0.75,0.75)</drawSize>
 		</graphicData>
 	</ThingStyleDef>
 
@@ -86,7 +96,7 @@
 			<drawSize>(1.5,1.5)</drawSize>
 		</graphicData>
 	</ThingStyleDef>
-	
+
 	<ThingStyleDef MayRequire="Aoba.DeadManSwitch.Core">
 		<defName>DMS_USAC_LightMachineGun</defName>
 		<graphicData>

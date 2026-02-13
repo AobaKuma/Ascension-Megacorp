@@ -10,6 +10,11 @@
     <ritualVisualEffectDef>Techist</ritualVisualEffectDef>
     <thingDefStyles>
       <li>
+        <thingDef>Apparel_FlakVest</thingDef>
+        <styleDef>Apparel_USACFlakVest</styleDef>
+        
+      </li>
+      <li>
         <thingDef>Gun_Revolver</thingDef>
         <styleDef>Gun_USACRevolver</styleDef>
       </li>

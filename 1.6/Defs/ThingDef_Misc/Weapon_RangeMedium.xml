@@ -191,7 +191,7 @@
 
   <ThingDef ParentName="USAC_BaseGun">
     <defName>USAC_Gun_ACSW</defName>
-    <label>advanced crew service weapon</label>
+    <label>advanced support weapon</label>
     <description>Project ACSW M307 "Terminator", A lightweight automatic grenade launcher that can fire fragmentation grenades in succession to kill infantry. require exoskeleton to carrying ammunition and handheld.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/USAC_Gun_ACSW</texPath>

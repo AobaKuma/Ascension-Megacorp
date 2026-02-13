@@ -3,7 +3,7 @@
   <ThingDef ParentName="ApparelBase">
     <defName>USAC_Apparel_ExoSkeleton</defName>
     <label>hardiman powered unit</label>
-    <description>A powered exoskeleton suit driven by an electric motor. It allows the wearer to lift and operate heavy weapons and equipment, and features bulletproof plate mounting points for protection. Its design dates back to the Cold War era on ancient Earth and may be the earliest known prototype of a powered exoskeleton suit.</description>
+    <description>A powered exoskeleton suit driven by an electric motor. It allows personal to lift and operate heavy weapons and equipment, and features bulletproof plate mounting points for protection. Its design dates back to the Cold War era on ancient Earth and may be the earliest known prototype of a powered exoskeleton suit.</description>
     <techLevel>Industrial</techLevel>
     <costList>
       <Plasteel>150</Plasteel>
@@ -22,7 +22,7 @@
       <li>ApparelArmor</li>
     </thingCategories>
     <statBases>
-      <MaxHitPoints>200</MaxHitPoints>
+      <MaxHitPoints>240</MaxHitPoints>
       <WorkToMake>80000</WorkToMake>
       <Mass>27</Mass>
       <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
@@ -40,9 +40,9 @@
       <bodyPartGroups>
         <li>Hands</li>
         <li>Feet</li>
-		<li>Neck</li>
-		<li>Shoulders</li>
-		<li>Torso</li>
+        <li>Neck</li>
+        <li>Shoulders</li>
+        <li>Torso</li>
         <li>Legs</li>
         <li>Arms</li>
       </bodyPartGroups>
@@ -97,6 +97,14 @@
       <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
       <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
     </apparel>
+    <comps>
+      <li Class="Fortified.CompProperties_BulletproofPlate">
+        <armorRating>0.4</armorRating>
+        <maxDurability>240</maxDurability>
+        <plateThing>Plasteel</plateThing>
+        <durabilityRestorePerMaterial>10</durabilityRestorePerMaterial>
+      </li>
+    </comps>
     <modExtensions>
       <li Class="Fortified.ApparelExtension">
         <pawnCapacityMinLevels>

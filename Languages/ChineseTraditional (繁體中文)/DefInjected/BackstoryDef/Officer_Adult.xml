@@ -18,7 +18,7 @@
   <!-- EN: [PAWN_nameDef] worked for the Medical Department of the Colonial Forces. Due to disputes regarding prisoner's medical rights on-world, [PAWN_nameDef] had to stay planetside until the situation was resolved. -->
   <DMS_Officer03.description>[PAWN_nameDef]在軍工複合體的醫療部門工作。由於有機素材的缺乏，[PAWN_nameDef]不得不留在行星表面直到情況解決。</DMS_Officer03.description>
   <!-- EN: Itinerant Doctor -->
-  <DMS_Officer03.title>巡迴醫生</DMS_Officer03.title>
+  <DMS_Officer03.title>收屍人</DMS_Officer03.title>
   <!-- EN: Doctor -->
   <DMS_Officer03.titleShort>醫生</DMS_Officer03.titleShort>
   

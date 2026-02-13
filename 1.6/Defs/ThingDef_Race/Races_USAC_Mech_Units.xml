@@ -31,9 +31,9 @@
       <renderTree>USAC_HumanlikeMech</renderTree>
     </race>
     <comps>
-      <li Class="USAC.CompProperties_MechWreck">
+      <!-- <li Class="USAC.CompProperties_MechWreck">
         <wreckDef>USAC_Wreck_Rocky</wreckDef>
-      </li>
+      </li> -->
       <li Class="Fortified.CompProperties_MechApparel" />
     </comps>
     <modExtensions>
@@ -99,13 +99,13 @@
     <defName>USAC_Mech_Rocky</defName>
     <apparelTags>
       <li>USAC_HelmetAssault</li>
+      <li>IndustrialMilitaryBasic</li>
       <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Tactical</li>
     </apparelTags>
     <apparelMoney>800~1500</apparelMoney>
     <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
     <weaponTags>
       <li>IndustrialGunAdvanced</li>
-		<li>USAC_AR</li>
     </weaponTags>
     <weaponMoney>1000~2500</weaponMoney>
   </PawnKindDef>
@@ -115,7 +115,9 @@
     <apparelTags>
       <li>USAC_HelmetMelee</li>
       <li>USAC_HelmetAssault</li>
+      <li>IndustrialMilitaryBasic</li>
       <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Tactical</li>
+      <li>BeltDefensePop</li>
     </apparelTags>
     <apparelMoney>800~1500</apparelMoney>
     <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
@@ -227,8 +229,8 @@
       </li>
     </lifeStages>
     <weaponTags>
-      <li>IndustrialGunAdvanced</li>
-      <li>SimpleGun</li>
+      <li>USAC_AGL</li>
+      <li>USAC_AC</li>
     </weaponTags>
     <weaponMoney>700~1800</weaponMoney>
   </PawnKindDef>
@@ -389,8 +391,8 @@
       </li>
     </lifeStages>
     <weaponTags>
-      <li>GunHeavy</li>
-      <li>IndustrialGunAdvanced</li>
+      <li>USAC_HDMR</li>
+      <li>USAC_SGL</li>
     </weaponTags>
     <weaponMoney>800~2000</weaponMoney>
     <abilities>
@@ -500,8 +502,8 @@
       </li>
     </lifeStages>
     <weaponTags>
-      <li>GunHeavy</li>
-      <li>IndustrialGunAdvanced</li>
+      <li>USAC_HeavyAC</li>
+      <li>USAC_HRR</li>
     </weaponTags>
     <weaponMoney>2000~4000</weaponMoney>
     <abilities>

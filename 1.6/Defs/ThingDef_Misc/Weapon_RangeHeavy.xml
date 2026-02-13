@@ -189,7 +189,7 @@
       </li>
     </verbs>
     <weaponTags>
-      <li>USAC_DMR</li>
+      <li>USAC_HDMR</li>
       <li>Mech_Weapon</li>
     </weaponTags>
     <tools>
@@ -346,7 +346,7 @@
       </li>
     </verbs>
     <weaponTags>
-      <li>USAC_RR</li>
+      <li>USAC_HRR</li>
       <li>Mech_Weapon</li>
     </weaponTags>
     <tools>

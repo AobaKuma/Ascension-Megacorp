@@ -2,14 +2,14 @@
 <LanguageData>
   
   <!-- EN: [PAWN_nameDef] failed as a bandit and was unfortunately captured by a colonial group. While serving a labor sentence, [PAWN_nameDef] realized how much better the life of these people had and decided to stay after being released from prison. -->
-  <USAC_Military01.description>[PAWN_nameDef]作為盜匪失敗了，不幸被一個殖民地集團抓獲。在服完勞動刑期間，[PAWN_nameDef]意識到這些人的生活質量要好得多，並決定在出獄後留下來。</USAC_Military01.description>
+  <USAC_Military01.description>[PAWN_nameDef]作為盜匪失敗了，不幸被武裝集團抓獲並判處義務勞動。</USAC_Military01.description>
   <!-- EN: Reformed Bandit -->
   <USAC_Military01.title>改邪歸正的盜匪</USAC_Military01.title>
   <!-- EN: Bandit -->
   <USAC_Military01.titleShort>盜匪</USAC_Military01.titleShort>
   
   <!-- EN: [PAWN_nameDef] served as a medic in the Armed Forces and retired from military life prematurely after a serious injury. -->
-  <USAC_Military02.description>[PAWN_nameDef]在武裝部隊中擔任軍醫，在一次嚴重傷害後提前從軍事生活中退役。</USAC_Military02.description>
+  <USAC_Military02.description>[PAWN_nameDef]在武裝部隊中擔任軍醫，直到在一次嚴重傷害後提前從軍事生涯中退役。</USAC_Military02.description>
   <!-- EN: Retired Medic -->
   <USAC_Military02.title>退休軍醫</USAC_Military02.title>
   <!-- EN: Medic -->
@@ -23,21 +23,21 @@
   <USAC_Military03.titleShort>副官</USAC_Military03.titleShort>
   
   <!-- EN: [PAWN_nameDef] was once a bodyguard for military contractor groups, but was laid off because Automatroids proved to be stronger in competitive combat capability. [PAWN_nameDef] eventually had to follow a frontier project to the rimworld to seek a living. -->
-  <USAC_Military04.description>[PAWN_nameDef]曾是軍事承包商集團的保鏢，但由於機兵在競爭性戰鬥能力上證明更強而被解僱。[PAWN_nameDef]最終不得不跟隨邊疆項目到邊緣世界謀求生計。</USAC_Military04.description>
+  <USAC_Military04.description>[PAWN_nameDef]曾是軍事承包商集團的保鏢，但由於機兵的普及而被解僱。[PAWN_nameDef]最終不得不跟隨邊疆項目到邊緣世界謀求生計。</USAC_Military04.description>
   <!-- EN: Fired Bodyguard -->
   <USAC_Military04.title>被解僱的保鏢</USAC_Military04.title>
   <!-- EN: Bodyguard -->
   <USAC_Military04.titleShort>保鏢</USAC_Military04.titleShort>
   
   <!-- EN: [PAWN_nameDef] was a mercenary in armed groups. However, Automatroids have squeezed out the mercenaries' living space with both superior combat power and cost efficiency. [PAWN_nameDef] proved that [PAWN_pronoun]'s blood and sweat could be cheaper than an Automatroid's lubricant oil. -->
-  <USAC_Military05.description>[PAWN_nameDef]是武裝集團中的傭兵。然而，機兵以優越的戰鬥力和成本效益擠壓了傭兵的生存空間。[PAWN_nameDef]證明了[PAWN_pronoun]的血汗可以比機兵的潤滑油還便宜。</USAC_Military05.description>
+  <USAC_Military05.description>[PAWN_nameDef]是武裝集團中的傭兵。然而機兵以優越的戰鬥力和成本效益擠壓了傭兵的生存空間。但[PAWN_nameDef]證明了[PAWN_pronoun]的血汗可以比機兵的潤滑油還便宜。</USAC_Military05.description>
   <!-- EN: Struggling Mercenary -->
   <USAC_Military05.title>掙扎的傭兵</USAC_Military05.title>
   <!-- EN: Mercenary -->
   <USAC_Military05.titleShort>傭兵</USAC_Military05.titleShort>
   
   <!-- EN: The profits and opportunities brought by frontier projects attracted many unemployed laborers like [PAWN_nameDef]. Like many others following the frontier project, [PAWN_nameDef] signed liability waivers to come to the rimworld. -->
-  <USAC_Military06.description>邊疆項目帶來的利潤和機會吸引了許多像[PAWN_nameDef]這樣的失業勞動者。像許多其他跟隨邊疆項目的人一樣，[PAWN_nameDef]簽署了責任豁免書來到邊緣世界。</USAC_Military06.description>
+  <USAC_Military06.description>邊疆項目帶來的利潤和機會吸引了許多像[PAWN_nameDef]這樣的失業勞動者。像許多其他跟隨邊疆計畫的參與者一樣，[PAWN_nameDef]簽署了責任豁免書來到邊緣世界。</USAC_Military06.description>
   <!-- EN: Frontier Worker -->
   <USAC_Military06.title>邊疆工人</USAC_Military06.title>
   <!-- EN: Worker -->
@@ -51,11 +51,11 @@
   <USAC_Military07.titleShort>驗屍官</USAC_Military07.titleShort>
   
   <!-- EN: As technology and Automatroids continued to iterate, [PAWN_nameDef] was eventually laid off from maintaining Automatroids. However, in an era where Automatroids run rampant, the laid-off [PAWN_nameDef] remains an important talent for mercenaries, pirates, and private armed groups. -->
-  <USAC_Military08.description>隨著技術和機兵的不斷迭代，[PAWN_nameDef]最終被解僱而無法繼續維護機兵。然而，在機兵猖獗的時代，被解僱的[PAWN_nameDef]仍然是傭兵、海盜和私人武裝集團的重要人才。</USAC_Military08.description>
+  <USAC_Military08.description>隨著技術和機兵的不斷迭代，[PAWN_nameDef]最終被解僱而流離失所。然而在機兵猖獗的時代，被解僱的[PAWN_nameDef]仍然是傭兵、海盜和私人武裝集團的重要人才。</USAC_Military08.description>
   <!-- EN: Automatroid Maintenance Tech -->
   <USAC_Military08.title>機兵維護技術員</USAC_Military08.title>
   <!-- EN: Mech Tech -->
-  <USAC_Military08.titleShort>機甲技術員</USAC_Military08.titleShort>
+  <USAC_Military08.titleShort>機兵技術員</USAC_Military08.titleShort>
   
   <!-- EN: [PAWN_nameDef] came to the rimworld with a frontier project, doing whatever [PAWN_pronoun] wanted. Because [PAWN_pronoun] offended many people and violated most contract terms, [PAWN_pronoun] is now being hunted. But this kind of life is exactly what [PAWN_pronoun] pursues. -->
   <USAC_Military09.description>[PAWN_nameDef]跟隨邊疆項目來到邊緣世界，做[PAWN_pronoun]想做的任何事。因為[PAWN_pronoun]冒犯了許多人並違反了大多數合同條款，[PAWN_pronoun]現在被追捕。但這種生活正是[PAWN_pronoun]所追求的。</USAC_Military09.description>
