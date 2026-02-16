@@ -151,7 +151,7 @@
     <description>An M905 "Viper" large-caliber precision anti-materiel weapon system using autocannon ammunition. Designed to be mounted on medium Automatroids as an anti-materiel weapon, it can also be wielded by large augmented humans or soldiers wearing heavy exoskeletons. Excels at long-range precision strikes against armored targets.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/USAC_Gun_ViperDMR</texPath>
-      <drawSize>2.5</drawSize>
+      <drawSize>1.8</drawSize>
     </graphicData>
     <weaponClasses>
       <li>LongShots</li>

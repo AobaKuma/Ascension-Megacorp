@@ -61,7 +61,7 @@
           <drawData>
             <defaultData>
               <layer>80</layer>
-              <offset>(0,0,0)</offset>
+              <offset>(0,0,0.01)</offset>
             </defaultData>
             <dataSouth>
               <layer>50</layer>
@@ -82,7 +82,7 @@
           <drawData>
             <defaultData>
               <layer>-5</layer>
-              <offset>(0,0,0)</offset>
+              <offset>(0,0,0.01)</offset>
             </defaultData>
           </drawData>
         </li>

@@ -192,7 +192,7 @@
           <useRottenColor>true</useRottenColor>
           <drawData>
             <defaultData>
-              <offset>(0,0,0.4)</offset>
+              <offset>(0,0,0.2)</offset>
             </defaultData>
           </drawData>
           <children>
@@ -323,7 +323,8 @@
       <body>USAC_Bipedal</body>
       <baseBodySize>3.0</baseBodySize>
       <baseHealthScale>5.0</baseHealthScale>
-      <mechWeightClass>UltraHeavy</mechWeightClass>
+      <renderTree>USAC_LargeMech</renderTree>
+      <mechWeightClass>Heavy</mechWeightClass>
     </race>
     <tools Inherit="False">
       <li>
