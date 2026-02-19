@@ -6,7 +6,7 @@ using System;
 
 namespace USAC
 {
-    // 限制 USAC 派系关系变动补丁
+    // 限制派系好感度变动
     // 拦截好感度增益逻辑
     [HarmonyPatch(typeof(Faction), "TryAffectGoodwillWith", new Type[] {
         typeof(Faction), typeof(int), typeof(bool), typeof(bool), typeof(HistoryEventDef), typeof(GlobalTargetInfo?)

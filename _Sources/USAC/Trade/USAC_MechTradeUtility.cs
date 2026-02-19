@@ -7,7 +7,7 @@ namespace USAC
     // USAC 机兵交易工具类
     public static class USAC_MechTradeUtility
     {
-        // 空投机兵（使用 FFF 的通用容器）
+        // 投送机兵
         public static void DropMech(PawnKindDef mechKindDef, Pawn negotiator)
         {
             Map map = negotiator?.Map;
@@ -47,10 +47,10 @@ namespace USAC
             ));
             capsule.TryAcceptMech(mech);
 
-            // 找到空投位置，考虑建筑尺寸
+            // 查找空投位置
             IntVec3 dropSpot = FindDropSpotForSize(map, capsuleDef.size, negotiator.Position);
 
-            // 使用自定义 Skyfaller 空投
+            // 创建空投舱
             SkyfallerMaker.SpawnSkyfaller(USAC_DefOf.USAC_MechIncoming, capsule, dropSpot, map);
 
             Messages.Message(
@@ -60,13 +60,13 @@ namespace USAC
             );
         }
 
-        // 为指定尺寸的建筑找到合适的空投位置
+        // 查找合适空投点
         private static IntVec3 FindDropSpotForSize(Map map, IntVec2 size, IntVec3 nearLoc)
         {
-            // 首先尝试在交易点附近找到合适位置
+            // 优先交易点附近
             IntVec3 targetSpot = nearLoc.IsValid ? nearLoc : DropCellFinder.TradeDropSpot(map);
 
-            // 在目标点周围螺旋搜索合适的着陆点
+            // 螺旋搜索空投点
             int maxSearchRadius = 30;
             for (int radius = 0; radius <= maxSearchRadius; radius++)
             {
@@ -78,7 +78,7 @@ namespace USAC
                     // 检查是否距离地图边缘足够远
                     if (cell.DistanceToEdge(map) < 10) continue;
 
-                    // 检查该位置是否可以放置指定尺寸的建筑
+                    // 检查放置条件
                     if (CanPlaceAt(map, cell, size))
                     {
                         return cell;
@@ -86,12 +86,12 @@ namespace USAC
                 }
             }
 
-            // 如果找不到合适位置，返回默认交易点（可能会碾压建筑）
+            // 未找到则强制降落
             Log.Warning($"[USAC] FindDropSpotForSize: no suitable spot found for size {size}, using default trade spot");
             return DropCellFinder.TradeDropSpot(map);
         }
 
-        // 检查指定位置是否可以放置指定尺寸的建筑
+        // 检查位置有效性
         private static bool CanPlaceAt(Map map, IntVec3 center, IntVec2 size)
         {
             // 检查所有占用的格子

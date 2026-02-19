@@ -6,7 +6,7 @@ using Verse;
 
 namespace USAC
 {
-    // 定义尸体袋建筑逻辑
+    // 定义尸体袋建筑逻辑啊
     // 记录派系贸易交易属性
     // 扩展存储搬运接口逻辑
     public class Building_CorpseBag : Building_Casket, IHaulDestination, IStoreSettingsParent, IHaulEnroute, INotifyHauledTo
@@ -121,7 +121,7 @@ namespace USAC
         {
             base.TickRare();
 
-            // 定期刷新市场价值缓存，因为尸体会腐烂
+            // 刷新市值缓存
             if (HasCorpse)
             {
                 InvalidateMarketValueCache();

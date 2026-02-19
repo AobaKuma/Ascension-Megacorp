@@ -56,7 +56,7 @@ namespace USAC
                     computeShader = USAC_AssetBundleLoader.SewageSprayCompute;
                 }
 
-                if (computeShader == null) return; // 仍然未加载，等待下一帧
+                if (computeShader == null) return;
             }
             else
             {
@@ -91,7 +91,7 @@ namespace USAC
             // 初始化间接渲染参数
             argsBuffer = new ComputeBuffer(1, 5 * sizeof(uint), ComputeBufferType.IndirectArguments);
 
-            // Create explicit Quad Mesh to be safe
+            // 创建Quad网格
             if (particleMesh == null) particleMesh = CreateQuadMesh();
 
             if (particleMesh != null)
@@ -164,7 +164,7 @@ namespace USAC
 
         // 注册多位置同步发射源
         private static Dictionary<Vector3, float> activeSources = new Dictionary<Vector3, float>();
-        private const float SOURCE_EXPIRY_TIME = 0.05f; // 50ms 过期，足以覆盖 Tick 间隔
+        private const float SOURCE_EXPIRY_TIME = 0.05f;
 
         public static void RegisterEmissionSource(Vector3 pos)
         {
@@ -174,11 +174,11 @@ namespace USAC
         // 计算统一风向系统演化
         private void UpdateGlobalWind()
         {
-            // 基础风强 (4.5 ~ 6.0)
+            // 基础风强
             float strength = 5.25f + (Mathf.PerlinNoise(Time.time * 0.1f, 100f) - 0.5f) * 1.5f;
 
-            // 基础夹角 (随时间极缓慢漂移，并在 85~105 度或 -85~-105 度之间摆动)
-            // 使用长周期正弦波决定主方向（左/右），叠加柏林噪声决定细微扰动
+            // 基础风向夹角
+            // 叠加长周期正弦波
             float side = (Mathf.Sin(Time.time * 0.05f) > 0) ? 1f : -1f;
             float baseAngle = side * 95f;
             float wobble = (Mathf.PerlinNoise(Time.time * 0.3f, 200f) - 0.5f) * 30f;
@@ -266,8 +266,7 @@ namespace USAC
                 argsBuffer
             );
 
-            // 基础逻辑已在上方处理，此处不再手动清空，靠时间戳过期
-            // activeSources.Clear();
+
         }
 
         public void CleanUp()

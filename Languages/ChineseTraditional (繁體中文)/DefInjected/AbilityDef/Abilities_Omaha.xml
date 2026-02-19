@@ -1,11 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: liner charges rocket -->
-  <USAC_MICLIC.label>線性排雷火箭</USAC_MICLIC.label>
-  <!-- EN: A type of linear mine-clearing explosive, which is delivered from a safe distance and detonated remotely by a rocket-guided explosive rope, is widely used to quickly clear safe passageways in minefields. -->
-  <USAC_MICLIC.description>一種線性排雷爆炸裝置，由火箭牽引的爆破索可在安全距離外遠程引爆，廣泛用於快速在地雷區清除安全通道。</USAC_MICLIC.description>
-  
+
   <!-- EN: towed mineclearing line -->
   <USAC_MICLIC_Towed.label>牽引式排雷索</USAC_MICLIC_Towed.label>
   <!-- EN: Launch a rocket that tows a continuous demolition cable behind it. Upon impact, the cable detonates along its entire path to clear mines. -->

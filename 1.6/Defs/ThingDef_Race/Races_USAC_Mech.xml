@@ -44,6 +44,10 @@
         <lowReadinessHediff>USAC_LowReadiness</lowReadinessHediff>
       </li>
       <li Class="Fortified.CompProperties_MechDeactivate" />
+      <li Class="Fortified.CompProperties_Paintable">
+        <defaultColor>(192, 175, 158)</defaultColor>
+        <enableCamoSwitch>true</enableCamoSwitch>
+      </li>
     </comps>
     <modExtensions>
       <li Class="Fortified.ModExtension_MechCapsule" />

@@ -8,4 +8,14 @@
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
   </JobDef>
 
+  <JobDef>
+    <defName>USAC_WaitDetonate</defName>
+    <driverClass>USAC.JobDriver_WaitDetonate</driverClass>
+    <reportString>detonating MICLIC.</reportString>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+    <casualInterruptible>false</casualInterruptible>
+    <playerInterruptible>false</playerInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+
 </Defs>

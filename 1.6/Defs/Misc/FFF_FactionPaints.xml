@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <Fortified.FFF_FactionPaintDef>
+    <defName>USAC_Mech_PaintPreset</defName>
+    <faction>USAC_Faction</faction>
+    <options>
+      <!-- 无涂装 (70% 概率) -->
+      <li>
+        <weight>70</weight>
+        <color1>(192, 175, 158)</color1>
+      </li>
+      <!-- 六角迷彩 (30% 概率) -->
+      <li>
+        <weight>30</weight>
+        <color1>(192, 175, 158)</color1>
+        <color2>(155, 140, 130)</color2>
+        <color3>(130, 130, 130)</color3>
+        <camoDef>FFF_Camo_Hex</camoDef>
+      </li>
+    </options>
+  </Fortified.FFF_FactionPaintDef>
+
+  <!-- 奥马哈特定配置: 100% 携带叠加层 -->
+  <Fortified.FFF_FactionPaintDef>
+    <defName>USAC_Omaha_PaintPreset</defName>
+    <faction>USAC_Faction</faction>
+    <pawnKind>USAC_Mech_Omaha</pawnKind>
+    <options>
+      <li>
+        <weight>100</weight>
+        <color1>(192, 175, 158)</color1>
+        <color2>(155, 140, 130)</color2>
+        <color3>(130, 130, 130)</color3>
+        <camoDef>FFF_Camo_Hex</camoDef>
+        <overlayDef>FFF_Overlay_Omaha_Test</overlayDef>
+      </li>
+    </options>
+  </Fortified.FFF_FactionPaintDef>
+</Defs>

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <!-- USAC 派系 - 飞升巨企军事承包集团 -->
-    <!-- 只有轨道站，没有地面据点 -->
     <FactionDef ParentName="FactionBase">
         <defName>USAC_Faction</defName>
         <label>United Stellar Armament Company</label>

@@ -139,7 +139,7 @@ namespace USAC
                 }
             }
 
-            // 兼容旧版Tradeable_CorpseBag
+            // 兼容尸体袋交易
             foreach (var tradeable in ___tradeables)
             {
                 if (tradeable is Tradeable_CorpseBag)

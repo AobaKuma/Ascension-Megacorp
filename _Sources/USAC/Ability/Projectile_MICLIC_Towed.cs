@@ -2,217 +2,373 @@ using RimWorld;
 using Verse;
 using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
+using Verse.AI;
 
 namespace USAC
 {
-    // 定义全程牵引物逻辑
+    // 基于解析解的弹道计算
+    // 抛弃迭代使用解析解
     [StaticConstructorOnStartup]
     public class Projectile_MICLIC_Towed : Projectile_Explosive
     {
-        private class TowedNode
-        {
-            public float fraction; // 记录节点位置比例
-            public float sagFactor; // 记录下垂系数
-            public float extraInertia; // 记录水平惯性偏移
-            public Vector3 lastGroundPos; // 记录爆炸地面坐标
-        }
+        private const int TOTAL_NODES = 40;
+        private const int CHARGE_START = 20;
+        private const float LAUNCHER_HEIGHT = 0.55f;
 
-        private List<TowedNode> nodes = new List<TowedNode>();
-        private float? cachedArcHeightFactor = null;
-        private static readonly Material CableMat = MaterialPool.MatFrom(BaseContent.WhiteTex, ShaderDatabase.Transparent, new Color(0.2f, 0.2f, 0.2f));
+        // 物理常数
+        private const float GRAVITY = 0.0055f;
+        private const float BURNOUT_PROG = 0.15f;
 
-        private void EnsureNodesInitialized()
-        {
-            if (nodes.Count == 0)
-            {
-                for (int i = 1; i <= 6; i++)
-                    nodes.Add(new TowedNode { fraction = (float)i / 7f, sagFactor = 0f });
-            }
-        }
-
+        private VerletRope rope;
         private bool isLanded = false;
         private int landingTick = -1;
-        private Vector3 impactPos;
+
+        // 缓存发射时的平面坐标
+        private Vector2 cachedLauncherPlanePos;
+        private bool launcherPosCached = false;
+
+        // 动态计算出的仰角
+        private float launchAngleParams_Sin;
+        private float launchAngleParams_Cos;
+
+        private Vector3 rocketPhysPos;
+        private Vector3 rocketPhysVel;
+
+        public override Vector3 ExactPosition => new Vector3(rocketPhysPos.x, origin.y, rocketPhysPos.y);
+
+        private static readonly Material CableMat =
+            MaterialPool.MatFrom(BaseContent.WhiteTex,
+                ShaderDatabase.Transparent, new Color(0.1f, 0.1f, 0.1f));
+
+        private static readonly Material RocketEmptyMat = MaterialPool.MatFrom("Things/Projectile/lineCharge_RocketEmpty", ShaderDatabase.Cutout);
+        private static readonly Material RocketLandedMat = MaterialPool.MatFrom("Things/Projectile/lineCharge_RocketLanded", ShaderDatabase.Cutout);
+
+        private void EnsureRopeInit()
+        {
+            if (rope != null) return;
+
+            float totalDist = (destination - origin).MagnitudeHorizontal();
+            float totalLen = totalDist * 1.28f;
+            rope = new VerletRope(TOTAL_NODES, totalLen, GRAVITY, 40);
+
+            for (int i = 0; i < TOTAL_NODES; i++)
+                rope.Nodes[i].mass = (i >= CHARGE_START) ? 5.0f : 0.1f;
+
+            launchAngleParams_Sin = 0; // 占位符将被下方强化求解器覆盖
+            launchAngleParams_Cos = 0;
+
+            // 基于发射矢量计算锚点
+            Vector2 launchDirFlat = new Vector2(destination.x - origin.x, destination.z - origin.z).normalized;
+            Vector3 startPos = origin + (new Vector3(launchDirFlat.x, 0, launchDirFlat.y) * -0.9f);
+            cachedLauncherPlanePos = new Vector2(startPos.x, startPos.z);
+            launcherPosCached = true;
+
+            rope.InitFlaked(cachedLauncherPlanePos, LAUNCHER_HEIGHT, launchDirFlat);
+
+            // 初始化物理状态
+            rocketPhysPos = new Vector3(cachedLauncherPlanePos.x, cachedLauncherPlanePos.y, LAUNCHER_HEIGHT);
+
+            // 带高度补偿的物理求解
+            float v = def.projectile.SpeedTilesPerTick;
+            float g = GRAVITY;
+            float h = LAUNCHER_HEIGHT;
+            // 真实需要跨越的水平距离
+            float R = (new Vector2(destination.x, destination.z) - cachedLauncherPlanePos).magnitude;
+
+            // 补偿欧拉积分误差
+            R *= 1.015f;
+
+            float v2 = v * v;
+            float gR = g * R;
+            float discriminant = v2 * v2 - g * (g * R * R + 2 * h * v2);
+
+            float finalAngle;
+            if (discriminant < 0)
+            {
+                // 射程不足使用45度
+                finalAngle = 45f * Mathf.Deg2Rad;
+            }
+            else
+            {
+                // 求高抛角解 (取正号)
+                float tanTheta = (v2 + Mathf.Sqrt(discriminant)) / gR;
+                finalAngle = Mathf.Atan(tanTheta);
+            }
+
+            launchAngleParams_Sin = Mathf.Sin(finalAngle);
+            launchAngleParams_Cos = Mathf.Cos(finalAngle);
+
+            float speed = def.projectile.SpeedTilesPerTick;
+            rocketPhysVel = new Vector3(launchDirFlat.x * speed * launchAngleParams_Cos,
+                                        launchDirFlat.y * speed * launchAngleParams_Cos,
+                                        speed * launchAngleParams_Sin);
+        }
 
         protected override void Tick()
         {
             base.Tick();
             if (!this.Spawned) return;
 
-            // 保持发射者处于战斗等待
-            if (!isLanded && launcher is Pawn pawn && pawn.Spawned)
-            {
-                if (pawn.CurJob != null && pawn.CurJob.def != JobDefOf.Wait_Combat)
-                {
-                    pawn.jobs.StartJob(JobMaker.MakeJob(JobDefOf.Wait_Combat, 10), Verse.AI.JobCondition.InterruptForced);
-                }
-            }
+            EnsureRopeInit();
 
-            // 处理落地物理表现
+            Vector2 startPlane = cachedLauncherPlanePos;
+            Vector3 currentRocketPos;
+
+            // 推进阶段检查
+            float totalDist = (destination - origin).MagnitudeHorizontal();
+            float currentDist = 0f;
+
             if (isLanded)
             {
-                foreach (var node in nodes)
+                currentRocketPos = rocketPhysPos;
+                if (Find.TickManager.TicksGame >= landingTick + 45) SyncExplodeAll();
+            }
+            else
+            {
+                SimulateRocketPhysics();
+                currentRocketPos = rocketPhysPos;
+
+                currentDist = Vector2.Distance(new Vector2(origin.x, origin.z), new Vector2(rocketPhysPos.x, rocketPhysPos.y));
+
+                // 仅在助推阶段喷射尾迹
+                if (totalDist > 0.001f && currentDist / totalDist <= BURNOUT_PROG)
                 {
-                    // 计算空中节点前进惯性
-                    if (node.sagFactor < 1f)
-                    {
-                        node.extraInertia += 0.003f; // 增加节点空中惯性
-                    }
-                    node.sagFactor = Mathf.Min(1f, node.sagFactor + 0.05f);
+                    ThrowExhaust(rocketPhysPos, rocketPhysVel);
                 }
 
-                // 执行全线延迟起爆
-                if (Find.TickManager.TicksGame >= landingTick + 30)
+                if (rocketPhysPos.z <= 0f)
                 {
-                    SyncExplodeAll();
+                    rocketPhysPos.z = 0f;
+                    OnPhysicsLanded();
                 }
-                return;
             }
 
-            EnsureNodesInitialized();
+            // 同步格子坐标
+            this.Position = ExactPosition.ToIntVec3();
 
-            // 处理飞行过程下坠
-            foreach (var node in nodes)
+            rope.Simulate(startPlane, LAUNCHER_HEIGHT, new Vector2(currentRocketPos.x, currentRocketPos.y), currentRocketPos.z);
+        }
+
+        private void SimulateRocketPhysics()
+        {
+            rocketPhysVel.z -= GRAVITY;
+            rocketPhysPos += rocketPhysVel;
+        }
+
+        private void ThrowExhaust(Vector3 rPos, Vector3 rVel)
+        {
+            if (this.Map == null) return;
+
+            Vector3 visualPos = new Vector3(rPos.x, 0, rPos.y + rPos.z);
+            float speed = rVel.magnitude;
+            Vector3 retroVel = -rVel.normalized * (speed * 0.2f);
+
+            for (int i = 0; i < 3; i++)
             {
-                node.sagFactor = Mathf.Min(1f, node.sagFactor + 0.008f);
+                float time = (Find.TickManager.TicksGame + i * 0.33f) * 0.8f;
+                Vector3 cross = Vector3.Cross(rVel, Vector3.up).normalized;
+                if (cross == Vector3.zero) cross = Vector3.right;
+                Vector3 up = Vector3.Cross(cross, rVel).normalized;
+                float radius = 0.3f + Mathf.Sin(time * 0.5f) * 0.1f;
+                Vector3 spiralOffset = (cross * Mathf.Cos(time) + up * Mathf.Sin(time)) * radius;
+                Vector3 smokePos = rPos + spiralOffset * 0.5f;
+                Vector3 finalPos = new Vector3(smokePos.x, 0, smokePos.y + smokePos.z);
+                FleckDef fleckDef = (i % 2 == 0) ? FleckDefOf.Smoke : FleckDefOf.DustPuffThick;
+                FleckCreationData data = FleckMaker.GetDataStatic(finalPos, Map, fleckDef, 2.5f);
+                data.rotation = Rand.Range(0, 360);
+                data.rotationRate = Rand.Range(-30f, 30f);
+                data.velocityAngle = (retroVel + spiralOffset * 0.15f).AngleFlat();
+                data.velocitySpeed = 0.6f + Rand.Range(0f, 0.5f);
+                data.solidTimeOverride = 5.0f + Rand.Range(0f, 1.5f);
+                data.scale = 2.4f + Rand.Range(0f, 1.2f);
+                float gray = Rand.Range(0.3f, 0.5f);
+                data.instanceColor = new Color(gray, gray, gray, 0.95f);
+
+                Map.flecks.CreateFleck(data);
+            }
+
+            if (speed > 0.5f)
+            {
+                FleckCreationData fire = FleckMaker.GetDataStatic(visualPos, Map, FleckDefOf.MicroSparks, 0.6f);
+                fire.instanceColor = new Color(1f, 0.8f, 0.2f, 0.9f);
+                fire.velocitySpeed = 0.1f;
+                fire.solidTimeOverride = 0.2f;
+                Map.flecks.CreateFleck(fire);
             }
         }
 
-        private void SyncExplodeAll()
+        private void OnPhysicsLanded()
         {
-            float angle = origin.AngleToFlat(destination);
-            // 执行全线同步爆炸
-            foreach (var node in nodes)
-            {
-                ExplodeAt(node.lastGroundPos, angle);
-            }
-            ExplodeAt(impactPos, angle);
-            this.Destroy(); // 销毁弹体
+            if (isLanded) return;
+            isLanded = true;
+            landingTick = Find.TickManager.TicksGame;
         }
 
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
-            // 获取当前绘制坐标
-            Vector3 currentPos = isLanded ? impactPos : drawLoc;
+            if (rope == null) return;
+            // 修正渲染层级顺序
+            float baseLayer = AltitudeLayer.MoteOverhead.AltitudeFor();
+            float layerLine = baseLayer - 0.05f;
+            float layerCharge = baseLayer;
+            float layerRocket = baseLayer + 0.5f;
 
-            float totalDist = (destination - origin).MagnitudeHorizontal();
-            float coveredDist = (isLanded ? (impactPos - origin).MagnitudeHorizontal() : (ExactPosition - origin).MagnitudeHorizontal());
-            float progress = totalDist > 0.01f ? Mathf.Clamp01(coveredDist / totalDist) : 0f;
+            Vector2 lPlane = cachedLauncherPlanePos;
 
-            float arcHeight = 0f;
-            if (!isLanded)
+            Vector3 rPos = rocketPhysPos;
+            Vector3 rVis = new Vector3(rPos.x, layerRocket, rPos.y + rPos.z);
+
+            float angle;
+            // 按视觉速度矢量旋转
+            if (!isLanded && rocketPhysVel.MagnitudeHorizontal() > 0.001f)
+                angle = Mathf.Atan2(rocketPhysVel.x, rocketPhysVel.y + rocketPhysVel.z) * Mathf.Rad2Deg;
+            else
+                angle = origin.AngleToFlat(destination);
+
+            Material rocketMat = def.graphic.MatSingle;
+            if (isLanded)
             {
-                if (cachedArcHeightFactor == null) cachedArcHeightFactor = def.projectile.arcHeightFactor;
-                arcHeight = cachedArcHeightFactor.Value * GenMath.InverseParabola(progress);
+                rocketMat = RocketLandedMat;
+            }
+            else
+            {
+                float totalDist = (destination - origin).MagnitudeHorizontal();
+                float currentDist = Vector2.Distance(new Vector2(origin.x, origin.z), new Vector2(rocketPhysPos.x, rocketPhysPos.y));
+                if (totalDist > 0.001f && currentDist / totalDist > BURNOUT_PROG)
+                    rocketMat = RocketEmptyMat;
             }
 
-            Vector3 visualRocketPos = currentPos;
-            visualRocketPos.z += arcHeight;
+            Vector2 drawSize = def.graphicData.drawSize;
+            Matrix4x4 rocketMatrix = Matrix4x4.TRS(rVis, Quaternion.AngleAxis(angle, Vector3.up), new Vector3(drawSize.x, 1f, drawSize.y));
+            Graphics.DrawMesh(MeshPool.plane10, rocketMatrix, rocketMat, 0);
 
-            float angle = origin.AngleToFlat(destination);
-            Graphic.Draw(visualRocketPos, this.Rotation, this, angle);
-
-            DrawChain(visualRocketPos, progress, angle);
-        }
-
-        private void DrawChain(Vector3 currentRocketPos, float progress, float shotAngle)
-        {
-            EnsureNodesInitialized();
-            // 获取发射者实时坐标
-            Vector3 startPos = (launcher != null && launcher.Spawned) ? launcher.DrawPos : origin;
-            Vector3 prev = startPos;
-
-            Graphic segmentGraphic = USAC_DefOf.USAC_MICLIC_Segment?.graphic ?? GraphicDatabase.Get<Graphic_Single>("Things/Mote/SparkFlash", ShaderDatabase.MoteGlow);
-
-            int count = nodes.Count;
-            for (int i = count - 1; i >= 0; i--)
+            // 反向查找首个出舱节点
+            int startDrawIndex = 0;
+            for (int i = rope.NodeCount - 1; i >= 0; i--)
             {
-                float nodeLag = (float)(i + 1) / (count + 1);
-                // 计算节点物理位置进度
-                float nodeProg = Mathf.Clamp01(progress - nodeLag + nodes[i].extraInertia);
-
-                Vector3 groundPos = Vector3.Lerp(origin, destination, nodeProg);
-                nodes[i].lastGroundPos = groundPos;
-
-                float currentH = 0f;
-                // 计算节点实时高度
-                if (nodeProg > 0f)
+                if (Vector2.Distance(rope.Nodes[i].planePos, lPlane) <= 0.6f)
                 {
-                    // 获取理想高度
-                    float idealH = (cachedArcHeightFactor ?? 2f) * GenMath.InverseParabola(nodeProg);
-                    // 应用下垂系数修正高度
-                    currentH = idealH * (1f - nodes[i].sagFactor);
+                    startDrawIndex = i + 1;
+                    break;
                 }
-
-                Vector3 visualPos = groundPos;
-                visualPos.y = AltitudeLayer.MoteOverhead.AltitudeFor();
-                visualPos.z += currentH;
-
-                DrawBezierBetween(prev, visualPos, false);
-                if (nodeProg > 0f) segmentGraphic.Draw(visualPos, Rotation, this, shotAngle);
-                prev = visualPos;
             }
 
-            DrawBezierBetween(prev, currentRocketPos, true);
-        }
-
-        private void DrawBezierBetween(Vector3 start, Vector3 end, bool isLeadSection)
-        {
-            float dist = (start - end).MagnitudeHorizontal();
-            if (dist < 0.05f) return;
-
-            float sag = isLeadSection ? Mathf.Clamp(dist * 0.005f, 0f, 0.08f) : Mathf.Clamp(dist * 0.015f, 0f, 0.12f);
-            Vector3 p1 = Vector3.Lerp(start, end, 0.33f); p1.z -= sag;
-            Vector3 p2 = Vector3.Lerp(start, end, 0.66f); p2.z -= sag;
-
-            int subDivs = Mathf.Clamp(Mathf.RoundToInt(dist * 3f), 3, 12);
-            Vector3 lastPt = start;
-            for (int i = 1; i <= subDivs; i++)
+            List<Vector3> activeDots = new List<Vector3>();
+            for (int i = startDrawIndex; i < rope.NodeCount; i++)
             {
-                float t = (float)i / subDivs;
-                Vector3 currPt = CalculateBezierPoint(t, start, p1, p2, end);
-                GenDraw.DrawLineBetween(lastPt, currPt, CableMat, 0.12f);
-                lastPt = currPt;
+                // Y轴折叠模拟
+                float foldOffset = (i % 3) * 0.005f + Mathf.Sin(i * 0.5f) * 0.005f;
+                activeDots.Add(rope.GetVisualPos(i, layerLine + foldOffset));
+            }
+
+            // 无论如何都要画线作为保底连接
+            if (activeDots.Count > 1) DrawSmoothCable(activeDots, 0.11f);
+
+            // 绘制炸药包段
+            Graphic segGfx = USAC_DefOf.USAC_MICLIC_Segment?.graphic;
+            if (segGfx != null)
+            {
+                Material mat = segGfx.MatSingle;
+                Vector2 size = segGfx.drawSize;
+                Mesh mesh = MeshPool.plane10;
+
+                int startSegment = Mathf.Max(CHARGE_START, startDrawIndex);
+
+                for (int i = startSegment; i < rope.NodeCount - 1; i++)
+                {
+                    Vector3 a = rope.GetVisualPos(i, layerCharge);
+                    Vector3 b = rope.GetVisualPos(i + 1, layerCharge);
+
+                    // 计算中点和方向
+                    Vector3 mid = (a + b) * 0.5f;
+                    Vector3 dir = b - a;
+                    float len = dir.magnitude;
+
+                    if (len < 0.001f) continue;
+
+                    Quaternion rot = Quaternion.LookRotation(dir);
+
+                    // 偏移Y轴防重叠
+                    float foldOffset = (i % 5) * 0.002f;
+                    mid.y += foldOffset;
+
+                    // 使用定义尺寸固定缩放
+                    // 允许物理重叠表现
+                    Vector3 scale = new Vector3(size.x, 1f, size.y);
+
+                    Matrix4x4 matrix = Matrix4x4.TRS(mid, rot, scale);
+                    Graphics.DrawMesh(mesh, matrix, mat, 0);
+                }
             }
         }
 
-        private Vector3 CalculateBezierPoint(float t, Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3)
+        private void DrawSmoothCable(List<Vector3> points, float width)
         {
-            float u = 1 - t; float tt = t * t; float uu = u * u;
-            return p0 * (uu * u) + 3f * p1 * (uu * t) + 3f * p2 * (u * tt) + p3 * (tt * t);
+            int segs = 3;
+            if (points.Count == 0) return;
+            Vector3 lastP = points[0];
+            for (int i = 0; i < points.Count - 1; i++)
+            {
+                Vector3 p0 = (i == 0) ? points[i] : points[i - 1];
+                Vector3 p1 = points[i];
+                Vector3 p2 = points[i + 1];
+                Vector3 p3 = (i + 2 < points.Count) ? points[i + 2] : points[i + 1];
+                for (int j = 1; j <= segs; j++)
+                {
+                    float t = j / (float)segs;
+                    float t2 = t * t; float t3 = t2 * t;
+                    Vector3 curP = 0.5f * ((2f * p1) + (-p0 + p2) * t + (2f * p0 - 5f * p1 + 4f * p2 - p3) * t2 + (-p0 + 3f * p1 - 3f * p2 + p3) * t3);
+                    GenDraw.DrawLineBetween(lastP, curP, CableMat, width);
+                    lastP = curP;
+                }
+            }
         }
+
+        private Vector2 GetLauncherPlanePos() => cachedLauncherPlanePos;
 
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
             if (isLanded) return;
-
-            // 初始化着陆状态
-            isLanded = true;
-            impactPos = this.ExactPosition;
-            landingTick = Find.TickManager.TicksGame;
-
-            // 阻止弹体立即销毁
+            // 此时忽略碰撞
         }
 
-        private void ExplodeAt(Vector3 pos, float angle)
+        private void SyncExplodeAll()
         {
-            IntVec3 cell = pos.ToIntVec3();
-            if (Map == null || !cell.InBounds(Map)) return;
-
-            float radius = def.projectile.explosionRadius;
-            var damageWorker = DamageDefOf.Bomb.Worker;
-            var allCells = damageWorker.ExplosionCellsToHit(cell, Map, radius);
-            List<IntVec3> filtered = new List<IntVec3>();
-
-            foreach (var c in allCells)
+            if (rope == null) { this.Destroy(); return; }
+            float angle = origin.AngleToFlat(destination);
+            for (int i = CHARGE_START; i < rope.NodeCount; i++)
             {
-                float cellAngle = cell.ToVector3Shifted().AngleToFlat(c.ToVector3Shifted());
-                if (Mathf.Abs(Mathf.DeltaAngle(angle, cellAngle)) <= 90.5f) filtered.Add(c);
+                IntVec3 cell = new IntVec3(Mathf.RoundToInt(rope.Nodes[i].planePos.x), 0, Mathf.RoundToInt(rope.Nodes[i].planePos.y));
+                if (Map != null && cell.InBounds(Map))
+                    GenExplosion.DoExplosion(cell, Map, def.projectile.explosionRadius, DamageDefOf.Bomb, launcher, direction: angle);
             }
+            this.Destroy();
+        }
 
-            GenExplosion.DoExplosion(center: cell, map: Map, radius: radius, damType: DamageDefOf.Bomb,
-                instigator: launcher, damAmount: def.projectile.GetDamageAmount(1f, null), direction: angle, overrideCells: filtered);
+        public override void Launch(Thing launcher, Vector3 origin, LocalTargetInfo usedTarget, LocalTargetInfo intendedTarget, ProjectileHitFlags hitFlags, bool preventFriendlyFire = false, Thing equipment = null, ThingDef targetCoverDef = null)
+        {
+            base.Launch(launcher, origin, usedTarget, intendedTarget, hitFlags, preventFriendlyFire, equipment, targetCoverDef);
+            // 设置超长寿命防止销毁
+            this.ticksToImpact = 9999;
+
+            // 强制从属发射者进入在此等待状态
+            if (launcher is Pawn p && !p.Dead && p.Map != null)
+            {
+                Job job = JobMaker.MakeJob(USAC_DefOf.USAC_WaitDetonate, this);
+                job.playerForced = true;
+                p.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+            }
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref isLanded, "isLanded", false);
+            Scribe_Values.Look(ref landingTick, "landingTick", -1);
+            Scribe_Values.Look(ref rocketPhysPos, "rocketPhysPos");
+            Scribe_Values.Look(ref rocketPhysVel, "rocketPhysVel");
+            Scribe_Values.Look(ref cachedLauncherPlanePos, "cachedLauncherPlanePos");
+            Scribe_Values.Look(ref launcherPosCached, "launcherPosCached", false);
         }
     }
 }

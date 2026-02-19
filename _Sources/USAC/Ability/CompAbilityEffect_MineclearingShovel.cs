@@ -53,7 +53,7 @@ namespace USAC
 
         private List<IntVec3> GetFanCells(IntVec3 center, float angle, float radius)
         {
-            // 获取原版环境下受阻挡后的爆炸格位
+            // 获取受阻挡的爆炸格位
             var damageWorker = DamageDefOf.Bomb.Worker;
             var allCells = damageWorker.ExplosionCellsToHit(center, parent.pawn.Map, radius, null, null, null);
 

@@ -21,6 +21,8 @@ namespace USAC
         // 引用火箭排雷索定义
         public static ThingDef USAC_MICLIC_Segment;
 
+        public static JobDef USAC_WaitDetonate;
+
         static USAC_DefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(USAC_DefOf));

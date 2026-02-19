@@ -1,62 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <AbilityDef>
-    <defName>USAC_MICLIC</defName>
-    <label>liner charges rocket</label>
-    <description>A type of linear mine-clearing explosive, which is delivered from a safe distance and detonated remotely by a rocket-guided explosive rope, is widely used to quickly clear safe passageways in minefields.</description>
-    <iconPath>UI/Abilities/MICLIC</iconPath>
-    <cooldownTicksRange>3600</cooldownTicksRange>
-    <verbProperties>
-      <verbClass>Verb_CastAbility</verbClass>
-      <range>28</range>
-      <warmupTime>2.0</warmupTime>
-      <requireLineOfSight>false</requireLineOfSight>
-      <targetParams>
-        <canTargetLocations>true</canTargetLocations>
-        <canTargetPawns>true</canTargetPawns>
-        <canTargetBuildings>true</canTargetBuildings>
-      </targetParams>
-    </verbProperties>
-    <comps>
-      <li Class="USAC.CompProperties_AbilityMICLIC">
-        <projectileDef>USAC_Projectile_MICLIC</projectileDef>
-      </li>
-    </comps>
-  </AbilityDef>
-
-  <ThingDef ParentName="BaseBullet">
-    <defName>USAC_Projectile_MICLIC</defName>
-    <label>mineclearing rocket</label>
-    <thingClass>USAC.Projectile_MICLIC</thingClass>
-    <graphicData>
-      <texPath>Things/Projectile/RocketHighTech</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <projectile>
-      <damageDef>Bomb</damageDef>
-      <damageAmountBase>150</damageAmountBase>
-      <speed>45</speed>
-      <explosionRadius>3.9</explosionRadius>
-      <flyOverhead>true</flyOverhead>
-      <arcHeightFactor>2.0</arcHeightFactor>
-      <shadowSize>0.6</shadowSize>
-    </projectile>
-  </ThingDef>
-
   <ThingDef>
     <defName>USAC_MICLIC_Segment</defName>
     <label>mineclearing line segment</label>
-    <thingClass>USAC.MineClearingLineSegment</thingClass>
+    <thingClass>Verse.Thing</thingClass>
     <category>Ethereal</category>
-    <tickerType>Normal</tickerType>
+    <tickerType>Never</tickerType>
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <drawerType>RealtimeOnly</drawerType>
     <graphicData>
-      <texPath>Things/Mote/SparkFlash</texPath>
+      <texPath>Effects/lineCharge_Segment</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <shaderType>MoteGlow</shaderType>
-      <drawSize>1.5</drawSize>
+      <shaderType>Cutout</shaderType>
+      <drawSize>(1.8, 1.2)</drawSize>
     </graphicData>
   </ThingDef>
 
@@ -69,6 +26,7 @@
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
       <range>32</range>
+      <minRange>16</minRange>
       <warmupTime>2.5</warmupTime>
       <requireLineOfSight>false</requireLineOfSight>
       <targetParams>
@@ -87,14 +45,14 @@
     <label>towed mineclearing rocket</label>
     <thingClass>USAC.Projectile_MICLIC_Towed</thingClass>
     <graphicData>
-      <texPath>Things/Projectile/RocketHighTech</texPath>
+      <texPath>Things/Projectile/lineCharge_Rocket</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>1.2</drawSize>
+      <drawSize>(1.6, 1.2)</drawSize>
     </graphicData>
     <projectile>
       <damageDef>Bomb</damageDef>
       <damageAmountBase>200</damageAmountBase>
-      <speed>40</speed>
+      <speed>45</speed>
       <explosionRadius>3.9</explosionRadius>
       <flyOverhead>true</flyOverhead>
       <arcHeightFactor>2.5</arcHeightFactor>

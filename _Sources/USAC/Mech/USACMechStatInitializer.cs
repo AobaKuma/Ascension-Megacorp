@@ -40,7 +40,7 @@ namespace USAC
             // 基于体型数值计算重量
             float bodySize = mechDef.race?.baseBodySize ?? 1f;
 
-            // 基础重量 30，每单位 bodySize 增加 20
+            // 根据体型计算重量
             return 30f + bodySize * 20f;
         }
 

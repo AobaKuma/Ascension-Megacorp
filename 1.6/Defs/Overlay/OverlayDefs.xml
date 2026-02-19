@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <Fortified.FFF_OverlayDef>
+    <defName>FFF_Overlay_Omaha_Test</defName>
+    <label>奥马哈测试标记</label>
+    <texPath>Things/Mech/Overlays/omaha</texPath>
+    <multiplyBase>false</multiplyBase>
+    <applicablePawnKinds>
+      <li>USAC_Mech_Omaha</li>
+    </applicablePawnKinds>
+  </Fortified.FFF_OverlayDef>
+
+</Defs>

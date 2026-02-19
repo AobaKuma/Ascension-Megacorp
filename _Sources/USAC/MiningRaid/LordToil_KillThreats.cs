@@ -45,7 +45,7 @@ namespace USAC
                 Pawn pawn = lord.ownedPawns[i];
                 if (pawn?.mindState == null) continue;
 
-                // 使用 AssaultColony 职责，会主动攻击敌人
+                // 分配攻击职责
                 pawn.mindState.duty = new PawnDuty(DutyDefOf.AssaultColony);
             }
         }

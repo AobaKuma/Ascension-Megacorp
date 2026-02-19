@@ -1,11 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: 占位符 -->
-  <USAC_MICLIC.label>占位符</USAC_MICLIC.label>
-  <!-- EN: 占位符 -->
-  <USAC_MICLIC.description>占位符</USAC_MICLIC.description>
-  
+
   <!-- EN: towed mineclearing line -->
   <USAC_MICLIC_Towed.label>towed mineclearing line</USAC_MICLIC_Towed.label>
   <!-- EN: Launch a rocket that tows a continuous demolition cable behind it. Upon impact, the cable detonates along its entire path to clear mines. -->
