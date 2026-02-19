@@ -92,8 +92,101 @@
             <li Class="USAC.StockGenerator_USACBond">
                 <countRange>5~15</countRange>
             </li>
-            
+
         </stockGenerators>
     </TraderKindDef>
 
+    <TraderKindDef>
+        <defName>USAC_Trader_MechSupplier</defName>
+        <label>USAC mech supplier</label>
+        <commonality>1</commonality>
+        <orbital>true</orbital>
+        <faction>USAC_Faction</faction>
+        <requestable>true</requestable>
+        <hideThingsNotWillingToTrade>true</hideThingsNotWillingToTrade>
+        <modExtensions>
+            <li Class="USAC.ModExtension_CorpseBagTrader">
+                <useCorpseBagCurrency>true</useCorpseBagCurrency>
+                <corpseBagDefName>USAC_CorpseBag</corpseBagDefName>
+            </li>
+        </modExtensions>
+        <stockGenerators>
+            <!-- 出售：机兵订单 -->
+            <li Class="USAC.StockGenerator_USAC_Mechs">
+                <kindCountRange>2~6</kindCountRange>
+                <countPerKindRange>1~4</countPerKindRange>
+            </li>
+
+            <!-- 出售：零件和补给 -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Plasteel</thingDef>
+                <countRange>100~200</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>MedicineUltratech</thingDef>
+                <countRange>5~15</countRange>
+            </li>
+
+            <!-- 出售：临时机控中枢 -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>USAC_TempMechlink</thingDef>
+                <countRange>1~3</countRange>
+            </li>
+            <!-- 出售：神经强化剂 -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>USAC_NeuroBooster</thingDef>
+                <countRange>3~10</countRange>
+            </li>
+            <!-- 出售：活力水 -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>GoJuice</thingDef>
+                <countRange>5~15</countRange>
+            </li>
+
+            <!-- 收购：零件 -->
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>ComponentIndustrial</thingDef>
+            </li>
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>ComponentSpacer</thingDef>
+            </li>
+            <!-- 收购：沖壓零件 -->
+            <li MayRequire="aoba.deadmanswitch.core" Class="StockGenerator_BuySingleDef">
+                <thingDef>ComponentStamped</thingDef>
+            </li>
+
+            <!-- 收购：未受精卵 -->
+            <li MayRequire="ludeon.rimworld.biotech" Class="StockGenerator_BuySingleDef">
+                <thingDef>HumanOvum</thingDef>
+            </li>
+            <!-- 收购：受精卵 -->
+            <li MayRequire="ludeon.rimworld.biotech" Class="StockGenerator_BuySingleDef">
+                <thingDef>HumanEmbryo</thingDef>
+            </li>
+            <!-- 收购：血包 -->
+            <li MayRequire="ludeon.rimworld.biotech" Class="StockGenerator_BuySingleDef">
+                <thingDef>HemogenPack</thingDef>
+            </li>
+
+            <!-- 收购：中性胺 -->
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>Neutroamine</thingDef>
+            </li>
+
+            <li Class="StockGenerator_MarketValue">
+                <tradeTag>USAC_Armor</tradeTag>
+                <countRange>7~12</countRange>
+            </li>
+            <li Class="StockGenerator_MarketValue">
+                <tradeTag>USAC_WeaponRanged</tradeTag>
+                <countRange>5~10</countRange>
+            </li>
+
+            <!-- 出售：信用债券 -->
+            <li Class="USAC.StockGenerator_USACBond">
+                <countRange>5~15</countRange>
+            </li>
+
+        </stockGenerators>
+    </TraderKindDef>
 </Defs>

@@ -13,10 +13,6 @@
                     <SightsEfficiency>4</SightsEfficiency>
                     <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
                 </statBases>
-                <equippedStatOffsets>
-                   <HuntingStealth>0.2</HuntingStealth>
-                   <ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
-                </equippedStatOffsets>
                 <Properties>
                     <recoilAmount>0.9</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
@@ -84,9 +80,6 @@
                     <SightsEfficiency>3</SightsEfficiency>
                     <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
                 </statBases>
-                <equippedStatOffsets>
-                  <ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
-                </equippedStatOffsets>
                 <Properties>
                     <recoilAmount>0.9</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
@@ -165,11 +158,6 @@
                     <SwayFactor>1.34</SwayFactor>
                     <Bulk>5.9</Bulk>
                 </statBases>
-                <equippedStatOffsets>
-                  <HuntingStealth>0.2</HuntingStealth>
-                  <MoveSpeed>-0.15</MoveSpeed>
-                  <ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
-                </equippedStatOffsets>
                 <Properties>
                     <recoilAmount>2.25</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>

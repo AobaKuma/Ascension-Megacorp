@@ -4,25 +4,25 @@
     <!-- 尸体袋 -->
     <ThingDef ParentName="BuildingBase">
         <defName>USAC_CorpseBag</defName>
-        <label>corpse bag</label>
-        <description>TODO</description>
+        <label>body bag</label>
+        <description>A fabric bag for sealing and transporting corpses, used for the sanitary storage of large numbers of bodies and for dense stacking during cold chain transportation. It could also be used as a currency substitute in transactions with armed companies for peaceful development and scientific research purposes.</description>
         <thingClass>USAC.Building_CorpseBag</thingClass>
         <graphicData>
             <texPath>Things/Building/CorpseBag/CorpseBagEmpty</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(2,1)</drawSize>
+            <drawSize>(1,2)</drawSize>
         </graphicData>
         <modExtensions>
             <li Class="USAC.ModExtension_CorpseBag">
                 <graphicDataEmpty>
                     <texPath>Things/Building/CorpseBag/CorpseBagEmpty</texPath>
                     <graphicClass>Graphic_Single</graphicClass>
-                    <drawSize>(2,1)</drawSize>
+                    <drawSize>(1,2)</drawSize>
                 </graphicDataEmpty>
                 <graphicDataFull>
                     <texPath>Things/Building/CorpseBag/CorpseBagFull</texPath>
                     <graphicClass>Graphic_Single</graphicClass>
-                    <drawSize>(2,1)</drawSize>
+                    <drawSize>(1,2)</drawSize>
                 </graphicDataFull>
             </li>
         </modExtensions>
@@ -33,19 +33,44 @@
         <fillPercent>0.3</fillPercent>
         <castEdgeShadows>false</castEdgeShadows>
         <rotatable>true</rotatable>
-        <size>(2,1)</size>
+        <size>(1,2)</size>
         <statBases>
             <MaxHitPoints>100</MaxHitPoints>
-            <WorkToBuild>300</WorkToBuild>
-            <Mass>15</Mass>
+            <WorkToBuild>8000</WorkToBuild>
+            <WorkToMake>10000</WorkToMake>
+            <Mass>5</Mass>
             <Flammability>1.0</Flammability>
             <MarketValue>50</MarketValue>
         </statBases>
+        <costStuffCount>75</costStuffCount>
         <costList>
-            <Cloth>50</Cloth>
             <Steel>10</Steel>
         </costList>
+        <stuffCategories>
+            <li>Fabric</li>
+        </stuffCategories>
+        <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Tailor</effectWorking>
+            <soundWorking>Recipe_Tailor</soundWorking>
+            <recipeUsers>
+                <li>ElectricTailoringBench</li>
+                <li>HandTailoringBench</li>
+                <li>DMS_TableMachinePrinter</li>
+            </recipeUsers>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <defaultIngredientFilter>
+                <categories>
+                    <li>Root</li>
+                </categories>
+                <disallowedThingDefs>
+                    <li>Hyperweave</li>
+                </disallowedThingDefs>
+            </defaultIngredientFilter>
+        </recipeMaker>
         <building>
+            <paintable>true</paintable>
             <isInert>true</isInert>
             <fixedStorageSettings>
                 <filter>

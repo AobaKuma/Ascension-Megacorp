@@ -31,13 +31,13 @@
                     <reloadTime>1.1</reloadTime>
                     <ammoSet>AmmoSet_277Fury</ammoSet>
                 </AmmoUser>
-               <FireModes>
+                <FireModes>
                     <aiUseBurstMode>true</aiUseBurstMode>
                     <aiAimMode>Snapshot</aiAimMode>
                     <aimedBurstShotCount>2</aimedBurstShotCount>
                 </FireModes>
                 <weaponTags>
-                   <li>USAC_AR</li>
+                    <li>USAC_AR</li>
                 </weaponTags>
             </li>
             <li Class="PatchOperationAdd">
@@ -80,10 +80,6 @@
                     <SightsEfficiency>3</SightsEfficiency>
                     <RangedWeapon_Cooldown>1.55</RangedWeapon_Cooldown>
                 </statBases>
-                <equippedStatOffsets>
-                  <HuntingStealth>0.1</HuntingStealth>
-                  <ShootingAccuracyPawn>0.5</ShootingAccuracyPawn>
-                </equippedStatOffsets>
                 <Properties>
                     <recoilAmount>0.9</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
@@ -102,13 +98,13 @@
                     <reloadTime>1.7</reloadTime>
                     <ammoSet>AmmoSet_277Fury</ammoSet>
                 </AmmoUser>
-               <FireModes>
+                <FireModes>
                     <aiUseBurstMode>true</aiUseBurstMode>
                     <aiAimMode>Snapshot</aiAimMode>
                     <aimedBurstShotCount>2</aimedBurstShotCount>
                 </FireModes>
                 <weaponTags>
-                  <li>USAC_LMG</li>
+                    <li>USAC_LMG</li>
                 </weaponTags>
             </li>
             <li Class="PatchOperationAdd">
@@ -151,10 +147,6 @@
                     <SightsEfficiency>3.4</SightsEfficiency>
                     <RangedWeapon_Cooldown>1.45</RangedWeapon_Cooldown>
                 </statBases>
-                <equippedStatOffsets>
-                   <HuntingStealth>0.15</HuntingStealth>
-                   <ShootingAccuracyPawn>0.7</ShootingAccuracyPawn>
-                </equippedStatOffsets>
                 <Properties>
                     <recoilAmount>0.9</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
@@ -173,14 +165,14 @@
                     <reloadTime>2.2</reloadTime>
                     <ammoSet>AmmoSet_277Fury</ammoSet>
                 </AmmoUser>
-               <FireModes>
+                <FireModes>
                     <aiUseBurstMode>true</aiUseBurstMode>
                     <aiAimMode>Snapshot</aiAimMode>
                     <aimedBurstShotCount>1</aimedBurstShotCount>
                 </FireModes>
                 <weaponClasses>
-                  <li>LongShots</li>
-                  <li>RangedHeavy</li>
+                    <li>LongShots</li>
+                    <li>RangedHeavy</li>
                 </weaponClasses>
             </li>
             <li Class="PatchOperationAdd">

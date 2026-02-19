@@ -243,7 +243,6 @@
       <RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
-      <ShootingAccuracyPawn>0.5</ShootingAccuracyPawn>
     </equippedStatOffsets>
     <costList>
       <Plasteel>210</Plasteel>
@@ -304,7 +303,7 @@
   <ThingDef ParentName="USAC_BaseGun">
     <defName>USAC_Gun_TorchwoodRR</defName>
     <label>Torchwood recoilless rifle</label>
-    <description>An M40A3 "Torchwood" recoilless weapon system with automatic loading mechanism. Due to its lightweight characteristics derived from recoilless operation, it serves as an effective anti-tank and anti-fortification weapon. Capable of devastating armor penetration and structural destruction.</description>
+    <description>M40A3 "Torchwood" recoilless weapon system with automatic loading system. Due to its lightweight characteristics derived from recoilless operation, it serves as an effective anti-tank and anti-fortification weapon. Capable of devastating armor penetration and structural destruction.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/USAC_Gun_TorchwoodRR</texPath>
       <drawSize>3</drawSize>

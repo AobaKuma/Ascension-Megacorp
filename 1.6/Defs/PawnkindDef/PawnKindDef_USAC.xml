@@ -13,47 +13,47 @@
         <combatEnhancingDrugsChance>0.8</combatEnhancingDrugsChance>
         <combatEnhancingDrugsCount>0~2</combatEnhancingDrugsCount>
         <biocodeWeaponChance>0.15</biocodeWeaponChance>
-		<apparelAllowHeadgearChance>0.7</apparelAllowHeadgearChance>
-		<initialWillRange>2~4</initialWillRange>
-		<initialResistanceRange>8~14</initialResistanceRange>
-		<skills>
-			<li>
-				<skill>Shooting</skill>
-				<range>6~12</range>
-			</li>
-		</skills>
-		<specificApparelRequirements>
-			<li>
-				<colorGenerator Class="ColorGenerator_Options">
-					<options>
-						<li>
-							<only>(192, 175, 158)</only>
-						</li>
-					</options>
-				</colorGenerator>
-			</li>
-		</specificApparelRequirements>
-	</PawnKindDef>
+        <apparelAllowHeadgearChance>0.7</apparelAllowHeadgearChance>
+        <initialWillRange>2~4</initialWillRange>
+        <initialResistanceRange>8~14</initialResistanceRange>
+        <skills>
+            <li>
+                <skill>Shooting</skill>
+                <range>6~12</range>
+            </li>
+        </skills>
+        <specificApparelRequirements>
+            <li>
+                <colorGenerator Class="ColorGenerator_Options">
+                    <options>
+                        <li>
+                            <only>(192, 175, 158)</only>
+                        </li>
+                    </options>
+                </colorGenerator>
+            </li>
+        </specificApparelRequirements>
+    </PawnKindDef>
 
-	<!-- USAC 步枪兵 -->
-	<PawnKindDef ParentName="USAC_Base">
-		<defName>USAC_Rifleman</defName>
-		<label>rifleman</label>
-		<labelPlural>riflemen</labelPlural>
-		<combatPower>85</combatPower>
-		<gearHealthRange>0.8~2.5</gearHealthRange>
-		<apparelTags>
-			<li>IndustrialBasic</li>
-			<li>IndustrialMilitaryBasic</li>
-			<li>IndustrialMilitaryAdvanced</li>
-			<li>BeltDefensePop</li>
-			<li>USAC_HelmetAssault</li>
-		</apparelTags>
-		<apparelMoney>1000~1800</apparelMoney>
+    <!-- USAC 步枪兵 -->
+    <PawnKindDef ParentName="USAC_Base">
+        <defName>USAC_Rifleman</defName>
+        <label>rifleman</label>
+        <labelPlural>riflemen</labelPlural>
+        <combatPower>85</combatPower>
+        <gearHealthRange>0.8~2.5</gearHealthRange>
+        <apparelTags>
+            <li>IndustrialBasic</li>
+            <li>IndustrialMilitaryBasic</li>
+            <li>IndustrialMilitaryAdvanced</li>
+            <li>BeltDefensePop</li>
+            <li>USAC_HelmetAssault</li>
+        </apparelTags>
+        <apparelMoney>1000~1800</apparelMoney>
         <weaponMoney>400~800</weaponMoney>
         <weaponTags>
             <li>Gun</li>
-			<li>USAC_AR</li>
+            <li>USAC_AR</li>
         </weaponTags>
         <techHediffsChance>0.1</techHediffsChance>
         <techHediffsMoney>500~1000</techHediffsMoney>
@@ -74,18 +74,18 @@
             <li>IndustrialMilitaryBasic</li>
             <li>IndustrialMilitaryAdvanced</li>
             <li>BeltDefensePop</li>
-			<li>USAC_HelmetHeavy</li>
-			<li>USAC_HelmetAssault</li>
+            <li>USAC_HelmetHeavy</li>
+            <li>USAC_HelmetAssault</li>
         </apparelTags>
-		<apparelRequired>
-			<li>USAC_Apparel_ExoSkeleton</li>
-		</apparelRequired>
+        <apparelRequired>
+            <li>USAC_Apparel_ExoSkeleton</li>
+        </apparelRequired>
         <apparelMoney>1200~2000</apparelMoney>
         <apparelAllowHeadgearChance>0.8</apparelAllowHeadgearChance>
         <weaponMoney>1200~1500</weaponMoney>
         <weaponTags>
-			<li>USAC_OICW</li>
-			<li>USAC_LMG</li>
+            <li>USAC_OICW</li>
+            <li>USAC_LMG</li>
         </weaponTags>
         <techHediffsChance>0.15</techHediffsChance>
         <techHediffsMoney>800~1200</techHediffsMoney>
@@ -109,18 +109,18 @@
             <li>IndustrialBasic</li>
             <li>IndustrialMilitaryBasic</li>
             <li>IndustrialMilitaryAdvanced</li>
-			<li>USAC_HelmetNV</li>
-			<li>USAC_HelmetAssault</li>
+            <li>USAC_HelmetNV</li>
+            <li>USAC_HelmetAssault</li>
         </apparelTags>
-		<apparelRequired>
-			<li>USAC_Apparel_ExoSkeleton</li>
-		</apparelRequired>
+        <apparelRequired>
+            <li>USAC_Apparel_ExoSkeleton</li>
+        </apparelRequired>
         <apparelMoney>1000~1600</apparelMoney>
         <apparelAllowHeadgearChance>0.6</apparelAllowHeadgearChance>
         <weaponMoney>600~800</weaponMoney>
         <weaponTags>
             <li>SniperRifle</li>
-			<li>USAC_DMR</li>
+            <li>USAC_DMR</li>
         </weaponTags>
         <techHediffsChance>0.1</techHediffsChance>
         <techHediffsMoney>600~1000</techHediffsMoney>

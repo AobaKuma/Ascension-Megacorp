@@ -137,6 +137,7 @@
     </statBases>
     <equippedStatOffsets>
       <AimingDelayFactor>0.2</AimingDelayFactor>
+      <MeleeHitChance>-0.25</MeleeHitChance>
     </equippedStatOffsets>
     <apparel>
       <wornGraphicPath>Things/Apparel/MeleeHelmet/headgear</wornGraphicPath>
@@ -162,7 +163,10 @@
       <StuffEffectMultiplierInsulation_Heat>0.18</StuffEffectMultiplierInsulation_Heat>
       <EquipDelay>1.75</EquipDelay>
     </statBases>
-    <equippedStatOffsets />
+    <equippedStatOffsets>
+      <AimingDelayFactor>-0.2</AimingDelayFactor>
+      <MeleeHitChance>0.1</MeleeHitChance>
+    </equippedStatOffsets>
     <apparel>
       <wornGraphicPath>Things/Apparel/NightHelmet/headgear</wornGraphicPath>
       <tags>
