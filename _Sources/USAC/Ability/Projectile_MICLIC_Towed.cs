@@ -338,7 +338,8 @@ namespace USAC
             float angle = origin.AngleToFlat(destination);
             for (int i = CHARGE_START; i < rope.NodeCount; i++)
             {
-                IntVec3 cell = new IntVec3(Mathf.RoundToInt(rope.Nodes[i].planePos.x), 0, Mathf.RoundToInt(rope.Nodes[i].planePos.y));
+                Vector3 nodePos = new Vector3(rope.Nodes[i].planePos.x, 0, rope.Nodes[i].planePos.y);
+                IntVec3 cell = nodePos.ToIntVec3();
                 if (Map != null && cell.InBounds(Map))
                     GenExplosion.DoExplosion(cell, Map, def.projectile.explosionRadius, DamageDefOf.Bomb, launcher, direction: angle);
             }

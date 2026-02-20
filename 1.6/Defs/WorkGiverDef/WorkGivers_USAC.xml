@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <WorkGiverDef>
+    <defName>USAC_ResupplyMech</defName>
+    <label>resupply USAC mech</label>
+    <giverClass>USAC.WorkGiver_ResupplyMech</giverClass>
+    <workType>Smithing</workType>
+    <verb>resupply</verb>
+    <gerund>resupplying</gerund>
+    <!-- 优先级设为 195，略低于维修(200) -->
+    <priorityInType>195</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <canBeDoneByMechs>false</canBeDoneByMechs>
+    <canBeDoneWhileDrafted>true</canBeDoneWhileDrafted>
+  </WorkGiverDef>
+</Defs>

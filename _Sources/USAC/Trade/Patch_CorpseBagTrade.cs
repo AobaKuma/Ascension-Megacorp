@@ -40,7 +40,7 @@ namespace USAC
             tradeables.RemoveAll(t => t.ThingDef == ThingDefOf.Silver && t.IsCurrency);
 
             ThingDef corpseBagDef = DefDatabase<ThingDef>.GetNamedSilentFail(ext.corpseBagDefName);
-            ThingDef bondDef = DefDatabase<ThingDef>.GetNamedSilentFail("USAC_Bond");
+            ThingDef bondDef = USAC_DefOf.USAC_Bond;
 
             // 移除原交易项缓存
 
@@ -75,7 +75,7 @@ namespace USAC
                             addedThings.Add(thing);
                         }
                         // 债券
-                        else if (bondDef != null && thing.def == bondDef &&
+                        else if (thing.def == bondDef &&
                             thing.def.category == ThingCategory.Item &&
                             !thing.IsForbidden(Faction.OfPlayer))
                         {
@@ -92,7 +92,7 @@ namespace USAC
         // 添加债券买入Tradeable
         private static void AddBondTradeable(List<Tradeable> tradeables)
         {
-            ThingDef bondDef = DefDatabase<ThingDef>.GetNamedSilentFail("USAC_Bond");
+            ThingDef bondDef = USAC_DefOf.USAC_Bond;
             if (bondDef == null)
                 return;
 
@@ -155,7 +155,7 @@ namespace USAC
     }
 
     // 触发成交后机兵空投
-    [HarmonyPatch(typeof(Tradeable), "ResolveTrade")]
+    [HarmonyPatch(typeof(Tradeable), nameof(Tradeable.ResolveTrade))]
     public static class Patch_Tradeable_ResolveTrade
     {
         public static bool Prefix(Tradeable __instance)
@@ -235,7 +235,7 @@ namespace USAC
             {
                 if (thing is Building_CorpseBag bag && bag.HasCorpse)
                     corpseBagValue += Building_CorpseBag.CalculateCorpseValue(bag.ContainedCorpse);
-                else if (thing.def.defName == "USAC_Bond")
+                else if (thing.def == USAC_DefOf.USAC_Bond)
                     bondCount += thing.stackCount;
             }
 

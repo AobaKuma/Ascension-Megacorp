@@ -31,7 +31,6 @@ namespace USAC
     public class CompMechReadiness : ThingComp
     {
         private float readiness;
-        private Need_Readiness cachedNeed;
 
         public CompProperties_MechReadiness Props => (CompProperties_MechReadiness)props;
 
@@ -48,7 +47,12 @@ namespace USAC
             {
                 readiness = Props.capacity;
             }
-            SyncNeed();
+            UpdateHediff();
+        }
+
+        public void SetReadinessDirectly(float amount)
+        {
+            readiness = UnityEngine.Mathf.Clamp(amount, 0f, Props.capacity);
             UpdateHediff();
         }
 
@@ -57,32 +61,48 @@ namespace USAC
             base.CompTick();
 
             // 执行机兵整备周期损耗
-            if (parent.IsHashIntervalTick(2500))
+            if (parent.IsHashIntervalTick(2500) && Pawn?.Faction != null && Pawn.Faction.IsPlayer)
             {
                 ConsumeReadiness(Props.consumptionPerDay / 24f);
                 UpdateHediff();
-                SyncNeed();
             }
         }
+
+        public bool autoResupply = true;
 
         public override void PostExposeData()
         {
             base.PostExposeData();
             Scribe_Values.Look(ref readiness, "readiness", Props.capacity);
+            Scribe_Values.Look(ref autoResupply, "autoResupply", true);
+        }
+
+        public override System.Collections.Generic.IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+            foreach (Gizmo g in base.CompGetGizmosExtra()) yield return g;
+            if (Pawn != null && Pawn.Faction == Faction.OfPlayer)
+            {
+                yield return new Command_Toggle
+                {
+                    defaultLabel = "USAC_AutoResupply".Translate(),
+                    defaultDesc = "USAC_AutoResupplyDesc".Translate(),
+                    icon = TexCommand.RearmTrap,
+                    isActive = () => autoResupply,
+                    toggleAction = () => autoResupply = !autoResupply
+                };
+            }
         }
 
         public void ConsumeReadiness(float amount)
         {
             readiness -= amount;
             if (readiness < 0) readiness = 0;
-            SyncNeed();
         }
 
         public void Resupply(float amount)
         {
             readiness += amount;
             if (readiness > Props.capacity) readiness = Props.capacity;
-            SyncNeed();
             UpdateHediff();
         }
 
@@ -91,27 +111,16 @@ namespace USAC
             if (supplyThing.def != Props.supplyDef) return;
 
             float needed = Props.capacity - readiness;
-            int toConsume = (int)System.Math.Min(needed, supplyThing.stackCount);
+            float restorePerItem = Props.capacity * 0.25f;
+            int toConsume = UnityEngine.Mathf.CeilToInt(needed / restorePerItem);
+
+            toConsume = UnityEngine.Mathf.Min(toConsume, supplyThing.stackCount);
 
             if (toConsume > 0)
             {
+                float amountToRestore = toConsume * restorePerItem;
                 supplyThing.SplitOff(toConsume).Destroy();
-                Resupply(toConsume);
-            }
-        }
-
-        private void SyncNeed()
-        {
-            if (Pawn?.needs == null) return;
-
-            if (cachedNeed == null)
-            {
-                cachedNeed = Pawn.needs.TryGetNeed<Need_Readiness>();
-            }
-
-            if (cachedNeed != null)
-            {
-                cachedNeed.CurLevel = readiness;
+                Resupply(amountToRestore);
             }
         }
 

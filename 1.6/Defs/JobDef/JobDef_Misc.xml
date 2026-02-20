@@ -18,4 +18,18 @@
     <suspendable>false</suspendable>
   </JobDef>
 
+  <JobDef>
+    <defName>USAC_ResupplyMech</defName>
+    <driverClass>USAC.JobDriver_ResupplyMech</driverClass>
+    <reportString>resupplying {0} with {1}.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+  <JobDef>
+    <defName>USAC_WaitForResupply</defName>
+    <driverClass>Verse.AI.JobDriver_Wait</driverClass>
+    <reportString>waiting for resupply.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
 </Defs>

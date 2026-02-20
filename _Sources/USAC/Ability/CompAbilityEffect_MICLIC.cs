@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace USAC
 {
-    // 定义火箭排雷索技能组件类
+    // 脚本承技能
     public class CompAbilityEffect_MICLIC : CompAbilityEffect
     {
         private new CompProperties_AbilityMICLIC Props => (CompProperties_AbilityMICLIC)props;
@@ -17,7 +17,7 @@ namespace USAC
             Pawn pawn = parent.pawn;
             if (pawn == null || !pawn.Spawned) return;
 
-            // 执行排雷火箭实例生成与发射
+            // 实体化火箭
             Projectile projectile = (Projectile)GenSpawn.Spawn(Props.projectileDef, pawn.Position, pawn.Map);
             projectile.Launch(pawn, pawn.DrawPos, target, target, ProjectileHitFlags.All);
         }
@@ -31,43 +31,91 @@ namespace USAC
                 float totalDist = (end - start).MagnitudeHorizontal();
                 float shotAngle = start.AngleToFlat(end);
 
-                // 执行排雷主索预览轨迹线渲染
+                int chargeStart = 20;
+                int totalSegments = 40;
+
+                // 向量指方向
+                Vector3 launchDir = (end - start).normalized;
+
+                // 索道隐虚空
+                // 空段不引爆
+                // 落位即锚点
+                float chargeDist = totalDist * 0.7f; // 长度乘系数
+
+                // 目标即终点
+                Vector3 chargeStartPos = end - launchDir * chargeDist;
+                // 极近则钳制
+                if (totalDist < chargeDist)
+                {
+                    chargeStartPos = start;
+                    chargeDist = totalDist;
+                }
+
+                float layerCharge = AltitudeLayer.MoteOverhead.AltitudeFor();
+
+                // 白线连始终
                 GenDraw.DrawLineBetween(start, end, SimpleColor.White);
 
+                // 半径展长廊
+                float radius = Props.projectileDef.projectile.explosionRadius;
+                if (radius <= 0f) radius = 3.9f;
+                HashSet<IntVec3> explosionCells = new HashSet<IntVec3>();
 
-                int maxSegments = 6;
-                float interval = totalDist / (maxSegments + 1);
+                Graphic segGfx = USAC_DefOf.USAC_MICLIC_Segment?.graphic;
+                Material previewMat = null;
+                Vector2 size = Vector2.one;
+                Mesh mesh = MeshPool.plane10;
 
-                // 执行模拟段落部署位置视觉渲染
-                for (int i = 1; i <= maxSegments; i++)
+                if (segGfx != null)
                 {
-                    Vector3 pos = start + (end - start).normalized * (interval * i);
-                    IntVec3 cell = pos.ToIntVec3();
-                    if (cell.InBounds(parent.pawn.Map))
+                    Material protoMat = segGfx.MatSingle;
+                    previewMat = MaterialPool.MatFrom(new MaterialRequest
                     {
-                        DrawExplosionPreview(cell, shotAngle, parent.pawn.Map);
+                        mainTex = protoMat.mainTexture,
+                        shader = ShaderDatabase.Transparent,
+                        color = new Color(1f, 1f, 1f, 0.35f)
+                    });
+                    size = segGfx.drawSize;
+                }
+
+                int explodeNodeCount = totalSegments - chargeStart;
+                float segmentLen = chargeDist / Mathf.Max(1, explodeNodeCount - 1);
+
+                for (int i = 0; i < explodeNodeCount; i++)
+                {
+                    Vector3 currentPos = chargeStartPos + launchDir * (segmentLen * i);
+                    IntVec3 cell = currentPos.ToIntVec3();
+
+                    // 坐标纳合集
+                    int rCeil = Mathf.CeilToInt(radius);
+                    for (int dx = -rCeil; dx <= rCeil; dx++)
+                    {
+                        for (int dz = -rCeil; dz <= rCeil; dz++)
+                        {
+                            IntVec3 c = new IntVec3(cell.x + dx, 0, cell.z + dz);
+                            if (c.InBounds(parent.pawn.Map) && c.DistanceTo(cell) <= radius)
+                            {
+                                explosionCells.Add(c);
+                            }
+                        }
+                    }
+
+                    if (segGfx != null && i < explodeNodeCount - 1)
+                    {
+                        Vector3 nextPos = chargeStartPos + launchDir * (segmentLen * (i + 1));
+                        Vector3 mid = (currentPos + nextPos) * 0.5f;
+                        mid.y = layerCharge; // 虚影贴地表
+
+                        Quaternion rot = Quaternion.LookRotation(launchDir);
+                        Matrix4x4 matrix = Matrix4x4.TRS(mid, rot, new Vector3(size.x, 1f, size.y));
+                        Graphics.DrawMesh(mesh, matrix, previewMat, 0);
                     }
                 }
 
-                // 绘制火箭落点爆炸预览
-                DrawExplosionPreview(target.Cell, shotAngle, parent.pawn.Map);
+                // 边沿绘白线
+                List<IntVec3> cellList = new List<IntVec3>(explosionCells);
+                GenDraw.DrawFieldEdges(cellList, Color.white);
             }
-        }
-
-        private void DrawExplosionPreview(IntVec3 center, float angle, Map map)
-        {
-            var damageWorker = DamageDefOf.Bomb.Worker;
-            var allCells = damageWorker.ExplosionCellsToHit(center, map, 5.9f, null, null, null);
-            List<IntVec3> filtered = new List<IntVec3>();
-            foreach (var cell in allCells)
-            {
-                float cellAngle = center.ToVector3Shifted().AngleToFlat(cell.ToVector3Shifted());
-                if (Mathf.Abs(Mathf.DeltaAngle(angle, cellAngle)) <= 90.5f)
-                {
-                    filtered.Add(cell);
-                }
-            }
-            GenDraw.DrawFieldEdges(filtered, Color.white);
         }
     }
 
@@ -81,3 +129,4 @@ namespace USAC
         }
     }
 }
+//咕咕又嘎嘎

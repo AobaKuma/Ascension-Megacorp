@@ -37,8 +37,8 @@ namespace USAC
         private static bool IsUSACFaction(Faction faction)
         {
             if (faction?.def == null) return false;
-            // 锁定项目派系标识
-            return faction.def.defName == "USAC_Faction" || faction.def.categoryTag == "USAC";
+            // 匹配项目派系定义
+            return faction.def == USAC_FactionDefOf.USAC_Faction || faction.def.categoryTag == "USAC";
         }
     }
 }

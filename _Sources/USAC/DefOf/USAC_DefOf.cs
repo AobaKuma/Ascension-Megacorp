@@ -23,6 +23,12 @@ namespace USAC
 
         public static JobDef USAC_WaitDetonate;
 
+        // 引用机兵整备作业定义
+        public static JobDef USAC_ResupplyMech;
+
+        // 引用机兵等待整备定义
+        public static JobDef USAC_WaitForResupply;
+
         static USAC_DefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(USAC_DefOf));

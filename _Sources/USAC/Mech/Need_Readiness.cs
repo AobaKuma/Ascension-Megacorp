@@ -19,12 +19,23 @@ namespace USAC
 
         public override int GUIChangeArrow => -1;
 
+        public override float CurLevel
+        {
+            get => Comp?.Readiness ?? curLevelInt;
+            set
+            {
+                float clamped = UnityEngine.Mathf.Clamp(value, 0f, MaxLevel);
+                curLevelInt = clamped;
+                Comp?.SetReadinessDirectly(clamped);
+            }
+        }
+
         // 判定整备需求列表可见性
-        public override bool ShowOnNeedList => Comp != null;
+        public override bool ShowOnNeedList => Comp != null && pawn.Faction != null && pawn.Faction.IsPlayer;
 
         public override void NeedInterval()
         {
-            // 记录需求值同步来源说明
+            // 依赖组件时钟
         }
 
         public override string GetTipString()
