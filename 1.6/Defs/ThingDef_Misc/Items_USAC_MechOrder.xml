@@ -62,25 +62,7 @@
     </modExtensions>
   </ThingDef>
 
-  <!-- XM3 Gonk 订单 -->
-  <ThingDef ParentName="USAC_BaseMechOrder">
-    <defName>USAC_MechOrder_Gonk</defName>
-    <label>XM3 "Gonk" order</label>
-    <description>A USAC military contract for one XM3 "Gonk" heavy artillery mech. When purchased, an inactive mech will be delivered via drop pod.</description>
-    <graphicData>
-      <texPath>Things/Mech/gonk_south</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <statBases>
-      <MarketValue>8000</MarketValue>
-    </statBases>
-    <modExtensions>
-      <li Class="USAC.ModExtension_MechOrder">
-        <mechKindDef>USAC_Mech_Gonk</mechKindDef>
-      </li>
-    </modExtensions>
-  </ThingDef>
-
+  
   <!-- M7 Cobalt 订单 -->
   <ThingDef ParentName="USAC_BaseMechOrder">
     <defName>USAC_MechOrder_Cobalt</defName>
@@ -100,6 +82,25 @@
     </modExtensions>
   </ThingDef>
 
+  <!-- XM3 Gonk 订单 -->
+  <ThingDef ParentName="USAC_BaseMechOrder">
+    <defName>USAC_MechOrder_Gonk</defName>
+    <label>XM3 "Gonk" order</label>
+    <description>A USAC military contract for one XM3 "Gonk" heavy artillery mech. When purchased, an inactive mech will be delivered via drop pod.</description>
+    <graphicData>
+      <texPath>Things/Mech/gonk_south</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>8000</MarketValue>
+    </statBases>
+    <modExtensions>
+      <li Class="USAC.ModExtension_MechOrder">
+        <mechKindDef>USAC_Mech_Gonk</mechKindDef>
+      </li>
+    </modExtensions>
+  </ThingDef>
+
   <!-- M110 Omaha 订单 -->
   <ThingDef ParentName="USAC_BaseMechOrder">
     <defName>USAC_MechOrder_Omaha</defName>
@@ -110,7 +111,7 @@
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>12000</MarketValue>
+      <MarketValue>10000</MarketValue>
     </statBases>
     <modExtensions>
       <li Class="USAC.ModExtension_MechOrder">

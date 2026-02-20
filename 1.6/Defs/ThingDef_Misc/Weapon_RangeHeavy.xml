@@ -16,6 +16,11 @@
       <texPath>Things/Projectile/Bullet_big</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+		<comps>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>FFF_LaunchDust_Grenade</effecterDef>
+			</li>
+		</comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -32,6 +37,11 @@
       <texPath>Things/Projectile/Bullet_big</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+		<comps>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>FFF_LaunchDust_Grenade</effecterDef>
+			</li>
+		</comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -64,6 +74,11 @@
       <texPath>Things/Projectile/Bullet_big</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+		<comps>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>FFF_LaunchDust_Recoilless</effecterDef>
+			</li>
+		</comps>
   </ThingDef>
 
   <!-- ================================= Cobra Assault Cannon ==================================== -->
@@ -109,6 +124,7 @@
     </verbs>
     <weaponTags>
       <li>USAC_AC</li>
+      <li>USAC_Heavy</li>
       <li>Mech_Weapon</li>
     </weaponTags>
     <tools>
@@ -264,6 +280,7 @@
     </verbs>
     <weaponTags>
       <li>USAC_HeavyAC</li>
+      <li>USAC_UltraHeavy</li>
       <li>Mech_Weapon</li>
     </weaponTags>
     <tools>
@@ -340,6 +357,7 @@
     </verbs>
     <weaponTags>
       <li>USAC_HRR</li>
+      <li>USAC_UltraHeavy</li>
       <li>Mech_Weapon</li>
     </weaponTags>
     <tools>

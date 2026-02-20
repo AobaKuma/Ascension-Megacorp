@@ -12,6 +12,7 @@
   <!--机兵基类-->
   <ThingDef Name="USAC_BaseMechRace" ParentName="BaseMechanoid" Abstract="True">
     <tradeability>All</tradeability>
+    <thingClass>Fortified.WeaponUsableMech</thingClass>
     <statBases>
       <MoveSpeed>4.5</MoveSpeed>
       <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
@@ -40,7 +41,7 @@
         <capacity>100</capacity>
         <consumptionPerDay>10</consumptionPerDay>
         <supplyDef>ComponentIndustrial</supplyDef>
-        <lowThreshold>0</lowThreshold>
+        <lowThreshold>10</lowThreshold>
         <lowReadinessHediff>USAC_LowReadiness</lowReadinessHediff>
       </li>
       <li Class="Fortified.CompProperties_MechDeactivate" />
@@ -97,6 +98,50 @@
       </li>
     </tools>
   </ThingDef>
+
+
+  <PawnRenderTreeDef>
+    <defName>USAC_LargeMech</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li>
+          <debugLabel>Body</debugLabel>
+          <tagDef>Body</tagDef>
+          <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+          <useRottenColor>true</useRottenColor>
+          <drawData>
+            <defaultData>
+              <offset>(0,0,0.2)</offset>
+            </defaultData>
+          </drawData>
+          <children>
+            <li>
+              <debugLabel>Wounds</debugLabel>
+              <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+              <workerClass>PawnRenderNodeWorker_OverlayWounds</workerClass>
+              <overlayLayer>Body</overlayLayer>
+              <useGraphic>false</useGraphic>
+              <baseLayer>3</baseLayer>
+            </li>
+            <li>
+              <debugLabel>Firefoam</debugLabel>
+              <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+              <workerClass>PawnRenderNodeWorker_OverlayFirefoam</workerClass>
+              <overlayLayer>Body</overlayLayer>
+              <useGraphic>false</useGraphic>
+              <baseLayer>5</baseLayer>
+            </li>
+          </children>
+        </li>
+        <li Class="PawnRenderNodeProperties_Carried">
+          <debugLabel>Weapon/carried thing</debugLabel>
+          <workerClass>PawnRenderNodeWorker_Carried</workerClass>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
 
   <!-- USAC 四足机兵基础 -->
   <ThingDef Name="USAC_BaseQuadMech" ParentName="USAC_BaseMechRace" Abstract="True">

@@ -4,11 +4,10 @@
         <defName>USAC_Military01</defName>
         <title>Reformed Bandit</title>
         <titleShort>Bandit</titleShort>
-        <description>[PAWN_nameDef] failed as a bandit and was unfortunately captured by a colonial group. While serving a labor sentence, [PAWN_nameDef] realized how much better the life of these people had and decided to stay after being released from prison.</description>
+        <description>[PAWN_nameDef] failed as a bandit and was unfortunately captured by a merc group. While serving a labor sentence, [PAWN_nameDef] realized how much better the life of these people had and decided to stay after being released.</description>
         <slot>Adulthood</slot>
         <spawnCategories>
             <li>USAC_Fighter</li>
-            <li>Mili_Standard</li>
         </spawnCategories>
         <skillGains>
             <Medicine>4</Medicine>
@@ -30,7 +29,6 @@
         <slot>Adulthood</slot>
         <spawnCategories>
             <li>USAC_Fighter</li>
-            <li>Civil_Expert</li>
         </spawnCategories>
         <skillGains>
             <Shooting>8</Shooting>
@@ -51,7 +49,6 @@
         <slot>Adulthood</slot>
         <spawnCategories>
             <li>USAC_Fighter</li>
-            <li>Mili_Standard</li>
         </spawnCategories>
         <skillGains>
             <Social>8</Social>
@@ -73,7 +70,6 @@
         <slot>Adulthood</slot>
         <spawnCategories>
             <li>USAC_Fighter</li>
-            <li>Mili_Standard</li>
         </spawnCategories>
         <skillGains>
             <Shooting>10</Shooting>
@@ -97,7 +93,6 @@
         <slot>Adulthood</slot>
         <spawnCategories>
             <li>USAC_Fighter</li>
-            <li>Mili_Standard</li>
         </spawnCategories>
         <skillGains>
             <Shooting>15</Shooting>
@@ -146,7 +141,6 @@
         <slot>Adulthood</slot>
         <spawnCategories>
             <li>USAC_Fighter</li>
-            <li>Civil_Expert</li>
         </spawnCategories>
         <skillGains>
             <Medicine>12</Medicine>
@@ -172,7 +166,6 @@
         <slot>Adulthood</slot>
         <spawnCategories>
             <li>USAC_Fighter</li>
-            <li>Civil_Expert</li>
         </spawnCategories>
         <skillGains>
             <Crafting>10</Crafting>
@@ -194,7 +187,6 @@
         <slot>Adulthood</slot>
         <spawnCategories>
             <li>USAC_Fighter</li>
-            <li>Mili_Standard</li>
         </spawnCategories>
         <skillGains>
             <Shooting>7</Shooting>
@@ -215,7 +207,6 @@
         <slot>Adulthood</slot>
         <spawnCategories>
             <li>USAC_Fighter</li>
-            <li>Mili_Standard</li>
         </spawnCategories>
         <skillGains>
             <Shooting>10</Shooting>
@@ -243,7 +234,6 @@
         <slot>Adulthood</slot>
         <spawnCategories>
             <li>USAC_Fighter</li>
-            <li>Mili_Standard</li>
         </spawnCategories>
         <skillGains>
             <Shooting>5</Shooting>
@@ -264,7 +254,6 @@
         <slot>Adulthood</slot>
         <spawnCategories>
             <li>USAC_Fighter</li>
-            <li>Civil_Expert</li>
         </spawnCategories>
         <skillGains>
             <Intellectual>7</Intellectual>

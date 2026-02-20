@@ -48,6 +48,16 @@
                 <thingDef>GoJuice</thingDef>
                 <countRange>5~15</countRange>
             </li>
+            <!-- 出售：工具 -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>USAC_DisposableRepairTool</thingDef>
+                <countRange>5~20</countRange>
+            </li>
+            <!-- 出售：電池 -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>USAC_DisposableBattery</thingDef>
+                <countRange>5~20</countRange>
+            </li>
 
             <!-- 收购：零件 -->
             <li Class="StockGenerator_BuySingleDef">
@@ -140,7 +150,17 @@
             <!-- 出售：活力水 -->
             <li Class="StockGenerator_SingleDef">
                 <thingDef>GoJuice</thingDef>
-                <countRange>5~15</countRange>
+                <countRange>5~150</countRange>
+            </li>
+            <!-- 出售：工具 -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>USAC_DisposableRepairTool</thingDef>
+                <countRange>5~20</countRange>
+            </li>
+            <!-- 出售：電池 -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>USAC_DisposableBattery</thingDef>
+                <countRange>5~20</countRange>
             </li>
 
             <!-- 收购：零件 -->

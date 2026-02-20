@@ -38,6 +38,7 @@
         <building>
             <destroySound>BuildingDestroyed_Metal_Big</destroySound>
             <ai_chillDestination>false</ai_chillDestination>
+            <spawnedConceptLearnOpportunity>USAC_AssaultRig</spawnedConceptLearnOpportunity>
         </building>
         <killedLeavings>
             <Steel>100</Steel>

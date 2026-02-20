@@ -4,8 +4,8 @@
     <!-- 尸体袋 -->
     <ThingDef ParentName="BuildingBase">
         <defName>USAC_CorpseBag</defName>
-        <label>body bag</label>
-        <description>A fabric bag for sealing and transporting corpses, used for the sanitary storage of large numbers of bodies and for dense stacking during cold chain transportation. It could also be used as a currency substitute in transactions with armed companies for peaceful development and scientific research purposes.</description>
+        <label>bodybag</label>
+        <description>A fabric bag for sealing and transporting wetware material, used for the sanitary storage of large numbers of bodies and for dense stacking during cold chain transportation. It could also be used as a currency substitute in transactions with armed companies for peaceful development and scientific research purposes.</description>
         <thingClass>USAC.Building_CorpseBag</thingClass>
         <graphicData>
             <texPath>Things/Building/CorpseBag/CorpseBagEmpty</texPath>
@@ -93,6 +93,7 @@
                     </specialFiltersToDisallow>
                 </filter>
             </defaultStorageSettings>
+            <spawnedConceptLearnOpportunity>USAC_Bodybag</spawnedConceptLearnOpportunity>
         </building>
         <inspectorTabs>
             <li>ITab_Storage</li>

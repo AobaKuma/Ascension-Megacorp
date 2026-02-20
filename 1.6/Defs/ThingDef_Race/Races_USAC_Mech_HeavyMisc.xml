@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ==================== XM3 "Gonk" ==================== -->
+  <ThingDef ParentName="USAC_BaseQuadMech">
+    <defName>USAC_Mech_Gonk</defName>
+    <label>XM3 "Gonk"</label>
+    <description>A heavy self-propelled artillery mech with tank-level armor, very slow movement, and extreme long-range firepower. Based on the geochelone chassis.</description>
+    <statBases>
+      <MoveSpeed>2.5</MoveSpeed>
+      <ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>1.3</ArmorRating_Blunt>
+      <ArmorRating_Heat>1.2</ArmorRating_Heat>
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <MechEnergyUsageFactor>0.5</MechEnergyUsageFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">5</BandwidthCost>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">4</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <body>USAC_Bipedal</body>
+      <baseBodySize>3.0</baseBodySize>
+      <baseHealthScale>5.0</baseHealthScale>
+      <renderTree>USAC_LargeMech</renderTree>
+      <mechWeightClass>Heavy</mechWeightClass>
+    </race>
+    <tools Inherit="False">
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>5.6</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+    </tools>
+    <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <drawData>
+          <dataEast>
+            <offset>(0.2,0,-0.3)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-0.2,0,0.6)</offset>
+            <layer>-20</layer>
+          </dataWest>
+          <dataSouth>
+            <offset>(-0.9,0,0)</offset>
+          </dataSouth>
+          <dataNorth>
+            <offset>(0.9,0,0)</offset>
+          </dataNorth>
+        </drawData>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.05</rotationSmoothTime>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>60</Steel>
+      <Plasteel>20</Plasteel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="USAC_BaseMechKind">
+    <defName>USAC_Mech_Gonk</defName>
+    <label>XM3 Gonk</label>
+    <race>USAC_Mech_Gonk</race>
+    <combatPower>420</combatPower>
+    <isBoss>true</isBoss>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Mech/gonk</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.75</drawSize>
+          <color>(192, 175, 158)</color>
+          <shadowData>
+            <volume>(1.2,0.7,1.2)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>Artillery</li>
+    </weaponTags>
+    <weaponMoney>1500~3000</weaponMoney>
+  </PawnKindDef>
+
+  <!-- ==================== M7 "Cobalt" ==================== -->
+  <!-- 基于 DMS Hyrax 放大版，中型四足货运机兵 -->
+  <ThingDef ParentName="USAC_BaseQuadMech">
+    <defName>USAC_Mech_Cobalt</defName>
+    <label>M7 "Cobalt"</label>
+    <description>A medium quadruped cargo mech with integrated machine gun. Features shotgun-resistant armor plating, cargo hauling capability, and smoke grenade deployment system.</description>
+    <statBases>
+      <MoveSpeed>4.0</MoveSpeed>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
+      <ArmorRating_Heat>1.0</ArmorRating_Heat>
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <MechEnergyUsageFactor>0.5</MechEnergyUsageFactor>
+      <CarryingCapacity>120</CarryingCapacity>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <body>USAC_Hound</body>
+      <baseBodySize>1.1</baseBodySize>
+      <baseHealthScale>1.2</baseHealthScale>
+      <mechWeightClass>Medium</mechWeightClass>
+      <mechEnabledWorkTypes>
+        <li>Hauling</li>
+      </mechEnabledWorkTypes>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <drawData>
+          <dataEast>
+            <offset>(0.5,0,0.3)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-0.5,0,0.3)</offset>
+          </dataWest>
+          <dataSouth>
+            <offset>(0,0,-0.3)</offset>
+          </dataSouth>
+          <dataNorth>
+            <offset>(0,0,0.4)</offset>
+          </dataNorth>
+        </drawData>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.05</rotationSmoothTime>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>30</Steel>
+      <Plasteel>8</Plasteel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="USAC_BaseMechKind">
+    <defName>USAC_Mech_Cobalt</defName>
+    <label>M7 Cobalt</label>
+    <race>USAC_Mech_Cobalt</race>
+    <combatPower>100</combatPower>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Mech/cobalt</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>2.25</drawSize>
+          <color>(192, 175, 158)</color>
+          <shadowData>
+            <volume>(0.8,0.7,0.8)</volume>
+            <offset>(0,0,0)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>USAC_HDMR</li>
+      <li>USAC_SGL</li>
+    </weaponTags>
+    <weaponMoney>1200~2000</weaponMoney>
+    <abilities>
+      <li>SmokepopMech</li>
+    </abilities>
+  </PawnKindDef>
+
+  <!-- ==================== M110 "Omaha" ==================== -->
+  <!-- 基于 DMSA Krepost，重型双足机兵 -->
+  <ThingDef ParentName="USAC_BaseHeavyBipedMech">
+    <defName>USAC_Mech_Omaha</defName>
+    <label>M110 "Omaha"</label>
+    <description>An amphibious assault mech capable of operating both on land and water, providing close to mid-range fire support for USAC operations. Based on the Krepost heavy walker chassis.</description>
+    <statBases>
+      <MoveSpeed>2.7</MoveSpeed>
+      <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">6</BandwidthCost>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">5</WastepacksPerRecharge>
+    </statBases>
+    <race>
+      <body>USAC_Bipedal</body>
+      <renderTree>USAC_LargeMech</renderTree>
+      <baseBodySize>3.0</baseBodySize>
+      <baseHealthScale>5.0</baseHealthScale>
+      <mechWeightClass>UltraHeavy</mechWeightClass>
+    </race>
+    <tools Inherit="False">
+      <li>
+        <label>mechanical head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>100</power>
+        <cooldownTime>6.5</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+      </li>
+      <li>
+        <label>left leg</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>60</power>
+        <cooldownTime>5</cooldownTime>
+        <linkedBodyPartsGroup>USAC_LeftMechanicalLeg</linkedBodyPartsGroup>
+      </li>
+      <li>
+        <label>right leg</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>60</power>
+        <cooldownTime>5</cooldownTime>
+        <linkedBodyPartsGroup>USAC_RightMechanicalLeg</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <comps>
+      <li Class="USAC.CompProperties_MechWreck">
+        <wreckDef>USAC_Wreck_Omaha</wreckDef>
+      </li>
+      <li Class="Fortified.CompProperties_VehicleWeapon">
+        <drawData>
+          <dataEast>
+            <offset>(0.2,0,-0.3)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(-0.2,0,1.4)</offset>
+            <layer>-20</layer>
+          </dataWest>
+          <dataSouth>
+            <offset>(-1.1,0,0.2)</offset>
+          </dataSouth>
+          <dataNorth>
+            <offset>(1.1,0,0.2)</offset>
+          </dataNorth>
+        </drawData>
+        <turretRotationFollowPawn>true</turretRotationFollowPawn>
+        <rotationSmoothTime>0.05</rotationSmoothTime>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Steel>80</Steel>
+      <Plasteel>25</Plasteel>
+    </butcherProducts>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li>DMS_MechWeaponTransHeavy</li>
+          <li>DMS_MechWeaponHeavy</li>
+          <li>DMS_Gun_Recoilless</li>
+          <li>USAC_Heavy</li>
+          <li>USAC_HeavyAC</li>
+        </UsableWeaponTags>
+        <BypassUsableWeapons />
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <PawnKindDef ParentName="USAC_BaseMechKind">
+    <defName>USAC_Mech_Omaha</defName>
+    <label>M110 Omaha</label>
+    <race>USAC_Mech_Omaha</race>
+    <combatPower>500</combatPower>
+    <isBoss>true</isBoss>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Mech/omaha</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>4</drawSize>
+          <color>(192, 175, 158)</color>
+          <shadowData>
+            <volume>(1.25,1,1.25)</volume>
+            <offset>(0,0,-0.5)</offset>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>USAC_HeavyAC</li>
+      <li>USAC_HRR</li>
+    </weaponTags>
+    <weaponMoney>2500~4000</weaponMoney>
+    <abilities>
+      <li>USAC_MICLIC_Towed</li>
+      <li>USAC_MineclearingShovel</li>
+    </abilities>
+  </PawnKindDef>
+
+</Defs>

@@ -31,7 +31,6 @@
         <slot>Adulthood</slot>
         <spawnCategories>
             <li>USAC_Common</li>
-            <li>Pioneer</li>
         </spawnCategories>
         <skillGains>
             <Animals>9</Animals>

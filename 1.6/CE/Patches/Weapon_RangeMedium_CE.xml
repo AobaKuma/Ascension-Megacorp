@@ -6,10 +6,10 @@
             <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
                 <defName>USAC_Gun_OSW</defName>
                 <statBases>
-                    <Mass>8.3</Mass>
-                    <Bulk>8.3</Bulk>
+                    <Mass>15</Mass>
+                    <Bulk>11</Bulk>
                     <SwayFactor>1.60</SwayFactor>
-                    <ShotSpread>0.09</ShotSpread>
+                    <ShotSpread>0.06</ShotSpread>
                     <SightsEfficiency>4</SightsEfficiency>
                     <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
                 </statBases>
@@ -27,7 +27,7 @@
                     <muzzleFlashScale>8</muzzleFlashScale>
                 </Properties>
                 <AmmoUser>
-                    <magazineSize>30</magazineSize>
+                    <magazineSize>5</magazineSize>
                     <reloadTime>2.2</reloadTime>
                     <ammoSet>AmmoSet_25x59mmGrenade</ammoSet>
                 </AmmoUser>
@@ -73,28 +73,28 @@
             <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
                 <defName>USAC_Gun_ACSW</defName>
                 <statBases>
-                    <Mass>10.05</Mass>
-                    <Bulk>10.05</Bulk>
+                    <Mass>19.05</Mass>
+                    <Bulk>19.05</Bulk>
                     <SwayFactor>1.60</SwayFactor>
                     <ShotSpread>0.09</ShotSpread>
                     <SightsEfficiency>3</SightsEfficiency>
-                    <RangedWeapon_Cooldown>1.1</RangedWeapon_Cooldown>
+                    <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
-                    <recoilAmount>0.9</recoilAmount>
+                    <recoilAmount>1.1</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_25x59mmGrenade_HE</defaultProjectile>
                     <burstShotCount>3</burstShotCount>
-                    <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-                    <warmupTime>1.1</warmupTime>
+                    <ticksBetweenBurstShots>15</ticksBetweenBurstShots>
+                    <warmupTime>2</warmupTime>
                     <range>67.9</range>
                     <soundCast>RocketswarmLauncher_Fire</soundCast>
                     <soundCastTail>GunTail_Heavy</soundCastTail>
                     <muzzleFlashScale>8</muzzleFlashScale>
                 </Properties>
                 <AmmoUser>
-                    <magazineSize>30</magazineSize>
+                    <magazineSize>31</magazineSize>
                     <reloadTime>2.2</reloadTime>
                     <ammoSet>AmmoSet_25x59mmGrenade</ammoSet>
                 </AmmoUser>

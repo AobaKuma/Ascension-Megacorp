@@ -145,8 +145,8 @@
     <defName>USAC_Wreck_Omaha</defName>
     <label>M110 Omaha wreck</label>
     <graphicData>
-      <texPath>Things/Mech/omaha</texPath>
-      <graphicClass>Graphic_Multi</graphicClass>
+      <texPath>Things/Building/Wreckage/Omaha</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
       <shaderType>CutoutComplex</shaderType>
       <drawSize>4.2</drawSize>
     </graphicData>

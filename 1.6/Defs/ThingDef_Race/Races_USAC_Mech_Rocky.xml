@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ==================== M88 "Rocky" ==================== -->
+  <!-- 基于 DMS Soldat，轻型步兵机兵 -->
+  <ThingDef ParentName="USAC_BaseHumanoidMech">
+    <defName>USAC_Mech_Rocky</defName>
+    <label>M88 "Rocky"</label>
+    <description>A USAC Marine Corps synthetic infantry unit. Designed to use standard infantry weapons and can wear human armor. Provides basic infantry support with moderate protection.</description>
+    <thingClass>Fortified.HumanlikeMech</thingClass>
+    <statBases>
+      <MoveSpeed>4.2</MoveSpeed>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+      <ArmorRating_Heat>1.5</ArmorRating_Heat>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
+    </statBases>
+    <inspectorTabs Inherit="False">
+      <li>ITab_Pawn_Health</li>
+      <li>ITab_Pawn_Needs</li>
+      <li>ITab_Pawn_FormingCaravan</li>
+      <li>ITab_Pawn_Gear</li>
+      <li>ITab_Pawn_Log</li>
+    </inspectorTabs>
+    <race>
+      <body>USAC_Synthroid</body>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHealthScale>1.0</baseHealthScale>
+      <mechWeightClass>Medium</mechWeightClass>
+      <renderTree>USAC_HumanlikeMech</renderTree>
+    </race>
+    <comps>
+      <li Class="Fortified.CompProperties_MechApparel" />
+    </comps>
+    <modExtensions>
+      <li Class="Fortified.ModExtension_MechCapsule" />
+      <li Class="Fortified.HumanlikeMechExtension">
+        <bodyTypeOverride>Male</bodyTypeOverride>
+        <headTypeOverride>Male_AverageNormal</headTypeOverride>
+        <headGraphic>
+          <texPath>Things/Mech/rockyHead</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.4</drawSize>
+        </headGraphic>
+        <headOffset>(0,0,0)</headOffset>
+      </li>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>false</EnableWeaponFilter>
+        <EnableTechLevelFilter>true</EnableTechLevelFilter>
+        <UsableTechLevels>
+          <li>Spacer</li>
+          <li>Industrial</li>
+          <li>Medieval</li>
+        </UsableTechLevels>
+      </li>
+    </modExtensions>
+    <butcherProducts>
+      <Steel>20</Steel>
+      <Plasteel>5</Plasteel>
+    </butcherProducts>
+  </ThingDef>
+
+  <PawnKindDef ParentName="USAC_BaseMechKind" Name="USAC_BaseRockyKind" Abstract="true">
+    <label>M88 Rocky</label>
+    <race>USAC_Mech_Rocky</race>
+    <combatPower>80</combatPower>
+    <canStrip>true</canStrip>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Mech/rocky</texPath>
+          <shaderType>CutoutComplex</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1.5</drawSize>
+          <shadowData>
+            <volume>(0.6, 0.8, 0.6)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <specificApparelRequirements>
+      <li>
+        <colorGenerator Class="ColorGenerator_Options">
+          <options>
+            <li>
+              <only>(192, 175, 158)</only>
+            </li>
+          </options>
+        </colorGenerator>
+      </li>
+    </specificApparelRequirements>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="USAC_BaseRockyKind">
+    <defName>USAC_Mech_Rocky</defName>
+    <apparelTags>
+      <li>USAC_HelmetAssault</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Tactical</li>
+    </apparelTags>
+    <apparelMoney>800~1500</apparelMoney>
+    <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
+    <weaponTags>
+      <li>IndustrialGunAdvanced</li>
+    </weaponTags>
+    <weaponMoney>1000~2500</weaponMoney>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="USAC_BaseRockyKind">
+    <defName>USAC_Mech_Rocky_AR</defName>
+    <apparelTags>
+      <li>USAC_HelmetMelee</li>
+      <li>USAC_HelmetAssault</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Tactical</li>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelMoney>800~1500</apparelMoney>
+    <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
+    <weaponTags>
+      <li>USAC_AR</li>
+    </weaponTags>
+    <weaponMoney>1000~2500</weaponMoney>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="USAC_BaseRockyKind">
+    <defName>USAC_Mech_Rocky_LMG</defName>
+    <apparelTags>
+      <li>USAC_HelmetHeavy</li>
+      <li>USAC_HelmetAssault</li>
+      <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Tactical</li>
+    </apparelTags>
+    <apparelMoney>800~2500</apparelMoney>
+    <apparelRequired>
+      <li>USAC_Apparel_ExoSkeleton</li>
+    </apparelRequired>
+    <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
+    <weaponTags>
+      <li>USAC_LMG</li>
+    </weaponTags>
+    <weaponMoney>1000~2500</weaponMoney>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="USAC_BaseRockyKind">
+    <defName>USAC_Mech_Rocky_DMR</defName>
+    <apparelTags>
+      <li>USAC_HelmetNV</li>
+      <li>USAC_HelmetAssault</li>
+      <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Tactical</li>
+    </apparelTags>
+    <apparelMoney>800~2500</apparelMoney>
+    <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
+    <weaponTags>
+      <li>USAC_DMR</li>
+    </weaponTags>
+    <weaponMoney>1000~2500</weaponMoney>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="USAC_BaseRockyKind">
+    <defName>USAC_Mech_Rocky_Heavy</defName>
+    <apparelTags>
+      <li>USAC_HelmetNV</li>
+      <li>USAC_HelmetAssault</li>
+      <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Tactical</li>
+    </apparelTags>
+    <apparelMoney>800~3500</apparelMoney>
+    <apparelRequired>
+      <li>USAC_Apparel_ExoSkeleton</li>
+    </apparelRequired>
+    <apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
+    <weaponTags>
+      <li>USAC_OICW</li>
+      <li MayRequire="Aoba.DeadManSwitch.Core">A_BR_LongRifle</li>
+    </weaponTags>
+    <weaponMoney>1000~2500</weaponMoney>
+  </PawnKindDef>
+</Defs>
