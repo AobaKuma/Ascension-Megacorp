@@ -38,6 +38,11 @@
       <repairable>false</repairable>
       <deconstructible>true</deconstructible>
     </building>
+    <comps>
+      <li Class="Fortified.CompProperties_Paintable">
+        <allowGizmoForBuilding>false</allowGizmoForBuilding>
+      </li>
+    </comps>
   </ThingDef>
 
   <!-- M88 Rocky 残骸 -->
