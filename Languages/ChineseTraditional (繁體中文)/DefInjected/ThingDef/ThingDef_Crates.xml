@@ -2,32 +2,32 @@
 <LanguageData>
   
   <!-- EN: USAC supply crate (L) -->
-  <USAC_Crate_Large.label>USAC 供應箱 (L)</USAC_Crate_Large.label>
+  <USAC_Crate_Large.label>USAC供應箱 (L)</USAC_Crate_Large.label>
   <!-- EN: A sealed supply crate used by USAC for air-dropping equipment and materials. Left behind after mining operations. Can be opened to claim the contents. -->
   <USAC_Crate_Large.description>由USAC用於空投設備和材料的密封供應箱。採礦作業後留下。可以打開以獲取內容。</USAC_Crate_Large.description>
   
   <!-- EN: empty USAC supply crate (L) -->
-  <USAC_Crate_Large_Empty.label>空 USAC 供應箱 (L)</USAC_Crate_Large_Empty.label>
+  <USAC_Crate_Large_Empty.label>空USAC供應箱 (L)</USAC_Crate_Large_Empty.label>
   <!-- EN: An empty USAC supply crate. Provides some cover. -->
   <USAC_Crate_Large_Empty.description>一個空的USAC供應箱。提供一些掩護。</USAC_Crate_Large_Empty.description>
   
   <!-- EN: USAC supply crate (M) -->
-  <USAC_Crate_Medium.label>USAC 供應箱 (M)</USAC_Crate_Medium.label>
+  <USAC_Crate_Medium.label>USAC供應箱(M)</USAC_Crate_Medium.label>
   <!-- EN: A sealed supply crate used by USAC for air-dropping equipment and materials. Left behind after mining operations. Can be opened to claim the contents. -->
   <USAC_Crate_Medium.description>由USAC用於空投設備和材料的密封供應箱。採礦作業後留下。可以打開以獲取內容。</USAC_Crate_Medium.description>
   
   <!-- EN: empty USAC supply crate (M) -->
-  <USAC_Crate_Medium_Empty.label>空 USAC 供應箱 (M)</USAC_Crate_Medium_Empty.label>
+  <USAC_Crate_Medium_Empty.label>空USAC供應箱 (M)</USAC_Crate_Medium_Empty.label>
   <!-- EN: An empty USAC supply crate. Provides some cover. -->
   <USAC_Crate_Medium_Empty.description>一個空的USAC供應箱。提供一些掩護。</USAC_Crate_Medium_Empty.description>
   
   <!-- EN: USAC supply crate (S) -->
-  <USAC_Crate_Small.label>USAC 供應箱 (S)</USAC_Crate_Small.label>
+  <USAC_Crate_Small.label>USAC供應箱(S)</USAC_Crate_Small.label>
   <!-- EN: A sealed supply crate used by USAC for air-dropping equipment and materials. Left behind after mining operations. Can be opened to claim the contents. -->
   <USAC_Crate_Small.description>由USAC用於空投設備和材料的密封供應箱。採礦作業後留下。可以打開以獲取內容。</USAC_Crate_Small.description>
   
   <!-- EN: empty USAC supply crate (S) -->
-  <USAC_Crate_Small_Empty.label>空 USAC 供應箱 (S)</USAC_Crate_Small_Empty.label>
+  <USAC_Crate_Small_Empty.label>空USAC供應箱 (S)</USAC_Crate_Small_Empty.label>
   <!-- EN: An empty USAC supply crate. Provides some cover. -->
   <USAC_Crate_Small_Empty.description>一個空的USAC供應箱。提供一些掩護。</USAC_Crate_Small_Empty.description>
   

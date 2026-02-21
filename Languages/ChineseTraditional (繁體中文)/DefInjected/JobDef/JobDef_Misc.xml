@@ -1,7 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
+  <!-- EN: resupplying {0} with {1}. -->
+  <USAC_ResupplyMech.reportString>正在用{1}整備{0}</USAC_ResupplyMech.reportString>
+  
   <!-- EN: using {0} on {1}. -->
   <USAC_UseItemOnTarget.reportString>正在使用 {0} 於 {1}。</USAC_UseItemOnTarget.reportString>
+  
+  <!-- EN: detonating MICLIC. -->
+  <USAC_WaitDetonate.reportString>引爆線性排爆索</USAC_WaitDetonate.reportString>
+  
+  <!-- EN: waiting for resupply. -->
+  <USAC_WaitForResupply.reportString>等待整備</USAC_WaitForResupply.reportString>
   
 </LanguageData>

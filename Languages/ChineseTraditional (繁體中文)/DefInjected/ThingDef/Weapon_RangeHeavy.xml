@@ -5,7 +5,7 @@
   <USAC_Bullet_35mmAPDS.label>35毫米脫殼穿甲彈</USAC_Bullet_35mmAPDS.label>
   
   <!-- EN: 35mm chain round -->
-  <USAC_Bullet_BushmasterRound.label>35毫米鏈式彈</USAC_Bullet_BushmasterRound.label>
+  <USAC_Bullet_BushmasterRound.label>35毫米鏈砲彈</USAC_Bullet_BushmasterRound.label>
   
   <!-- EN: heavy autocannon round -->
   <USAC_Bullet_HeavyAutoCannon.label>重型機關砲彈</USAC_Bullet_HeavyAutoCannon.label>
@@ -14,39 +14,45 @@
   <USAC_Bullet_TorchwoodRound.label>105毫米無後座力炮彈</USAC_Bullet_TorchwoodRound.label>
   
   <!-- EN: Bushmaster autocannon -->
-  <USAC_Gun_BushmasterAC.label>猛蛇機關砲</USAC_Gun_BushmasterAC.label>
+  <USAC_Gun_BushmasterAC.label>巨蝮蛇鏈砲</USAC_Gun_BushmasterAC.label>
   <!-- EN: An M901 "Bushmaster III" large-caliber chain cannon designed for mounting on armored vehicles and aircraft. Capable of firing large-caliber depleted uranium autocannon rounds that can inflict devastating damage against infantry and lightly armored units. Provides devastating anti-personnel and anti-armor capabilities. -->
-  <USAC_Gun_BushmasterAC.description>一種M901"猛蛇III"大口徑鏈砲，設計用於安裝在裝甲車輛和飛機上。能夠發射大口徑貧鈾機關砲彈，可對步兵和輕型裝甲單位造成毀滅性傷害。提供毀滅性的反人員和反裝甲能力。</USAC_Gun_BushmasterAC.description>
+  <USAC_Gun_BushmasterAC.description>M901"猛蛇III"，一種設計搭載於裝甲車輛與航空器的大口徑鏈砲，能夠發射大口徑貧鈾機砲彈來對步兵及輕型裝甲單位造成相當毀滅性的破壞。</USAC_Gun_BushmasterAC.description>
   <!-- EN: stock -->
   <USAC_Gun_BushmasterAC.tools.stock.label>槍托</USAC_Gun_BushmasterAC.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_BushmasterAC.tools.barrel.label>槍管</USAC_Gun_BushmasterAC.tools.barrel.label>
   <!-- EN: Bushmaster autocannon -->
-  <USAC_Gun_BushmasterAC.verbs.Verb_Shoot.label>猛蛇機關砲</USAC_Gun_BushmasterAC.verbs.Verb_Shoot.label>
+  <USAC_Gun_BushmasterAC.verbs.Verb_Shoot.label>巨蝮蛇鏈砲</USAC_Gun_BushmasterAC.verbs.Verb_Shoot.label>
   
   <!-- EN: Cobra assault cannon -->
   <USAC_Gun_CobraAC.label>眼鏡蛇突擊砲</USAC_Gun_CobraAC.label>
   <!-- EN: A large-scale assault rifle designed to provide suppressive fire. Commonly used as the standard weapon for medium Automatroids, it can also be wielded by large augmented humans or soldiers wearing heavy exoskeletons. The weapon's high rate of fire makes it effective for sustained suppression against infantry targets. -->
-  <USAC_Gun_CobraAC.description>一種大型突擊步槍，設計用於提供壓制火力。通常用作中型機兵的標準武器，也可由大型強化人類或穿著重型外骨骼的士兵使用。該武器的高射速使其對步兵目標的持續壓制非常有效。</USAC_Gun_CobraAC.description>
+  <USAC_Gun_CobraAC.description>一種由大型單位握持使用的重型突擊步槍，設計用於提供壓制火力。通常用作中型機兵的標準武器，也可由大型強化人類或穿著重型外骨骼的士兵使用。該武器的高射速使其對步兵目標的持續壓制非常有效。</USAC_Gun_CobraAC.description>
   <!-- EN: stock -->
   <USAC_Gun_CobraAC.tools.stock.label>槍托</USAC_Gun_CobraAC.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_CobraAC.tools.barrel.label>槍管</USAC_Gun_CobraAC.tools.barrel.label>
   <!-- EN: Cobra assault cannon -->
+  <USAC_Gun_CobraAC.verbs.Verb_ShootCE.label>眼鏡蛇突擊砲</USAC_Gun_CobraAC.verbs.Verb_ShootCE.label>
+  
+  <!-- UNUSED -->
   <USAC_Gun_CobraAC.verbs.Verb_Shoot.label>眼鏡蛇突擊砲</USAC_Gun_CobraAC.verbs.Verb_Shoot.label>
   
   <!-- EN: Torchwood recoilless rifle -->
   <USAC_Gun_TorchwoodRR.label>火炬木無後座力炮</USAC_Gun_TorchwoodRR.label>
-  <!-- EN: An M40A3 "Torchwood" recoilless weapon system with automatic loading mechanism. Due to its lightweight characteristics derived from recoilless operation, it serves as an effective anti-tank and anti-fortification weapon. Capable of devastating armor penetration and structural destruction. -->
-  <USAC_Gun_TorchwoodRR.description>M40A3"火炬木"，一種無後座力武器系統，配備自動裝彈機制。由於其無後座力操作所具有的輕量級特性，它是一種有效的反坦克和反防禦工事武器。能夠造成毀滅性的裝甲穿透和結構破壞。</USAC_Gun_TorchwoodRR.description>
+  <!-- EN: M40A3 "Torchwood" recoilless weapon system with automatic loading system. Due to its lightweight characteristics derived from recoilless operation, it serves as an effective anti-tank and anti-fortification weapon. Capable of devastating armor penetration and structural destruction. -->
+  <USAC_Gun_TorchwoodRR.description>M40A3"火炬木"，一種配備自動裝彈機的無後座力武器系統。由於無後座力操作所具有的輕量級特性因此是一種有效的反坦克和反防禦工事武器。能夠造成毀滅性的裝甲穿透和結構破壞。</USAC_Gun_TorchwoodRR.description>
   <!-- EN: stock -->
   <USAC_Gun_TorchwoodRR.tools.stock.label>槍托</USAC_Gun_TorchwoodRR.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_TorchwoodRR.tools.barrel.label>槍管</USAC_Gun_TorchwoodRR.tools.barrel.label>
   <!-- EN: Torchwood recoilless rifle -->
+  <USAC_Gun_TorchwoodRR.verbs.Verb_ShootCE.label>火炬木無後座力炮</USAC_Gun_TorchwoodRR.verbs.Verb_ShootCE.label>
+  
+  <!-- UNUSED -->
   <USAC_Gun_TorchwoodRR.verbs.Verb_Shoot.label>火炬木無後座力炮</USAC_Gun_TorchwoodRR.verbs.Verb_Shoot.label>
   
-  <!-- EN: Viper designated marksman rifle -->
+  <!-- EN: Viper DMR -->
   <USAC_Gun_ViperDMR.label>蝮蛇射手步槍</USAC_Gun_ViperDMR.label>
   <!-- EN: An M905 "Viper" large-caliber precision anti-materiel weapon system using autocannon ammunition. Designed to be mounted on medium Automatroids as an anti-materiel weapon, it can also be wielded by large augmented humans or soldiers wearing heavy exoskeletons. Excels at long-range precision strikes against armored targets. -->
   <USAC_Gun_ViperDMR.description>M905"蝮蛇"，一種大口徑精密武器系統，使用機關砲彈藥。設計用於作為反器材武器安裝在中型機兵上，也可由大型強化人類或穿著重型外骨骼的士兵使用。擅長對裝甲目標進行遠距離精密打擊。</USAC_Gun_ViperDMR.description>
@@ -54,7 +60,7 @@
   <USAC_Gun_ViperDMR.tools.stock.label>槍托</USAC_Gun_ViperDMR.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_ViperDMR.tools.barrel.label>槍管</USAC_Gun_ViperDMR.tools.barrel.label>
-  <!-- EN: Viper designated marksman rifle -->
-  <USAC_Gun_ViperDMR.verbs.Verb_Shoot.label>蝮蛇指定射手步槍</USAC_Gun_ViperDMR.verbs.Verb_Shoot.label>
-
+  <!-- EN: Viper DMR -->
+  <USAC_Gun_ViperDMR.verbs.Verb_Shoot.label>蝮蛇射手步槍</USAC_Gun_ViperDMR.verbs.Verb_Shoot.label>
+  
 </LanguageData>

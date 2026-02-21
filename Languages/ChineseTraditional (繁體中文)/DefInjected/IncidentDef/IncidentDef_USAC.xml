@@ -6,13 +6,13 @@
   <!-- EN: USAC mech supplier -->
   <USAC_MechSupplierArrival.letterLabel>USAC機兵商船</USAC_MechSupplierArrival.letterLabel>
   <!-- EN: A USAC mech supplier ship has entered orbit. They are willing to trade mechs and weapons for corpse bags, mech wrecks, components, and hemogen packs.\n\nUse the comms console to contact them. -->
-  <USAC_MechSupplierArrival.letterText>一艘USAC機兵補給船已進入軌道。他們願意用機兵和武器交換封包屍體、機兵殘骸、沖壓零件和血包。\n\n使用通訊台聯繫他們。</USAC_MechSupplierArrival.letterText>
+  <USAC_MechSupplierArrival.letterText>一艘USAC軌道商船已進入軌道。他們願意用機兵和武器交換一些、機兵殘骸、沖壓零件和血包。\n\n使用通訊台聯繫他們。</USAC_MechSupplierArrival.letterText>
   
   <!-- EN: USAC mining raid -->
-  <USAC_MiningRaid.label>USAC採礦襲擊</USAC_MiningRaid.label>
+  <USAC_MiningRaid.label>突擊鑽機</USAC_MiningRaid.label>
   <!-- EN: USAC mining raid -->
-  <USAC_MiningRaid.letterLabel>USAC採礦襲擊</USAC_MiningRaid.letterLabel>
-  <!-- EN: USAC has detected valuable deep resources on your map. They are deploying a mining rig with mech escorts to extract them.\n\nDestroy the mining rig or eliminate the escorts to stop the operation. -->
+  <USAC_MiningRaid.letterLabel>軌道突擊鑽機</USAC_MiningRaid.letterLabel>
+  <!-- EN: USAC has detected valuable deep resources on your map. They are deploying a mining rig with mech escorts to extract them.\n\nDestroy the assault rig and eliminate the escorts to stop the operation. -->
   <USAC_MiningRaid.letterText>USAC已偵測到你的地圖上存在寶貴的深層資源。他們正在部署採礦鑽機與機械體護衛隊來開採這些資源。\n\n摧毀採礦鑽機或消滅護衛隊以停止此次行動。</USAC_MiningRaid.letterText>
   
 </LanguageData>

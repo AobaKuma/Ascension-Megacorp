@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: M88 "Rocky" -->
+  <USAC_Mech_Rocky.label>M88「洛基」</USAC_Mech_Rocky.label>
+  <!-- EN: A USAC Marine Corps synthetic infantry unit. Designed to use standard infantry weapons and can wear human armor. Provides basic infantry support with moderate protection. -->
+  <USAC_Mech_Rocky.description>一種在舊地球上由北美軍事霸權國家所使用的第二代人形合成機兵，基於奈良重工所研製的合成機兵技術原型機S-1為基礎，並透過大量退伍軍人的作戰經驗優化改進而成。使用先進且成功量產的濕件計算核心與優異的人類仿生學設計，使其在各類小規模軍事行動具備隱蔽性與智能優勢。由於優秀的作戰裝備兼容性以及低廉的購買成本，在邊緣世界中的雇傭兵與武裝集團中經常能見到其被作為特種作戰單位使用。</USAC_Mech_Rocky.description>
+  <!-- EN: head -->
+  <USAC_Mech_Rocky.tools.head.label>頭部</USAC_Mech_Rocky.tools.head.label>
+  <!-- EN: left fist -->
+  <USAC_Mech_Rocky.tools.left_fist.label>左拳</USAC_Mech_Rocky.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <USAC_Mech_Rocky.tools.right_fist.label>右拳</USAC_Mech_Rocky.tools.right_fist.label>
+  
+</LanguageData>

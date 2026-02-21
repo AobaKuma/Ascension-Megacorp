@@ -2,9 +2,9 @@
 <LanguageData>
   
   <!-- EN: assault mining rig -->
-  <USAC_HeavyMiningRig.label>USAC重型採礦機</USAC_HeavyMiningRig.label>
+  <USAC_HeavyMiningRig.label>軌道突擊鑽機</USAC_HeavyMiningRig.label>
   <!-- EN: A heavy-duty vertical excavation platform, deployed via orbital drop, is powered by an internal radioactive nuclear battery and possesses vertical take-off and landing capabilities for flexible redeployment and return to orbit. It achieves highly automated excavation efficiency and effectively prevents pest infestations by pressurizing and pumping shallow groundwater into deep ore veins to fracture them and extracting the ore-mixed mud. However, contaminated wastewater containing heavy metals and radioactivity is discharged in large quantities during the ore screening process, causing severe environmental pollution. -->
-  <USAC_HeavyMiningRig.description>等待添加</USAC_HeavyMiningRig.description>
+  <USAC_HeavyMiningRig.description>一種透過軌道空降部署的重型垂直挖掘平台，透過內置的放射性核電池來提供能源，同時具備垂直起降的能力來靈活重新部署與返回軌道。\n\n透過將探鑽淺層的地下水加壓泵入深層礦脈使其壓裂並將混合了礦石的泥漿抽取出來，其挖掘效率高度自動化並且也能有效的避免蟲害發生。然而夾帶重金屬物質與放射性的污染廢水會在抽取過程中隨著礦石篩選過程被大量排放出來，因此會對周遭環境造成嚴重的污染。</USAC_HeavyMiningRig.description>
   
   <!-- EN: mining rig (incoming) -->
   <USAC_MiningRigIncoming.label>採礦機（降落中）</USAC_MiningRigIncoming.label>

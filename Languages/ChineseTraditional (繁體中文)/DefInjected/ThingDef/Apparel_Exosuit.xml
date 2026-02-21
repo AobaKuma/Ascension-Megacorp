@@ -3,7 +3,7 @@
   
   <!-- EN: hardiman powered unit -->
   <USAC_Apparel_ExoSkeleton.label>哈迪曼動力外骨骼</USAC_Apparel_ExoSkeleton.label>
-  <!-- EN: A powered exoskeleton suit driven by an electric motor. It allows the wearer to lift and operate heavy weapons and equipment, and features bulletproof plate mounting points for protection. Its design dates back to the Cold War era on ancient Earth and may be the earliest known prototype of a powered exoskeleton suit. -->
+  <!-- EN: A powered exoskeleton suit driven by an electric motor. It allows personal to lift and operate heavy weapons and equipment, and features bulletproof plate mounting points for protection. Its design dates back to the Cold War era on ancient Earth and may be the earliest known prototype of a powered exoskeleton suit. -->
   <USAC_Apparel_ExoSkeleton.description>透過電機驅動的動力外骨骼服，能使穿戴者舉起並操作笨重的武器與裝備，裝有快拆式插板來提供防護。其設計可追溯至古代地球上的冷戰時期。</USAC_Apparel_ExoSkeleton.description>
   <!-- EN: exosuit top -->
   <USAC_Apparel_ExoSkeleton.apparel.renderNodeProperties.0.debugLabel>外骨骼上衣</USAC_Apparel_ExoSkeleton.apparel.renderNodeProperties.0.debugLabel>

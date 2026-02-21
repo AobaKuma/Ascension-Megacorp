@@ -17,7 +17,7 @@
   <!-- 武裝集團透過在軌工業平台生產與投放這種能夠靈活部署的鑽機平台到地面上執行開採任務，所使用的開採方式會對地表造成嚴重的污染，你能夠將其摧毀來遏制污染的發生並避免礦藏的損失。也可以放任其開採完畢後自行離開。無論如何，武裝集團都會派駐部隊與物資來保護他們的財產不受他人侵犯。 -->
   <ConceptDef ParentName="NotedOpportunisticBase">
     <defName>USAC_AssaultRig</defName>
-    <label>Credit bond</label>
+    <label>Orbital assault rig</label>
     <helpText>Armed groups produce and deploy these flexibly deployable drilling rigs to the surface via on-orbit industrial platforms to carry out mining operations. Their mining methods cause severe surface pollution, which you can prevent by destroying them to contain the pollution and avoid deposit loss.\n\nAlternatively, you can allow them to leave on their own after mining is complete. Regardless, armed groups will deploy troops and supplies to protect their property from intrusion.</helpText>
   </ConceptDef>
 

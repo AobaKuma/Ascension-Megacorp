@@ -2,21 +2,21 @@
 <LanguageData>
   
   <!-- EN: M7 "Cobalt" -->
-  <USAC_Mech_Cobalt.label>M7「鈷藍」</USAC_Mech_Cobalt.label>
+  <USAC_Mech_Cobalt.label>M7「鈷合金」</USAC_Mech_Cobalt.label>
   <!-- EN: A medium quadruped cargo mech with integrated machine gun. Features shotgun-resistant armor plating, cargo hauling capability, and smoke grenade deployment system. -->
   <USAC_Mech_Cobalt.description>一種被用於在都市戰環境中攜帶重火力來支援步兵推進與掃蕩火力點的中型四足機兵平台，通常會安裝自動榴彈發射器或一桿高精度自動砲來有效的清除建築樓層中的定點陣地。在地球時代由於該型機兵在街上鎮壓暴徒時能夠靠著外殼無視燃燒彈的點燃，其全身燃燒時不為所動的壓迫感也被人暱稱為地獄犬。</USAC_Mech_Cobalt.description>
   <!-- EN: head -->
   <USAC_Mech_Cobalt.tools.head.label>頭部</USAC_Mech_Cobalt.tools.head.label>
   
   <!-- EN: XM3 "Gonk" -->
-  <USAC_Mech_Gonk.label>XM11「岡克」</USAC_Mech_Gonk.label>
+  <USAC_Mech_Gonk.label>XM3「岡克」</USAC_Mech_Gonk.label>
   <!-- EN: A heavy self-propelled artillery mech with tank-level armor, very slow movement, and extreme long-range firepower. Based on the geochelone chassis. -->
   <USAC_Mech_Gonk.description>一種在高度城市化並且雙方投入大量機械化步兵單位的的舊地球北美戰場上，用於在佔領市區執行治安戰任務的反步兵支援平台，被設計為在巷戰環境中針對打擊穿戴外骨骼並攜帶重型反坦克武器的武裝伏擊者，在生存能力極強的同時搭載了一門具備快速反應能力的實驗性激光武器系統。</USAC_Mech_Gonk.description>
   <!-- EN: head -->
   <USAC_Mech_Gonk.tools.head.label>頭部</USAC_Mech_Gonk.tools.head.label>
   
   <!-- EN: M110 "Omaha" -->
-  <USAC_Mech_Omaha.label>M1154E「奧馬哈」</USAC_Mech_Omaha.label>
+  <USAC_Mech_Omaha.label>M110「奧馬哈」</USAC_Mech_Omaha.label>
   <!-- EN: An amphibious assault mech capable of operating both on land and water, providing close to mid-range fire support for USAC operations. Based on the Krepost heavy walker chassis. -->
   <USAC_Mech_Omaha.description>一種被設計用於在交通線上排雷與清掃伏擊的超重型破障用機兵，具有一扇厚重的排雷鏟以及一對用於遠距離清障的火箭牽引排爆索，在專為拆除建築與防禦工事的同時也具備一定的自衛火力用於消滅靠近的非法武裝分子與游擊隊裝甲車。</USAC_Mech_Omaha.description>
   <!-- EN: mechanical head -->
@@ -25,27 +25,5 @@
   <USAC_Mech_Omaha.tools.left_leg.label>左腿</USAC_Mech_Omaha.tools.left_leg.label>
   <!-- EN: right leg -->
   <USAC_Mech_Omaha.tools.right_leg.label>右腿</USAC_Mech_Omaha.tools.right_leg.label>
-  
-  <!-- EN: M939 "Paraman" -->
-  <USAC_Mech_Paraman.label>M939「空降步兵」</USAC_Mech_Paraman.label>
-  <!-- EN: A medium mechanized airborne unit. Designed for rapid deployment operations with enhanced mobility and moderate firepower. Based on the battle frame chassis. -->
-  <USAC_Mech_Paraman.description>一種較大體型的人形機兵，在過去的地球時代被作為機械化外骨骼空降兵編制中的無人外骨骼僚機，隨著地球戰場上的機械化程度提高，在第三次世界大戰後基本取代了在戰爭期間耗損率極高的陸軍空降兵，並在次世代戰爭中被作為在北美洲戰場上的主力戰鬥機兵。</USAC_Mech_Paraman.description>
-  <!-- EN: head -->
-  <USAC_Mech_Paraman.tools.head.label>頭部</USAC_Mech_Paraman.tools.head.label>
-  <!-- EN: left fist -->
-  <USAC_Mech_Paraman.tools.left_fist.label>左拳</USAC_Mech_Paraman.tools.left_fist.label>
-  <!-- EN: right fist -->
-  <USAC_Mech_Paraman.tools.right_fist.label>右拳</USAC_Mech_Paraman.tools.right_fist.label>
-  
-  <!-- EN: M88 "Rocky" -->
-  <USAC_Mech_Rocky.label>M88「洛基」</USAC_Mech_Rocky.label>
-  <!-- EN: A USAC Marine Corps synthetic infantry unit. Designed to use standard infantry weapons and can wear human armor. Provides basic infantry support with moderate protection. -->
-  <USAC_Mech_Rocky.description>一種在舊地球上由北美軍事霸權國家所使用的第二代人形合成機兵，基於奈良重工所研製的合成機兵技術原型機S-1為基礎，並透過大量退伍軍人的作戰經驗優化改進而成。使用先進且成功量產的濕件計算核心與優異的人類仿生學設計，使其在各類小規模軍事行動具備隱蔽性與智能優勢。由於優秀的作戰裝備兼容性以及低廉的購買成本，在邊緣世界中的雇傭兵與武裝集團中經常能見到其被作為特種作戰單位使用。</USAC_Mech_Rocky.description>
-  <!-- EN: head -->
-  <USAC_Mech_Rocky.tools.head.label>頭部</USAC_Mech_Rocky.tools.head.label>
-  <!-- EN: left fist -->
-  <USAC_Mech_Rocky.tools.left_fist.label>左拳</USAC_Mech_Rocky.tools.left_fist.label>
-  <!-- EN: right fist -->
-  <USAC_Mech_Rocky.tools.right_fist.label>右拳</USAC_Mech_Rocky.tools.right_fist.label>
   
 </LanguageData>

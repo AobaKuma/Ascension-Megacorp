@@ -7,9 +7,6 @@
   <!-- EN: flying -->
   <USAC_PawnFlyer_Shovel.label>飛行</USAC_PawnFlyer_Shovel.label>
   
-  <!-- EN: mineclearing rocket -->
-  <USAC_Projectile_MICLIC.label>掃雷火箭</USAC_Projectile_MICLIC.label>
-  
   <!-- EN: towed mineclearing rocket -->
   <USAC_Projectile_MICLIC_Towed.label>被拖曳的掃雷火箭</USAC_Projectile_MICLIC_Towed.label>
   

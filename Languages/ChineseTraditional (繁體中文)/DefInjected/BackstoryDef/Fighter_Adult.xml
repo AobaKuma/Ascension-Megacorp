@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: [PAWN_nameDef] failed as a bandit and was unfortunately captured by a colonial group. While serving a labor sentence, [PAWN_nameDef] realized how much better the life of these people had and decided to stay after being released from prison. -->
-  <USAC_Military01.description>[PAWN_nameDef]作為盜匪失敗了，不幸被武裝集團抓獲並判處義務勞動。</USAC_Military01.description>
+  <!-- EN: [PAWN_nameDef] failed as a bandit and was unfortunately captured by a merc group. While serving a labor sentence, [PAWN_nameDef] realized how much better the life of these people had and decided to stay after being released. -->
+  <USAC_Military01.description>[PAWN_nameDef]作為盜匪十分失敗，不幸被武裝集團抓獲後被判處義務勞動，但好在工作內容幾乎沒有變化。</USAC_Military01.description>
   <!-- EN: Reformed Bandit -->
-  <USAC_Military01.title>改邪歸正的盜匪</USAC_Military01.title>
+  <USAC_Military01.title>從良盜匪</USAC_Military01.title>
   <!-- EN: Bandit -->
   <USAC_Military01.titleShort>盜匪</USAC_Military01.titleShort>
   
@@ -23,7 +23,7 @@
   <USAC_Military03.titleShort>副官</USAC_Military03.titleShort>
   
   <!-- EN: [PAWN_nameDef] was once a bodyguard for military contractor groups, but was laid off because Automatroids proved to be stronger in competitive combat capability. [PAWN_nameDef] eventually had to follow a frontier project to the rimworld to seek a living. -->
-  <USAC_Military04.description>[PAWN_nameDef]曾是軍事承包商集團的保鏢，但由於機兵的普及而被解僱。[PAWN_nameDef]最終不得不跟隨邊疆項目到邊緣世界謀求生計。</USAC_Military04.description>
+  <USAC_Military04.description>[PAWN_nameDef]曾是軍事承包商集團長期聘用的持槍保鏢，但由於機兵的普及而被解僱。[PAWN_nameDef]最終不得不跟隨邊疆計畫來到邊緣世界謀求生計。</USAC_Military04.description>
   <!-- EN: Fired Bodyguard -->
   <USAC_Military04.title>被解僱的保鏢</USAC_Military04.title>
   <!-- EN: Bodyguard -->
@@ -37,14 +37,14 @@
   <USAC_Military05.titleShort>傭兵</USAC_Military05.titleShort>
   
   <!-- EN: The profits and opportunities brought by frontier projects attracted many unemployed laborers like [PAWN_nameDef]. Like many others following the frontier project, [PAWN_nameDef] signed liability waivers to come to the rimworld. -->
-  <USAC_Military06.description>邊疆項目帶來的利潤和機會吸引了許多像[PAWN_nameDef]這樣的失業勞動者。像許多其他跟隨邊疆計畫的參與者一樣，[PAWN_nameDef]簽署了責任豁免書來到邊緣世界。</USAC_Military06.description>
+  <USAC_Military06.description>第一次邊疆計畫帶來的利潤和機會吸引了許多像[PAWN_nameDef]這樣的失業勞動者。像許多其他跟隨邊疆計畫的參與者一樣，[PAWN_nameDef]簽署了責任豁免書來到邊緣世界。</USAC_Military06.description>
   <!-- EN: Frontier Worker -->
   <USAC_Military06.title>邊疆工人</USAC_Military06.title>
   <!-- EN: Worker -->
   <USAC_Military06.titleShort>工人</USAC_Military06.titleShort>
   
   <!-- EN: [PAWN_nameDef] worked for a megacorporation as a forensic assistant accepting credit collateral. Unlike those with special interests, [PAWN_nameDef] was pushed to the brink of collapse by daily work pressure, but also honed advanced medical skills in the process. -->
-  <USAC_Military07.description>[PAWN_nameDef]曾在一家巨型企業擔任法醫助理，接受信用抵押品。與那些有特殊利益的人不同，[PAWN_nameDef]被日常工作壓力推到了崩潰的邊緣，但在這個過程中也磨練了先進的醫療技能。</USAC_Military07.description>
+  <USAC_Military07.description>[PAWN_nameDef]曾在一家巨型企業擔任法醫助理，在現場為信用抵押品評估收購價值。與那些有特殊利益的人不同，[PAWN_nameDef]被日常工作壓力推到了崩潰的邊緣，但在這個過程中也磨練了先進的醫療技能。</USAC_Military07.description>
   <!-- EN: Megacorp Coroner -->
   <USAC_Military07.title>巨型企業驗屍官</USAC_Military07.title>
   <!-- EN: Coroner -->
@@ -58,21 +58,21 @@
   <USAC_Military08.titleShort>機兵技術員</USAC_Military08.titleShort>
   
   <!-- EN: [PAWN_nameDef] came to the rimworld with a frontier project, doing whatever [PAWN_pronoun] wanted. Because [PAWN_pronoun] offended many people and violated most contract terms, [PAWN_pronoun] is now being hunted. But this kind of life is exactly what [PAWN_pronoun] pursues. -->
-  <USAC_Military09.description>[PAWN_nameDef]跟隨邊疆項目來到邊緣世界，做[PAWN_pronoun]想做的任何事。因為[PAWN_pronoun]冒犯了許多人並違反了大多數合同條款，[PAWN_pronoun]現在被追捕。但這種生活正是[PAWN_pronoun]所追求的。</USAC_Military09.description>
+  <USAC_Military09.description>[PAWN_nameDef]跟隨邊疆計畫來到邊緣世界，做[PAWN_pronoun]想做的任何事。因為[PAWN_pronoun]冒犯了許多人並違反了大多數合同條款，[PAWN_pronoun]現在被追捕。但這種生活正是[PAWN_pronoun]所追求的。</USAC_Military09.description>
   <!-- EN: Lawless Rogue -->
   <USAC_Military09.title>無法無天的無賴</USAC_Military09.title>
   <!-- EN: Rogue -->
   <USAC_Military09.titleShort>無賴</USAC_Military09.titleShort>
   
   <!-- EN: [PAWN_nameDef] was once a high-ranking officer in the military, but became a political scapegoat in the factional struggles within the military and military-industrial complex. Although [PAWN_nameDef] kept [PAWN_pronoun]'s life through military connections, [PAWN_pronoun] had to follow a frontier project to the rimworld. -->
-  <USAC_Military10.description>[PAWN_nameDef]曾是軍隊中的高級軍官，但在軍隊和軍工複合體內部的派系鬥爭中成為了政治替罪羊。雖然[PAWN_nameDef]通過軍事關係保住了[PAWN_pronoun]的生命，但[PAWN_pronoun]不得不跟隨邊疆項目到邊緣世界。</USAC_Military10.description>
+  <USAC_Military10.description>[PAWN_nameDef]曾是軍隊中的高級軍官，但在軍隊和軍工複合體內部的派系鬥爭中成為了政治替罪羊。雖然[PAWN_nameDef]通過軍事關係保住了[PAWN_pronoun]的生命，但[PAWN_pronoun]不得不跟隨邊疆計畫到邊緣世界。</USAC_Military10.description>
   <!-- EN: Retired General -->
   <USAC_Military10.title>退休將軍</USAC_Military10.title>
   <!-- EN: General -->
   <USAC_Military10.titleShort>將軍</USAC_Military10.titleShort>
   
   <!-- EN: [PAWN_nameDef] dedicated [PAWN_pronoun]'s youth to [PAWN_pronoun]'s country. However, the brutality of the battlefield left [PAWN_nameDef] with post-traumatic stress disorder. After the war, [PAWN_pronoun] received no proper treatment, and the difficulties of daily life forced [PAWN_pronoun] to come to the rimworld to seek a living. -->
-  <USAC_Military11.description>[PAWN_nameDef]將[PAWN_pronoun]的青春獻給了[PAWN_pronoun]的國家。然而，戰場的殘酷給[PAWN_nameDef]留下了創傷後應激障礙。戰爭結束後，[PAWN_pronoun]沒有得到適當的治療，日常生活的困難迫使[PAWN_pronoun]來到邊緣世界謀求生計。</USAC_Military11.description>
+  <USAC_Military11.description>[PAWN_nameDef]將[PAWN_pronoun]的青春獻給了[PAWN_pronoun]的國家。然而，戰場的殘酷給[PAWN_nameDef]留下了創傷後應激障礙。戰爭結束後，[PAWN_pronoun]沒有得到適當的治療，日常生活的困難迫使[PAWN_pronoun]參與邊疆計畫謀求生計。</USAC_Military11.description>
   <!-- EN: Traumatized Veteran -->
   <USAC_Military11.title>創傷退伍軍人</USAC_Military11.title>
   <!-- EN: Veteran -->
@@ -84,5 +84,5 @@
   <USAC_Military12.title>機兵教父</USAC_Military12.title>
   <!-- EN: Godfather -->
   <USAC_Military12.titleShort>教父</USAC_Military12.titleShort>
-
+  
 </LanguageData>

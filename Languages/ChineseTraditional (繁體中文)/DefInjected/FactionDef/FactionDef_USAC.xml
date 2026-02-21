@@ -3,12 +3,12 @@
   
   <!-- EN: United Stellar Armament Company -->
   <USAC_Faction.label>聯合星區武裝企業</USAC_Faction.label>
-  <!-- EN: A group of resource development companies and armed trading groups driven by profit, originating from a planet that was enlightend by colonization and gained abilities to reach interstellar, countless massive corporations have created this man-eating Leviathan through military hegemony and commercial mergers and acquisitions on their home planet. Their purpose on this world is to gain a foothold  and prepare for a total ground control. -->
-  <USAC_Faction.description>一群受利益驅動的資源開發公司和武裝貿易集團，源自一個被殖民啟蒙且獲得星際行進能力的星球。無數龐大的企業透過軍事霸權和商業兼併收購在其本星上創造了這隻吃人巨獸。他們在此世界的目標是獲得立足點並為完全的地面控制做準備。</USAC_Faction.description>
+  <!-- EN: A group of resource development companies and armed trading groups driven by profit, originating from a planet that was enlightend by colonization and gained abilities to reach interstellar, countless massive corporations have created this man-eating Leviathan through military hegemony and commercial mergers and acquisitions on their home planet. Their purpose on this world is to gain a foothold and prepare for a total ground control. -->
+  <USAC_Faction.description>一群受利益驅動的資源開發公司和武裝貿易集團，源自一個被殖民艦隊所援助啟蒙且獲得星際航行能力的準中寰世界。無數龐大的企業透過軍事霸權與商業兼併在其母星上創造了這頭以人為食的利維坦。他們的目標是在這顆星球上獲得立足點並隱匿的為進一步的地面控制做準備。</USAC_Faction.description>
   <!-- EN: executive -->
   <USAC_Faction.leaderTitle>執行官</USAC_Faction.leaderTitle>
   <!-- EN: {0} from {1} are attacking your {2}. -->
-  <USAC_Faction.messageDefendersAttacking>{0} 來自 {1} 正在攻擊你的 {2}。</USAC_Faction.messageDefendersAttacking>
+  <USAC_Faction.messageDefendersAttacking>來自{0}的{1}正在攻擊你的{2}。</USAC_Faction.messageDefendersAttacking>
   <!-- EN: operative -->
   <USAC_Faction.pawnSingular>特工</USAC_Faction.pawnSingular>
   <!-- EN: operatives -->

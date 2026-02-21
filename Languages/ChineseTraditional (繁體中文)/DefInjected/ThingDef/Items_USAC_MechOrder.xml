@@ -2,24 +2,24 @@
 <LanguageData>
   
   <!-- EN: M7 "Cobalt" order -->
-  <USAC_MechOrder_Cobalt.label>M7「鈷藍」訂單</USAC_MechOrder_Cobalt.label>
+  <USAC_MechOrder_Cobalt.label>M7「鈷合金」訂單</USAC_MechOrder_Cobalt.label>
   <!-- EN: A USAC military contract for one M7 "Cobalt" cargo mech. When purchased, an inactive mech will be delivered via drop pod. -->
-  <USAC_MechOrder_Cobalt.description>USAC軍事合約，購買一台M7「鈷藍」貨運機兵。購買後，一台未啟動的機兵將通過空投艙送達。</USAC_MechOrder_Cobalt.description>
+  <USAC_MechOrder_Cobalt.description>USAC軍事合約，購買一台M7「鈷合金」中型支援機兵。購買後，一台未啟動的機兵將通過空投艙送達。</USAC_MechOrder_Cobalt.description>
   
   <!-- EN: XM3 "Gonk" order -->
   <USAC_MechOrder_Gonk.label>XM3「岡克」訂單</USAC_MechOrder_Gonk.label>
   <!-- EN: A USAC military contract for one XM3 "Gonk" heavy artillery mech. When purchased, an inactive mech will be delivered via drop pod. -->
-  <USAC_MechOrder_Gonk.description>USAC軍事合約，購買一台XM3「岡克」重型火砲機兵。購買後，一台未啟動的機兵將通過空投艙送達。</USAC_MechOrder_Gonk.description>
+  <USAC_MechOrder_Gonk.description>USAC軍事合約，購買一台XM3「岡克」步兵支援型機兵。購買後，一台未啟動的機兵將通過空投艙送達。</USAC_MechOrder_Gonk.description>
   
   <!-- EN: M110 "Omaha" order -->
   <USAC_MechOrder_Omaha.label>M110「奧馬哈」訂單</USAC_MechOrder_Omaha.label>
   <!-- EN: A USAC military contract for one M110 "Omaha" amphibious assault mech. When purchased, an inactive mech will be delivered via drop pod. -->
-  <USAC_MechOrder_Omaha.description>USAC軍事合約，購買一台M110「奧馬哈」兩棲突擊機兵。購買後，一台未啟動的機兵將通過空投艙送達。</USAC_MechOrder_Omaha.description>
+  <USAC_MechOrder_Omaha.description>USAC軍事合約，購買一台M110「奧馬哈」超重型反工事機兵。購買後，一台未啟動的機兵將通過空投艙送達。</USAC_MechOrder_Omaha.description>
   
   <!-- EN: M939 "Paraman" order -->
-  <USAC_MechOrder_Paraman.label>M939「傘兵」訂單</USAC_MechOrder_Paraman.label>
+  <USAC_MechOrder_Paraman.label>M939「空降兵」訂單</USAC_MechOrder_Paraman.label>
   <!-- EN: A USAC military contract for one M939 "Paraman" airborne unit. When purchased, an inactive mech will be delivered via drop pod. -->
-  <USAC_MechOrder_Paraman.description>USAC軍事合約，購買一台M939「傘兵」空降機兵。購買後，一台未啟動的機兵將通過空投艙送達。</USAC_MechOrder_Paraman.description>
+  <USAC_MechOrder_Paraman.description>USAC軍事合約，購買一台M939「空降兵」人型機兵。購買後，一台未啟動的機兵將通過空投艙送達。</USAC_MechOrder_Paraman.description>
   
   <!-- EN: M88 "Rocky" order -->
   <USAC_MechOrder_Rocky.label>M88「洛基」訂單</USAC_MechOrder_Rocky.label>

@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-
   <!-- EN: towed mineclearing line -->
   <USAC_MICLIC_Towed.label>牽引式排雷索</USAC_MICLIC_Towed.label>
   <!-- EN: Launch a rocket that tows a continuous demolition cable behind it. Upon impact, the cable detonates along its entire path to clear mines. -->
-  <USAC_MICLIC_Towed.description>發射一枚牽引連續爆破纜繩的火箭。撞擊時纜繩沿其整個路徑引爆以清除地雷。</USAC_MICLIC_Towed.description>
+  <USAC_MICLIC_Towed.description>發射一枚牽引爆破纜繩的火箭。撞擊時纜繩沿其整個路徑引爆以清除地雷。</USAC_MICLIC_Towed.description>
   
   <!-- EN: mineclearing shovel -->
   <USAC_MineclearingShovel.label>排雷鏟</USAC_MineclearingShovel.label>

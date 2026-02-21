@@ -3,7 +3,7 @@
   
   <!-- EN: credit bond -->
   <USAC_Bond.label>信用債券</USAC_Bond.label>
-  <!-- EN: A physical, registered certificate issued by USAC Corporation dealers to the Ground Faction during transactions.Made from special type of high-tenacity fibers paper and its surface is printed with special ink, featuring sophisticated anti-counterfeiting markings and the registered owner's information.\n\nSurplus value from transactions with USAC Corporation can be used to purchase these certificates with fixed purchasing power for future transactions.\n\nBecause the certificates are registered, it cannot be used by anyone other than the registered owner; therefore, this highly durable paper is essentially useless to other factions in Rimworld. -->
+  <!-- EN: A physical, registered certificate issued by USAC Corporation dealers to local factions during transactions. Made from special type of high-tenacity fibers paper and its surface is printed with special ink, featuring sophisticated anti-counterfeiting markings and the registered owner's information.\n\nSurplus value from transactions with USAC Corporation can be used to purchase these certificates with fixed purchasing power for future transactions.\n\nBecause the certificates are registered, it cannot be used by anyone other than the registered owner; therefore, this highly durable paper is essentially useless to other factions in Rimworld. -->
   <USAC_Bond.description>一種由高韌度纖維製成的特殊紙張，是由USAC授權經銷商與地面陣營交易時所印發的實體記名憑證，其表面採用特殊油墨印刷，具有精美的防偽標識與記名所有者訊息。\n\n在商品收購與裝備銷售後，結餘的剩餘價值能被用來買入這種具備固定購買力的憑證用於下次交易。由於憑證具有記名性因此無法由記名所有人以外的人使用，因此對邊緣世界中的其他陣營來說，這張十分耐磨損的紙基本沒有任何實際用途。</USAC_Bond.description>
   
 </LanguageData>

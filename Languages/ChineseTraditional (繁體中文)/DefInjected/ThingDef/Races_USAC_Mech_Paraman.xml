@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: M939 "Paraman" -->
+  <USAC_Mech_Paraman.label>M939「空降步兵」</USAC_Mech_Paraman.label>
+  <!-- EN: A medium mechanized airborne unit. Designed for rapid deployment operations with enhanced mobility and moderate firepower. Based on the battle frame chassis. -->
+  <USAC_Mech_Paraman.description>一種較大體型的人形機兵，在過去的地球時代被作為機械化外骨骼空降兵編制中的無人外骨骼僚機，隨著地球戰場上的機械化程度提高，在第三次世界大戰後基本取代了在戰爭期間耗損率極高的陸軍空降兵，並在次世代戰爭中被作為在北美洲戰場上的主力戰鬥機兵。</USAC_Mech_Paraman.description>
+  <!-- EN: head -->
+  <USAC_Mech_Paraman.tools.head.label>頭部</USAC_Mech_Paraman.tools.head.label>
+  <!-- EN: left fist -->
+  <USAC_Mech_Paraman.tools.left_fist.label>左拳</USAC_Mech_Paraman.tools.left_fist.label>
+  <!-- EN: right fist -->
+  <USAC_Mech_Paraman.tools.right_fist.label>右拳</USAC_Mech_Paraman.tools.right_fist.label>
+  
+</LanguageData>
