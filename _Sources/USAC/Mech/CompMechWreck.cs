@@ -74,6 +74,18 @@ namespace USAC
             // 执行残骸建筑生成逻辑
             Thing wreck = ThingMaker.MakeThing(Props.wreckDef);
 
+            // 传递着色数据
+            var parentPaint = pawn.TryGetComp<Fortified.CompPaintable>();
+            var wreckPaint = wreck.TryGetComp<Fortified.CompPaintable>();
+            if (parentPaint != null && wreckPaint != null)
+            {
+                wreckPaint.color1 = parentPaint.color1;
+                wreckPaint.color2 = parentPaint.color2;
+                wreckPaint.color3 = parentPaint.color3;
+                wreckPaint.camoDef = parentPaint.camoDef;
+                wreckPaint.brightness = parentPaint.brightness;
+            }
+
             // 设置派系为机兵的派系
             if (pawn.Faction != null)
             {
