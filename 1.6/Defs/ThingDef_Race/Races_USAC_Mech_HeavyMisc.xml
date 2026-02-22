@@ -226,6 +226,10 @@
       <li Class="USAC.CompProperties_MechWreck">
         <wreckDef>USAC_Wreck_Omaha</wreckDef>
       </li>
+      <li Class="USAC.CompProperties_BulletDeflect">
+        <deflectFlightDist>5</deflectFlightDist>
+        <normalJitter>0.3</normalJitter>
+      </li>
       <li Class="Fortified.CompProperties_VehicleWeapon">
         <drawData>
           <dataEast>
