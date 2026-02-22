@@ -5,11 +5,11 @@
         <defName>USAC_Culture</defName>
         <label>Zenith Ascension</label>
         <description>Zenith Ascension is a military-industrial complex under the United Stellar Armament Company, whose core business is coordinating military development projects across various technical departments and selling arms abroad.\n\nDespite its impressive financial statements, it harbors a vast network of bribery and cronyism. which does not prevent their capability to physically eliminating and annexing competitor's assets and running their privateering fleets to monopolizing the arms market through money-for-power deals.</description>
-        <ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerIdeo_USAC</ideoNameMaker>
-        <deityNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerDeity_USAC</deityNameMaker>
-        <deityTypeMaker MayRequire="Ludeon.RimWorld.Ideology">DeityTypeMaker_USAC</deityTypeMaker>
-        <leaderTitleMaker MayRequire="Ludeon.RimWorld.Ideology">LeaderTitleMaker_USAC</leaderTitleMaker>
-        <festivalNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerFestival_USAC</festivalNameMaker>
+        <ideoNameMaker MayRequire="ludeon.rimworld.ideology">NamerIdeo_USAC</ideoNameMaker>
+        <deityNameMaker MayRequire="ludeon.rimworld.ideology">NamerDeity_USAC</deityNameMaker>
+        <deityTypeMaker MayRequire="ludeon.rimworld.ideology">DeityTypeMaker_USAC</deityTypeMaker>
+        <leaderTitleMaker MayRequire="ludeon.rimworld.ideology">LeaderTitleMaker_USAC</leaderTitleMaker>
+        <festivalNameMaker MayRequire="ludeon.rimworld.ideology">NamerFestival_USAC</festivalNameMaker>
         <preferredWeaponClasses>
             <noble>Ultratech</noble>
             <despised>Neolithic</despised>

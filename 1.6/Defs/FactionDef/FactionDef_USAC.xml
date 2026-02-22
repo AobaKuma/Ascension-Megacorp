@@ -33,53 +33,53 @@
         <naturalEnemy>false</naturalEnemy>
         <mustStartOneEnemy>false</mustStartOneEnemy>
         <hidden>false</hidden>
-        <allowedCultures MayRequire="Ludeon.RimWorld.Ideology" Inherit="false">
-            <li>USAC_Culture</li>
+        <allowedCultures Inherit="false">
+            <li MayRequire="ludeon.rimworld.ideology">USAC_Culture</li>
         </allowedCultures>
         <structureMemeWeights Inherit="false">
-            <Structure_OriginChristian MayRequire="Ludeon.RimWorld.Ideology">1</Structure_OriginChristian>
-            <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Ideological>
+            <Structure_OriginChristian MayRequire="ludeon.rimworld.ideology">1</Structure_OriginChristian>
+            <Structure_Ideological MayRequire="ludeon.rimworld.ideology">1</Structure_Ideological>
         </structureMemeWeights>
         <requiredMemes>
-            <li>Supremacist</li>
-            <li>Individualist</li>
-            <li>Proselytizer</li>
-            <li>HumanPrimacy</li>
+            <li MayRequire="ludeon.rimworld.ideology">Supremacist</li>
+            <li MayRequire="ludeon.rimworld.ideology">Individualist</li>
+            <li MayRequire="ludeon.rimworld.ideology">Proselytizer</li>
+            <li MayRequire="ludeon.rimworld.ideology">HumanPrimacy</li>
         </requiredMemes>
         <disallowedMemes>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Structure_Animist</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">FleshPurity</li>
+            <li MayRequire="ludeon.rimworld.ideology">Structure_Animist</li>
+            <li MayRequire="ludeon.rimworld.ideology">Nudism</li>
+            <li MayRequire="ludeon.rimworld.ideology">Blindsight</li>
+            <li MayRequire="ludeon.rimworld.ideology">PainIsVirtue</li>
+            <li MayRequire="ludeon.rimworld.ideology">FleshPurity</li>
         </disallowedMemes>
         <disallowedPrecepts>
-            <li MayRequire="Ludeon.RimWorld.Ideology">DrugUse_Prohibited</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">DrugUse_MedicalOnly</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Abhorrent</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Horrible</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_Prohibited</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_Horrible</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_SpouseOnly_Strict</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_SpouseOnly_Moderate</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Lovin_SpouseOnly_Mild</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Research_None</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Research_ExtremelySlow</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Research_VerySlow</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Research_Slow</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_Abhorrent</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">OrganUse_HorribleNoSell</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">DrugUse_Prohibited</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">DrugUse_MedicalOnly</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_NoRules</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_NoRules</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_CoveringAnythingButGroinDisapproved</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_CoveringAnythingButGroinDisapproved</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Male_Mandatory</li>
-            <li MayRequire="Ludeon.RimWorld.Ideology">Nudity_Female_Mandatory</li>
+            <li MayRequire="ludeon.rimworld.ideology">DrugUse_Prohibited</li>
+            <li MayRequire="ludeon.rimworld.ideology">DrugUse_MedicalOnly</li>
+            <li MayRequire="ludeon.rimworld.ideology">Slavery_Abhorrent</li>
+            <li MayRequire="ludeon.rimworld.ideology">Slavery_Horrible</li>
+            <li MayRequire="ludeon.rimworld.ideology">Lovin_Prohibited</li>
+            <li MayRequire="ludeon.rimworld.ideology">Lovin_Horrible</li>
+            <li MayRequire="ludeon.rimworld.ideology">Lovin_SpouseOnly_Strict</li>
+            <li MayRequire="ludeon.rimworld.ideology">Lovin_SpouseOnly_Moderate</li>
+            <li MayRequire="ludeon.rimworld.ideology">Lovin_SpouseOnly_Mild</li>
+            <li MayRequire="ludeon.rimworld.ideology">Research_None</li>
+            <li MayRequire="ludeon.rimworld.ideology">Research_ExtremelySlow</li>
+            <li MayRequire="ludeon.rimworld.ideology">Research_VerySlow</li>
+            <li MayRequire="ludeon.rimworld.ideology">Research_Slow</li>
+            <li MayRequire="ludeon.rimworld.ideology">OrganUse_Abhorrent</li>
+            <li MayRequire="ludeon.rimworld.ideology">OrganUse_HorribleNoSell</li>
+            <li MayRequire="ludeon.rimworld.ideology">DrugUse_Prohibited</li>
+            <li MayRequire="ludeon.rimworld.ideology">DrugUse_MedicalOnly</li>
+            <li MayRequire="ludeon.rimworld.ideology">Nudity_Female_NoRules</li>
+            <li MayRequire="ludeon.rimworld.ideology">Nudity_Male_NoRules</li>
+            <li MayRequire="ludeon.rimworld.ideology">Nudity_Female_CoveringAnythingButGroinDisapproved</li>
+            <li MayRequire="ludeon.rimworld.ideology">Nudity_Male_CoveringAnythingButGroinDisapproved</li>
+            <li MayRequire="ludeon.rimworld.ideology">Nudity_Male_Mandatory</li>
+            <li MayRequire="ludeon.rimworld.ideology">Nudity_Female_Mandatory</li>
         </disallowedPrecepts>
         <styles>
-            <li>USAC_Segments</li>
+            <li MayRequire="ludeon.rimworld.ideology">USAC_Segments</li>
         </styles>
         <arrivalLayerWhitelist>
             <li>Surface</li>

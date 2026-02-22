@@ -102,7 +102,7 @@
     <statBases>
       <MaxHitPoints>150</MaxHitPoints>
       <Mass>4</Mass>
-      <StuffEffectMultiplierArmor>1.27</StuffEffectMultiplierArmor>
+      <StuffEffectMultiplierArmor>1.4</StuffEffectMultiplierArmor>
       <StuffEffectMultiplierInsulation_Cold>0.18</StuffEffectMultiplierInsulation_Cold>
       <StuffEffectMultiplierInsulation_Heat>0.18</StuffEffectMultiplierInsulation_Heat>
       <EquipDelay>1.75</EquipDelay>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+    <!-- 在沒有Biotech的狀況下這些槍無法被取得，並且會掉落銷毀 -->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Biotech</li>
+        </mods>
+        <nomatch Class="PatchOperationSequence">
+            <operations>
+                <li Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[
+                        defName="USAC_Gun_CobraAC" or
+                        defName="USAC_Gun_ViperDMR" or
+                        defName="USAC_Gun_TorchwoodRR" or
+                        defName="USAC_Gun_CobraAC" or
+                        defName="USAC_Gun_CobraAC" or
+                        defName="USAC_Gun_CobraAC" 
+                        ]/statBases/StuffEffectMultiplierArmor</xpath>
+                    <value>
+                        <StuffEffectMultiplierArmor>3.5</StuffEffectMultiplierArmor>
+                    </value>
+                </li>
+            </operations>
+        </nomatch>
+    </Operation>
+</Patch>
