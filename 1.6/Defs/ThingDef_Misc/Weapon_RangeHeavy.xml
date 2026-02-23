@@ -311,7 +311,7 @@
         </offsets>
       </li>
       <li Class="Fortified.HeavyEquippableExtension">
-        <EquippableDef>TransHeavyAutomatroid</EquippableDef>
+        <EquippableDef>HeavyAutomatroid</EquippableDef>
       </li>
     </modExtensions>
   </ThingDef>
