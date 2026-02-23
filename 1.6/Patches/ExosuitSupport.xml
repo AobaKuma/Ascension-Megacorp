@@ -11,7 +11,9 @@
                     defName="StandardAutomatroid" or
                     defName="BulkyAutomatroid"
                     ]/EquippableWithApparel</xpath>
-                <value>USAC_Apparel_ExoSkeleton</value>
+                <value>
+                    <li>USAC_Apparel_ExoSkeleton</li>
+                </value>
             </li>
         </operations>
     </Operation>
