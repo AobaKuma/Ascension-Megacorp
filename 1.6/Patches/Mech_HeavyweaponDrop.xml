@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Biotech</li>
+        </mods>
+        <nomatch Class="PatchOperationSequence">
+            <operations>
+                <!-- 在沒有Biotech的狀況下不需要能換武器 -->
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/ThingDef[@Name="USAC_BaseMechRace"]/thingClass</xpath>
+                </li>
+                <!-- 在沒有Biotech的狀況下這些槍無法被取得，並且會掉落銷毀 -->
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[
+                        defName="USAC_Gun_CobraAC" or
+                        defName="USAC_Gun_BushmasterAC" or
+                        defName="USAC_Gun_TorchwoodRR"
+                        ]</xpath>
+                    <value>
+                        <destroyOnDrop>true</destroyOnDrop>
+                    </value>
+                </li>
+            </operations>
+        </nomatch>
+    </Operation>
+</Patch>

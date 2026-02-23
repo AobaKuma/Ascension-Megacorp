@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <operations>
+            <!-- 在沒有Biotech的狀況下不需要能換武器 -->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/Fortified.HeavyEquippableDef[
+                    defName="AverageHumanCanUse" or
+                    defName="LightAutomatroid" or
+                    defName="StandardAutomatroid" or
+                    defName="BulkyAutomatroid"
+                    ]/EquippableWithApparel</xpath>
+                <value>USAC_Apparel_ExoSkeleton</value>
+            </li>
+        </operations>
+    </Operation>
+</Patch>

@@ -83,12 +83,11 @@
                     <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
-                    <recoilAmount>0.9</recoilAmount>
+                    <recoilAmount>1.2</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
-                    <defaultProjectile>Bullet_20x102mmNATO_AP</defaultProjectile>
-                    <burstShotCount>4</burstShotCount>
-                    <ticksBetweenBurstShots>16</ticksBetweenBurstShots>
+                    <defaultProjectile>Bullet_35x228mmNATO_AP</defaultProjectile>
+                    <burstShotCount>1</burstShotCount>
                     <warmupTime>1.1</warmupTime>
                     <range>59.9</range>
                     <soundCast>Shot_Autocannon</soundCast>
@@ -154,7 +153,7 @@
                     <recoilAmount>0.9</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
-                    <defaultProjectile>Bullet_20x102mmNATO_AP</defaultProjectile>
+                    <defaultProjectile>Bullet_35x228mmNATO_AP</defaultProjectile>
                     <burstShotCount>4</burstShotCount>
                     <ticksBetweenBurstShots>16</ticksBetweenBurstShots>
                     <warmupTime>1.1</warmupTime>
