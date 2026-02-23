@@ -41,8 +41,6 @@
                     <aiAimMode>Snapshot</aiAimMode>
                     <aimedBurstShotCount>3</aimedBurstShotCount>
                 </FireModes>
-                <weaponTags>
-                </weaponTags>
             </li>
 
             <li Class="PatchOperationAdd">
@@ -198,8 +196,7 @@
                     <aiAimMode>AimedShot</aiAimMode>
                 </FireModes>
                 <weaponTags>
-                    <li>Bipod_ATR</li>
-                    <li>CE_AI_SR</li>
+                    <li>Bipod_DMR</li>
                 </weaponTags>
             </li>
 
@@ -291,8 +288,6 @@
                     <aiAimMode>AimedShot</aiAimMode>
                     <aimedBurstShotCount>4</aimedBurstShotCount>
                 </FireModes>
-                <weaponTags>
-                </weaponTags>
                 <AllowWithRunAndGun>true</AllowWithRunAndGun>
             </li>
 
