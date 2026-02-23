@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef ParentName="Outpost">
+    <defName>USAC_NeutralOutpost</defName>
+    <label>outpost</label>
+    <description>an outpost</description>
+    <gravShipsCanLandOn>true</gravShipsCanLandOn>
+    <tags Inherit="False">
+      <li>USAC_NeutralOutpost</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>USAC_NeutralOutpostGen</defName>
+    <linkWithSite>USAC_NeutralOutpost</linkWithSite>
+    <order>400</order>
+    <genStep Class="GenStep_Outpost"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>USAC_NeutralOutpostPower</defName>
+    <linkWithSite>USAC_NeutralOutpost</linkWithSite>
+    <order>401</order>
+    <genStep Class="GenStep_Power"/>
+  </GenStepDef>
+  
+  <HistoryEventDef>
+    <defName>USAC_Coverup</defName>
+    <label>Coverup successful</label>
+  </HistoryEventDef>
+
+  <HistoryEventDef>
+    <defName>USAC_Exposure</defName>
+    <label>Coverup failed: Identity exposed</label>
+  </HistoryEventDef>
+
+</Defs>

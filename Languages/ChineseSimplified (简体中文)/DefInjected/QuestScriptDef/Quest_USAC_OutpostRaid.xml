@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.0>questName->[target] [operation]</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.0>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.1>questName->[asker_faction_name] [operation]</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.1>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.2>questName->USAC [operation]: [target]</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.2>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.3>target(targetRelation==hostile)->敌方前哨</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.3>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.4>target(targetRelation==hostile)->敌军据点</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.4>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.5>target(targetRelation==hostile)->叛军营地</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.5>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.6>target(targetRelation==hostile)->前方哨所</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.6>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.7>target(targetRelation==neutral)->度假营地</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.7>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.8>target(targetRelation==neutral)->休憩驿站</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.8>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.9>target(targetRelation==neutral)->边境旅舍</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.9>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.10>target(targetRelation==neutral)->边陲哨所</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.10>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.11>operation(targetRelation==hostile)->清缴</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.11>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.12>operation(targetRelation==hostile)->突袭</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.12>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.13>operation(targetRelation==hostile)->扫荡</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.13>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.14>operation(targetRelation==hostile)->剿灭</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.14>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.15>operation(targetRelation==hostile)->清除行动</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.15>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.16>operation(targetRelation==neutral)->特别行动</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.16>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.17>operation(targetRelation==neutral)->处置</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.17>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.18>operation(targetRelation==neutral)->制裁</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.18>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.19>operation(targetRelation==neutral)->指令</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.19>
+    <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.20>operation(targetRelation==neutral)->清洗行动</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.20>
+
+    <!-- 中立时对USAC敌对目标 -->
+    <USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.0>questDescription(usacRelation==neutral)->[asker_faction_name]的低级联络员通过加密频道联系了你。在你的阵地附近发现了一处隶属于[siteFaction_name]的前哨站。他们的[siteFaction_pawnsPlural]一直在[hostileAction][asker_faction_name]在该区域的[targetAsset]。\n\n[asker_faction_name]要求你突击并消灭该据点的所有敌人。作为回报，他们将为此次行动提供报酬。根据侦察数据，[sitePart0_description]。</USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.0>
+    <!-- 友好时对敌对目标 -->
+    <USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.1>questDescription(usacRelation==ally,targetRelation==hostile)->[asker_faction_name]的联络员通过加密频道联系了你。在你的阵地附近发现了一处隶属于[siteFaction_name]的前哨站。他们的[siteFaction_pawnsPlural]一直在[hostileAction][asker_faction_name]在该区域的[targetAsset]。\n\n[asker_faction_name]请求你突击并消灭该据点的所有敌人。作为回报，他们将为此次行动提供报酬。根据侦察数据，[sitePart0_description]。</USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.1>
+    <!-- 友好时对中立目标 -->
+    <USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.2>questDescription(usacRelation==ally,targetRelation==neutral)->[asker_faction_name]的高级联络员通过加密频道联系了你。在你的阵地附近发现了一处隶属于[siteFaction_name]的前哨站。他们的[siteFaction_pawnsPlural]被评估为对[asker_faction_name]具有战略价值的目标。\n\n[asker_faction_name]请求你协助突击并消灭该据点的所有人。作为回报，他们将为此次行动提供报酬。根据侦察数据，[sitePart0_description]。</USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.2>
+
+    <USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.3>hostileAction->骚扰</USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.3>
+    <USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.4>hostileAction->袭击</USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.4>
+    <USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.5>hostileAction->截击</USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.5>
+    <USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.6>hostileAction->伏击</USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.6>
+    <USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.7>hostileAction->破坏</USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.7>
+    <USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.8>targetAsset->后勤补给线</USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.8>
+    <USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.9>targetAsset->前沿哨站</USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.9>
+    <USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.10>targetAsset->通讯中继站</USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.10>
+    <USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.11>targetAsset->资源运输队</USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.11>
+    <USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.12>targetAsset->巡逻分队</USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.12>
+
+    <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_NeutralOutpost>root(priority=1,sitePart==USAC_NeutralOutpost)->该地点有一个前哨站，驻守着(*Threat)[enemiesCount]名[enemiesLabel](/Threat)</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_NeutralOutpost>
+    <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_BanditCamp>root(priority=1,sitePart==BanditCamp)->该地点有一个驻扎着(*Threat)[enemiesCount]名敌人的匪徒营地</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_BanditCamp>
+    <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Outpost>root(priority=1,sitePart==Outpost)->该地点有一个被(*Threat)[enemiesCount]名敌人防守的前哨站</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Outpost>
+    <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Fallback>root->有个[label]</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Fallback>
+
+    <USAC_LetterLabelOutpostExpired>任务过期：[resolvedQuestName]</USAC_LetterLabelOutpostExpired>
+    <USAC_LetterTextOutpostExpired>目标前哨站已转移阵地。行动[resolvedQuestName]已被取消。</USAC_LetterTextOutpostExpired>
+
+    <USAC_LetterLabelOutpostFailed>任务失败：[resolvedQuestName]</USAC_LetterLabelOutpostFailed>
+    <USAC_LetterTextOutpostFailed>目标前哨站察觉到你的接近后已四散撤离。行动[resolvedQuestName]已失败。</USAC_LetterTextOutpostFailed>
+
+    <USAC_LetterLabelPayment>USAC报酬已送达</USAC_LetterLabelPayment>
+    <USAC_LetterTextPayment>你已成功消灭了目标据点的所有人！\n\nUSAC已从[asker_faction_name]发出了约定的报酬。</USAC_LetterTextPayment>
+
+    <USAC_LetterLabelEscaped>行动泄露：[resolvedQuestName]</USAC_LetterLabelEscaped>
+    <USAC_LetterTextEscaped>由于有活口从目标地点逃脱，你的行动已经泄露。[siteFaction_name]已经得知了这次袭击。任务失败。</USAC_LetterTextEscaped>
+
+
+</LanguageData>

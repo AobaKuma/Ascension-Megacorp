@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- USAC 据点清缴任务 -->
+    <QuestScriptDef>
+        <defName>USAC_OpportunitySite_OutpostRaid</defName>
+        <rootSelectionWeight>1.0</rootSelectionWeight>
+        <rootMinPoints>400</rootMinPoints>
+        <expireDaysRange>4~8</expireDaysRange>
+        <questNameRules>
+            <rulesStrings>
+                <li>questName-&gt;[target] [operation]</li>
+                <li>questName-&gt;[asker_faction_name] [operation]</li>
+                <li>questName-&gt;USAC [operation]: [target]</li>
+                <li>target(targetRelation==hostile)-&gt;Hostile Outpost</li>
+                <li>target(targetRelation==hostile)-&gt;Enemy Camp</li>
+                <li>target(targetRelation==hostile)-&gt;Rogue Base</li>
+                <li>target(targetRelation==hostile)-&gt;Forward Post</li>
+                <li>target(targetRelation==neutral)-&gt;Resort Camp</li>
+                <li>target(targetRelation==neutral)-&gt;Retreat Site</li>
+                <li>target(targetRelation==neutral)-&gt;Remote Lodge</li>
+                <li>target(targetRelation==neutral)-&gt;Frontier Outpost</li>
+                <li>operation(targetRelation==hostile)-&gt;Sweep</li>
+                <li>operation(targetRelation==hostile)-&gt;Raid</li>
+                <li>operation(targetRelation==hostile)-&gt;Cleanup</li>
+                <li>operation(targetRelation==hostile)-&gt;Elimination</li>
+                <li>operation(targetRelation==hostile)-&gt;Clearance</li>
+                <li>operation(targetRelation==neutral)-&gt;Special Op</li>
+                <li>operation(targetRelation==neutral)-&gt;Disposal</li>
+                <li>operation(targetRelation==neutral)-&gt;Sanction</li>
+                <li>operation(targetRelation==neutral)-&gt;Directive</li>
+                <li>operation(targetRelation==neutral)-&gt;Clean Sweep</li>
+            </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+            <rulesStrings>
+                <!-- 中立时对USAC敌对目标 -->
+                <li>questDescription(usacRelation==neutral)-&gt;A low-level liaison of [asker_faction_name] has contacted you via encrypted channel. A hostile outpost belonging to [siteFaction_name] has been identified near your position. Their [siteFaction_pawnsPlural] have been [hostileAction] [asker_faction_name]'s [targetAsset] in the region.\n\n[asker_faction_name] demands you to assault and eliminate all hostiles at the site. In return, they will provide compensation for the operation. According to recon data, [sitePart0_description].</li>
+                <!-- 友好时对敌对目标 -->
+                <li>questDescription(usacRelation==ally,targetRelation==hostile)-&gt;A liaison of [asker_faction_name] has contacted you via encrypted channel. A hostile outpost belonging to [siteFaction_name] has been identified near your position. Their [siteFaction_pawnsPlural] have been [hostileAction] [asker_faction_name]'s [targetAsset] in the region.\n\n[asker_faction_name] is requesting you to assault and eliminate all hostiles at the site. In return, they will provide compensation for the operation. According to recon data, [sitePart0_description].</li>
+                <!-- 友好时对中立目标 -->
+                <li>questDescription(usacRelation==ally,targetRelation==neutral)-&gt;A senior liaison of [asker_faction_name] has contacted you via encrypted channel. An outpost belonging to [siteFaction_name] has been identified near your position. Their [siteFaction_pawnsPlural] have been assessed as a target of strategic value to [asker_faction_name].\n\n[asker_faction_name] is requesting your assistance to assault and eliminate everyone at the site. In return, they will provide compensation for the operation. According to recon data, [sitePart0_description].</li>
+                <!-- 动态文本词库 -->
+                <li>hostileAction-&gt;disrupting</li>
+                <li>hostileAction-&gt;harassing</li>
+                <li>hostileAction-&gt;raiding</li>
+                <li>hostileAction-&gt;ambushing</li>
+                <li>hostileAction-&gt;intercepting</li>
+                <li>targetAsset-&gt;logistics and supply routes</li>
+                <li>targetAsset-&gt;forward outposts</li>
+                <li>targetAsset-&gt;comm relays</li>
+                <li>targetAsset-&gt;resource convoys</li>
+                <li>targetAsset-&gt;patrol units</li>
+            </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+            <nodes>
+                <!-- 随机化难度 -->
+                <li Class="QuestNode_SubScript">
+                    <def>Util_RandomizePointsChallengeRating</def>
+                    <parms>
+                        <pointsFactorTwoStar>1.5</pointsFactorTwoStar>
+                        <pointsFactorThreeStar>2</pointsFactorThreeStar>
+                    </parms>
+                </li>
+
+                <!-- 远程战斗点数调整 -->
+                <li Class="QuestNode_SubScript">
+                    <def>Util_AdjustPointsForDistantFight</def>
+                </li>
+
+                <!-- 获取玩家地图 -->
+                <li Class="QuestNode_GetMap" />
+
+                <!-- 获取USAC领袖作为委托人 -->
+                <li Class="QuestNode_GetPawn">
+                    <storeAs>asker</storeAs>
+                    <mustBeFactionLeader>true</mustBeFactionLeader>
+                    <mustBeOfKind>USAC_Executive</mustBeOfKind>
+                    <allowPermanentEnemyFaction>false</allowPermanentEnemyFaction>
+                </li>
+
+                <!-- 自定义派系和站点部件选择 -->
+                <li Class="USAC.QuestNode_USAC_GetEnemyFaction">
+                    <storeFactionAs>siteFaction</storeFactionAs>
+                    <storeSitePartsAs>sitePartDefs</storeSitePartsAs>
+                    <storeRelationAs>targetRelation</storeRelationAs>
+                </li>
+
+                <!-- 设置USAC与玩家关系标记 -->
+                <li Class="USAC.QuestNode_USAC_IsAllyToPlayer">
+                    <node Class="QuestNode_Set">
+                        <name>usacRelation</name>
+                        <value>ally</value>
+                    </node>
+                    <elseNode Class="QuestNode_Set">
+                        <name>usacRelation</name>
+                        <value>neutral</value>
+                    </elseNode>
+                </li>
+
+                <!-- 获取站点地块 -->
+                <li Class="QuestNode_GetSiteTile">
+                    <storeAs>siteTile</storeAs>
+                    <preferCloserTiles>true</preferCloserTiles>
+                </li>
+
+
+
+                <!-- 获取站点参数 -->
+                <li Class="QuestNode_GetDefaultSitePartsParams">
+                    <tile>$siteTile</tile>
+                    <faction>$siteFaction</faction>
+                    <sitePartDefs>$sitePartDefs</sitePartDefs>
+                    <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+                </li>
+
+                <!-- 获取威胁点数 -->
+                <li Class="QuestNode_GetSiteThreatPoints">
+                    <storeAs>sitePoints</storeAs>
+                    <sitePartsParams>$sitePartsParams</sitePartsParams>
+                </li>
+
+                <!-- 计算奖励价值 -->
+                <li Class="QuestNode_SubScript">
+                    <def>Util_GetDefaultRewardValueFromPoints</def>
+                    <parms>
+                        <points>$sitePoints</points>
+                    </parms>
+                </li>
+
+                <!-- 基础奖励倍率 -->
+                <li Class="QuestNode_Multiply">
+                    <value1>$rewardValue</value1>
+                    <value2>1.75</value2>
+                    <storeAs>rewardValue</storeAs>
+                </li>
+
+                <!-- 中立目标额外1.5倍奖励 -->
+                <li Class="QuestNode_IsTrue">
+                    <value>$isNeutralTarget</value>
+                    <node Class="QuestNode_Multiply">
+                        <value1>$rewardValue</value1>
+                        <value2>1.5</value2>
+                        <storeAs>rewardValue</storeAs>
+                    </node>
+                </li>
+
+                <!-- 生成站点 -->
+                <li Class="QuestNode_GenerateSite">
+                    <sitePartsParams>$sitePartsParams</sitePartsParams>
+                    <storeAs>site</storeAs>
+                    <faction>$siteFaction</faction>
+                    <tile>$siteTile</tile>
+                    <singleSitePartRules>
+                        <rulesStrings>
+                            <li TKey="USAC_SitePart_NeutralOutpost">root(priority=1,sitePart==USAC_NeutralOutpost)->there's an outpost at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</li>
+                            <li TKey="USAC_SitePart_BanditCamp">root(priority=1,sitePart==BanditCamp)->there's a bandit camp at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</li>
+                            <li TKey="USAC_SitePart_Outpost">root(priority=1,sitePart==Outpost)->there's an enemy outpost at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</li>
+                            <li TKey="USAC_SitePart_Fallback">root->there's a [label]</li>
+                        </rulesStrings>
+                    </singleSitePartRules>
+                </li>
+
+                <!-- 设置站点自定义名称 -->
+                <li Class="USAC.QuestNode_USAC_SetSiteLabel">
+                    <site>$site</site>
+                    <label>$siteLabel</label>
+                </li>
+
+                <!-- 在世界地图放置站点 -->
+                <li Class="QuestNode_SpawnWorldObjects">
+                    <worldObjects>$site</worldObjects>
+                </li>
+
+                <!-- 隐蔽行动控制器 -->
+                <li Class="Fortified.QuestNode_FFF_SetupRaidController">
+                    <mapParent>$site</mapParent>
+                    <faction>$siteFaction</faction>
+                </li>
+
+                <!-- 敌人逃跑导致任务失败 -->
+                <li Class="QuestNode_Signal">
+                    <inSignal>EnemyEscaped</inSignal>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Letter">
+                                <label TKey="USAC_LetterLabelEscaped">Operation compromised: [resolvedQuestName]</label>
+                                <text TKey="USAC_LetterTextEscaped">Hostiles have escaped from the target site. The operation has been compromised. [siteFaction_name] will learn of your attack.</text>
+                            </li>
+                            <li Class="QuestNode_End">
+                                <outcome>Fail</outcome>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+
+                <!-- 超时机制 -->
+                <li Class="QuestNode_WorldObjectTimeout">
+                    <worldObject>$site</worldObject>
+                    <isQuestTimeout>true</isQuestTimeout>
+                    <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+                    <inSignalDisable>site.MapGenerated</inSignalDisable>
+                    <destroyOnCleanup>true</destroyOnCleanup>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Letter">
+                                <label TKey="USAC_LetterLabelOutpostExpired">Quest expired: [resolvedQuestName]</label>
+                                <text TKey="USAC_LetterTextOutpostExpired">The target outpost has relocated. The operation [resolvedQuestName] has been canceled.</text>
+                            </li>
+                            <li Class="QuestNode_End">
+                                <outcome>Fail</outcome>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+
+                <!-- 提前离开导致任务失败 -->
+                <li Class="QuestNode_Signal">
+                    <inSignal>site.Destroyed</inSignal>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Letter">
+                                <label TKey="USAC_LetterLabelOutpostFailed">Quest failed: [resolvedQuestName]</label>
+                                <text TKey="USAC_LetterTextOutpostFailed">The target outpost has detected your approach and dispersed. The operation [resolvedQuestName] has failed.</text>
+                            </li>
+                            <li Class="QuestNode_End">
+                                <outcome>Fail</outcome>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+
+                <!-- 消灭所有敌人后成功 -->
+                <li Class="QuestNode_Signal">
+                    <inSignal>$allKilledSignal</inSignal>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Notify_PlayerRaidedSomeone">
+                                <getRaidersFromMapParent>$site</getRaidersFromMapParent>
+                            </li>
+                            <li Class="QuestNode_GiveRewards">
+                                <parms>
+                                    <allowGoodwill>true</allowGoodwill>
+                                    <allowRoyalFavor>false</allowRoyalFavor>
+                                </parms>
+                                <addCampLootReward>true</addCampLootReward>
+                                <customLetterLabel TKey="USAC_LetterLabelPayment">USAC payment arrived</customLetterLabel>
+                                <customLetterText TKey="USAC_LetterTextPayment">You have eliminated the target outpost!\n\nUSAC has sent the agreed compensation from [asker_faction_name].</customLetterText>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+
+                <!-- 任务完成 -->
+                <li Class="QuestNode_End">
+                    <inSignal>$allKilledSignal</inSignal>
+                    <outcome>Success</outcome>
+                </li>
+            </nodes>
+        </root>
+    </QuestScriptDef>
+
+</Defs>

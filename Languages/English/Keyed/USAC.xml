@@ -132,4 +132,18 @@
 
     <TraderArrivalNoFaction>They do not belong to any known faction.</TraderArrivalNoFaction>
 
+    <!-- Site 站点标签 -->
+  <USAC_SiteLabel_HostileOutpost>Hostile Outpost</USAC_SiteLabel_HostileOutpost>
+  <USAC_SiteLabel_EnemyCamp>Enemy Camp</USAC_SiteLabel_EnemyCamp>
+  <USAC_SiteLabel_RogueBase>Rogue Base</USAC_SiteLabel_RogueBase>
+  <USAC_SiteLabel_ForwardPost>Forward Post</USAC_SiteLabel_ForwardPost>
+  <USAC_SiteLabel_Resort>Resort Camp</USAC_SiteLabel_Resort>
+  <USAC_SiteLabel_Retreat>Retreat Site</USAC_SiteLabel_Retreat>
+  <USAC_SiteLabel_Lodge>Remote Lodge</USAC_SiteLabel_Lodge>
+  <USAC_SiteLabel_Outpost>Frontier Outpost</USAC_SiteLabel_Outpost>
+
+  <USAC_LetterLabelCoverup>Coverup Successful</USAC_LetterLabelCoverup>
+  <USAC_LetterTextCoverup>{0} provided cover for your operation, several outputs were attacked and destroyed by {1}, they couldn't uncover your involvement. The elimination was a complete success.</USAC_LetterTextCoverup>
+  <USAC_Coverup>Coverup Successful</USAC_Coverup>
+
 </LanguageData>
