@@ -3,19 +3,22 @@
 <Patch>
     <Operation Class="PatchOperationSequence">
         <operations>
+			
             <!--power skeleton-->
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="USAC_Apparel_ExoSkeleton"]/statBases/ArmorRating_Sharp</xpath>
 				<value>
-					<ArmorRating_Sharp>5</ArmorRating_Sharp>
+					<ArmorRating_Sharp>15</ArmorRating_Sharp>
 				</value>
 			</li>
+			
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="USAC_Apparel_ExoSkeleton"]/statBases/ArmorRating_Blunt</xpath>
 				<value>
-					<ArmorRating_Blunt>15</ArmorRating_Blunt>
+					<ArmorRating_Blunt>35</ArmorRating_Blunt>
 				</value>
 			</li>
+			
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="USAC_Apparel_ExoSkeleton"]/statBases</xpath>
 				<value>
@@ -23,24 +26,29 @@
 					<WornBulk>10</WornBulk>
 				</value>
 			</li>
+			
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="USAC_Apparel_ExoSkeleton"]/equippedStatOffsets</xpath>
 				<value>
-					<CarryWeight>125</CarryWeight>
+					<CarryWeight>155</CarryWeight>
+					<CarryBulk>165</CarryBulk>
 				</value>
 			</li>
+			
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="USAC_Apparel_ExoSkeleton"]/comps/li[@Class="Fortified.CompProperties_BulletproofPlate"]</xpath>
 				<value>
 					<compClass>FortifiedCE.CompBulletproofPlate</compClass>
 				</value>
 			</li>
+			
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="USAC_Apparel_ExoSkeleton"]/comps/li[@Class="Fortified.CompProperties_BulletproofPlate"]/armorRating</xpath>
 				<value>
 					<armorRating>20</armorRating>
 				</value>
 			</li>
+			
         </operations>
     </Operation>
 </Patch>
