@@ -4,7 +4,7 @@
   <SitePartDef ParentName="Outpost">
     <defName>USAC_NeutralOutpost</defName>
     <label>outpost</label>
-    <description>there are [enemiesCount] [enemiesLabel] in the outpost</description>
+    <description>an outpost</description>
     <gravShipsCanLandOn>true</gravShipsCanLandOn>
     <tags Inherit="False">
       <li>USAC_NeutralOutpost</li>
