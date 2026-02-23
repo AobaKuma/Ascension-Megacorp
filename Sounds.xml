@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <SoundDef>
+    <defName>USAC_BushmasterIII_Shot</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>USAC/USAC_BushmsaterIII</clipPath>
+          </li>
+        </grains>
+        <volumeRange>90~95</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>USAC_105mmRR_Shot</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipPath>USAC_105mmRR</clipPath>
+          </li>
+        </grains>
+        <volumeRange>90~95</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>USAC_Suppressor_Shot</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>USAC_Suppressor</clipPath>
+          </li>
+        </grains>
+        <volumeRange>90~95</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>USAC_MachineGunHeavy_Shot</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>USAC_HMG</clipPath>
+          </li>
+        </grains>
+        <volumeRange>90~95</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>USAC_SniperRifle_Shot</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>USAC_SR</clipPath>
+          </li>
+        </grains>
+        <volumeRange>90~95</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+
+</Defs>
