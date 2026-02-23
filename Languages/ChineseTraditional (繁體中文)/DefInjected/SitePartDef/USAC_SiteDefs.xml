@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- USAC_NeutralOutpost -->
+  <USAC_NeutralOutpost.label>前哨站</USAC_NeutralOutpost.label>
+  <USAC_NeutralOutpost.description>該前哨站內共有[enemiesCount]名[enemiesLabel]</USAC_NeutralOutpost.description>
+  <USAC_NeutralOutpost.approachOrderString>突擊{0}</USAC_NeutralOutpost.approachOrderString>
+  <USAC_NeutralOutpost.approachingReportString>正在突擊{0}</USAC_NeutralOutpost.approachingReportString>
+  <USAC_NeutralOutpost.arrivedLetter>這片區域存在一個前哨站。</USAC_NeutralOutpost.arrivedLetter>
+</LanguageData>

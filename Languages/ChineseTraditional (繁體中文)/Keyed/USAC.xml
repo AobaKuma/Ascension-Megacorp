@@ -187,4 +187,20 @@
     <!-- EN: They do not belong to any known faction. -->
   <TraderArrivalNoFaction>他們不屬於任何已知派系。</TraderArrivalNoFaction>
 
+    <!-- 站點標籤 -->
+  <USAC_SiteLabel_HostileOutpost>敵方前哨</USAC_SiteLabel_HostileOutpost>
+  <USAC_SiteLabel_EnemyCamp>敵軍營地</USAC_SiteLabel_EnemyCamp>
+  <USAC_SiteLabel_RogueBase>叛軍據點</USAC_SiteLabel_RogueBase>
+  <USAC_SiteLabel_ForwardPost>前方哨所</USAC_SiteLabel_ForwardPost>
+  <USAC_SiteLabel_Resort>度假營地</USAC_SiteLabel_Resort>
+  <USAC_SiteLabel_Retreat>休憩驛站</USAC_SiteLabel_Retreat>
+  <USAC_SiteLabel_Lodge>邊境旅舍</USAC_SiteLabel_Lodge>
+  <USAC_SiteLabel_Outpost>邊陲哨所</USAC_SiteLabel_Outpost>
+  <USAC_SiteLabel_HostileCamp>敵軍據點</USAC_SiteLabel_HostileCamp>
+  <USAC_SiteLabel_HostileBase>叛軍營地</USAC_SiteLabel_HostileBase>
+  
+  <USAC_LetterLabelCoverup>罪跡掩蓋</USAC_LetterLabelCoverup>
+  <USAC_LetterTextCoverup>{0}為你的行動提供了遮掩，數個據點被{1}攻擊和摧毀，他們沒能發現是你做了這一切，滅口行動很成功。</USAC_LetterTextCoverup>
+  <USAC_Coverup>罪跡掩蓋</USAC_Coverup>
+
 </LanguageData>

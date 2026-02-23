@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <USAC_LetterLabelOutpostExpired>Quest expired: [resolvedQuestName]</USAC_LetterLabelOutpostExpired>
+    <USAC_LetterTextOutpostExpired>The target outpost has relocated. The operation [resolvedQuestName] has been canceled.</USAC_LetterTextOutpostExpired>
+
+    <USAC_LetterLabelOutpostFailed>Quest failed: [resolvedQuestName]</USAC_LetterLabelOutpostFailed>
+    <USAC_LetterTextOutpostFailed>The target outpost has detected your approach and dispersed. The operation [resolvedQuestName] has failed.</USAC_LetterTextOutpostFailed>
+
+    <USAC_LetterLabelPayment>USAC payment arrived</USAC_LetterLabelPayment>
+    <USAC_LetterTextPayment>You have eliminated the target outpost!\n\nUSAC has sent the agreed compensation from [asker_faction_name].</USAC_LetterTextPayment>
+
+    <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_NeutralOutpost>root(priority=1,sitePart==USAC_NeutralOutpost)->there's an outpost at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_NeutralOutpost>
+    <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_BanditCamp>root(priority=1,sitePart==BanditCamp)->there's a bandit camp at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_BanditCamp>
+    <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Outpost>root(priority=1,sitePart==Outpost)->there's an enemy outpost at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Outpost>
+    <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Fallback>root->there's a [label]</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Fallback>
+
+</LanguageData>
