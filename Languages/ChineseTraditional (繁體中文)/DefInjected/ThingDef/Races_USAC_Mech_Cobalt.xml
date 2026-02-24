@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: M7 "Cobalt" -->
+  <USAC_Mech_Cobalt.label>M7「鈷合金」</USAC_Mech_Cobalt.label>
+  <!-- EN: A medium quadruped cargo mech with integrated machine gun. Features shotgun-resistant armor plating, cargo hauling capability, and smoke grenade deployment system. -->
+  <USAC_Mech_Cobalt.description>一種被用於在都市戰環境中攜帶重火力來支援步兵推進與掃蕩火力點的中型四足機兵平台，通常會安裝自動榴彈發射器或一桿高精度自動砲來有效的清除建築樓層中的定點陣地。在地球時代由於該型機兵在街上鎮壓暴徒時能夠靠著外殼無視燃燒彈的點燃，其全身燃燒時不為所動的壓迫感也被人暱稱為地獄犬。</USAC_Mech_Cobalt.description>
+  <!-- EN: head -->
+  <USAC_Mech_Cobalt.tools.head.label>頭部</USAC_Mech_Cobalt.tools.head.label>
+  
+</LanguageData>

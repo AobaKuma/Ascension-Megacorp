@@ -16,6 +16,11 @@
   <!-- EN: exo infantries -->
   <USAC_Heavy.labelPlural>重裝兵</USAC_Heavy.labelPlural>
   
+  <!-- EN: heavy sniper -->
+  <USAC_Heavy_Sniper.label>重型狙擊手</USAC_Heavy_Sniper.label>
+  <!-- EN: heavy snipers -->
+  <USAC_Heavy_Sniper.labelPlural>重型狙擊手</USAC_Heavy_Sniper.labelPlural>
+  
   <!-- EN: rifleman -->
   <USAC_Rifleman.label>步槍兵</USAC_Rifleman.label>
   <!-- EN: riflemen -->

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: debt squad -->
+  <USAC_ScenarioDebtStart.label>負債小隊</USAC_ScenarioDebtStart.label>
+  <!-- EN: Four people tied to USAC contracts hit atmosphere in a failing drop pod line: a debt inheritor, a laid-off mech technician, a former security hand, and a frontier laborer who signed every waiver put in front of them. None of them were meant to lead a colony, but all of them were built to survive hard terms. On this rimworld, contracts mean nothing unless you can defend them. -->
+  <USAC_ScenarioDebtStart.description>四位與USAC簽訂合同的殖民者乘坐故障的空投艙墜入大氣層：債務繼承人、失業的機甲技師、前保安，又或者單純的邊境勞工，他們簽署了擺在面前的所有免責聲明負債參與了邊境計畫。他們在母星上的經歷證明了他們天生適合在嚴苛的條件下生存，他們離開了家鄉奔向自由...以及更多的債務。</USAC_ScenarioDebtStart.description>
+  <!-- EN: Four people tied to USAC contracts hit atmosphere in a failing drop pod line: a debt inheritor, a laid-off mech technician, a former security hand, and a frontier laborer who signed every waiver put in front of them. None of them were meant to lead a colony, but all of them were built to survive hard terms. On this rimworld, contracts mean nothing unless you can defend them. -->
+  <USAC_ScenarioDebtStart.scenario.description>四位與USAC簽訂合同的殖民者乘坐故障的空投艙墜入大氣層：債務繼承人、失業的機甲技師、前保安，又或者單純的邊境勞工，他們簽署了擺在面前的所有免責聲明負債參與了邊境計畫。他們在母星上的經歷證明了他們天生適合在嚴苛的條件下生存，他們離開了家鄉奔向自由...\n\n以及更多的債務。</USAC_ScenarioDebtStart.scenario.description>
+  <!-- EN: debt squad -->
+  <USAC_ScenarioDebtStart.scenario.name>負債小隊</USAC_ScenarioDebtStart.scenario.name>
+  <!-- EN: Four USAC-linked survivors: debt, layoffs, war experience, and frontier contracts forged into one desperate start. -->
+  <USAC_ScenarioDebtStart.scenario.summary>四位與飛升巨企密切相關的倖存者：債務、裁員、戰爭經歷和器官捐贈合同，造就了他們絕望的開始。</USAC_ScenarioDebtStart.scenario.summary>
+  <!-- EN: The emergency siren cuts through reentry. USAC has already written this loss off as acceptable risk.
+
+You are four survivors from different contract chains: debt inheritance, automation layoffs, penal security work, and frontier hazard labor. Supplies are limited, support is gone, and every promise now depends on what you can build and defend on this rimworld. -->
+  <USAC_ScenarioDebtStart_GameStartDialog>重返大氣層的警報聲撕裂艙體，USAC 早已把這次損失列入可接受風險。\n\n你們四人來自不同的契約鏈：繼承債務者、被自動機兵取代的技工、做過懲戒看守的武裝人員，以及簽下整份免責條款的邊疆勞工。補給有限、支援中斷，從現在起，所有承諾都只取決於你們能在這顆邊緣世界上建立並守住什麼。</USAC_ScenarioDebtStart_GameStartDialog>
+
+
+</LanguageData>

@@ -2,6 +2,22 @@
 <Defs>
 
   <SoundDef>
+    <defName>USAC_Gun_Shot</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>9</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>USAC/guncast</clipPath>
+          </li>
+        </grains>
+        <pitchRange>1.0~1.5</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
     <defName>USAC_BushmasterIII_Shot</defName>
     <context>MapOnly</context>
     <maxSimultaneous>5</maxSimultaneous>
@@ -9,7 +25,7 @@
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>USAC_BushmsaterIII</clipPath>
+            <clipPath>USAC/BushMasterIII</clipPath>
           </li>
         </grains>
         <volumeRange>90~95</volumeRange>
@@ -25,7 +41,7 @@
       <li>
         <grains>
           <li Class="AudioGrain_Folder">
-            <clipPath>USAC_105mmRR</clipPath>
+            <clipPath>USAC/105mmRR</clipPath>
           </li>
         </grains>
         <volumeRange>90~95</volumeRange>
@@ -41,7 +57,7 @@
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>USAC_Suppressor</clipPath>
+            <clipPath>USAC/Suppressor</clipPath>
           </li>
         </grains>
         <volumeRange>90~95</volumeRange>
@@ -57,7 +73,7 @@
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>USAC_HMG</clipPath>
+            <clipPath>USAC/HMG</clipPath>
           </li>
         </grains>
         <volumeRange>90~95</volumeRange>
@@ -73,7 +89,7 @@
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>USAC_SR</clipPath>
+            <clipPath>USAC/SR</clipPath>
           </li>
         </grains>
         <volumeRange>90~95</volumeRange>

@@ -39,4 +39,13 @@ Destroy the assault rig and eliminate the escorts to stop the operation.</letter
         <letterDef>ThreatBig</letterDef>
     </IncidentDef>
 
+    <!-- <IncidentDef ParentName="GiveQuestBase">
+        <defName>GiveQuest_USAC_OpportunitySite_OutpostRaid</defName>
+        <label>USAC outpost operation</label>
+        <letterLabel>USAC operation opportunity</letterLabel>
+        <questScriptDef>USAC_OpportunitySite_OutpostRaid</questScriptDef>
+        <pointsScaleable>true</pointsScaleable>
+        <baseChance>0</baseChance>
+    </IncidentDef> -->
+
 </Defs>

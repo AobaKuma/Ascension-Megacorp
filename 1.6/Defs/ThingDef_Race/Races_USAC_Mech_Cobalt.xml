@@ -14,7 +14,7 @@
       <StaggerDurationFactor>0.1</StaggerDurationFactor>
       <MechEnergyUsageFactor MayRequire="Ludeon.Rimworld.Biotech">0.5</MechEnergyUsageFactor>
       <CarryingCapacity>120</CarryingCapacity>
-      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
     </statBases>
     <race>

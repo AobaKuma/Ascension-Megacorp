@@ -9,13 +9,11 @@
   <USAC_Apparel_ExoSkeleton.apparel.renderNodeProperties.0.debugLabel>外骨骼上衣</USAC_Apparel_ExoSkeleton.apparel.renderNodeProperties.0.debugLabel>
   <!-- EN: exosuit bottom -->
   <USAC_Apparel_ExoSkeleton.apparel.renderNodeProperties.1.debugLabel>外骨骼褲子</USAC_Apparel_ExoSkeleton.apparel.renderNodeProperties.1.debugLabel>
-  <!-- EN: offering additional {0} on covered body parts, will lose durability after taking damage.\nDurability can be replenished using {1}, restoring {2} points per material. -->
+  <!-- EN: offering additional {0} on covered body parts, will lose durability after taking damage.\n{1} -->
   <USAC_Apparel_ExoSkeleton.comps.CompBulletproofPlate.durabilityDescKey>對於覆蓋的部位提供{0}的額外防護。在承受傷害後耐久將降低並有概率防護失效。</USAC_Apparel_ExoSkeleton.comps.CompBulletproofPlate.durabilityDescKey>
-
-  <!-- EN: offering additional {0} on covered body parts, will lose durability after taking damage.\nDurability can be replenished using {1}, restoring {2} points per material. -->
+  <!-- EN: durability can be replenished using {0}, restoring {1} points per material. -->
   <USAC_Apparel_ExoSkeleton.comps.CompBulletproofPlate.refillDescKey>可以在脫下後使用{0}來補充耐久，每單位材料可恢復{1}點。</USAC_Apparel_ExoSkeleton.comps.CompBulletproofPlate.refillDescKey>
-
-  <!-- EN: install plates for {0} ({1}x {2}) -->
+  <!-- EN: replenished plates {0} ({1}x {2}) -->
   <USAC_Apparel_ExoSkeleton.comps.CompBulletproofPlate.refillVerbKey>為{0}更換防彈插板({1}x {2})</USAC_Apparel_ExoSkeleton.comps.CompBulletproofPlate.refillVerbKey>
   
 </LanguageData>

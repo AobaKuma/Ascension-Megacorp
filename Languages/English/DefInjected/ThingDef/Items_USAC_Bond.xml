@@ -3,10 +3,10 @@
   
   <!-- EN: credit bond -->
   <USAC_Bond.label>credit bond</USAC_Bond.label>
-  <!-- EN: A physical, registered certificate issued by USAC Corporation dealers to the Ground Faction during transactions.Made from special type of high-tenacity fibers paper and its surface is printed with special ink, featuring sophisticated anti-counterfeiting markings and the registered owner's information.\n\nSurplus value from transactions with USAC Corporation can be used to purchase these certificates with fixed purchasing power for future transactions.\n\nBecause the certificates are registered, it cannot be used by anyone other than the registered owner; therefore, this highly durable paper is essentially useless to other factions in Rimworld. -->
-  <USAC_Bond.description>A physical, registered certificate issued by USAC Corporation dealers to the Ground Faction during transactions.Made from special type of high-tenacity fibers paper and its surface is printed with special ink, featuring sophisticated anti-counterfeiting markings and the registered owner's information.
+  <!-- EN: A physical, registered certificate issued by United Stellar Armament Company dealers to the Ground Faction during transactions.Made from special type of high-tenacity fibers paper and its surface is printed with special ink, featuring sophisticated anti-counterfeiting markings and the registered owner's information.\n\nSurplus value from transactions with United Stellar Armament Company can be used to purchase these certificates with fixed purchasing power for future transactions.\n\nBecause the certificates are registered, it cannot be used by anyone other than the registered owner; therefore, this highly durable paper is essentially useless to other factions in Rimworld. -->
+  <USAC_Bond.description>A physical, registered certificate issued by United Stellar Armament Company dealers to the Ground Faction during transactions.Made from special type of high-tenacity fibers paper and its surface is printed with special ink, featuring sophisticated anti-counterfeiting markings and the registered owner's information.
 
-Surplus value from transactions with USAC Corporation can be used to purchase these certificates with fixed purchasing power for future transactions.
+Surplus value from transactions with United Stellar Armament Company can be used to purchase these certificates with fixed purchasing power for future transactions.
 
 Because the certificates are registered, it cannot be used by anyone other than the registered owner; therefore, this highly durable paper is essentially useless to other factions in Rimworld.</USAC_Bond.description>
   

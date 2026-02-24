@@ -91,4 +91,57 @@
     </comps>
   </ThingDef>
 
+  <!-- Pain Relief Survival Pack -->
+  <ThingDef ParentName="MealBase">
+    <defName>USAC_MealSurvivalPack</defName>
+    <label>B-Ration</label>
+    <description>A military meal made from a soft split bun, compressed protein patty, and some sharp sauce. Its patented sealed packaging allows it to remain viable for decades when heated unopened. Along with stable calories, it contains a sustained-release analgesic formula that reduces bodily pain for about half a day.</description>
+    <graphicData>
+      <texPath>Things/Item/Meal/bRation</texPath>
+      <graphicClass>Graphic_MealVariants</graphicClass>
+    </graphicData>
+    <statBases>
+      <DeteriorationRate>0.25</DeteriorationRate>
+      <MarketValue>40</MarketValue>
+      <Mass>0.2</Mass>
+      <Nutrition>1.0</Nutrition>
+    </statBases>
+    <tradeability>Buyable</tradeability>
+    <ingestible>
+      <preferability>MealSimple</preferability>
+      <optimalityOffsetHumanlikes>-4</optimalityOffsetHumanlikes>
+      <optimalityOffsetFeedingAnimals>-100</optimalityOffsetFeedingAnimals>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>Meal_Eat</ingestSound>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>USAC_PainReliefIngestion</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <allowedArchonexusCount>40</allowedArchonexusCount>
+  </ThingDef>
+
+  <HediffDef>
+    <defName>USAC_PainReliefIngestion</defName>
+    <label>analgesic effect</label>
+    <labelNoun>analgesic effect from ingested meal</labelNoun>
+    <description>A sustained analgesic effect from ingested b-ration.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>30000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.6</painFactor>
+      </li>
+    </stages>
+  </HediffDef>
+
 </Defs>

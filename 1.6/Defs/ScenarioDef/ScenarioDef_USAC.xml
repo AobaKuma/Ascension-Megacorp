@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ScenarioDef ParentName="ScenarioBase">
+        <defName>USAC_ScenarioDebtStart</defName>
+        <label>The Debt squad</label>
+        <description>Four people tied to USAC contracts hit atmosphere in a failing drop pod line: a debt inheritor, a laid-off mech technician, a former security hand, and a frontier laborer who signed every waiver put in front of them. None of them were meant to lead a colony, but all of them were built to survive hard terms. On this rimworld, contracts mean nothing unless you can defend them.</description>
+        <scenario>
+            <summary>Four USAC-linked survivors: debt, layoffs, war experience, and frontier contracts forged into one desperate start.</summary>
+            <parts>
+
+                <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+                    <def>ConfigPage_ConfigureStartingPawns</def>
+                    <pawnCount>4</pawnCount>
+                    <pawnChoiceCount>8</pawnChoiceCount>
+                </li>
+
+                <li Class="ScenPart_PlayerPawnsArriveMethod">
+                    <def>PlayerPawnsArriveMethod</def>
+                    <method>DropPods</method>
+                    <visible>false</visible>
+                </li>
+
+                <li Class="ScenPart_ForcedHediff">
+                    <def>ForcedHediff</def>
+                    <visible>false</visible>
+                    <context>PlayerStarter</context>
+                    <chance>0.5</chance>
+                    <hediff>CryptosleepSickness</hediff>
+                    <hideOffMap>true</hideOffMap>
+                    <severityRange>1~1</severityRange>
+                </li>
+
+                <li Class="ScenPart_ForcedHediff">
+                    <def>ForcedHediff</def>
+                    <visible>false</visible>
+                    <context>PlayerStarter</context>
+                    <chance>0.85</chance>
+                    <hediff>USAC_NeuroBoosterAddiction</hediff>
+                    <hideOffMap>true</hideOffMap>
+                    <severityRange>1~9</severityRange>
+                </li>
+
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>USAC_Bond</thingDef>
+                    <count>1</count>
+                </li>
+
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>USAC_MealSurvivalPack</thingDef>
+                    <count>45</count>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>MedicineIndustrial</thingDef>
+                    <count>35</count>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>ComponentIndustrial</thingDef>
+                    <count>35</count>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>USAC_Gun_MarksmanRifle</thingDef>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>Gun_Revolver</thingDef>
+                    <count>2</count>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>MeleeWeapon_Knife</thingDef>
+                    <stuff>Plasteel</stuff>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>Apparel_FlakPants</thingDef>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>Apparel_FlakVest</thingDef>
+                </li>
+
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>USAC_NeuroBooster</thingDef>
+                    <count>20</count>
+                </li>
+
+                <!-- 有Biotech才會帶下面這些 -->
+                <li MayRequire="ludeon.rimworld.biotech" Class="ScenPart_StartingMech">
+                    <def>StartingMech</def>
+                    <mechKind>USAC_Mech_Rocky_AR</mechKind>
+                    <overseenByPlayerPawnChance>0.6</overseenByPlayerPawnChance>
+                </li>
+                <li MayRequire="ludeon.rimworld.biotech" Class="ScenPart_StartingMech">
+                    <def>StartingMech</def>
+                    <mechKind>USAC_Mech_Rocky_DMR</mechKind>
+                    <overseenByPlayerPawnChance>0.6</overseenByPlayerPawnChance>
+                </li>
+                <li MayRequire="ludeon.rimworld.biotech" Class="ScenPart_StartingMech">
+                    <def>StartingMech</def>
+                    <mechKind>USAC_Mech_Cobalt</mechKind>
+                    <overseenByPlayerPawnChance>0.6</overseenByPlayerPawnChance>
+                </li>
+                <li MayRequire="ludeon.rimworld.biotech" Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>USAC_TempMechlink</thingDef>
+                    <count>2</count>
+                </li>
+
+                <li Class="ScenPart_ScatterThingsNearPlayerStart">
+                    <def>ScatterThingsNearPlayerStart</def>
+                    <thingDef>Steel</thingDef>
+                    <count>600</count>
+                </li>
+                <li Class="ScenPart_ScatterThingsNearPlayerStart">
+                    <def>ScatterThingsNearPlayerStart</def>
+                    <thingDef>WoodLog</thingDef>
+                    <count>400</count>
+                </li>
+
+                <li Class="ScenPart_ScatterThingsAnywhere">
+                    <def>ScatterThingsAnywhere</def>
+                    <thingDef>ShipChunk</thingDef>
+                    <allowRoofed>false</allowRoofed>
+                    <count>3</count>
+                </li>
+
+                <li Class="ScenPart_GameStartDialog">
+                    <def>GameStartDialog</def>
+                    <textKey>USAC_FourPersonStart_GameStartDialog</textKey>
+                    <closeSound>GameStartSting</closeSound>
+                </li>
+
+            </parts>
+        </scenario>
+    </ScenarioDef>
+
+</Defs>

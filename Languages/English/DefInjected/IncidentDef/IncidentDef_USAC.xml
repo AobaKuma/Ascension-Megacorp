@@ -15,8 +15,13 @@ Use the comms console to contact them.</USAC_MechSupplierArrival.letterText>
   <!-- EN: USAC mining raid -->
   <USAC_MiningRaid.letterLabel>USAC mining raid</USAC_MiningRaid.letterLabel>
   <!-- EN: USAC has detected valuable deep resources on your map. They are deploying a mining rig with mech escorts to extract them.\n\nDestroy the mining rig or eliminate the escorts to stop the operation. -->
-  <USAC_MiningRaid.letterText>USAC has detected valuable deep resources on your map. They are deploying a mining rig with mech escorts to extract them.
+  <USAC_MiningRaid.letterText>USAC has detected valuable deep resources on your colony. They are deploying a mining rig with mech escorts to extract them.
 
-Destroy the mining rig or eliminate the escorts to stop the operation.</USAC_MiningRaid.letterText>
+Eliminate the escorts and destroy the mining rig to stop the operation.</USAC_MiningRaid.letterText>
+
+  <!-- EN: USAC outpost operation -->
+  <GiveQuest_USAC_OpportunitySite_OutpostRaid.label>seal operation</GiveQuest_USAC_OpportunitySite_OutpostRaid.label>
+  <!-- EN: USAC operation opportunity -->
+  <GiveQuest_USAC_OpportunitySite_OutpostRaid.letterLabel>seal operation opportunity</GiveQuest_USAC_OpportunitySite_OutpostRaid.letterLabel>
   
 </LanguageData>
