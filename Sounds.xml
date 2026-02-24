@@ -9,7 +9,7 @@
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>USAC/USAC_BushmsaterIII</clipPath>
+            <clipPath>USAC_BushmsaterIII</clipPath>
           </li>
         </grains>
         <volumeRange>90~95</volumeRange>
