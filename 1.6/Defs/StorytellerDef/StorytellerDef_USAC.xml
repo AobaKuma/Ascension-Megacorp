@@ -2,11 +2,11 @@
 <Defs>
 
     <StorytellerDef ParentName="BaseStoryteller">
-        <defName>USAC_RookieCapitalism</defName>
-        <label>Rookie Capitalism</label>
+        <defName>USAC_RookieRockefeller</defName>
+        <label>Rookie Rockefeller</label>
         <description>Rookie is the face of United Stellar Armament: a lucrative war broker, a synthetic android of humble origins who now pays his electricity bill in full. He'll sustain colony's fragile lifeline with contracts, quarterly subscriptions, and sales from orbital suppliers. \nOnly by remaining active and armed can you continue to generate revenue. But if you fall behind, his polite reminders will become the deadline for liquidation.</description>
-        <portraitLarge>UI/HeroArt/Storytellers/RookieCapitalism</portraitLarge>
-        <portraitTiny>UI/HeroArt/Storytellers/RookieCapitalismTiny</portraitTiny>
+        <portraitLarge>UI/HeroArt/Storytellers/RookieRockefeller</portraitLarge>
+        <portraitTiny>UI/HeroArt/Storytellers/RookieRockefellerTiny</portraitTiny>
         <listOrder>26</listOrder>
         <comps>
             <li Class="StorytellerCompProperties_ClassicIntro" />
