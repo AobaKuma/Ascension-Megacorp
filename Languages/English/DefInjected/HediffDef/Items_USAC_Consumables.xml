@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <USAC_PainReliefIngestion.label>analgesic effect</USAC_PainReliefIngestion.label>
+  <USAC_PainReliefIngestion.labelNoun>a B-Ration analgesic effect</USAC_PainReliefIngestion.labelNoun>
+  <USAC_PainReliefIngestion.description>A sustained-release analgesic phase triggered by recently ingested B-Ration. Pain perception is reduced for several hours while the body remains functional.</USAC_PainReliefIngestion.description>
+  
+</LanguageData>

@@ -145,7 +145,7 @@
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>USAC_Bullet_GrenadeRound</defaultProjectile>
-        <warmupTime>2.2</warmupTime>
+        <warmupTime>2.6</warmupTime>
         <forcedMissRadius>2</forcedMissRadius>
         <range>44.9</range>
         <soundCast>RocketswarmLauncher_Fire</soundCast>

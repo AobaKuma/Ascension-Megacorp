@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: analgesic effect -->
+  <USAC_PainReliefIngestion.label>鎮痛作用</USAC_PainReliefIngestion.label>
+  <!-- EN: A sustained analgesic effect from ingested b-ration. -->
+  <USAC_PainReliefIngestion.description>由近期攝取B口糧所觸發的緩釋鎮痛階段。在身體維持行動能力的同時，痛覺會於數小時內降低。</USAC_PainReliefIngestion.description>
+  <!-- EN: analgesic effect from ingested meal -->
+  <USAC_PainReliefIngestion.labelNoun>一項來自B口糧的鎮痛作用</USAC_PainReliefIngestion.labelNoun>
+  
+</LanguageData>

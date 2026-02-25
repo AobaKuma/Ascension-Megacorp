@@ -43,7 +43,6 @@
         <combatPower>85</combatPower>
         <gearHealthRange>0.8~2.5</gearHealthRange>
         <apparelTags>
-            <li>IndustrialBasic</li>
             <li>IndustrialMilitaryBasic</li>
             <li>IndustrialMilitaryAdvanced</li>
             <li>BeltDefensePop</li>
@@ -106,9 +105,6 @@
         <combatPower>110</combatPower>
         <gearHealthRange>0.8~2.5</gearHealthRange>
         <apparelTags>
-            <li>IndustrialBasic</li>
-            <li>IndustrialMilitaryBasic</li>
-            <li>IndustrialMilitaryAdvanced</li>
             <li>USAC_HelmetNV</li>
             <li>USAC_HelmetAssault</li>
         </apparelTags>
@@ -117,10 +113,46 @@
         </apparelRequired>
         <apparelMoney>1000~1600</apparelMoney>
         <apparelAllowHeadgearChance>0.6</apparelAllowHeadgearChance>
-        <weaponMoney>600~800</weaponMoney>
+        <weaponMoney>1200~2500</weaponMoney>
         <weaponTags>
             <li>SniperRifle</li>
             <li>USAC_DMR</li>
+        </weaponTags>
+        <techHediffsChance>0.1</techHediffsChance>
+        <techHediffsMoney>600~1000</techHediffsMoney>
+        <techHediffsTags>
+            <li>Simple</li>
+            <li>ImplantEmpireCommon</li>
+        </techHediffsTags>
+        <initialWillRange>2~4</initialWillRange>
+        <initialResistanceRange>14~22</initialResistanceRange>
+        <skills>
+            <li>
+                <skill>Shooting</skill>
+                <range>10~16</range>
+            </li>
+        </skills>
+    </PawnKindDef>
+
+    <!-- USAC 重装狙击手 -->
+    <PawnKindDef ParentName="USAC_Base">
+        <defName>USAC_Heavy_Sniper</defName>
+        <label>heavy sniper</label>
+        <labelPlural>heavy snipers</labelPlural>
+        <combatPower>110</combatPower>
+        <gearHealthRange>0.8~2.5</gearHealthRange>
+        <apparelTags>
+            <li>USAC_HelmetNV</li>
+            <li>USAC_HelmetAssault</li>
+        </apparelTags>
+        <apparelRequired>
+            <li>USAC_Apparel_ExoSkeleton</li>
+        </apparelRequired>
+        <apparelMoney>1800~3000</apparelMoney>
+        <apparelAllowHeadgearChance>0.6</apparelAllowHeadgearChance>
+        <weaponMoney>2100~3500</weaponMoney>
+        <weaponTags>
+            <li>USAC_HDMR</li>
         </weaponTags>
         <techHediffsChance>0.1</techHediffsChance>
         <techHediffsMoney>600~1000</techHediffsMoney>

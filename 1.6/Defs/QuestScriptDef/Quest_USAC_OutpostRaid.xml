@@ -4,9 +4,10 @@
     <!-- USAC 据点清缴任务 -->
     <QuestScriptDef>
         <defName>USAC_OpportunitySite_OutpostRaid</defName>
-        <rootSelectionWeight>1.0</rootSelectionWeight>
+        <rootSelectionWeight>1</rootSelectionWeight>
         <rootMinPoints>400</rootMinPoints>
         <expireDaysRange>4~8</expireDaysRange>
+        <minRefireDays>0.5</minRefireDays>
         <questNameRules>
             <rulesStrings>
                 <li>questName-&gt;[target] [operation]</li>

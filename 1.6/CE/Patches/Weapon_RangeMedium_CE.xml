@@ -3,43 +3,44 @@
 <Patch>
     <Operation Class="PatchOperationSequence">
         <operations>
+            
             <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
                 <defName>USAC_Gun_OSW</defName>
                 <statBases>
-                    <Mass>15</Mass>
-                    <Bulk>11</Bulk>
-                    <SwayFactor>1.60</SwayFactor>
-                    <ShotSpread>0.06</ShotSpread>
+                    <Mass>14</Mass>
+                    <Bulk>10</Bulk>
+                    <SwayFactor>1.5</SwayFactor>
+                    <ShotSpread>0.05</ShotSpread>
                     <SightsEfficiency>4</SightsEfficiency>
                     <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
                 </statBases>
                 <Properties>
-                    <recoilAmount>0.9</recoilAmount>
+                    <recoilAmount>2.2</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_25x59mmGrenade_HE</defaultProjectile>
-                    <burstShotCount>2</burstShotCount>
-                    <ticksBetweenBurstShots>16</ticksBetweenBurstShots>
+                    <burstShotCount>1</burstShotCount>
                     <warmupTime>2.2</warmupTime>
-                    <range>64.9</range>
-                    <soundCast>RocketswarmLauncher_Fire</soundCast>
+                    <range>75</range>
+                    <soundCast>USAC_SniperRifle_Shot</soundCast>
                     <soundCastTail>GunTail_Heavy</soundCastTail>
                     <muzzleFlashScale>8</muzzleFlashScale>
                 </Properties>
                 <AmmoUser>
                     <magazineSize>5</magazineSize>
-                    <reloadTime>2.2</reloadTime>
+                    <reloadTime>4</reloadTime>
                     <ammoSet>AmmoSet_25x59mmGrenade</ammoSet>
                 </AmmoUser>
                 <FireModes>
-                    <aiUseBurstMode>true</aiUseBurstMode>
-                    <aiAimMode>Snapshot</aiAimMode>
-                    <aimedBurstShotCount>1</aimedBurstShotCount>
+                    <aiAimMode>AimedShot</aiAimMode>
                 </FireModes>
                 <weaponTags>
-                    <li>USAC_SGL</li>
+                    <li>Bipod_DMR</li>
+                    <li>CE_AI_SR</li>
+                    <li>SniperRifle</li>
                 </weaponTags>
             </li>
+
             <li Class="PatchOperationAdd">
                 <xpath>Defs/ThingDef[defName="USAC_Gun_OSW"]</xpath>
                 <value>
@@ -73,40 +74,42 @@
             <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
                 <defName>USAC_Gun_ACSW</defName>
                 <statBases>
-                    <Mass>19.05</Mass>
-                    <Bulk>19.05</Bulk>
+                    <Mass>22</Mass>
+                    <Bulk>15</Bulk>
                     <SwayFactor>1.60</SwayFactor>
-                    <ShotSpread>0.09</ShotSpread>
-                    <SightsEfficiency>3</SightsEfficiency>
-                    <RangedWeapon_Cooldown>1.3</RangedWeapon_Cooldown>
+                    <ShotSpread>0.08</ShotSpread>
+                    <SightsEfficiency>1.2</SightsEfficiency>
+                    <RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown>
+                    <NightVisionEfficiency>0.7</NightVisionEfficiency>
                 </statBases>
                 <Properties>
-                    <recoilAmount>1.1</recoilAmount>
+                    <recoilAmount>2</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
                     <defaultProjectile>Bullet_25x59mmGrenade_HE</defaultProjectile>
-                    <burstShotCount>3</burstShotCount>
-                    <ticksBetweenBurstShots>15</ticksBetweenBurstShots>
+                    <burstShotCount>6</burstShotCount>
+                    <ticksBetweenBurstShots>14</ticksBetweenBurstShots>
                     <warmupTime>2</warmupTime>
                     <range>67.9</range>
                     <soundCast>RocketswarmLauncher_Fire</soundCast>
                     <soundCastTail>GunTail_Heavy</soundCastTail>
-                    <muzzleFlashScale>8</muzzleFlashScale>
+                    <muzzleFlashScale>10</muzzleFlashScale>
                 </Properties>
                 <AmmoUser>
-                    <magazineSize>31</magazineSize>
-                    <reloadTime>2.2</reloadTime>
+                    <magazineSize>36</magazineSize>
+                    <reloadTime>8</reloadTime>
                     <ammoSet>AmmoSet_25x59mmGrenade</ammoSet>
                 </AmmoUser>
                 <FireModes>
                     <aiUseBurstMode>true</aiUseBurstMode>
                     <aiAimMode>Snapshot</aiAimMode>
-                    <aimedBurstShotCount>2</aimedBurstShotCount>
+                    <aimedBurstShotCount>3</aimedBurstShotCount>
                 </FireModes>
                 <weaponTags>
-                    <li>USAC_SGL</li>
+                    <li>CE_AI_AOE</li>
                 </weaponTags>
             </li>
+
             <li Class="PatchOperationAdd">
                 <xpath>Defs/ThingDef[defName="USAC_Gun_ACSW"]</xpath>
                 <value>
@@ -140,6 +143,7 @@
             <li Class="PatchOperationRemove">
                 <xpath>Defs/ThingDef[defName="USAC_Gun_BattleRifle"]/comps/li[@Class="CompProperties_EquippableAbility"]</xpath>
             </li>
+
             <li Class="PatchOperationAdd">
                 <xpath>Defs/ThingDef[defName="USAC_Gun_BattleRifle"]/comps</xpath>
                 <value>
@@ -148,32 +152,33 @@
                     </li>
                 </value>
             </li>
+
             <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
                 <defName>USAC_Gun_BattleRifle</defName>
                 <statBases>
                     <Mass>5.9</Mass>
-                    <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
-                    <SightsEfficiency>3.4</SightsEfficiency>
-                    <ShotSpread>0.07</ShotSpread>
-                    <SwayFactor>1.34</SwayFactor>
                     <Bulk>5.9</Bulk>
+                    <RangedWeapon_Cooldown>0.9</RangedWeapon_Cooldown>
+                    <SightsEfficiency>1.3</SightsEfficiency>
+                    <ShotSpread>0.05</ShotSpread>
+                    <SwayFactor>1.34</SwayFactor>
                 </statBases>
                 <Properties>
                     <recoilAmount>2.25</recoilAmount>
                     <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                     <hasStandardCommand>true</hasStandardCommand>
-                    <defaultProjectile>Bullet_277Fury_AP</defaultProjectile>
-                    <warmupTime>0.8</warmupTime>
-                    <range>64.9</range>
+                    <defaultProjectile>Bullet_277Fury_FMJ</defaultProjectile>
+                    <warmupTime>1.9</warmupTime>
+                    <range>66.9</range>
                     <burstShotCount>2</burstShotCount>
                     <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
-                    <soundCast>USAC_Gun_Shot</soundCast>
-                    <soundCastTail>GunTail_Heavy</soundCastTail>
+                    <soundCast>Shot_AssaultRifle</soundCast>
+                    <soundCastTail>GunTail_Medium</soundCastTail>
                     <muzzleFlashScale>8</muzzleFlashScale>
                 </Properties>
                 <AmmoUser>
-                    <magazineSize>30</magazineSize>
-                    <reloadTime>1.7</reloadTime>
+                    <magazineSize>20</magazineSize>
+                    <reloadTime>3</reloadTime>
                     <ammoSet>AmmoSet_277Fury</ammoSet>
                 </AmmoUser>
                 <FireModes>
@@ -186,9 +191,9 @@
                     <li>Ranged</li>
                 </weaponClasses>
                 <weaponTags>
-                    <li>USAC_OICW</li>
                 </weaponTags>
             </li>
+
             <li Class="PatchOperationAddModExtension">
                 <xpath>Defs/ThingDef[defName="USAC_Gun_BattleRifle"]</xpath>
                 <value>
@@ -198,23 +203,24 @@
                     </li>
                 </value>
             </li>
+
             <li Class="PatchOperationAdd">
                 <xpath>Defs/ThingDef[defName="USAC_Gun_BattleRifle"]/comps</xpath>
                 <value>
                     <li Class="CombatExtended.CompProperties_UnderBarrel">
                         <propsUnderBarrel>
-                            <magazineSize>1</magazineSize>
-                            <reloadTime>2.5</reloadTime>
+                            <magazineSize>5</magazineSize>
+                            <reloadTime>4</reloadTime>
                             <ammoSet>AmmoSet_25x59mmGrenade</ammoSet>
                         </propsUnderBarrel>
                         <verbPropsUnderBarrel>
-                            <recoilAmount>2.2</recoilAmount>
+                            <recoilAmount>2.3</recoilAmount>
                             <verbClass>CombatExtended.Verb_ShootCE</verbClass>
                             <hasStandardCommand>true</hasStandardCommand>
                             <defaultProjectile>Bullet_25x59mmGrenade_HE</defaultProjectile>
                             <warmupTime>1.1</warmupTime>
                             <range>69</range>
-                            <soundCast>AGS</soundCast>
+                            <soundCast>USAC_SniperRifle_Shot</soundCast>
                             <soundCastTail>GunTail_Medium</soundCastTail>
                             <muzzleFlashScale>9</muzzleFlashScale>
                             <targetParams>
@@ -229,6 +235,7 @@
                     </li>
                 </value>
             </li>
+            
         </operations>
     </Operation>
 </Patch>

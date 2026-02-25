@@ -13,8 +13,8 @@
       <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
       <ArmorRating_Blunt>0.2</ArmorRating_Blunt>
       <ArmorRating_Heat>1.5</ArmorRating_Heat>
-      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">2</BandwidthCost>
-      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
+      <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">1</WastepacksPerRecharge>
     </statBases>
     <inspectorTabs Inherit="False">
       <li>ITab_Pawn_Health</li>
@@ -64,7 +64,7 @@
   <PawnKindDef ParentName="USAC_BaseMechKind" Name="USAC_BaseRockyKind" Abstract="true">
     <label>M88 Rocky</label>
     <race>USAC_Mech_Rocky</race>
-    <combatPower>80</combatPower>
+    <combatPower>85</combatPower>
     <canStrip>true</canStrip>
     <lifeStages>
       <li>

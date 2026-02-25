@@ -15,7 +15,7 @@
       <StaggerDurationFactor>0.35</StaggerDurationFactor>
       <AimingDelayFactor>1.3</AimingDelayFactor>
       <CaravanRidingSpeedFactor>1.3</CaravanRidingSpeedFactor>
-      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">3</BandwidthCost>
+      <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">4</BandwidthCost>
       <WastepacksPerRecharge MayRequire="Ludeon.Rimworld.Biotech">2</WastepacksPerRecharge>
     </statBases>
     <race>

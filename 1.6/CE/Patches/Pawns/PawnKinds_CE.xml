@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<!-- USAC Rifleman -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="USAC_Rifleman"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>7</min>
+							<max>9</max>
+						</primaryMagazineCount>
+						<sidearms>
+							<li>
+								<generateChance>0.2</generateChance>
+								<sidearmMoney>
+									<min>80</min>
+									<max>160</max>
+								</sidearmMoney>
+								<weaponTags>
+									<li>GrenadeSmoke</li>
+								</weaponTags>
+								<magazineCount>
+									<min>0</min>
+									<max>1</max>
+								</magazineCount>
+							</li>
+						</sidearms>
+					</li>
+				</value>
+			</li>
+
+			<!-- USAC Heavy Infantry  -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="USAC_Heavy"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>17</min>
+							<max>20</max>
+						</primaryMagazineCount>
+						<sidearms>
+							<li>
+								<generateChance>0.2</generateChance>
+								<sidearmMoney>
+									<min>80</min>
+									<max>160</max>
+								</sidearmMoney>
+								<weaponTags>
+									<li>GrenadeSmoke</li>
+								</weaponTags>
+								<magazineCount>
+									<min>0</min>
+									<max>1</max>
+								</magazineCount>
+							</li>
+						</sidearms>
+					</li>
+				</value>
+			</li>
+
+			<!-- USAC Heavy Sniperman  -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="USAC_Heavy_Sniper"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>5</min>
+							<max>7</max>
+						</primaryMagazineCount>
+						<sidearms>
+							<li>
+								<generateChance>0.2</generateChance>
+								<sidearmMoney>
+									<min>80</min>
+									<max>160</max>
+								</sidearmMoney>
+								<weaponTags>
+									<li>GrenadeSmoke</li>
+								</weaponTags>
+								<magazineCount>
+									<min>0</min>
+									<max>1</max>
+								</magazineCount>
+							</li>
+						</sidearms>
+					</li>
+				</value>
+			</li>
+
+			<!-- USAC Sniperman -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="USAC_Sniper"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>13</min>
+							<max>15</max>
+						</primaryMagazineCount>
+						<sidearms>
+							<li>
+								<generateChance>0.2</generateChance>
+								<sidearmMoney>
+									<min>80</min>
+									<max>160</max>
+								</sidearmMoney>
+								<weaponTags>
+									<li>GrenadeSmoke</li>
+								</weaponTags>
+								<magazineCount>
+									<min>0</min>
+									<max>1</max>
+								</magazineCount>
+							</li>
+						</sidearms>
+					</li>
+				</value>
+			</li>
+
+			<!-- USAC Elite -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="USAC_Elite"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>7</min>
+							<max>9</max>
+						</primaryMagazineCount>
+						<sidearms>
+							<li>
+								<generateChance>0.2</generateChance>
+								<sidearmMoney>
+									<min>80</min>
+									<max>160</max>
+								</sidearmMoney>
+								<weaponTags>
+									<li>GrenadeSmoke</li>
+								</weaponTags>
+								<magazineCount>
+									<min>0</min>
+									<max>1</max>
+								</magazineCount>
+							</li>
+						</sidearms>
+					</li>
+				</value>
+			</li>
+
+			<!-- USAC Executive -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="USAC_Executive"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>7</min>
+							<max>9</max>
+						</primaryMagazineCount>
+						<sidearms>
+							<li>
+								<generateChance>0.2</generateChance>
+								<sidearmMoney>
+									<min>80</min>
+									<max>160</max>
+								</sidearmMoney>
+								<weaponTags>
+									<li>GrenadeSmoke</li>
+								</weaponTags>
+								<magazineCount>
+									<min>0</min>
+									<max>1</max>
+								</magazineCount>
+							</li>
+						</sidearms>
+					</li>
+				</value>
+			</li>
+
+		</operations>
+	</Operation>
+</Patch>

@@ -14,5 +14,10 @@
   <USAC_MiningRaid.letterLabel>USAC采矿袭击</USAC_MiningRaid.letterLabel>
   <!-- EN: USAC has detected valuable deep resources on your map. They are deploying a mining rig with mech escorts to extract them.\n\nDestroy the mining rig or eliminate the escorts to stop the operation. -->
   <USAC_MiningRaid.letterText>USAC已侦测到你的地图上存在宝贵的深层资源。他们正在部署采矿钻机与机械体护卫队来开采这些资源。\n\n摧毁采矿钻机或消灭护卫队以停止此次行动。</USAC_MiningRaid.letterText>
+
+  <!-- EN: USAC outpost operation -->
+  <GiveQuest_USAC_OpportunitySite_OutpostRaid.label>USAC据点作战</GiveQuest_USAC_OpportunitySite_OutpostRaid.label>
+  <!-- EN: USAC operation opportunity -->
+  <GiveQuest_USAC_OpportunitySite_OutpostRaid.letterLabel>USAC作战机会</GiveQuest_USAC_OpportunitySite_OutpostRaid.letterLabel>
   
 </LanguageData>

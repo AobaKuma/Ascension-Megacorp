@@ -15,4 +15,9 @@
   <!-- EN: Use kit to repair mechanoid -->
   <USAC_DisposableRepairTool.comps.CompUsable.useLabel>使用工具組修復機械體</USAC_DisposableRepairTool.comps.CompUsable.useLabel>
   
+  <!-- EN: B-Ration -->
+  <USAC_MealSurvivalPack.label>B口糧</USAC_MealSurvivalPack.label>
+  <!-- EN: A military meal made from a soft split bun, compressed protein patty, and some sharp sauce. Its patented sealed packaging allows it to remain viable for decades when heated unopened. Along with stable calories, it contains a sustained-release analgesic formula that reduces bodily pain for about half a day. -->
+  <USAC_MealSurvivalPack.description>一種由柔軟的對切麵包、壓製蛋白肉餅與辛香醬組成的軍用餐食。其註冊專利的封裝能在未開封加熱的情況下保存數十年，並在提供穩定熱量的同時其內含緩釋鎮痛配方，能在約半天內降低身體疼痛感。</USAC_MealSurvivalPack.description>
+  
 </LanguageData>

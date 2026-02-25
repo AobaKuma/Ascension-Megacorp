@@ -23,14 +23,13 @@
                 <countPerKindRange>1~2</countPerKindRange>
             </li>
 
-            <!-- 出售：零件和补给 -->
             <li Class="StockGenerator_SingleDef">
-                <thingDef>Plasteel</thingDef>
-                <countRange>100~200</countRange>
+                <thingDef>USAC_MealSurvivalPack</thingDef>
+                <countRange>10~60</countRange>
             </li>
             <li Class="StockGenerator_SingleDef">
                 <thingDef>MedicineUltratech</thingDef>
-                <countRange>5~15</countRange>
+                <countRange>1~5</countRange>
             </li>
 
             <!-- 出售：临时机控中枢 -->
@@ -128,13 +127,14 @@
             </li>
 
             <!-- 出售：零件和补给 -->
+
             <li Class="StockGenerator_SingleDef">
-                <thingDef>Plasteel</thingDef>
-                <countRange>100~200</countRange>
+                <thingDef>USAC_MealSurvivalPack</thingDef>
+                <countRange>10~60</countRange>
             </li>
             <li Class="StockGenerator_SingleDef">
                 <thingDef>MedicineUltratech</thingDef>
-                <countRange>5~15</countRange>
+                <countRange>1~5</countRange>
             </li>
 
             <!-- 出售：临时机控中枢 -->

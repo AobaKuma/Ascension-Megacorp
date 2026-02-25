@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<!-- ====== Rocky PawnKind Base ======-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Rocky"]/statBases</xpath>
+				<value>
+					<CarryWeight>60</CarryWeight>
+					<CarryBulk>35</CarryBulk>
+					<AimingAccuracy>0.80</AimingAccuracy>
+					<ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.15</MeleeDodgeChance>
+					<MeleeCritChance>0.10</MeleeCritChance>
+					<MeleeParryChance>0.10</MeleeParryChance>
+					<MaxHitPoints>200</MaxHitPoints>
+					<NightVisionEfficiency>0.55</NightVisionEfficiency>
+					<!--<ReloadSpeed>1.2</ReloadSpeed>-->
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Rocky"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>18</ArmorRating_Blunt>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Rocky"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>7</ArmorRating_Sharp>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Rocky"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.15</ArmorRating_Heat>
+				</value>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Rocky"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="USAC_Mech_Rocky"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Rocky"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>850</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>5</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>10</Steel>
+						</RepairIngredients>
+						<RepairTime>100</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>82</MaxOverHeal>
+						<MinArmorPct>0.75</MinArmorPct>
+					</li>
+				</value>
+			</li>
+
+			<!-- ========== Rocky AR ========== -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_AR"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>6</min>
+							<max>8</max>
+						</primaryMagazineCount>
+						<sidearms>
+							<li>
+								<generateChance>0.5</generateChance>
+								<sidearmMoney>
+									<min>80</min>
+									<max>160</max>
+								</sidearmMoney>
+								<weaponTags>
+									<li>GrenadeSmoke</li>
+								</weaponTags>
+								<magazineCount>
+									<min>0</min>
+									<max>1</max>
+								</magazineCount>
+							</li>
+						</sidearms>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_AR"]/weaponTags</xpath>
+				<value>
+					<li>USAC_AR</li>
+				</value>
+			</li>
+
+			<!-- Rocky LMG -->
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_LMG"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>9</min>
+							<max>11</max>
+						</primaryMagazineCount>
+						<sidearms>
+							<li>
+								<generateChance>0.35</generateChance>
+								<sidearmMoney>
+									<min>80</min>
+									<max>160</max>
+								</sidearmMoney>
+								<weaponTags>
+									<li>GrenadeSmoke</li>
+								</weaponTags>
+								<magazineCount>
+									<min>0</min>
+									<max>1</max>
+								</magazineCount>
+							</li>
+						</sidearms>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_LMG"]/weaponTags</xpath>
+				<value />
+			</li>
+
+			<!-- Rocky DMR -->
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_DMR"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>9</min>
+							<max>11</max>
+						</primaryMagazineCount>
+						<sidearms>
+							<li>
+								<generateChance>0.35</generateChance>
+								<sidearmMoney>
+									<min>80</min>
+									<max>160</max>
+								</sidearmMoney>
+								<weaponTags>
+									<li>GrenadeSmoke</li>
+								</weaponTags>
+								<magazineCount>
+									<min>0</min>
+									<max>1</max>
+								</magazineCount>
+							</li>
+						</sidearms>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_DMR"]/weaponTags</xpath>
+				<value>
+					<li>USAC_DMR</li>
+				</value>
+			</li>
+
+			<!-- Rocky Heavy -->
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_Heavy"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>9</min>
+							<max>11</max>
+						</primaryMagazineCount>
+						<sidearms>
+							<li>
+								<generateChance>0.35</generateChance>
+								<sidearmMoney>
+									<min>80</min>
+									<max>160</max>
+								</sidearmMoney>
+								<weaponTags>
+									<li>GrenadeSmoke</li>
+								</weaponTags>
+								<magazineCount>
+									<min>0</min>
+									<max>1</max>
+								</magazineCount>
+							</li>
+						</sidearms>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_Heavy"]/weaponTags</xpath>
+				<value>
+					<li>USAC_ACSW</li>
+				</value>
+			</li>
+
+		</operations>
+	</Operation>
+</Patch>

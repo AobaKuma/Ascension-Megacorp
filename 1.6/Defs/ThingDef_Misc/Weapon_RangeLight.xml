@@ -1,22 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <SoundDef>
-    <defName>USAC_Gun_Shot</defName>
-    <context>MapOnly</context>
-    <maxSimultaneous>9</maxSimultaneous>
-    <subSounds>
-      <li>
-        <grains>
-          <li Class="AudioGrain_Clip">
-            <clipPath>USAC/guncast</clipPath>
-          </li>
-        </grains>
-        <pitchRange>1.0~1.5</pitchRange>
-      </li>
-    </subSounds>
-  </SoundDef>
-
   <ThingDef ParentName="BaseGunWithQuality" Name="USAC_BaseGun" Abstract="True">
     <weaponTags>
       <li>Gun</li>

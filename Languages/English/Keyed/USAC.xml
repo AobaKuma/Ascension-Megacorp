@@ -146,4 +146,8 @@
   <USAC_LetterTextCoverup>{0} provided cover for your operation, several outputs were attacked and destroyed by {1}, they couldn't uncover your involvement. The elimination was a complete success.</USAC_LetterTextCoverup>
   <USAC_Coverup>Coverup Successful</USAC_Coverup>
 
+  <USAC_FourPersonStart_GameStartDialog>The emergency siren cuts through reentry. USAC has already written this loss off as acceptable risk.
+
+You are four survivors from different contract chains: debt inheritance, automation layoffs, penal security work, and frontier hazard labor. Supplies are limited, support is gone, and every promise now depends on what you can build and defend on this rimworld.</USAC_FourPersonStart_GameStartDialog>
+
 </LanguageData>

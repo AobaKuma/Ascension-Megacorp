@@ -258,4 +258,8 @@
   <USAC_LetterTextCoverup>{0}为你的行动提供了遮掩，数个据点被{1}攻击和摧毁，他们没能发现是你做了这一切，灭口行动很成功。</USAC_LetterTextCoverup>
   <USAC_Coverup>罪迹掩盖</USAC_Coverup>
 
+  <USAC_FourPersonStart_GameStartDialog>重返大气层的警报撕开舱体，USAC 早已把这次损失列为可接受风险。
+
+你们四人来自不同的合同链：继承债务者、被自动机兵替代的技工、做过惩戒看守的武装人员，以及签下整份免责条款的边疆劳工。补给有限、支援中断，从现在起，所有承诺都只取决于你们能在这颗边缘世界上建立并守住什么。</USAC_FourPersonStart_GameStartDialog>
+
 </LanguageData>

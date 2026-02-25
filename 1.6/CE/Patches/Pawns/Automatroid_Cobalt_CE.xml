@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<!-- ========== PawnKind Patches ========== -->
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="USAC_Mech_Cobalt"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>6</min>
+							<max>8</max>
+						</primaryMagazineCount>
+						<forcedAmmoCategory>GrenadeHETF</forcedAmmoCategory>
+					</li>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/PawnKindDef[defName="USAC_Mech_Cobalt"]/weaponTags</xpath>
+				<value>
+					<li>USAC_ACSW</li>
+				</value>
+			</li>
+
+			<!-- ========== Cobalt ========== -->
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Cobalt"]/comps</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="USAC_Mech_Cobalt"]</xpath>
+					<value>
+						<comps />
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Cobalt"]/comps</xpath>
+				<value>
+					<li Class="CombatExtended.CompProperties_ArmorDurability">
+						<Durability>1190</Durability>
+						<Regenerates>true</Regenerates>
+						<RegenInterval>1250</RegenInterval>
+						<RegenValue>5</RegenValue>
+						<Repairable>true</Repairable>
+						<RepairIngredients>
+							<Steel>10</Steel>
+						</RepairIngredients>
+						<RepairTime>300</RepairTime>
+						<RepairValue>200</RepairValue>
+						<CanOverHeal>true</CanOverHeal>
+						<MaxOverHeal>135</MaxOverHeal>
+						<MinArmorPct>0.6</MinArmorPct>
+					</li>
+				</value>
+			</li>
+
+			<!-- ======Escort Lifter (outlander carrier modified battle frame)======-->
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Cobalt"]/statBases</xpath>
+				<value>
+					<CarryWeight>250</CarryWeight>
+					<CarryBulk>200</CarryBulk>
+					<AimingAccuracy>0.75</AimingAccuracy>
+					<ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
+					<MeleeDodgeChance>0.01</MeleeDodgeChance>
+					<MeleeCritChance>0.02</MeleeCritChance>
+					<MeleeParryChance>0.05</MeleeParryChance>
+					<MaxHitPoints>200</MaxHitPoints>
+					<NightVisionEfficiency>0.25</NightVisionEfficiency>
+					<ReloadSpeed>0.7</ReloadSpeed>
+				</value>
+			</li>
+			
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Cobalt"]/statBases/ArmorRating_Blunt</xpath>
+				<value>
+					<ArmorRating_Blunt>16</ArmorRating_Blunt>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Cobalt"]/statBases/ArmorRating_Sharp</xpath>
+				<value>
+					<ArmorRating_Sharp>10</ArmorRating_Sharp>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Cobalt"]/statBases/ArmorRating_Heat</xpath>
+				<value>
+					<ArmorRating_Heat>0.05</ArmorRating_Heat>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

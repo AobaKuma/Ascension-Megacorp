@@ -33,6 +33,7 @@
       <Insulation_Cold>10</Insulation_Cold>
       <Insulation_Heat>-10</Insulation_Heat>
       <EquipDelay>40</EquipDelay>
+      <Flammability>0</Flammability>
     </statBases>
     <equippedStatOffsets>
       <MoveSpeed>-0.5</MoveSpeed>

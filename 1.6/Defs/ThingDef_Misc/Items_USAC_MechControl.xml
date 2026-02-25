@@ -26,7 +26,7 @@
       <li>ItemsMisc</li>
     </thingCategories>
     <comps>
-      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Forbiddable" />
       <li Class="CompProperties_Usable">
         <compClass>CompUsableImplant</compClass>
         <useJob>InstallMechlink</useJob>
@@ -80,8 +80,12 @@
     <modExtensions>
       <li Class="Fortified.HediffsExtension">
         <hediffs>
-          <li><hediffDef>MechlinkImplant</hediffDef></li>
-          <li><hediffDef>USAC_TempMechlinkTrigger</hediffDef></li>
+          <li>
+            <hediffDef>MechlinkImplant</hediffDef>
+          </li>
+          <li>
+            <hediffDef>USAC_TempMechlinkTrigger</hediffDef>
+          </li>
         </hediffs>
       </li>
     </modExtensions>
@@ -108,9 +112,15 @@
     <modExtensions>
       <li Class="Fortified.HediffsExtension">
         <hediffs>
-          <li><hediffDef>MechlinkImplant</hediffDef></li>
-          <li><hediffDef>USAC_TempMechlinkTrigger</hediffDef></li>
-          <li><hediffDef>USAC_TempMechlinkKillSwitch</hediffDef></li>
+          <li>
+            <hediffDef>MechlinkImplant</hediffDef>
+          </li>
+          <li>
+            <hediffDef>USAC_TempMechlinkTrigger</hediffDef>
+          </li>
+          <li>
+            <hediffDef>USAC_TempMechlinkKillSwitch</hediffDef>
+          </li>
         </hediffs>
       </li>
     </modExtensions>
