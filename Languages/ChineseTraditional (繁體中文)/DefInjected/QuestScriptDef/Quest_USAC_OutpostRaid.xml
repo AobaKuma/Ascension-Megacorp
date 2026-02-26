@@ -28,11 +28,11 @@
   <!-- EN: targetAsset->patrol units -->
   <USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.12>targetAsset->巡邏分隊</USAC_OpportunitySite_OutpostRaid.questDescriptionRules.rulesStrings.12>
   <!-- EN: questName->[target] [operation] -->
-  <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.0>questName->[target] [operation]</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.0>
+  <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.0>questName->[target][operation]</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.0>
   <!-- EN: questName->[asker_faction_name] [operation] -->
-  <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.1>questName->[asker_faction_name] [operation]</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.1>
+  <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.1>questName->[asker_faction_name][operation]</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.1>
   <!-- EN: questName->USAC [operation]: [target] -->
-  <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.2>questName->USAC [operation]: [target]</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.2>
+  <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.2>questName->USAC[operation]: [target]</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.2>
   <!-- EN: target(targetRelation==hostile)->Hostile Outpost -->
   <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.3>target(targetRelation==hostile)->敵方前哨</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.3>
   <!-- EN: target(targetRelation==hostile)->Enemy Camp -->
@@ -69,11 +69,23 @@
   <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.19>operation(targetRelation==neutral)->指令</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.19>
   <!-- EN: operation(targetRelation==neutral)->Clean Sweep -->
   <USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.20>operation(targetRelation==neutral)->清洗行動</USAC_OpportunitySite_OutpostRaid.questNameRules.rulesStrings.20>
-
+  <!-- EN: siteFaction -->
+  <USAC_OpportunitySite_OutpostRaid.root.nodes.USAC_GetEnemyFaction.storeFactionAs.slateRef>siteFaction</USAC_OpportunitySite_OutpostRaid.root.nodes.USAC_GetEnemyFaction.storeFactionAs.slateRef>
+  <!-- EN: targetRelation -->
+  <USAC_OpportunitySite_OutpostRaid.root.nodes.USAC_GetEnemyFaction.storeRelationAs.slateRef>targetRelation</USAC_OpportunitySite_OutpostRaid.root.nodes.USAC_GetEnemyFaction.storeRelationAs.slateRef>
+  <!-- EN: sitePartDefs -->
+  <USAC_OpportunitySite_OutpostRaid.root.nodes.USAC_GetEnemyFaction.storeSitePartsAs.slateRef>sitePartDefs</USAC_OpportunitySite_OutpostRaid.root.nodes.USAC_GetEnemyFaction.storeSitePartsAs.slateRef>
+  <!-- EN: <rulesStrings><li TKey="USAC_SitePart_NeutralOutpost">root(priority=1,sitePart==USAC_NeutralOutpost)->there's an outpost at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</li><li TKey="USAC_SitePart_BanditCamp">root(priority=1,sitePart==BanditCamp)->there's a bandit camp at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</li><li TKey="USAC_SitePart_Outpost">root(priority=1,sitePart==Outpost)->there's an enemy outpost at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</li><li TKey="USAC_SitePart_Fallback">root->there's a [label]</li></rulesStrings> -->
+  <USAC_OpportunitySite_OutpostRaid.root.nodes.GenerateSite.singleSitePartRules.slateRef>
+    <li TKey="USAC_SitePart_NeutralOutpost">root(priority=1,sitePart==USAC_NeutralOutpost)->該位置存在一座由(*Threat)[enemiesCount] [enemiesLabel](/Threat)所把守的站點</li>
+    <li TKey="USAC_SitePart_BanditCamp">root(priority=1,sitePart==BanditCamp)->那裏有一座強盜營地由(*Threat)[enemiesCount] [enemiesLabel](/Threat)所把守</li>
+    <li TKey="USAC_SitePart_Outpost">root(priority=1,sitePart==Outpost)->那裏存在一座由敵對陣營所駐守的營地，據悉規模如下(*Threat)[enemiesCount] [enemiesLabel](/Threat)</li>
+    <li TKey="USAC_SitePart_Fallback">root->那裏有一座[label]</li>
+  </USAC_OpportunitySite_OutpostRaid.root.nodes.GenerateSite.singleSitePartRules.slateRef>
   <!-- EN: Operation compromised: [resolvedQuestName] -->
-  <USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.label>行動洩漏：[resolvedQuestName]</USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.label>
+  <USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.label.slateRef>行動暴露：[resolvedQuestName]</USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.label.slateRef>
   <!-- EN: Hostiles have escaped from the target site. The operation has been compromised. [siteFaction_name] will learn of your attack. -->
-  <USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.text>敵方人員已從目標地點逃脫。行動已失敗。[siteFaction_name]將會得知你的攻擊行為。</USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.text>
+  <USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.text.slateRef>至少一名敵對目擊者從目標地點逃脫。行動已失敗。[siteFaction_name]將會得知你的攻擊行為。</USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.text.slateRef>
   <!-- EN: Quest expired: [resolvedQuestName] -->
   <USAC_OpportunitySite_OutpostRaid.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>任務過期：[resolvedQuestName]</USAC_OpportunitySite_OutpostRaid.root.nodes.WorldObjectTimeout.node.nodes.Letter.label.slateRef>
   <!-- EN: The target outpost has relocated. The operation [resolvedQuestName] has been canceled. -->
@@ -88,9 +100,11 @@
   <USAC_OpportunitySite_OutpostRaid.root.nodes.allKilledSignal.node.nodes.GiveRewards.customLetterText.slateRef>你已成功消滅了目標前哨站！\n\nUSAC已從[asker_faction_name]發出了約定的報酬。</USAC_OpportunitySite_OutpostRaid.root.nodes.allKilledSignal.node.nodes.GiveRewards.customLetterText.slateRef>
   
   <!-- UNUSED -->
+  <USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.label>行動洩漏：[resolvedQuestName]</USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.label>
+  <USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.text>敵方人員已從目標地點逃脫。行動已失敗。[siteFaction_name]將會得知你的攻擊行為。</USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.text>
   <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_NeutralOutpost>root(priority=1,sitePart==USAC_NeutralOutpost)->該地點有一個前哨站，駐守著(*Threat)[enemiesCount]名[enemiesLabel](/Threat)</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_NeutralOutpost>
   <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_BanditCamp>root(priority=1,sitePart==BanditCamp)->該地點有一個駐紮著(*Threat)[enemiesCount]名敵人的匪徒營地</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_BanditCamp>
   <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Outpost>root(priority=1,sitePart==Outpost)->該地點有一個被(*Threat)[enemiesCount]名敵人防守的前哨站</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Outpost>
-  <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Fallback>root->有个[label]</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Fallback>
+  <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Fallback>root->有個[label]</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Fallback>
   
 </LanguageData>
