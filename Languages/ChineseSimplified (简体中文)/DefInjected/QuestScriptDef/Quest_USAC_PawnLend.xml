@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN:
+    <li>questDescription->[asker_faction_leaderTitle] [asker_nameFull] of [asker_faction_name] needs extra hands to help [dutyDescription].\n\n[asker_pronoun] is asking you to lend [colonistCountToLend] for [lendForDays] days.\n\n[willSendShuttle]</li>
+    <li>disease->flu</li>
+    <li>disease->plague</li>
+    <li>disease->malaria</li>
+    <li>disease->infection</li>
+    <li>colonistCountToLend(colonistsToLendCount==1)->1 colonist[minAgeOrOlder]</li>
+    <li>colonistCountToLend(colonistsToLendCount>1)->[colonistsToLendCount] colonists[minAgeOrOlder]</li>
+    <li>willSendShuttle->[asker_pronoun] will send a shuttle to pick up the [colonists].</li>
+    <li>colonists(colonistsToLendCount==1)->colonist</li>
+    <li>colonists(colonistsToLendCount>1)->colonists</li>
+    <li>minAgeOrOlder(minAge==0)-></li>
+    <li>minAgeOrOlder(minAge>0)-> [minAge] years old or older</li>
+    <li>pawnListHaveConjugation(colonistsToLendCount==1)->has</li>
+    <li>pawnListHaveConjugation(colonistsToLendCount>1)->have</li>
+  -->
+  <USAC_PawnLend.questDescriptionRules.rulesStrings>
+    <li>questDescription->[asker_faction_name]的[asker_faction_leaderTitle][asker_nameFull]需要一些临时劳务派遣来处理企业分部门的[dutyDescription]。\n\n[asker_pronoun]询问你是否有[colonistCountToLend]名意愿劳动的人手愿意出差[lendForDays]天。\n\n[willSendShuttle]</li>
+    <li>disease->流行性感冒</li>
+    <li>disease->天花</li>
+    <li>disease->肺部纤维化疾病</li>
+    <li>disease->急性金属中毒</li>
+    <li>dutyDescription->棉花采收</li>
+    <li>dutyDescription->清收货物</li>
+    <li>dutyDescription->建立地面哨站</li>
+    <li>dutyDescription->财政文书作业</li>
+    <li>dutyDescription->罢工工人</li>
+    <li>dutyDescription->[disease]病患</li>
+    <li>colonistCountToLend(colonistsToLendCount==1)->1位劳工[minAgeOrOlder]</li>
+    <li>colonistCountToLend(colonistsToLendCount>1)->[colonistsToLendCount]位劳工[minAgeOrOlder]</li>
+    <li>willSendShuttle->[asker_pronoun]将徵调穿梭机来接送[colonists]，你无须支付通勤与穿梭机维护费用。</li>
+    <li>colonists(colonistsToLendCount==1)->劳工</li>
+    <li>colonists(colonistsToLendCount>1)->劳工</li>
+    <li>minAgeOrOlder(minAge==0)-></li>
+    <li>minAgeOrOlder(minAge>0)-> 至少[minAge]岁</li>
+    <li>pawnListHaveConjugation(colonistsToLendCount==1)->有</li>
+    <li>pawnListHaveConjugation(colonistsToLendCount>1)->有</li>
+  </USAC_PawnLend.questDescriptionRules.rulesStrings>
+  <!-- EN:
+    <li>questName->[worker] Outsourcing</li>
+    <li>questName->Contract [worker]s</li>
+    <li>questName->Temporary Workers</li>
+    <li>questName->[worker] Lending</li>
+    <li>questName->[worker]s for [asker_faction_name]</li>
+    <li>questName->Provisional [worker]s</li>
+    <li>questName->Requesting [worker]s</li>
+    <li>worker->Colonist</li>
+    <li>worker->Worker</li>
+    <li>worker->Laborer</li>
+    <li>worker->Helper</li>
+  -->
+  <USAC_PawnLend.questNameRules.rulesStrings>
+    <li>questName->[worker]派遣</li>
+    <li>questName->契约[worker]</li>
+    <li>questName->临时外派</li>
+    <li>questName->[worker]借调</li>
+    <li>questName->[asker_faction_name]的[worker]订单</li>
+    <li>questName->募集[worker]</li>
+    <li>worker->劳工</li>
+    <li>worker->打工</li>
+    <li>worker->人事</li>
+    <li>worker->人工</li>
+  </USAC_PawnLend.questNameRules.rulesStrings>
+  <!-- EN: {PAWNS} [pawnListHaveConjugation] returned after helping [asker_nameFull] of [asker_faction_name] to [dutyDescription]. -->
+  <USAC_PawnLend.root.nodes.Set.value.slateRef>{PAWNS} [pawnListHaveConjugation] 在完成[asker_faction_name]的[asker_nameFull]所指定的[dutyDescription]工作後返回。</USAC_PawnLend.root.nodes.Set.value.slateRef>
+  <!-- EN: Shuttle arrived -->
+  <USAC_PawnLend.root.nodes.ShuttleDelay.node.nodes.Letter.label.slateRef>穿梭机已抵达</USAC_PawnLend.root.nodes.ShuttleDelay.node.nodes.Letter.label.slateRef>
+  <!-- EN: The shuttle has arrived to collect [colonistsToLendCount] of your colonists. -->
+  <USAC_PawnLend.root.nodes.ShuttleDelay.node.nodes.Letter.text.slateRef>穿梭机已抵达并等待你的[colonistsToLendCount]位劳工。</USAC_PawnLend.root.nodes.ShuttleDelay.node.nodes.Letter.text.slateRef>
+  <!-- EN: Shuttle destroyed -->
+  <USAC_PawnLend.root.nodes.pickupShipThingDestroyed.node.nodes.Letter.label.slateRef>穿梭机被摧毁</USAC_PawnLend.root.nodes.pickupShipThingDestroyed.node.nodes.Letter.label.slateRef>
+  <!-- EN: The shuttle sent to collect colonists has been destroyed. -->
+  <USAC_PawnLend.root.nodes.pickupShipThingDestroyed.node.nodes.Letter.text.slateRef>穿梭机已被摧毁。</USAC_PawnLend.root.nodes.pickupShipThingDestroyed.node.nodes.Letter.text.slateRef>
+  <!-- EN: Shuttle abandoned -->
+  <USAC_PawnLend.root.nodes.pickupShipThingLeftBehind.node.nodes.Letter.label.slateRef>穿梭机被遗弃</USAC_PawnLend.root.nodes.pickupShipThingLeftBehind.node.nodes.Letter.label.slateRef>
+  <!-- EN: The shuttle sent to collect colonists has been left behind. -->
+  <USAC_PawnLend.root.nodes.pickupShipThingLeftBehind.node.nodes.Letter.text.slateRef>穿梭机已被遗弃。</USAC_PawnLend.root.nodes.pickupShipThingLeftBehind.node.nodes.Letter.text.slateRef>
+  <!-- EN: Colonists returned -->
+  <USAC_PawnLend.root.nodes.ColonistsReturned.node.nodes.Letter.label.slateRef>穿梭机已离开</USAC_PawnLend.root.nodes.ColonistsReturned.node.nodes.Letter.label.slateRef>
+  
+</LanguageData>

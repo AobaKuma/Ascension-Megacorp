@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: bodybag -->
+  <USAC_CorpseBag.label>屍体袋</USAC_CorpseBag.label>
+  <!-- EN: A fabric bag for sealing and transporting wetware material, used for the sanitary storage of large numbers of bodies and for dense stacking during cold chain transportation. It could also be used as a currency substitute in transactions with armed companies for peaceful development and scientific research purposes. -->
+  <USAC_CorpseBag.description>一种用於密封运输屍体的织物袋子，被用於卫生存储大量屍体以及用於冷链运输时的密集堆放。能够在与武装集团的交易中用来作为货币替代品交易以用於和平发展与科研目的。</USAC_CorpseBag.description>
+  
+</LanguageData>

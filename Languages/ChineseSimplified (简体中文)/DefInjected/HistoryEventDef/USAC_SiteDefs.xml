@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Coverup successful -->
+  <USAC_Coverup.label>掩盖成功</USAC_Coverup.label>
+  
+  <!-- EN: Coverup failed: Identity exposed -->
+  <USAC_Exposure.label>掩盖失败:特徵暴露</USAC_Exposure.label>
+  
+</LanguageData>

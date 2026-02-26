@@ -2,9 +2,9 @@
 <LanguageData>
   
   <!-- EN: neuro-booster -->
-  <USAC_NeuroBooster.label>强化剂</USAC_NeuroBooster.label>
+  <USAC_NeuroBooster.label>神经强化剂</USAC_NeuroBooster.label>
   <!-- EN: A potent neuro-augment serum that enhances neural activity and rational thinking. Widely used by USAC technical workers and soldiers. It causes high addiction and requires regular administration to maintain stability, but provides significant bandwidth and consciousness boosts./n/nStudies have shown a small number of unexplained anaphylactic shock deaths in susceptible individuals when in a state of low activity, but USAC has substantial evidence to suggest its harmlessness. -->
-  <USAC_NeuroBooster.description>一种神经增强药剂，透过内含的奈米机械强化服用者的脑神经活跃性与理性思考能力，对於在USAC企业下工作的技术工人及军人而言是一种十分普遍的工作用强化剂，由於奈米机械会随时间缓慢失活并使得施用者感到焦躁与情绪不稳定，并且有少量易感人群案例表明低活跃性可能导致不明原因的诱发性过敏休克，因此在第一次服用之後需要持续不断的定期施用来维持奈米机械活跃性。</USAC_NeuroBooster.description>
+  <USAC_NeuroBooster.description>一种针对脑神经作用的增强药剂，透过内含的奈米机械强化服用者的脑神经活跃性与理性思考能力，对於在USAC企业下工作的技术工人及军人而言是一种十分普遍的工作用强化剂，由於奈米机械会随时间缓慢失活并使得施用者感到焦躁与情绪不稳定，并且有少量易感人群案例表明低活跃性可能导致不明原因的诱发性过敏休克，因此在第一次服用之後需要持续不断的定期施用来维持奈米机械活跃性。</USAC_NeuroBooster.description>
   <!-- EN: Inject {0} -->
   <USAC_NeuroBooster.ingestible.ingestCommandString>注射 {0}</USAC_NeuroBooster.ingestible.ingestCommandString>
   <!-- EN: Injecting {0}. -->

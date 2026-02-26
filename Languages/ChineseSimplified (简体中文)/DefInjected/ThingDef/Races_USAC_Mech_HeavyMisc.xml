@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: XM3 "Gonk" -->
+  <USAC_Mech_Gonk.label>XM3「冈克」</USAC_Mech_Gonk.label>
+  <!-- EN: A heavy self-propelled artillery mech with tank-level armor, very slow movement, and extreme long-range firepower. Based on the geochelone chassis. -->
+  <USAC_Mech_Gonk.description>一种在高度城市化并且双方投入大量机械化步兵单位的的旧地球北美战场上，用於在占领市区执行治安战任务的反步兵支援平台，被设计为在巷战环境中针对打击穿戴外骨骼并携带重型反坦克武器的武装伏击者，在生存能力极强的同时搭载了一门具备快速反应能力的实验性激光武器系统。</USAC_Mech_Gonk.description>
+  <!-- EN: head -->
+  <USAC_Mech_Gonk.tools.head.label>头部</USAC_Mech_Gonk.tools.head.label>
+  
+  <!-- EN: M110 "Omaha" -->
+  <USAC_Mech_Omaha.label>M110「奥马哈」</USAC_Mech_Omaha.label>
+  <!-- EN: An amphibious assault mech capable of operating both on land and water, providing close to mid-range fire support for USAC operations. Based on the Krepost heavy walker chassis. -->
+  <USAC_Mech_Omaha.description>一种被设计用於在交通线上排雷与清扫伏击的超重型破障用机兵，具有一扇厚重的排雷铲以及一对用於远距离清障的火箭牵引排爆索，在专为拆除建筑与防御工事的同时也具备一定的自卫火力用於消灭靠近的非法武装分子与游击队装甲车。</USAC_Mech_Omaha.description>
+  <!-- EN: mechanical head -->
+  <USAC_Mech_Omaha.tools.mechanical_head.label>机械头部</USAC_Mech_Omaha.tools.mechanical_head.label>
+  <!-- EN: left leg -->
+  <USAC_Mech_Omaha.tools.left_leg.label>左腿</USAC_Mech_Omaha.tools.left_leg.label>
+  <!-- EN: right leg -->
+  <USAC_Mech_Omaha.tools.right_leg.label>右腿</USAC_Mech_Omaha.tools.right_leg.label>
+  
+</LanguageData>

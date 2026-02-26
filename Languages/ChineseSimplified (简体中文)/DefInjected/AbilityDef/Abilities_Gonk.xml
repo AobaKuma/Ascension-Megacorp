@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: APS -->
+  <USAC_APS.label>主动防御系统</USAC_APS.label>
+  <!-- EN: Activate the Active Defense System to intercept nearby low-speed and explosive projectiles in a short period of time. -->
+  <USAC_APS.description>启动主动防御系统，在短时间内拦截周围的低速爆炸性投射物。</USAC_APS.description>
+  
+</LanguageData>

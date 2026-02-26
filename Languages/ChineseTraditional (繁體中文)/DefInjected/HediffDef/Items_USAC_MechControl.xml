@@ -2,13 +2,13 @@
 <LanguageData>
   
   <!-- EN: mechlink kill switch -->
-  <USAC_TempMechlinkKillSwitch.label>機械連接殺死開關</USAC_TempMechlinkKillSwitch.label>
+  <USAC_TempMechlinkKillSwitch.label>死亡板機</USAC_TempMechlinkKillSwitch.label>
   <!-- EN: Destroys the mechlink upon user death by overloading the interface. -->
-  <USAC_TempMechlinkKillSwitch.description>用戶死亡時通過過載界面銷毀機械連接。</USAC_TempMechlinkKillSwitch.description>
+  <USAC_TempMechlinkKillSwitch.description>用戶死亡時通過過載接口銷毀物理連接的自毀協議。</USAC_TempMechlinkKillSwitch.description>
   
   <!-- EN: temporary mechlink -->
-  <USAC_TempMechlinkTrigger.label>臨時機械連接</USAC_TempMechlinkTrigger.label>
+  <USAC_TempMechlinkTrigger.label>神經機控連接</USAC_TempMechlinkTrigger.label>
   <!-- EN: Subscription-based bandwidth control service via USAC satellite network. Provides 6 bandwidth. Lost upon brain death or service expiration. -->
-  <USAC_TempMechlinkTrigger.description>通過USAC衛星網絡提供的基於訂閱的帶寬控制服務。提供6個帶寬。腦死亡或服務過期時喪失。</USAC_TempMechlinkTrigger.description>
+  <USAC_TempMechlinkTrigger.description>通過USAC衛星網絡提供的基於訂閱的帶寬控制服務。提供6個帶寬。當用戶腦死亡或服務過期時將自動終止服務。</USAC_TempMechlinkTrigger.description>
   
 </LanguageData>

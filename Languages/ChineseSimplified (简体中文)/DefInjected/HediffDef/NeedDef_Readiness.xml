@@ -4,7 +4,7 @@
   <!-- EN: low readiness -->
   <USAC_LowReadiness.label>低整备</USAC_LowReadiness.label>
   <!-- EN: This mechanoid is running low on operational supplies. Its combat effectiveness is reduced. -->
-  <USAC_LowReadiness.description>该机兵的运作耗材已接近耗尽。其战斗效能下降。</USAC_LowReadiness.description>
+  <USAC_LowReadiness.description>该机兵的运作耗材已接近耗尽。其战斗效能下降，需要使用零件维修机械体来提高整备度。</USAC_LowReadiness.description>
   <!-- EN: degraded -->
   <USAC_LowReadiness.stages.degraded.label>性能下降</USAC_LowReadiness.stages.degraded.label>
   

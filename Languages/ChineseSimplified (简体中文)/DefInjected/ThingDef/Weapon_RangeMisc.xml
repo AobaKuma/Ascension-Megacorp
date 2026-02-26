@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: pluser beam -->
+  <USAC_Bullet_BeamPluser.label>脉冲光束</USAC_Bullet_BeamPluser.label>
+  
+  <!-- EN: XM931 Pulsar II -->
+  <USAC_Gun_OpticInterceptor.label>脉冲激光拦截器</USAC_Gun_OpticInterceptor.label>
+  <!-- EN: High-power pulse beam systems with low-altitude projectile interception capabilities, as well as the ability to kill conventional infantry and armored targets, are widely used as anti-drone and anti-missile interception systems on urban warfare weapon platforms. -->
+  <USAC_Gun_OpticInterceptor.description>具备低空投射物拦截能力的大功率脉冲光束武器系统，同时具备对常规步兵与装甲目标的杀伤能力，因此被广泛作为都市战武器平台上的反无人机与反导弹拦截系统。</USAC_Gun_OpticInterceptor.description>
+  <!-- EN: barrel -->
+  <USAC_Gun_OpticInterceptor.tools.barrel.label>枪管</USAC_Gun_OpticInterceptor.tools.barrel.label>
+  <!-- EN: XM931 Pulsar II -->
+  <USAC_Gun_OpticInterceptor.verbs.Verb_ShootBeam.label>脉冲激光拦截器</USAC_Gun_OpticInterceptor.verbs.Verb_ShootBeam.label>
+  
+  <!-- EN: Mote -->
+  <USAC_Mote_PluserBeamLaser.label>光束焦痕</USAC_Mote_PluserBeamLaser.label>
+  
+</LanguageData>

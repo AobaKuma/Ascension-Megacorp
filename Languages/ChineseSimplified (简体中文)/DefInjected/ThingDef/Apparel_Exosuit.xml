@@ -3,11 +3,17 @@
   
   <!-- EN: hardiman powered unit -->
   <USAC_Apparel_ExoSkeleton.label>哈迪曼动力外骨骼</USAC_Apparel_ExoSkeleton.label>
-  <!-- EN: A powered exoskeleton suit driven by an electric motor. It allows the wearer to lift and operate heavy weapons and equipment, and features bulletproof plate mounting points for protection. Its design dates back to the Cold War era on ancient Earth and may be the earliest known prototype of a powered exoskeleton suit. -->
-  <USAC_Apparel_ExoSkeleton.description>由电动马达驱动的动力外骨骼装甲。它允许穿着者举起和操作重武器和设备，并具有防弹板安装点以提供保护。其设计可以追溯到古地球的冷战时代，可能是已知最早的动力外骨骼装甲原型。</USAC_Apparel_ExoSkeleton.description>
+  <!-- EN: A powered exoskeleton suit driven by an electric motor. It allows personal to lift and operate heavy weapons and equipment, and features bulletproof plate mounting points for protection. Its design dates back to the Cold War era on ancient Earth and may be the earliest known prototype of a powered exoskeleton suit. -->
+  <USAC_Apparel_ExoSkeleton.description>透过电机驱动的动力外骨骼服，能使穿戴者举起并操作笨重的武器与装备，装有快拆式插板来提供防护。其设计可追溯至古代地球上的冷战时期。</USAC_Apparel_ExoSkeleton.description>
   <!-- EN: exosuit top -->
   <USAC_Apparel_ExoSkeleton.apparel.renderNodeProperties.0.debugLabel>外骨骼上衣</USAC_Apparel_ExoSkeleton.apparel.renderNodeProperties.0.debugLabel>
   <!-- EN: exosuit bottom -->
   <USAC_Apparel_ExoSkeleton.apparel.renderNodeProperties.1.debugLabel>外骨骼裤子</USAC_Apparel_ExoSkeleton.apparel.renderNodeProperties.1.debugLabel>
+  <!-- EN: offering additional {0} on covered body parts, will lose durability after taking damage.\n{1} -->
+  <USAC_Apparel_ExoSkeleton.comps.CompBulletproofPlate.durabilityDescKey>对於覆盖的部位提供{0}的额外防护。在承受伤害後耐久将降低并有概率防护失效。</USAC_Apparel_ExoSkeleton.comps.CompBulletproofPlate.durabilityDescKey>
+  <!-- EN: durability can be replenished using {0}, restoring {1} points per material. -->
+  <USAC_Apparel_ExoSkeleton.comps.CompBulletproofPlate.refillDescKey>可以在脱下後使用{0}来补充耐久，每单位材料可恢复{1}点。</USAC_Apparel_ExoSkeleton.comps.CompBulletproofPlate.refillDescKey>
+  <!-- EN: replenished plates {0} ({1}x {2}) -->
+  <USAC_Apparel_ExoSkeleton.comps.CompBulletproofPlate.refillVerbKey>为{0}更换防弹插板({1}x {2})</USAC_Apparel_ExoSkeleton.comps.CompBulletproofPlate.refillVerbKey>
   
 </LanguageData>

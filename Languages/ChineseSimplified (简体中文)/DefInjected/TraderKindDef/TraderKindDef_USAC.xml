@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
+  <!-- EN: USAC mech supplier -->
+  <USAC_Trader_MechSupplier.label>机兵营销商</USAC_Trader_MechSupplier.label>
+  
   <!-- EN: USAC orbital trader -->
   <USAC_Trader_Orbital.label>军工业承包商</USAC_Trader_Orbital.label>
   

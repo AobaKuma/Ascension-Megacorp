@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: M7 "Cobalt" -->
+  <USAC_Mech_Cobalt.label>M7「钴合金」</USAC_Mech_Cobalt.label>
+  <!-- EN: A medium quadruped cargo mech with integrated machine gun. Features shotgun-resistant armor plating, cargo hauling capability, and smoke grenade deployment system. -->
+  <USAC_Mech_Cobalt.description>一种被用於在都市战环境中携带重火力来支援步兵推进与扫荡火力点的中型四足机兵平台，通常会安装自动榴弹发射器或一杆高精度自动炮来有效的清除建筑楼层中的定点阵地。在地球时代由於该型机兵在街上镇压暴徒时能够靠着外壳无视燃烧弹的点燃，其全身燃烧时不为所动的压迫感也被人昵称为地狱犬。</USAC_Mech_Cobalt.description>
+  <!-- EN: head -->
+  <USAC_Mech_Cobalt.tools.head.label>头部</USAC_Mech_Cobalt.tools.head.label>
+  
+</LanguageData>

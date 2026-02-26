@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: [PAWN_nameDef] failed as a bandit and was unfortunately captured by a colonial group. While serving a labor sentence, [PAWN_nameDef] realized how much better the life of these people had and decided to stay after being released from prison. -->
-  <USAC_Military01.description>[PAWN_nameDef]作为盗匪失败了，不幸被一个殖民地集团抓获。在服完劳动刑期间，[PAWN_nameDef]意识到这些人的生活质量要好得多，并决定在出狱後留下来。</USAC_Military01.description>
+  <!-- EN: [PAWN_nameDef] failed as a bandit and was unfortunately captured by a merc group. While serving a labor sentence, [PAWN_nameDef] realized how much better the life of these people had and decided to stay after being released. -->
+  <USAC_Military01.description>[PAWN_nameDef]作为盗匪十分失败，不幸被武装集团抓获後被判处义务劳动，但好在工作内容几乎没有变化。</USAC_Military01.description>
   <!-- EN: Reformed Bandit -->
-  <USAC_Military01.title>改邪归正的盗匪</USAC_Military01.title>
+  <USAC_Military01.title>从良盗匪</USAC_Military01.title>
   <!-- EN: Bandit -->
   <USAC_Military01.titleShort>盗匪</USAC_Military01.titleShort>
   
   <!-- EN: [PAWN_nameDef] served as a medic in the Armed Forces and retired from military life prematurely after a serious injury. -->
-  <USAC_Military02.description>[PAWN_nameDef]在武装部队中担任军医，在一次严重伤害後提前从军事生活中退役。</USAC_Military02.description>
+  <USAC_Military02.description>[PAWN_nameDef]在武装部队中担任军医，直到在一次严重伤害後提前从军事生涯中退役。</USAC_Military02.description>
   <!-- EN: Retired Medic -->
   <USAC_Military02.title>退休军医</USAC_Military02.title>
   <!-- EN: Medic -->
@@ -23,56 +23,56 @@
   <USAC_Military03.titleShort>副官</USAC_Military03.titleShort>
   
   <!-- EN: [PAWN_nameDef] was once a bodyguard for military contractor groups, but was laid off because Automatroids proved to be stronger in competitive combat capability. [PAWN_nameDef] eventually had to follow a frontier project to the rimworld to seek a living. -->
-  <USAC_Military04.description>[PAWN_nameDef]曾是军事承包商集团的保镖，但由於机兵在竞争性战斗能力上证明更强而被解雇。[PAWN_nameDef]最终不得不跟随边疆项目到边缘世界谋求生计。</USAC_Military04.description>
+  <USAC_Military04.description>[PAWN_nameDef]曾是军事承包商集团长期聘用的持枪保镖，但由於机兵的普及而被解雇。[PAWN_nameDef]最终不得不跟随边疆计画来到边缘世界谋求生计。</USAC_Military04.description>
   <!-- EN: Fired Bodyguard -->
   <USAC_Military04.title>被解雇的保镖</USAC_Military04.title>
   <!-- EN: Bodyguard -->
   <USAC_Military04.titleShort>保镖</USAC_Military04.titleShort>
   
   <!-- EN: [PAWN_nameDef] was a mercenary in armed groups. However, Automatroids have squeezed out the mercenaries' living space with both superior combat power and cost efficiency. [PAWN_nameDef] proved that [PAWN_pronoun]'s blood and sweat could be cheaper than an Automatroid's lubricant oil. -->
-  <USAC_Military05.description>[PAWN_nameDef]是武装集团中的佣兵。然而，机兵以优越的战斗力和成本效益挤压了佣兵的生存空间。[PAWN_nameDef]证明了[PAWN_pronoun]的血汗可以比机兵的润滑油还便宜。</USAC_Military05.description>
+  <USAC_Military05.description>[PAWN_nameDef]是武装集团中的佣兵。然而机兵以优越的战斗力和成本效益挤压了佣兵的生存空间。但[PAWN_nameDef]证明了[PAWN_pronoun]的血汗可以比机兵的润滑油还便宜。</USAC_Military05.description>
   <!-- EN: Struggling Mercenary -->
   <USAC_Military05.title>挣扎的佣兵</USAC_Military05.title>
   <!-- EN: Mercenary -->
   <USAC_Military05.titleShort>佣兵</USAC_Military05.titleShort>
   
   <!-- EN: The profits and opportunities brought by frontier projects attracted many unemployed laborers like [PAWN_nameDef]. Like many others following the frontier project, [PAWN_nameDef] signed liability waivers to come to the rimworld. -->
-  <USAC_Military06.description>边疆项目带来的利润和机会吸引了许多像[PAWN_nameDef]这样的失业劳动者。像许多其他跟随边疆项目的人一样，[PAWN_nameDef]签署了责任豁免书来到边缘世界。</USAC_Military06.description>
+  <USAC_Military06.description>第一次边疆计画带来的利润和机会吸引了许多像[PAWN_nameDef]这样的失业劳动者。像许多其他跟随边疆计画的参与者一样，[PAWN_nameDef]签署了责任豁免书来到边缘世界。</USAC_Military06.description>
   <!-- EN: Frontier Worker -->
   <USAC_Military06.title>边疆工人</USAC_Military06.title>
   <!-- EN: Worker -->
   <USAC_Military06.titleShort>工人</USAC_Military06.titleShort>
   
   <!-- EN: [PAWN_nameDef] worked for a megacorporation as a forensic assistant accepting credit collateral. Unlike those with special interests, [PAWN_nameDef] was pushed to the brink of collapse by daily work pressure, but also honed advanced medical skills in the process. -->
-  <USAC_Military07.description>[PAWN_nameDef]曾在一家巨型企业担任法医助理，接受信用抵押品。与那些有特殊利益的人不同，[PAWN_nameDef]被日常工作压力推到了崩溃的边缘，但在这个过程中也磨练了先进的医疗技能。</USAC_Military07.description>
+  <USAC_Military07.description>[PAWN_nameDef]曾在一家巨型企业担任法医助理，在现场为信用抵押品评估收购价值。与那些有特殊利益的人不同，[PAWN_nameDef]被日常工作压力推到了崩溃的边缘，但在这个过程中也磨练了先进的医疗技能。</USAC_Military07.description>
   <!-- EN: Megacorp Coroner -->
   <USAC_Military07.title>巨型企业验屍官</USAC_Military07.title>
   <!-- EN: Coroner -->
   <USAC_Military07.titleShort>验屍官</USAC_Military07.titleShort>
   
   <!-- EN: As technology and Automatroids continued to iterate, [PAWN_nameDef] was eventually laid off from maintaining Automatroids. However, in an era where Automatroids run rampant, the laid-off [PAWN_nameDef] remains an important talent for mercenaries, pirates, and private armed groups. -->
-  <USAC_Military08.description>随着技术和机兵的不断迭代，[PAWN_nameDef]最终被解雇而无法继续维护机兵。然而，在机兵猖獗的时代，被解雇的[PAWN_nameDef]仍然是佣兵、海盗和私人武装集团的重要人才。</USAC_Military08.description>
+  <USAC_Military08.description>随着技术和机兵的不断迭代，[PAWN_nameDef]最终被解雇而流离失所。然而在机兵猖獗的时代，被解雇的[PAWN_nameDef]仍然是佣兵、海盗和私人武装集团的重要人才。</USAC_Military08.description>
   <!-- EN: Automatroid Maintenance Tech -->
   <USAC_Military08.title>机兵维护技术员</USAC_Military08.title>
   <!-- EN: Mech Tech -->
-  <USAC_Military08.titleShort>机甲技术员</USAC_Military08.titleShort>
+  <USAC_Military08.titleShort>机兵技术员</USAC_Military08.titleShort>
   
   <!-- EN: [PAWN_nameDef] came to the rimworld with a frontier project, doing whatever [PAWN_pronoun] wanted. Because [PAWN_pronoun] offended many people and violated most contract terms, [PAWN_pronoun] is now being hunted. But this kind of life is exactly what [PAWN_pronoun] pursues. -->
-  <USAC_Military09.description>[PAWN_nameDef]跟随边疆项目来到边缘世界，做[PAWN_pronoun]想做的任何事。因为[PAWN_pronoun]冒犯了许多人并违反了大多数合同条款，[PAWN_pronoun]现在被追捕。但这种生活正是[PAWN_pronoun]所追求的。</USAC_Military09.description>
+  <USAC_Military09.description>[PAWN_nameDef]跟随边疆计画来到边缘世界，做[PAWN_pronoun]想做的任何事。因为[PAWN_pronoun]冒犯了许多人并违反了大多数合同条款，[PAWN_pronoun]现在被追捕。但这种生活正是[PAWN_pronoun]所追求的。</USAC_Military09.description>
   <!-- EN: Lawless Rogue -->
   <USAC_Military09.title>无法无天的无赖</USAC_Military09.title>
   <!-- EN: Rogue -->
   <USAC_Military09.titleShort>无赖</USAC_Military09.titleShort>
   
   <!-- EN: [PAWN_nameDef] was once a high-ranking officer in the military, but became a political scapegoat in the factional struggles within the military and military-industrial complex. Although [PAWN_nameDef] kept [PAWN_pronoun]'s life through military connections, [PAWN_pronoun] had to follow a frontier project to the rimworld. -->
-  <USAC_Military10.description>[PAWN_nameDef]曾是军队中的高级军官，但在军队和军工复合体内部的派系斗争中成为了政治替罪羊。虽然[PAWN_nameDef]通过军事关系保住了[PAWN_pronoun]的生命，但[PAWN_pronoun]不得不跟随边疆项目到边缘世界。</USAC_Military10.description>
+  <USAC_Military10.description>[PAWN_nameDef]曾是军队中的高级军官，但在军队和军工复合体内部的派系斗争中成为了政治替罪羊。虽然[PAWN_nameDef]通过军事关系保住了[PAWN_pronoun]的生命，但[PAWN_pronoun]不得不跟随边疆计画到边缘世界。</USAC_Military10.description>
   <!-- EN: Retired General -->
   <USAC_Military10.title>退休将军</USAC_Military10.title>
   <!-- EN: General -->
   <USAC_Military10.titleShort>将军</USAC_Military10.titleShort>
   
   <!-- EN: [PAWN_nameDef] dedicated [PAWN_pronoun]'s youth to [PAWN_pronoun]'s country. However, the brutality of the battlefield left [PAWN_nameDef] with post-traumatic stress disorder. After the war, [PAWN_pronoun] received no proper treatment, and the difficulties of daily life forced [PAWN_pronoun] to come to the rimworld to seek a living. -->
-  <USAC_Military11.description>[PAWN_nameDef]将[PAWN_pronoun]的青春献给了[PAWN_pronoun]的国家。然而，战场的残酷给[PAWN_nameDef]留下了创伤後应激障碍。战争结束後，[PAWN_pronoun]没有得到适当的治疗，日常生活的困难迫使[PAWN_pronoun]来到边缘世界谋求生计。</USAC_Military11.description>
+  <USAC_Military11.description>[PAWN_nameDef]将[PAWN_pronoun]的青春献给了[PAWN_pronoun]的国家。然而，战场的残酷给[PAWN_nameDef]留下了创伤後应激障碍。战争结束後，[PAWN_pronoun]没有得到适当的治疗，日常生活的困难迫使[PAWN_pronoun]参与边疆计画谋求生计。</USAC_Military11.description>
   <!-- EN: Traumatized Veteran -->
   <USAC_Military11.title>创伤退伍军人</USAC_Military11.title>
   <!-- EN: Veteran -->
@@ -84,5 +84,5 @@
   <USAC_Military12.title>机兵教父</USAC_Military12.title>
   <!-- EN: Godfather -->
   <USAC_Military12.titleShort>教父</USAC_Military12.titleShort>
-
+  
 </LanguageData>

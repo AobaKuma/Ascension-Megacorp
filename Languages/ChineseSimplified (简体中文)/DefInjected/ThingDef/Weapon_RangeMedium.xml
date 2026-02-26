@@ -2,35 +2,44 @@
 <LanguageData>
   
   <!-- EN: programmable shaped charge -->
-  <USAC_Bullet_GrenadeRound.label>可编程成型装药</USAC_Bullet_GrenadeRound.label>
+  <USAC_Bullet_GrenadeRound.label>可编程装药榴弹</USAC_Bullet_GrenadeRound.label>
   
-  <!-- EN: advanced crew service weapon -->
+  <!-- EN: advanced support weapon -->
   <USAC_Gun_ACSW.label>先进支援武器</USAC_Gun_ACSW.label>
   <!-- EN: Project ACSW M307 "Terminator", A lightweight automatic grenade launcher that can fire fragmentation grenades in succession to kill infantry. require exoskeleton to carrying ammunition and handheld. -->
-  <USAC_Gun_ACSW.description>项目ACSW M307"终结者"，一种可连续发射破片榴弹的轻型自动榴弹发射器。其重量需要外骨骼来携带弹药。</USAC_Gun_ACSW.description>
+  <USAC_Gun_ACSW.description>M307 "终结者"是ACSW项目所产生的最终产品之一，是使用先进可编程榴弹的轻型自动榴弹发射器。其重量需要外骨骼来携带弹药。</USAC_Gun_ACSW.description>
   <!-- EN: stock -->
   <USAC_Gun_ACSW.tools.stock.label>枪托</USAC_Gun_ACSW.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_ACSW.tools.barrel.label>枪管</USAC_Gun_ACSW.tools.barrel.label>
-  <!-- EN: advanced crew service weapon -->
+  <!-- EN: advanced support weapon -->
+  <USAC_Gun_ACSW.verbs.Verb_ShootCE.label>先进支援武器</USAC_Gun_ACSW.verbs.Verb_ShootCE.label>
+  
+  <!-- UNUSED -->
   <USAC_Gun_ACSW.verbs.Verb_Shoot.label>先进支援武器</USAC_Gun_ACSW.verbs.Verb_Shoot.label>
   
   <!-- EN: Advanced battle rifle -->
   <USAC_Gun_BattleRifle.label>先进战斗步枪</USAC_Gun_BattleRifle.label>
   <!-- EN: M29 "SABR", an infantry weapon platform integrated automatic rifle and grenade launcher, capable of both direct fire suppression and indirect fire support. Although heavy, it boasts excellent aiming accuracy, making it ideal for use as a gunner's weapon in small units. -->
-  <USAC_Gun_BattleRifle.description>M29"SABR"，一种集成步兵武器平台，同时整合了自动步枪和榴弹发射器，能够进行直接火力压制和间接火力支援。虽然很重，但具有出色的瞄准精度，是小型单位中理想的枪手武器。</USAC_Gun_BattleRifle.description>
+  <USAC_Gun_BattleRifle.description>M29 "SABR"，是一种同时整合了自动步枪和榴弹发射器的步兵武器平台，能够进行直接火力压制和间接火力支援。虽然很重但具有出色的瞄准精度，是小编制作战队伍中的理想射手武器。</USAC_Gun_BattleRifle.description>
   <!-- EN: Advanced battle rifle -->
+  <USAC_Gun_BattleRifle.verbs.Verb_ShootCE.label>先进战斗步枪</USAC_Gun_BattleRifle.verbs.Verb_ShootCE.label>
+  
+  <!-- UNUSED -->
   <USAC_Gun_BattleRifle.verbs.Verb_Shoot.label>先进战斗步枪</USAC_Gun_BattleRifle.verbs.Verb_Shoot.label>
   
   <!-- EN: objective sniper weapon -->
   <USAC_Gun_OSW.label>目标狙击手武器</USAC_Gun_OSW.label>
   <!-- EN: Project OSW M109 "Payload", A sniper grenade launcher carried and used by exoskeleton infantrymen, capable of firing shaped charge grenades to precisely strike and damage the surface armor and external sensors of targets. -->
-  <USAC_Gun_OSW.description>项目OSW M109"佩洛德"，由外骨骼步兵携带和使用的狙击榴弹发射器，能够发射成型装药榴弹以精确打击和损害目标的表面装甲和外部传感器。</USAC_Gun_OSW.description>
+  <USAC_Gun_OSW.description>M109"佩洛德"，是在OSW计画中所提出由外骨骼步兵携带和使用的狙击榴弹发射器，能够发射先进可编程榴弹以精确打击和损害目标的表面装甲和外部传感器。</USAC_Gun_OSW.description>
   <!-- EN: stock -->
   <USAC_Gun_OSW.tools.stock.label>枪托</USAC_Gun_OSW.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_OSW.tools.barrel.label>枪管</USAC_Gun_OSW.tools.barrel.label>
   <!-- EN: objective sniper weapon -->
+  <USAC_Gun_OSW.verbs.Verb_ShootCE.label>目标狙击手武器</USAC_Gun_OSW.verbs.Verb_ShootCE.label>
+  
+  <!-- UNUSED -->
   <USAC_Gun_OSW.verbs.Verb_Shoot.label>目标狙击手武器</USAC_Gun_OSW.verbs.Verb_Shoot.label>
   
 </LanguageData>

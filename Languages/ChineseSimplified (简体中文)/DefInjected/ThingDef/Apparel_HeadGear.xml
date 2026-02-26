@@ -2,23 +2,23 @@
 <LanguageData>
   
   <!-- EN: Assault helmet -->
-  <USAC_Apparel_AssaultHelmet.label>突击头盔</USAC_Apparel_AssaultHelmet.label>
-  <!-- EN: todo -->
-  <USAC_Apparel_AssaultHelmet.description>轻型突击头盔，提供基本保护。</USAC_Apparel_AssaultHelmet.description>
+  <USAC_Apparel_AssaultHelmet.label>先进突击头盔</USAC_Apparel_AssaultHelmet.label>
+  <!-- EN: A lightweight tactical helmet made with a composite plasteel shell, which can be fitted with different additional components in addition to earmuffs as needed. -->
+  <USAC_Apparel_AssaultHelmet.description>使用复合塑钢外壳制成的轻量化战术头盔，除了耳罩外还能够根据需求加装不同的附加组件。</USAC_Apparel_AssaultHelmet.description>
   
   <!-- EN: Heavy helmet -->
-  <USAC_Apparel_HeavyHelmet.label>重型头盔</USAC_Apparel_HeavyHelmet.label>
-  <!-- EN: todo -->
-  <USAC_Apparel_HeavyHelmet.description>重型头盔，提供强大的头部保护。</USAC_Apparel_HeavyHelmet.description>
+  <USAC_Apparel_HeavyHelmet.label>先进防弹头盔</USAC_Apparel_HeavyHelmet.label>
+  <!-- EN: Composite plasteel protective helmets with enhanced frontal shrapnel protection are widely used by machine gunners and heavy infantry support infantry units engaged in high-profile combat on the battlefield contact line. -->
+  <USAC_Apparel_HeavyHelmet.description>强化正面破片防护能力的复合塑钢防护头盔，被广泛用於机枪手以及重装步兵等在战场接触线上高调战斗的支援步兵单位。</USAC_Apparel_HeavyHelmet.description>
   
   <!-- EN: Gladiator helmet -->
-  <USAC_Apparel_MeleeHelmet.label>角斗士头盔</USAC_Apparel_MeleeHelmet.label>
-  <!-- EN: todo -->
-  <USAC_Apparel_MeleeHelmet.description>专为近距离战斗设计的头盔。</USAC_Apparel_MeleeHelmet.description>
+  <USAC_Apparel_MeleeHelmet.label>先进格斗头盔</USAC_Apparel_MeleeHelmet.label>
+  <!-- EN: A tactical helmet for use in indoor environments features bulletproof eyepieces that protect the eyes from shrapnel and burns, but its reflectivity at certain angles can hinder aiming during firing. -->
+  <USAC_Apparel_MeleeHelmet.description>一种用於在室内环境中作战用的战术头盔，具有能够保护眼睛免受破片与灼伤伤害的防弹目镜，但由於在特定角度反光的原因而在长距离瞄准时会有瞄准阻碍。</USAC_Apparel_MeleeHelmet.description>
   
   <!-- EN: Night vision helmet -->
-  <USAC_Apparel_NightVisionHelmet.label>夜视头盔</USAC_Apparel_NightVisionHelmet.label>
-  <!-- EN: todo -->
-  <USAC_Apparel_NightVisionHelmet.description>配备夜视装置的高级头盔。</USAC_Apparel_NightVisionHelmet.description>
+  <USAC_Apparel_NightVisionHelmet.label>先进夜视头盔</USAC_Apparel_NightVisionHelmet.label>
+  <!-- EN: A lightweight tactical helmet with added night vision goggles can improve shooting ability and accuracy. However, the forward center of gravity reduces reaction time in close-range combat. -->
+  <USAC_Apparel_NightVisionHelmet.description>加挂模块化夜视装置的轻型战术头盔，能够提升射击能力与精确度。然而较为靠前的重心会使得在近距离的格斗反应能力下降。</USAC_Apparel_NightVisionHelmet.description>
   
 </LanguageData>

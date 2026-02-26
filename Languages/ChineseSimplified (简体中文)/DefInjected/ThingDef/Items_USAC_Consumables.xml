@@ -14,10 +14,10 @@
   <USAC_DisposableRepairTool.description>一种方形的奈米储存容器，能够释放奈米机器并自动分析目标结构来修补受损部位，为避免用户私自改造造成安全隐患，因此该工具被设计为一次性使用。</USAC_DisposableRepairTool.description>
   <!-- EN: Use kit to repair mechanoid -->
   <USAC_DisposableRepairTool.comps.CompUsable.useLabel>使用工具组修复机械体</USAC_DisposableRepairTool.comps.CompUsable.useLabel>
-
+  
   <!-- EN: B-Ration -->
   <USAC_MealSurvivalPack.label>B口粮</USAC_MealSurvivalPack.label>
-  <!-- EN: A military meal composed of a soft split bun, a compressed protein patty, and a sharp sauce packet. Its patented sealed packaging can preserve it for decades when heated unopened. While providing stable calories, its sustained-release analgesic formula can reduce bodily pain for about half a day. -->
-  <USAC_MealSurvivalPack.description>一种由柔软的对切面包、压制蛋白肉饼与辛香酱组成的军用餐食。其注册专利的封装能在未开封加热的情况下保存数十年，并在提供稳定热量的同时，内含缓释镇痛配方，可在约半天内降低身体疼痛感。</USAC_MealSurvivalPack.description>
+  <!-- EN: A military meal made from a soft split bun, compressed protein patty, and some sharp sauce. Its patented sealed packaging allows it to remain viable for decades when heated unopened. Along with stable calories, it contains a sustained-release analgesic formula that reduces bodily pain for about half a day. -->
+  <USAC_MealSurvivalPack.description>一种由柔软的对切面包、压制蛋白肉饼与辛香酱组成的军用餐食。其注册专利的封装能在未开封加热的情况下保存数十年，并在提供稳定热量的同时其内含缓释镇痛配方，能在约半天内降低身体疼痛感。</USAC_MealSurvivalPack.description>
   
 </LanguageData>

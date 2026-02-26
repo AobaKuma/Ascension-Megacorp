@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: resupply USAC mech -->
+  <USAC_ResupplyMech.label>整备精密机兵</USAC_ResupplyMech.label>
+  <!-- EN: resupplying -->
+  <USAC_ResupplyMech.gerund>整备中</USAC_ResupplyMech.gerund>
+  <!-- EN: resupply -->
+  <USAC_ResupplyMech.verb>整备</USAC_ResupplyMech.verb>
+  
+</LanguageData>

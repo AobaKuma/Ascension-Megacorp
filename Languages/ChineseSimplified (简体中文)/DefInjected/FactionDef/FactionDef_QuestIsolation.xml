@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: isolated outpost -->
+  <USAC_QuestIsolation.label>孤立站点</USAC_QuestIsolation.label>
+  <!-- EN: An isolated group designated as a target for USAC operations. -->
+  <USAC_QuestIsolation.description>一个被武装集团视为行动目标的孤立团体</USAC_QuestIsolation.description>
+  <!-- EN: leader -->
+  <USAC_QuestIsolation.leaderTitle>领袖</USAC_QuestIsolation.leaderTitle>
+  <!-- EN: {0} from {1} are attacking your {2}. -->
+  <USAC_QuestIsolation.messageDefendersAttacking>来自{1}的{0}正在攻击你的{2}</USAC_QuestIsolation.messageDefendersAttacking>
+  <!-- EN: operative -->
+  <USAC_QuestIsolation.pawnSingular>人员</USAC_QuestIsolation.pawnSingular>
+  <!-- EN: operatives -->
+  <USAC_QuestIsolation.pawnsPlural>人员</USAC_QuestIsolation.pawnsPlural>
+  
+</LanguageData>

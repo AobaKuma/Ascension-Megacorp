@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: The Debt squad -->
+  <USAC_ScenarioDebtStart.label>负债小队</USAC_ScenarioDebtStart.label>
+  <!-- EN: Four people tied to USAC contracts hit atmosphere in a failing drop pod line: a debt inheritor, a laid-off mech technician, a former security hand, and a frontier laborer who signed every waiver put in front of them. None of them were meant to lead a colony, but all of them were built to survive hard terms. On this rimworld, contracts mean nothing unless you can defend them. -->
+  <USAC_ScenarioDebtStart.description>四位与USAC签订合同的殖民者乘坐故障的空投舱坠入大气层：债务继承人、失业的机甲技师、前保安，又或者单纯的边境劳工，他们签署了摆在面前的所有免责声明负债参与了边境计画。他们在母星上的经历证明了他们天生适合在严苛的条件下生存，他们离开了家乡奔向自由...以及更多的债务。</USAC_ScenarioDebtStart.description>
+  <!-- EN: Four people tied to USAC contracts hit atmosphere in a failing drop pod line: a debt inheritor, a laid-off mech technician, a former security hand, and a frontier laborer who signed every waiver put in front of them. None of them were meant to lead a colony, but all of them were built to survive hard terms. On this rimworld, contracts mean nothing unless you can defend them. -->
+  <USAC_ScenarioDebtStart.scenario.description>四位与USAC签订合同的殖民者乘坐故障的空投舱坠入大气层：债务继承人、失业的机甲技师、前保安，又或者单纯的边境劳工，他们签署了摆在面前的所有免责声明负债参与了边境计画。他们在母星上的经历证明了他们天生适合在严苛的条件下生存，他们离开了家乡奔向自由...\n\n以及更多的债务。</USAC_ScenarioDebtStart.scenario.description>
+  <!-- EN: The Debt squad -->
+  <USAC_ScenarioDebtStart.scenario.name>负债小队</USAC_ScenarioDebtStart.scenario.name>
+  <!-- EN: Four USAC-linked survivors: debt, layoffs, war experience, and frontier contracts forged into one desperate start. -->
+  <USAC_ScenarioDebtStart.scenario.summary>四位与飞升巨企密切相关的幸存者：债务、裁员、战争经历和器官捐赠合同，造就了他们绝望的开始。</USAC_ScenarioDebtStart.scenario.summary>
+  
+</LanguageData>

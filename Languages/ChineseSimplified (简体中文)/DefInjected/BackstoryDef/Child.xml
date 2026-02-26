@@ -16,7 +16,7 @@
   <USAC_CivilianChild05.titleShort>债二代</USAC_CivilianChild05.titleShort>
   
   <!-- EN: [PAWN_nameDef] signed an organ donation contract early on, stipulating donation of healthy organs upon adulthood. But clever [PAWN_nameDef] quickly used the contract money to establish connections and joined a frontier project to escape to the rimworld and evade the donation contract. -->
-  <USAC_CivilianChild06.description>[PAWN_nameDef]早年签署了器官捐献合同，规定成年後捐献健康器官。但聪慧的[PAWN_nameDef]很快利用合同款项建立关系，加入边疆项目逃往边缘世界躲避捐献合同。</USAC_CivilianChild06.description>
+  <USAC_CivilianChild06.description>[PAWN_nameDef]早年签署了器官捐献合同，规定成年後捐献健康器官。但聪慧的[PAWN_nameDef]很快利用合同款项建立关系，加入边疆计画逃往边缘世界躲避捐献合同。</USAC_CivilianChild06.description>
   <!-- EN: Organ Dodger -->
   <USAC_CivilianChild06.title>器官逃避者</USAC_CivilianChild06.title>
   <!-- EN: Dodger -->
@@ -30,14 +30,14 @@
   <USAC_CivilianChild07.titleShort>殖民儿童</USAC_CivilianChild07.titleShort>
   
   <!-- EN: [PAWN_nameDef] grew up under excellent family conditions and received a fine education. However, talent saturation and blocked advancement paths forced [PAWN_nameDef] to seek opportunities in the distant rimworld. -->
-  <USAC_CivilianChild08.description>[PAWN_nameDef]的家庭条件十分优渥，让[PAWN_pronoun]接受良好的教育。然而人才饱和以及被封闭的晋升途径迫使[PAWN_nameDef]不得不在遥远的边缘世界寻求机会。</USAC_CivilianChild08.description>
+  <USAC_CivilianChild08.description>[PAWN_nameDef]的家庭条件十分优渥，让[PAWN_pronoun]接受良好的教育。然而人才饱和以及被封闭的晋升途径迫使[PAWN_nameDef]不得不加入边疆计画在遥远的边缘世界寻求机会。</USAC_CivilianChild08.description>
   <!-- EN: Middle-Class Child -->
   <USAC_CivilianChild08.title>中产阶级儿童</USAC_CivilianChild08.title>
   <!-- EN: Privileged Child -->
   <USAC_CivilianChild08.titleShort>特权儿童</USAC_CivilianChild08.titleShort>
   
   <!-- EN: Young [PAWN_nameDef] pursued the dream of being an adventurer, secretly participating in a frontier project to come to the rimworld without telling anyone. [PAWN_pronoun] quickly learned how cruel the reality behind [PAWN_pronoun]'s dreams truly was. -->
-  <USAC_CivilianChild09.description>年轻的[PAWN_nameDef]追求冒险家的梦想，没有告诉任何人就私自参加了边疆项目来到边缘世界。[PAWN_pronoun]很快就明白了[PAWN_pronoun]梦想背後的现实是多麽残酷。</USAC_CivilianChild09.description>
+  <USAC_CivilianChild09.description>年轻的[PAWN_nameDef]追求冒险家的梦想，没有告诉任何人就私自参加了边疆计画来到边缘世界。[PAWN_pronoun]很快就明白了[PAWN_pronoun]梦想背後的现实是多麽残酷。</USAC_CivilianChild09.description>
   <!-- EN: Young Adventurer -->
   <USAC_CivilianChild09.title>年轻的冒险家</USAC_CivilianChild09.title>
   <!-- EN: Adventurer -->
@@ -65,7 +65,7 @@
   <USAC_MilitaryChild05.titleShort>战争儿童</USAC_MilitaryChild05.titleShort>
   
   <!-- EN: Due to his outstanding performance in the Colonial Military Academy, [PAWN_nameDef] was trained as an Officer Cadet during his childhood. [PAWN_nameDef] achieved the rank of Warrant Officer upon reaching adulthood. -->
-  <USAC_OfficerChild01.description>由於军事学院的学贷，[PAWN_nameDef]在童年时期被培训为军官学员。[PAWN_nameDef]成年後获得了准尉军衔。</USAC_OfficerChild01.description>
+  <USAC_OfficerChild01.description>，[PAWN_nameDef]在童年时期被培训为军官学员。由於无法偿还军事学院的学贷[PAWN_nameDef]被分配到了边疆计画当中。</USAC_OfficerChild01.description>
   <!-- EN: Officer Cadet -->
   <USAC_OfficerChild01.title>军官学员</USAC_OfficerChild01.title>
   <!-- EN: Cadet -->
@@ -97,5 +97,5 @@
   <USAC_OfficerChild06.title>机兵爱好者</USAC_OfficerChild06.title>
   <!-- EN: Tech Enthusiast -->
   <USAC_OfficerChild06.titleShort>机兵宅</USAC_OfficerChild06.titleShort>
-
+  
 </LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: field backpack -->
+  <USAC_Apparel_Backpack.label>行军背包</USAC_Apparel_Backpack.label>
+  <!-- EN: A large field backpack designed for long-distance marches, capable of holding a large number of items but offering no load-bearing capacity. -->
+  <USAC_Apparel_Backpack.description>一种用於长距离行军的大型野战背包，能够装入大量的物品但并不提供任何负重能力的支持。</USAC_Apparel_Backpack.description>
+  
+</LanguageData>

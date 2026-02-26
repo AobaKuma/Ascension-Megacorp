@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Orbital assault rig -->
+  <USAC_AssaultRig.label>轨道突击钻机</USAC_AssaultRig.label>
+  <!-- EN: Armed groups produce and deploy these flexibly deployable drilling rigs to the surface via on-orbit industrial platforms to carry out mining operations. Their mining methods cause severe surface pollution, which you can prevent by destroying them to contain the pollution and avoid deposit loss.\n\nAlternatively, you can allow them to leave on their own after mining is complete. Regardless, armed groups will deploy troops and supplies to protect their property from intrusion. -->
+  <USAC_AssaultRig.helpText>武装集团透过在轨工业平台生产与投放这种能够灵活部署的钻机平台到地面上执行开采任务，所使用的开采方式会对地表造成严重的污染，你能够将其摧毁来遏制污染的发生并避免矿藏的损失。也可以放任其开采完毕後自行离开。无论如何，武装集团都会派驻部队与物资来保护他们的财产不受他人侵犯。</USAC_AssaultRig.helpText>
+  
+  <!-- EN: Bodybag -->
+  <USAC_Bodybag.label>裹屍袋</USAC_Bodybag.label>
+  <!-- EN: Bodybag is a designated packaging container for medical departments to package organic materials in transactions. USAC have a long history of legally acquiring such unclaimed materials for peaceful research, biological experiments, and medical aesthetics.\n\nBodybag containing samples must be placed within trade beacon range. Furthermore, materials with drug resistance can provide additional market value.\n\nIt is important to note that body bags cannot prevent environmental microorganisms from damaging the integrity of the materials; therefore, for large-scale long-term preservation, large cold storage facilities should be considered to prevent the loss of value due to natural decay. -->
+  <USAC_Bodybag.helpText>裹屍袋是武装集团医疗部门用於在交易中包裹材料的指定包装物。武装集团长期收购这些无人认领的屍体用於和平研究、生物实验与医疗美容。在交易中需要将装有样本的裹屍袋放置於交易信标的范围内，此外具有药物耐受性的材料可提供额外的贩售价值。\n\n要注意裹屍袋无法阻止环境微生物对材料完整性的损坏，因此在大规模的长期保存时应考虑构筑大型冷库以防止材料自然腐坏对价值的损失。</USAC_Bodybag.helpText>
+  
+  <!-- EN: Credit bonds -->
+  <USAC_CreditBonds.label>信用债券</USAC_CreditBonds.label>
+  <!-- EN: Armed groups and related traders used a form of value called credit bonds as a substitute for silver in the trade. These bonds could only be obtained through specific material transactions, and their registered nature made them difficult to circulate through other means. -->
+  <USAC_CreditBonds.helpText>武装集团与相关贸易商在军火贸易中使用一种名为信用债券的价值抵用物作为白银的替代，这些债券只能够透过特定的物资交易来获取，并且其记名性使得债券无法透过其他的方式流通。</USAC_CreditBonds.helpText>
+  
+</LanguageData>

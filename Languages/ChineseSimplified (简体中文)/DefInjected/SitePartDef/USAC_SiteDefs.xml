@@ -1,9 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  <!-- USAC_NeutralOutpost -->
+  
+  <!-- EN: outpost -->
   <USAC_NeutralOutpost.label>前哨站</USAC_NeutralOutpost.label>
+  <!-- EN: an outpost -->
   <USAC_NeutralOutpost.description>一个前哨站</USAC_NeutralOutpost.description>
-  <USAC_NeutralOutpost.approachOrderString>突击{0}</USAC_NeutralOutpost.approachOrderString>
+  <!-- EN: Attacking {0}. -->
   <USAC_NeutralOutpost.approachingReportString>正在突击{0}</USAC_NeutralOutpost.approachingReportString>
+  <!-- EN: Attack {0} -->
+  <USAC_NeutralOutpost.approachOrderString>突击{0}</USAC_NeutralOutpost.approachOrderString>
+  <!-- EN: There is an enemy outpost in this area. -->
   <USAC_NeutralOutpost.arrivedLetter>这片区域存在一个前哨站。</USAC_NeutralOutpost.arrivedLetter>
+  
 </LanguageData>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-  
-  <!-- EN: corpse bag -->
-  <USAC_CorpseBag.label>屍体袋</USAC_CorpseBag.label>
-  <!-- EN: TODO -->
-  <USAC_CorpseBag.description>一种用於存放屍体的专用建筑。能够在交易中用作货币替代品或用於军事回收目的。</USAC_CorpseBag.description>
-  
-</LanguageData>

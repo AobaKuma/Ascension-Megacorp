@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: beam -->
+  <USAC_BeamPluse.label>脉冲光束</USAC_BeamPluse.label>
+  <!-- EN: {0} has been beamed to death. -->
+  <USAC_BeamPluse.deathMessage>{0}被光束烧伤致死。</USAC_BeamPluse.deathMessage>
+  
+</LanguageData>
