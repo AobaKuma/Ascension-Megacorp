@@ -38,17 +38,16 @@
       <li Class="Fortified.CompProperties_VehicleWeapon">
         <drawData>
           <dataEast>
-            <offset>(0.2,0,-0.3)</offset>
+            <offset>(-0.2,0,0.75)</offset>
           </dataEast>
           <dataWest>
-            <offset>(-0.2,0,0.6)</offset>
-            <layer>-20</layer>
+            <offset>(0.2,0,0.75)</offset>
           </dataWest>
           <dataSouth>
-            <offset>(-0.9,0,0)</offset>
+            <offset>(0,0,0.2)</offset>
           </dataSouth>
           <dataNorth>
-            <offset>(0.9,0,0)</offset>
+            <offset>(0,0,0)</offset>
           </dataNorth>
         </drawData>
         <turretRotationFollowPawn>true</turretRotationFollowPawn>
@@ -66,7 +65,7 @@
     <label>XM3 Gonk</label>
     <race>USAC_Mech_Gonk</race>
     <combatPower>420</combatPower>
-    <isBoss>true</isBoss>
+    <aiAvoidCover>true</aiAvoidCover>
     <lifeStages>
       <li>
         <bodyGraphicData>
@@ -82,8 +81,12 @@
         </bodyGraphicData>
       </li>
     </lifeStages>
+    <abilities>
+      <li>USAC_APS</li>
+      <li MayRequire="Ludeon.Rimworld.Biotech">SmokepopMech</li>
+    </abilities>
     <weaponTags>
-      <li>Artillery</li>
+      <li>USAC_GonkWeapon</li>
     </weaponTags>
     <weaponMoney>1500~3000</weaponMoney>
   </PawnKindDef>
@@ -192,7 +195,7 @@
     <label>M110 Omaha</label>
     <race>USAC_Mech_Omaha</race>
     <combatPower>500</combatPower>
-    <isBoss>true</isBoss>
+    <aiAvoidCover>true</aiAvoidCover>
     <lifeStages>
       <li>
         <bodyGraphicData>

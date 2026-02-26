@@ -49,6 +49,7 @@
     <label>M939 Paraman</label>
     <race>USAC_Mech_Paraman</race>
     <combatPower>160</combatPower>
+    <aiAvoidCover>true</aiAvoidCover>
     <lifeStages>
       <li>
         <bodyGraphicData>
@@ -67,6 +68,7 @@
     <weaponTags>
       <li>USAC_AGL</li>
       <li>USAC_AC</li>
+      <li>USAC_HDMR</li>
     </weaponTags>
     <weaponMoney>1500~2500</weaponMoney>
   </PawnKindDef>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <AbilityDef>
+    <defName>USAC_APS</defName>
+    <label>APS</label>
+    <description>Activate the Active Defense System to intercept nearby low-speed and explosive projectiles in a short period of time.</description>
+    <iconPath>UI/Abilities/USAC_APS</iconPath>
+    <aiCanUse>true</aiCanUse>
+    <cooldownTicksRange>16000~17200</cooldownTicksRange>
+    <verbProperties>
+      <defaultCooldownTime>1</defaultCooldownTime>
+      <verbClass>Verb_CastAbility</verbClass>
+      <onlyManualCast>false</onlyManualCast>
+      <range>18</range>
+      <warmupTime>0.25</warmupTime>
+      <drawAimPie>false</drawAimPie>
+      <violent>false</violent>
+      <targetable>false</targetable>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="Fortified.CompProperties_ActiveProtectionSystem">
+        <Radius>30</Radius>
+        <chanceToFail>0.98</chanceToFail>
+        <spawnLeaving>Filth_Ash</spawnLeaving>
+        <interceptedFleckDef>FFF_Fleck_RocketFlame</interceptedFleckDef>
+        <soundIntercepted>Explosion_Thump</soundIntercepted>
+        <interceptThings>
+          <li>Bullet_CataphractCentipede_FY</li>
+        </interceptThings>
+      </li>
+    </comps>
+  </AbilityDef>
+</Defs>

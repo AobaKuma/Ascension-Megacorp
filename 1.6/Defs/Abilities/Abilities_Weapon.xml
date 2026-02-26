@@ -5,7 +5,7 @@
     <defName>USAC_GrenadeLauncher</defName>
     <label>programmable shaped charge</label>
     <description>An airburst smart grenade that uses an electronic fire control system to set a timed fuse at launch can effectively strike enemies behind cover.</description>
-    <iconPath>UI/Abilities/Launch_Grenade</iconPath>
+    <iconPath>UI/Abilities/USAC_Launch_Grenade</iconPath>
     <cooldownTicksRange>600~800</cooldownTicksRange>
     <aiCanUse>true</aiCanUse>
     <ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>

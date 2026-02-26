@@ -22,6 +22,16 @@
                         <destroyOnDrop>true</destroyOnDrop>
                     </value>
                 </li>
+                <li Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[
+                        defName="USAC_Gun_CobraAC" or
+                        defName="USAC_Gun_BushmasterAC" or
+                        defName="USAC_Gun_TorchwoodRR"
+                        ]</xpath>
+                    <value>
+                        <tradeability>None</tradeability>
+                    </value>
+                </li>      
             </operations>
         </nomatch>
     </Operation>

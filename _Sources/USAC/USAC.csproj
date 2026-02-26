@@ -24,8 +24,7 @@
 
   <ItemGroup>
     <Reference Include="Fortified">
-      <HintPath>../../../Fortified-Framework/1.6/Assemblies/Fortified.dll</HintPath>
-      <Private>false</Private>
+      <HintPath>..\..\..\_Fortified-Framework\1.6\Assemblies\Fortified.dll</HintPath>
     </Reference>
   </ItemGroup>
 

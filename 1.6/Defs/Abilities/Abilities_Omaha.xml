@@ -21,7 +21,7 @@
     <defName>USAC_MICLIC_Towed</defName>
     <label>towed mineclearing line</label>
     <description>Launch a rocket that tows a continuous demolition cable behind it. Upon impact, the cable detonates along its entire path to clear mines.</description>
-    <iconPath>UI/Abilities/MICLIC</iconPath>
+    <iconPath>UI/Abilities/USAC_MICLIC</iconPath>
     <cooldownTicksRange>3600</cooldownTicksRange>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
@@ -64,12 +64,12 @@
     <defName>USAC_MineclearingShovel</defName>
     <label>mineclearing shovel</label>
     <description>The mech dashes forward to the target location and releases two powerful fan-shaped explosions along the path to clear mines and obstacles.</description>
-    <iconPath>UI/Abilities/MineclearingShovel</iconPath>
+    <iconPath>UI/Abilities/USAC_MineclearingShovel</iconPath>
     <cooldownTicksRange>1200</cooldownTicksRange>
     <jobDef>CastJump</jobDef>
     <verbProperties>
       <verbClass>USAC.Verb_CastAbilityMineclearingShovel</verbClass>
-      <range>15.9</range>
+      <range>9.9</range>
       <warmupTime>0.5</warmupTime>
       <soundCast>Pawn_Devourer_Jump</soundCast>
       <targetParams>
@@ -85,7 +85,7 @@
     <defName>USAC_PawnFlyer_Shovel</defName>
     <pawnFlyer>
       <heightFactor>0.4</heightFactor>
-      <flightSpeed>15</flightSpeed>
+      <flightSpeed>20</flightSpeed>
     </pawnFlyer>
   </ThingDef>
 
