@@ -77,10 +77,12 @@
   <USAC_OpportunitySite_OutpostRaid.root.nodes.USAC_GetEnemyFaction.storeSitePartsAs.slateRef>sitePartDefs</USAC_OpportunitySite_OutpostRaid.root.nodes.USAC_GetEnemyFaction.storeSitePartsAs.slateRef>
   <!-- EN: <rulesStrings><li TKey="USAC_SitePart_NeutralOutpost">root(priority=1,sitePart==USAC_NeutralOutpost)->there's an outpost at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</li><li TKey="USAC_SitePart_BanditCamp">root(priority=1,sitePart==BanditCamp)->there's a bandit camp at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</li><li TKey="USAC_SitePart_Outpost">root(priority=1,sitePart==Outpost)->there's an enemy outpost at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</li><li TKey="USAC_SitePart_Fallback">root->there's a [label]</li></rulesStrings> -->
   <USAC_OpportunitySite_OutpostRaid.root.nodes.GenerateSite.singleSitePartRules.slateRef>
-    <li TKey="USAC_SitePart_NeutralOutpost">root(priority=1,sitePart==USAC_NeutralOutpost)->該位置存在一座由(*Threat)[enemiesCount] [enemiesLabel](/Threat)所把守的站點</li>
-    <li TKey="USAC_SitePart_BanditCamp">root(priority=1,sitePart==BanditCamp)->那裏有一座強盜營地由(*Threat)[enemiesCount] [enemiesLabel](/Threat)所把守</li>
-    <li TKey="USAC_SitePart_Outpost">root(priority=1,sitePart==Outpost)->那裏存在一座由敵對陣營所駐守的營地，據悉規模如下(*Threat)[enemiesCount] [enemiesLabel](/Threat)</li>
-    <li TKey="USAC_SitePart_Fallback">root->那裏有一座[label]</li>
+    <rulesStrings>
+      <li TKey="USAC_SitePart_NeutralOutpost">root(priority=1,sitePart==USAC_NeutralOutpost)->該位置存在一座由[enemiesCount]名[enemiesLabel]所把守的站點</li>
+      <li TKey="USAC_SitePart_BanditCamp">root(priority=1,sitePart==BanditCamp)->那裏有一座強盜營地由[enemiesCount]名[enemiesLabel]所把守</li>
+      <li TKey="USAC_SitePart_Outpost">root(priority=1,sitePart==Outpost)->那裏存在一座由敵對陣營所駐守的營地，據悉守軍可能有[enemiesCount]名[enemiesLabel]</li>
+      <li TKey="USAC_SitePart_Fallback">root->那裏有一座[label]</li>
+    </rulesStrings>
   </USAC_OpportunitySite_OutpostRaid.root.nodes.GenerateSite.singleSitePartRules.slateRef>
   <!-- EN: Operation compromised: [resolvedQuestName] -->
   <USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.label.slateRef>行動暴露：[resolvedQuestName]</USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.label.slateRef>

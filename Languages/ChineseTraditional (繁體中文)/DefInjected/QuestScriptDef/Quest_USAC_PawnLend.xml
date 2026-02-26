@@ -18,11 +18,17 @@
     <li>pawnListHaveConjugation(colonistsToLendCount>1)->have</li>
   -->
   <USAC_PawnLend.questDescriptionRules.rulesStrings>
-    <li>questDescription->[asker_faction_name]的[asker_faction_leaderTitle][asker_nameFull]需要一些臨時勞務派遣來處理企業分部門的[dutyDescription].\n\n[asker_pronoun]尋問你是否有[colonistCountToLend]名意願勞動的人手願意出差[lendForDays]天。\n\n[willSendShuttle]</li>
+    <li>questDescription->[asker_faction_name]的[asker_faction_leaderTitle][asker_nameFull]需要一些臨時勞務派遣來處理企業分部門的[dutyDescription]。\n\n[asker_pronoun]詢問你是否有[colonistCountToLend]名意願勞動的人手願意出差[lendForDays]天。\n\n[willSendShuttle]</li>
     <li>disease->流行性感冒</li>
     <li>disease->天花</li>
     <li>disease->肺部纖維化疾病</li>
     <li>disease->急性金屬中毒</li>
+    <li>dutyDescription->棉花採收</li>
+    <li>dutyDescription->清收貨物</li>
+    <li>dutyDescription->建立地面哨站</li>
+    <li>dutyDescription->財政文書作業</li>
+    <li>dutyDescription->罷工工人</li>
+    <li>dutyDescription->[disease]病患</li>
     <li>colonistCountToLend(colonistsToLendCount==1)->1位勞工[minAgeOrOlder]</li>
     <li>colonistCountToLend(colonistsToLendCount>1)->[colonistsToLendCount]位勞工[minAgeOrOlder]</li>
     <li>willSendShuttle->[asker_pronoun]將徵調穿梭機來接送[colonists]，你無須支付通勤與穿梭機維護費用。</li>
@@ -58,15 +64,6 @@
     <li>worker->人事</li>
     <li>worker->人工</li>
   </USAC_PawnLend.questNameRules.rulesStrings>
-  <!-- EN: <rulesStrings><li>dutyDescription->gather the harvest</li><li>dutyDescription->fortify a settlement</li><li>dutyDescription->set up a settlement</li><li>dutyDescription->watch for raiders</li><li>dutyDescription->set up a hospital</li><li>dutyDescription->contain an outbreak of [disease]</li></rulesStrings> -->
-  <USAC_PawnLend.root.nodes.ResolveTextNow.rules.slateRef>
-    <li>dutyDescription->採收棉花</li>
-    <li>dutyDescription->清收貨物</li>
-    <li>dutyDescription->建立地面哨站</li>
-    <li>dutyDescription->追蹤債務人</li>
-    <li>dutyDescription->看護老人</li>
-    <li>dutyDescription->隔離[disease]病患</li>
-  </USAC_PawnLend.root.nodes.ResolveTextNow.rules.slateRef>
   <!-- EN: {PAWNS} [pawnListHaveConjugation] returned after helping [asker_nameFull] of [asker_faction_name] to [dutyDescription]. -->
   <USAC_PawnLend.root.nodes.Set.value.slateRef>{PAWNS} [pawnListHaveConjugation] 在完成[asker_faction_name]的[asker_nameFull]所指定的[dutyDescription]工作後返回。</USAC_PawnLend.root.nodes.Set.value.slateRef>
   <!-- EN: Shuttle arrived -->
