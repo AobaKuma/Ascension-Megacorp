@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--===== 這些槍械是無法被製造的，只會在固定武裝的機械體上生成
+=====-->
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <operations>
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[@Name="DMS_AutomatroidTurretGun"]/statBases</xpath>
+                <value>
+                    <ToughnessRating>3</ToughnessRating>
+                </value>
+            </li>
+
+            <!--===== Patch tools =====-->
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[@Name="DMS_AutomatroidTurretGun"]/tools</xpath>
+                <value>
+                    <tools>
+                        <li Class="CombatExtended.ToolCE">
+                            <label>barrel</label>
+                            <capacities>
+                                <li>Blunt</li>
+                            </capacities>
+                            <power>8</power>
+                            <cooldownTime>2.02</cooldownTime>
+                            <armorPenetrationBlunt>2.730</armorPenetrationBlunt>
+                            <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+                        </li>
+                        <li Class="CombatExtended.ToolCE">
+                            <label>muzzle</label>
+                            <capacities>
+                                <li>Poke</li>
+                            </capacities>
+                            <power>12</power>
+                            <cooldownTime>1.55</cooldownTime>
+                            <armorPenetrationBlunt>3.955</armorPenetrationBlunt>
+                            <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+                        </li>
+                    </tools>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>Defs/ThingDef[@Name="DMS_AutomatroidHeavyGun"]/tools</xpath>
+                <value>
+                    <tools>
+                        <li Class="CombatExtended.ToolCE">
+                            <label>barrel</label>
+                            <capacities>
+                                <li>Blunt</li>
+                            </capacities>
+                            <power>8</power>
+                            <cooldownTime>2.02</cooldownTime>
+                            <armorPenetrationBlunt>2.730</armorPenetrationBlunt>
+                            <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+                        </li>
+                        <li Class="CombatExtended.ToolCE">
+                            <label>muzzle</label>
+                            <capacities>
+                                <li>Poke</li>
+                            </capacities>
+                            <power>12</power>
+                            <cooldownTime>1.55</cooldownTime>
+                            <armorPenetrationBlunt>3.955</armorPenetrationBlunt>
+                            <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+                        </li>
+                    </tools>
+                </value>
+            </li>
+           
+            <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+                <defName>USAC_HeavyMachineGunMounted</defName>
+                <statBases>
+                    <Mass>39.4</Mass>
+                    <Bulk>25.6</Bulk>
+                    <SwayFactor>1.64</SwayFactor>
+                    <ShotSpread>0.05</ShotSpread>
+                    <SightsEfficiency>1</SightsEfficiency>
+                    <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+                </statBases>
+                <Properties>
+                    <recoilAmount>1.55</recoilAmount>
+                    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+                    <hasStandardCommand>true</hasStandardCommand>
+                    <defaultProjectile>Bullet_50BMG_FMJ</defaultProjectile>
+                    <burstShotCount>10</burstShotCount>
+                    <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+                    <warmupTime>1.2</warmupTime>
+                    <range>75</range>
+                    <soundCast>DMS_MachineGunHeavy_Shot</soundCast>
+                    <soundCastTail>GunTail_Medium</soundCastTail>
+                    <muzzleFlashScale>12</muzzleFlashScale>
+                    <recoilPattern>Mounted</recoilPattern>
+                </Properties>
+                <AmmoUser>
+                    <magazineSize>200</magazineSize>
+                    <reloadTime>12</reloadTime>
+                    <ammoSet>AmmoSet_50BMG</ammoSet>
+                </AmmoUser>
+                <FireModes>
+                    <aiUseBurstMode>FALSE</aiUseBurstMode>
+                    <aiAimMode>SuppressFire</aiAimMode>
+                    <aimedBurstShotCount>5</aimedBurstShotCount>
+                </FireModes>
+                <weaponTags>
+                    <li>CE_AI_Suppressive</li>
+                    <li>NoSwitch</li>
+                </weaponTags>
+            </li>
+
+        </operations>
+    </Operation>
+</Patch>

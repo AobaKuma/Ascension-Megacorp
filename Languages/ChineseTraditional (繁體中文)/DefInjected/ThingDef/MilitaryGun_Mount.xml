@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: Mounted HMG -->
+  <USAC_HeavyMachineGunMounted.label>USAC机载重机枪</USAC_HeavyMachineGunMounted.label>
+  <!-- EN: A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
+  <USAC_HeavyMachineGunMounted.description>空白。</USAC_HeavyMachineGunMounted.description>
+  <!-- EN: Mounted HMG -->
+  <USAC_HeavyMachineGunMounted.verbs.Verb_Shoot.label>USAC机载重机枪</USAC_HeavyMachineGunMounted.verbs.Verb_Shoot.label>
+  
+</LanguageData>

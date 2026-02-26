@@ -87,6 +87,33 @@
 		</graphicData>
 	</ThingStyleDef>
 
+	<ThingStyleDef>
+		<defName>Gun_USACChainShotgun</defName>
+		<graphicData>
+			<texPath>Things/Style/USAC/ChainShotgun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5,1.5)</drawSize>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_USACBoltActionRifle</defName>
+		<graphicData>
+			<texPath>Things/Style/USAC/BoltActionRifle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.1,1.1)</drawSize>
+		</graphicData>
+	</ThingStyleDef>
+
+	<ThingStyleDef>
+		<defName>Gun_USACLMG</defName>
+		<graphicData>
+			<texPath>Things/Style/USAC/LightMachineGun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5,1.5)</drawSize>
+		</graphicData>
+	</ThingStyleDef>
+
 	<ThingStyleDef MayRequire="Aoba.DeadManSwitch.Core">
 		<defName>DMS_USAC_AssaultPiercer</defName>
 		<graphicData>
