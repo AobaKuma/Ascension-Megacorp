@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="USAC_Mech_Cobalt"]/comps/li[@Class="Fortified.CompProperties_VehicleWeapon"]/defaultWeapon</xpath>
+		<value>
+			<defaultWeapon>USAC_HeavyMachineGunMounted</defaultWeapon>
+		</value>
+	</Operation>
+
+	
+</Patch>			

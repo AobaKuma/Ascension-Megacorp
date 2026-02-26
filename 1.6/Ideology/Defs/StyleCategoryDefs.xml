@@ -46,6 +46,18 @@
         <thingDef>Gun_Minigun</thingDef>
         <styleDef>Gun_USACMinigun</styleDef>
       </li>
+      <li>
+        <thingDef>Gun_ChainShotgun</thingDef>
+        <styleDef>Gun_USACChainShotgun</styleDef>
+      </li>
+      <li>
+        <thingDef>Gun_BoltActionRifle</thingDef>
+        <styleDef>Gun_USACBoltActionRifle</styleDef>
+      </li>
+      <li>
+        <thingDef>Gun_LMG</thingDef>
+        <styleDef>Gun_USACLMG</styleDef>
+      </li>
       <li MayRequire="Aoba.DeadManSwitch.Core">
         <thingDef>DMS_AssaultRifle</thingDef>
         <styleDef>DMS_USAC_AssaultRifle</styleDef>
