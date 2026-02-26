@@ -1,11 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: USAC outpost operation -->
-  <GiveQuest_USAC_OpportunitySite_OutpostRaid.label>任務機會</GiveQuest_USAC_OpportunitySite_OutpostRaid.label>
-  <!-- EN: USAC operation opportunity -->
-  <GiveQuest_USAC_OpportunitySite_OutpostRaid.letterLabel>USAC隱密行動機會</GiveQuest_USAC_OpportunitySite_OutpostRaid.letterLabel>
-  
   <!-- EN: USAC mech supplier arrival -->
   <USAC_MechSupplierArrival.label>機兵商船到訪</USAC_MechSupplierArrival.label>
   <!-- EN: USAC mech supplier -->
