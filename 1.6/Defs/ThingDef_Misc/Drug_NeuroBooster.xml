@@ -250,7 +250,6 @@
     <chemicalNeed>Chemical_USAC_NeuroBooster</chemicalNeed>
     <everCurableByItem>false</everCurableByItem>
     <stages>
-      <li></li>
       <li>
         <label>unmet</label>
         <painOffset>0.5</painOffset>

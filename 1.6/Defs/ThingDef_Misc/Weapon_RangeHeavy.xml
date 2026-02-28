@@ -112,10 +112,10 @@
       <renderInstanced>true</renderInstanced>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer>
-    <fadeInTime>0.05</fadeInTime>
-    <solidTime>0.5</solidTime>
-    <fadeOutTime>0.25</fadeOutTime>
-    <growthRate>0.5</growthRate>
+    <fadeInTime>0.03</fadeInTime>
+    <solidTime>0.9</solidTime>
+    <fadeOutTime>0.65</fadeOutTime>
+    <growthRate>0.75</growthRate>
     <collide>false</collide>
   </FleckDef>
 
@@ -126,10 +126,10 @@
       <renderInstanced>true</renderInstanced>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer>
-    <fadeInTime>0.04</fadeInTime>
-    <solidTime>0.15</solidTime>
-    <fadeOutTime>0.1</fadeOutTime>
-    <growthRate>0.5</growthRate>
+    <fadeInTime>0.02</fadeInTime>
+    <solidTime>0.45</solidTime>
+    <fadeOutTime>0.35</fadeOutTime>
+    <growthRate>0.7</growthRate>
     <collide>true</collide>
   </FleckDef>
 
@@ -140,26 +140,40 @@
         <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
         <positionRadius>-0.15</positionRadius>
         <fleckDef>USAC_SplashedPieces</fleckDef>
-        <burstCount>10~15</burstCount>
-        <speed>5~15</speed>
-        <scale>0.25~0.5</scale>
-        <angle>-60~60</angle>
+        <burstCount>24~34</burstCount>
+        <speed>3~11</speed>
+        <scale>0.55~1.05</scale>
+        <angle>-78~78</angle>
         <positionLerpFactor>0.8</positionLerpFactor>
         <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
         <attachToSpawnThing>true</attachToSpawnThing>
-        <color>(100,100,100)</color>
+        <color>(85,80,75)</color>
       </li>
       <li>
         <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
         <positionRadius>-0.15</positionRadius>
         <fleckDef>USAC_SplashedPieces_Center</fleckDef>
-        <burstCount>4~8</burstCount>
-        <speed>10~20</speed>
-        <scale>0.25~0.5</scale>
-        <angle>-20~20</angle>
+        <burstCount>14~22</burstCount>
+        <speed>6~16</speed>
+        <scale>0.5~0.95</scale>
+        <angle>-35~35</angle>
         <positionLerpFactor>0.8</positionLerpFactor>
         <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
         <attachToSpawnThing>true</attachToSpawnThing>
+        <color>(95,90,85)</color>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <positionRadius>-0.05</positionRadius>
+        <fleckDef>USAC_SplashedPieces_Center</fleckDef>
+        <burstCount>8~14</burstCount>
+        <speed>4~10</speed>
+        <scale>0.55~0.9</scale>
+        <angle>-18~18</angle>
+        <positionLerpFactor>0.9</positionLerpFactor>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <color>(110,105,100)</color>
       </li>
     </children>
   </EffecterDef>
