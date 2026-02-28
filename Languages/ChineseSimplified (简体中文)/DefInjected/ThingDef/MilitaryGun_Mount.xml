@@ -2,10 +2,10 @@
 <LanguageData>
   
   <!-- EN: Mounted HMG -->
-  <USAC_HeavyMachineGunMounted.label>USAC机载重机枪</USAC_HeavyMachineGunMounted.label>
+  <USAC_HeavyMachineGunMounted.label>猎狐犬机枪</USAC_HeavyMachineGunMounted.label>
   <!-- EN: A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
-  <USAC_HeavyMachineGunMounted.description>空白。</USAC_HeavyMachineGunMounted.description>
+  <USAC_HeavyMachineGunMounted.description>一种使用复合材料轻量化枪身并改良的多用途重机枪，被广泛使用于各类武器平台与固定防御设施当中，于遥远的地球时代在材料一度因战争短缺而几乎停产前其曾是非常成功的M2重机枪替代品。</USAC_HeavyMachineGunMounted.description>
   <!-- EN: Mounted HMG -->
-  <USAC_HeavyMachineGunMounted.verbs.Verb_Shoot.label>USAC机载重机枪</USAC_HeavyMachineGunMounted.verbs.Verb_Shoot.label>
+  <USAC_HeavyMachineGunMounted.verbs.Verb_Shoot.label>猎狐犬机枪</USAC_HeavyMachineGunMounted.verbs.Verb_Shoot.label>
   
 </LanguageData>

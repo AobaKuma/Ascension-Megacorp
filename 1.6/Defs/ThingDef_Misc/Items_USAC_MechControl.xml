@@ -84,7 +84,7 @@
             <hediffDef>MechlinkImplant</hediffDef>
           </li>
           <li>
-            <hediffDef>USAC_TempMechlinkTrigger</hediffDef>
+            <hediffDef>USAC_TempMechlinkKillSwitch</hediffDef>
           </li>
         </hediffs>
       </li>

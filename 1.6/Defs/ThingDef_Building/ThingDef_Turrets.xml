@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <ThingDef Name="USAC_BaseTurretBuilding" ParentName="BuildingBase" Abstract="True">
+        <!-- will comment out  -->
+        <designationCategory>Misc</designationCategory>
+        <!-- will comment out  -->
+        <thingClass>Building_TurretGun</thingClass>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <damageData>
+                <rect>(0.38,0.2,0.56375,0.8)</rect>
+                <cornerTL>Damage/Corner</cornerTL>
+            </damageData>
+            <shadowData>
+                <offset>(0,-0.25,-0.25)</offset>
+                <volume>(0.5,0.5,0.5)</volume>
+            </shadowData>
+        </graphicData>
+        <altitudeLayer>Building</altitudeLayer>
+        <stealable>false</stealable>
+        <rotatable>true</rotatable>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <fillPercent>0.8</fillPercent>
+        <tickerType>Normal</tickerType>
+        <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+        <comps>
+            <li Class="CompProperties_Forbiddable" />
+            <li Class="CompProperties_Flickable" />
+        </comps>
+        <modExtensions>
+            <li Class="Fortified.ForceTargetableExtension" />
+        </modExtensions>
+        <building>
+            <ai_combatDangerous>true</ai_combatDangerous>
+        </building>
+        <placeWorkers>
+            <li>PlaceWorker_TurretTop</li>
+            <li>PlaceWorker_ShowTurretRadius</li>
+            <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+        </placeWorkers>
+        <uiIconScale>1.1</uiIconScale>
+        <statBases>
+            <Mass>50</Mass>
+        </statBases>
+    </ThingDef>
+
+    <ThingDef ParentName="USAC_BaseTurretBuilding">
+        <defName>USAC_Turret_HMG</defName>
+        <label>Heavy sentry gun</label>
+        <description>A multi-purpose heavy machine gun with a lightweight composite material frame and improved design, it is widely used in various weapon platforms and fixed defensive facilities. In the distant past, it was a very successful alternative to the M2 heavy machine gun.</description>
+        <graphicData>
+            <texPath>Things/Building/Turrets/USAC_HeavyMachineGunMounted</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>2</drawSize>
+            <drawOffset>(0,0,-0.1)</drawOffset>
+        </graphicData>
+        <uiIconPath>Things/Building/Turrets/USAC_HeavyMachineGunMounted_Icon</uiIconPath>
+        <size>(1,1)</size>
+        <statBases>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+            <Beauty>-2</Beauty>
+            <ShootingAccuracyTurret>1</ShootingAccuracyTurret>
+        </statBases>
+        <building>
+            <turretGunDef>USAC_HeavyMachineGunMounted</turretGunDef>
+            <turretTopDrawSize>2.5</turretTopDrawSize>
+            <turretBurstWarmupTime>1.5</turretBurstWarmupTime>   <!--================冷卻與瞄準時間================-->
+            <turretBurstCooldownTime>2.3</turretBurstCooldownTime>
+        </building>
+        <killedLeavingsRanges>
+            <ChunkSlagSteel>2~4</ChunkSlagSteel>
+        </killedLeavingsRanges>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>USAC_Bullet_HeavyMachineGun</defName>
+        <label>heavy machine gun bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Big</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>18</damageAmountBase>
+            <armorPenetrationBase>0.25</armorPenetrationBase>
+            <stoppingPower>3</stoppingPower>
+            <speed>80</speed>
+        </projectile>
+    </ThingDef>
+</Defs>

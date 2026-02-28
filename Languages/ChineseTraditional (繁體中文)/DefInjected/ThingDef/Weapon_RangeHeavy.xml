@@ -16,7 +16,7 @@
   <!-- EN: Bushmaster autocannon -->
   <USAC_Gun_BushmasterAC.label>巨蝮蛇鏈砲</USAC_Gun_BushmasterAC.label>
   <!-- EN: An M901 "Bushmaster III" large-caliber chain cannon designed for mounting on armored vehicles and aircraft. Capable of firing large-caliber depleted uranium autocannon rounds that can inflict devastating damage against infantry and lightly armored units. Provides devastating anti-personnel and anti-armor capabilities. -->
-  <USAC_Gun_BushmasterAC.description>M901"猛蛇III"，一種設計搭載於裝甲車輛與航空器的大口徑鏈砲，能夠發射大口徑貧鈾機砲彈來對步兵及輕型裝甲單位造成相當毀滅性的破壞。</USAC_Gun_BushmasterAC.description>
+  <USAC_Gun_BushmasterAC.description>M901"巨蝮蛇III"，一種設計搭載於裝甲車輛與航空器的大口徑鏈砲，能夠發射大口徑貧鈾機砲彈來對步兵及輕型裝甲單位造成相當毀滅性的破壞。</USAC_Gun_BushmasterAC.description>
   <!-- EN: stock -->
   <USAC_Gun_BushmasterAC.tools.stock.label>槍托</USAC_Gun_BushmasterAC.tools.stock.label>
   <!-- EN: barrel -->
@@ -41,7 +41,7 @@
   <!-- EN: Torchwood recoilless rifle -->
   <USAC_Gun_TorchwoodRR.label>火炬木無後座力炮</USAC_Gun_TorchwoodRR.label>
   <!-- EN: M40A3 "Torchwood" recoilless weapon system with automatic loading system. Due to its lightweight characteristics derived from recoilless operation, it serves as an effective anti-tank and anti-fortification weapon. Capable of devastating armor penetration and structural destruction. -->
-  <USAC_Gun_TorchwoodRR.description>M40A3"火炬木"，一種配備自動裝彈機的無後座力武器系統。由於無後座力操作所具有的輕量級特性因此是一種有效的反坦克和反防禦工事武器。能夠造成毀滅性的裝甲穿透和結構破壞。</USAC_Gun_TorchwoodRR.description>
+  <USAC_Gun_TorchwoodRR.description>M40A3"火炬木"，一種配備自動裝彈機的無後座力武器系統。由於無後座力操作所具有的輕量級特性因此是一種十分有效的反工事與反步兵武器。配合其爆炸破片彈可作為有效的反工事武器，能夠對步兵造成毀滅性打擊並摧毀建築物。</USAC_Gun_TorchwoodRR.description>
   <!-- EN: stock -->
   <USAC_Gun_TorchwoodRR.tools.stock.label>槍托</USAC_Gun_TorchwoodRR.tools.stock.label>
   <!-- EN: barrel -->

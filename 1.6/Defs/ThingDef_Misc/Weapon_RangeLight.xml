@@ -2,8 +2,7 @@
 <Defs>
 
   <ThingDef ParentName="BaseGunWithQuality" Name="USAC_BaseGun" Abstract="True">
-    <weaponTags>
-      <li>Gun</li>
+    <weaponTags Inherit="false">
       <li>USAC_Gun</li>
     </weaponTags>
     <tradeTags>

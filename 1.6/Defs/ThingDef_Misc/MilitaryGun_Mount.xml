@@ -1,15 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    <!-- Mounted HMG, missing turret base xml definition. -->
-	<ThingDef ParentName="DMS_AutomatroidTurretGun">
+	<ThingDef ParentName="BaseGun">
 		<defName>USAC_HeavyMachineGunMounted</defName>
-		<label>Mounted HMG</label>
-		<description>white.</description>
+		<label>Foxhound GPMG</label>
+		<description>A multi-purpose heavy machine gun with a lightweight composite material frame and improved design, it is widely used in various weapon platforms and fixed defensive facilities. In the distant past, before materials were almost discontinued due to war, it was a very successful alternative to the M2 heavy machine gun.</description>
 		<graphicData>
-			<texPath>Things/Turrets/USAC_HeavyMachineGunMounted</texPath>
-			<drawSize>2</drawSize>
+			<texPath>Things/Building/Turrets/USAC_Gun_Foxhound</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>2.5</drawSize>
 		</graphicData>
+		<relicChance>0</relicChance>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
 		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
 			<AccuracyTouch>0.50</AccuracyTouch>
 			<AccuracyShort>0.58</AccuracyShort>
 			<AccuracyMedium>0.45</AccuracyMedium>
@@ -20,12 +24,12 @@
 			<li>
 				<verbClass>Verb_Shoot</verbClass>
 				<hasStandardCommand>true</hasStandardCommand>
-				<defaultProjectile>DMS_Bullet_Kord</defaultProjectile>
+				<defaultProjectile>USAC_Bullet_HeavyMachineGun</defaultProjectile>
 				<requireLineOfSight>true</requireLineOfSight>
 				<warmupTime>1.5</warmupTime>
 				<range>39.9</range>
-				<ticksBetweenBurstShots>5</ticksBetweenBurstShots>
-				<burstShotCount>10</burstShotCount>
+				<ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+				<burstShotCount>5</burstShotCount>
 				<soundCast>Shot_Autocannon</soundCast>
 				<soundCastTail>GunTail_Heavy</soundCastTail>
 				<muzzleFlashScale>10</muzzleFlashScale>
@@ -36,7 +40,7 @@
 			</li>
 		</verbs>
 		<weaponTags>
-			<li>DMS_HeavyMachineGunMounted</li>
+			<li>USAC_Cobalt</li>
 		</weaponTags>
 		<modExtensions>
 			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">

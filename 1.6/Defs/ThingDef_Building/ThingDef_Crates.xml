@@ -84,13 +84,13 @@
         <selectable>true</selectable>
         <useHitPoints>true</useHitPoints>
         <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-        <designationCategory />
         <passability>PassThroughOnly</passability>
         <pathCost>50</pathCost>
         <blockWind>false</blockWind>
         <castEdgeShadows>true</castEdgeShadows>
-        
+        <!-- will comment out  -->
         <designationCategory>Misc</designationCategory>
+        <!-- will comment out  -->
         <statBases>
             <MaxHitPoints>150</MaxHitPoints>
             <Flammability>0.5</Flammability>

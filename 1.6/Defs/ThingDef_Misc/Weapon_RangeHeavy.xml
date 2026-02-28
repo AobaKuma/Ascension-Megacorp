@@ -16,11 +16,11 @@
       <texPath>Things/Projectile/Bullet_big</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-		<comps>
-			<li Class="CompProperties_ProjectileEffecter">
-				<effecterDef>FFF_LaunchDust_Grenade</effecterDef>
-			</li>
-		</comps>
+    <comps>
+      <li Class="CompProperties_ProjectileEffecter">
+        <effecterDef>FFF_LaunchDust_Grenade</effecterDef>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -28,20 +28,20 @@
     <label>35mm APDS round</label>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>42</damageAmountBase>
+      <damageAmountBase>22</damageAmountBase>
       <stoppingPower>3.0</stoppingPower>
-      <armorPenetrationBase>0.45</armorPenetrationBase>
+      <armorPenetrationBase>0.6</armorPenetrationBase>
       <speed>95</speed>
     </projectile>
     <graphicData>
       <texPath>Things/Projectile/Bullet_big</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-		<comps>
-			<li Class="CompProperties_ProjectileEffecter">
-				<effecterDef>FFF_LaunchDust_Grenade</effecterDef>
-			</li>
-		</comps>
+    <comps>
+      <li Class="CompProperties_ProjectileEffecter">
+        <effecterDef>FFF_LaunchDust_Grenade</effecterDef>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
@@ -51,38 +51,137 @@
       <damageDef>Bullet</damageDef>
       <damageAmountBase>38</damageAmountBase>
       <stoppingPower>2.8</stoppingPower>
-      <armorPenetrationBase>0.5</armorPenetrationBase>
+      <armorPenetrationBase>0.35</armorPenetrationBase>
       <speed>92</speed>
     </projectile>
     <graphicData>
       <texPath>Things/Projectile/Bullet_big</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+    <comps>
+      <li Class="CompProperties_ProjectileEffecter">
+        <effecterDef>FFF_LaunchDust_Grenade</effecterDef>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseBullet">
     <defName>USAC_Bullet_TorchwoodRound</defName>
     <label>105mm recoilless round</label>
+    <thingClass>Fortified.Projectile_ConeExplosive</thingClass>
+    <tickerType>Normal</tickerType>
     <projectile>
-      <damageDef>Bullet</damageDef>
+      <speed>80</speed>
+      <damageDef>Bomb</damageDef>
       <damageAmountBase>55</damageAmountBase>
-      <stoppingPower>3.5</stoppingPower>
-      <armorPenetrationBase>0.65</armorPenetrationBase>
-      <speed>85</speed>
+      <armorPenetrationBase>0</armorPenetrationBase>
+      <stoppingPower>1.5</stoppingPower>
+      <ai_IsIncendiary>false</ai_IsIncendiary>
+      <soundExplode>Explosion_Rocket</soundExplode>
+      <shadowSize>0.6</shadowSize>
     </projectile>
+    <modExtensions>
+      <li Class="Fortified.ExplosiveExtension">
+        <damage>Bullet</damage>
+        <damageAmount>60</damageAmount>
+        <armorPen>0</armorPen>
+        <preExplosionOffset>2</preExplosionOffset>
+        <range>15</range>
+        <swayAngle>120</swayAngle>
+        <doVisualEffects>false</doVisualEffects>
+        <effecterDef>USAC_ConeExplosion</effecterDef>
+      </li>
+    </modExtensions>
     <graphicData>
       <texPath>Things/Projectile/Bullet_big</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>1.8</drawSize>
     </graphicData>
-		<comps>
-			<li Class="CompProperties_ProjectileEffecter">
-				<effecterDef>FFF_LaunchDust_Recoilless</effecterDef>
-			</li>
-		</comps>
+    <comps>
+      <li Class="CompProperties_ProjectileEffecter">
+        <effecterDef>FFF_LaunchDust_Recoilless</effecterDef>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>USAC_SplashedPieces</defName>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Shotgun</texPath>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.05</fadeInTime>
+    <solidTime>0.5</solidTime>
+    <fadeOutTime>0.25</fadeOutTime>
+    <growthRate>0.5</growthRate>
+    <collide>false</collide>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>USAC_SplashedPieces_Center</defName>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Shotgun</texPath>
+      <renderInstanced>true</renderInstanced>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.04</fadeInTime>
+    <solidTime>0.15</solidTime>
+    <fadeOutTime>0.1</fadeOutTime>
+    <growthRate>0.5</growthRate>
+    <collide>true</collide>
+  </FleckDef>
+
+  <EffecterDef>
+    <defName>USAC_ConeExplosion</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <positionRadius>-0.15</positionRadius>
+        <fleckDef>USAC_SplashedPieces</fleckDef>
+        <burstCount>10~15</burstCount>
+        <speed>5~15</speed>
+        <scale>0.25~0.5</scale>
+        <angle>-60~60</angle>
+        <positionLerpFactor>0.8</positionLerpFactor>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <attachToSpawnThing>true</attachToSpawnThing>
+        <color>(100,100,100)</color>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <positionRadius>-0.15</positionRadius>
+        <fleckDef>USAC_SplashedPieces_Center</fleckDef>
+        <burstCount>4~8</burstCount>
+        <speed>10~20</speed>
+        <scale>0.25~0.5</scale>
+        <angle>-20~20</angle>
+        <positionLerpFactor>0.8</positionLerpFactor>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <attachToSpawnThing>true</attachToSpawnThing>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <ThingDef ParentName="USAC_BaseGun" Name="USAC_BaseHeavyGun" Abstract="True">
+    <weaponTags Inherit="false">
+      <li>USAC_HeavyGun</li>
+    </weaponTags>
+    <tradeTags>
+      <li>USAC_WeaponRanged</li>
+    </tradeTags>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <soundInteract>Artillery_ShellLoaded</soundInteract>
   </ThingDef>
 
   <!-- ================================= Cobra Assault Cannon ==================================== -->
-  <ThingDef ParentName="USAC_BaseGun">
+  <ThingDef ParentName="USAC_BaseHeavyGun">
     <defName>USAC_Gun_CobraAC</defName>
     <label>Cobra assault cannon</label>
     <description>A large-scale assault rifle designed to provide suppressive fire. Commonly used as the standard weapon for medium Automatroids, it can also be wielded by large augmented humans or soldiers wearing heavy exoskeletons. The weapon's high rate of fire makes it effective for sustained suppression against infantry targets.</description>
@@ -90,9 +189,6 @@
       <texPath>Things/Item/Equipment/WeaponRanged/USAC_Gun_CobraAC</texPath>
       <drawSize>1.5</drawSize>
     </graphicData>
-    <weaponClasses>
-      <li>RangedHeavy</li>
-    </weaponClasses>
     <statBases>
       <Mass>18.5</Mass>
       <AccuracyTouch>0.55</AccuracyTouch>
@@ -124,8 +220,6 @@
     </verbs>
     <weaponTags>
       <li>USAC_AC</li>
-      <li>USAC_Heavy</li>
-      <li>Mech_Weapon</li>
     </weaponTags>
     <tools>
       <li>
@@ -161,7 +255,7 @@
   </ThingDef>
 
   <!-- ================================= Viper DMR ==================================== -->
-  <ThingDef ParentName="USAC_BaseGun">
+  <ThingDef ParentName="USAC_BaseHeavyGun">
     <defName>USAC_Gun_ViperDMR</defName>
     <label>Viper DMR</label>
     <description>An M905 "Viper" large-caliber precision anti-materiel weapon system using autocannon ammunition. Designed to be mounted on medium Automatroids as an anti-materiel weapon, it can also be wielded by large augmented humans or soldiers wearing heavy exoskeletons. Excels at long-range precision strikes against armored targets.</description>
@@ -171,7 +265,6 @@
     </graphicData>
     <weaponClasses>
       <li>LongShots</li>
-      <li>RangedHeavy</li>
     </weaponClasses>
     <statBases>
       <Mass>16.2</Mass>
@@ -239,7 +332,7 @@
   </ThingDef>
 
   <!-- ================================= Bushmaster AC ==================================== -->
-  <ThingDef ParentName="USAC_BaseGun">
+  <ThingDef ParentName="USAC_BaseHeavyGun">
     <defName>USAC_Gun_BushmasterAC</defName>
     <label>Bushmaster autocannon</label>
     <description>An M901 "Bushmaster III" large-caliber chain cannon designed for mounting on armored vehicles and aircraft. Capable of firing large-caliber depleted uranium autocannon rounds that can inflict devastating damage against infantry and lightly armored units. Provides devastating anti-personnel and anti-armor capabilities.</description>
@@ -247,9 +340,6 @@
       <texPath>Things/Item/Equipment/WeaponRanged/USAC_Gun_BushmasterAC</texPath>
       <drawSize>2.5</drawSize>
     </graphicData>
-    <weaponClasses>
-      <li>RangedHeavy</li>
-    </weaponClasses>
     <statBases>
       <Mass>24.5</Mass>
       <AccuracyTouch>0.45</AccuracyTouch>
@@ -258,8 +348,7 @@
       <AccuracyLong>0.60</AccuracyLong>
       <RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
     </statBases>
-    <equippedStatOffsets>
-    </equippedStatOffsets>
+    <equippedStatOffsets />
     <costList>
       <Plasteel>210</Plasteel>
       <ComponentIndustrial>16</ComponentIndustrial>
@@ -273,7 +362,7 @@
         <range>42.9</range>
         <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
         <burstShotCount>6</burstShotCount>
-        <soundCast>Shot_TurretSniper</soundCast>
+        <soundCast>USAC_BushmasterIII_Shot</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>14</muzzleFlashScale>
       </li>
@@ -317,17 +406,14 @@
   </ThingDef>
 
   <!-- ================================= Torchwood Recoilless Rifle ==================================== -->
-  <ThingDef ParentName="USAC_BaseGun">
+  <ThingDef ParentName="USAC_BaseHeavyGun">
     <defName>USAC_Gun_TorchwoodRR</defName>
     <label>Torchwood recoilless rifle</label>
-    <description>M40A3 "Torchwood" recoilless weapon system with automatic loading system. Due to its lightweight characteristics derived from recoilless operation, it serves as an effective anti-tank and anti-fortification weapon. Capable of devastating armor penetration and structural destruction.</description>
+    <description>M40A3 "Torchwood", a heavy recoilless rifle with automatic loading system. Due to its lightweight characteristics derived from recoilless operation, it serves as an effective anti-fortification weapon with its explosive frag shell. Capable of devastating infantry demolish and structural destruction.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/USAC_Gun_TorchwoodRR</texPath>
       <drawSize>3</drawSize>
     </graphicData>
-    <weaponClasses>
-      <li>RangedHeavy</li>
-    </weaponClasses>
     <statBases>
       <Mass>20.8</Mass>
       <AccuracyTouch>0.50</AccuracyTouch>
@@ -340,8 +426,8 @@
       <ShootingAccuracyPawn>1.2</ShootingAccuracyPawn>
     </equippedStatOffsets>
     <costList>
-      <Plasteel>220</Plasteel>
-      <ComponentIndustrial>18</ComponentIndustrial>
+      <Plasteel>400</Plasteel>
+      <ComponentIndustrial>30</ComponentIndustrial>
     </costList>
     <verbs>
       <li>
@@ -349,8 +435,9 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>USAC_Bullet_TorchwoodRound</defaultProjectile>
         <warmupTime>2</warmupTime>
+        <forcedMissRadius>3</forcedMissRadius>
         <range>46.9</range>
-        <soundCast>USAC_Gun_Shot</soundCast>
+        <soundCast>USAC_105mmRR_Shot</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>14</muzzleFlashScale>
       </li>
@@ -358,7 +445,6 @@
     <weaponTags>
       <li>USAC_HRR</li>
       <li>USAC_UltraHeavy</li>
-      <li>Mech_Weapon</li>
     </weaponTags>
     <tools>
       <li>
