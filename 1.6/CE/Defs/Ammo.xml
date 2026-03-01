@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<CombatExtended.AmmoCategoryDef>
+		<defName>USAC_DU</defName>
+		<label>Depleted uranium</label>
+		<labelShort>DU</labelShort>
+		<description>Uses depleted uranium as projectile core, It has chemical toxicity and radioactivity., greatly improving armor penetration.</description>
+		<advanced>true</advanced>
+	</CombatExtended.AmmoCategoryDef>
+
+	<!-- .277 -->
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="277FuryBase">
+		<defName>USAC_Ammo_277Fury_DU</defName>
+		<label>.277 Fury (DU)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/Battlerifle/FMJ</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>USAC_DU</ammoClass>
+		<tradeTags>
+			<li>USAC_Ammunition</li>
+		</tradeTags>
+		<cookOffProjectile>USAC_Bullet_277Fury_DU</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base277FuryBullet">
+		<defName>USAC_Bullet_277Fury_DU</defName>
+		<label>.277 Fury bullet (DU)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>14</damageAmountBase>
+			<armorPenetrationSharp>22</armorPenetrationSharp>
+			<armorPenetrationBlunt>90.500</armorPenetrationBlunt>
+			<secondaryDamage>
+				<li>
+					<def>Flame_Secondary</def>
+					<amount>4</amount>
+				</li>
+				<li>
+					<def>UASC_Radiotoxicity</def>
+					<amount>8</amount>
+				</li>
+			</secondaryDamage>
+		</projectile>
+	</ThingDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase" MayRequire="aoba.fortress.industrial.nucleardawn">
+		<defName>MakeUSAC_Ammo_277Fury_DU</defName>
+		<label>make .277 Fury (DU) cartridge x500</label>
+		<description>Craft 500 .277 Fury (DU) cartridges.</description>
+		<jobString>Making .277 Fury (DU) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>26</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FT_DepletedUranium</li>
+					</thingDefs>
+				</filter>
+				<count>4</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FT_DepletedUranium</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<USAC_Ammo_277Fury_DU>500</USAC_Ammo_277Fury_DU>
+		</products>
+		<workAmount>4200</workAmount>
+	</RecipeDef>
+	
+	<!-- 7.62x51mm -->
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="762x51mmNATOBase">
+		<defName>USAC_Ammo_762x51mmNATO_DU</defName>
+		<label>7.62x51mm NATO (DU)</label>
+		<graphicData>
+			<texPath>Things/Ammo/Rifle/Battlerifle/FMJ</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>USAC_DU</ammoClass>
+		<tradeTags>
+			<li>USAC_Ammunition</li>
+		</tradeTags>
+		<cookOffProjectile>USAC_Bullet_762x51mmNATO_DU</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base762x51mmNATOBullet">
+		<defName>USAC_Bullet_762x51mmNATO_DU</defName>
+		<label>7.62x51mm NATO bullet (DU)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>13</damageAmountBase>
+			<armorPenetrationSharp>20</armorPenetrationSharp>
+			<armorPenetrationBlunt>83.500</armorPenetrationBlunt>
+			<secondaryDamage>
+				<li>
+					<def>Flame_Secondary</def>
+					<amount>4</amount>
+				</li>
+				<li>
+					<def>UASC_Radiotoxicity</def>
+					<amount>7</amount>
+				</li>
+			</secondaryDamage>
+		</projectile>
+	</ThingDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase" MayRequire="aoba.fortress.industrial.nucleardawn">
+		<defName>MakeUSAC_Ammo_762x51mmNATO_DU</defName>
+		<label>make 7.62x51mm NATO (DU) cartridge x500</label>
+		<description>Craft 500 7.62x51mm NATO (DU) cartridges.</description>
+		<jobString>Making 7.62x51mm NATO (DU) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>26</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FT_DepletedUranium</li>
+					</thingDefs>
+				</filter>
+				<count>4</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FT_DepletedUranium</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<USAC_Ammo_762x51mmNATO_DU>500</USAC_Ammo_762x51mmNATO_DU>
+		</products>
+		<workAmount>4200</workAmount>
+	</RecipeDef>
+
+	<!-- .338 -->
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="Ammo338LapuaBase">
+		<defName>USAC_Ammo_338Lapua_DU</defName>
+		<label>.338 Lapua Magnum (DU)</label>
+		<graphicData>
+			<texPath>Things/Ammo/HighCaliber/FMJ</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>USAC_DU</ammoClass>
+		<tradeTags inherit="false">
+			<li>CE_AmmoInjector</li>
+			<li>CE_Ammo</li>
+			<li>CE_AutoEnableTrade</li>
+			<li MayRequire="aoba.fortress.industrial.nucleardawn">CE_AutoEnableCrafting</li>
+			<li>USAC_Ammunition</li>
+		</tradeTags>
+		<cookOffProjectile>USAC_Bullet_338Lapua_DU</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base338LapuaBullet">
+		<defName>USAC_Bullet_338Lapua_DU</defName>
+		<label>.338 Lapua Magnum bullet (DU)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>20</damageAmountBase>
+			<armorPenetrationSharp>40</armorPenetrationSharp>
+			<armorPenetrationBlunt>192.160</armorPenetrationBlunt>
+			<secondaryDamage>
+				<li>
+					<def>Flame_Secondary</def>
+					<amount>8</amount>
+				</li>
+				<li>
+					<def>UASC_Radiotoxicity</def>
+					<amount>12</amount>
+				</li>
+			</secondaryDamage>
+		</projectile>
+	</ThingDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase" MayRequire="aoba.fortress.industrial.nucleardawn">
+		<defName>MakeUSAC_Ammo_338Lapua_DU</defName>
+		<label>make .338 Lapua Magnum (DU) cartridge x200</label>
+		<description>Craft 200 .338 Lapua Magnum (DU) cartridges.</description>
+		<jobString>Making .338 Lapua Magnum (DU) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FT_DepletedUranium</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FT_DepletedUranium</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<USAC_Ammo_338Lapua_DU>200</USAC_Ammo_338Lapua_DU>
+		</products>
+		<workAmount>4000</workAmount>
+	</RecipeDef>
+	<!-- 20x102mm -->
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="Ammo20x102mmNATOBase">
+		<defName>USAC_Ammo_20x102mmNATO_DU</defName>
+		<label>20x102mm NATO (DU)</label>
+		<graphicData>
+			<texPath>Things/Ammo/HighCaliber/FMJ</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>USAC_DU</ammoClass>
+		<tradeTags>
+			<li>USAC_Ammunition</li>
+		</tradeTags>
+		<cookOffProjectile>USAC_Bullet_20x102mmNATO_DU</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base20x102mmNATOBullet">
+		<defName>USAC_Bullet_20x102mmNATO_DU</defName>
+		<label>20x102mm NATO bullet (DU)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>52</damageAmountBase>
+			<armorPenetrationSharp>42</armorPenetrationSharp>
+			<armorPenetrationBlunt>1315.000</armorPenetrationBlunt>
+			<secondaryDamage>
+				<li>
+					<def>Flame_Secondary</def>
+					<amount>16</amount>
+				</li>
+				<li>
+					<def>UASC_Radiotoxicity</def>
+					<amount>24</amount>
+				</li>
+			</secondaryDamage>
+		</projectile>
+	</ThingDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase" MayRequire="aoba.fortress.industrial.nucleardawn">
+		<defName>MakeUSAC_Ammo_20x102mmNATO_DU</defName>
+		<label>make 20x102mm NATO (DU) cartridge x200</label>
+		<description>Craft 200 20x102mm NATO (DU) cartridges.</description>
+		<jobString>Making 20x102mm NATO (DU) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>104</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FT_DepletedUranium</li>
+					</thingDefs>
+				</filter>
+				<count>14</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FT_DepletedUranium</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<USAC_Ammo_20x102mmNATO_DU>200</USAC_Ammo_20x102mmNATO_DU>
+		</products>
+		<workAmount>16800</workAmount>
+	</RecipeDef>
+	<!-- 35x228mm -->
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="Ammo35x228mmNATOBase">
+		<defName>USAC_Ammo_35x228mmNATO_DU</defName>
+		<label>35x228mm NATO (DU)</label>
+		<graphicData>
+			<texPath>Things/Ammo/HighCaliber/FMJ</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<ammoClass>USAC_DU</ammoClass>
+		<tradeTags>
+			<li>USAC_Ammunition</li>
+		</tradeTags>
+		<cookOffProjectile>USAC_Bullet_35x228mmNATO_DU</cookOffProjectile>
+	</ThingDef>
+
+	<ThingDef ParentName="Base35x228mmNATOBullet">
+		<defName>USAC_Bullet_35x228mmNATO_DU</defName>
+		<label>35x228mm NATO bullet (DU)</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageAmountBase>124</damageAmountBase>
+			<armorPenetrationSharp>108</armorPenetrationSharp>
+			<armorPenetrationBlunt>9550.000</armorPenetrationBlunt>
+			<secondaryDamage>
+				<li>
+					<def>Flame_Secondary</def>
+					<amount>34</amount>
+				</li>
+				<li>
+					<def>UASC_Radiotoxicity</def>
+					<amount>48</amount>
+				</li>
+			</secondaryDamage>
+		</projectile>
+	</ThingDef>
+
+	<RecipeDef ParentName="AmmoRecipeBase" MayRequire="aoba.fortress.industrial.nucleardawn">
+		<defName>MakeUSAC_Ammo_35x228mmNATO_DU</defName>
+		<label>make 35x228mm NATO (DU) cartridge x50</label>
+		<description>Craft 50 35x228mm NATO (DU) cartridges.</description>
+		<jobString>Making 35x228mm NATO (DU) cartridges.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>160</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FT_DepletedUranium</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>FT_DepletedUranium</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<USAC_Ammo_35x228mmNATO_DU>50</USAC_Ammo_35x228mmNATO_DU>
+		</products>
+		<workAmount>25200</workAmount>
+	</RecipeDef>
+
+</Defs>

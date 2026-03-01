@@ -92,6 +92,12 @@
                 <tradeTag>USAC_Armor</tradeTag>
                 <countRange>7~12</countRange>
             </li>
+            
+            <li Class="StockGenerator_MarketValue">
+                <tradeTag>USAC_Ammunition</tradeTag>
+                <countRange>7~12</countRange>
+            </li>
+
             <li Class="StockGenerator_MarketValue">
                 <tradeTag>USAC_WeaponRanged</tradeTag>
                 <countRange>5~10</countRange>

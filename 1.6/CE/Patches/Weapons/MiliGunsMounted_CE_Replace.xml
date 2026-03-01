@@ -1,14 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <Patch>
-
-
-	<Operation Class="PatchOperationReplace">
+	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/ThingDef[defName="USAC_Mech_Cobalt"]/comps/li[@Class="Fortified.CompProperties_VehicleWeapon"]/defaultWeapon</xpath>
-		<value>
-			<defaultWeapon>USAC_HeavyMachineGunMounted</defaultWeapon>
-		</value>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="USAC_Mech_Cobalt"]/comps/li[@Class="Fortified.CompProperties_VehicleWeapon"]</xpath>
+			<value>
+				<defaultWeapon>USAC_HeavyMachineGunMounted</defaultWeapon>
+			</value>
+		</nomatch>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="USAC_Mech_Cobalt"]/comps/li[@Class="Fortified.CompProperties_VehicleWeapon"]/defaultWeapon</xpath>
+			<value>
+				<defaultWeapon>USAC_HeavyMachineGunMounted</defaultWeapon>
+			</value>
+		</match>
 	</Operation>
-
-	
-</Patch>			
+</Patch>	

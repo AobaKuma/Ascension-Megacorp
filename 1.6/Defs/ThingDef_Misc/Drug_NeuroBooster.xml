@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <!-- Neuro-Booster -->
@@ -21,10 +21,10 @@
     </statBases>
     <techLevel>Spacer</techLevel>
     <costList>
-      <Neutroamine>4</Neutroamine>
+      <Neutroamine>20</Neutroamine>
       <ComponentSpacer>1</ComponentSpacer>
     </costList>
-    <recipeMaker Inherit="false"/>
+    <recipeMaker Inherit="false" />
     <ingestible>
       <drugCategory>Hard</drugCategory>
       <foodType>Processed, Fluid</foodType>
@@ -49,12 +49,16 @@
           <hediffDef>USAC_NeuroBoosterAddiction</hediffDef>
           <severity>1.0</severity>
         </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Chemical_USAC_NeuroBooster</need>
+          <offset>-0.9</offset>
+        </li>
       </outcomeDoers>
     </ingestible>
     <comps>
       <li Class="CompProperties_Drug">
         <chemical>USAC_NeuroBooster</chemical>
-        <addictiveness>1.0</addictiveness>
+        <addictiveness>0.9</addictiveness>
         <existingAddictionSeverityOffset>0.25</existingAddictionSeverityOffset>
         <needLevelOffset>1.0</needLevelOffset>
         <listOrder>210</listOrder>
@@ -84,141 +88,281 @@
       <li>
         <minSeverity>1</minSeverity>
         <label>layer 1</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">2</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.02</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">2</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.02</offset>
+          </li>
+        </capMods>
         <painOffset>0.05</painOffset>
       </li>
       <li>
         <minSeverity>2</minSeverity>
         <label>layer 2</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">4</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.04</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">4</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.04</offset>
+          </li>
+        </capMods>
         <painOffset>0.10</painOffset>
       </li>
       <li>
         <minSeverity>3</minSeverity>
         <label>layer 3</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">6</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.06</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">6</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.06</offset>
+          </li>
+        </capMods>
         <painOffset>0.15</painOffset>
       </li>
       <li>
         <minSeverity>4</minSeverity>
         <label>layer 4</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">8</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.08</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">8</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.08</offset>
+          </li>
+        </capMods>
         <painOffset>0.20</painOffset>
       </li>
       <li>
         <minSeverity>5</minSeverity>
         <label>layer 5</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">10</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.10</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">10</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.10</offset>
+          </li>
+        </capMods>
         <painOffset>0.25</painOffset>
       </li>
       <li>
         <minSeverity>6</minSeverity>
         <label>layer 6</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">12</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.12</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">12</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.12</offset>
+          </li>
+        </capMods>
         <painOffset>0.30</painOffset>
       </li>
       <li>
         <minSeverity>7</minSeverity>
         <label>layer 7</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">14</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.14</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">14</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.14</offset>
+          </li>
+        </capMods>
         <painOffset>0.35</painOffset>
       </li>
       <li>
         <minSeverity>8</minSeverity>
         <label>layer 8</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">16</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.16</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">16</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.16</offset>
+          </li>
+        </capMods>
         <painOffset>0.40</painOffset>
       </li>
       <li>
         <minSeverity>9</minSeverity>
         <label>layer 9</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">18</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.18</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">18</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.18</offset>
+          </li>
+        </capMods>
         <painOffset>0.45</painOffset>
       </li>
       <li>
         <minSeverity>10</minSeverity>
         <label>layer 10</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">20</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.20</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">20</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.20</offset>
+          </li>
+        </capMods>
         <painOffset>0.50</painOffset>
       </li>
       <li>
         <minSeverity>11</minSeverity>
         <label>layer 11</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">22</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.22</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">22</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.22</offset>
+          </li>
+        </capMods>
         <painOffset>0.55</painOffset>
       </li>
       <li>
         <minSeverity>12</minSeverity>
         <label>layer 12</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">24</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.24</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">24</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.24</offset>
+          </li>
+        </capMods>
         <painOffset>0.60</painOffset>
       </li>
       <li>
         <minSeverity>13</minSeverity>
         <label>layer 13</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">26</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.26</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">26</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.26</offset>
+          </li>
+        </capMods>
         <painOffset>0.65</painOffset>
       </li>
       <li>
         <minSeverity>14</minSeverity>
         <label>layer 14</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">28</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.28</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">28</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.28</offset>
+          </li>
+        </capMods>
         <painOffset>0.70</painOffset>
       </li>
       <li>
         <minSeverity>15</minSeverity>
         <label>layer 15</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">30</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.30</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">30</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.30</offset>
+          </li>
+        </capMods>
         <painOffset>0.75</painOffset>
       </li>
       <li>
         <minSeverity>16</minSeverity>
         <label>layer 16</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">32</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.32</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">32</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.32</offset>
+          </li>
+        </capMods>
         <painOffset>0.80</painOffset>
       </li>
       <li>
         <minSeverity>17</minSeverity>
         <label>layer 17</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">34</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.34</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">34</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.34</offset>
+          </li>
+        </capMods>
         <painOffset>0.85</painOffset>
       </li>
       <li>
         <minSeverity>18</minSeverity>
         <label>layer 18</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">36</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.36</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">36</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.36</offset>
+          </li>
+        </capMods>
         <painOffset>0.90</painOffset>
       </li>
       <li>
         <minSeverity>19</minSeverity>
         <label>layer 19</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">38</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.38</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">38</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.38</offset>
+          </li>
+        </capMods>
         <painOffset>0.95</painOffset>
       </li>
       <li>
         <minSeverity>20</minSeverity>
         <label>layer 20</label>
-        <statOffsets><MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">40</MechBandwidth></statOffsets>
-        <capMods><li><capacity>Consciousness</capacity><offset>0.40</offset></li></capMods>
+        <statOffsets>
+          <MechBandwidth MayRequire="Ludeon.Rimworld.Biotech">40</MechBandwidth>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.40</offset>
+          </li>
+        </capMods>
         <painOffset>1.00</painOffset>
       </li>
     </stages>

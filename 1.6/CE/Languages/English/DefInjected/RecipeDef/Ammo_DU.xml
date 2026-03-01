@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <USAC_MakeAmmo_338Lapua_DU.label>make .338 Lapua Magnum (DU) cartridge x200</USAC_MakeAmmo_338Lapua_DU.label>
+  <USAC_MakeAmmo_338Lapua_DU.description>Craft 200 .338 Lapua Magnum (DU) cartridges.</USAC_MakeAmmo_338Lapua_DU.description>
+  <USAC_MakeAmmo_338Lapua_DU.jobString>Making .338 Lapua Magnum (DU) cartridges.</USAC_MakeAmmo_338Lapua_DU.jobString>
+
+  <USAC_MakeAmmo_20x102mmNATO_DU.label>make 20x102mm NATO (DU) cartridge x200</USAC_MakeAmmo_20x102mmNATO_DU.label>
+  <USAC_MakeAmmo_20x102mmNATO_DU.description>Craft 200 20x102mm NATO (DU) cartridges.</USAC_MakeAmmo_20x102mmNATO_DU.description>
+  <USAC_MakeAmmo_20x102mmNATO_DU.jobString>Making 20x102mm NATO (DU) cartridges.</USAC_MakeAmmo_20x102mmNATO_DU.jobString>
+
+  <USAC_MakeAmmo_35x228mmNATO_DU.label>make 35x228mm NATO (DU) cartridge x50</USAC_MakeAmmo_35x228mmNATO_DU.label>
+  <USAC_MakeAmmo_35x228mmNATO_DU.description>Craft 50 35x228mm NATO (DU) cartridges.</USAC_MakeAmmo_35x228mmNATO_DU.description>
+  <USAC_MakeAmmo_35x228mmNATO_DU.jobString>Making 35x228mm NATO (DU) cartridges.</USAC_MakeAmmo_35x228mmNATO_DU.jobString>
+
+  <USAC_MakeAmmo_277Fury_DU.label>make .277 Fury (DU) cartridge x500</USAC_MakeAmmo_277Fury_DU.label>
+  <USAC_MakeAmmo_277Fury_DU.description>Craft 500 .277 Fury (DU) cartridges.</USAC_MakeAmmo_277Fury_DU.description>
+  <USAC_MakeAmmo_277Fury_DU.jobString>Making .277 Fury (DU) cartridges.</USAC_MakeAmmo_277Fury_DU.jobString>
+
+  <USAC_MakeAmmo_762x51mmNATO_DU.label>make 7.62x51mm NATO (DU) cartridge x500</USAC_MakeAmmo_762x51mmNATO_DU.label>
+  <USAC_MakeAmmo_762x51mmNATO_DU.description>Craft 500 7.62x51mm NATO (DU) cartridges.</USAC_MakeAmmo_762x51mmNATO_DU.description>
+  <USAC_MakeAmmo_762x51mmNATO_DU.jobString>Making 7.62x51mm NATO (DU) cartridges.</USAC_MakeAmmo_762x51mmNATO_DU.jobString>
+</LanguageData>

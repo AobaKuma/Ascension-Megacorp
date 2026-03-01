@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <USAC_DU.label>Depleted uranium</USAC_DU.label>
+  <USAC_DU.labelShort>uranium</USAC_DU.labelShort>
+  <USAC_DU.description>Uses depleted uranium as projectile core, it has chemical toxicity and radioactivity, greatly improving armor penetration.</USAC_DU.description>
+</LanguageData>

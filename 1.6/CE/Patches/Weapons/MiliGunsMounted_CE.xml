@@ -1,73 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--===== 這些槍械是無法被製造的，只會在固定武裝的機械體上生成
-=====-->
+<!--===== 這些槍械是無法被製造的，只會在固定武裝的機械體上生成 =====-->
 <Patch>
     <Operation Class="PatchOperationSequence">
         <operations>
             <li Class="PatchOperationAdd">
-                <xpath>Defs/ThingDef[@Name="DMS_AutomatroidTurretGun"]/statBases</xpath>
+                <xpath>Defs/ThingDef[defName="USAC_HeavyMachineGunMounted"]/statBases</xpath>
                 <value>
                     <ToughnessRating>3</ToughnessRating>
                 </value>
             </li>
 
-            <!--===== Patch tools =====-->
-            <li Class="PatchOperationReplace">
-                <xpath>Defs/ThingDef[@Name="DMS_AutomatroidTurretGun"]/tools</xpath>
-                <value>
-                    <tools>
-                        <li Class="CombatExtended.ToolCE">
-                            <label>barrel</label>
-                            <capacities>
-                                <li>Blunt</li>
-                            </capacities>
-                            <power>8</power>
-                            <cooldownTime>2.02</cooldownTime>
-                            <armorPenetrationBlunt>2.730</armorPenetrationBlunt>
-                            <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
-                        </li>
-                        <li Class="CombatExtended.ToolCE">
-                            <label>muzzle</label>
-                            <capacities>
-                                <li>Poke</li>
-                            </capacities>
-                            <power>12</power>
-                            <cooldownTime>1.55</cooldownTime>
-                            <armorPenetrationBlunt>3.955</armorPenetrationBlunt>
-                            <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
-                        </li>
-                    </tools>
-                </value>
-            </li>
-            <li Class="PatchOperationReplace">
-                <xpath>Defs/ThingDef[@Name="DMS_AutomatroidHeavyGun"]/tools</xpath>
-                <value>
-                    <tools>
-                        <li Class="CombatExtended.ToolCE">
-                            <label>barrel</label>
-                            <capacities>
-                                <li>Blunt</li>
-                            </capacities>
-                            <power>8</power>
-                            <cooldownTime>2.02</cooldownTime>
-                            <armorPenetrationBlunt>2.730</armorPenetrationBlunt>
-                            <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
-                        </li>
-                        <li Class="CombatExtended.ToolCE">
-                            <label>muzzle</label>
-                            <capacities>
-                                <li>Poke</li>
-                            </capacities>
-                            <power>12</power>
-                            <cooldownTime>1.55</cooldownTime>
-                            <armorPenetrationBlunt>3.955</armorPenetrationBlunt>
-                            <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
-                        </li>
-                    </tools>
-                </value>
-            </li>
-           
             <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
                 <defName>USAC_HeavyMachineGunMounted</defName>
                 <statBases>
@@ -107,7 +50,6 @@
                     <li>NoSwitch</li>
                 </weaponTags>
             </li>
-
         </operations>
     </Operation>
 </Patch>

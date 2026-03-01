@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_338Lapua"]/ammoTypes</xpath>
+				<value>
+					<USAC_Ammo_338Lapua_DU>USAC_Bullet_338Lapua_DU</USAC_Ammo_338Lapua_DU>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_20x102mmNATO"]/ammoTypes</xpath>
+				<value>
+					<USAC_Ammo_20x102mmNATO_DU>USAC_Bullet_20x102mmNATO_DU</USAC_Ammo_20x102mmNATO_DU>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_35x228mm"]/ammoTypes</xpath>
+				<value>
+					<USAC_Ammo_35x228mmNATO_DU>USAC_Bullet_35x228mmNATO_DU</USAC_Ammo_35x228mmNATO_DU>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_277Fury"]/ammoTypes</xpath>
+				<value>
+					<USAC_Ammo_277Fury_DU>USAC_Bullet_277Fury_DU</USAC_Ammo_277Fury_DU>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_762x51mmNATO"]/ammoTypes</xpath>
+				<value>
+					<USAC_Ammo_762x51mmNATO_DU>USAC_Bullet_762x51mmNATO_DU</USAC_Ammo_762x51mmNATO_DU>
+				</value>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/CombatExtended.AmmoSetDef[defName="AmmoSet_762x51mmNATO_SB"]/ammoTypes</xpath>
+				<value>
+					<USAC_Ammo_762x51mmNATO_DU>USAC_Bullet_762x51mmNATO_DU</USAC_Ammo_762x51mmNATO_DU>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

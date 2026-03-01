@@ -109,8 +109,7 @@
 						<RegenValue>5</RegenValue>
 						<Repairable>true</Repairable>
 						<RepairIngredients>
-							<Steel>5</Steel>
-							<Tungsteel>5</Tungsteel>
+							<Steel>15</Steel>
 						</RepairIngredients>
 						<RepairTime>300</RepairTime>
 						<RepairValue>200</RepairValue>

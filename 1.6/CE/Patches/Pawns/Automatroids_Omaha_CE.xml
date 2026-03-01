@@ -121,8 +121,7 @@
 						<RegenValue>25</RegenValue>
 						<Repairable>true</Repairable>
 						<RepairIngredients>
-							<Steel>5</Steel>
-							<Tungsteel>5</Tungsteel>
+                            <Plasteel>10</Plasteel>
 						</RepairIngredients>
 						<RepairTime>300</RepairTime>
 						<RepairValue>200</RepairValue>
@@ -152,7 +151,7 @@
 								</extraMeleeDamages>
 							</surpriseAttack>
 							<cooldownTime>3.55</cooldownTime>
-							<linkedBodyPartsGroup>LeftMechanicalLeg</linkedBodyPartsGroup>
+							<linkedBodyPartsGroup>USAC_LeftMechanicalLeg</linkedBodyPartsGroup>
 							<armorPenetrationBlunt>49</armorPenetrationBlunt>
 							<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
 						</li>
@@ -171,7 +170,7 @@
 								</extraMeleeDamages>
 							</surpriseAttack>
 							<cooldownTime>3.55</cooldownTime>
-							<linkedBodyPartsGroup>RightMechanicalLeg</linkedBodyPartsGroup>
+							<linkedBodyPartsGroup>USAC_RightMechanicalLeg</linkedBodyPartsGroup>
 							<armorPenetrationBlunt>49</armorPenetrationBlunt>
 							<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
 						</li>
