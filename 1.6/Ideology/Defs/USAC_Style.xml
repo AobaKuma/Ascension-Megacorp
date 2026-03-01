@@ -18,14 +18,6 @@
 	</ThingStyleDef>
 
 	<ThingStyleDef>
-		<defName>Apparel_USACRifle</defName>
-		<graphicData>
-			<texPath>Things/Style/USAC/Rifle</texPath>
-			<graphicClass>Graphic_Single</graphicClass>
-		</graphicData>
-	</ThingStyleDef>
-
-	<ThingStyleDef>
 		<defName>Gun_USACAutopistol</defName>
 		<graphicData>
 			<texPath>Things/Style/USAC/Autopistol</texPath>

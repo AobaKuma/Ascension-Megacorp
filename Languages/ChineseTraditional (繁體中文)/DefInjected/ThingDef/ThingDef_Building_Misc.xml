@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: Heavy sentry gun -->
+  <USAC_HESCO.label>艾斯科牆</USAC_HESCO.label>
+  <!-- EN: A multi-purpose heavy machine gun with a lightweight composite material frame and improved design, it is widely used in various weapon platforms and fixed defensive facilities. In the distant past, it was a very successful alternative to the M2 heavy machine gun. -->
+  <USAC_HESCO.description>一種由可折疊的金屬絲網容器和重型織物內襯製成的掩體牆。通常被用作臨時或半永久性的堤壩或防爆牆。</USAC_HESCO.description>
+  
+</LanguageData>

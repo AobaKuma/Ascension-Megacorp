@@ -247,6 +247,7 @@
     <weaponTags>
       <li>USAC_AC</li>
       <li>USAC_Heavy</li>
+      <li>DMS_MechWeaponHeavy</li>
     </weaponTags>
     <tools>
       <li>
@@ -325,6 +326,7 @@
       <li>USAC_HDMR</li>
       <li>USAC_Heavy</li>
       <li>Mech_Weapon</li>
+      <li>DMS_MechWeaponHeavy</li>
     </weaponTags>
     <tools>
       <li>
@@ -399,6 +401,7 @@
       <li>USAC_HeavyAC</li>
       <li>USAC_UltraHeavy</li>
       <li>Mech_Weapon</li>
+      <li>DMS_MechWeaponHeavy</li>
     </weaponTags>
     <tools>
       <li>
@@ -473,6 +476,7 @@
     <weaponTags>
       <li>USAC_HRR</li>
       <li>USAC_UltraHeavy</li>
+      <li>DMS_Gun_Recoilless</li>
     </weaponTags>
     <tools>
       <li>

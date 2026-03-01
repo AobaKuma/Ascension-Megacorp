@@ -16,7 +16,7 @@
     </graphicData>
     <rotatable>false</rotatable>
     <statBases>
-      <MarketValue>750</MarketValue>
+      <MarketValue>500</MarketValue>
       <Mass>0.05</Mass>
     </statBases>
     <techLevel>Spacer</techLevel>
@@ -51,7 +51,7 @@
         </li>
         <li Class="IngestionOutcomeDoer_OffsetNeed">
           <need>Chemical_USAC_NeuroBooster</need>
-          <offset>-0.9</offset>
+          <offset>0.9</offset>
         </li>
       </outcomeDoers>
     </ingestible>
@@ -97,7 +97,7 @@
             <offset>0.02</offset>
           </li>
         </capMods>
-        <painOffset>0.05</painOffset>
+        <painOffset>0.01</painOffset>
       </li>
       <li>
         <minSeverity>2</minSeverity>
@@ -111,7 +111,7 @@
             <offset>0.04</offset>
           </li>
         </capMods>
-        <painOffset>0.10</painOffset>
+        <painOffset>0.02</painOffset>
       </li>
       <li>
         <minSeverity>3</minSeverity>
@@ -125,7 +125,7 @@
             <offset>0.06</offset>
           </li>
         </capMods>
-        <painOffset>0.15</painOffset>
+        <painOffset>0.03</painOffset>
       </li>
       <li>
         <minSeverity>4</minSeverity>
@@ -139,7 +139,7 @@
             <offset>0.08</offset>
           </li>
         </capMods>
-        <painOffset>0.20</painOffset>
+        <painOffset>0.04</painOffset>
       </li>
       <li>
         <minSeverity>5</minSeverity>
@@ -153,7 +153,7 @@
             <offset>0.10</offset>
           </li>
         </capMods>
-        <painOffset>0.25</painOffset>
+        <painOffset>0.05</painOffset>
       </li>
       <li>
         <minSeverity>6</minSeverity>
@@ -167,7 +167,7 @@
             <offset>0.12</offset>
           </li>
         </capMods>
-        <painOffset>0.30</painOffset>
+        <painOffset>0.10</painOffset>
       </li>
       <li>
         <minSeverity>7</minSeverity>
@@ -181,7 +181,7 @@
             <offset>0.14</offset>
           </li>
         </capMods>
-        <painOffset>0.35</painOffset>
+        <painOffset>0.15</painOffset>
       </li>
       <li>
         <minSeverity>8</minSeverity>
@@ -195,7 +195,7 @@
             <offset>0.16</offset>
           </li>
         </capMods>
-        <painOffset>0.40</painOffset>
+        <painOffset>0.20</painOffset>
       </li>
       <li>
         <minSeverity>9</minSeverity>
@@ -209,7 +209,7 @@
             <offset>0.18</offset>
           </li>
         </capMods>
-        <painOffset>0.45</painOffset>
+        <painOffset>0.25</painOffset>
       </li>
       <li>
         <minSeverity>10</minSeverity>
@@ -223,7 +223,7 @@
             <offset>0.20</offset>
           </li>
         </capMods>
-        <painOffset>0.50</painOffset>
+        <painOffset>0.30</painOffset>
       </li>
       <li>
         <minSeverity>11</minSeverity>
@@ -237,7 +237,7 @@
             <offset>0.22</offset>
           </li>
         </capMods>
-        <painOffset>0.55</painOffset>
+        <painOffset>0.35</painOffset>
       </li>
       <li>
         <minSeverity>12</minSeverity>
@@ -251,7 +251,7 @@
             <offset>0.24</offset>
           </li>
         </capMods>
-        <painOffset>0.60</painOffset>
+        <painOffset>0.40</painOffset>
       </li>
       <li>
         <minSeverity>13</minSeverity>
@@ -265,7 +265,7 @@
             <offset>0.26</offset>
           </li>
         </capMods>
-        <painOffset>0.65</painOffset>
+        <painOffset>0.45</painOffset>
       </li>
       <li>
         <minSeverity>14</minSeverity>
@@ -279,7 +279,7 @@
             <offset>0.28</offset>
           </li>
         </capMods>
-        <painOffset>0.70</painOffset>
+        <painOffset>0.50</painOffset>
       </li>
       <li>
         <minSeverity>15</minSeverity>
@@ -293,7 +293,7 @@
             <offset>0.30</offset>
           </li>
         </capMods>
-        <painOffset>0.75</painOffset>
+        <painOffset>0.55</painOffset>
       </li>
       <li>
         <minSeverity>16</minSeverity>
@@ -307,7 +307,7 @@
             <offset>0.32</offset>
           </li>
         </capMods>
-        <painOffset>0.80</painOffset>
+        <painOffset>0.60</painOffset>
       </li>
       <li>
         <minSeverity>17</minSeverity>
@@ -321,7 +321,7 @@
             <offset>0.34</offset>
           </li>
         </capMods>
-        <painOffset>0.85</painOffset>
+        <painOffset>0.65</painOffset>
       </li>
       <li>
         <minSeverity>18</minSeverity>
@@ -335,7 +335,7 @@
             <offset>0.36</offset>
           </li>
         </capMods>
-        <painOffset>0.90</painOffset>
+        <painOffset>0.70</painOffset>
       </li>
       <li>
         <minSeverity>19</minSeverity>
@@ -349,7 +349,7 @@
             <offset>0.38</offset>
           </li>
         </capMods>
-        <painOffset>0.95</painOffset>
+        <painOffset>0.75</painOffset>
       </li>
       <li>
         <minSeverity>20</minSeverity>
@@ -363,7 +363,7 @@
             <offset>0.40</offset>
           </li>
         </capMods>
-        <painOffset>1.00</painOffset>
+        <painOffset>0.80</painOffset>
       </li>
     </stages>
   </HediffDef>
@@ -394,6 +394,7 @@
     <chemicalNeed>Chemical_USAC_NeuroBooster</chemicalNeed>
     <everCurableByItem>false</everCurableByItem>
     <stages>
+      <li></li>
       <li>
         <label>unmet</label>
         <painOffset>0.5</painOffset>

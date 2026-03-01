@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: Mounted HMG -->
+  <!-- EN: Foxhound GPMG -->
   <USAC_HeavyMachineGunMounted.label>獵狐犬機槍</USAC_HeavyMachineGunMounted.label>
-  <!-- EN: A heavy machine gun for mech soldiers or infantry support platforms.\n\nThis weapon is designed specifically for mounted use, so only specific units can equip it. -->
+  <!-- EN: A multi-purpose heavy machine gun with a lightweight composite material frame and improved design, it is widely used in various weapon platforms and fixed defensive facilities. In the distant past, before materials were almost discontinued due to war, it was a very successful alternative to the M2 heavy machine gun. -->
   <USAC_HeavyMachineGunMounted.description>一種使用複合材料輕量化槍身並改良的多用途重機槍，被廣泛使用於各類武器平台與固定防禦設施當中，於遙遠的地球時代在材料一度因戰爭短缺而幾乎停產前其曾是非常成功的M2重機槍替代品。</USAC_HeavyMachineGunMounted.description>
-  <!-- EN: Mounted HMG -->
+  <!-- EN: Foxhound GPMG -->
   <USAC_HeavyMachineGunMounted.verbs.Verb_Shoot.label>獵狐犬機槍</USAC_HeavyMachineGunMounted.verbs.Verb_Shoot.label>
   
 </LanguageData>

@@ -50,6 +50,7 @@
     </weaponClasses>
     <weaponTags>
       <li>USAC_OICW</li>
+      <li>A_BR_LongRifle</li>
     </weaponTags>
     <graphicData>
       <texPath>Things/Item/Equipment/WeaponRanged/USAC_Gun_BattleRifle</texPath>
@@ -155,6 +156,7 @@
     </verbs>
     <weaponTags>
       <li>USAC_SGL</li>
+      <li>A_SR_GrenadeLauncher</li>
     </weaponTags>
     <tools>
       <li>
@@ -228,6 +230,7 @@
     </verbs>
     <weaponTags>
       <li>USAC_AGL</li>
+      <li>DMS_MechWeaponHeavy</li>
     </weaponTags>
     <tools>
       <li>

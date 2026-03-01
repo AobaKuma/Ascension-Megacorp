@@ -17,6 +17,9 @@
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<ammoClass>USAC_DU</ammoClass>
+		<statBases>
+			<MarketValue>0.25</MarketValue>
+		</statBases>
 		<tradeTags>
 			<li>USAC_Ammunition</li>
 		</tradeTags>
@@ -86,6 +89,9 @@
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<ammoClass>USAC_DU</ammoClass>
+		<statBases>
+			<MarketValue>0.24</MarketValue>
+		</statBases>
 		<tradeTags>
 			<li>USAC_Ammunition</li>
 		</tradeTags>
@@ -155,6 +161,9 @@
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<ammoClass>USAC_DU</ammoClass>
+		<statBases>
+			<MarketValue>0.65</MarketValue>
+		</statBases>
 		<tradeTags inherit="false">
 			<li>CE_AmmoInjector</li>
 			<li>CE_Ammo</li>
@@ -227,6 +236,9 @@
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<ammoClass>USAC_DU</ammoClass>
+		<statBases>
+			<MarketValue>2.30</MarketValue>
+		</statBases>
 		<tradeTags>
 			<li>USAC_Ammunition</li>
 		</tradeTags>
@@ -295,6 +307,9 @@
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<ammoClass>USAC_DU</ammoClass>
+		<statBases>
+			<MarketValue>13.60</MarketValue>
+		</statBases>
 		<tradeTags>
 			<li>USAC_Ammunition</li>
 		</tradeTags>
