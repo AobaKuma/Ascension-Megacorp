@@ -11,4 +11,16 @@
     </applicablePawnKinds>
   </Fortified.FFF_OverlayDef>
 
+  
+  <Fortified.FFF_OverlayDef>
+    <defName>FFF_Overlay_Paraman</defName>
+    <label>Paraman(Default)</label>
+    <texPath>Things/Mech/Overlays/paraman</texPath>
+    <multiplyBase>false</multiplyBase>
+    <applicablePawnKinds>
+      <li>USAC_Mech_Paraman</li>
+    </applicablePawnKinds>
+  </Fortified.FFF_OverlayDef>
+
+
 </Defs>
