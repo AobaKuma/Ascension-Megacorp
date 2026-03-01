@@ -37,7 +37,7 @@
                     <chance>0.85</chance>
                     <hediff>USAC_NeuroBoosterAddiction</hediff>
                     <hideOffMap>true</hideOffMap>
-                    <severityRange>1~9</severityRange>
+                    <severityRange>0.1~0.5</severityRange>
                 </li>
 
                 <li Class="ScenPart_StartingThing_Defined">

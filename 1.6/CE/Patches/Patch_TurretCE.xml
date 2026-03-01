@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="USAC_Turret_HMG"]</xpath>
+				<value>
+					<thingClass>CombatExtended.Building_TurretGunCE</thingClass>
+				</value>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="USAC_Turret_HMG"]/statBases</xpath>
+				<value>
+					<AimingAccuracy>0.75</AimingAccuracy>
+					<Bulk>18</Bulk>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="USAC_Turret_HMG"]/statBases/ShootingAccuracyTurret</xpath>
+				<value>
+					<ShootingAccuracyTurret>0.98</ShootingAccuracyTurret>
+				</value>
+			</li>
+
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="USAC_Turret_HMG"]/building/turretBurstCooldownTime</xpath>
+				<value>
+					<turretBurstCooldownTime>1.9</turretBurstCooldownTime>
+				</value>
+			</li>
+
+			<li Class="PatchOperationConditional">
+				<xpath>Defs/ThingDef[defName="USAC_Turret_HMG"]/tradeTags</xpath>
+				<nomatch Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="USAC_Turret_HMG"]</xpath>
+					<value>
+						<tradeTags />
+					</value>
+				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="USAC_Turret_HMG"]/tradeTags</xpath>
+				<value>
+					<li>CE_Turret</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

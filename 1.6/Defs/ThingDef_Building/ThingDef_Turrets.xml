@@ -60,7 +60,7 @@
         <uiIconPath>Things/Building/Turrets/USAC_HeavyMachineGunMounted_Icon</uiIconPath>
         <size>(1,1)</size>
         <statBases>
-            <MaxHitPoints>150</MaxHitPoints>
+            <MaxHitPoints>250</MaxHitPoints>
             <Flammability>0.5</Flammability>
             <Beauty>-2</Beauty>
             <ShootingAccuracyTurret>1</ShootingAccuracyTurret>
@@ -68,12 +68,15 @@
         <building>
             <turretGunDef>USAC_HeavyMachineGunMounted</turretGunDef>
             <turretTopDrawSize>2.5</turretTopDrawSize>
-            <turretBurstWarmupTime>1.5</turretBurstWarmupTime>   <!--================冷卻與瞄準時間================-->
-            <turretBurstCooldownTime>2.3</turretBurstCooldownTime>
+            <turretBurstWarmupTime>1.25</turretBurstWarmupTime>   <!--================冷卻與瞄準時間================-->
+            <turretBurstCooldownTime>3</turretBurstCooldownTime>
         </building>
         <killedLeavingsRanges>
             <ChunkSlagSteel>2~4</ChunkSlagSteel>
         </killedLeavingsRanges>
+        <tradeTags>
+            <li>USAC_Turret</li>
+        </tradeTags>
     </ThingDef>
 
     <ThingDef ParentName="BaseBullet">

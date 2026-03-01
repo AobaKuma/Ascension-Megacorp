@@ -215,7 +215,7 @@
       <li>USAC_HeavyAC</li>
       <li>USAC_HRR</li>
     </weaponTags>
-    <weaponMoney>2500~4000</weaponMoney>
+    <weaponMoney>2500~9999</weaponMoney>
     <abilities>
       <li>USAC_MICLIC_Towed</li>
       <li>USAC_MineclearingShovel</li>

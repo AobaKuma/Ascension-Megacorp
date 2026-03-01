@@ -38,10 +38,10 @@
     </tradeTags>
     <comps>
       <li Class="USAC.CompProperties_MechReadiness">
-        <capacity>100</capacity>
-        <consumptionPerDay>10</consumptionPerDay>
+        <capacity>60</capacity>
+        <consumptionPerDay>1</consumptionPerDay>
         <supplyDef>ComponentIndustrial</supplyDef>
-        <lowThreshold>10</lowThreshold>
+        <lowThreshold>1</lowThreshold>
         <lowReadinessHediff>USAC_LowReadiness</lowReadinessHediff>
       </li>
       <li Class="Fortified.CompProperties_MechDeactivate" />

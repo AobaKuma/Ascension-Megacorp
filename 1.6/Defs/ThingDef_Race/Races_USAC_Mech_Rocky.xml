@@ -154,7 +154,7 @@
     <weaponTags>
       <li>USAC_DMR</li>
     </weaponTags>
-    <weaponMoney>1000~2500</weaponMoney>
+    <weaponMoney>1000~9999</weaponMoney>
   </PawnKindDef>
 
   <PawnKindDef ParentName="USAC_BaseRockyKind">
@@ -164,7 +164,7 @@
       <li>USAC_HelmetAssault</li>
       <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Tactical</li>
     </apparelTags>
-    <apparelMoney>800~3500</apparelMoney>
+    <apparelMoney>800~9999</apparelMoney>
     <apparelRequired>
       <li>USAC_Apparel_ExoSkeleton</li>
     </apparelRequired>

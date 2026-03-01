@@ -73,10 +73,11 @@
       </li>
     </lifeStages>
     <weaponTags>
+      <li>USAC_Cobalt_GPMG</li>
       <li>USAC_HDMR</li>
       <li>USAC_SGL</li>
     </weaponTags>
-    <weaponMoney>1200~2000</weaponMoney>
+    <weaponMoney>1200~9999</weaponMoney>
     <abilities>
       <li MayRequire="Ludeon.Rimworld.Biotech">SmokepopMech</li>
     </abilities>

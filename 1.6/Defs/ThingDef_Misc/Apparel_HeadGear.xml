@@ -75,7 +75,7 @@
       <EquipDelay>1.75</EquipDelay>
     </statBases>
     <equippedStatOffsets>
-      <AimingDelayFactor>-0.1</AimingDelayFactor>
+      <AimingDelayFactor>-0.3</AimingDelayFactor>
     </equippedStatOffsets>
     <apparel>
       <wornGraphicPath>Things/Apparel/AssaultHelmet/headgear</wornGraphicPath>
@@ -136,8 +136,9 @@
       <EquipDelay>1.75</EquipDelay>
     </statBases>
     <equippedStatOffsets>
-      <AimingDelayFactor>0.2</AimingDelayFactor>
-      <MeleeHitChance>-0.25</MeleeHitChance>
+      <AimingAccuracy MayRequire="ceteam.combatextended">-0.3</AimingAccuracy>
+      <AimingDelayFactor>-0.15</AimingDelayFactor>
+      <MeleeHitChance>0.25</MeleeHitChance>
     </equippedStatOffsets>
     <apparel>
       <wornGraphicPath>Things/Apparel/MeleeHelmet/headgear</wornGraphicPath>
@@ -165,7 +166,7 @@
     </statBases>
     <equippedStatOffsets>
       <AimingDelayFactor>-0.2</AimingDelayFactor>
-      <MeleeHitChance>0.1</MeleeHitChance>
+      <MeleeHitChance>-0.3</MeleeHitChance>
     </equippedStatOffsets>
     <apparel>
       <wornGraphicPath>Things/Apparel/NightHelmet/headgear</wornGraphicPath>

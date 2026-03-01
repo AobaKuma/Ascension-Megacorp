@@ -30,8 +30,20 @@
       <damageDef>Bullet</damageDef>
       <damageAmountBase>22</damageAmountBase>
       <stoppingPower>3.0</stoppingPower>
-      <armorPenetrationBase>0.6</armorPenetrationBase>
+      <armorPenetrationBase>0.9</armorPenetrationBase>
       <speed>95</speed>
+      <extraDamages>
+        <li>
+          <def>Burn</def>
+          <amount>6</amount>
+          <armorPenetration>0.1</armorPenetration>
+        </li>
+        <li>
+          <def>UASC_Radiotoxicity</def>
+          <amount>10</amount>
+          <armorPenetration>0.5</armorPenetration>
+        </li>
+      </extraDamages>
     </projectile>
     <graphicData>
       <texPath>Things/Projectile/Bullet_big</texPath>
@@ -49,7 +61,7 @@
     <label>35mm chain round</label>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>38</damageAmountBase>
+      <damageAmountBase>28</damageAmountBase>
       <stoppingPower>2.8</stoppingPower>
       <armorPenetrationBase>0.35</armorPenetrationBase>
       <speed>92</speed>
@@ -234,6 +246,7 @@
     </verbs>
     <weaponTags>
       <li>USAC_AC</li>
+      <li>USAC_Heavy</li>
     </weaponTags>
     <tools>
       <li>
@@ -310,6 +323,7 @@
     </verbs>
     <weaponTags>
       <li>USAC_HDMR</li>
+      <li>USAC_Heavy</li>
       <li>Mech_Weapon</li>
     </weaponTags>
     <tools>

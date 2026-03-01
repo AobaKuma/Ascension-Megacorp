@@ -40,7 +40,7 @@
 			</li>
 		</verbs>
 		<weaponTags>
-			<li>USAC_Cobalt</li>
+			<li>USAC_Cobalt_GPMG</li>
 		</weaponTags>
 		<modExtensions>
 			<li Class="MuzzleFlash.MuzzleFlashProps" MayRequire="IssacZhuang.MuzzleFlash">

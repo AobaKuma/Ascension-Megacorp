@@ -70,6 +70,6 @@
       <li>USAC_AC</li>
       <li>USAC_HDMR</li>
     </weaponTags>
-    <weaponMoney>1500~2500</weaponMoney>
+    <weaponMoney>1500~9999</weaponMoney>
   </PawnKindDef>
 </Defs>
