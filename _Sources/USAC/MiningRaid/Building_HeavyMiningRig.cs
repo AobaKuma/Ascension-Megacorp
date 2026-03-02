@@ -561,16 +561,19 @@ namespace USAC
             }
 
             // 手动清空已采矿物
-            yield return new Command_Action
+            if (Faction == Faction.OfPlayer)
             {
-                defaultLabel = "USAC.UI.Drill.EmptyMinerals".Translate(),
-                defaultDesc = "USAC.UI.Drill.EmptyMinerals.Desc".Translate(),
-                icon = ContentFinder<Texture2D>.Get("UI/Designators/PickUp", true),
-                action = delegate
+                yield return new Command_Action
                 {
-                    EjectStoredMinerals();
-                }
-            };
+                    defaultLabel = "USAC.UI.Drill.EmptyMinerals".Translate(),
+                    defaultDesc = "USAC.UI.Drill.EmptyMinerals.Desc".Translate(),
+                    icon = ContentFinder<Texture2D>.Get("UI/Designators/PickUp", true),
+                    action = delegate
+                    {
+                        EjectStoredMinerals();
+                    }
+                };
+            }
 
             // 执行开发环境瞬间采矿
             if (DebugSettings.ShowDevGizmos)
