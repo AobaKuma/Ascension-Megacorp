@@ -10,6 +10,22 @@ namespace USAC
     // USAC 货币整合类
     public class Tradeable_USACCurrency : Tradeable
     {
+        #region 字段
+
+        // 占位防止第三方访问空
+        private static Thing placeholder;
+
+        private static Thing Placeholder
+        {
+            get
+            {
+                if (placeholder == null) placeholder = ThingMaker.MakeThing(USAC_DefOf.USAC_Bond);
+                return placeholder;
+            }
+        }
+
+        #endregion
+
         #region 属性
 
         public override bool IsCurrency => true;
@@ -17,6 +33,20 @@ namespace USAC
         public override string Label => BuildCurrencyLabel();
         public override string TipDescription => BuildCurrencyDescription();
         public override float BaseMarketValue => 1f;
+
+        // 获取代表性物品实例
+        public override Thing AnyThing
+        {
+            get
+            {
+                if (thingsColony.Count > 0) return thingsColony[0];
+                if (thingsTrader.Count > 0) return thingsTrader[0];
+                return Placeholder;
+            }
+        }
+
+        // 获取对应的物品定义
+        public override ThingDef ThingDef => USAC_DefOf.USAC_Bond;
 
         #endregion
 

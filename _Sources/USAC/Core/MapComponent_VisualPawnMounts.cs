@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Verse;
+using RimWorld.Planet;
 
 namespace USAC
 {
@@ -31,6 +32,7 @@ namespace USAC
         public override void MapComponentUpdate()
         {
             if (registeredComps.Count == 0) return;
+            if (Find.CurrentMap != map || WorldRendererUtility.WorldRendered) return;
 
             foreach (var comp in registeredComps)
             {

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ScenPartDef>
+    <defName>USAC_ScenPart_Debt</defName>
+    <label>USAC 债务合约</label>
+    <description>在游戏开始时携带指定的 USAC 初始债务。</description>
+    <scenPartClass>USAC.ScenPart_USACDebt</scenPartClass>
+    <category>PlayerPawnModifier</category><!-- 出现在剧本编辑器的添加列表中 -->
+    <selectionWeight>1.0</selectionWeight>
+    <summaryPriority>10</summaryPriority>
+  </ScenPartDef>
+</Defs>

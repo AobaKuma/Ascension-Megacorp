@@ -53,8 +53,7 @@ namespace USAC
             {
                 if (overlayGraphic == null && !string.IsNullOrEmpty(Props.overlayTexPath))
                 {
-                    // 检索系统预设覆盖层着色器
-                    Shader shader = USAC_AssetBundleLoader.OverlayShader ?? ShaderDatabase.Transparent;
+                    Shader shader = ShaderDatabase.Transparent;
                     overlayGraphic = GraphicDatabase.Get<Graphic_Single>(
                         Props.overlayTexPath,
                         shader,

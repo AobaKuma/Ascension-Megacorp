@@ -43,6 +43,11 @@ namespace USAC
         // 记录粒子喷射剩余时长
         private int sprayTicksLeft;
 
+        // 租赁剩余时长
+        private int leaseTicksLeft = -1;
+
+        // 开启自动续费
+        public bool autoRenew;
         #endregion
 
         #region 常量
@@ -114,7 +119,8 @@ namespace USAC
             {
                 ScanForResources();
 
-                if (!hasResources)
+                // 延迟资源耗尽撤离
+                if (!hasResources && leaseTicksLeft <= 0)
                 {
                     StartExtraction();
                 }
@@ -163,6 +169,14 @@ namespace USAC
             }
             else
             {
+                // 检测租赁到期撤离点
+                if (leaseTicksLeft > 0)
+                {
+                    leaseTicksLeft--;
+                    if (leaseTicksLeft == 2500 && autoRenew) TryAutoRenewLease();
+                    if (leaseTicksLeft <= 0) StartExtraction();
+                }
+
                 // 执行常规资源挖掘逻辑
                 if (hasResources)
                 {
@@ -183,7 +197,7 @@ namespace USAC
                     pos.z += 4.5f;
 
                     // 注册至全局效果管理器
-                    SewageSprayManager.RegisterEmissionSource(pos);
+                    SewageSprayManager.RegisterEmissionSource(Map, pos, thingIDNumber);
                 }
             }
         }
@@ -197,6 +211,8 @@ namespace USAC
             Scribe_Values.Look(ref hasScanned, "hasScanned");
             Scribe_Values.Look(ref hasResources, "hasResources");
             Scribe_Values.Look(ref currentMiningCell, "currentMiningCell", IntVec3.Invalid);
+            Scribe_Values.Look(ref leaseTicksLeft, "leaseTicksLeft", -1);
+            Scribe_Values.Look(ref autoRenew, "autoRenew", false);
             Scribe_Collections.Look(ref storedMinerals, "storedMinerals", LookMode.Def, LookMode.Value);
             Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
             Scribe_References.Look(ref guardLord, "guardLord");
@@ -245,7 +261,7 @@ namespace USAC
             return result;
         }
 
-        // 执行容器内容物强制弹出
+        // 弹出容器内容物
         private void EjectAllContents()
         {
             if (!Spawned || Map == null) return;
@@ -265,12 +281,11 @@ namespace USAC
 
         private bool GetNextResource(out ThingDef resDef, out int countPresent, out IntVec3 cell)
         {
-            // 检索区域深层矿物资源
-            CellRect rect = CellRect.CenteredOn(Position, MiningRadius);
-
-            foreach (IntVec3 c in rect)
+            // 检索圆形区域深层矿物
+            int radiusSq = MiningRadius * MiningRadius;
+            foreach (IntVec3 c in CellRect.CenteredOn(Position, MiningRadius))
             {
-                if (!c.InBounds(Map)) continue;
+                if (!c.InBounds(Map) || c.DistanceToSquared(Position) > radiusSq) continue;
 
                 ThingDef mineralDef = Map.deepResourceGrid.ThingDefAt(c);
                 if (mineralDef != null)
@@ -295,11 +310,10 @@ namespace USAC
         private Dictionary<ThingDef, int> GetAllResourcesInRange()
         {
             Dictionary<ThingDef, int> resources = new Dictionary<ThingDef, int>();
-            CellRect rect = CellRect.CenteredOn(Position, MiningRadius);
-
-            foreach (IntVec3 c in rect)
+            int radiusSq = MiningRadius * MiningRadius;
+            foreach (IntVec3 c in CellRect.CenteredOn(Position, MiningRadius))
             {
-                if (!c.InBounds(Map)) continue;
+                if (!c.InBounds(Map) || c.DistanceToSquared(Position) > radiusSq) continue;
 
                 ThingDef mineralDef = Map.deepResourceGrid.ThingDefAt(c);
                 if (mineralDef != null)
@@ -340,10 +354,10 @@ namespace USAC
 
             if (!GetNextResource(out resDef, out countPresent, out cell))
             {
-                // 资源耗尽并启动撤离程序
+                // 资源耗尽处理
                 hasResources = false;
                 currentMiningCell = IntVec3.Invalid;
-                StartExtraction();
+                if (leaseTicksLeft <= 0) StartExtraction();
                 return;
             }
 
@@ -364,12 +378,11 @@ namespace USAC
             // 周期性执行污染扩散逻辑
             SpreadPollution();
 
-            // 校验区域资源存续状态
             if (!GetNextResource(out _, out _, out currentMiningCell))
             {
                 hasResources = false;
                 currentMiningCell = IntVec3.Invalid;
-                StartExtraction();
+                if (leaseTicksLeft <= 0) StartExtraction();
             }
         }
 
@@ -547,6 +560,18 @@ namespace USAC
                 yield return gizmo;
             }
 
+            // 手动清空已采矿物
+            yield return new Command_Action
+            {
+                defaultLabel = "USAC.UI.Drill.EmptyMinerals".Translate(),
+                defaultDesc = "USAC.UI.Drill.EmptyMinerals.Desc".Translate(),
+                icon = ContentFinder<Texture2D>.Get("UI/Designators/PickUp", true),
+                action = delegate
+                {
+                    EjectStoredMinerals();
+                }
+            };
+
             // 执行开发环境瞬间采矿
             if (DebugSettings.ShowDevGizmos)
             {
@@ -573,11 +598,10 @@ namespace USAC
 
         private void DevMineAll()
         {
-            CellRect rect = CellRect.CenteredOn(Position, MiningRadius);
-
-            foreach (IntVec3 c in rect)
+            int radiusSq = MiningRadius * MiningRadius;
+            foreach (IntVec3 c in CellRect.CenteredOn(Position, MiningRadius))
             {
-                if (!c.InBounds(Map)) continue;
+                if (!c.InBounds(Map) || c.DistanceToSquared(Position) > radiusSq) continue;
 
                 ThingDef mineralDef = Map.deepResourceGrid.ThingDefAt(c);
                 if (mineralDef != null)
@@ -602,6 +626,7 @@ namespace USAC
             portionYieldPct = 0f;
 
             // 强制启动全员撤离逻辑
+            leaseTicksLeft = 0;
             StartExtraction();
         }
 
@@ -672,7 +697,35 @@ namespace USAC
                 text += "USAC_ExtractionCountdown".Translate(extractionCountdown.ToStringTicksToPeriod());
             }
 
+            if (leaseTicksLeft > 0)
+            {
+                if (!string.IsNullOrEmpty(text)) text += "\n";
+                text += "USAC_LeaseDurationLeft".Translate(leaseTicksLeft.ToStringTicksToPeriod());
+            }
+
             return text;
+        }
+
+        public void SetLease(int ticks, bool auto)
+        {
+            leaseTicksLeft = ticks;
+            autoRenew = auto;
+        }
+
+        private void TryAutoRenewLease()
+        {
+            var debtComp = GameComponent_USACDebt.Instance;
+            if (debtComp != null && debtComp.GetBondCountNearBeacons(Map) >= 1)
+            {
+                debtComp.ConsumeBondsNearBeacons(Map, 1);
+                leaseTicksLeft += 60000; // 延长1天
+                Messages.Message("USAC.Message.LeaseAutoRenewed".Translate(), this, MessageTypeDefOf.PositiveEvent);
+            }
+            else
+            {
+                autoRenew = false;
+                Messages.Message("USAC.Message.LeaseAutoRenewFailed".Translate(), this, MessageTypeDefOf.NegativeEvent);
+            }
         }
 
         #endregion

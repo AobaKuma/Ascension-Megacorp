@@ -7,7 +7,7 @@ using Verse;
 
 namespace USAC
 {
-    // 为据点清缴任务查找目标派系和站点部件
+    // 查找目标派系和部件
     public class QuestNode_USAC_GetEnemyFaction : QuestNode
     {
         public SlateRef<string> storeFactionAs;
@@ -34,7 +34,7 @@ namespace USAC
             if (!storeRelationAs.GetValue(slate).NullOrEmpty())
                 slate.Set(storeRelationAs.GetValue(slate), rel);
 
-            // 供QuestNode_IsTrue使用
+            // 供逻辑节点使用
             slate.Set("isNeutralTarget", rel == "neutral");
 
             // 站点自定义标签

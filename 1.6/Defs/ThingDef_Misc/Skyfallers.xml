@@ -2,8 +2,6 @@
 <Defs>
 
   <!-- USAC 机兵空投 Skyfaller -->
-  <!-- 直接垂直下降，无空投舱，类似盗采袭击的采矿机 -->
-  <!-- 不设置 graphicData，让 Skyfaller 显示内容物的图形 -->
   <ThingDef ParentName="SkyfallerBase">
     <defName>USAC_MechIncoming</defName>
     <label>mech (incoming)</label>
@@ -16,7 +14,6 @@
       <anticipationSound>DropPod_Fall</anticipationSound>
       <impactSound>DropPod_Open</impactSound>
       <cameraShake>0</cameraShake>
-      <!-- 垂直下降，0度表示从屏幕顶部下来 -->
       <angleCurve>
         <points>
           <li>(0, 0)</li>
@@ -46,6 +43,73 @@
         </points>
       </angleCurve>
     </skyfaller>
+  </ThingDef>
+
+  <!-- USAC 轨道夹具 Skyfaller -->
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>USAC_GripperIncoming</defName>
+    <label>orbital gripper (incoming)</label>
+    <thingClass>USAC.Skyfaller_USACGripper</thingClass>
+    <graphicData>
+      <texPath>USAC/Debt/OrbitalGripper</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2, 2)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <movementType>Decelerate</movementType>
+      <ticksToImpactRange>120~150</ticksToImpactRange>
+      <speed>1.0</speed>
+      <shadowSize>(1.5,1.5)</shadowSize>
+      <anticipationSound>DropPod_Fall</anticipationSound>
+      <impactSound>DropPod_Open</impactSound>
+      <cameraShake>0</cameraShake>
+      <angleCurve>
+        <points>
+          <li>(0, 0)</li>
+          <li>(1, 0)</li>
+        </points>
+      </angleCurve>
+    </skyfaller>
+  </ThingDef>
+
+  <!-- USAC 轨道夹具 视觉 Mote -->
+  <ThingDef ParentName="MoteBase">
+    <defName>USAC_GripperMote</defName>
+    <label>orbital gripper</label>
+    <thingClass>USAC.Mote_USACGripper</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <graphicData>
+      <texPath>USAC/Debt/OrbitalGripper</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2, 2)</drawSize>
+      <color>(1, 0.8, 0.2)</color>
+    </graphicData>
+    <mote>
+      <solidTime>999</solidTime><!-- 生命周期由C#自管理 -->
+      <fadeInTime>0</fadeInTime>
+      <fadeOutTime>0</fadeOutTime>
+    </mote>
+  </ThingDef>
+
+  <!-- USAC 轨道钻地破拆投射物 Projectile -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>USAC_DrillShellProjectile</defName>
+    <label>USAC orbital drill shell</label>
+    <thingClass>USAC.Projectile_USACDrillShell</thingClass>
+    <graphicData>
+      <texPath>USAC/Debt/DrillShell</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1, 2)</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>0</damageAmountBase>
+      <speed>150</speed><!-- 高速进入 -->
+      <armorPenetrationBase>1.0</armorPenetrationBase>
+      <soundExplode>Artillery_Boom</soundExplode>
+      <shadowSize>0</shadowSize>
+      <flyOverhead>true</flyOverhead><!-- 确保可以飞跃障碍物直接击中目标点 -->
+    </projectile>
   </ThingDef>
 
 </Defs>

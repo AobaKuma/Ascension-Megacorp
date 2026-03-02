@@ -7,6 +7,14 @@
         <scenario>
             <summary>Four USAC-linked survivors: debt, layoffs, war experience, and frontier contracts forged into one desperate start.</summary>
             <parts>
+                <li Class="USAC.ScenPart_USACDebt">
+                    <def>USAC_ScenPart_Debt</def>
+                    <initialDebt>10000</initialDebt>
+                    <debtType>WholeMortgage</debtType>
+                    <growthMode>WealthBased</growthMode>
+                    <growthRate>0.20</growthRate>
+                    <interestRate>0.05</interestRate>
+                </li>
 
                 <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
                     <def>ConfigPage_ConfigureStartingPawns</def>

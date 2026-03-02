@@ -18,11 +18,17 @@ namespace USAC
         // 引用该次采矿作业所属派系
         private Faction faction;
 
+        // 关联采矿机租期
+        private int leaseTicks = -1;
+        private bool autoRenew;
+
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Collections.Look(ref guards, "guards", LookMode.Reference);
             Scribe_References.Look(ref faction, "faction");
+            Scribe_Values.Look(ref leaseTicks, "leaseTicks", -1);
+            Scribe_Values.Look(ref autoRenew, "autoRenew", false);
 
             if (guards == null)
                 guards = new List<Pawn>();
@@ -34,8 +40,9 @@ namespace USAC
             this.faction = fac;
             this.guards = pawns ?? new List<Pawn>();
 
-            // 令对象脱离地图进入容器持有
-            // 避免未落地前对象被内存回收
+            // 对象入容器
+            // 避落前回收
+            // 咕咕又嘎嘎
             foreach (Pawn pawn in guards)
             {
                 if (pawn != null)
@@ -65,6 +72,12 @@ namespace USAC
                 if (faction != null)
                 {
                     rig.SetFaction(faction);
+                }
+
+                // 传递租赁时长
+                if (leaseTicks > 0)
+                {
+                    rig.SetLease(leaseTicks, autoRenew);
                 }
             }
 
@@ -125,8 +138,13 @@ namespace USAC
             {
                 def.skyfaller.impactSound.PlayOneShot(SoundInfo.InMap(new TargetInfo(pos, map)));
             }
-
             Destroy();
+        }
+
+        public void SetLease(int ticks, bool auto)
+        {
+            leaseTicks = ticks;
+            autoRenew = auto;
         }
     }
 
@@ -174,7 +192,7 @@ namespace USAC
 
         protected override void LeaveMap()
         {
-            // 彻底销毁容器内部所有持有物
+            // 销毁容器内容
             innerContainer.ClearAndDestroyContents();
             Destroy();
         }

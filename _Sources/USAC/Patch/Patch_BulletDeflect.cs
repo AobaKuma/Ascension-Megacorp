@@ -99,7 +99,7 @@ namespace USAC
         }
     }
 
-    // Prefix: 子弹命中前记录信息并清理标记
+    // 记录子弹信息并清理标记
     [HarmonyPatch(typeof(Bullet), "Impact")]
     static class Patch_BulletDeflect_RecordInfo
     {
@@ -133,7 +133,7 @@ namespace USAC
         }
     }
 
-    // Postfix: 原版护甲判定deflect后生成弹飞子弹
+    // 生成护甲弹飞子弹
     [HarmonyPatch(typeof(DamageWorker_AddInjury), "ApplyToPawn")]
     static class Patch_BulletDeflect_SpawnDeflected
     {
@@ -182,14 +182,14 @@ namespace USAC
             Vector3 deflected;
             if (isHighY)
             {
-                // 高Y掠射: 继续入射方向偏转±45°
+                // 继续入射方向随机偏转
                 float jitter = Rand.Range(-45f, 45f);
                 deflected =
                     Quaternion.Euler(0f, jitter, 0f) * incoming;
             }
             else
             {
-                // 普通反射: 四面装甲板法线
+                // 计算装甲法线反弹路径
                 Vector3 negIn = -incoming;
                 Vector3 normal;
                 if (Mathf.Abs(negIn.x) > Mathf.Abs(negIn.z))

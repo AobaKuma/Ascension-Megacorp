@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <!-- 通用内容 -->
+  <USAC.UI.Back>&lt; BACK</USAC.UI.Back>
+  <USAC.UI.Credits>CREDITS</USAC.UI.Credits>
+
+  <!-- 首页 Page_Home -->
+  <USAC.UI.Home.Title>STRATEGIC_OVERVIEW // 战略概览</USAC.UI.Home.Title>
+  <USAC.UI.Home.Banner>UNITED STELLAR ARMAMENT COMPANY\n[CORPORATE_INTRANET_V4.2]</USAC.UI.Home.Banner>
+  <USAC.UI.Home.Slogan>DEFINING THE FUTURE OF PLANETARY SECURITY</USAC.UI.Home.Slogan>
+  <USAC.UI.Home.Description>USAC 是星际资源垄断与武装贸易的领导者。我们通过轨道结算网络，确保资产的绝对流动性。</USAC.UI.Home.Description>
+  <USAC.UI.Home.Bento.Products.Title>ARMORY_CATALOG</USAC.UI.Home.Bento.Products.Title>
+  <USAC.UI.Home.Bento.Products.Desc>授权武器与机兵系统目录</USAC.UI.Home.Bento.Products.Desc>
+  <USAC.UI.Home.Bento.Assets.Title>FINANCIAL_TERMINAL</USAC.UI.Home.Bento.Assets.Title>
+  <USAC.UI.Home.Bento.Assets.Desc>信用资产与债务杠杆管理</USAC.UI.Home.Bento.Assets.Desc>
+  <USAC.UI.Home.Bento.Legal.Title>COMPLIANCE</USAC.UI.Home.Bento.Legal.Title>
+  <USAC.UI.Home.Bento.Legal.Desc>法律条款与自动化征收协议</USAC.UI.Home.Bento.Legal.Desc>
+  <USAC.UI.Home.Bento.Services.Title>CORPORATE_SERVICES</USAC.UI.Home.Bento.Services.Title>
+  <USAC.UI.Home.Bento.Services.Desc>定制化企业支援与远程资产维护</USAC.UI.Home.Bento.Services.Desc>
+
+  <!-- 目录页 Page_Products -->
+  <USAC.UI.Products.Title>AUTHORIZED_PRODUCT_CATALOG // 授权目录</USAC.UI.Products.Title>
+  <USAC.UI.Products.Tab.Mech>机兵订单</USAC.UI.Products.Tab.Mech>
+  <USAC.UI.Products.Tab.Weapon>战术武器</USAC.UI.Products.Tab.Weapon>
+  <USAC.UI.Products.Tab.Apparel>战术装备</USAC.UI.Products.Tab.Apparel>
+  <USAC.UI.Products.Tab.Supply>后勤配给</USAC.UI.Products.Tab.Supply>
+
+  <!-- 详情页 Page_ProductDetail -->
+  <USAC.UI.Detail.Title>PRODUCT_SPECIFICATION // 产品规格</USAC.UI.Detail.Title>
+  <USAC.UI.Detail.Summary>EXECUTIVE_SUMMARY // 执行摘要</USAC.UI.Detail.Summary>
+  <USAC.UI.Detail.Btn>查看详情</USAC.UI.Detail.Btn>
+  <USAC.UI.Stat.Identifier>IDENTIFIER</USAC.UI.Stat.Identifier>
+  <USAC.UI.Stat.Category>CATEGORY</USAC.UI.Stat.Category>
+  <USAC.UI.Stat.SubType>SUB_TYPE</USAC.UI.Stat.SubType>
+  <USAC.UI.Stat.MoveSpeed>MOVE_SPEED</USAC.UI.Stat.MoveSpeed>
+  <USAC.UI.Stat.ArmorSharp>ARMOR_SHARP</USAC.UI.Stat.ArmorSharp>
+  <USAC.UI.Stat.ArmorBlunt>ARMOR_BLUNT</USAC.UI.Stat.ArmorBlunt>
+  <USAC.UI.Stat.HealthFact>HEALTH_FACT</USAC.UI.Stat.HealthFact>
+  <USAC.UI.Stat.WeightClass>WEIGHT_CLASS</USAC.UI.Stat.WeightClass>
+  <USAC.UI.Stat.Damage>DAMAGE</USAC.UI.Stat.Damage>
+  <USAC.UI.Stat.ArmorPen>ARMOR_PEN</USAC.UI.Stat.ArmorPen>
+  <USAC.UI.Stat.Range>RANGE</USAC.UI.Stat.Range>
+  <USAC.UI.Stat.Cooldown>COOLDOWN</USAC.UI.Stat.Cooldown>
+  <USAC.UI.Stat.InsulCold>INSUL_COLD</USAC.UI.Stat.InsulCold>
+  <USAC.UI.Stat.InsulHeat>INSUL_HEAT</USAC.UI.Stat.InsulHeat>
+  <USAC.UI.Stat.Nutrition>NUTRITION</USAC.UI.Stat.Nutrition>
+  <USAC.UI.Stat.MedPotency>MED_POTENCY</USAC.UI.Stat.MedPotency>
+  <USAC.UI.Stat.Mass>LOGISTICS_MASS</USAC.UI.Stat.Mass>
+
+  <!-- 资产页 Page_Assets —— 总览与申请 -->
+  <USAC.UI.Assets.Title>ASSET_TERMINAL // 资产终端</USAC.UI.Assets.Title>
+  <USAC.UI.Assets.SyncStatus>正在实时同步轨道结算网络数据库...</USAC.UI.Assets.SyncStatus>
+  <USAC.UI.Assets.CreditLevel>当前信用等级: [UNREGISTERED / NONE]</USAC.UI.Assets.CreditLevel>
+  <USAC.UI.Assets.NoAgreement>警告: 尚未建立合法的资产抵押协议</USAC.UI.Assets.NoAgreement>
+  <USAC.UI.Assets.CreditScore>信用分: {0}</USAC.UI.Assets.CreditScore>
+  <USAC.UI.Assets.TotalDebt>总计负债: ₿{0}</USAC.UI.Assets.TotalDebt>
+  <USAC.UI.Assets.ActiveContracts>ACTIVE_CONTRACTS // 活动合同</USAC.UI.Assets.ActiveContracts>
+  
+  <!-- 嵌套申请面板 -->
+  <USAC.UI.Assets.Apply.Title>RISK_PRICING_APPLICATION // 风险定价申请</USAC.UI.Assets.Apply.Title>
+  <USAC.UI.Assets.InterestRate>基础方案利率</USAC.UI.Assets.InterestRate>
+  <USAC.UI.Assets.GrowthRate>周期风险费率/手续费</USAC.UI.Assets.GrowthRate>
+  <USAC.UI.Assets.Stat.GrowthMode>风险增长基准</USAC.UI.Assets.Stat.GrowthMode>
+  <USAC.UI.Assets.Stat.ActualInterest>实际执行利率</USAC.UI.Assets.Stat.ActualInterest>
+  <USAC.UI.Assets.Stat.CreditDiscount>信用折扣优惠</USAC.UI.Assets.Stat.CreditDiscount>
+  <USAC.UI.Assets.Apply.Confirm>确认签署合同</USAC.UI.Assets.Apply.Confirm>
+  <USAC.UI.Assets.Apply.Warning>警告: 您正在通过提高利率与风险费率来换取更高的授信。一旦签署，USAC 轨道征收系统将严格执行合同，任何欠缴将导致资产保全行动。</USAC.UI.Assets.Apply.Warning>
+
+  <!-- 合同列表行 -->
+  <USAC.UI.Assets.NextSettlement>距结算</USAC.UI.Assets.NextSettlement>
+  <USAC.UI.Assets.MissedWarning>⚠ 已欠缴 {0} 次！再次欠缴将触发强制征收！</USAC.UI.Assets.MissedWarning>
+  <USAC.UI.Assets.Cycle>每周期</USAC.UI.Assets.Cycle>
+
+  <!-- 增长模式相关 -->
+  <USAC.UI.Assets.GrowthMode.WealthBased>资产联动增长 ({0}%/周期)</USAC.UI.Assets.GrowthMode.WealthBased>
+  <USAC.UI.Assets.GrowthMode.PrincipalBased>本金联动增长 ({0}%/周期)</USAC.UI.Assets.GrowthMode.PrincipalBased>
+
+  <!-- 不可申请原因 -->
+  <USAC.UI.Assets.Block.LowCredit>信用评分不足 (需≥30)，系统已关闭融资通道。</USAC.UI.Assets.Block.LowCredit>
+  <USAC.UI.Assets.Block.LowWealth>当前资产估值不足以支持申请额度，请提高利率方案以通过评估。</USAC.UI.Assets.Block.LowWealth>
+  
+  <!-- 信用评估卡各字段标签 -->
+  <USAC.UI.Assets.Stat.CreditScore>信用评分</USAC.UI.Assets.Stat.CreditScore>
+  <USAC.UI.Assets.Stat.Wealth>地图总财富</USAC.UI.Assets.Stat.Wealth>
+  <USAC.UI.Assets.Stat.MaxAmount>最高评估额度</USAC.UI.Assets.Stat.MaxAmount>
+  <USAC.UI.Assets.Stat.Growth>负债预测</USAC.UI.Assets.Stat.Growth>
+
+  <USAC.UI.Assets.MaxAmount>授信额度: ₿{0}</USAC.UI.Assets.MaxAmount>
+  <USAC.UI.Assets.InterestRate>周期利率: {0}%</USAC.UI.Assets.InterestRate>
+  <USAC.UI.Assets.GrowthRate>资产增长率: {0}%</USAC.UI.Assets.GrowthRate>
+
+  <!-- 合同详情页 —— 顶栏 -->
+  <USAC.UI.Assets.Contract.Details>CONTRACT_SPECIFICATIONS // 合同细节</USAC.UI.Assets.Contract.Details>
+  <USAC.UI.Assets.Contract.ID>合同编号: {0}</USAC.UI.Assets.Contract.ID>
+  <USAC.UI.Assets.Contract.Type>抵押模式: {0}</USAC.UI.Assets.Contract.Type>
+  <USAC.UI.Assets.Contract.Status>执行状态: [ IN_EFFECT / 运行中 ]</USAC.UI.Assets.Contract.Status>
+  <USAC.UI.Assets.Contract.PaidQuarter>本季度已偿还: ₿{0}</USAC.UI.Assets.Contract.PaidQuarter>
+
+  <!-- 合同详情页 —— 财务状态卡 -->
+  <USAC.UI.Assets.Principal>本金余额</USAC.UI.Assets.Principal>
+  <USAC.UI.Assets.Stat.Principal>本金基准联动</USAC.UI.Assets.Stat.Principal>
+  <USAC.UI.Assets.Interest>本期利息</USAC.UI.Assets.Interest>
+  <USAC.UI.Assets.Stat.InterestRate>利率</USAC.UI.Assets.Stat.InterestRate>
+  <USAC.UI.Assets.Imminent>即将结算</USAC.UI.Assets.Imminent>
+
+  <!-- 合同详情页 —— 危险警告横幅 -->
+  <USAC.UI.Assets.Warning.Caution>已欠缴 {0} 次，信用评分持续下滑，请尽快缴纳。</USAC.UI.Assets.Warning.Caution>
+  <USAC.UI.Assets.Warning.Critical>⚠ 已欠缴 {0} 次！再次欠缴将立即触发强制征收程序！</USAC.UI.Assets.Warning.Critical>
+
+  <!-- 合同详情页 —— 利息缴纳面板 -->
+  <USAC.UI.Assets.InterestPanel.Title>INTEREST_SETTLEMENT // 利息结算</USAC.UI.Assets.InterestPanel.Title>
+  <USAC.UI.Assets.InterestPaid>✓ 本期无挂账利息</USAC.UI.Assets.InterestPaid>
+  <USAC.UI.Assets.BondsNeeded>需 {0} 张债券</USAC.UI.Assets.BondsNeeded>
+  <USAC.UI.Assets.BondsOwned>当前持有债券: {0} 张</USAC.UI.Assets.BondsOwned>
+  <USAC.UI.Assets.PayInterest>缴纳利息 ({0} 张债券)</USAC.UI.Assets.PayInterest>
+
+  <!-- 合同详情页 —— 本金偿还面板 -->
+  <USAC.UI.Assets.RepayPanel.Title>PRINCIPAL_REPAYMENT // 本金偿还</USAC.UI.Assets.RepayPanel.Title>
+  <USAC.UI.Assets.QuarterFree>本季免费额度</USAC.UI.Assets.QuarterFree>
+  <USAC.UI.Assets.Used>已使用</USAC.UI.Assets.Used>
+  <USAC.UI.Assets.Repay>偿还本金 ({0} 张债券)</USAC.UI.Assets.Repay>
+  <USAC.UI.Assets.RepaySurcharge>偿还本金 ({0} 张, 含手续费 {1} 张)</USAC.UI.Assets.RepaySurcharge>
+
+  <!-- 合同详情页 —— 增长预测卡 -->
+  <USAC.UI.Assets.GrowthForecast>GROWTH_FORECAST // 本金增长预测</USAC.UI.Assets.GrowthForecast>
+  <USAC.UI.Assets.GrowthMode.Wealth>财富百分比增长 ({0}% / 周期)</USAC.UI.Assets.GrowthMode.Wealth>
+  <USAC.UI.Assets.GrowthMode.Principal>本金百分比增长 ({0}% / 周期)</USAC.UI.Assets.GrowthMode.Principal>
+  <USAC.UI.Assets.CurrentWealth>当前地图财富: ₿{0}</USAC.UI.Assets.CurrentWealth>
+
+  <!-- 侧边栏与框架 Dialog_USACPortal -->
+  <USAC.UI.Nav.Home>战略概览</USAC.UI.Nav.Home>
+  <USAC.UI.Nav.Assets>资产终端</USAC.UI.Nav.Assets>
+  <USAC.UI.Nav.Products>授权目录</USAC.UI.Nav.Products>
+  <USAC.UI.Nav.Legal>法律合规</USAC.UI.Nav.Legal>
+  <USAC.UI.Nav.Services>企业服务</USAC.UI.Nav.Services>
+  <USAC.UI.StatusBar>● TUNNEL_ACTIVE // ENCRYPTION: SECURE</USAC.UI.StatusBar>
+
+  <!-- 法律页 Page_Legal -->
+  <USAC.UI.Legal.Title>LEGAL_COMPLIANCE // 法律合规</USAC.UI.Legal.Title>
+  <USAC.UI.Legal.Ordinance>COLLECTION_ORDINANCE_V1.1 // 征收条例</USAC.UI.Legal.Ordinance>
+  <USAC.UI.Legal.Clause01.Title>条款 01: 资产优先权</USAC.UI.Legal.Clause01.Title>
+  <USAC.UI.Legal.Clause01.Desc>在任何违约情况下，USAC 拥有对本地所有物质资产的绝对优先回收权。</USAC.UI.Legal.Clause01.Desc>
+  <USAC.UI.Legal.Clause02.Title>条款 02: 自动化执行</USAC.UI.Legal.Clause02.Title>
+  <USAC.UI.Legal.Clause02.Desc>回收过程由轨道平台自动引导，不接受任何形式的人工辩护或延期申请。</USAC.UI.Legal.Clause02.Desc>
+  <USAC.UI.Legal.Footer>警告：点击进入本门户即代表您已默认并签署了上述所有协议。USAC 不对回收过程中的意外平民伤亡或次生伤害负责。</USAC.UI.Legal.Footer>
+
+  <!-- 交互反馈 -->
+  <USAC_PaymentSuccess>[USAC] {0} 核销完成，信用评分已上调。</USAC_PaymentSuccess>
+  <USAC_InsufficientBonds>[USAC] 支付失败：轨道卫星未在该区域信标范围内检测到足够的信用债券。</USAC_InsufficientBonds>
+  <USAC_LoanApproved>[USAC] 合同签署成功：{0} 资产已通过轨道投放投递至贸易信标附近。</USAC_LoanApproved>
+  <USAC_FunctionInProgress>[USAC] 访问受限：该功能模块正在升级，或者您的信用等级尚未解锁此权限。</USAC_FunctionInProgress>
+
+  <!-- 错误 Page_404 -->
+  <USAC.UI.Error.404.Title>CONNECTION_LOST // 连接中断</USAC.UI.Error.404.Title>
+  <USAC.UI.Error.404.Text>请求的资源未在 USAC 内网中注册，或者您的访问权限已被剥夺。</USAC.UI.Error.404.Text>
+  <USAC.UI.Error.ProductNotFound>错误: 找不到指定产品</USAC.UI.Error.ProductNotFound>
+
+  <!-- 企业服务 Page_Services -->
+  <USAC.UI.Services.Title>CORPORATE_SERVICES // 企业服务</USAC.UI.Services.Title>
+  <USAC.UI.Services.Lease.Title>LEASE_SERVICES // 租赁服务</USAC.UI.Services.Lease.Title>
+  <USAC.UI.Services.Lease.Desc>USAC 资产租赁方案。由轨道平台投送重型突击采矿机至指定区域。1,000信用点/24小时作业周期。支持动态周期配置与自动续期功能。</USAC.UI.Services.Lease.Desc>
+  <USAC.UI.Services.Lease.Days>初始租赁时长：{0} 天</USAC.UI.Services.Lease.Days>
+  <USAC.UI.Services.Lease.Btn>启动租赁方案</USAC.UI.Services.Lease.Btn>
+  <USAC_ActiveRigs>资产部署监控 // 投送中矿机</USAC_ActiveRigs>
+  <USAC_LeaseActive>采矿作业进行中</USAC_LeaseActive>
+  <USAC.UI.Services.Renewal.Title>REMOTE_RENEWAL // 远程续订</USAC.UI.Services.Renewal.Title>
+  <USAC.UI.Services.Renewal.Desc>为临时机控带宽加密链路提供续费。通过增加本地数据中继授权，有效延长非永久性机控中枢的在线寿命。</USAC.UI.Services.Renewal.Desc>
+  <USAC.UI.Services.Renewal.Btn>续订带宽通道</USAC.UI.Services.Renewal.Btn>
+  <USAC.UI.Services.Renewal.Header>已登记的临时带宽链接</USAC.UI.Services.Renewal.Header>
+  <USAC.UI.Services.Renewal.NoMechnitor>未检测到受控范围内的临时机控带宽链接。</USAC.UI.Services.Renewal.NoMechnitor>
+  <USAC.UI.Services.Renewal.Remaining>剩余链路时长: {0}</USAC.UI.Services.Renewal.Remaining>
+
+  <!-- 债务条目 -->
+  <USAC.Debt.LeaseDrill>USAC 重型突击采矿机租赁费用</USAC.Debt.LeaseDrill>
+  <USAC.Debt.Renewal>{0} 的临时带宽链路续期费用</USAC.Debt.Renewal>
+
+  <USAC.Message.Renewed>[USAC] 续期成功：已为 {0} 续订 30 周期带宽链路。</USAC.Message.Renewed>
+  <USAC.Message.AutoRenewed>[USAC] 自动续期：已自动为 {0} 续订 30 周期链路时长。</USAC.Message.AutoRenewed>
+  <USAC.Message.AutoRenewFailed>[USAC] 续期中止：因信标范围内债券余额不足，已停用 {0} 的自动续订服务。</USAC.Message.AutoRenewFailed>
+  <USAC.Message.InsufficientBonds>[USAC] 支付失败：贸易信标范围内储备的信用债券不足。</USAC.Message.InsufficientBonds>
+  <USAC.Message.InsufficientBondsForLease>[USAC] 租赁中止：当前储备的信用债券不足以支持选定的起始租赁时长。</USAC.Message.InsufficientBondsForLease>
+  <USAC.Message.LeaseAutoRenewed>[USAC] 自动续签：已通过轨道结算网络为采矿机续订了 24 小时的部署时长。</USAC.Message.LeaseAutoRenewed>
+  <USAC.Message.LeaseAutoRenewFailed>[USAC] 续签失败：因轨道信标附近债券储备不足，已停用该采矿机的自动续期功能并将按期回收。</USAC.Message.LeaseAutoRenewFailed>
+
+  <USAC_LeaseDurationLeft>租期剩余时间: {0}</USAC_LeaseDurationLeft>
+  <USAC_ExtractionCountdown>撤离倒计时: {0}</USAC_ExtractionCountdown>
+
+  <!-- 采矿机 Gizmo -->
+  <USAC.UI.Drill.EmptyMinerals>清空矿仓</USAC.UI.Drill.EmptyMinerals>
+  <USAC.UI.Drill.EmptyMinerals.Desc>手动将已采集的矿物从密封舱中弹出。注意：如果在撤离前未清空，USAC 轨道平台将直接回收所有机内物资。</USAC.UI.Drill.EmptyMinerals.Desc>
+</LanguageData>

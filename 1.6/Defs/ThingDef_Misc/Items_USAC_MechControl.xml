@@ -39,7 +39,7 @@
         <requiresPsychicallySensitive>false</requiresPsychicallySensitive>
       </li>
       <li Class="CompProperties_UseEffectInstallImplant">
-        <compClass>CompUseEffect_InstallImplantMechlink</compClass>
+        <compClass>USAC.CompUseEffect_USACInstallTempMechlink</compClass>
         <hediffDef>USAC_TempMechlinkTrigger</hediffDef>
         <bodyPart>Brain</bodyPart>
         <requiresPsychicallySensitive>false</requiresPsychicallySensitive>
