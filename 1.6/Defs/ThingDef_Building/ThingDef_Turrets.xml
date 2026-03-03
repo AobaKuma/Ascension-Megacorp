@@ -2,7 +2,7 @@
 <Defs>
     <ThingDef Name="USAC_BaseTurretBuilding" ParentName="BuildingBase" Abstract="True">
         <!-- will comment out  -->
-        <designationCategory>Misc</designationCategory>
+        <!-- <designationCategory>Misc</designationCategory> -->
         <!-- will comment out  -->
         <thingClass>Building_TurretGun</thingClass>
         <drawerType>MapMeshAndRealTime</drawerType>

@@ -71,6 +71,19 @@
                 </li>
                 <li Class="ScenPart_StartingThing_Defined">
                     <def>StartingThing_Defined</def>
+                    <thingDef>OrbitalTradeBeacon</thingDef>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>CommsConsole</thingDef>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>USAC_CorpseBag</thingDef>
+                    <count>6</count>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
                     <thingDef>USAC_Gun_MarksmanRifle</thingDef>
                 </li>
                 <li Class="ScenPart_StartingThing_Defined">

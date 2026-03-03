@@ -13,7 +13,7 @@
 		<defName>USAC_Ammo_277Fury_DU</defName>
 		<label>.277 Fury (DU)</label>
 		<graphicData>
-			<texPath>Things/Ammo/Rifle/Battlerifle/FMJ</texPath>
+			<texPath>Things/Ammo/Rifle/Battlerifle/DU</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<ammoClass>USAC_DU</ammoClass>
@@ -85,7 +85,7 @@
 		<defName>USAC_Ammo_762x51mmNATO_DU</defName>
 		<label>7.62x51mm NATO (DU)</label>
 		<graphicData>
-			<texPath>Things/Ammo/Rifle/Battlerifle/FMJ</texPath>
+			<texPath>Things/Ammo/Rifle/Battlerifle/DU</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<ammoClass>USAC_DU</ammoClass>
@@ -157,7 +157,7 @@
 		<defName>USAC_Ammo_338Lapua_DU</defName>
 		<label>.338 Lapua Magnum (DU)</label>
 		<graphicData>
-			<texPath>Things/Ammo/HighCaliber/FMJ</texPath>
+			<texPath>Things/Ammo/HighCaliber/DU</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<ammoClass>USAC_DU</ammoClass>
@@ -228,7 +228,7 @@
 		<defName>USAC_Ammo_20x102mmNATO_DU</defName>
 		<label>20x102mm NATO (DU)</label>
 		<graphicData>
-			<texPath>Things/Ammo/HighCaliber/FMJ</texPath>
+			<texPath>Things/Ammo/HighCaliber/DU</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<ammoClass>USAC_DU</ammoClass>
@@ -299,7 +299,7 @@
 		<defName>USAC_Ammo_35x228mmNATO_DU</defName>
 		<label>35x228mm NATO (DU)</label>
 		<graphicData>
-			<texPath>Things/Ammo/HighCaliber/FMJ</texPath>
+			<texPath>Things/Ammo/HighCaliber/DU</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<ammoClass>USAC_DU</ammoClass>

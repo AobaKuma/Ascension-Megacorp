@@ -89,7 +89,7 @@
         <blockWind>false</blockWind>
         <castEdgeShadows>true</castEdgeShadows>
         <!-- will comment out  -->
-        <designationCategory>Misc</designationCategory>
+        <!-- <designationCategory>Misc</designationCategory> -->
         <!-- will comment out  -->
         <statBases>
             <MaxHitPoints>150</MaxHitPoints>

@@ -6,6 +6,7 @@
         <!-- 一種由可折疊的金屬絲網容器和重型織物內襯製成的掩體牆。通常被用作臨時或半永久性的堤壩或防爆牆。 -->
         <description>A bunker wall made of a collapsible wire mesh container and a heavy-duty fabric lining. It is typically used as a temporary or semi-permanent dike or blast wall.</description>
         <thingClass>Building</thingClass>
+        <uiIconScale>0.9</uiIconScale>
         <graphicData>
             <texPath>Things/Building/HESCO</texPath>
             <graphicClass>Graphic_Random</graphicClass>
