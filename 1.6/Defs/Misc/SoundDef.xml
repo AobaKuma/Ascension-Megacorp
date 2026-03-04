@@ -13,6 +13,7 @@
           </li>
         </grains>
         <pitchRange>1.0~1.5</pitchRange>
+        <volumeRange>90~95</volumeRange>
       </li>
     </subSounds>
   </SoundDef>
@@ -93,7 +94,7 @@
             <clipPath>USAC/SR</clipPath>
           </li>
         </grains>
-        <volumeRange>90~95</volumeRange>
+        <volumeRange>60~75</volumeRange>
       </li>
     </subSounds>
   </SoundDef>

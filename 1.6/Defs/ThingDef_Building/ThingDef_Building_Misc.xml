@@ -11,7 +11,7 @@
             <texPath>Things/Building/HESCO</texPath>
             <graphicClass>Graphic_Random</graphicClass>
             <drawSize>1.95</drawSize>
-            <drawOffset>(0,0.01,-0.15)</drawOffset>
+            <drawOffset>(0,-0.01,-0.15)</drawOffset>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>

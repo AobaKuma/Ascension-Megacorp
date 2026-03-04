@@ -127,6 +127,15 @@
   <USAC.UI.Services.Renewal.Header>Registered Temporary Bandwidth Links</USAC.UI.Services.Renewal.Header>
   <USAC.UI.Services.Renewal.NoMechnitor>No temporary Mechnitor bandwidth links detected within controlled range.</USAC.UI.Services.Renewal.NoMechnitor>
   <USAC.UI.Services.Renewal.Remaining>Remaining Link Time: {0}</USAC.UI.Services.Renewal.Remaining>
+  <USAC.UI.Services.Trader.Title>ORBITAL_TRADE_REQUEST // Orbital Trade Request</USAC.UI.Services.Trader.Title>
+  <USAC.UI.Services.Trader.Desc>Send a priority trade request through the orbital settlement network. A USAC orbital trade ship will arrive in this area in approximately one hour.</USAC.UI.Services.Trader.Desc>
+  <USAC.UI.Services.Trader.Btn>Send Request</USAC.UI.Services.Trader.Btn>
+  <USAC.UI.Services.Trader.Pending>Trade ship en route</USAC.UI.Services.Trader.Pending>
+  <USAC.UI.Services.Trader.Status.Title>ORBITAL_INBOUND // Trade Ship Arrival Status</USAC.UI.Services.Trader.Status.Title>
+  <USAC.UI.Services.Trader.Status.ETA>Estimated Arrival: {0}</USAC.UI.Services.Trader.Status.ETA>
+  <USAC.UI.Services.Trader.Status.Desc>USAC orbital trade ship is inbound</USAC.UI.Services.Trader.Status.Desc>
+  <USAC.Message.TraderCalled>[USAC] Request accepted: A USAC orbital trade ship is en route to your location and is expected to arrive in about one hour.</USAC.Message.TraderCalled>
+  <USAC.Message.TraderArrived>[USAC] Orbital trade ship in position: The USAC orbital trade ship is now available for trading.</USAC.Message.TraderArrived>
   <USAC.Debt.LeaseDrill>USAC orbital assault drill lease fee</USAC.Debt.LeaseDrill>
   <USAC.Debt.Renewal>Temporary bandwidth link renewal fee for {0}</USAC.Debt.Renewal>
   <USAC.Message.Renewed>[USAC] Renewal successful: 30-cycle bandwidth link has been renewed for {0}.</USAC.Message.Renewed>

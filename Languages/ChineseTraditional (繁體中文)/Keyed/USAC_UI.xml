@@ -127,6 +127,15 @@
   <USAC.UI.Services.Renewal.Header>已登記的臨時帶寬鏈接</USAC.UI.Services.Renewal.Header>
   <USAC.UI.Services.Renewal.NoMechnitor>未檢測到受控範圍內的臨時機控帶寬鏈接。</USAC.UI.Services.Renewal.NoMechnitor>
   <USAC.UI.Services.Renewal.Remaining>剩餘鏈路時長: {0}</USAC.UI.Services.Renewal.Remaining>
+  <USAC.UI.Services.Trader.Title>ORBITAL_TRADE_REQUEST // 商船呼叫</USAC.UI.Services.Trader.Title>
+  <USAC.UI.Services.Trader.Desc>通過軌道結算網絡發送優先交易請求。USAC 軌道商船將於約一小時後抵達該區域。</USAC.UI.Services.Trader.Desc>
+  <USAC.UI.Services.Trader.Btn>發送呼叫請求</USAC.UI.Services.Trader.Btn>
+  <USAC.UI.Services.Trader.Pending>商船已在途中</USAC.UI.Services.Trader.Pending>
+  <USAC.UI.Services.Trader.Status.Title>ORBITAL_INBOUND // 商船抵達狀態</USAC.UI.Services.Trader.Status.Title>
+  <USAC.UI.Services.Trader.Status.ETA>預計到達：{0}</USAC.UI.Services.Trader.Status.ETA>
+  <USAC.UI.Services.Trader.Status.Desc>USAC 軌道商船正在抵達中</USAC.UI.Services.Trader.Status.Desc>
+  <USAC.Message.TraderCalled>[USAC] 請求已受理：USAC 軌道商船正在趕往您的位置，預計約一小時後抵達。</USAC.Message.TraderCalled>
+  <USAC.Message.TraderArrived>[USAC] 軌道商船已就位：USAC 軌道商船現在可供交易。</USAC.Message.TraderArrived>
   <USAC.Debt.LeaseDrill>USAC軌道突擊鑽機租賃費用</USAC.Debt.LeaseDrill>
   <USAC.Debt.Renewal>{0} 的臨時帶寬鏈路續期費用</USAC.Debt.Renewal>
   <USAC.Message.Renewed>[USAC] 續期成功：已為 {0} 續訂 30 週期帶寬鏈路。</USAC.Message.Renewed>

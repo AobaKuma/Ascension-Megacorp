@@ -19,13 +19,13 @@
         <stockGenerators>
             <!-- 出售：机兵订单 -->
             <li Class="USAC.StockGenerator_USAC_Mechs">
-                <kindCountRange>2~4</kindCountRange>
+                <kindCountRange>0~2</kindCountRange>
                 <countPerKindRange>1~2</countPerKindRange>
             </li>
 
             <li Class="StockGenerator_SingleDef">
                 <thingDef>USAC_MealSurvivalPack</thingDef>
-                <countRange>10~60</countRange>
+                <countRange>10~100</countRange>
             </li>
             <li Class="StockGenerator_SingleDef">
                 <thingDef>MedicineUltratech</thingDef>
@@ -40,12 +40,12 @@
             <!-- 出售：神经强化剂 -->
             <li Class="StockGenerator_SingleDef">
                 <thingDef>USAC_NeuroBooster</thingDef>
-                <countRange>3~10</countRange>
+                <countRange>3~40</countRange>
             </li>
             <!-- 出售：活力水 -->
             <li Class="StockGenerator_SingleDef">
                 <thingDef>GoJuice</thingDef>
-                <countRange>5~15</countRange>
+                <countRange>5~65</countRange>
             </li>
             <!-- 出售：工具 -->
             <li Class="StockGenerator_SingleDef">
@@ -95,7 +95,7 @@
             
             <li Class="StockGenerator_MarketValue">
                 <tradeTag>USAC_Ammunition</tradeTag>
-                <countRange>7~12</countRange>
+                <countRange>1000~3000</countRange>
             </li>
 
             <li Class="StockGenerator_MarketValue">
@@ -105,7 +105,7 @@
 
             <!-- 出售：信用债券 -->
             <li Class="USAC.StockGenerator_USACBond">
-                <countRange>5~15</countRange>
+                <countRange>5~50</countRange>
             </li>
 
         </stockGenerators>
@@ -212,6 +212,11 @@
                 <countRange>5~10</countRange>
             </li>
 
+            <li Class="StockGenerator_MarketValue">
+                <tradeTag>USAC_Ammunition</tradeTag>
+                <countRange>1000~3000</countRange>
+            </li>
+            
             <!-- 出售：信用债券 -->
             <li Class="USAC.StockGenerator_USACBond">
                 <countRange>5~15</countRange>

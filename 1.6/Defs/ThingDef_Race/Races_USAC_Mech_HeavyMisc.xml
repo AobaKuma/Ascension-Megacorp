@@ -52,7 +52,7 @@
             <offset>(0,0,0.2)</offset>
           </dataSouth>
           <dataNorth>
-            <offset>(0,0,0)</offset>
+            <offset>(0,0,0.4)</offset>
           </dataNorth>
         </drawData>
         <turretRotationFollowPawn>true</turretRotationFollowPawn>
