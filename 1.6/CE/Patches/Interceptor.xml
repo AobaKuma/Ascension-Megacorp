@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationAttributeSet">
+				<xpath>Defs/AbilityDef[defName="USAC_APS"]/comps/li[@Class="Fortified.CompProperties_ActiveProtectionSystem"]</xpath>
+				<attribute>Class</attribute>
+				<value>FortifiedCE.CompProperties_ActiveProtectionSystem</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>
