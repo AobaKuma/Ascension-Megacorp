@@ -332,7 +332,8 @@ namespace USAC.InternalUI
 
                 float freeLimit = contract.Principal * 0.10f;
                 float used = contract.PrincipalPaidThisQuarter;
-                string feeHint = $"{"USAC.UI.Assets.QuarterFree".Translate()} ₿{freeLimit:N0} | {"USAC.UI.Assets.Used".Translate()} ₿{used:N0} | 10%▸免费 20%▸50% 30%▸100% 50%+▸200%";
+                string feeHint = "USAC.UI.Assets.SurchargeHint"
+                    .Translate(freeLimit.ToString("N0"), used.ToString("N0"));
                 DrawColoredLabel(new Rect(inner.x, inner.y + 22, inner.width, 18), feeHint, ColTextMuted, GameFont.Tiny);
 
                 Rect adjRow = new(inner.x, inner.y + 44, inner.width - 185, 32);

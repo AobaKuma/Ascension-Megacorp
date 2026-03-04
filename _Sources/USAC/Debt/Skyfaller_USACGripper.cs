@@ -134,7 +134,7 @@ namespace USAC
                 if (d > WarpThreshold * WarpThreshold)
                 {
                     // 目标丢失直接空夹上升
-                    Messages.Message("[USAC] 轨道夹具抓取失败：目标丢失。",
+                    Messages.Message("USAC.Debt.Message.GripperTargetLost".Translate(),
                         MessageTypeDefOf.NeutralEvent);
                     landedAnchor = curPos;
                     isLifting = true;
@@ -233,10 +233,10 @@ namespace USAC
                     target.MissedPayments++;
                     debtComp.AddTransaction(
                         USACTransactionType.Penalty, penalty,
-                        "轨道夹具遭摧毁 (损坏赔偿)");
+                        "USAC.Debt.Transaction.GripperDestroyed".Translate());
                     Messages.Message(
-                        "[USAC] 轨道夹具遭摧毁！" +
-                        "额外费用₿3000已记入账单",
+                        "USAC.Debt.Message.GripperDestroyedPenalty"
+                            .Translate(penalty.ToString("N0")),
                         MessageTypeDefOf.NegativeEvent);
                 }
             }

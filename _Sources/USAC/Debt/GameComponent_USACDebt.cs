@@ -124,29 +124,26 @@ namespace USAC
             int bondsNeeded = Mathf.CeilToInt(toPay / 1000f);
 
             string text =
-                $"[USAC 金融节点] {contract.Label}审计完成\n\n" +
-                $"本期应付利息: ₿{toPay:N0}" +
-                $" (需{bondsNeeded}张债券)\n" +
-                $"当前合同本金: ₿{contract.Principal:N0}\n" +
-                $"累计欠缴: {contract.MissedPayments}次\n\n" +
-                "请确认是否使用贸易信标范围内的" +
-                "\"USAC信用债券\"进行核销。\n" +
-                (contract.MissedPayments >= 2
-                    ? "⚠ 再次欠缴将触发强制征收程序！"
-                    : "");
+                "USAC.Debt.Dialog.Repayment.Text".Translate(
+                    contract.Label,
+                    toPay.ToString("N0"),
+                    bondsNeeded,
+                    contract.Principal.ToString("N0"),
+                    contract.MissedPayments);
+            if (contract.MissedPayments >= 2) text += "USAC.Debt.Dialog.Repayment.Warning".Translate();
 
             DiaNode diaNode = new DiaNode(text);
 
             // 确认缴纳
-            DiaOption optPay = new DiaOption("执行核销（使用债券）")
+            DiaOption optPay = new DiaOption(
+                "USAC.Debt.Dialog.Repayment.Option.Pay".Translate())
             {
                 action = () =>
                 {
                     if (contract.TryPayInterest(map))
                     {
                         Messages.Message(
-                            $"[USAC] {contract.Label}" +
-                            " 利息缴纳完成",
+                            "USAC.Debt.Message.InterestPaid".Translate(contract.Label),
                             MessageTypeDefOf.PositiveEvent);
                     }
                     else
@@ -158,7 +155,8 @@ namespace USAC
             };
 
             // 拒绝/无力偿还
-            DiaOption optRefuse = new DiaOption("无力偿还/拒绝")
+            DiaOption optRefuse = new DiaOption(
+                "USAC.Debt.Dialog.Repayment.Option.Refuse".Translate())
             {
                 action = () =>
                 {
@@ -172,7 +170,7 @@ namespace USAC
 
             Find.WindowStack.Add(new Dialog_NodeTree(
                 diaNode, true, false,
-                $"USAC {contract.Label}结算"));
+                "USAC.Debt.Dialog.Repayment.Title".Translate(contract.Label)));
         }
 
         private void HandleFailedPayment(
@@ -198,7 +196,7 @@ namespace USAC
             if (IsMapSealedFromOrbit(map))
             {
                 Messages.Message(
-                    "[USAC] 目标殖民地处于轨道屏蔽区域，强制征收程序已暂缓。",
+                    "USAC.Debt.Message.ForceCollectPausedByShield".Translate(),
                     MessageTypeDefOf.NeutralEvent);
                 return;
             }
@@ -217,8 +215,9 @@ namespace USAC
 
             AddTransaction(USACTransactionType.Penalty,
                 collected,
-                $"{contract.Label} 强制征收 (第" +
-                $"{contract.MissedPayments}次)");
+                "USAC.Debt.Transaction.ForceCollect".Translate(
+                    contract.Label,
+                    contract.MissedPayments));
         }
 
         // 检查地图屏蔽状态
@@ -282,7 +281,7 @@ namespace USAC
 
             AddTransaction(USACTransactionType.Initial,
                 debtAmount,
-                $"签署{contract.Label}合同");
+                "USAC.Debt.Transaction.SignContract".Translate(contract.Label));
         }
 
         // 贷款风险定价评估
@@ -482,7 +481,7 @@ namespace USAC
             legacyTotalDebt = 0;
             legacyInterest = 0;
 
-            Log.Message("[USAC] 已迁移旧版债务数据至新合同系统");
+            Log.Message("USAC.Debt.Log.LegacyMigrated".Translate());
         }
         #endregion
     }

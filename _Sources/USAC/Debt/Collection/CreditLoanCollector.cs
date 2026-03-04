@@ -29,15 +29,14 @@ namespace USAC
             if (comp.CreditScore <= 10)
             {
                 Messages.Message(
-                    "[USAC] 信用等级降至危险水平" +
-                    " USAC贸易通道即将关闭",
+                    "USAC.Debt.Message.CreditDanger".Translate(),
                     MessageTypeDefOf.ThreatBig);
             }
             else
             {
                 Messages.Message(
-                    $"[USAC] 信用贷欠缴 信用分-25" +
-                    $" (当前:{comp.CreditScore})",
+                    "USAC.Debt.Message.CreditPenalty"
+                        .Translate(comp.CreditScore),
                     MessageTypeDefOf.NegativeEvent);
             }
 

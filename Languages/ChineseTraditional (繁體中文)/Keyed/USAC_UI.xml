@@ -148,5 +148,51 @@
   <USAC_LeaseDurationLeft>租期剩餘時間: {0}</USAC_LeaseDurationLeft>
   <USAC.UI.Drill.EmptyMinerals>清空礦倉</USAC.UI.Drill.EmptyMinerals>
   <USAC.UI.Drill.EmptyMinerals.Desc>手動將已採集的礦物從密封艙中彈出。注意：如果在撤離前未清空，USAC 軌道平臺將直接回收所有機內物資。</USAC.UI.Drill.EmptyMinerals.Desc>
+  <USAC.Alert.DebtRepayment.Label>USAC 債務結算</USAC.Alert.DebtRepayment.Label>
+  <USAC.Alert.DebtRepayment.LabelWithTime>USAC 結算：{0}天（{1}筆）</USAC.Alert.DebtRepayment.LabelWithTime>
+  <USAC.Alert.DebtRepayment.Explanation.Header>信用評分：{0}\n信標範圍債券：{1}張\n\n</USAC.Alert.DebtRepayment.Explanation.Header>
+  <USAC.Alert.DebtRepayment.Explanation.ContractEntry>▸ {0}\n  本金：₿{1}  預估利息：₿{2}\n  到期：{3}天  欠繳：{4}次\n\n</USAC.Alert.DebtRepayment.Explanation.ContractEntry>
+  <USAC.Alert.DebtRepayment.Explanation.ImminentWarning>⚠ 最近合同即將到期！請準備足夠 USAC 債券。</USAC.Alert.DebtRepayment.Explanation.ImminentWarning>
+  <USAC.Debt.Dialog.Repayment.Text>[USAC 金融節點] {0} 審計完成\n\n本期應付利息：₿{1}（需 {2} 張債券）\n當前合同本金：₿{3}\n累計欠繳：{4} 次\n\n請確認是否使用貿易信標範圍內的「USAC 信用債券」進行核銷。\n</USAC.Debt.Dialog.Repayment.Text>
+  <USAC.Debt.Dialog.Repayment.Warning>⚠ 再次欠繳將觸發強制徵收程序！</USAC.Debt.Dialog.Repayment.Warning>
+  <USAC.Debt.Dialog.Repayment.Option.Pay>執行核銷（使用債券）</USAC.Debt.Dialog.Repayment.Option.Pay>
+  <USAC.Debt.Dialog.Repayment.Option.Refuse>無力償還／拒絕</USAC.Debt.Dialog.Repayment.Option.Refuse>
+  <USAC.Debt.Dialog.Repayment.Title>USAC {0} 結算</USAC.Debt.Dialog.Repayment.Title>
+  <USAC.Debt.Message.InterestPaid>[USAC] {0} 利息繳納完成</USAC.Debt.Message.InterestPaid>
+  <USAC.Debt.Message.ForceCollectPausedByShield>[USAC] 目標殖民地處於軌道屏蔽區域，強制徵收程序已暫緩。</USAC.Debt.Message.ForceCollectPausedByShield>
+  <USAC.Debt.Transaction.ForceCollect>{0} 強制徵收（第 {1} 次）</USAC.Debt.Transaction.ForceCollect>
+  <USAC.Debt.Transaction.SignContract>簽署 {0} 合同</USAC.Debt.Transaction.SignContract>
+  <USAC.Debt.Log.LegacyMigrated>[USAC] 已遷移舊版債務資料至新合同系統</USAC.Debt.Log.LegacyMigrated>
+  <USAC.Debt.Type.WholeMortgage>整體抵押貸款</USAC.Debt.Type.WholeMortgage>
+  <USAC.Debt.Type.DynamicLoan>動態信貸</USAC.Debt.Type.DynamicLoan>
+  <USAC.Debt.Type.Unknown>未知合同</USAC.Debt.Type.Unknown>
+  <USAC.Debt.Transaction.PrincipalGrowth>{0} 本金增長（{1}%）</USAC.Debt.Transaction.PrincipalGrowth>
+  <USAC.Debt.Transaction.CycleInterest>{0} 週期利息</USAC.Debt.Transaction.CycleInterest>
+  <USAC.Debt.Message.CycleProcessed>[USAC] {0}：本金 +₿{1}，本期利息 ₿{2}</USAC.Debt.Message.CycleProcessed>
+  <USAC.Debt.Transaction.MissedPayment>{0} 第 {1} 次欠繳，利息併入本金</USAC.Debt.Transaction.MissedPayment>
+  <USAC.Debt.Transaction.InterestPayment>{0} 利息繳納</USAC.Debt.Transaction.InterestPayment>
+  <USAC.Debt.Error.PayInterestFirst>請先繳納當期利息</USAC.Debt.Error.PayInterestFirst>
+  <USAC.Debt.Error.NotEnoughBondsWithFee>需要 {0} 張債券（含手續費 {1} 張）</USAC.Debt.Error.NotEnoughBondsWithFee>
+  <USAC.Debt.Transaction.PrincipalRepay>{0} 本金償還</USAC.Debt.Transaction.PrincipalRepay>
+  <USAC.Debt.Transaction.RepaySurcharge>{0} 超額還款手續費</USAC.Debt.Transaction.RepaySurcharge>
+  <USAC.Debt.Message.ContractSettled>[USAC] {0} 已結清！</USAC.Debt.Message.ContractSettled>
+  <USAC.Debt.GrowthMode.WealthBase>財富基準</USAC.Debt.GrowthMode.WealthBase>
+  <USAC.Debt.GrowthMode.PrincipalBase>本金基準</USAC.Debt.GrowthMode.PrincipalBase>
+  <USAC.Debt.ScenPart.Summary>USAC {0}：₿{1}\n週期增長：{2}%（{3}）\n週期利率：{4}%</USAC.Debt.ScenPart.Summary>
+  <USAC.Debt.ScenPart.InitialDebt>初始債務本金： </USAC.Debt.ScenPart.InitialDebt>
+  <USAC.Debt.ScenPart.DebtType>貸款類型： </USAC.Debt.ScenPart.DebtType>
+  <USAC.Debt.ScenPart.DynamicLoanReserved>動態信貸（預留）</USAC.Debt.ScenPart.DynamicLoanReserved>
+  <USAC.Debt.ScenPart.GrowthBase>增長基準： </USAC.Debt.ScenPart.GrowthBase>
+  <USAC.Debt.ScenPart.GrowthRatePct>週期增長率（%）： </USAC.Debt.ScenPart.GrowthRatePct>
+  <USAC.Debt.ScenPart.InterestRatePct>週期利率（%）： </USAC.Debt.ScenPart.InterestRatePct>
+  <USAC.Debt.Transaction.ScenarioStart>開局劇本 {0}</USAC.Debt.Transaction.ScenarioStart>
+  <USAC.Debt.Message.GripperTargetLost>[USAC] 軌道夾具抓取失敗：目標遺失。</USAC.Debt.Message.GripperTargetLost>
+  <USAC.Debt.Transaction.GripperDestroyed>軌道夾具遭摧毀（損壞賠償）</USAC.Debt.Transaction.GripperDestroyed>
+  <USAC.Debt.Message.GripperDestroyedPenalty>[USAC] 軌道夾具遭摧毀！額外費用 ₿{0} 已記入帳單。</USAC.Debt.Message.GripperDestroyedPenalty>
+  <USAC.Debt.Message.OrganHarvested>[USAC] 器官抵押執行：已摘取 {0} 的器官，價值 ₿{1}</USAC.Debt.Message.OrganHarvested>
+  <USAC.Debt.Message.PawnDemolished>[USAC] 債務清算執行：{0} 已被完全拆解。</USAC.Debt.Message.PawnDemolished>
+  <USAC.Debt.Message.CreditDanger>[USAC] 信用等級降至危險水平，USAC 貿易通道即將關閉。</USAC.Debt.Message.CreditDanger>
+  <USAC.Debt.Message.CreditPenalty>[USAC] 信用貸欠繳，信用分 -25（當前：{0}）</USAC.Debt.Message.CreditPenalty>
+  <USAC.UI.Assets.SurchargeHint>本季免費額度 ₿{0} | 已使用 ₿{1} | 10%▸免費 20%▸50% 30%▸100% 50%+▸200%</USAC.UI.Assets.SurchargeHint>
   
 </LanguageData>

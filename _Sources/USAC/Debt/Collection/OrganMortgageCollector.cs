@@ -73,8 +73,8 @@ namespace USAC
             if (totalValue > 0)
             {
                 Messages.Message(
-                    $"[USAC] 器官抵押执行：已摘取{pawn.LabelShort}" +
-                    $"的器官，价值₿{totalValue:F0}",
+                    "USAC.Debt.Message.OrganHarvested"
+                        .Translate(pawn.LabelShort, totalValue.ToString("F0")),
                     pawn, MessageTypeDefOf.ThreatBig);
             }
 
@@ -149,7 +149,8 @@ namespace USAC
             float value = pawn.MarketValue;
 
             Messages.Message(
-                $"[USAC] 债务清算执行：{pawn.LabelShort}已被完全拆解",
+                "USAC.Debt.Message.PawnDemolished"
+                    .Translate(pawn.LabelShort),
                 MessageTypeDefOf.ThreatBig);
 
             pawn.Kill(null);

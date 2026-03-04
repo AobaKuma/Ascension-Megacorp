@@ -22,11 +22,15 @@ namespace USAC
         {
             string typeStr = GetTypeLabel(debtType);
             string modeStr = growthMode == DebtGrowthMode.WealthBased
-                ? "财富基准" : "本金基准";
+                ? "USAC.Debt.GrowthMode.WealthBase".Translate()
+                : "USAC.Debt.GrowthMode.PrincipalBase".Translate();
 
-            return $"USAC {typeStr}: ₿{initialDebt:N0}\n" +
-                   $"周期增长: {growthRate * 100:F0}% ({modeStr})\n" +
-                   $"周期利率: {interestRate * 100:F0}%";
+            return "USAC.Debt.ScenPart.Summary".Translate(
+                typeStr,
+                initialDebt.ToString("N0"),
+                (growthRate * 100f).ToString("F0"),
+                modeStr,
+                (interestRate * 100f).ToString("F0"));
         }
 
         public override void DoEditInterface(Listing_ScenEdit listing)
@@ -38,18 +42,18 @@ namespace USAC
 
             // 初始本金
             sub.TextFieldNumericLabeled(
-                "初始债务本金: ", ref initialDebt,
+                "USAC.Debt.ScenPart.InitialDebt".Translate(), ref initialDebt,
                 ref initialDebtBuffer, 0f, 10000000f);
 
             // 贷款类型
             if (sub.ButtonTextLabeled(
-                "贷款类型: ", GetTypeLabel(debtType)))
+                "USAC.Debt.ScenPart.DebtType".Translate(), GetTypeLabel(debtType)))
             {
                 var options = new List<FloatMenuOption>
                 {
-                    new("整体抵押",
+                    new("USAC.Debt.Type.WholeMortgage".Translate(),
                         () => debtType = DebtType.WholeMortgage),
-                    new("动态信贷 (预留)",
+                    new("USAC.Debt.ScenPart.DynamicLoanReserved".Translate(),
                         () => debtType = DebtType.DynamicLoan)
                 };
                 Find.WindowStack.Add(new FloatMenu(options));
@@ -57,13 +61,16 @@ namespace USAC
 
             // 增长模式
             if (sub.ButtonTextLabeled(
-                "增长基准: ", growthMode.ToString()))
+                "USAC.Debt.ScenPart.GrowthBase".Translate(),
+                growthMode == DebtGrowthMode.WealthBased
+                    ? "USAC.Debt.GrowthMode.WealthBase".Translate()
+                    : "USAC.Debt.GrowthMode.PrincipalBase".Translate()))
             {
                 var options = new List<FloatMenuOption>
                 {
-                    new("USAC.UI.Assets.GrowthMode.WealthBased".Translate(0).RawText,
+                    new("USAC.Debt.GrowthMode.WealthBase".Translate(),
                         () => growthMode = DebtGrowthMode.WealthBased),
-                    new("USAC.UI.Assets.GrowthMode.PrincipalBased".Translate(0).RawText,
+                    new("USAC.Debt.GrowthMode.PrincipalBase".Translate(),
                         () => growthMode = DebtGrowthMode.PrincipalBased)
                 };
                 Find.WindowStack.Add(new FloatMenu(options));
@@ -72,13 +79,13 @@ namespace USAC
             // 增长率与利率
             float gPct = growthRate * 100f;
             sub.TextFieldNumericLabeled(
-                "周期增长率 (%): ", ref gPct,
+                "USAC.Debt.ScenPart.GrowthRatePct".Translate(), ref gPct,
                 ref growthRateBuffer, 0f, 200f);
             growthRate = gPct / 100f;
 
             float iPct = interestRate * 100f;
             sub.TextFieldNumericLabeled(
-                "周期利率 (%): ", ref iPct,
+                "USAC.Debt.ScenPart.InterestRatePct".Translate(), ref iPct,
                 ref interestRateBuffer, 0f, 200f);
             interestRate = iPct / 100f;
 
@@ -97,7 +104,7 @@ namespace USAC
             comp.ActiveContracts.Add(contract);
             comp.AddTransaction(USACTransactionType.Initial,
                 initialDebt,
-                $"开局剧本 {GetTypeLabel(debtType)}");
+                "USAC.Debt.Transaction.ScenarioStart".Translate(GetTypeLabel(debtType)));
         }
 
         public override void ExposeData()
@@ -119,9 +126,11 @@ namespace USAC
         {
             return t switch
             {
-                DebtType.WholeMortgage => "整体抵押",
-                DebtType.DynamicLoan => "动态信贷",
-                _ => "未知"
+                DebtType.WholeMortgage =>
+                    "USAC.Debt.Type.WholeMortgage".Translate(),
+                DebtType.DynamicLoan =>
+                    "USAC.Debt.Type.DynamicLoan".Translate(),
+                _ => "USAC.Debt.Type.Unknown".Translate()
             };
         }
     }

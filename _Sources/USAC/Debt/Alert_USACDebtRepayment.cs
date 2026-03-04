@@ -10,7 +10,7 @@ namespace USAC
     {
         public Alert_USACDebtRepayment()
         {
-            defaultLabel = "USAC 债务结算";
+            defaultLabel = "USAC.Alert.DebtRepayment.Label".Translate();
         }
 
         public override AlertReport GetReport()
@@ -44,13 +44,14 @@ namespace USAC
         {
             var comp = GameComponent_USACDebt.Instance;
             var next = comp?.NextDueContract;
-            if (next == null) return "USAC 债务结算";
+            if (next == null) return "USAC.Alert.DebtRepayment.Label".Translate();
 
             int ticksLeft = next.NextCycleTick
                 - Find.TickManager.TicksGame;
             float days = Mathf.Max(0f, ticksLeft / 60000f);
 
-            return $"USAC 结算: {days:F1}天 ({comp.ActiveCount}笔)";
+            return "USAC.Alert.DebtRepayment.LabelWithTime"
+                .Translate(days.ToString("F1"), comp.ActiveCount);
         }
 
         public override TaggedString GetExplanation()
@@ -63,8 +64,8 @@ namespace USAC
                 ? comp.GetBondCountNearBeacons(map)
                 : 0;
 
-            string result = $"信用评分: {comp.CreditScore}\n" +
-                            $"信标范围债券: {bonds}张\n\n";
+            string result = "USAC.Alert.DebtRepayment.Explanation.Header"
+                .Translate(comp.CreditScore, bonds);
 
             var contracts = comp.ActiveContracts
                 .Where(c => c.IsActive)
@@ -78,12 +79,13 @@ namespace USAC
                 float estInterest = DebtContract.CeilTo1000(
                     c.Principal * c.InterestRate);
 
-                result +=
-                    $"▸ {c.Label}\n" +
-                    $"  本金: ₿{c.Principal:N0}" +
-                    $"  预估利息: ₿{estInterest:N0}\n" +
-                    $"  到期: {days:F1}天" +
-                    $"  欠缴: {c.MissedPayments}次\n\n";
+                result += "USAC.Alert.DebtRepayment.Explanation.ContractEntry"
+                    .Translate(
+                        c.Label,
+                        c.Principal.ToString("N0"),
+                        estInterest.ToString("N0"),
+                        days.ToString("F1"),
+                        c.MissedPayments);
             }
 
             var next = comp.NextDueContract;
@@ -93,8 +95,8 @@ namespace USAC
                     - Find.TickManager.TicksGame;
                 if (tl < 180000)
                 {
-                    result += "⚠ 最近合同即将到期！" +
-                              "请准备足够USAC债券。";
+                    result += "USAC.Alert.DebtRepayment.Explanation.ImminentWarning"
+                        .Translate();
                 }
             }
 

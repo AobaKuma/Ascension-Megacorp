@@ -150,5 +150,51 @@
   <USAC.UI.Services.Trader.Status.Desc>USAC 轨道商船正在抵达中</USAC.UI.Services.Trader.Status.Desc>
   <USAC.Message.TraderCalled>[USAC] 请求已受理：USAC 轨道商船正在赶往您的位置，预计约一小时后抵达。</USAC.Message.TraderCalled>
   <USAC.Message.TraderArrived>[USAC] 轨道商船已就位：USAC 轨道商船现在可供交易。</USAC.Message.TraderArrived>
+  <USAC.Alert.DebtRepayment.Label>USAC 债务结算</USAC.Alert.DebtRepayment.Label>
+  <USAC.Alert.DebtRepayment.LabelWithTime>USAC 结算：{0}天（{1}笔）</USAC.Alert.DebtRepayment.LabelWithTime>
+  <USAC.Alert.DebtRepayment.Explanation.Header>信用评分：{0}\n信标范围债券：{1}张\n\n</USAC.Alert.DebtRepayment.Explanation.Header>
+  <USAC.Alert.DebtRepayment.Explanation.ContractEntry>▸ {0}\n  本金：₿{1}  预估利息：₿{2}\n  到期：{3}天  欠缴：{4}次\n\n</USAC.Alert.DebtRepayment.Explanation.ContractEntry>
+  <USAC.Alert.DebtRepayment.Explanation.ImminentWarning>⚠ 最近合同即将到期！请准备足够 USAC 债券。</USAC.Alert.DebtRepayment.Explanation.ImminentWarning>
+  <USAC.Debt.Dialog.Repayment.Text>[USAC 金融节点] {0}审计完成\n\n本期应付利息：₿{1}（需 {2} 张债券）\n当前合同本金：₿{3}\n累计欠缴：{4} 次\n\n请确认是否使用贸易信标范围内的“USAC信用债券”进行核销。\n</USAC.Debt.Dialog.Repayment.Text>
+  <USAC.Debt.Dialog.Repayment.Warning>⚠ 再次欠缴将触发强制征收程序！</USAC.Debt.Dialog.Repayment.Warning>
+  <USAC.Debt.Dialog.Repayment.Option.Pay>执行核销（使用债券）</USAC.Debt.Dialog.Repayment.Option.Pay>
+  <USAC.Debt.Dialog.Repayment.Option.Refuse>无力偿还/拒绝</USAC.Debt.Dialog.Repayment.Option.Refuse>
+  <USAC.Debt.Dialog.Repayment.Title>USAC {0}结算</USAC.Debt.Dialog.Repayment.Title>
+  <USAC.Debt.Message.InterestPaid>[USAC] {0} 利息缴纳完成</USAC.Debt.Message.InterestPaid>
+  <USAC.Debt.Message.ForceCollectPausedByShield>[USAC] 目标殖民地处于轨道屏蔽区域，强制征收程序已暂缓。</USAC.Debt.Message.ForceCollectPausedByShield>
+  <USAC.Debt.Transaction.ForceCollect>{0} 强制征收（第 {1} 次）</USAC.Debt.Transaction.ForceCollect>
+  <USAC.Debt.Transaction.SignContract>签署 {0} 合同</USAC.Debt.Transaction.SignContract>
+  <USAC.Debt.Log.LegacyMigrated>[USAC] 已迁移旧版债务数据至新合同系统</USAC.Debt.Log.LegacyMigrated>
+  <USAC.Debt.Type.WholeMortgage>整体抵押贷款</USAC.Debt.Type.WholeMortgage>
+  <USAC.Debt.Type.DynamicLoan>动态信贷</USAC.Debt.Type.DynamicLoan>
+  <USAC.Debt.Type.Unknown>未知合同</USAC.Debt.Type.Unknown>
+  <USAC.Debt.Transaction.PrincipalGrowth>{0} 本金增长（{1}%）</USAC.Debt.Transaction.PrincipalGrowth>
+  <USAC.Debt.Transaction.CycleInterest>{0} 周期利息</USAC.Debt.Transaction.CycleInterest>
+  <USAC.Debt.Message.CycleProcessed>[USAC] {0}：本金 +₿{1}，本期利息 ₿{2}</USAC.Debt.Message.CycleProcessed>
+  <USAC.Debt.Transaction.MissedPayment>{0} 第 {1} 次欠缴，利息并入本金</USAC.Debt.Transaction.MissedPayment>
+  <USAC.Debt.Transaction.InterestPayment>{0} 利息缴纳</USAC.Debt.Transaction.InterestPayment>
+  <USAC.Debt.Error.PayInterestFirst>请先缴纳当期利息</USAC.Debt.Error.PayInterestFirst>
+  <USAC.Debt.Error.NotEnoughBondsWithFee>需要 {0} 张债券（含手续费 {1} 张）</USAC.Debt.Error.NotEnoughBondsWithFee>
+  <USAC.Debt.Transaction.PrincipalRepay>{0} 本金偿还</USAC.Debt.Transaction.PrincipalRepay>
+  <USAC.Debt.Transaction.RepaySurcharge>{0} 超额还款手续费</USAC.Debt.Transaction.RepaySurcharge>
+  <USAC.Debt.Message.ContractSettled>[USAC] {0} 已结清！</USAC.Debt.Message.ContractSettled>
+  <USAC.Debt.GrowthMode.WealthBase>财富基准</USAC.Debt.GrowthMode.WealthBase>
+  <USAC.Debt.GrowthMode.PrincipalBase>本金基准</USAC.Debt.GrowthMode.PrincipalBase>
+  <USAC.Debt.ScenPart.Summary>USAC {0}：₿{1}\n周期增长：{2}%（{3}）\n周期利率：{4}%</USAC.Debt.ScenPart.Summary>
+  <USAC.Debt.ScenPart.InitialDebt>初始债务本金： </USAC.Debt.ScenPart.InitialDebt>
+  <USAC.Debt.ScenPart.DebtType>贷款类型： </USAC.Debt.ScenPart.DebtType>
+  <USAC.Debt.ScenPart.DynamicLoanReserved>动态信贷（预留）</USAC.Debt.ScenPart.DynamicLoanReserved>
+  <USAC.Debt.ScenPart.GrowthBase>增长基准： </USAC.Debt.ScenPart.GrowthBase>
+  <USAC.Debt.ScenPart.GrowthRatePct>周期增长率（%）： </USAC.Debt.ScenPart.GrowthRatePct>
+  <USAC.Debt.ScenPart.InterestRatePct>周期利率（%）： </USAC.Debt.ScenPart.InterestRatePct>
+  <USAC.Debt.Transaction.ScenarioStart>开局剧本 {0}</USAC.Debt.Transaction.ScenarioStart>
+  <USAC.Debt.Message.GripperTargetLost>[USAC] 轨道夹具抓取失败：目标丢失。</USAC.Debt.Message.GripperTargetLost>
+  <USAC.Debt.Transaction.GripperDestroyed>轨道夹具遭摧毁（损坏赔偿）</USAC.Debt.Transaction.GripperDestroyed>
+  <USAC.Debt.Message.GripperDestroyedPenalty>[USAC] 轨道夹具遭摧毁！额外费用 ₿{0} 已记入账单。</USAC.Debt.Message.GripperDestroyedPenalty>
+  <USAC.Debt.Message.OrganHarvested>[USAC] 器官抵押执行：已摘取 {0} 的器官，价值 ₿{1}</USAC.Debt.Message.OrganHarvested>
+  <USAC.Debt.Message.PawnDemolished>[USAC] 债务清算执行：{0} 已被完全拆解。</USAC.Debt.Message.PawnDemolished>
+  <USAC.Debt.Message.CreditDanger>[USAC] 信用等级降至危险水平，USAC 贸易通道即将关闭。</USAC.Debt.Message.CreditDanger>
+  <USAC.Debt.Message.CreditPenalty>[USAC] 信用贷欠缴，信用分 -25（当前：{0}）</USAC.Debt.Message.CreditPenalty>
+  <USAC.UI.Assets.SurchargeHint>本季免费额度 ₿{0} | 已使用 ₿{1} | 10%▸免费 20%▸50% 30%▸100% 50%+▸200%</USAC.UI.Assets.SurchargeHint>
 
 </LanguageData>

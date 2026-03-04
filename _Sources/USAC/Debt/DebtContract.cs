@@ -69,9 +69,11 @@ namespace USAC
         {
             return type switch
             {
-                DebtType.WholeMortgage => "整体抵押贷款",
-                DebtType.DynamicLoan => "动态信贷",
-                _ => "未知合同"
+                DebtType.WholeMortgage =>
+                    "USAC.Debt.Type.WholeMortgage".Translate(),
+                DebtType.DynamicLoan =>
+                    "USAC.Debt.Type.DynamicLoan".Translate(),
+                _ => "USAC.Debt.Type.Unknown".Translate()
             };
         }
 
@@ -87,7 +89,10 @@ namespace USAC
                 Principal += growth;
                 var comp = GameComponent_USACDebt.Instance;
                 comp?.AddTransaction(USACTransactionType.GrowthAdjust,
-                    growth, $"{Label} 本金增长({GrowthRate * 100:F0}%)");
+                    growth,
+                    "USAC.Debt.Transaction.PrincipalGrowth".Translate(
+                        Label,
+                        (GrowthRate * 100f).ToString("F0")));
             }
 
             // 结算利息
@@ -96,10 +101,13 @@ namespace USAC
 
             var debtComp = GameComponent_USACDebt.Instance;
             debtComp?.AddTransaction(USACTransactionType.Interest,
-                AccruedInterest, $"{Label} 周期利息");
+                AccruedInterest,
+                "USAC.Debt.Transaction.CycleInterest".Translate(Label));
 
-            string msg = $"[USAC] {Label}: 本金增长+₿{growth:F0}" +
-                         $", 本期利息₿{AccruedInterest:F0}";
+            string msg = "USAC.Debt.Message.CycleProcessed".Translate(
+                Label,
+                growth.ToString("F0"),
+                AccruedInterest.ToString("F0"));
             Messages.Message(msg, MessageTypeDefOf.NegativeEvent);
         }
 
@@ -113,7 +121,10 @@ namespace USAC
 
             var comp = GameComponent_USACDebt.Instance;
             comp?.AddTransaction(USACTransactionType.Penalty,
-                0, $"{Label} 欠缴第{MissedPayments}次 利息并入本金");
+                0,
+                "USAC.Debt.Transaction.MissedPayment".Translate(
+                    Label,
+                    MissedPayments));
         }
 
         // 检查强制征收
@@ -135,7 +146,8 @@ namespace USAC
             AccruedInterest = 0f;
             comp.CreditScore = Mathf.Min(100, comp.CreditScore + 5);
             comp.AddTransaction(USACTransactionType.Payment,
-                paid, $"{Label} 利息缴纳");
+                paid,
+                "USAC.Debt.Transaction.InterestPayment".Translate(Label));
             return true;
         }
 
@@ -143,7 +155,7 @@ namespace USAC
         public string TryPayPrincipal(Map map, int bondCount)
         {
             if (AccruedInterest > 0)
-                return "请先缴纳当期利息";
+                return "USAC.Debt.Error.PayInterestFirst".Translate();
 
             CheckQuarterReset();
 
@@ -168,7 +180,8 @@ namespace USAC
             int bondsAvail = comp?.GetBondCountOnMap() ?? 0;
 
             if (bondsAvail < totalBonds)
-                return $"需要{totalBonds}张债券(含手续费{feeBonds}张)";
+                return "USAC.Debt.Error.NotEnoughBondsWithFee"
+                    .Translate(totalBonds, feeBonds);
 
             comp.ConsumeBonds(map, totalBonds);
             Principal = Mathf.Max(0, Principal - payAmount);
@@ -176,18 +189,20 @@ namespace USAC
             comp.CreditScore = Mathf.Min(100, comp.CreditScore + 2);
 
             comp.AddTransaction(USACTransactionType.Payment,
-                payAmount, $"{Label} 本金偿还");
+                payAmount,
+                "USAC.Debt.Transaction.PrincipalRepay".Translate(Label));
             if (incrementalFee > 0)
             {
                 comp.AddTransaction(USACTransactionType.Surcharge,
-                    feeBonds * 1000f, $"{Label} 超额还款手续费");
+                    feeBonds * 1000f,
+                    "USAC.Debt.Transaction.RepaySurcharge".Translate(Label));
             }
 
             // 检查结清状态
             if (Principal <= 0)
             {
                 IsActive = false;
-                Messages.Message($"[USAC] {Label} 已结清！",
+                Messages.Message("USAC.Debt.Message.ContractSettled".Translate(Label),
                     MessageTypeDefOf.PositiveEvent);
             }
 
