@@ -337,7 +337,7 @@ namespace USAC.InternalUI
                 DrawColoredLabel(new Rect(inner.x, inner.y + 22, inner.width, 18), feeHint, ColTextMuted, GameFont.Tiny);
 
                 Rect adjRow = new(inner.x, inner.y + 44, inner.width - 185, 32);
-                float maxRepayK = Mathf.Floor(contract.Principal / 1000f) * 1000f;
+                float maxRepayK = Mathf.Ceil(contract.Principal / 1000f) * 1000f;
                 curRepayAmount = Mathf.Min(curRepayAmount, maxRepayK);
                 if (DrawTacticalButton(adjRow.LeftPartPixels(50), "-10k", curRepayAmount > 1000f, key: "repay_m10k")) curRepayAmount = Mathf.Max(1000f, curRepayAmount - 10000f);
                 if (DrawTacticalButton(new Rect(adjRow.x + 55, adjRow.y, 45, 32), "-1k", curRepayAmount > 1000f, key: "repay_m1k")) curRepayAmount = Mathf.Max(1000f, curRepayAmount - 1000f);
