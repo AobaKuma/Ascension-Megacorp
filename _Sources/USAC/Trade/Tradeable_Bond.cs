@@ -1,5 +1,4 @@
 using RimWorld;
-using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 
@@ -39,22 +38,6 @@ namespace USAC
                 return GetBondBuyPrice();
             }
             return 1000f;
-        }
-
-        public override void ResolveTrade()
-        {
-            if (ActionToDo == TradeAction.PlayerBuys)
-            {
-                int count = CountToTransferToSource;
-                if (count > 0)
-                {
-                    TransferableUtility.TransferNoSplit(thingsTrader, count, (thing, countToTransfer) =>
-                    {
-                        Thing transferred = thing.SplitOff(countToTransfer);
-                        TradeSession.playerNegotiator.inventory?.innerContainer?.TryAdd(transferred);
-                    });
-                }
-            }
         }
 
         #endregion
