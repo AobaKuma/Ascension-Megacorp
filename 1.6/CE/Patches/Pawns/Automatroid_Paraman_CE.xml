@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Patch>
+	
 	<Operation Class="PatchOperationSequence">
 		<operations>
 
@@ -31,7 +32,7 @@
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="USAC_Mech_Paraman"]/statBases</xpath>
 				<value>
-					<CarryWeight>152.5</CarryWeight>
+					<CarryWeight>167.5</CarryWeight>
 					<CarryBulk>100</CarryBulk>
 					<AimingAccuracy>1.35</AimingAccuracy>
 					<ShootingAccuracyPawn>1.70</ShootingAccuracyPawn>
@@ -70,6 +71,15 @@
 						<comps />
 					</value>
 				</nomatch>
+			</li>
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Paraman"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Humanoid</bodyShape>
+					</li>
+				</value>
 			</li>
 
 			<li Class="PatchOperationAdd">
@@ -203,4 +213,5 @@
 
 	    </operations>	
     </Operation>
+	
 </Patch>			

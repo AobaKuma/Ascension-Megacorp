@@ -10,10 +10,10 @@
 				<value>
 					<li Class="CombatExtended.LoadoutPropertiesExtension">
 						<primaryMagazineCount>
-							<min>6</min>
-							<max>8</max>
+							<min>5</min>
+							<max>7</max>
 						</primaryMagazineCount>
-						<forcedAmmoCategory>GrenadeHETF</forcedAmmoCategory>
+						<forcedAmmoCategory>GrenadeHEDP</forcedAmmoCategory>
 					</li>
 				</value>
 			</li>
@@ -62,7 +62,7 @@
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="USAC_Mech_Cobalt"]/statBases</xpath>
 				<value>
-					<CarryWeight>250</CarryWeight>
+					<CarryWeight>200</CarryWeight>
 					<CarryBulk>200</CarryBulk>
 					<AimingAccuracy>0.75</AimingAccuracy>
 					<ShootingAccuracyPawn>0.8</ShootingAccuracyPawn>
@@ -97,4 +97,5 @@
 			</li>
 		</operations>
 	</Operation>
+	
 </Patch>

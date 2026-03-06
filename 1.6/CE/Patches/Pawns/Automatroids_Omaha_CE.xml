@@ -52,7 +52,7 @@
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="USAC_Mech_Omaha"]/statBases</xpath>
 				<value>
-					<CarryWeight>275</CarryWeight>
+					<CarryWeight>240</CarryWeight>
 					<CarryBulk>400</CarryBulk>
 					<AimingAccuracy>1.2</AimingAccuracy>
 					<ShootingAccuracyPawn>1.5</ShootingAccuracyPawn>
@@ -68,14 +68,14 @@
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="USAC_Mech_Omaha"]/race/baseHealthScale</xpath>
 				<value>
-					<baseHealthScale>10.0</baseHealthScale>
+					<baseHealthScale>9.0</baseHealthScale>
 				</value>
 			</li>
 
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="USAC_Mech_Omaha"]/statBases/ArmorRating_Blunt</xpath>
 				<value>
-					<ArmorRating_Blunt>1850</ArmorRating_Blunt>
+					<ArmorRating_Blunt>750</ArmorRating_Blunt>
 				</value>
 			</li>
 
@@ -83,24 +83,23 @@
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="USAC_Mech_Omaha"]/statBases/ArmorRating_Sharp</xpath>
 				<value>
-					<ArmorRating_Sharp>150</ArmorRating_Sharp>
+					<ArmorRating_Sharp>90</ArmorRating_Sharp>
 				</value>
 			</li>
 
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="USAC_Mech_Omaha"]/statBases/ArmorRating_Heat</xpath>
 				<value>
-					<ArmorRating_Heat>1.5</ArmorRating_Heat>
+					<ArmorRating_Heat>0.9</ArmorRating_Heat>
 				</value>
 			</li>
 
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="USAC_Mech_Omaha"]/statBases</xpath>
 				<value>
-					<ArmorRating_Electric>1.5</ArmorRating_Electric>
+					<ArmorRating_Electric>0.8</ArmorRating_Electric>
 				</value>
 			</li>
-
 			<li Class="PatchOperationConditional">
 				<xpath>Defs/ThingDef[defName="USAC_Mech_Omaha"]/comps</xpath>
 				<nomatch Class="PatchOperationAdd">

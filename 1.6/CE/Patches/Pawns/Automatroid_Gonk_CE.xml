@@ -46,12 +46,60 @@
 				</value>
 			</li>
 
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Gonk"]/tools</xpath>
+				<value>
+					<tools Inherit="False">
+						<li Class="CombatExtended.ToolCE">
+							<label>head</label>
+							<capacities>
+								<li>Blunt</li>
+							</capacities>
+							<power>25</power>
+							<cooldownTime>2.2</cooldownTime>
+							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+							<armorPenetrationBlunt>19.5</armorPenetrationBlunt>
+							<chanceFactor>0.3</chanceFactor>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>laser cutter</label>
+							<capacities>
+								<li>Cut</li>
+							</capacities>
+							<power>26</power>
+							<extraMeleeDamages>
+								<li>
+									<def>Flame</def>
+									<amount>5</amount>
+									<chance>0.3</chance>
+								</li>
+							</extraMeleeDamages>
+							<cooldownTime>3.6</cooldownTime>
+							<armorPenetrationBlunt>4.06</armorPenetrationBlunt>
+							<armorPenetrationSharp>24</armorPenetrationSharp>
+							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.ToolCE">
+							<label>surgical drill</label>
+							<capacities>
+								<li>Stab</li>
+							</capacities>
+							<power>14</power>
+							<cooldownTime>1.86</cooldownTime>
+							<armorPenetrationBlunt>1.28</armorPenetrationBlunt>
+							<armorPenetrationSharp>12</armorPenetrationSharp>
+							<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+						</li>
+					</tools>
+				</value>
+			</li>
+
 			<!-- ======Iguana (nerf version of Tarbosarus)======-->
 			<li Class="PatchOperationAdd">
 				<xpath>Defs/ThingDef[defName="USAC_Mech_Gonk"]/statBases</xpath>
 				<value>
-					<CarryWeight>180</CarryWeight>
-					<CarryBulk>165</CarryBulk>
+					<CarryWeight>50</CarryWeight>
+					<CarryBulk>75</CarryBulk>
 					<AimingAccuracy>1.4</AimingAccuracy>
 					<ShootingAccuracyPawn>1.85</ShootingAccuracyPawn>
 					<MeleeDodgeChance>0.08</MeleeDodgeChance>
@@ -273,4 +321,4 @@
 
 	    </operations>	
     </Operation>
-</Patch>			
+</Patch>		
