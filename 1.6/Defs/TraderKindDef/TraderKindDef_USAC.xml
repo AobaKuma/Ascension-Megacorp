@@ -105,9 +105,32 @@
 
             <!-- 出售：信用债券 -->
             <li Class="USAC.StockGenerator_USACBond">
-                <countRange>5~50</countRange>
+                <countRange>10~50</countRange>
             </li>
 
+            <!-- DMS聯動 -->
+
+            <!-- 收购：沖壓零件 -->
+            <li MayRequire="aoba.deadmanswitch.core" Class="StockGenerator_BuySingleDef">
+                <thingDef>ComponentStamped</thingDef>
+            </li>
+            <!-- 收购：機兵武器 -->
+            <li MayRequire="Aoba.DeadManSwitch.Core" Class="StockGenerator_Category">
+                <categoryDef>AutomatroidWeapon</categoryDef>
+                <countRange>0~0</countRange>
+            </li>
+            <!-- 收购：火控系統 -->
+            <li MayRequire="Aoba.DeadManSwitch.Core" Class="StockGenerator_BuySingleDef">
+                <thingDef>ComponentFireControl</thingDef>
+            </li>
+            <!-- 收购：CCC -->
+            <li MayRequire="Aoba.DeadManSwitch.Core" Class="StockGenerator_BuySingleDef">
+                <thingDef>ComponentControlChip</thingDef>
+            </li>
+            <!-- 收购：T/R組件 -->
+            <li MayRequire="Aoba.DeadManSwitch.Core" Class="StockGenerator_BuySingleDef">
+                <thingDef>ComponentTransmitter</thingDef>
+            </li>
         </stockGenerators>
     </TraderKindDef>
 
@@ -174,11 +197,6 @@
             <li Class="StockGenerator_BuySingleDef">
                 <thingDef>ComponentSpacer</thingDef>
             </li>
-            <!-- 收购：沖壓零件 -->
-            <li MayRequire="aoba.deadmanswitch.core" Class="StockGenerator_BuySingleDef">
-                <thingDef>ComponentStamped</thingDef>
-            </li>
-
             <!-- 收购：未受精卵 -->
             <li MayRequire="ludeon.rimworld.biotech" Class="StockGenerator_BuySingleDef">
                 <thingDef>HumanOvum</thingDef>
@@ -209,7 +227,6 @@
                 <tradeTag>USAC_WeaponRanged</tradeTag>
                 <countRange>5~10</countRange>
             </li>
-
             <li Class="StockGenerator_MarketValue">
                 <tradeTag>USAC_Ammunition</tradeTag>
                 <countRange>1000~3000</countRange>
@@ -217,7 +234,31 @@
 
             <!-- 出售：信用债券 -->
             <li Class="USAC.StockGenerator_USACBond">
-                <countRange>5~15</countRange>
+                <countRange>10~50</countRange>
+            </li>
+
+            <!-- DMS聯動 -->
+
+            <!-- 收购：沖壓零件 -->
+            <li MayRequire="aoba.deadmanswitch.core" Class="StockGenerator_BuySingleDef">
+                <thingDef>ComponentStamped</thingDef>
+            </li>
+            <!-- 收购：機兵武器 -->
+            <li MayRequire="Aoba.DeadManSwitch.Core" Class="StockGenerator_Category">
+                <categoryDef>AutomatroidWeapon</categoryDef>
+                <countRange>0~0</countRange>
+            </li>
+            <!-- 收购：火控系統 -->
+            <li MayRequire="Aoba.DeadManSwitch.Core" Class="StockGenerator_BuySingleDef">
+                <thingDef>ComponentFireControl</thingDef>
+            </li>
+            <!-- 收购：CCC -->
+            <li MayRequire="Aoba.DeadManSwitch.Core" Class="StockGenerator_BuySingleDef">
+                <thingDef>ComponentControlChip</thingDef>
+            </li>
+            <!-- 收购：T/R組件 -->
+            <li MayRequire="Aoba.DeadManSwitch.Core" Class="StockGenerator_BuySingleDef">
+                <thingDef>ComponentTransmitter</thingDef>
             </li>
 
         </stockGenerators>
