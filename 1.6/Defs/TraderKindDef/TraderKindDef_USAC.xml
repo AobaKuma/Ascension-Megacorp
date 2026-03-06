@@ -25,11 +25,11 @@
 
             <li Class="StockGenerator_SingleDef">
                 <thingDef>USAC_MealSurvivalPack</thingDef>
-                <countRange>10~100</countRange>
+                <countRange>200~500</countRange>
             </li>
             <li Class="StockGenerator_SingleDef">
                 <thingDef>MedicineUltratech</thingDef>
-                <countRange>1~5</countRange>
+                <countRange>10~50</countRange>
             </li>
 
             <!-- 出售：临时机控中枢 -->
@@ -40,22 +40,22 @@
             <!-- 出售：神经强化剂 -->
             <li Class="StockGenerator_SingleDef">
                 <thingDef>USAC_NeuroBooster</thingDef>
-                <countRange>3~40</countRange>
+                <countRange>3~100</countRange>
             </li>
             <!-- 出售：活力水 -->
             <li Class="StockGenerator_SingleDef">
                 <thingDef>GoJuice</thingDef>
-                <countRange>5~65</countRange>
+                <countRange>5~165</countRange>
             </li>
             <!-- 出售：工具 -->
             <li Class="StockGenerator_SingleDef">
                 <thingDef>USAC_DisposableRepairTool</thingDef>
-                <countRange>5~20</countRange>
+                <countRange>5~50</countRange>
             </li>
             <!-- 出售：電池 -->
             <li Class="StockGenerator_SingleDef">
                 <thingDef>USAC_DisposableBattery</thingDef>
-                <countRange>5~20</countRange>
+                <countRange>5~50</countRange>
             </li>
 
             <!-- 收购：零件 -->
@@ -92,7 +92,7 @@
                 <tradeTag>USAC_Armor</tradeTag>
                 <countRange>7~12</countRange>
             </li>
-            
+
             <li Class="StockGenerator_MarketValue">
                 <tradeTag>USAC_Ammunition</tradeTag>
                 <countRange>1000~3000</countRange>
@@ -132,15 +132,13 @@
                 <countPerKindRange>1~4</countPerKindRange>
             </li>
 
-            <!-- 出售：零件和补给 -->
-
             <li Class="StockGenerator_SingleDef">
                 <thingDef>USAC_MealSurvivalPack</thingDef>
-                <countRange>10~60</countRange>
+                <countRange>50~200</countRange>
             </li>
             <li Class="StockGenerator_SingleDef">
                 <thingDef>MedicineUltratech</thingDef>
-                <countRange>1~5</countRange>
+                <countRange>10~50</countRange>
             </li>
 
             <!-- 出售：临时机控中枢 -->
@@ -216,7 +214,7 @@
                 <tradeTag>USAC_Ammunition</tradeTag>
                 <countRange>1000~3000</countRange>
             </li>
-            
+
             <!-- 出售：信用债券 -->
             <li Class="USAC.StockGenerator_USACBond">
                 <countRange>5~15</countRange>

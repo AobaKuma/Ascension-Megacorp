@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <USAC_HeatMealSurvivalPack.label>加熱口糧</USAC_HeatMealSurvivalPack.label>
+  <USAC_HeatMealSurvivalPack.description>將密封口糧加熱，以改善口感與進食體驗。</USAC_HeatMealSurvivalPack.description>
+  <USAC_HeatMealSurvivalPack.jobString>正在加熱口糧。</USAC_HeatMealSurvivalPack.jobString>
+
+  <USAC_HeatMealSurvivalPackx4.label>加熱口糧x4</USAC_HeatMealSurvivalPackx4.label>
+  <USAC_HeatMealSurvivalPackx4.description>將4份密封口糧批次加熱，以改善口感與進食體驗。</USAC_HeatMealSurvivalPackx4.description>
+  <USAC_HeatMealSurvivalPackx4.jobString>正在批次加熱口糧。</USAC_HeatMealSurvivalPackx4.jobString>
+</LanguageData>

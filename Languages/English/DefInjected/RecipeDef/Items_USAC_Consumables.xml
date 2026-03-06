@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <USAC_HeatMealSurvivalPack.label>heat B-ration</USAC_HeatMealSurvivalPack.label>
+  <USAC_HeatMealSurvivalPack.description>Heat a sealed B-ration to improve taste and dining comfort.</USAC_HeatMealSurvivalPack.description>
+  <USAC_HeatMealSurvivalPack.jobString>Heating B-ration.</USAC_HeatMealSurvivalPack.jobString>
+
+  <USAC_HeatMealSurvivalPackx4.label>heat B-ration x4</USAC_HeatMealSurvivalPackx4.label>
+  <USAC_HeatMealSurvivalPackx4.description>Heat 4 sealed B-rations in one batch to improve taste and dining comfort.</USAC_HeatMealSurvivalPackx4.description>
+  <USAC_HeatMealSurvivalPackx4.jobString>Heating B-ration x4.</USAC_HeatMealSurvivalPackx4.jobString>
+</LanguageData>

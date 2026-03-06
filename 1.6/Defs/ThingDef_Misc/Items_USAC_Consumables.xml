@@ -123,6 +123,103 @@
     <allowedArchonexusCount>40</allowedArchonexusCount>
   </ThingDef>
 
+  <!-- Heated Pain Relief Survival Pack -->
+  <ThingDef ParentName="MealBase">
+    <defName>USAC_MealSurvivalPackHeated</defName>
+    <label>heated B-ration</label>
+    <description>A B-ration heated before serving. The warmed bun and sauce make it less unpleasant, while the sustained-release analgesic formula still provides temporary pain relief. The USAC insurance department rejects all claims for spoilage, decay, or food poisoning caused by heated products.</description>
+    <graphicData>
+      <texPath>Things/Item/Meal/bRation</texPath>
+      <graphicClass>Graphic_MealVariants</graphicClass>
+    </graphicData>
+    <statBases>
+      <DeteriorationRate>0.25</DeteriorationRate>
+      <MarketValue>34</MarketValue>
+      <Mass>0.2</Mass>
+      <Nutrition>1.0</Nutrition>
+    </statBases>
+    <tradeability>Buyable</tradeability>
+    <ingestible>
+      <preferability>MealFine</preferability>
+      <specialThoughtDirect>AteFineMeal</specialThoughtDirect>
+      <optimalityOffsetHumanlikes>-1</optimalityOffsetHumanlikes>
+      <optimalityOffsetFeedingAnimals>-100</optimalityOffsetFeedingAnimals>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>Meal_Eat</ingestSound>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>USAC_PainReliefIngestion</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <allowedArchonexusCount>40</allowedArchonexusCount>
+  </ThingDef>
+
+  <RecipeDef>
+    <defName>USAC_HeatMealSurvivalPack</defName>
+    <label>heat ration</label>
+    <description>Heat a sealed B-ration to improve taste and dining comfort.</description>
+    <jobString>Heating B-ration.</jobString>
+    <workAmount>250</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMealSimple</soundWorking>
+    <workSkill>Cooking</workSkill>
+    <allowMixingIngredients>false</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>USAC_MealSurvivalPack</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <USAC_MealSurvivalPackHeated>1</USAC_MealSurvivalPackHeated>
+    </products>
+    <recipeUsers>
+      <li>FueledStove</li>
+      <li>ElectricStove</li>
+      <li>Campfire</li>
+      <li MayRequire="aoba.fortress.industrial.citadel">FTC_FieldKitchen</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>USAC_HeatMealSurvivalPackx4</defName>
+    <label>heat ration x4</label>
+    <description>Heat 4 sealed B-rations in one batch to improve taste and dining comfort.</description>
+    <jobString>Heating B-ration x4.</jobString>
+    <workAmount>900</workAmount>
+    <workSpeedStat>CookSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMealSimple</soundWorking>
+    <workSkill>Cooking</workSkill>
+    <allowMixingIngredients>false</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>USAC_MealSurvivalPack</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <products>
+      <USAC_MealSurvivalPackHeated>4</USAC_MealSurvivalPackHeated>
+    </products>
+    <recipeUsers>
+      <li>FueledStove</li>
+      <li>ElectricStove</li>
+      <li>Campfire</li>
+      <li MayRequire="aoba.fortress.industrial.citadel">FTC_FieldKitchen</li>
+    </recipeUsers>
+  </RecipeDef>
+
   <HediffDef>
     <defName>USAC_PainReliefIngestion</defName>
     <label>analgesic effect</label>
