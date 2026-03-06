@@ -20,6 +20,16 @@
 					<!--<ReloadSpeed>1.2</ReloadSpeed>-->
 				</value>
 			</li>
+			
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Rocky"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Humanoid</bodyShape>
+					</li>
+				</value>
+			</li>
+			
 			<li Class="PatchOperationReplace">
 				<xpath>Defs/ThingDef[defName="USAC_Mech_Rocky"]/statBases/ArmorRating_Blunt</xpath>
 				<value>
@@ -47,6 +57,16 @@
 						<comps />
 					</value>
 				</nomatch>
+			</li>
+
+
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/ThingDef[defName="USAC_Mech_Rocky"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Humanoid</bodyShape>
+					</li>
+				</value>
 			</li>
 
 			<li Class="PatchOperationAdd">

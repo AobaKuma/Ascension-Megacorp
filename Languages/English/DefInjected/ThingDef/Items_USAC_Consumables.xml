@@ -19,5 +19,10 @@
   <USAC_MealSurvivalPack.label>B-Ration</USAC_MealSurvivalPack.label>
   <!-- EN: A military meal made from a soft split bun, compressed protein patty, and some sharp sauce. Its patented sealed packaging allows it to remain viable for decades when heated unopened. Along with stable calories, it contains a sustained-release analgesic formula that reduces bodily pain for about half a day. -->
   <USAC_MealSurvivalPack.description>A military meal made from a soft split bun, compressed protein patty, and some sharp sauce. Its patented sealed packaging allows it to remain viable for decades when heated unopened. Along with stable calories, it contains a sustained-release analgesic formula that reduces bodily pain for about half a day.</USAC_MealSurvivalPack.description>
+
+  <!-- EN: heated B-ration -->
+  <USAC_MealSurvivalPackHeated.label>heated B-ration</USAC_MealSurvivalPackHeated.label>
+  <!-- EN: A B-ration heated before serving. The warmed bun and sauce make it less unpleasant, while the sustained-release analgesic formula still provides temporary pain relief. -->
+  <USAC_MealSurvivalPackHeated.description>A B-ration heated before serving. The warmed bun and sauce make it less unpleasant, while the sustained-release analgesic formula still provides temporary pain relief. The USAC insurance department rejects all claims for spoilage, decay, or food poisoning caused by heated products.</USAC_MealSurvivalPackHeated.description>
   
 </LanguageData>

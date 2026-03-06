@@ -18,6 +18,11 @@
   <!-- EN: B-Ration -->
   <USAC_MealSurvivalPack.label>B口糧</USAC_MealSurvivalPack.label>
   <!-- EN: A military meal made from a soft split bun, compressed protein patty, and some sharp sauce. Its patented sealed packaging allows it to remain viable for decades when heated unopened. Along with stable calories, it contains a sustained-release analgesic formula that reduces bodily pain for about half a day. -->
-  <USAC_MealSurvivalPack.description>一種由柔軟的對切麵包、壓製蛋白肉餅與辛香醬組成的軍用餐食。其註冊專利的封裝能在未開封加熱的情況下保存數十年，並在提供穩定熱量的同時其內含緩釋鎮痛配方，能在約半天內降低身體疼痛感。</USAC_MealSurvivalPack.description>
+  <USAC_MealSurvivalPack.description>一種軍用餐食，由柔軟的對切麵包、壓縮蛋白肉餅與辛辣醬組成。其專利密封包裝在未開封加熱時可維持數十年的可食用性。除提供穩定熱量外，還含有緩釋鎮痛配方，可在約半天內降低身體疼痛感。</USAC_MealSurvivalPack.description>
+
+  <!-- EN: heated B-ration -->
+  <USAC_MealSurvivalPackHeated.label>加熱B口糧</USAC_MealSurvivalPackHeated.label>
+  <!-- EN: A B-ration heated before serving. The warmed bun and sauce make it less unpleasant, while the sustained-release analgesic formula still provides temporary pain relief. -->
+  <USAC_MealSurvivalPackHeated.description>一種在食用前加熱過的B口糧。加熱後的麵包與醬料讓它沒那麼難吃，而緩釋鎮痛配方仍能提供短暫止痛效果。對於因加熱產品導致的變質、腐壞或食物中毒，USAC保險部門一律拒絕理賠。</USAC_MealSurvivalPackHeated.description>
   
 </LanguageData>

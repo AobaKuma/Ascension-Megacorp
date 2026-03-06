@@ -42,6 +42,9 @@ namespace USAC
         // 记录粒子喷射剩余时长
         private int sprayTicksLeft;
 
+        // 记录下次扬尘特效触发时刻
+        private int nextDustEffectTick;
+
         // 租赁剩余时长
         private int leaseTicksLeft = -1;
 
@@ -68,6 +71,14 @@ namespace USAC
 
         // 记录单次喷射粒子总数
         private const int SprayParticleCount = 8;
+
+        // 记录扬尘特效触发间隔
+        private const int DustEffectIntervalMin = 110;
+        private const int DustEffectIntervalMax = 210;
+
+        // 大型设备单次扬尘爆发点位数量
+        private const int DustBurstCountMin = 4;
+        private const int DustBurstCountMax = 7;
 
         #endregion
 
@@ -113,6 +124,11 @@ namespace USAC
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
+
+            if (nextDustEffectTick <= 0)
+            {
+                nextDustEffectTick = Find.TickManager.TicksGame + Rand.RangeInclusive(DustEffectIntervalMin, DustEffectIntervalMax);
+            }
 
             if (!respawningAfterLoad)
             {
@@ -199,6 +215,9 @@ namespace USAC
                     SewageSprayManager.RegisterEmissionSource(Map, pos, thingIDNumber);
                 }
             }
+
+            // 周期性在设备周边触发扬尘特效
+            TrySpawnPeripheralDustEffect();
         }
 
         public override void ExposeData()
@@ -212,6 +231,7 @@ namespace USAC
             Scribe_Values.Look(ref currentMiningCell, "currentMiningCell", IntVec3.Invalid);
             Scribe_Values.Look(ref leaseTicksLeft, "leaseTicksLeft", -1);
             Scribe_Values.Look(ref autoRenew, "autoRenew", false);
+            Scribe_Values.Look(ref nextDustEffectTick, "nextDustEffectTick", 0);
             Scribe_Collections.Look(ref storedMinerals, "storedMinerals", LookMode.Def, LookMode.Value);
             Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
             Scribe_References.Look(ref guardLord, "guardLord");
@@ -471,6 +491,61 @@ namespace USAC
             dropletData.velocityAngle = Rand.Range(0f, 360f);
             dropletData.velocitySpeed = Rand.Range(0.5f, 1.5f);
             Map.flecks.CreateFleck(dropletData);
+        }
+
+        // 执行设备周边间歇性扬尘
+        private void TrySpawnPeripheralDustEffect()
+        {
+            if (!Spawned || Map == null) return;
+
+            int now = Find.TickManager.TicksGame;
+            if (now < nextDustEffectTick) return;
+
+            nextDustEffectTick = now + Rand.RangeInclusive(DustEffectIntervalMin, DustEffectIntervalMax);
+
+            // 仅在正常采矿阶段触发，撤离或资源耗尽时停止
+            if (extractionCountdown > 0 || !hasResources) return;
+
+            CellRect rigRect = this.OccupiedRect();
+            CellRect ringRect = rigRect.ExpandedBy(1);
+            List<IntVec3> candidateCells = new List<IntVec3>(32);
+
+            foreach (IntVec3 c in ringRect)
+            {
+                if (!c.InBounds(Map)) continue;
+                if (rigRect.Contains(c)) continue;
+                if (!c.ShouldSpawnMotesAt(Map)) continue;
+                candidateCells.Add(c);
+            }
+
+            if (candidateCells.Count == 0 && !CellFinder.TryFindRandomCellNear(
+                    Position,
+                    Map,
+                    4,
+                    c => c.InBounds(Map) && c.ShouldSpawnMotesAt(Map),
+                    out _))
+            {
+                return;
+            }
+
+            int burstCount = Rand.RangeInclusive(DustBurstCountMin, DustBurstCountMax);
+            for (int i = 0; i < burstCount; i++)
+            {
+                IntVec3 dustCell = candidateCells.Count > 0
+                    ? candidateCells[Rand.Range(0, candidateCells.Count)]
+                    : Position;
+
+                Effecter dustEffecter = EffecterDefOf.ImpactSmallDustCloud.Spawn(dustCell, Map);
+                dustEffecter?.Cleanup();
+
+                // 使用厚尘 fleck 增强大型机械震地感
+                FleckMaker.ThrowDustPuffThick(
+                    dustCell.ToVector3Shifted() + Gen.RandomHorizontalVector(0.35f),
+                    Map,
+                    Rand.Range(1.6f, 2.8f),
+                    Color.gray
+                );
+            }
         }
 
         private void EjectStoredMinerals()

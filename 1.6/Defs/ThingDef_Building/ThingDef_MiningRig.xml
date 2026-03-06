@@ -47,6 +47,9 @@
         </killedLeavings>
         <comps>
             <li Class="CompProperties_Forbiddable" />
+            <li Class="CompProperties_AmbientSound">
+                <sound>GeyserSpray</sound>
+            </li>
             <li Class="USAC.CompProperties_VisualPawnContainer">
                 <frontRowOffsets>
                     <!-- 前排5个，仅限最小型机兵 -->

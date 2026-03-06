@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <operations>
+            <!-- Add extra organ buy orders when deadmanswitch is not active. -->
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/TraderKindDef[defName="USAC_Trader_Orbital"]/stockGenerators</xpath>
+                <value>
+                    <li Class="StockGenerator_Category">
+                        <categoryDef>BodyPartsNatural</categoryDef>
+                        <countRange>0~0</countRange>
+                    </li>
+                </value>
+            </li>
+
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/TraderKindDef[defName="USAC_Trader_MechSupplier"]/stockGenerators</xpath>
+                <value>
+                    <li Class="StockGenerator_Category">
+                        <categoryDef>BodyPartsNatural</categoryDef>
+                        <countRange>0~0</countRange>
+                    </li>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+</Patch>

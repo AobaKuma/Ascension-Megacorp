@@ -17,7 +17,7 @@
     <label>Civilian Assistant</label>
     <description>A civilian collaborator temporarily attached to USAC logistics and support duties under supervision.</description>
     <seniority>0</seniority>
-    <favorCost>10</favorCost>
+    <favorCost>1</favorCost>
     <changeHeirQuestPoints>1000</changeHeirQuestPoints>
   </RoyalTitleDef>
 
