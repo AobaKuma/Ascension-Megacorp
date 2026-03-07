@@ -44,7 +44,7 @@ namespace USAC
             if (currentGoodwill < 0)
             {
                 int goodwillChange = -currentGoodwill;
-                usacFaction.TryAffectGoodwillWith(playerFaction, goodwillChange, false, false);
+                usacFaction.TryAffectGoodwillWith(playerFaction, goodwillChange, false, false, USAC_HistoryEventDefOf.USAC_HostilityReset);
             }
 
             // 执行派系关系重置信件发送

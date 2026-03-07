@@ -24,9 +24,10 @@ namespace USAC
 
             if (isUSAC)
             {
-                // 过滤任务与调试增益
+                // 过滤任务、调试增益及独立重置通道
                 if (reason != HistoryEventDefOf.QuestGoodwillReward &&
-                    reason != HistoryEventDefOf.DebugGoodwill)
+                    reason != HistoryEventDefOf.DebugGoodwill &&
+                    reason != USAC_HistoryEventDefOf.USAC_HostilityReset)
                 {
                     // 修正常规交互增益
                     goodwillChange = 0;

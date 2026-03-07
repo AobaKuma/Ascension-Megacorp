@@ -7,6 +7,7 @@ namespace USAC
     public static class USAC_HistoryEventDefOf
     {
         public static HistoryEventDef USAC_Coverup;
+        public static HistoryEventDef USAC_HostilityReset;
 
         static USAC_HistoryEventDefOf()
         {
