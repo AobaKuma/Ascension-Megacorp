@@ -83,10 +83,20 @@ namespace USAC
         // 检索计算着色器核心标识
         public static int GetKernel(UnityEngine.ComputeShader shader, string kernelName)
         {
+            if (shader == null) return -1;
+
             var key = (shader, kernelName);
             if (!kernelCache.TryGetValue(key, out int kernelId))
             {
-                kernelId = shader.FindKernel(kernelName);
+                try
+                {
+                    kernelId = shader.FindKernel(kernelName);
+                }
+                catch (Exception ex)
+                {
+                    Log.ErrorOnce($"[USAC] Failed to find kernel '{kernelName}' in shader '{shader.name}': {ex.Message}", shader.GetInstanceID() ^ kernelName.GetHashCode());
+                    kernelId = -1;
+                }
                 kernelCache[key] = kernelId;
             }
             return kernelId;

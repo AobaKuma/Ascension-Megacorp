@@ -9,7 +9,7 @@ struct Particle
     float maxLife;
     float size;
     float3 color;
-    float mass; // 1.0=核心, 0.5=剥离块, 0.0=散雾
+    float mass;
 };
 
 RWStructuredBuffer<Particle> particleBuffer;
@@ -55,11 +55,9 @@ void Update(uint3 id : SV_DispatchThreadID)
     if (p.life > 0)
     {
         float distFromEmitter = distance(p.position, emitterPos);
-        
         uint clumpId = id.x / 128;
         float clumpRnd = hash(clumpId);
         
-        // === 剥离逻辑 ===
         if (p.mass > 0.8)
         {
             float peelThreshold = smoothstep(0.5, 3.5, distFromEmitter); 
@@ -98,16 +96,13 @@ void Update(uint3 id : SV_DispatchThreadID)
             
             float3 offsetDir = random3(clumpId).xyz * 2.0 - 1.0;
             p.position += offsetDir * (5.0 * (1.0 - p.mass)) * deltaTime;
-            
             p.position += (random3(id.x + time).xyz * 2.0 - 1.0) * 1.5 * deltaTime;
         }
 
         p.size = lerp(1.2, 0.15, p.mass); 
-        
         float3 colCore = float3(0.85, 0.85, 0.80); 
         float3 colClump = float3(0.85, 0.85, 0.80); 
         float3 colMist = float3(0.95, 0.95, 0.93); 
-        
         float scint = (hash(id.x * 23.0 + time) * 0.2 + 0.9);
         
         if(p.mass > 0.8) 
@@ -125,7 +120,6 @@ void Update(uint3 id : SV_DispatchThreadID)
             float t = p.mass / 0.4;
             p.color = lerp(colMist, colClump, t) * scint;
         }
-        
         p.life -= deltaTime;
     }
     else
@@ -140,14 +134,12 @@ void Update(uint3 id : SV_DispatchThreadID)
             {
                 int emitterIdx = id.x % (uint)emitterCount;
                 float3 targetEmitterPos = emitterPositions[emitterIdx].xyz;
-
                 p.mass = 1.0; 
                 p.life = 0.6 + hash(uint(seed * 123.4)) * 0.9; 
                 p.maxLife = p.life;
                 p.position = targetEmitterPos;
                 p.position.x += (hash(uint(seed * 456.7)) * 2.0 - 1.0) * 0.15;
                 p.position.z += (hash(uint(seed * 789.0)) * 2.0 - 1.0) * 0.05;
-                
                 float baseSpeed = 26.0 + hash(uint(seed * 321.0)) * 10.0; 
                 float angle = (hash(uint(seed * 654.0)) * 2.0 - 1.0) * 0.05;
                 p.velocity.x = sin(angle) * baseSpeed;
