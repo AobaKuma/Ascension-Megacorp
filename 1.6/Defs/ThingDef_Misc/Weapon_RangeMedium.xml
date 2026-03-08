@@ -230,6 +230,7 @@
     </verbs>
     <weaponTags>
       <li>USAC_AGL</li>
+      <li>USAC_ACSW</li>
       <li>DMS_MechWeaponHeavy</li>
     </weaponTags>
     <tools>

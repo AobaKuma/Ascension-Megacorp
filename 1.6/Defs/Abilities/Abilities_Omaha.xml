@@ -51,7 +51,7 @@
     </graphicData>
     <projectile>
       <damageDef>Bomb</damageDef>
-      <damageAmountBase>200</damageAmountBase>
+      <damageAmountBase>100</damageAmountBase>
       <speed>45</speed>
       <explosionRadius>3.9</explosionRadius>
       <flyOverhead>true</flyOverhead>

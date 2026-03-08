@@ -49,6 +49,20 @@
         <rotationSmoothTime>0.05</rotationSmoothTime>
       </li>
     </comps>
+    <modExtensions>
+      <li Class="Fortified.MechWeaponExtension">
+        <EnableWeaponFilter>true</EnableWeaponFilter>
+        <UsableWeaponTags>
+          <li MayRequire="vanillaexpanded.vwehw">HeavyGun</li><!--重型武器拓展-->
+          <li>A_SuppressWeapon</li>
+          <li>DMS_MechWeaponTransHeavy</li>
+          <li>DMS_Gun_Recoilless</li>
+          <li>USAC_Heavy</li>
+          <li>USAC_AGL</li>
+        </UsableWeaponTags>
+        <BypassUsableWeapons />
+      </li>
+    </modExtensions>
     <butcherProducts>
       <Steel>30</Steel>
       <Plasteel>8</Plasteel>
