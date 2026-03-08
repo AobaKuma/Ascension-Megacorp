@@ -93,11 +93,11 @@
 
     <USAC_Currency_Label>USAC Currency</USAC_Currency_Label>
 
-    <USAC_Currency_LabelFull>Lower Bag: {0} (Including Bonds x{1})</USAC_Currency_LabelFull>
+    <USAC_Currency_LabelFull>Body bag value: {0} (Including Bonds x{1})</USAC_Currency_LabelFull>
 
     <USAC_Currency_LabelBondOnly>Bonds x{0}</USAC_Currency_LabelBondOnly>
 
-    <USAC_Currency_LabelCorpseBagOnly>Lower Bag: {0}</USAC_Currency_LabelCorpseBagOnly>
+    <USAC_Currency_LabelCorpseBagOnly>Body bag value: {0}</USAC_Currency_LabelCorpseBagOnly>
 
     <USAC_Currency_LabelEmpty>USAC Currency</USAC_Currency_LabelEmpty>
 
