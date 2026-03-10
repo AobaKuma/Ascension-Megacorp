@@ -80,6 +80,7 @@
                 <li Class="ScenPart_StartingThing_Defined">
                     <def>StartingThing_Defined</def>
                     <thingDef>USAC_CorpseBag</thingDef>
+                    <stuff>Cloth</stuff>
                     <count>6</count>
                 </li>
                 <li Class="ScenPart_StartingThing_Defined">

@@ -105,9 +105,13 @@
 
             <!-- 出售：信用债券 -->
             <li Class="USAC.StockGenerator_USACBond">
-                <countRange>10~50</countRange>
+                <countRange>10~150</countRange>
             </li>
 
+            <!-- 收购：化合燃料 -->
+            <li Class="StockGenerator_BuySingleDef">
+                <thingDef>Chemfuel</thingDef>
+            </li>
             <!-- DMS聯動 -->
 
             <!-- 收购：沖壓零件 -->
