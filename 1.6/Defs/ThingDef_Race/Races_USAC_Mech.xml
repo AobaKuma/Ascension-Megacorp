@@ -72,16 +72,6 @@
 
   <!-- USAC 人形机兵基础 -->
   <ThingDef Name="USAC_BaseHumanoidMech" ParentName="USAC_BaseMechRace" Abstract="True">
-    <comps Inherit="false">
-      <li Class="USAC.CompProperties_MechReadiness">
-        <capacity>60</capacity>
-        <consumptionPerDay>1</consumptionPerDay>
-        <supplyDef>ComponentIndustrial</supplyDef>
-        <lowThreshold>1</lowThreshold>
-        <lowReadinessHediff>USAC_LowReadiness</lowReadinessHediff>
-      </li>
-      <li Class="Fortified.CompProperties_MechDeactivate" />
-    </comps>
     <race>
       <body>USAC_Humanoid_Soldat</body>
       <baseBodySize>1.0</baseBodySize>
