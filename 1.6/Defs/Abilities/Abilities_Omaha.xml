@@ -23,6 +23,8 @@
     <description>Launch a rocket that tows a continuous demolition cable behind it. Upon impact, the cable detonates along its entire path to clear mines.</description>
     <iconPath>UI/Abilities/USAC_MICLIC</iconPath>
     <cooldownTicksRange>60000</cooldownTicksRange>
+    <cooldownPerCharge>true</cooldownPerCharge>
+    <charges>2</charges>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
       <range>32</range>
