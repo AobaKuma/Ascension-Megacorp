@@ -104,8 +104,8 @@
     <description>An amphibious assault mech capable of operating both on land and water, providing close to mid-range fire support for USAC operations. Based on the Krepost heavy walker chassis.</description>
     <statBases>
       <MoveSpeed>2.7</MoveSpeed>
-      <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
-      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.0</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.4</ArmorRating_Blunt>
       <ArmorRating_Heat>1.5</ArmorRating_Heat>
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <BandwidthCost MayRequire="Ludeon.Rimworld.Biotech">10</BandwidthCost>
