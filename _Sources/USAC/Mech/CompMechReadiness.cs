@@ -3,22 +3,22 @@ using Verse;
 
 namespace USAC
 {
-    // 定义机兵整备组件属性
+    // 机兵整备组件属性
     public class CompProperties_MechReadiness : CompProperties
     {
-        // 记录机兵整备容量数值
+        // 机兵整备容量数值
         public float capacity = 100f;
 
-        // 记录机兵整备日损耗值
+        // 机兵整备日损耗值
         public float consumptionPerDay = 10f;
 
-        // 记录整备补给物品定义
+        // 整备补给物品定义
         public ThingDef supplyDef;
 
-        // 记录低整备状态阈值
+        // 低整备状态阈值
         public float lowThreshold = 0.3f;
 
-        // 记录低整备状态异常定义
+        // 低整备状态异常定义
         public HediffDef lowReadinessHediff;
 
         public CompProperties_MechReadiness()
@@ -27,7 +27,7 @@ namespace USAC
         }
     }
 
-    // 定义机兵整备逻辑组件
+    // 机兵整备逻辑组件
     public class CompMechReadiness : ThingComp
     {
         public CompProperties_MechReadiness Props => (CompProperties_MechReadiness)props;

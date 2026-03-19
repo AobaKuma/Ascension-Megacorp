@@ -6,8 +6,8 @@ using Verse.Sound;
 
 namespace USAC
 {
-    // USAC轨道夹具完整生命周期
-    // 下降→着陆抓取→上升离开
+    // USAC轨道夹具生命周期
+    // 下降着陆抓取上升离开
     public class Skyfaller_USACGripper : Skyfaller, IActiveTransporter
     {
         private Thing targetThing;
@@ -23,13 +23,22 @@ namespace USAC
         private Vector3 lastTargetPos;
         // 是否已正常完成
         private bool completedNormally;
-        // 位置跳变距离阈值，将其约束到1格
+        // 位置跳变距离阈值
         private const float WarpThreshold = 1f;
 
         private Rot4 targetRotation = Rot4.North;
         private float gripperScale = 1.5f;
         private Graphic cachedScaledGraphic;
         private float cachedScaleKey = -1f;
+
+        private int contractIndex = -1; // 关联的合约索引
+
+        public void SetTargetContract(DebtContract contract)
+        {
+            var comp = GameComponent_USACDebt.Instance;
+            if (comp != null && contract != null)
+                contractIndex = comp.ActiveContracts.IndexOf(contract);
+        }
 
         public void SetTarget(Thing target)
         {
@@ -38,7 +47,7 @@ namespace USAC
             {
                 lastTargetPos = target.DrawPos;
 
-                // 根据目标类型计算夹具缩放
+                // 根据目标类型计算缩放
                 if (target is Pawn pawn)
                 {
                     // 基于体型尺寸缩放
@@ -61,9 +70,11 @@ namespace USAC
         {
             base.ExposeData();
             Scribe_References.Look(ref targetThing, "targetThing");
-            Scribe_Values.Look(ref isLifting, "isLifting");
-            Scribe_Values.Look(ref liftTicks, "liftTicks");
+            Scribe_Values.Look(ref isLifting, "isLifting", false);
+            Scribe_Values.Look(ref liftTicks, "liftTicks", 0);
             Scribe_Values.Look(ref landedAnchor, "landedAnchor");
+            Scribe_Values.Look(ref completedNormally, "completedNormally", false);
+            Scribe_Values.Look(ref contractIndex, "contractIndex", -1);
             Scribe_Values.Look(ref gripperScale, "gripperScale", 1.5f);
             Scribe_Values.Look(ref targetRotation, "targetRotation", Rot4.North);
         }
@@ -73,7 +84,7 @@ namespace USAC
             base.SpawnSetup(map, respawningAfterLoad);
             if (!respawningAfterLoad)
             {
-                // 赋予敌对派系，使其能够被防空设施自动选作目标
+                // 赋予敌对派系
                 factionInt = Find.FactionManager.RandomEnemyFaction(false, false, true, TechLevel.Undefined);
             }
         }
@@ -133,6 +144,22 @@ namespace USAC
                 if (liftTicks >= LiftDuration)
                 {
                     completedNormally = true;
+
+                    // 成功离开核减本金
+                    if (contractIndex >= 0)
+                    {
+                        var comp = GameComponent_USACDebt.Instance;
+                        if (comp != null && contractIndex < comp.ActiveContracts.Count)
+                        {
+                            var contract = comp.ActiveContracts[contractIndex];
+                            float value = 0f;
+                            foreach (var thing in innerContainer)
+                                value += thing.MarketValue * thing.stackCount;
+                            
+                            contract.Principal = Mathf.Max(0, contract.Principal - value);
+                        }
+                    }
+
                     innerContainer.ClearAndDestroyContents();
                     Destroy();
                 }
@@ -165,7 +192,7 @@ namespace USAC
                 return;
             }
 
-            // 主动进行护盾拦截检测，使原版高角护盾生效
+            // 主动护盾拦截检测
             if (!hasImpacted)
             {
                 CheckForShieldInterception();
@@ -191,10 +218,10 @@ namespace USAC
                 var comp = interceptors[i].TryGetComp<CompProjectileInterceptor>();
                 if (comp != null && comp.Active && comp.Props.interceptAirProjectiles)
                 {
-                    // 借用Projectlies的逻辑计算
+                    // 借用Projectile逻辑
                     Vector3 center = interceptors[i].Position.ToVector3Shifted();
                     float radius = comp.Props.radius;
-                    // 由于夹具从天而降，只检查其在二维平面上是否落入护盾圈
+                    // 检查二维平面护盾圈
                     if ((newExactPos.x - center.x) * (newExactPos.x - center.x) + (newExactPos.z - center.z) * (newExactPos.z - center.z) <= radius * radius)
                     {
                         // 触发护盾特效并阻断夹具
@@ -276,7 +303,7 @@ namespace USAC
             GetScaledGraphic()?.Draw(gripperPos, Rot4.North, this);
         }
 
-        // 补充 IActiveTransporter 必须的装载信息
+        // 补充装载信息
         private ActiveTransporterInfo dummyInfo;
         public ActiveTransporterInfo Contents
         {
@@ -293,7 +320,8 @@ namespace USAC
         {
             if (!completedNormally && !Destroyed)
             {
-                // 罚金计入最近合同
+                // 仅计入罚金标记
+                // 失败计数由轮次统一处理
                 try
                 {
                     var debtComp = GameComponent_USACDebt.Instance;
@@ -303,6 +331,10 @@ namespace USAC
                         float penalty = 3000f;
                         target.Principal += penalty;
                         target.MissedPayments++;
+
+                        // 记录抗收标志
+                        debtComp.HasGripperDestroyedThisRound = true;
+
                         debtComp.AddTransaction(
                             USACTransactionType.Penalty, penalty,
                             "USAC.Debt.Transaction.GripperDestroyed".Translate());
@@ -316,6 +348,25 @@ namespace USAC
                 {
                     Log.Error($"[USAC] Failed to apply penalty for gripper destruction: {ex}");
                 }
+            }
+            if (completedNormally)
+            {
+                // 记录被清算资产名单
+                var debtComp = GameComponent_USACDebt.Instance;
+                if (debtComp != null)
+                {
+                    foreach (var thing in innerContainer)
+                    {
+                        if (thing is Pawn p && p.IsColonist)
+                            debtComp.LiquidatedPawns.Add(p);
+                    }
+                }
+                debtComp?.CheckCollectionRoundResults(Map);
+            }
+            else // 被摧毁也要检查结算
+            {
+                var debtComp = GameComponent_USACDebt.Instance;
+                debtComp?.CheckCollectionRoundResults(Map);
             }
             base.Destroy(mode);
         }

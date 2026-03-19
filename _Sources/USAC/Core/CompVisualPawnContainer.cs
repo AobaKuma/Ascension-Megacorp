@@ -64,17 +64,47 @@ namespace USAC
             }
         }
 
+        // 脏标记追踪容器变化
+        private bool isDirty = true;
+        private int lastPawnCount = -1;
+        
+        public bool IsDirty => isDirty;
+        
+        public void MarkDirty()
+        {
+            isDirty = true;
+        }
+        
+        public void ClearDirty()
+        {
+            isDirty = false;
+        }
+
+        // 检查容器是否变化
+        public bool CheckContainerChanged()
+        {
+            if (parent is IThingHolder holder)
+            {
+                var container = holder.GetDirectlyHeldThings();
+                int currentCount = container?.Count ?? 0;
+                if (currentCount != lastPawnCount)
+                {
+                    lastPawnCount = currentCount;
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            // 注册至全局可视化容器管理
             parent.Map.GetComponent<MapComponent_VisualPawnMounts>().Register(this);
         }
 
         public override void PostDestroy(DestroyMode mode, Map map)
         {
             base.PostDestroy(mode, map);
-            // 移除全局可视化容器管理项
             if (map != null)
             {
                 map.GetComponent<MapComponent_VisualPawnMounts>().Unregister(this);

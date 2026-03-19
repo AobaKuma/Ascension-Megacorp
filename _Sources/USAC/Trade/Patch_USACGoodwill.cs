@@ -24,12 +24,14 @@ namespace USAC
 
             if (isUSAC)
             {
-                // 过滤任务、调试增益及独立重置通道
+                // 过滤任务
                 if (reason != HistoryEventDefOf.QuestGoodwillReward &&
                     reason != HistoryEventDefOf.DebugGoodwill &&
-                    reason != USAC_HistoryEventDefOf.USAC_HostilityReset)
+                    reason != USAC_HistoryEventDefOf.USAC_HostilityReset &&
+                    reason != HistoryEventDefOf.DestroyedEnemyBase &&
+                    reason != HistoryEventDefOf.PeaceTalksSuccess &&
+                    reason != HistoryEventDefOf.PeaceTalksTriumph)
                 {
-                    // 修正常规交互增益
                     goodwillChange = 0;
                 }
             }

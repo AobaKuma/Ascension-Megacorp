@@ -13,4 +13,7 @@
   <!-- EN: mech (incoming) -->
   <USAC_MechIncoming.label>mech (incoming)</USAC_MechIncoming.label>
   
+  <!-- EN: orbital transport (incoming) -->
+  <USAC_TransportIncoming.label>orbital transport (incoming)</USAC_TransportIncoming.label>
+  
 </LanguageData>

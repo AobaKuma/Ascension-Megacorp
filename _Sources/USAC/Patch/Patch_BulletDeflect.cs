@@ -8,7 +8,7 @@ using Verse;
 
 namespace USAC
 {
-    // 记录子弹命中前的信息
+    // 记录子弹命中前信息
     static class DeflectContext
     {
         [ThreadStatic] public static bool active;
@@ -19,15 +19,59 @@ namespace USAC
         [ThreadStatic] public static bool isHighY;
 
         // 高Y入射子弹
-        public static readonly HashSet<int> HighYBullets = new HashSet<int>();
+        private static readonly HashSet<int> highYBullets = new HashSet<int>();
+        private static readonly object highYLock = new object();
 
         // 高Y弹飞子弹
-        public static readonly HashSet<int> HighYDeflected =
-            new HashSet<int>();
+        private static readonly HashSet<int> highYDeflected = new HashSet<int>();
+        private static readonly object deflectedLock = new object();
 
         // 高于Pawn的渲染高度
-        public static readonly float HighAlt =
-            AltitudeLayer.Pawn.AltitudeFor() + Altitudes.AltInc * 2;
+        public static readonly float HighAlt = AltitudeLayer.Pawn.AltitudeFor() + Altitudes.AltInc * 2;
+
+        // 线程安全的添加方法
+        public static void AddHighYBullet(int id)
+        {
+            lock (highYLock) { highYBullets.Add(id); }
+        }
+
+        public static void AddHighYDeflected(int id)
+        {
+            lock (deflectedLock) { highYDeflected.Add(id); }
+        }
+
+        // 线程安全的检查方法
+        public static bool IsHighYBullet(int id)
+        {
+            lock (highYLock) { return highYBullets.Contains(id); }
+        }
+
+        public static bool IsHighYDeflected(int id)
+        {
+            lock (deflectedLock) { return highYDeflected.Contains(id); }
+        }
+
+        // 线程安全的移除方法
+        public static bool RemoveHighYBullet(int id)
+        {
+            lock (highYLock) { return highYBullets.Remove(id); }
+        }
+
+        public static void RemoveHighYDeflected(int id)
+        {
+            lock (deflectedLock) { highYDeflected.Remove(id); }
+        }
+
+        // 获取集合大小
+        public static int GetHighYCount()
+        {
+            lock (highYLock) { return highYBullets.Count; }
+        }
+
+        public static int GetDeflectedCount()
+        {
+            lock (deflectedLock) { return highYDeflected.Count; }
+        }
 
         public static void Clear()
         {
@@ -46,9 +90,7 @@ namespace USAC
     static class Patch_BulletDeflect_MarkHighY
     {
         [HarmonyPostfix]
-        static void Postfix(
-            Projectile __instance,
-            LocalTargetInfo intendedTarget)
+        static void Postfix(Projectile __instance, LocalTargetInfo intendedTarget)
         {
             try
             {
@@ -61,37 +103,36 @@ namespace USAC
                 Rand.PopState();
 
                 if (highY)
-                    DeflectContext.HighYBullets.Add(
-                        __instance.thingIDNumber);
+                    DeflectContext.AddHighYBullet(__instance.thingIDNumber);
             }
             catch (Exception e)
             {
-                Log.Error($"[USAC] MarkHighY: {e}");
+                Log.Error($"[USAC] 标记高Y子弹失败: {e}");
             }
         }
     }
 
-    // 抬高高Y子弹的渲染层级
+    // 抬高高Y子弹渲染层级
     [HarmonyPatch(typeof(Projectile), "DrawAt")]
     static class Patch_BulletDeflect_DrawHighY
     {
         [HarmonyPrefix]
-        static void Prefix(
-            Projectile __instance, ref Vector3 drawLoc)
+        static void Prefix(Projectile __instance, ref Vector3 drawLoc)
         {
-            if (DeflectContext.HighYBullets.Count == 0 &&
-                DeflectContext.HighYDeflected.Count == 0)
+            // 早期退出优化
+            if (DeflectContext.GetHighYCount() == 0 && DeflectContext.GetDeflectedCount() == 0)
                 return;
 
             int id = __instance.thingIDNumber;
-            if (DeflectContext.HighYBullets.Contains(id) ||
-                DeflectContext.HighYDeflected.Contains(id))
+            
+            // 检查是否为高Y子弹
+            if (DeflectContext.IsHighYBullet(id) || DeflectContext.IsHighYDeflected(id))
             {
                 // 已销毁则清理残留
                 if (!__instance.Spawned)
                 {
-                    DeflectContext.HighYBullets.Remove(id);
-                    DeflectContext.HighYDeflected.Remove(id);
+                    DeflectContext.RemoveHighYBullet(id);
+                    DeflectContext.RemoveHighYDeflected(id);
                     return;
                 }
                 drawLoc.y = DeflectContext.HighAlt;
@@ -103,17 +144,18 @@ namespace USAC
     [HarmonyPatch(typeof(Bullet), "Impact")]
     static class Patch_BulletDeflect_RecordInfo
     {
-        static readonly FieldInfo OriginField =
-            typeof(Projectile).GetField("origin",
-                BindingFlags.Instance | BindingFlags.NonPublic);
+        // 缓存反射字段访问器
+        private static readonly AccessTools.FieldRef<Projectile, Vector3> OriginRef =
+            AccessTools.FieldRefAccess<Projectile, Vector3>("origin");
 
         [HarmonyPrefix]
         static void Prefix(Bullet __instance, Thing hitThing)
         {
             int id = __instance.thingIDNumber;
-            // 先记录高Y状态再清理
-            bool wasHighY = DeflectContext.HighYBullets.Remove(id);
-            DeflectContext.HighYDeflected.Remove(id);
+            
+            // 记录高Y状态并清理
+            bool wasHighY = DeflectContext.RemoveHighYBullet(id);
+            DeflectContext.RemoveHighYDeflected(id);
 
             DeflectContext.Clear();
             if (hitThing is Pawn pawn)
@@ -124,8 +166,10 @@ namespace USAC
                     DeflectContext.active = true;
                     DeflectContext.bulletDef = __instance.def;
                     DeflectContext.position = __instance.ExactPosition;
-                    DeflectContext.origin =
-                        (Vector3)OriginField.GetValue(__instance);
+                    
+                    // 使用委托或反射获取origin
+                    DeflectContext.origin = OriginRef(__instance);
+                    
                     DeflectContext.map = __instance.Map;
                     DeflectContext.isHighY = wasHighY;
                 }
@@ -229,8 +273,7 @@ namespace USAC
 
             // 标记高Y弹飞子弹
             if (isHighY)
-                DeflectContext.HighYDeflected.Add(
-                    bullet.thingIDNumber);
+                DeflectContext.AddHighYDeflected(bullet.thingIDNumber);
 
             // 碰撞火花
             if (hitPos.ShouldSpawnMotesAt(map))

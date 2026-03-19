@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 using RimWorld;
@@ -27,13 +28,45 @@ namespace USAC.InternalUI
 
             string view = parent.GetParam("view") ?? "index";
 
+
             if (view == "index") DrawIndex(rect, parent, comp);
             else if (view == "contract") DrawContractDetail(rect, parent, comp);
+        }
+
+        private void DrawTransferLocked(Rect rect)
+        {
+            Text.Anchor = TextAnchor.MiddleCenter;
+            Text.Font = GameFont.Medium;
+            GUI.color = ColAccentRed;
+            string msg = "USAC.UI.Assets.TransferLocked.Title".Translate() + "\n\n" + 
+                         "USAC.UI.Assets.TransferLocked.Desc".Translate();
+            Widgets.Label(rect, msg);
+            Text.Anchor = TextAnchor.UpperLeft;
+            GUI.color = Color.white;
+        }
+
+        // 绘制拒绝访问页面
+        private static void DrawAccessDenied(Rect rect)
+        {
+            Text.Anchor = TextAnchor.MiddleCenter;
+            Text.Font = GameFont.Medium;
+            GUI.color = PortalUIUtility.ColAccentRed;
+            Widgets.Label(rect, "USAC.UI.Assets.AccessDenied".Translate());
+            Text.Anchor = TextAnchor.UpperLeft;
+            GUI.color = Color.white;
         }
 
         #region 索引与申请合成视图
         private void DrawIndex(Rect rect, Dialog_USACPortal parent, GameComponent_USACDebt comp)
         {
+            // 债权转移判断
+            var transfer = USAC.Endings.GameComponent_DebtTransfer.Instance;
+            if (transfer != null && transfer.Phase != USAC.Endings.GameComponent_DebtTransfer.TransferPhase.None)
+            {
+                DrawTransferLocked(rect);
+                return;
+            }
+
             // 顶栏汇总
             Rect headerRect = new(0, 0, rect.width, 80);
             DrawUIGradient(headerRect, ColHeaderBg, ColWindowBg);
@@ -68,7 +101,14 @@ namespace USAC.InternalUI
                     y = DrawContractRow(y, rect.width, contract, parent);
             }
 
-            y += 30;
+            y += 20;
+
+            // 全局信用修复和谈面板
+            if (comp.IsSystemLocked)
+            {
+                DrawNegotiationPanel(ref y, rect.width - 20, null, comp);
+                y += 10;
+            }
 
             // 绘制贷款申请面板
             DrawLoanApplicationPanel(ref y, rect.width - 20, comp);
@@ -220,7 +260,7 @@ namespace USAC.InternalUI
         private void DrawContractDetail(Rect rect, Dialog_USACPortal parent, GameComponent_USACDebt comp)
         {
             string id = parent.GetParam("id");
-            var contract = comp.ActiveContracts.FirstOrDefault(c => c.ContractId == id);
+            var contract = FindContractById(comp.ActiveContracts, id);
             if (contract == null)
             { parent.NavigateTo("usac://internal/assets?view=index"); return; }
 
@@ -231,7 +271,44 @@ namespace USAC.InternalUI
             DrawWarningBanner(ref y, rect.width, contract);
             DrawInterestPayPanel(ref y, rect.width, contract, comp);
             DrawPrincipalRepayPanel(ref y, rect.width, contract, comp);
+            DrawNegotiationPanel(ref y, rect.width, contract, comp);
             DrawGrowthForecastCard(ref y, rect.width, contract);
+        }
+
+        private void DrawNegotiationPanel(ref float y, float width, DebtContract contract, GameComponent_USACDebt comp)
+        {
+            if (!comp.IsSystemLocked) return;
+
+            Rect r = new(0, y, width, 80);
+            bool canNegotiate = comp.RepayCountDuringLock >= 2;
+            
+            DrawBentoBox(r, (box) =>
+            {
+                Rect inner = box.ContractedBy(15);
+                DrawColoredLabel(inner.TopPartPixels(20), "USAC.UI.Assets.Negotiation.Title".Translate(), ColAccentCamo1, GameFont.Tiny);
+                
+                string status = canNegotiate 
+                    ? "USAC.UI.Assets.Negotiation.Available".Translate() 
+                    : "USAC.UI.Assets.Negotiation.Locked".Translate(comp.RepayCountDuringLock);
+                
+                DrawColoredLabel(new Rect(inner.x, inner.y + 22, inner.width - 180, 24), status, canNegotiate ? ColAccentCamo3 : ColTextMuted);
+
+                if (DrawTacticalButton(new Rect(inner.xMax - 170, inner.y + 10, 165, 40), 
+                    "USAC.UI.Assets.Negotiation.Btn".Translate(), canNegotiate, key: "negotiate_debt_global"))
+                {
+                    comp.IsSystemLocked = false;
+                    comp.RepayCountDuringLock = 0;
+                    
+                    // 解锁所有合法的合同违约状态
+                    foreach(var c in comp.ActiveContracts)
+                    {
+                        if (c.ConsecutiveCollectionFails > 0) c.ConsecutiveCollectionFails = 0;
+                    }
+                    
+                    Messages.Message("USAC.UI.Assets.Negotiation.Success".Translate(), MessageTypeDefOf.PositiveEvent);
+                }
+            }, false);
+            y += 88;
         }
 
         private void DrawContractHeader(Rect rect, DebtContract contract, Dialog_USACPortal parent)
@@ -374,6 +451,17 @@ namespace USAC.InternalUI
                 DrawColoredLabel(new Rect(bInner.xMax - 150, bInner.y + 20, 140, 30), $"+₿{predicted:N0}", ColAccentRed, GameFont.Medium, TextAnchor.MiddleRight);
             }, false);
             y += 88;
+        }
+
+        // 查找指定ID的合约
+        private DebtContract FindContractById(List<DebtContract> contracts, string id)
+        {
+            for (int i = 0; i < contracts.Count; i++)
+            {
+                if (contracts[i].ContractId == id)
+                    return contracts[i];
+            }
+            return null;
         }
         #endregion
     }

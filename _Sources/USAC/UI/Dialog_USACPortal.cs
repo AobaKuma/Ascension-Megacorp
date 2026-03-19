@@ -18,11 +18,8 @@ namespace USAC
         private readonly Dictionary<string, IPortalPage> pageCache = new();
         private readonly Stack<string> history = new();
 
-        // 动画控制器
         public readonly PortalAnimator Animator = new();
-
-        private GUIStyle tacticalScrollbar;
-        private GUIStyle tacticalScrollThumb;
+        
         // URL参数缓存
         private string _lastCurrentUrl;
         private readonly Dictionary<string, string> _currentParamCache = new();
@@ -83,7 +80,6 @@ namespace USAC
             Rect fullRect = new(0, 0, InitialSize.x, InitialSize.y);
             Widgets.DrawBoxSolid(fullRect, ColWindowBg);
             DrawBackgroundGrid(fullRect);
-            EnsureTacticalStyles();
 
             GUI.BeginGroup(inRect);
             // 绘制头部
@@ -114,15 +110,9 @@ namespace USAC
             Rect localContent = new(0, 0, contentRect.width, contentRect.height);
 
             // 注入滚动条样式
-            var origBar = GUI.skin.verticalScrollbar;
-            var origThumb = GUI.skin.verticalScrollbarThumb;
-            GUI.skin.verticalScrollbar = tacticalScrollbar;
-            GUI.skin.verticalScrollbarThumb = tacticalScrollThumb;
-
+            BeginTacticalScroll(out var prevBar, out var prevThumb, out var prevColor);
             DrawContent(localContent);
-
-            GUI.skin.verticalScrollbar = origBar;
-            GUI.skin.verticalScrollbarThumb = origThumb;
+            EndTacticalScroll(prevBar, prevThumb, prevColor);
 
             GUI.EndGroup();
         }
@@ -393,15 +383,6 @@ namespace USAC
         #endregion
 
         #region 辅助系统
-        // 初始化滚动条样式
-        private void EnsureTacticalStyles()
-        {
-            if (tacticalScrollbar != null) return;
-            tacticalScrollbar = new GUIStyle(GUI.skin.verticalScrollbar) { fixedWidth = 4f };
-            tacticalScrollThumb = new GUIStyle(GUI.skin.verticalScrollbarThumb) { fixedWidth = 4f };
-            tacticalScrollThumb.normal.background = SolidColorMaterials.NewSolidColorTexture(ColAccentCamo3);
-        }
-
         private static Texture2D cachedLogo;
         private static Texture2D Logo => cachedLogo ??= ContentFinder<Texture2D>.Get("UI/StyleCategories/USACIcon");
 

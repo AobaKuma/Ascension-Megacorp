@@ -98,7 +98,7 @@ namespace USAC
             Map map = Find.AnyPlayerHomeMap;
             if (map == null) return;
 
-            // 使用 DefOf 静态引用替代字符串查找
+            // 使用DefOf静态引用
             Faction usacFaction = Find.FactionManager
                 .FirstFactionOfDef(USAC_FactionDefOf.USAC_Faction);
             if (usacFaction == null || usacFaction.HostileTo(Faction.OfPlayer)) return;

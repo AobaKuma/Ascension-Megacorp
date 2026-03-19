@@ -4,22 +4,22 @@ using Verse;
 
 namespace USAC
 {
-    // 定义系统通用缓存工具类
+    // 系统缓存工具
     public static class USAC_Cache
     {
         #region 时效缓存
 
-        // 定义缓存条目数据结构
+        // 缓存条目结构
         private class CacheEntry<T>
         {
             public T Value;
             public int ExpireTick;
         }
 
-        // 维护定时缓存数据映射
-        private static Dictionary<string, object> timedCache = new Dictionary<string, object>();
+        // 定时缓存映射
+        private static readonly Dictionary<string, object> timedCache = new Dictionary<string, object>();
 
-        // 检索或创建指定缓存条目
+        // 获取或创建缓存
         public static T GetOrCreate<T>(string key, Func<T> creator, int validTicks = 60)
         {
             int currentTick = Find.TickManager?.TicksGame ?? 0;
@@ -33,7 +33,7 @@ namespace USAC
                 }
             }
 
-            // 执行缓存缺失时对象创建
+            // 创建新缓存对象
             T value = creator();
             timedCache[key] = new CacheEntry<T>
             {
@@ -43,16 +43,16 @@ namespace USAC
             return value;
         }
 
-        // 移除指定键名的缓存条目
+        // 移除指定缓存
         public static void Invalidate(string key)
         {
             timedCache.Remove(key);
         }
 
-        // 移除匹配前缀的所有缓存
+        // 移除前缀匹配缓存
         public static void InvalidateByPrefix(string prefix)
         {
-            List<string> toRemove = new List<string>();
+            var toRemove = new List<string>();
             foreach (var key in timedCache.Keys)
             {
                 if (key.StartsWith(prefix))
@@ -66,7 +66,7 @@ namespace USAC
             }
         }
 
-        // 清空定时缓存全量数据
+        // 清空全部缓存
         public static void ClearAll()
         {
             timedCache.Clear();
@@ -74,13 +74,13 @@ namespace USAC
 
         #endregion
 
-        #region 计算着色器内核缓存
+        #region 着色器内核缓存
 
-        // 维护计算着色器核心索引
-        private static Dictionary<(UnityEngine.ComputeShader, string), int> kernelCache
+        // 着色器内核索引
+        private static readonly Dictionary<(UnityEngine.ComputeShader, string), int> kernelCache
             = new Dictionary<(UnityEngine.ComputeShader, string), int>();
 
-        // 检索计算着色器核心标识
+        // 获取着色器内核
         public static int GetKernel(UnityEngine.ComputeShader shader, string kernelName)
         {
             if (shader == null) return -1;
@@ -94,7 +94,7 @@ namespace USAC
                 }
                 catch (Exception ex)
                 {
-                    Log.ErrorOnce($"[USAC] Failed to find kernel '{kernelName}' in shader '{shader.name}': {ex.Message}", shader.GetInstanceID() ^ kernelName.GetHashCode());
+                    Log.ErrorOnce($"[USAC] 着色器内核查找失败 '{kernelName}' in '{shader.name}': {ex.Message}", shader.GetInstanceID() ^ kernelName.GetHashCode());
                     kernelId = -1;
                 }
                 kernelCache[key] = kernelId;
@@ -106,10 +106,10 @@ namespace USAC
 
         #region 组件缓存
 
-        // 维护物体组件实例引用
-        private static Dictionary<(int, Type), object> compCache = new Dictionary<(int, Type), object>();
+        // 物体组件引用缓存
+        private static readonly Dictionary<(int, Type), object> compCache = new Dictionary<(int, Type), object>();
 
-        // 检索指定物体的组件引用
+        // 获取物体组件
         public static T GetComp<T>(ThingWithComps thing) where T : ThingComp
         {
             if (thing == null) return null;
@@ -123,10 +123,10 @@ namespace USAC
             return cached as T;
         }
 
-        // 移除已销毁物体组件缓存
+        // 清理销毁物体缓存
         public static void CleanupDestroyedThings()
         {
-            // 执行组件缓存全量清空
+            // 清空组件缓存
             compCache.Clear();
         }
 

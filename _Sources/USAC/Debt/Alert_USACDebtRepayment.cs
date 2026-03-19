@@ -34,6 +34,18 @@ namespace USAC
         {
             RefreshCache();
             if (cachedComp == null || cachedActiveCount <= 0) return false;
+
+            // 系统锁定时不显示提醒
+            if (cachedComp.IsSystemLocked)
+            {
+                var contracts = cachedComp.ActiveContracts;
+                for (int i = 0; i < contracts.Count; i++)
+                {
+                    if (contracts[i].IsActive && contracts[i].ConsecutiveCollectionFails >= 2)
+                        return false;
+                }
+            }
+
             return true;
         }
 
@@ -71,7 +83,7 @@ namespace USAC
             string result = "USAC.Alert.DebtRepayment.Explanation.Header"
                 .Translate(cachedComp.CreditScore, bonds);
 
-            // 按 NextCycleTick 排序遍历
+            // 按周期排序遍历
             var contracts = cachedComp.ActiveContracts;
             for (int i = 0; i < contracts.Count; i++)
             {

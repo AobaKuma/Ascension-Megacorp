@@ -5,8 +5,8 @@ using Verse.AI.Group;
 
 namespace USAC
 {
-    // 定义采矿护卫群体逻辑任务
-    // 守卫矿机并执行登机撤离程序
+    // 采矿护卫群体任务
+    // 守卫矿机并执行登机撤离
     // 切换对抗模式但不改变全局关系
     public class LordJob_MiningGuard : LordJob
     {
@@ -43,23 +43,23 @@ namespace USAC
         {
             StateGraph stateGraph = new StateGraph();
 
-            // 状态定义为防守矿机任务
+            // 防守矿机任务状态
             LordToil_DefendMiningRig toilDefend = new LordToil_DefendMiningRig(defendPoint, defendRadius: 10f, wanderRadius: 5f);
             stateGraph.AddToil(toilDefend);
 
-            // 状态定义为清理区域威胁
+            // 清理区域威胁状态
             LordToil_KillThreats toilKill = new LordToil_KillThreats(defendPoint, maxChaseRadius: 25f);
             stateGraph.AddToil(toilKill);
 
-            // 状态定义为执行登机撤离
+            // 登机撤离状态
             LordToil_BoardMiningRig toilBoard = new LordToil_BoardMiningRig(targetRig);
             stateGraph.AddToil(toilBoard);
 
-            // 状态定义为矿机被毁强制撤离
+            // 矿机被毁强制撤离状态
             LordToil_ExitMap toilExit = new LordToil_ExitMap(LocomotionUrgency.Jog);
             stateGraph.AddToil(toilExit);
 
-            // 状态定义为敌对机器被毁反击
+            // 敌对机器被毁反击状态
             LordToil_AssaultColony toilAssault = new LordToil_AssaultColony(false);
             stateGraph.AddToil(toilAssault);
 
@@ -119,16 +119,16 @@ namespace USAC
 
         #region 公共方法
 
-        // 配置关联目标矿机建筑实例
+        // 配置关联目标矿机
         public void SetTargetRig(Building_HeavyMiningRig rig)
         {
             targetRig = rig;
         }
 
-        // 发送全员开始登机执行信号
+        // 发送全员开始登机信号
         public void NotifyStartBoarding()
         {
-            // 同步更新全体登机任务目标
+            // 同步更新登机任务目标
             foreach (LordToil toil in lord.Graph.lordToils)
             {
                 if (toil is LordToil_BoardMiningRig boardToil)

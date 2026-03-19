@@ -17,9 +17,17 @@ namespace USAC.InternalUI
         private int leaseDays = 3;
         private bool leaseAutoRenew = false;
 
-        // 状态面板动画当前系数
+        // 状态面板动画系数
         private float _panelT = 0f;
         private const float PanelAnimDur = 0.35f;
+
+        // 缓存机械师列表
+        private List<Pawn> cachedMechnitors;
+        private int lastMechnitorUpdate = -1;
+
+        // 缓存采矿机列表
+        private List<Building_HeavyMiningRig> cachedActiveRigs;
+        private int lastRigUpdate = -1;
 
         private GameComponent_USACServices ServiceComp => Current.Game.GetComponent<GameComponent_USACServices>();
 
@@ -28,11 +36,8 @@ namespace USAC.InternalUI
             var serviceComp = ServiceComp;
             var map = Find.CurrentMap;
 
-            var mechnitors = PawnsFinder.AllMaps_FreeColonistsSpawned
-                .Where(p => p.health.hediffSet.HasHediff(DefDatabase<HediffDef>.GetNamed("USAC_TempMechlinkTrigger")))
-                .ToList();
-
-            var activeRigs = (map != null) ? map.listerBuildings.allBuildingsColonist.OfType<Building_HeavyMiningRig>().ToList() : new List<Building_HeavyMiningRig>();
+            var mechnitors = GetCachedMechnitors();
+            var activeRigs = GetCachedActiveRigs(map);
 
             bool hasPending = serviceComp != null && serviceComp.traderArrivalTick > 0;
 
@@ -44,7 +49,7 @@ namespace USAC.InternalUI
             float y = 0;
             float fullW = rect.width - 16;
 
-            // 每帧推进动画系数（任意位置反向都连续）
+            // 每帧推进动画系数
             float target = hasPending ? 1f : 0f;
             _panelT = Mathf.MoveTowards(_panelT, target, Time.unscaledDeltaTime / PanelAnimDur);
 
@@ -52,11 +57,11 @@ namespace USAC.InternalUI
             float t = _panelT;
             float finalSlideT = t * t * (3f - 2f * t);
 
-            // 绘制呼叫卡片 (宽度随 finalSlideT 动态变化)
+            // 绘制呼叫卡片
             float callCardW = Mathf.Lerp(fullW, fullW * 0.6f - 8f, finalSlideT);
             DrawTraderCallCard(ref y, callCardW, serviceComp);
 
-            // 商船状态面板：展开 / 收起都用 finalSlideT 控制
+            // 绘制商船状态面板
             if (finalSlideT > 0.01f)
             {
                 float panelW = fullW * 0.4f - 8f;
@@ -90,6 +95,71 @@ namespace USAC.InternalUI
             DrawRenewalSection(ref y, w, mechnitors, serviceComp);
 
             Widgets.EndScrollView();
+        }
+
+        // 获取缓存的机械师列表
+        private List<Pawn> GetCachedMechnitors()
+        {
+            int currentTick = Find.TickManager.TicksGame;
+            if (currentTick - lastMechnitorUpdate > 250) // 每250tick更新
+            {
+                RefreshMechnitorCache();
+                lastMechnitorUpdate = currentTick;
+            }
+            return cachedMechnitors ?? (cachedMechnitors = new List<Pawn>());
+        }
+
+        // 刷新机械师缓存
+        private void RefreshMechnitorCache()
+        {
+            if (cachedMechnitors == null)
+                cachedMechnitors = new List<Pawn>();
+            else
+                cachedMechnitors.Clear();
+
+            var hediffDef = DefDatabase<HediffDef>.GetNamed("USAC_TempMechlinkTrigger");
+            var allPawns = PawnsFinder.AllMaps_FreeColonistsSpawned;
+            for (int i = 0; i < allPawns.Count; i++)
+            {
+                var pawn = allPawns[i];
+                if (pawn.health.hediffSet.HasHediff(hediffDef))
+                {
+                    cachedMechnitors.Add(pawn);
+                }
+            }
+        }
+
+        // 获取缓存的采矿机列表
+        private List<Building_HeavyMiningRig> GetCachedActiveRigs(Map map)
+        {
+            if (map == null)
+                return new List<Building_HeavyMiningRig>();
+
+            int currentTick = Find.TickManager.TicksGame;
+            if (currentTick - lastRigUpdate > 250) // 每250tick更新
+            {
+                RefreshRigCache(map);
+                lastRigUpdate = currentTick;
+            }
+            return cachedActiveRigs ?? (cachedActiveRigs = new List<Building_HeavyMiningRig>());
+        }
+
+        // 刷新采矿机缓存
+        private void RefreshRigCache(Map map)
+        {
+            if (cachedActiveRigs == null)
+                cachedActiveRigs = new List<Building_HeavyMiningRig>();
+            else
+                cachedActiveRigs.Clear();
+
+            var allBuildings = map.listerBuildings.allBuildingsColonist;
+            for (int i = 0; i < allBuildings.Count; i++)
+            {
+                if (allBuildings[i] is Building_HeavyMiningRig rig)
+                {
+                    cachedActiveRigs.Add(rig);
+                }
+            }
         }
 
         private void DrawLeaseConfigCard(ref float y, float w, string price, System.Action action)
@@ -263,7 +333,7 @@ namespace USAC.InternalUI
                 DrawColoredLabel(new Rect(inner.x, inner.y + 35, inner.width - 180, 70),
                     "USAC.UI.Services.Trader.Desc".Translate(), ColTextActive, GameFont.Tiny);
 
-                // 定价标签 - 与租赁卡片保持一致
+                // 绘制定价标签
                 DrawColoredLabel(new Rect(inner.xMax - 165, inner.yMax - 70, 160, 20),
                     "₿4 BONDS", ColTextMuted, GameFont.Tiny, TextAnchor.LowerRight);
 

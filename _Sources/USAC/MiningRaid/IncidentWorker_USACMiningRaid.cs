@@ -171,21 +171,47 @@ namespace USAC
         #region 逻辑支持
 
         // 复用候选列表避免事件级分配
-        private static readonly List<IntVec3> potentialCells = new List<IntVec3>();
+        private static readonly List<IntVec3> potentialCells = new List<IntVec3>(256);
 
         private bool TryFindMiningLocation(Map map, out IntVec3 location)
         {
             DeepResourceGrid grid = map.deepResourceGrid;
-
-            // 全量扫描收集合格候选格
             potentialCells.Clear();
+
+            // 使用索引直接遍历避免IntVec3转换开销
             int cellCount = map.cellIndices.NumGridCells;
-            for (int i = 0; i < cellCount; i++)
+            
+            // 采样策略：每10个格子检查1个
+            int step = Mathf.Max(1, cellCount / 10000);
+            
+            for (int i = 0; i < cellCount; i += step)
             {
-                if (grid.CountAt(map.cellIndices.IndexToCell(i)) <= 0) continue;
                 IntVec3 cell = map.cellIndices.IndexToCell(i);
-                if (cell.Walkable(map) && !cell.Roofed(map) && cell.GetEdifice(map) == null)
-                    potentialCells.Add(cell);
+                
+                // 快速检查：先检查资源再检查其他条件
+                if (grid.CountAt(cell) <= 0) continue;
+                if (!cell.Walkable(map)) continue;
+                if (cell.Roofed(map)) continue;
+                if (cell.GetEdifice(map) != null) continue;
+                
+                potentialCells.Add(cell);
+                
+                // 找到足够候选就停止
+                if (potentialCells.Count >= 50) break;
+            }
+
+            // 如果采样没找到足够候选则全图扫描
+            if (potentialCells.Count < 10)
+            {
+                potentialCells.Clear();
+                for (int i = 0; i < cellCount; i++)
+                {
+                    IntVec3 cell = map.cellIndices.IndexToCell(i);
+                    if (grid.CountAt(cell) > 0 && cell.Walkable(map) && !cell.Roofed(map) && cell.GetEdifice(map) == null)
+                    {
+                        potentialCells.Add(cell);
+                    }
+                }
             }
 
             if (potentialCells.Count == 0)
@@ -195,7 +221,8 @@ namespace USAC
             }
 
             // 随机抽样验证放置可行性
-            for (int i = 0; i < 50; i++)
+            int maxAttempts = Mathf.Min(50, potentialCells.Count);
+            for (int i = 0; i < maxAttempts; i++)
             {
                 IntVec3 target = potentialCells.RandomElement();
                 if (CanPlaceMiningRig(map, target))

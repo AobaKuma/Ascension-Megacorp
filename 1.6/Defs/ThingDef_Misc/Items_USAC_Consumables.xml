@@ -164,7 +164,7 @@
     <workAmount>250</workAmount>
     <workSpeedStat>CookSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-    <soundWorking>Recipe_CookMealSimple</soundWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
     <workSkill>Cooking</workSkill>
     <allowMixingIngredients>false</allowMixingIngredients>
     <ingredients>
@@ -196,7 +196,7 @@
     <workAmount>900</workAmount>
     <workSpeedStat>CookSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
-    <soundWorking>Recipe_CookMealSimple</soundWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
     <workSkill>Cooking</workSkill>
     <allowMixingIngredients>false</allowMixingIngredients>
     <ingredients>

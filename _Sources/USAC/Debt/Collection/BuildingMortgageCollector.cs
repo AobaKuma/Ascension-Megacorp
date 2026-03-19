@@ -21,7 +21,7 @@ namespace USAC
             {
                 if (remaining <= 0) break;
                 remaining -= b.MarketValue;
-                SpawnGripper(b, map);
+                SpawnGripper(b, map, contract);
             }
 
             // 建筑不足时抓取高价物品补充
@@ -32,7 +32,7 @@ namespace USAC
                 {
                     if (remaining <= 0) break;
                     remaining -= item.MarketValue * item.stackCount;
-                    SpawnGripper(item, map);
+                    SpawnGripper(item, map, contract);
                 }
             }
 
@@ -71,11 +71,12 @@ namespace USAC
             return 1;
         }
 
-        private static void SpawnGripper(Thing target, Map map)
+        private static void SpawnGripper(Thing target, Map map, DebtContract contract)
         {
             var gripper = (Skyfaller_USACGripper)ThingMaker
                 .MakeThing(USAC_DefOf.USAC_GripperIncoming);
             gripper.SetTarget(target);
+            gripper.SetTargetContract(contract);
             GenSpawn.Spawn(gripper, target.Position, map);
         }
     }

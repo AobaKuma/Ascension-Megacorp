@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- 债务据点共用基础 -->
+  <SitePartDef Name="USAC_DebtSiteBase" Abstract="True">
+    <workerClass>SitePartWorker</workerClass>
+    <siteTexture>World/WorldObjects/USAC_Settlement</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/USAC_Icon</expandingIconTexture>
+    <tags>
+      <li>USAC_DebtSite</li>
+    </tags>
+    <requiresFaction>true</requiresFaction>
+  </SitePartDef>
+  
+  <SitePartDef ParentName="USAC_DebtSiteBase">
+    <defName>USAC_CommercialOutpost</defName>
+    <label>USAC commercial outpost</label>
+    <description>This outpost is selling intelligence and supplies to local pirates, centralizing their attacks against you to clear your debt.</description>
+    <selectionWeight>0</selectionWeight>
+  </SitePartDef>
+
+  <SitePartDef ParentName="USAC_DebtSiteBase">
+    <defName>USAC_ArtilleryPosition</defName>
+    <label>USAC artillery position</label>
+    <description>This outpost is selling artillery support. Most raids against your settlement will be accompanied by multiple rounds of creeping artillery bombardment.</description>
+    <selectionWeight>0</selectionWeight>
+  </SitePartDef>
+
+  <SitePartDef ParentName="USAC_DebtSiteBase">
+    <defName>USAC_Airbase</defName>
+    <label>USAC temporary airbase</label>
+    <description>This outpost offers airstrike services. Most raids against your settlement will consider purchasing smart bombs and EMP bombardments.</description>
+    <selectionWeight>0</selectionWeight>
+  </SitePartDef>
+
+  <!-- 债务据点专用 WorldObjectDef，用于挂载逻辑组件 -->
+  <WorldObjectDef ParentName="Site">
+    <defName>USAC_DebtSite</defName>
+    <label>debt management site</label>
+    <description>A site established by USAC to manage your debt through local "services".</description>
+    <texture>World/WorldObjects/USAC_Settlement</texture>
+    <expandingIconTexture>World/WorldObjects/Expanding/USAC_Icon</expandingIconTexture>
+    <comps>
+      <!-- 针对商业据点的袭击组件 -->
+      <li Class="Fortified.WorldObjectCompProperties_PeriodicRaid">
+        <daysBetweenRaids>2~4</daysBetweenRaids>
+        <pointsFactor>1.2</pointsFactor>
+        <letterLabel>USAC_DebtSite_CommercialRaid</letterLabel>
+        <letterText>USAC_DebtSite_CommercialRaid_Desc</letterText>
+        <requiresAnySitePart>
+          <li>USAC_CommercialOutpost</li>
+        </requiresAnySitePart>
+      </li>
+      <!-- 针对火炮据点和空军基地的空中支援组件 -->
+      <li Class="Fortified.WorldObjectCompProperties_PeriodicAirSupport">
+        <vanillaBombardmentDef>Bullet_Shell_HighExplosive</vanillaBombardmentDef>
+        <strikePattern>Creeping</strikePattern>
+        <strikeCycles>3</strikeCycles>
+        <wavesPerStrike>3</wavesPerStrike>
+        <projectilesPerStrike>12</projectilesPerStrike>
+        <strikeIntervalTicks>2700</strikeIntervalTicks>
+        <spreadRadius>18</spreadRadius>
+        <creepingStep>8</creepingStep>
+        <waveIntervalTicks>5</waveIntervalTicks>
+        <ticksBetweenStrikes>0~0</ticksBetweenStrikes>
+        <requireActiveThreat>true</requireActiveThreat>
+        <triggerChance>0.8</triggerChance>  <!-- 80% 概率此次袭击购买了炮击服务 -->
+        <successChance>1.0</successChance>  <!-- 购买后每轮打击 100% 执行 -->
+        <messageText>USAC_DebtSite_ArtilleryStrike</messageText>
+        <letterLabel>USAC_ArtillerySupport_LetterLabel</letterLabel>
+        <letterText>USAC_ArtillerySupport_LetterText</letterText>
+        <requiresAnySitePart>
+          <li>USAC_ArtilleryPosition</li>
+        </requiresAnySitePart>
+      </li>
+      <li Class="Fortified.WorldObjectCompProperties_PeriodicAirSupport">
+        <!-- 空袭模式池：每次袭击随机选择一种执行 -->
+        <airSupportPool>
+          <li>
+            <airSupportDef>USAC_StrafingRun</airSupportDef>
+            <weight>1</weight>  <!-- 导弹扫射 50% -->
+          </li>
+          <li>
+            <airSupportDef>USAC_EMPStrike</airSupportDef>
+            <weight>1</weight>  <!-- EMP电磁压制 50% -->
+          </li>
+        </airSupportPool>
+        <!-- 目标优先级：先打发电网，再打机兵聚集，最后兜底跟随敌军 -->
+        <targetPriorities>
+          <li>PowerGrid</li>
+          <li>MechConcentration</li>
+          <li>Auto</li>
+        </targetPriorities>
+        <coordinationHoldTicks>1200</coordinationHoldTicks>
+        <strikeCycles>2</strikeCycles>
+        <strikeIntervalTicks>3600</strikeIntervalTicks>
+        <requireActiveThreat>true</requireActiveThreat>
+        <triggerChance>0.5</triggerChance>  <!-- 50% 概率购买了空袭服务 -->
+        <successChance>1.0</successChance>
+        <messageText>USAC_DebtSite_AirStrike</messageText>
+        <letterLabel>USAC_AirbaseSupport_LetterLabel</letterLabel>
+        <letterText>USAC_AirbaseSupport_LetterText</letterText>
+        <requiresAnySitePart>
+          <li>USAC_Airbase</li>
+        </requiresAnySitePart>
+      </li>
+    </comps>
+  </WorldObjectDef>
+
+</Defs>

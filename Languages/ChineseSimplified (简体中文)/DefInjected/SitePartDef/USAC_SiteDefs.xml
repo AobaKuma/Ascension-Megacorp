@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
   
-  <!-- EN: outpost -->
-  <USAC_NeutralOutpost.label>前哨站</USAC_NeutralOutpost.label>
-  <!-- EN: an outpost -->
-  <USAC_NeutralOutpost.description>一个前哨站</USAC_NeutralOutpost.description>
-  <!-- EN: Attacking {0}. -->
-  <USAC_NeutralOutpost.approachingReportString>正在突击{0}</USAC_NeutralOutpost.approachingReportString>
-  <!-- EN: Attack {0} -->
-  <USAC_NeutralOutpost.approachOrderString>突击{0}</USAC_NeutralOutpost.approachOrderString>
-  <!-- EN: There is an enemy outpost in this area. -->
-  <USAC_NeutralOutpost.arrivedLetter>这片区域存在一个前哨站。</USAC_NeutralOutpost.arrivedLetter>
+  <USAC_CommercialOutpost.label>USAC 区域补给站</USAC_CommercialOutpost.label>
+  <USAC_CommercialOutpost.description>该据点是 USAC 在该地区的物流枢纽之一，致力于通过向第三方合作伙伴提供物资补给与战术数据支撑以确保其在该星区的商业利益。这导致原本分散的本地武装力量往往能够获得更具效率的协调。这种部署行为的背景通常源于 USAC 边疆商业计划……或者由于您的债务。</USAC_CommercialOutpost.description>
+
+  <USAC_ArtilleryPosition.label>USAC 远程服务站点</USAC_ArtilleryPosition.label>
+  <USAC_ArtilleryPosition.description>该站点负责处理该区域的远程安全外包服务。它允许本地其他活跃实体购买精准的校准引导与火力覆盖，以实现其各自的战术目标。大多数针对您定居点的第三方行动现在都倾向于订购此类修正方案。其部署背景可能源于 USAC 边疆商业计划……或者由于您的债务。</USAC_ArtilleryPosition.description>
+
+  <USAC_Airbase.label>USAC 飞行转运节点</USAC_Airbase.label>
+  <USAC_Airbase.description>该节点是 USAC 边疆航空网络的重要组成部分，提供灵活的战术投放与环境干预服务。通过向周边合作伙伴开放高级弹药的采购权限，该节点能极大地提高区域内武装冲突的效率。这种服务的持续存在可能涉及 USAC 边疆商业计划……或者由于您的债务。</USAC_Airbase.description>
   
 </LanguageData>

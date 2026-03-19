@@ -6,7 +6,7 @@ using Verse;
 
 namespace USAC
 {
-    // 優先抓取抵押建築對象
+    // 抵押建筑收缴策略
     public class WholeMortgageCollector : ICollectionStrategy
     {
         public float Execute(Map map, float targetAmount,
@@ -17,11 +17,11 @@ namespace USAC
             float remaining = targetAmount;
             var candidates = BuildCandidateList(map, contract);
 
-            foreach (var t in candidates)
+            for (int i = 0; i < candidates.Count && remaining > 0; i++)
             {
-                if (remaining <= 0) break;
+                var t = candidates[i];
                 remaining -= t.MarketValue * t.stackCount;
-                SpawnGripperForTarget(t, map);
+                SpawnGripperForTarget(t, map, contract);
             }
 
             return targetAmount - remaining;
@@ -33,51 +33,93 @@ namespace USAC
         {
             var result = new List<Thing>();
 
-            // 檢索高價值受控物品區域
-            result.AddRange(
-                map.listerThings.AllThings
-                    .Where(t => t is not Pawn && t is not Building
-                        && t.MarketValue * t.stackCount >= 300f
-                        && t.Spawned
-                        && !t.def.IsCorpse && !t.def.IsBlueprint && !t.def.IsFrame
-                        && t.def.defName != "USAC_Bond"
-                        && (map.areaManager.Home[t.Position] || t.IsInAnyStorage()))
-                    .OrderBy(t => GetRoofPriority(t.Position, map))
-                    .ThenByDescending(t => t.MarketValue));
+            // 高价值物品区域
+            var allThings = map.listerThings.AllThings;
+            for (int i = 0; i < allThings.Count; i++)
+            {
+                var t = allThings[i];
+                if (t is Pawn || t is Building) continue;
+                if (t.MarketValue * t.stackCount < 300f) continue;
+                if (!t.Spawned || t.def.IsCorpse || t.def.IsBlueprint || t.def.IsFrame) continue;
+                if (t.def.defName == "USAC_Bond") continue;
+                if (!map.areaManager.Home[t.Position] && !t.IsInAnyStorage()) continue;
+                
+                result.Add(t);
+            }
 
-            // 檢索指定低價值建築對象
-            result.AddRange(
-                map.listerThings.AllThings
-                    .OfType<Building>()
-                    .Where(b => b.Faction == Faction.OfPlayer
-                        && b.MarketValue >= 300f && b.Spawned
-                        && !b.def.IsBlueprint && !b.def.IsFrame)
-                    .OrderBy(b => GetRoofPriority(b.Position, map))
-                    .ThenByDescending(b => b.MarketValue));
+            // 按屋顶优先级和价值排序
+            result.Sort((a, b) =>
+            {
+                int roofCompare = GetRoofPriority(a.Position, map).CompareTo(GetRoofPriority(b.Position, map));
+                if (roofCompare != 0) return roofCompare;
+                return b.MarketValue.CompareTo(a.MarketValue);
+            });
 
-            // 檢索合適囚犯與奴隸對象
-            result.AddRange(
-                map.mapPawns.AllPawnsSpawned
-                    .Where(p => p.Faction == Faction.OfPlayer
-                        && (p.IsPrisoner || p.IsSlave) && !p.Dead
-                        && !IsUnderThickRoof(p.Position, map)));
+            // 玩家建筑对象
+            var buildings = map.listerThings.AllThings;
+            var buildingCandidates = new List<Building>();
+            for (int i = 0; i < buildings.Count; i++)
+            {
+                if (buildings[i] is Building b && 
+                    b.Faction == Faction.OfPlayer &&
+                    b.MarketValue >= 300f && b.Spawned &&
+                    !b.def.IsBlueprint && !b.def.IsFrame)
+                {
+                    buildingCandidates.Add(b);
+                }
+            }
 
-            // 檢索地圖活動機兵對象
-            result.AddRange(
-                map.mapPawns.AllPawnsSpawned
-                    .Where(p => p.Faction == Faction.OfPlayer
-                        && p.RaceProps.IsMechanoid && !p.Dead
-                        && !IsUnderThickRoof(p.Position, map)));
+            buildingCandidates.Sort((a, b) =>
+            {
+                int roofCompare = GetRoofPriority(a.Position, map).CompareTo(GetRoofPriority(b.Position, map));
+                if (roofCompare != 0) return roofCompare;
+                return b.MarketValue.CompareTo(a.MarketValue);
+            });
+            
+            result.AddRange(buildingCandidates);
 
-            // 判斷並抓取本地殖民者對象
+            // 囚犯与奴隶对象
+            var allPawns = map.mapPawns.AllPawnsSpawned;
+            for (int i = 0; i < allPawns.Count; i++)
+            {
+                var p = allPawns[i];
+                if (p.Faction == Faction.OfPlayer &&
+                    (p.IsPrisoner || p.IsSlave) && !p.Dead &&
+                    !IsUnderThickRoof(p.Position, map))
+                {
+                    result.Add(p);
+                }
+            }
+
+            // 机兵对象
+            for (int i = 0; i < allPawns.Count; i++)
+            {
+                var p = allPawns[i];
+                if (p.Faction == Faction.OfPlayer &&
+                    p.RaceProps.IsMechanoid && !p.Dead &&
+                    !IsUnderThickRoof(p.Position, map))
+                {
+                    result.Add(p);
+                }
+            }
+
+            // 殖民者对象
             if (contract.MissedPayments >= 3)
             {
-                result.AddRange(
-                    map.mapPawns.AllPawnsSpawned
-                        .Where(p => p.IsColonist && !p.Dead
-                            && !p.IsPrisoner && !p.IsSlave
-                            && !IsUnderThickRoof(p.Position, map))
-                        .OrderByDescending(p => p.MarketValue));
+                var colonists = new List<Pawn>();
+                for (int i = 0; i < allPawns.Count; i++)
+                {
+                    var p = allPawns[i];
+                    if (p.IsColonist && !p.Dead &&
+                        !p.IsPrisoner && !p.IsSlave &&
+                        !IsUnderThickRoof(p.Position, map))
+                    {
+                        colonists.Add(p);
+                    }
+                }
+                
+                colonists.Sort((a, b) => b.MarketValue.CompareTo(a.MarketValue));
+                result.AddRange(colonists);
             }
 
             return result;
@@ -100,39 +142,39 @@ namespace USAC
         #endregion
 
         #region 夹具派遣
-        // 根据目标屋顶情况决定派遣策略
-        protected static void SpawnGripperForTarget(Thing target, Map map)
+        // 根据屋顶情况派遣策略
+        protected static void SpawnGripperForTarget(Thing target, Map map, DebtContract contract)
         {
             if (!target.Spawned) return;
             if (IsUnderThickRoof(target.Position, map))
-                SpawnDrillThenGripper(target, map);
+                SpawnDrillThenGripper(target, map, contract);
             else
-                SpawnGripper(target, map);
+                SpawnGripper(target, map, contract);
         }
 
-        // 派遣夹具并破拆
-        protected static void SpawnGripper(Thing target, Map map)
+        // 派遣夹具
+        protected static void SpawnGripper(Thing target, Map map, DebtContract contract)
         {
             var gripper = (Skyfaller_USACGripper)ThingMaker.MakeThing(
                 USAC_DefOf.USAC_GripperIncoming);
             gripper.SetTarget(target);
+            gripper.SetTargetContract(contract);
             GenSpawn.Spawn(gripper, target.Position, map);
         }
 
         // 发射破拆弹及夹具
-        protected static void SpawnDrillThenGripper(Thing target, Map map)
+        protected static void SpawnDrillThenGripper(Thing target, Map map, DebtContract contract)
         {
             IntVec3 targetPos = target.Position;
-            // 说明坐标系轴向
-            // 设置俯冲投射起点
+            // 俯冲投射起点
             Vector3 origin = targetPos.ToVector3();
-            origin.z += 100f; // 高空俯冲定位
+            origin.z += 100f; // 高空俯冲
 
             var proj = (Projectile_USACDrillShell)GenSpawn.Spawn(
                 USAC_DefOf.USAC_DrillShellProjectile, targetPos, map);
 
-            proj.SetPayload(target);
-            // 目标点锁定在物体的实际地面坐标
+            proj.SetPayload(target, contract);
+            // 目标点锁定
             proj.Launch(null, origin, targetPos, targetPos, ProjectileHitFlags.IntendedTarget);
         }
         #endregion

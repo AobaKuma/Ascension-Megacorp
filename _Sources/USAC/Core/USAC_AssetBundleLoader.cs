@@ -29,7 +29,7 @@ namespace USAC
         {
             try
             {
-                // 根据当前运行平台选择对应 bundle 文件名
+                // 选择平台bundle文件名
                 string bundleName = GetPlatformBundleName();
                 AssetBundle bundle = FindBundle(bundleName);
 
@@ -77,7 +77,7 @@ namespace USAC
 
         #region 工具方法
 
-        // 返回当前平台对应的 bundle 文件名
+        // 返回平台bundle文件名
         private static string GetPlatformBundleName()
         {
             switch (Application.platform)

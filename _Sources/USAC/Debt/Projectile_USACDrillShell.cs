@@ -11,12 +11,16 @@ namespace USAC
         #region 字段
         private bool impactsHandled = false;
         private Thing payloadTarget;
+        private int contractIndex = -1;
         #endregion
 
         #region 生命周期
-        public void SetPayload(Thing target)
+        public void SetPayload(Thing target, DebtContract contract)
         {
             payloadTarget = target;
+            var comp = GameComponent_USACDebt.Instance;
+            if (comp != null && contract != null)
+                contractIndex = comp.ActiveContracts.IndexOf(contract);
         }
 
         protected override void ImpactSomething()
@@ -110,6 +114,12 @@ namespace USAC
         {
             var gripper = (Skyfaller_USACGripper)ThingMaker.MakeThing(USAC_DefOf.USAC_GripperIncoming);
             gripper.SetTarget(target);
+            
+            // 恢复合约关联
+            var comp = GameComponent_USACDebt.Instance;
+            if (comp != null && contractIndex >= 0 && contractIndex < comp.ActiveContracts.Count)
+                gripper.SetTargetContract(comp.ActiveContracts[contractIndex]);
+
             GenSpawn.Spawn(gripper, target.Position, map);
         }
         #endregion
@@ -120,6 +130,7 @@ namespace USAC
             base.ExposeData();
             Scribe_References.Look(ref payloadTarget, "payloadTarget");
             Scribe_Values.Look(ref impactsHandled, "impactsHandled");
+            Scribe_Values.Look(ref contractIndex, "contractIndex", -1);
         }
         #endregion
     }

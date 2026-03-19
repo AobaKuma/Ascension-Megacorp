@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-  
-  <!-- UNUSED -->
   <USAC.UI.Back>&lt; BACK</USAC.UI.Back>
   <USAC.UI.Credits>CREDITS</USAC.UI.Credits>
   <USAC.UI.Home.Title>STRATEGIC_OVERVIEW // 战略概览</USAC.UI.Home.Title>
   <USAC.UI.Home.Banner>UNITED STELLAR ARMAMENT COMPANY\n[CORPORATE_INTRANET_V4.2]</USAC.UI.Home.Banner>
   <USAC.UI.Home.Slogan>DEFINING THE FUTURE OF PLANETARY SECURITY</USAC.UI.Home.Slogan>
-  <USAC.UI.Home.Description>USAC 是星际资源垄断与武装贸易的领导者。我们通过轨道结算网络，确保资产的绝对流动性。</USAC.UI.Home.Description>
+  <USAC.UI.Home.Description>USAC是星际资源开发与贸易的领导者。我们通过轨道结算网络，确保资产的绝对流动性。</USAC.UI.Home.Description>
   <USAC.UI.Home.Bento.Products.Title>ARMORY_CATALOG</USAC.UI.Home.Bento.Products.Title>
   <USAC.UI.Home.Bento.Products.Desc>授权武器与机兵系统目录</USAC.UI.Home.Bento.Products.Desc>
   <USAC.UI.Home.Bento.Assets.Title>FINANCIAL_TERMINAL</USAC.UI.Home.Bento.Assets.Title>
@@ -45,8 +43,8 @@
   <USAC.UI.Assets.SyncStatus>正在实时同步轨道结算网络数据库...</USAC.UI.Assets.SyncStatus>
   <USAC.UI.Assets.CreditLevel>当前信用等级: [UNREGISTERED / NONE]</USAC.UI.Assets.CreditLevel>
   <USAC.UI.Assets.NoAgreement>警告: 尚未建立合法的资产抵押协议</USAC.UI.Assets.NoAgreement>
-  <USAC.UI.Assets.CreditScore>信用分: {0}</USAC.UI.Assets.CreditScore>
-  <USAC.UI.Assets.TotalDebt>总计负债: ₿{0}</USAC.UI.Assets.TotalDebt>
+  <USAC.UI.Assets.CreditScore>CREDIT_SCORE // 信用评分: {0}</USAC.UI.Assets.CreditScore>
+  <USAC.UI.Assets.TotalDebt>OUTSTANDING_BALANCE // 待结算总额: ₿{0}</USAC.UI.Assets.TotalDebt>
   <USAC.UI.Assets.ActiveContracts>ACTIVE_CONTRACTS // 活动合同</USAC.UI.Assets.ActiveContracts>
   <USAC.UI.Assets.Apply.Title>RISK_PRICING_APPLICATION // 风险定价申请</USAC.UI.Assets.Apply.Title>
   <USAC.UI.Assets.InterestRate>基础方案利率</USAC.UI.Assets.InterestRate>
@@ -55,7 +53,7 @@
   <USAC.UI.Assets.Stat.ActualInterest>实际执行利率</USAC.UI.Assets.Stat.ActualInterest>
   <USAC.UI.Assets.Stat.CreditDiscount>信用折扣优惠</USAC.UI.Assets.Stat.CreditDiscount>
   <USAC.UI.Assets.Apply.Confirm>确认签署合同</USAC.UI.Assets.Apply.Confirm>
-  <USAC.UI.Assets.Apply.Warning>警告: 您正在通过提高利率与风险费率来换取更高的授信。一旦签署，USAC 轨道徵收系统将严格执行合同，任何欠缴将导致资产保全行动。</USAC.UI.Assets.Apply.Warning>
+  <USAC.UI.Assets.Apply.Warning>警告: 您正在通过提高利率方案换取授信。请知悉，一旦签署，债务管理部门将介入资产的实时评估。任何违约行为都将导致系统自动执行预设的风险对冲程序，其后果往往是不可逆且无法干预的。</USAC.UI.Assets.Apply.Warning>
   <USAC.UI.Assets.NextSettlement>距结算</USAC.UI.Assets.NextSettlement>
   <USAC.UI.Assets.MissedWarning>⚠ 已欠缴 {0} 次！再次欠缴将触发强制徵收！</USAC.UI.Assets.MissedWarning>
   <USAC.UI.Assets.Cycle>每周期</USAC.UI.Assets.Cycle>
@@ -103,20 +101,20 @@
   <USAC.UI.Legal.Title>LEGAL_COMPLIANCE // 法律合规</USAC.UI.Legal.Title>
   <USAC.UI.Legal.Ordinance>COLLECTION_ORDINANCE_V1.1 // 徵收条例</USAC.UI.Legal.Ordinance>
   <USAC.UI.Legal.Clause01.Title>条款 01: 资产优先权</USAC.UI.Legal.Clause01.Title>
-  <USAC.UI.Legal.Clause01.Desc>在任何违约情况下，USAC 拥有对本地所有物质资产的绝对优先回收权。</USAC.UI.Legal.Clause01.Desc>
+  <USAC.UI.Legal.Clause01.Desc>在任何违约情况下，USAC拥有对本地所有物质资产的绝对优先回收权。</USAC.UI.Legal.Clause01.Desc>
   <USAC.UI.Legal.Clause02.Title>条款 02: 自动化执行</USAC.UI.Legal.Clause02.Title>
   <USAC.UI.Legal.Clause02.Desc>回收过程由轨道平台自动引导，不接受任何形式的人工辩护或延期申请。</USAC.UI.Legal.Clause02.Desc>
-  <USAC.UI.Legal.Footer>警告：点击进入本门户即代表您已默认并签署了上述所有协议。USAC资产回收部门不对回收过程中的意外平民伤亡或次生伤害负责。</USAC.UI.Legal.Footer>
-  <USAC_PaymentSuccess>[USAC] {0} 核销完成，信用评分已上调。</USAC_PaymentSuccess>
-  <USAC_InsufficientBonds>[USAC] 支付失败：轨道卫星未在该区域信标范围内检测到足够的信用债券。</USAC_InsufficientBonds>
-  <USAC_LoanApproved>[USAC] 合同签署成功：{0} 资产已通过轨道投放投递至贸易信标附近。</USAC_LoanApproved>
-  <USAC_FunctionInProgress>[USAC] 访问受限：该功能模块正在升级，或者您的信用等级尚未解锁此权限。</USAC_FunctionInProgress>
+  <USAC.UI.Legal.Footer>警告：访问本门户即代表您已默认并签署了上述所有协议。债务管理部门仅负责资产价值的强制性归位，不对回收路径上的任何环境阻碍或附带损坏承担责任。</USAC.UI.Legal.Footer>
+  <USAC_PaymentSuccess>[USAC]{0}核销完成，信用评分已上调。</USAC_PaymentSuccess>
+  <USAC_InsufficientBonds>[USAC]支付失败：轨道卫星未在该区域信标范围内检测到足够的信用债券。</USAC_InsufficientBonds>
+  <USAC_LoanApproved>[USAC]合同签署成功：{0}资产已通过轨道投放投递至贸易信标附近。</USAC_LoanApproved>
+  <USAC_FunctionInProgress>[USAC]访问受限：该功能模块正在升级，或者您的信用等级尚未解锁此权限。</USAC_FunctionInProgress>
   <USAC.UI.Error.404.Title>CONNECTION_LOST // 连接中断</USAC.UI.Error.404.Title>
-  <USAC.UI.Error.404.Text>请求的资源未在 USAC 内网中注册，或者您的访问权限已被剥夺。</USAC.UI.Error.404.Text>
+  <USAC.UI.Error.404.Text>请求的资源未在USAC内网中注册，或者您的访问权限已被剥夺。</USAC.UI.Error.404.Text>
   <USAC.UI.Error.ProductNotFound>错误: 找不到指定产品</USAC.UI.Error.ProductNotFound>
   <USAC.UI.Services.Title>CORPORATE_SERVICES // 企业服务</USAC.UI.Services.Title>
   <USAC.UI.Services.Lease.Title>LEASE_SERVICES // 租赁服务</USAC.UI.Services.Lease.Title>
-  <USAC.UI.Services.Lease.Desc>USAC 资产租赁方案。由轨道平台投送重型突击采矿机至指定区域。1,000信用点/24小时作业周期。支持动态周期配置与自动续期功能。</USAC.UI.Services.Lease.Desc>
+  <USAC.UI.Services.Lease.Desc>USAC资产租赁方案。由轨道平台投送重型突击采矿机至指定区域。1,000信用点/24小时作业周期。支持动态周期配置与自动续期功能。</USAC.UI.Services.Lease.Desc>
   <USAC.UI.Services.Lease.Days>初始租赁时长：{0} 天</USAC.UI.Services.Lease.Days>
   <USAC.UI.Services.Lease.Btn>启动租赁方案</USAC.UI.Services.Lease.Btn>
   <USAC_ActiveRigs>资产部署监控 // 投送中矿机</USAC_ActiveRigs>
@@ -127,44 +125,46 @@
   <USAC.UI.Services.Renewal.Header>已登记的临时带宽链接</USAC.UI.Services.Renewal.Header>
   <USAC.UI.Services.Renewal.NoMechnitor>未检测到受控范围内的临时机控带宽链接。</USAC.UI.Services.Renewal.NoMechnitor>
   <USAC.UI.Services.Renewal.Remaining>剩余链路时长: {0}</USAC.UI.Services.Renewal.Remaining>
-  <USAC.Debt.LeaseDrill>USAC轨道突击钻机租赁费用</USAC.Debt.LeaseDrill>
-  <USAC.Debt.Renewal>{0} 的临时带宽链路续期费用</USAC.Debt.Renewal>
-  <USAC.Message.Renewed>[USAC] 续期成功：已为 {0} 续订 30 周期带宽链路。</USAC.Message.Renewed>
-  <USAC.Message.AutoRenewed>[USAC] 自动续期：已自动为 {0} 续订 30 周期链路时长。</USAC.Message.AutoRenewed>
-  <USAC.Message.AutoRenewFailed>[USAC] 续期中止：因信标范围内债券余额不足，已停用 {0} 的自动续订服务。</USAC.Message.AutoRenewFailed>
-  <USAC.Message.InsufficientBonds>[USAC] 支付失败：贸易信标范围内储备的信用债券不足。</USAC.Message.InsufficientBonds>
-  <USAC.Message.InsufficientBondsForLease>[USAC] 租赁中止：当前储备的信用债券不足以支持选定的起始租赁时长。</USAC.Message.InsufficientBondsForLease>
-  <USAC.Message.LeaseAutoRenewed>[USAC] 自动续签：已通过轨道结算网络为采矿机续订了 24 小时的部署时长。</USAC.Message.LeaseAutoRenewed>
-  <USAC.Message.LeaseAutoRenewFailed>[USAC] 续签失败：因轨道信标附近债券储备不足，已停用该采矿机的自动续期功能并将按期回收。</USAC.Message.LeaseAutoRenewFailed>
+  <USAC.Settings.CategoryName>Ascension Megacorp</USAC.Settings.CategoryName>
+  <USAC.Settings.ResetAgreement>清空并重置服务协议弹出状态</USAC.Settings.ResetAgreement>
+  <USAC.Settings.ResetAgreementSuccess>已重置协议处理记录。下次贸易将重新弹出服务协议说明。</USAC.Settings.ResetAgreementSuccess>
+  <USAC.Settings.ResetAgreementDesc>此操作将强制系统在下一次访问 USAC 终端前重新要求您进行合规性署名，不会影响已生效的资产协议。</USAC.Settings.ResetAgreementDesc>
+  <USAC.Message.Renewed>[USAC]续期成功：已为 {0} 续订 30 周期带宽链路。</USAC.Message.Renewed>
+  <USAC.Message.AutoRenewed>[USAC]自动续期：已自动为 {0} 续订 30 周期链路时长。</USAC.Message.AutoRenewed>
+  <USAC.Message.AutoRenewFailed>[USAC]续期中止：因信标范围内债券余额不足，已停用 {0} 的自动续订服务。</USAC.Message.AutoRenewFailed>
+  <USAC.Message.InsufficientBonds>[USAC]支付失败：贸易信标范围内储备的信用债券不足。</USAC.Message.InsufficientBonds>
+  <USAC.Message.InsufficientBondsForLease>[USAC]租赁中止：当前储备的信用债券不足以支持选定的起始租赁时长。</USAC.Message.InsufficientBondsForLease>
+  <USAC.Message.LeaseAutoRenewed>[USAC]自动续签：已通过轨道结算网络为采矿机续订了 24 小时的部署时长。</USAC.Message.LeaseAutoRenewed>
+  <USAC.Message.LeaseAutoRenewFailed>[USAC]续签失败：因轨道信标附近债券储备不足，已停用该采矿机的自动续期功能并将按期回收。</USAC.Message.LeaseAutoRenewFailed>
   <USAC_LeaseDurationLeft>租期剩余时间: {0}</USAC_LeaseDurationLeft>
   <USAC.UI.Drill.EmptyMinerals>清空矿仓</USAC.UI.Drill.EmptyMinerals>
-  <USAC.UI.Drill.EmptyMinerals.Desc>手动将已采集的矿物从密封舱中弹出。注意：如果在撤离前未清空，USAC 轨道平台将直接回收所有机内物资。</USAC.UI.Drill.EmptyMinerals.Desc>
+  <USAC.UI.Drill.EmptyMinerals.Desc>手动将已采集的矿物从密封舱中弹出。注意：如果在撤离前未清空，USAC轨道平台将直接回收所有机内物资。</USAC.UI.Drill.EmptyMinerals.Desc>
 
   <!-- 轨道商船呼叫服务 -->
   <USAC.UI.Services.Trader.Title>ORBITAL_TRADE_REQUEST // 商船呼叫</USAC.UI.Services.Trader.Title>
-  <USAC.UI.Services.Trader.Desc>通过轨道结算网络发送优先交易请求。USAC 轨道商船将于约一小时后抵达该区域。</USAC.UI.Services.Trader.Desc>
+  <USAC.UI.Services.Trader.Desc>通过轨道结算网络发送优先交易请求。USAC轨道商船将于约一小时后抵达该区域。</USAC.UI.Services.Trader.Desc>
   <USAC.UI.Services.Trader.Btn>发送呼叫请求</USAC.UI.Services.Trader.Btn>
   <USAC.UI.Services.Trader.Pending>商船已在途中</USAC.UI.Services.Trader.Pending>
   <USAC.UI.Services.Trader.Status.Title>ORBITAL_INBOUND // 商船抵达状态</USAC.UI.Services.Trader.Status.Title>
   <USAC.UI.Services.Trader.Status.ETA>预计到达：{0}</USAC.UI.Services.Trader.Status.ETA>
-  <USAC.UI.Services.Trader.Status.Desc>USAC 轨道商船正在抵达中</USAC.UI.Services.Trader.Status.Desc>
-  <USAC.Message.TraderCalled>[USAC] 请求已受理：USAC 轨道商船正在赶往您的位置，预计约一小时后抵达。</USAC.Message.TraderCalled>
-  <USAC.Message.TraderArrived>[USAC] 轨道商船已就位：USAC 轨道商船现在可供交易。</USAC.Message.TraderArrived>
-  <USAC.Alert.DebtRepayment.Label>USAC 债务结算</USAC.Alert.DebtRepayment.Label>
-  <USAC.Alert.DebtRepayment.LabelWithTime>USAC 结算：{0}天（{1}笔）</USAC.Alert.DebtRepayment.LabelWithTime>
+  <USAC.UI.Services.Trader.Status.Desc>USAC轨道商船正在抵达中</USAC.UI.Services.Trader.Status.Desc>
+  <USAC.Message.TraderCalled>[USAC] 请求已受理：USAC轨道商船正在赶往您的位置，预计约一小时后抵达。</USAC.Message.TraderCalled>
+  <USAC.Message.TraderArrived>[USAC] 轨道商船已就位：USAC轨道商船现在可供交易。</USAC.Message.TraderArrived>
+  <USAC.Alert.DebtRepayment.Label>USAC债务结算</USAC.Alert.DebtRepayment.Label>
+  <USAC.Alert.DebtRepayment.LabelWithTime>USAC结算：{0}天（{1}笔）</USAC.Alert.DebtRepayment.LabelWithTime>
   <USAC.Alert.DebtRepayment.Explanation.Header>信用评分：{0}\n信标范围债券：{1}张\n\n</USAC.Alert.DebtRepayment.Explanation.Header>
   <USAC.Alert.DebtRepayment.Explanation.ContractEntry>▸ {0}\n  本金：₿{1}  预估利息：₿{2}\n  到期：{3}天  欠缴：{4}次\n\n</USAC.Alert.DebtRepayment.Explanation.ContractEntry>
-  <USAC.Alert.DebtRepayment.Explanation.ImminentWarning>⚠ 最近合同即将到期！请准备足够 USAC 债券。</USAC.Alert.DebtRepayment.Explanation.ImminentWarning>
+  <USAC.Alert.DebtRepayment.Explanation.ImminentWarning>⚠ 最近合同即将到期！请准备足够USAC债券。</USAC.Alert.DebtRepayment.Explanation.ImminentWarning>
   <USAC.Debt.Dialog.Repayment.Text>[USAC 金融节点] {0}审计完成\n\n本期应付利息：₿{1}（需 {2} 张债券）\n当前合同本金：₿{3}\n累计欠缴：{4} 次\n\n请确认是否使用贸易信标范围内的“USAC信用债券”进行核销。\n</USAC.Debt.Dialog.Repayment.Text>
-  <USAC.Debt.Dialog.Repayment.Warning>⚠ 再次欠缴将触发强制征收程序！</USAC.Debt.Dialog.Repayment.Warning>
+  <USAC.Debt.Dialog.Repayment.Warning>⚠ 再次违约将导致信用评估系统判定常规回收失效，进而转入自动化资产保全程序。</USAC.Debt.Dialog.Repayment.Warning>
   <USAC.Debt.Dialog.Repayment.Option.Pay>执行核销（使用债券）</USAC.Debt.Dialog.Repayment.Option.Pay>
   <USAC.Debt.Dialog.Repayment.Option.Refuse>无力偿还/拒绝</USAC.Debt.Dialog.Repayment.Option.Refuse>
-  <USAC.Debt.Dialog.Repayment.Title>USAC {0}结算</USAC.Debt.Dialog.Repayment.Title>
-  <USAC.Debt.Message.InterestPaid>[USAC] {0} 利息缴纳完成</USAC.Debt.Message.InterestPaid>
-  <USAC.Debt.Message.ForceCollectPausedByShield>[USAC] 目标殖民地处于轨道屏蔽区域，强制征收程序已暂缓。</USAC.Debt.Message.ForceCollectPausedByShield>
+  <USAC.Debt.Dialog.Repayment.Title>USAC{0}结算</USAC.Debt.Dialog.Repayment.Title>
+  <USAC.Debt.Message.InterestPaid>[USAC]{0}利息缴纳完成</USAC.Debt.Message.InterestPaid>
+  <USAC.Debt.Message.ForceCollectPausedByShield>[USAC]目标殖民地处于轨道屏蔽区域，强制征收程序已暂缓。</USAC.Debt.Message.ForceCollectPausedByShield>
   <USAC.Debt.Transaction.ForceCollect>{0} 强制征收（第 {1} 次）</USAC.Debt.Transaction.ForceCollect>
   <USAC.Debt.Transaction.SignContract>签署 {0} 合同</USAC.Debt.Transaction.SignContract>
-  <USAC.Debt.Log.LegacyMigrated>[USAC] 已迁移旧版债务数据至新合同系统</USAC.Debt.Log.LegacyMigrated>
+  <USAC.Debt.Log.LegacyMigrated>[USAC]已迁移旧版债务数据至新合同系统</USAC.Debt.Log.LegacyMigrated>
   <USAC.Debt.Type.WholeMortgage>整体抵押贷款</USAC.Debt.Type.WholeMortgage>
   <USAC.Debt.Type.DynamicLoan>动态信贷</USAC.Debt.Type.DynamicLoan>
   <USAC.Debt.Type.Unknown>未知合同</USAC.Debt.Type.Unknown>
@@ -180,21 +180,159 @@
   <USAC.Debt.Message.ContractSettled>[USAC] {0} 已结清！</USAC.Debt.Message.ContractSettled>
   <USAC.Debt.GrowthMode.WealthBase>财富基准</USAC.Debt.GrowthMode.WealthBase>
   <USAC.Debt.GrowthMode.PrincipalBase>本金基准</USAC.Debt.GrowthMode.PrincipalBase>
-  <USAC.Debt.ScenPart.Summary>USAC {0}：₿{1}\n周期增长：{2}%（{3}）\n周期利率：{4}%</USAC.Debt.ScenPart.Summary>
-  <USAC.Debt.ScenPart.InitialDebt>初始债务本金： </USAC.Debt.ScenPart.InitialDebt>
-  <USAC.Debt.ScenPart.DebtType>贷款类型： </USAC.Debt.ScenPart.DebtType>
+  <USAC.Debt.ScenPart.Summary>USAC{0}：₿{1}\n周期增长：{2}%（{3}）\n周期利率：{4}%</USAC.Debt.ScenPart.Summary>
+  <USAC.Debt.ScenPart.InitialDebt>初始债务本金：</USAC.Debt.ScenPart.InitialDebt>
+  <USAC.Debt.ScenPart.DebtType>贷款类型：</USAC.Debt.ScenPart.DebtType>
   <USAC.Debt.ScenPart.DynamicLoanReserved>动态信贷（预留）</USAC.Debt.ScenPart.DynamicLoanReserved>
-  <USAC.Debt.ScenPart.GrowthBase>增长基准： </USAC.Debt.ScenPart.GrowthBase>
-  <USAC.Debt.ScenPart.GrowthRatePct>周期增长率（%）： </USAC.Debt.ScenPart.GrowthRatePct>
-  <USAC.Debt.ScenPart.InterestRatePct>周期利率（%）： </USAC.Debt.ScenPart.InterestRatePct>
+  <USAC.Debt.ScenPart.GrowthBase>增长基准：</USAC.Debt.ScenPart.GrowthBase>
+  <USAC.Debt.ScenPart.GrowthRatePct>周期增长率（%）：</USAC.Debt.ScenPart.GrowthRatePct>
+  <USAC.Debt.ScenPart.InterestRatePct>周期利率（%）：</USAC.Debt.ScenPart.InterestRatePct>
   <USAC.Debt.Transaction.ScenarioStart>开局剧本 {0}</USAC.Debt.Transaction.ScenarioStart>
-  <USAC.Debt.Message.GripperTargetLost>[USAC] 轨道夹具抓取失败：目标丢失。</USAC.Debt.Message.GripperTargetLost>
+  <USAC.Debt.Message.GripperTargetLost>[USAC]轨道夹具抓取失败：目标丢失。</USAC.Debt.Message.GripperTargetLost>
   <USAC.Debt.Transaction.GripperDestroyed>轨道夹具遭摧毁（损坏赔偿）</USAC.Debt.Transaction.GripperDestroyed>
-  <USAC.Debt.Message.GripperDestroyedPenalty>[USAC] 轨道夹具遭摧毁！额外费用 ₿{0} 已记入账单。</USAC.Debt.Message.GripperDestroyedPenalty>
-  <USAC.Debt.Message.OrganHarvested>[USAC] 器官抵押执行：已摘取 {0} 的器官，价值 ₿{1}</USAC.Debt.Message.OrganHarvested>
-  <USAC.Debt.Message.PawnDemolished>[USAC] 债务清算执行：{0} 已被完全拆解。</USAC.Debt.Message.PawnDemolished>
-  <USAC.Debt.Message.CreditDanger>[USAC] 信用等级降至危险水平，USAC 贸易通道即将关闭。</USAC.Debt.Message.CreditDanger>
-  <USAC.Debt.Message.CreditPenalty>[USAC] 信用贷欠缴，信用分 -25（当前：{0}）</USAC.Debt.Message.CreditPenalty>
+  <USAC.Debt.Message.GripperDestroyedPenalty>[USAC]轨道夹具遭摧毁！额外费用 ₿{0} 已记入账单。</USAC.Debt.Message.GripperDestroyedPenalty>
+  <USAC.Debt.Message.OrganHarvested>[USAC]器官抵押执行：已摘取 {0} 的器官，价值 ₿{1}</USAC.Debt.Message.OrganHarvested>
+  <USAC.Debt.Message.PawnDemolished>[USAC]债务清算执行：{0} 已被完全拆解。</USAC.Debt.Message.PawnDemolished>
+  <USAC.Debt.Message.CreditDanger>[USAC]信用等级已触发风险警报，债务管理部门将对审批通道采取预防性冻结。</USAC.Debt.Message.CreditDanger>
+  <USAC.Debt.Message.CreditPenalty>[USAC]信用贷欠缴，信用分 -25（当前：{0}）</USAC.Debt.Message.CreditPenalty>
   <USAC.UI.Assets.SurchargeHint>本季免费额度 ₿{0} | 已使用 ₿{1} | 10%▸免费 20%▸50% 30%▸100% 50%+▸200%</USAC.UI.Assets.SurchargeHint>
+  <USAC.UI.Assets.AccessDenied>ACCESS_DENIED // 拒绝访问\n\n您的权限无法访问此页面。。</USAC.UI.Assets.AccessDenied>
 
+  <!-- 债务清偿结局 (Settled) -->
+  <USAC.Ending.Settled.Loading>正在生成结算报告...</USAC.Ending.Settled.Loading>
+  <USAC.Ending.Settled.Title>DEBT_SETTLED // 债务核销报告</USAC.Ending.Settled.Title>
+  <USAC.Ending.Settled.Intro>尊敬的星际公民：\n\n我们非常荣幸地通知您，您在债务管理部门备案的所有资产抵押协议已正式核销。在漫长的结算周期中，您表现出了极其罕见的履约精神。尽管这片边缘世界充满了不可控的风险，但您用行动证明了信用才是最通用的货币。</USAC.Ending.Settled.Intro>
+  <USAC.Ending.Settled.CreditScore>最终信用评级：{0} </USAC.Ending.Settled.CreditScore>
+  <USAC.Ending.Settled.Close>您的信贷记录已归档。债务管理部门已终止对您定居点的风险监控。希望在之后的岁月中，您能继续维持这种罕见的合规水准。</USAC.Ending.Settled.Close>
+  <USAC.Ending.Settled.Ending>“契约终结，繁荣永存。”</USAC.Ending.Settled.Ending>
+
+  <!-- 债务清算结局 (Liquidation) -->
+  <USAC.Ending.Liquidation.Loading>正在生成清算核照...</USAC.Ending.Liquidation.Loading>
+  <USAC.Ending.Liquidation.Title>LIQUIDATION_COMPLETE // 资产清算确认</USAC.Ending.Liquidation.Title>
+  <USAC.Ending.Liquidation.Intro>程序启动。资产定位信标已锁定，债务管理部门将开始执行最终的资产清算。一切都在按规章执行。</USAC.Ending.Liquidation.Intro>
+  <USAC.Ending.Liquidation.Body>刺耳的警报声被天际传来的尖啸瞬间撕碎。你抬头仰望，数十台巨大的钢铁夹具正拖着橘红色的尾迹贯穿云层。随着剧烈的金属撞击声，你所在的屋顶被瞬间震碎，烟尘弥漫中，液压钳闭合的沉重嗡鸣成为了家园最后的遗留。你感到身体被粗暴地被夹具抓取，冰冷的氧气面罩和涂层喷雾包裹在脸上和身上，伴随着推进器再次点火的轰鸣，重力在这一刻彻底逆转。你看到那些曾经悉心照料的庄稼、亲手垒起的石砖，连同惊恐的同伴们，都在视野中飞速坠落....\n\n或者说，是你们在向着无垠的深空急速升起。在窒息的静默夺走一切之前，你最后看到的画面是下方荒凉的土地上，往昔的一切正随着漫天尘埃一同消散。</USAC.Ending.Liquidation.Body>
+  <USAC.Ending.Liquidation.FinancialReport>资产清算财务汇总：</USAC.Ending.Liquidation.FinancialReport>
+  <USAC.Ending.Liquidation.TotalDebtLiquidated>核销总额</USAC.Ending.Liquidation.TotalDebtLiquidated>
+  <USAC.Ending.Liquidation.CapturedAssets>{0} 已作为逾期担保物完成交付。</USAC.Ending.Liquidation.CapturedAssets>
+  <USAC.Ending.Liquidation.Close>尘埃落定。土地再次重归寂静，等待着下一个不知情的灵魂。</USAC.Ending.Liquidation.Close>
+  <USAC.Ending.Liquidation.Ending>“债务已核销。”</USAC.Ending.Liquidation.Ending>
+
+  <!-- 债权转移结局 (Transfer) -->
+  <USAC.Ending.Transfer.NegotiationTitle>债权出售公告</USAC.Ending.Transfer.NegotiationTitle>
+  <USAC.Ending.Transfer.NegotiationText>鉴于您对回收链路的非法干预，债务管理部门已判定该笔坏账的直接核销成本过高。我们已将您的债权包出售给了第三方派系：{0}。\n\n由于债务性质已发生变更，您当前欠款已由于违约滞纳金上调至 {2} 白银。\n\n金融连接将于 24 小时内正式关闭。在此之后，您的信用记录将不复存在，取而代之的是新债主对您资产的无限期诉求。</USAC.Ending.Transfer.NegotiationText>
+  <USAC.Ending.Transfer.Option.Pay>向新债主支付白银 ({0})</USAC.Ending.Transfer.Option.Pay>
+  <USAC.Ending.Transfer.Option.Refuse>拒绝。准备迎接 {0} 天后的清算。</USAC.Ending.Transfer.Option.Refuse>
+  <USAC.Ending.Transfer.BuyoutFail>支付失败：地图上的白银储备 ({0}) 不足以结清债务 ({1})。准备迎接进攻。</USAC.Ending.Transfer.BuyoutFail>
+  <USAC.Ending.Transfer.BuyoutSuccess>债务买家 {0} 已收到白银，您的所有债务已在星际法律框架内全额核销。</USAC.Ending.Transfer.BuyoutSuccess>
+  <USAC.Ending.Transfer.CountdownLabel>债权转让生效</USAC.Ending.Transfer.CountdownLabel>
+  <USAC.Ending.Transfer.CountdownText>USAC已正式退出您的债务合约。派系 {0} 现在拥有对您所有资产的处置权。他们已发出最后通牒：{1} 天后将发起全面收缴行动。</USAC.Ending.Transfer.CountdownText>
+  <USAC.Ending.Transfer.SiegeStartLabel>清缴行动开始</USAC.Ending.Transfer.SiegeStartLabel>
+  <USAC.Ending.Transfer.SiegeStartText>{0} 派出的武装收债队已经抵达！他们计划在接下来的 {1} 天内通过持续不断的进攻彻底摧毁您的意志。坚持下去，或者在余烬中支付代价。</USAC.Ending.Transfer.SiegeStartText>
+  <USAC.Ending.Transfer.VictoryLabel>债权废止</USAC.Ending.Transfer.VictoryLabel>
+  <USAC.Ending.Transfer.VictoryText>在付出了惨重的代价后，{0} 由于损失过大，已正式宣布放弃该笔债权的强制执行。您的债务状态已更新为“逾期作废”，自此以后，没有任何派系会再为了这笔陈年旧账找您的麻烦。</USAC.Ending.Transfer.VictoryText>
+  
+  <USAC.Ending.Transfer.Credits.Title>DEBT_ASSIGNMENT // 债权转移报告</USAC.Ending.Transfer.Credits.Title>
+  <USAC.Ending.Transfer.Credits.Intro>派系 {0} 已通过二级市场购入了您在债务管理部门备案的价值 ₿{1} 的欠款。</USAC.Ending.Transfer.Credits.Intro>
+  <USAC.Ending.Transfer.Credits.Body>注：债务管理部门始终追求效率与平衡。当风险对冲的成本效益比失衡时，将资产包移交给本地具备接收能力的第三方是标准流程。\n\n感谢您曾作为我们的信贷客户，祝在后续的资产重组中好运。</USAC.Ending.Transfer.Credits.Body>
+  <USAC.Ending.Transfer.Credits.Close>“金融连接已安全断开。”</USAC.Ending.Transfer.Credits.Close>
+
+  <USAC.Ending.Transfer.Victory.Title>WAR_OF_DEBT // 债务终战</USAC.Ending.Transfer.Victory.Title>
+  <USAC.Ending.Transfer.Victory.Body>您用最原始也最彻底的方式解决了财务问题：消灭债权人。\n\n在数日的血腥防御后，债权持有者终于意识到，向一群武装到牙齿的狂热殖民者讨债是一笔亏本买卖。随着最后一支突击队的溃退，那些由于债务产生的枷锁正式崩断。\n\n自由是有代价的，而您已经在血泊中支付了全额。</USAC.Ending.Transfer.Victory.Body>
+  <USAC.Ending.Transfer.Victory.Close>“债务已消亡。”</USAC.Ending.Transfer.Victory.Close>
+
+  <!-- 围攻相关提示 -->
+  <USAC.Alert.SiegeCountdown.Label>资产收缴倒计时</USAC.Alert.SiegeCountdown.Label>
+  <USAC.Alert.SiegeCountdown.LabelActive>正在进行最终防御</USAC.Alert.SiegeCountdown.LabelActive>
+  <USAC.Alert.SiegeCountdown.Explanation>距离收缴行动开始还剩：{0}
+
+当前债权持有人：{1}
+
+一旦倒计时结束，该派系将发起无限制的强制收缴。请确保您的防御设施已就绪。</USAC.Alert.SiegeCountdown.Explanation>
+  <USAC.Alert.SiegeCountdown.ExplanationActive>防守剩余时间：{0}\n\n当前正在抵御来自 {1} 的持续进攻。如果能在限定时间内维持防御，对方将因成本过高而被迫放弃债权。</USAC.Alert.SiegeCountdown.ExplanationActive>
+
+  <USAC_DebtSite_WarningLetterLabel>资产保全等级提升</USAC_DebtSite_WarningLetterLabel>
+  <USAC_DebtSite_WarningLetterText>鉴于您在 {0} 结算过程中的违约行为，债务管理部门已将您的信用评级定义为“高风险违约”。所有外部信贷权限已同步锁定。建议立即恢复合规表现以避免保全程序进一步升级。</USAC_DebtSite_WarningLetterText>
+  <USAC_DebtSite_LoanLockedWarning>金融权限已被锁定</USAC_DebtSite_LoanLockedWarning>
+
+  <!-- 二次抗收升级提示 -->
+  <USAC_DebtSite_EscalationLetterLabel>强制征收策略变更通知</USAC_DebtSite_EscalationLetterLabel>
+  <USAC_DebtSite_EscalationLetterText>由于针对 {0} 的资产保全行动遭遇持续阻碍，债务管理部门已判定常规回收手段失效。意味着我们将不再尝试与您进行任何同步结算通讯，而是转由自动化评估系统主导后续流程。这些系统将根据安全反馈，在您的坐标点附近部署必要的长期驻留保全设施，其行为模式完全取决于局势的合规程度。请知悉，由此产生的所有次生损害均由违约方承担。</USAC_DebtSite_EscalationLetterText>
+
+  <!-- 债权转移锁定 -->
+  <USAC.UI.Assets.TransferLocked.Title>ACCOUNT_TERMINATED // 资产包离岸转让确认</USAC.UI.Assets.TransferLocked.Title>
+  <USAC.UI.Assets.TransferLocked.Desc>服务公告：根据风险管控协定，由于您的信用模型已被判定为 "不良资产"，债务管理部门已正式完成该笔坏账的离岸转让。由此产生的资产剥离动作不可撤销。\n\nUSAC现已正式终止您的接口访问权限，您的账户已处于逻辑地址隔离状态。后续的一切估值与回收程序将由受托派系独立执行。祝在新的周期中保重。</USAC.UI.Assets.TransferLocked.Desc>
+
+  <!-- 和谈系统 -->
+  <USAC.UI.Assets.Negotiation.Title>QUASI-LEGAL_SETTLEMENT // 违约和解提案</USAC.UI.Assets.Negotiation.Title>
+  <USAC.UI.Assets.Negotiation.Available>系统检测到您的账户展现出积极的现金流。债务管理部门已特别授权开启“二次机会”资产恢复窗口。我们可以聊聊如何重新建立合作伙伴关系。</USAC.UI.Assets.Negotiation.Available>
+  <USAC.UI.Assets.Negotiation.Locked>根据《爱国者金融安全法》，您的账户目前处于惩罚性管制。我们需要观察到至少 2 次连续的主动履约行为（当前评估进度: {0}/2）后，合规官才会介入您的风险重评。请继续表现您的诚意。</USAC.UI.Assets.Negotiation.Locked>
+  <USAC.UI.Assets.Negotiation.Btn>呈交《资产恢复与违约和解申请书》</USAC.UI.Assets.Negotiation.Btn>
+  <USAC.UI.Assets.Negotiation.Success>祝贺！您的违约豁免协议已通过审核。我们决定重新评估您的风险模型，金融通道已恢复至标准级别。记住：信用优于生命。</USAC.UI.Assets.Negotiation.Success>
+
+  <!-- 尸体储存货柜相关 -->
+  <USAC.UI.Storage.Contents>包含资产: {0} / {1}</USAC.UI.Storage.Contents>
+
+
+  <!-- 贸易终端 -->
+  <USAC.Trade.Terminal>USAC TRADE_TERMINAL // 轨道交易终端</USAC.Trade.Terminal>
+  <USAC.Trade.SearchPlaceholder>搜索物品、分类或描述...</USAC.Trade.SearchPlaceholder>
+  <USAC.Trade.PlayerItems>殖民地物品</USAC.Trade.PlayerItems>
+  <USAC.Trade.TraderItems>商人物品</USAC.Trade.TraderItems>
+  <USAC.Trade.Summary>交易摘要</USAC.Trade.Summary>
+  <USAC.Trade.NoActiveTrades>暂无交易项目</USAC.Trade.NoActiveTrades>
+  <USAC.Trade.SelectCount>选择 {0} 的交易数量</USAC.Trade.SelectCount>
+  
+  <USAC.Trade.Summary.Buy>购买总额</USAC.Trade.Summary.Buy>
+  <USAC.Trade.Summary.Sell>出售总额</USAC.Trade.Summary.Sell>
+  <USAC.Trade.Summary.Net>净支出</USAC.Trade.Summary.Net>
+  <USAC.Trade.Summary.Current>当前资产</USAC.Trade.Summary.Current>
+  <USAC.Trade.Summary.After>交易后</USAC.Trade.Summary.After>
+  <USAC.Trade.Summary.NoChange>资产存量保持恒定</USAC.Trade.Summary.NoChange>
+  <USAC.Trade.Summary.Wastage>当前单元核销后资产损失：₿{0}</USAC.Trade.Summary.Wastage>
+  
+  <USAC.Trade.Summary.Tip_0>点击物品图标可查看详情</USAC.Trade.Summary.Tip_0>
+  <USAC.Trade.Summary.Tip_1>你说你不想在这里~《USAC董事长选集3:43》</USAC.Trade.Summary.Tip_1>
+  <USAC.Trade.Summary.Tip_2>USAC不提供货币拆分与找零服务</USAC.Trade.Summary.Tip_2>
+  <USAC.Trade.Summary.Tip_3>咕咕嘎嘎</USAC.Trade.Summary.Tip_3>
+  <USAC.Trade.Summary.Tip_4>点击输入框可以进行精确数字输入</USAC.Trade.Summary.Tip_4>
+  
+  <USAC.Trade.Header.Item>物品</USAC.Trade.Header.Item>
+  <USAC.Trade.Header.Held>持有</USAC.Trade.Header.Held>
+  <USAC.Trade.Header.Stock>库存</USAC.Trade.Header.Stock>
+  <USAC.Trade.Header.Price>单价</USAC.Trade.Header.Price>
+
+  <USAC.Trade.Dialog.Cancel>取消</USAC.Trade.Dialog.Cancel>
+  <USAC.Trade.Dialog.Confirm>确定</USAC.Trade.Dialog.Confirm>
+  <USAC.Trade.Dialog.Available>可用数量: {0}</USAC.Trade.Dialog.Available>
+
+  <USAC.Trade.Currency.Combined>{0} x{1} + {2} x{3}</USAC.Trade.Currency.Combined>
+  <USAC.Trade.Currency.Single>{0} x{1}</USAC.Trade.Currency.Single>
+  <USAC.Trade.Currency.CorpseBag>尸体袋</USAC.Trade.Currency.CorpseBag>
+  <USAC.Trade.Currency.Bond>信用债券</USAC.Trade.Currency.Bond>
+  <USAC.Trade.Currency.Empty>轨道网络未检测到在该区域信标范围内的合法资产</USAC.Trade.Currency.Empty>
+  
+  <USAC_Currency_Breakdown>资产结算明细：</USAC_Currency_Breakdown>
+  <USAC_Currency_CorpseBagValue>存储单元总值：₿{0}</USAC_Currency_CorpseBagValue>
+  <USAC_Currency_BondValue>信用债券持有（{0}张）：₿{1}</USAC_Currency_BondValue>
+  <USAC_Currency_TotalValue>最大支付授权额度：₿{0}</USAC_Currency_TotalValue>
+  <USAC_Currency_SmallestBag>当前库存中最小结算单元：₿{0}</USAC_Currency_SmallestBag>
+  <USAC_Currency_Desc>该部分资产可直接被轨道清算系统识别。USAC将优先通过存储单元进行核销，除非您在偏好设置中指定优先消耗实物债券。</USAC_Currency_Desc>
+  <USAC_Currency_LabelEmpty>未离岸资产</USAC_Currency_LabelEmpty>
+  
+  <USAC.UI.Storage.Capacity>容量: {0}/{1}</USAC.UI.Storage.Capacity>
+  <USAC.UI.Storage.RefrigerationActive>冷藏运行中</USAC.UI.Storage.RefrigerationActive>
+  <USAC.UI.Storage.NoPower>无电力</USAC.UI.Storage.NoPower>
+
+  <!-- 债券支付选项 -->
+  <USAC.Trade.EnableBonds>启用债券支付</USAC.Trade.EnableBonds>
+  <USAC.Trade.PriorityBonds>优先使用债券支付</USAC.Trade.PriorityBonds>
+
+  <!-- 建筑交付 -->
+  <USAC.Trade.PlaceDelivery>选择 {0} 的部署位置</USAC.Trade.PlaceDelivery>
+  <USAC.Trade.CannotPlace>无法在此位置放置</USAC.Trade.CannotPlace>
+  <USAC.Trade.CannotPlaceUnderThickRoof>无法在厚岩顶下部署</USAC.Trade.CannotPlaceUnderThickRoof>
+  <USAC.Trade.SelectPlacement>请为 {0} 选择部署位置（按Q/E键旋转）</USAC.Trade.SelectPlacement>
+  <USAC.Trade.DeliveriesDispatched>所有建筑已派遣运输夹投送</USAC.Trade.DeliveriesDispatched>
+
+  <USAC.Trade.NotEnoughCurrency>支付失败：您的信标范围内没有足够的货币（尸体袋或债券）来结清此账单。</USAC.Trade.NotEnoughCurrency>
 </LanguageData>

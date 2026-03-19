@@ -256,4 +256,54 @@
     <rotateTowardsMoveDirectionExtraAngle>15</rotateTowardsMoveDirectionExtraAngle>
   </FleckDef>
 
-</Defs>
+  <!-- EMP火力压制空袭：低空扫射释放EMP弹幕 -->
+  <Fortified.AirSupportDef>
+    <defName>USAC_EMPStrike</defName>
+    <label>EMP air strike</label>
+    <comps>
+      <li Class="Fortified.AirSupportComp_SetOriginRandomEdge" />
+      <li Class="Fortified.AirSupportComp_StrafeII">
+        <ProjectileDef>USAC_Bullet_CASAC_EMP</ProjectileDef>
+        <spreadRadius>6</spreadRadius>
+        <burstCount>30</burstCount>
+        <burstInterval>4</burstInterval>
+        <singleBurstCount>1</singleBurstCount>
+        <delayRange>120~300</delayRange>
+        <lastShotDelayRange>120~200</lastShotDelayRange>
+        <flyByThingDef>USAC_AirFlyBy_Executioner</flyByThingDef>
+        <soundDef>USAC_Shot_Gatling</soundDef>
+        <projOffsets>
+          <li>(0, 0, 1)</li>
+          <li>(-1, 0, 0)</li>
+          <li>(1, 0, 0)</li>
+        </projOffsets>
+      </li>
+      <li Class="Fortified.AirSupportComp_Sound">
+        <soundDef>USAC_JetFlyBy</soundDef>
+      </li>
+    </comps>
+  </Fortified.AirSupportDef>
+
+  <!-- EMP机炮弹：造成EMP伤害 -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>USAC_Bullet_CASAC_EMP</defName>
+    <label>EMP cannon round</label>
+    <thingClass>Fortified.Bullet_ForAirSupport</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.5,1.5)</drawSize>
+      <shaderType>MoteGlow</shaderType>
+      <color>(0.4, 0.8, 1.0)</color>
+    </graphicData>
+    <projectile>
+      <damageDef>EMP</damageDef>
+      <damageAmountBase>40</damageAmountBase>
+      <stoppingPower>0.5</stoppingPower>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
+      <speed>200</speed>
+      <flyOverhead>true</flyOverhead>
+    </projectile>
+  </ThingDef>
+
+</Defs>

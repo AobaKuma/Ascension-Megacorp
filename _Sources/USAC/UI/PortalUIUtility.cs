@@ -1,5 +1,6 @@
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 using RimWorld;
 
 namespace USAC.InternalUI
@@ -18,6 +19,37 @@ namespace USAC.InternalUI
         public static readonly Color ColTextActive = new(0.9f, 0.9f, 0.9f);
         public static readonly Color ColTextMuted = new(0.65f, 0.65f, 0.65f);
         public static readonly Color ColBorder = new(1f, 1f, 1f, 0.06f);
+        #endregion
+
+        #region 样式
+        private static GUIStyle tacticalScrollbar;
+        private static GUIStyle tacticalScrollThumb;
+
+        public static void EnsureTacticalStyles()
+        {
+            if (tacticalScrollbar != null) return;
+            tacticalScrollbar = new GUIStyle(GUI.skin.verticalScrollbar) { fixedWidth = 4f };
+            tacticalScrollThumb = new GUIStyle(GUI.skin.verticalScrollbarThumb) { fixedWidth = 4f };
+        }
+
+        public static void BeginTacticalScroll(out GUIStyle prevBar, out GUIStyle prevThumb, out Color prevColor)
+        {
+            EnsureTacticalStyles();
+            prevBar = GUI.skin.verticalScrollbar;
+            prevThumb = GUI.skin.verticalScrollbarThumb;
+            prevColor = GUI.color;
+
+            GUI.skin.verticalScrollbar = tacticalScrollbar;
+            GUI.skin.verticalScrollbarThumb = tacticalScrollThumb;
+            GUI.color = ColAccentCamo3;
+        }
+
+        public static void EndTacticalScroll(GUIStyle prevBar, GUIStyle prevThumb, Color prevColor)
+        {
+            GUI.skin.verticalScrollbar = prevBar;
+            GUI.skin.verticalScrollbarThumb = prevThumb;
+            GUI.color = prevColor;
+        }
         #endregion
 
         #region 动效系统
@@ -82,6 +114,43 @@ namespace USAC.InternalUI
             Text.Anchor = TextAnchor.UpperLeft;
 
             return active && Widgets.ButtonInvisible(r);
+        }
+
+        // 战术复选框绘制USAC风格
+        public static void DrawTacticalCheckbox(Rect r, string label, ref bool checkOn, bool disabled = false, string key = null)
+        {
+            float alpha = GetAnimAlpha((key ?? label) + "_hover", Mouse.IsOver(r) && !disabled);
+            float checkAlpha = GetAnimAlpha((key ?? label) + "_check", checkOn);
+
+            // 绘制标签
+            Text.Font = GameFont.Small;
+            Text.Anchor = TextAnchor.MiddleLeft;
+            GUI.color = disabled ? ColTextMuted : (alpha > 0.5f ? Color.white : ColAccentCamo3);
+            Widgets.Label(new Rect(r.x, r.y, r.width - 32, r.height), label);
+
+            // 绘制勾选框背景
+            Rect boxRect = new(r.xMax - 28, r.y + (r.height - 24) / 2, 24, 24);
+            Widgets.DrawBoxSolid(boxRect, ColAddressBar);
+            
+            GUI.color = disabled ? ColTextMuted : Color.Lerp(ColBorder, ColAccentCamo1, alpha);
+            Widgets.DrawBox(boxRect, 1);
+
+            // 绘制内部勾选标记实心色块
+            if (checkAlpha > 0.01f)
+            {
+                Rect checkRect = boxRect.ContractedBy(4);
+                GUI.color = ColAccentCamo1.ToTransp(checkAlpha);
+                Widgets.DrawBoxSolid(checkRect, GUI.color);
+            }
+
+            if (!disabled && Widgets.ButtonInvisible(r))
+            {
+                checkOn = !checkOn;
+                SoundDefOf.Checkbox_TurnedOn.PlayOneShotOnCamera();
+            }
+
+            GUI.color = Color.white;
+            Text.Anchor = TextAnchor.UpperLeft;
         }
 
         // Bento容器绘制

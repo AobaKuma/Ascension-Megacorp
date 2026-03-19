@@ -60,6 +60,11 @@
                 <thingDef>USAC_DisposableBattery</thingDef>
                 <countRange>5~50</countRange>
             </li>
+            <!-- 出售：尸体储存方案 -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>USAC_CorpseStorage</thingDef>
+                <countRange>1~2</countRange>
+            </li>
 
             <!-- 收购：零件 -->
             <li Class="StockGenerator_BuySingleDef">
@@ -213,6 +218,11 @@
             <li Class="StockGenerator_SingleDef">
                 <thingDef>USAC_DisposableBattery</thingDef>
                 <countRange>5~20</countRange>
+            </li>
+            <!-- 出售：尸体储存方案 -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>USAC_CorpseStorage</thingDef>
+                <countRange>1~3</countRange>
             </li>
 
             <!-- 收购：零件 -->

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <!-- USAC标准尸体储存方案 -->
+    <ThingDef ParentName="BuildingBase">
+        <defName>USAC_CorpseStorage</defName>
+        <label>USAC standard corpse storage solution</label>
+        <description>The only authorized humanitarian corpse storage container currently approved by USAC, allowing for the storage of multiple corpses in a smaller footprint. This high-end upgrade of the corpse bag provides internal refrigeration when powered, ensuring long-term preservation of wetware assets. re-usable and durable.</description>
+        <thingClass>USAC.Building_USACCorpseStorage</thingClass>
+        <graphicData>
+            <texPath>Things/Building/USAC_CorpseStorage/USAC_CorpseStorage</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(4,4)</drawSize>
+        </graphicData>
+        <altitudeLayer>Building</altitudeLayer>
+        <tickerType>Rare</tickerType>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <fillPercent>0.5</fillPercent>
+        <rotatable>true</rotatable>
+        <size>(2,4)</size>
+        <statBases>
+            <MaxHitPoints>350</MaxHitPoints>
+            <WorkToBuild>2500</WorkToBuild>
+            <Mass>65</Mass>
+            <Flammability>0.3</Flammability>
+            <MarketValue>10000</MarketValue>
+        </statBases>
+        <building>
+            <claimable>true</claimable>
+            <deconstructible>false</deconstructible>
+            <repairable>true</repairable>
+            <fixedStorageSettings>
+                <filter>
+                    <categories>
+                        <li>CorpsesHumanlike</li>
+                    </categories>
+                    <specialFiltersToDisallow>
+                        <li>AllowRotten</li>
+                    </specialFiltersToDisallow>
+                </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+                <priority>Important</priority>
+                <filter>
+                    <categories>
+                        <li>CorpsesHumanlike</li>
+                    </categories>
+                    <specialFiltersToDisallow>
+                        <li>AllowRotten</li>
+                    </specialFiltersToDisallow>
+                </filter>
+            </defaultStorageSettings>
+        </building>
+        <inspectorTabs>
+            <li>ITab_Storage</li>
+        </inspectorTabs>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>120</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Forbiddable" />
+        </comps>
+        <killedLeavings>
+            <Steel>3</Steel>
+        </killedLeavings>
+        <butcherProducts>
+            <Steel>5</Steel>
+        </butcherProducts>
+        <tradeability>Buyable</tradeability>
+        <tradeTags>
+            <li>USAC_Special_Building</li>
+        </tradeTags>
+        <thingCategories>
+            <li>BuildingsMisc</li>
+        </thingCategories>
+        <minifiedDef>MinifiedThing</minifiedDef>
+    </ThingDef>
+</Defs>

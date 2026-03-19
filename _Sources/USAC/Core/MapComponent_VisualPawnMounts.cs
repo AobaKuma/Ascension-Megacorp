@@ -17,6 +17,9 @@ namespace USAC
         private List<PawnData> smallPawns = new List<PawnData>();
         private List<Pawn> topPawns = new List<Pawn>();
 
+        // 缓存排序结果
+        private Dictionary<CompVisualPawnContainer, CachedLayout> layoutCache = new Dictionary<CompVisualPawnContainer, CachedLayout>();
+
         private struct PawnData
         {
             public Pawn Pawn;
@@ -24,12 +27,22 @@ namespace USAC
             public float EffectiveSize;
         }
 
+        private class CachedLayout
+        {
+            public List<(Pawn pawn, Vector3 offset)> renderList = new List<(Pawn, Vector3)>();
+        }
+
         public MapComponent_VisualPawnMounts(Map map) : base(map)
         {
         }
 
         public void Register(CompVisualPawnContainer comp) => registeredComps.Add(comp);
-        public void Unregister(CompVisualPawnContainer comp) => registeredComps.Remove(comp);
+        
+        public void Unregister(CompVisualPawnContainer comp)
+        {
+            registeredComps.Remove(comp);
+            layoutCache.Remove(comp);
+        }
 
         public override void MapComponentUpdate()
         {
@@ -48,7 +61,16 @@ namespace USAC
                         {
                             if (thing is Pawn p) cachedPawnList.Add(p);
                         }
-                        DrawMountedPawns(comp, cachedPawnList, comp.parent.DrawPos);
+
+                        // 检查是否需要重新计算布局
+                        bool needsRecalc = comp.CheckContainerChanged() || !layoutCache.ContainsKey(comp);
+                        
+                        if (needsRecalc)
+                        {
+                            CalculateLayout(comp, cachedPawnList);
+                        }
+
+                        DrawCachedLayout(comp, comp.parent.DrawPos);
                     }
                 }
                 DrawOverlay(comp, comp.parent.DrawPos);
@@ -68,13 +90,20 @@ namespace USAC
             overlay.Draw(pos, Rot4.North, comp.parent);
         }
 
-        private void DrawMountedPawns(CompVisualPawnContainer comp, List<Pawn> pawns, Vector3 centerPos)
+        // 计算布局并缓存
+        private void CalculateLayout(CompVisualPawnContainer comp, List<Pawn> pawns)
         {
+            if (!layoutCache.TryGetValue(comp, out var cache))
+            {
+                cache = new CachedLayout();
+                layoutCache[comp] = cache;
+            }
+
+            cache.renderList.Clear();
             if (pawns.Count == 0) return;
 
             var props = comp.Props;
 
-            // 检索并分析机兵静态渲染数据
             cachedPawnData.Clear();
             for (int i = 0; i < pawns.Count; i++)
             {
@@ -89,24 +118,21 @@ namespace USAC
                 });
             }
 
-            // 执行挂载列表按体型权重排序
             cachedPawnData.Sort((a, b) => b.Volume.CompareTo(a.Volume));
 
             overflowPawns.Clear();
             smallPawns.Clear();
 
-            // 执行挂载列表对象的功能分类
             int tinyIndex = 0;
             for (int i = 0; i < cachedPawnData.Count; i++)
             {
                 var data = cachedPawnData[i];
                 if (data.EffectiveSize <= props.frontRowMaxSize)
                 {
-                    // 执行容器前排槽位渲染与填充
                     if (props.frontRowOffsets != null && tinyIndex < props.frontRowOffsets.Count)
                     {
                         Vector2 offset = props.frontRowOffsets[tinyIndex];
-                        RenderPawn(data.Pawn, centerPos + new Vector3(offset.x, 0.5f, offset.y + 1.3f));
+                        cache.renderList.Add((data.Pawn, new Vector3(offset.x, 0.5f, offset.y + 1.3f)));
                         tinyIndex++;
                     }
                     else
@@ -120,14 +146,13 @@ namespace USAC
                 }
             }
 
-            // 执行高低层混合挂载槽格渲染
             int smallIndex = 0;
             if (props.higherOffsets != null)
             {
                 for (int i = 0; i < props.higherOffsets.Count && smallIndex < smallPawns.Count; i++, smallIndex++)
                 {
                     Vector2 offset = props.higherOffsets[i];
-                    RenderPawn(smallPawns[smallIndex].Pawn, centerPos + new Vector3(offset.x, 0.5f, offset.y + 1.3f));
+                    cache.renderList.Add((smallPawns[smallIndex].Pawn, new Vector3(offset.x, 0.5f, offset.y + 1.3f)));
                 }
             }
 
@@ -136,18 +161,16 @@ namespace USAC
                 for (int i = 0; i < props.lowerOffsets.Count && smallIndex < smallPawns.Count; i++, smallIndex++)
                 {
                     Vector2 offset = props.lowerOffsets[i];
-                    RenderPawn(smallPawns[smallIndex].Pawn, centerPos + new Vector3(offset.x, -0.5f, offset.y + 1.3f));
+                    cache.renderList.Add((smallPawns[smallIndex].Pawn, new Vector3(offset.x, -0.5f, offset.y + 1.3f)));
                 }
             }
 
-            // 检索无法入槽的额外挂载单位
             while (smallIndex < smallPawns.Count)
             {
                 overflowPawns.Add(smallPawns[smallIndex].Pawn);
                 smallIndex++;
             }
 
-            // 收集顶部大型挂载单位
             topPawns.Clear();
             for (int i = 0; i < cachedPawnData.Count; i++)
             {
@@ -157,15 +180,14 @@ namespace USAC
             for (int i = 0; i < overflowPawns.Count; i++)
                 topPawns.Add(overflowPawns[i]);
 
-            // 按体积降序排列
             topPawns.Sort((a, b) =>
             {
                 float va = (a.Drawer.renderer.BodyGraphic?.drawSize.x ?? 1f) * (a.Drawer.renderer.BodyGraphic?.drawSize.y ?? 1f);
                 float vb = (b.Drawer.renderer.BodyGraphic?.drawSize.x ?? 1f) * (b.Drawer.renderer.BodyGraphic?.drawSize.y ?? 1f);
                 return vb.CompareTo(va);
             });
+            
             int topCount = topPawns.Count > props.topSlotCount ? props.topSlotCount : topPawns.Count;
-
             float stackOffset = 0f;
             float layerOffset = 0f;
 
@@ -173,15 +195,23 @@ namespace USAC
             {
                 Pawn p = topPawns[i];
                 float ds = p.Drawer.renderer.BodyGraphic?.drawSize.x ?? 1f;
-
                 if (i > 0) stackOffset += ds * 0.5f;
 
-                Vector3 pos = centerPos;
-                pos.z += props.stackZOffset + stackOffset;
-                pos.y += 0.5f + layerOffset;
-
-                RenderPawn(p, pos);
+                Vector3 offset = new Vector3(0, 0.5f + layerOffset, props.stackZOffset + stackOffset);
+                cache.renderList.Add((p, offset));
                 layerOffset += 0.1f;
+            }
+        }
+
+        // 使用缓存布局渲染
+        private void DrawCachedLayout(CompVisualPawnContainer comp, Vector3 centerPos)
+        {
+            if (!layoutCache.TryGetValue(comp, out var cache)) return;
+
+            for (int i = 0; i < cache.renderList.Count; i++)
+            {
+                var (pawn, offset) = cache.renderList[i];
+                RenderPawn(pawn, centerPos + offset);
             }
         }
 

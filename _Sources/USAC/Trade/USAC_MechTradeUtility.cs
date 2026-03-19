@@ -7,7 +7,7 @@ namespace USAC
     // USAC 机兵交易工具类
     public static class USAC_MechTradeUtility
     {
-        // 投送机兵
+        // 投送机兵使用运输夹
         public static void DropMech(PawnKindDef mechKindDef, Pawn negotiator)
         {
             Map map = negotiator?.Map;
@@ -47,21 +47,18 @@ namespace USAC
             ));
             if (mech.def.TryGetModExtension<MechWeaponExtension>(out var ext))
             {
-                mech.inventory.DestroyAll(); // 清空默认装备
+                mech.inventory.DestroyAll();
             }
             capsule.TryAcceptMech(mech);
 
-            // 查找空投位置
-            IntVec3 dropSpot = FindDropSpotForSize(map, capsuleDef.size, DropCellFinder.TradeDropSpot(map));
+            // 添加到交付队列
+            USACDeliveryManager.Instance?.AddDelivery(capsule, map);
+        }
 
-            // 创建空投舱
-            SkyfallerMaker.SpawnSkyfaller(USAC_DefOf.USAC_MechIncoming, capsule, dropSpot, map);
-
-            Messages.Message(
-                "USAC_MechDelivered".Translate(mechKindDef.label),
-                new TargetInfo(dropSpot, map),
-                MessageTypeDefOf.PositiveEvent
-            );
+        // 开始交付流程
+        public static void StartDeliveryProcess()
+        {
+            USACDeliveryManager.Instance?.StartPlacementProcess();
         }
 
         // 查找合适空投点
@@ -112,7 +109,7 @@ namespace USAC
         {
             CellRect myRect = GenAdj.OccupiedRect(center, Rot4.North, size);
 
-            // 检查是否有其他的正在空投的机兵重叠
+            // 检查机兵空投重叠
             for (int i = 0; i < incomingRects.Count; i++)
             {
                 if (myRect.Overlaps(incomingRects[i]))

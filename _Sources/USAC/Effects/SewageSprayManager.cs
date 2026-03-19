@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace USAC
 {
     [StaticConstructorOnStartup]
-    public class SewageSprayManager : MapComponent
+    public class SewageSprayManager : MapComponent, System.IDisposable
     {
         #region 字段
 
@@ -23,17 +23,25 @@ namespace USAC
         // 游戏时间累积器
         private float gameTimeAccumulated;
 
-        // 发射源快照 供渲染帧安全读取
+        // 发射源快照
         private Vector4[] emitterSnapshot = new Vector4[32];
         private int snapshotCount;
         private bool snapshotEmitting;
         private Vector2 windOffset = Vector2.zero;
 
-        // 使用有序字典确保索引固定
-        private SortedDictionary<int, Vector3> activeSourcesThisTick = new SortedDictionary<int, Vector3>();
+        // 活跃发射源
+        private readonly SortedDictionary<int, Vector3> activeSourcesThisTick = new SortedDictionary<int, Vector3>();
 
-        // 仅输出一次诊断日志
+        // GPU降级日志标记
         private static bool gpuFallbackLogged;
+
+        // 资源释放标记
+        private bool disposed = false;
+
+        // 粒子活跃度追踪
+        private int idleFrameCount = 0;
+        private const int MAX_IDLE_FRAMES = 120;
+        private bool hasEverEmitted = false;
 
         #endregion
 
@@ -73,7 +81,7 @@ namespace USAC
 
             UpdateGlobalWind();
 
-            // 将本 Tick 发射源数据写入快照
+            // 写入发射源快照
             int sourceCount = activeSourcesThisTick.Count;
             snapshotCount = Mathf.Min(sourceCount, 32);
             snapshotEmitting = sourceCount > 0;
@@ -95,12 +103,28 @@ namespace USAC
 
             base.MapComponentUpdate();
 
-            // 消费累积的游戏时间 若无累积则跳过 Dispatch
+            // 活跃度检查优化
+            if (!snapshotEmitting)
+            {
+                idleFrameCount++;
+                // 空闲超过2秒且曾经发射过则跳过更新
+                if (idleFrameCount > MAX_IDLE_FRAMES && hasEverEmitted)
+                {
+                    return;
+                }
+            }
+            else
+            {
+                idleFrameCount = 0;
+                hasEverEmitted = true;
+            }
+
+            // 消费累积游戏时间
             float dt = gameTimeAccumulated;
             if (dt <= 0f) dt = 0f;
             gameTimeAccumulated = 0f;
 
-            // 每渲染帧只执行一次 Dispatch
+            // 每帧执行一次Dispatch
             int kernel = USAC_Cache.GetKernel(computeShader, "Update");
             if (kernel >= 0)
             {
@@ -138,7 +162,29 @@ namespace USAC
         public override void MapRemoved()
         {
             base.MapRemoved();
-            CleanUp();
+            Dispose();
+        }
+
+        // 实现IDisposable接口
+        public void Dispose()
+        {
+            Dispose(true);
+            System.GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposed && disposing)
+            {
+                CleanUp();
+                disposed = true;
+            }
+        }
+
+        // 析构函数确保资源释放
+        ~SewageSprayManager()
+        {
+            Dispose(false);
         }
 
         #endregion
@@ -253,10 +299,32 @@ namespace USAC
 
         public void CleanUp()
         {
-            particleBuffer?.Release();
-            argsBuffer?.Release();
-            particleBuffer = null;
-            argsBuffer = null;
+            try
+            {
+                particleBuffer?.Release();
+                argsBuffer?.Release();
+                
+                if (instanceMaterial != null)
+                {
+                    UnityEngine.Object.DestroyImmediate(instanceMaterial);
+                }
+                
+                if (particleMesh != null)
+                {
+                    UnityEngine.Object.DestroyImmediate(particleMesh);
+                }
+            }
+            catch (System.Exception ex)
+            {
+                Log.Error($"[USAC] 清理GPU资源时出错: {ex}");
+            }
+            finally
+            {
+                particleBuffer = null;
+                argsBuffer = null;
+                instanceMaterial = null;
+                particleMesh = null;
+            }
         }
 
         #endregion

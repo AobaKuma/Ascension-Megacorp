@@ -41,7 +41,7 @@
   <USAC_HostilityReset>敌对状态已重置</USAC_HostilityReset>
 
     <!-- EN: The USAC faction has reset its hostility. They are now neutral towards you. -->
-  <USAC_HostilityResetDesc>经USAC内部的安全性评估，他们改变了与殖民地的外交状态。他们现在对你保持中立。</USAC_HostilityResetDesc>
+  <USAC_HostilityResetDesc>经债务管理部门的合规性重评，您的派系风险等级已回归中立区间。受限的贸易节点将重新开放。</USAC_HostilityResetDesc>
 
     <!-- Illegal Mining Drop -->
 
@@ -139,29 +139,9 @@
     <!-- EN: Lower Bag: {0} -->
   <USAC_Currency_LabelCorpseBagOnly>距下袋: {0}</USAC_Currency_LabelCorpseBagOnly>
 
-    <!-- EN: USAC Currency -->
-  <USAC_Currency_LabelEmpty>USAC货币</USAC_Currency_LabelEmpty>
-
-    <!-- EN: Total value of currency used in transactions with USAC merchants. Includes the value of body bags and credit bonds. USAC traders only accept body bags and credit bonds as currency. Bonds are consumed first during transactions; body bags are consumed only when bonds are insufficient (starting with the lowest value).  -->
-  <USAC_Currency_Desc>用於与USAC商人交易的货币总价值。包含屍体袋价值和信用债券价值。USAC贸易商只接受屍体袋和信用债券作为货币。\n\n交易时优先消耗债券，债券不足时再消耗屍体袋（从价值最小的开始）。</USAC_Currency_Desc>
-
-    <!-- EN: - - - Value Details - - - -->
-  <USAC_Currency_Breakdown>--- 价值明细 ---</USAC_Currency_Breakdown>
-
-    <!-- EN: Total Body Bag Value: {0} -->
-  <USAC_Currency_CorpseBagValue>屍体袋总价值: {0}</USAC_Currency_CorpseBagValue>
-
-    <!-- EN: Credit Bonds: {0} (Value {1}) -->
-  <USAC_Currency_BondValue>信用债券: {0}张 (价值 {1})</USAC_Currency_BondValue>
-
-    <!-- EN: Total Currency: {0} -->
-  <USAC_Currency_TotalValue>货币总计: {0}</USAC_Currency_TotalValue>
-
-    <!-- EN: Minimum Body Bag Value: {0} -->
-  <USAC_Currency_SmallestBag>最小屍体袋价值: {0}</USAC_Currency_SmallestBag>
-
     <!-- EN: Available Until Next Bag: {0} -->
   <USAC_Currency_UntilNextBag>距下袋可用: {0}</USAC_Currency_UntilNextBag>
+
 
     <!-- Consumable Interaction -->
     <!-- EN: The target must be a machine. -->
@@ -215,10 +195,18 @@
   <!-- EN: The emergency siren cuts through reentry. USAC has already written this loss off as acceptable risk.
 
 You are four survivors from different contract chains: debt inheritance, automation layoffs, penal security work, and frontier hazard labor. Supplies are limited, support is gone, and every promise now depends on what you can build and defend on this rimworld. -->
-  <USAC_FourPersonStart_GameStartDialog>重返大气层的警报声撕裂舱体，USAC早已把这次损失列入可接受风险。\n\n你们四人来自不同的契约链：继承债务者、被自动机兵取代的技工、做过惩戒看守的武装人员，你们都是签下整份免责条款的边疆计画参与者。补给有限、支援中断，从现在起，所有承诺都只取决於你们能在这颗边缘世界上建立并守住什麽。\n\n以及记得履行每个月的债务支付。</USAC_FourPersonStart_GameStartDialog>
+  <USAC_FourPersonStart_GameStartDialog>重返大气层的警报声撕裂舱体，债务管理部门已将此次载具损失核销为不可抗力风险。\n\n你们四人来自不同的契约链：继承债务者、被自动机兵取代的技工、做过惩戒看守的武装人员，你们都是签下整份免责条款的边疆计画参与者。补给有限、支援中断，从现在起，所有承诺都只取决于你们能在这颗边缘世界上建立并守住什麽。\n\n以及记得维持每个结算周期的信用记录。</USAC_FourPersonStart_GameStartDialog>
 
-  <!-- UNUSED -->
-  <USAC_SiteLabel_HostileCamp>敌军据点</USAC_SiteLabel_HostileCamp>
-  <USAC_SiteLabel_HostileBase>叛军营地</USAC_SiteLabel_HostileBase>
+  <!-- 债务据点预警与袭击相关 -->
+  <USAC_DebtSite_CommercialRaid>USAC 资产保障行动</USAC_DebtSite_CommercialRaid>
+  <USAC_DebtSite_CommercialRaid_Desc>来自 USAC 商业据点的情报显示，该据点通过出售您的防御漏洞信息，诱使一波海盗对您的殖民地发起了进攻。</USAC_DebtSite_CommercialRaid_Desc>
+  
+  <USAC_DebtSite_ArtilleryStrike>检测到来自 USAC 据点的火炮校射...</USAC_DebtSite_ArtilleryStrike>
+  <USAC_DebtSite_AirStrike>检测到来自 USAC 机场的航空识别...</USAC_DebtSite_AirStrike>
 
+  <USAC_ArtillerySupport_LetterLabel>检测到来袭炮火</USAC_ArtillerySupport_LetterLabel>
+  <USAC_ArtillerySupport_LetterText>一个临近的 USAC 火炮阵地响应了当前对您殖民地的袭击，并提供了远程校射后的火炮轰炸支援。请立即进入掩体！</USAC_ArtillerySupport_LetterText>
+  
+  <USAC_AirbaseSupport_LetterLabel>检测到来袭空袭</USAC_AirbaseSupport_LetterLabel>
+  <USAC_AirbaseSupport_LetterText>一个临近的 USAC 临时机场已向您的坐标派遣了战术轰炸队，以配合当前的地面攻势。空袭即将抵达预定目标区！</USAC_AirbaseSupport_LetterText>
 </LanguageData>

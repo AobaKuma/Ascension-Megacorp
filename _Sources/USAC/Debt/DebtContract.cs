@@ -33,6 +33,10 @@ namespace USAC
         public float PrincipalPaidThisQuarter;
         public int QuarterStartTick;
         public bool IsActive = true;
+
+        // 强制征收连续失败与据点管控
+        public int ConsecutiveCollectionFails;
+        public bool HasActiveDebtSite;
         #endregion
 
         #region 时间常量
@@ -86,29 +90,22 @@ namespace USAC
             float growth = CalculateGrowth(map);
             if (growth > 0)
             {
-                Principal += growth;
-                var comp = GameComponent_USACDebt.Instance;
-                comp?.AddTransaction(USACTransactionType.GrowthAdjust,
-                    growth,
-                    "USAC.Debt.Transaction.PrincipalGrowth".Translate(
-                        Label,
-                        (GrowthRate * 100f).ToString("F0")));
+                DebtHandler.AdjustPrincipal(this, growth, 
+                    "USAC.Debt.Transaction.PrincipalGrowth".Translate(Label, (GrowthRate * 100f).ToString("F0")),
+                    USACTransactionType.GrowthAdjust);
             }
 
             // 结算利息
             float rawInterest = Principal * InterestRate;
-            AccruedInterest = Mathf.Max(1000f, CeilTo1000(rawInterest));
+            float interestAmount = Mathf.Max(1000f, CeilTo1000(rawInterest));
+            DebtHandler.SetAccruedInterest(this, interestAmount);
 
-            var debtComp = GameComponent_USACDebt.Instance;
-            debtComp?.AddTransaction(USACTransactionType.Interest,
-                AccruedInterest,
+            GameComponent_USACDebt.Instance?.AddTransaction(USACTransactionType.Interest,
+                interestAmount,
                 "USAC.Debt.Transaction.CycleInterest".Translate(Label));
 
-            string msg = "USAC.Debt.Message.CycleProcessed".Translate(
-                Label,
-                growth.ToString("F0"),
-                AccruedInterest.ToString("F0"));
-            Messages.Message(msg, MessageTypeDefOf.NegativeEvent);
+            Messages.Message("USAC.Debt.Message.CycleProcessed".Translate(Label, growth.ToString("F0"), interestAmount.ToString("F0")), 
+                MessageTypeDefOf.NegativeEvent);
         }
 
         // 处理欠缴罚则
@@ -116,15 +113,12 @@ namespace USAC
         {
             MissedPayments++;
             // 利息转入本金
-            Principal += AccruedInterest;
-            AccruedInterest = 0f;
-
-            var comp = GameComponent_USACDebt.Instance;
-            comp?.AddTransaction(USACTransactionType.Penalty,
-                0,
-                "USAC.Debt.Transaction.MissedPayment".Translate(
-                    Label,
-                    MissedPayments));
+            float penalty = AccruedInterest;
+            DebtHandler.AdjustPrincipal(this, penalty, 
+                "USAC.Debt.Transaction.MissedPayment".Translate(Label, MissedPayments),
+                USACTransactionType.Penalty);
+            
+            DebtHandler.SetAccruedInterest(this, 0f);
         }
 
         // 检查强制征收
@@ -143,11 +137,16 @@ namespace USAC
 
             comp.ConsumeBondsNearBeacons(map, bondsNeeded);
             float paid = bondsNeeded * 1000f;
-            AccruedInterest = 0f;
+            
+            // 记录日志并重置利息
+            comp.AddTransaction(USACTransactionType.Payment, paid, "USAC.Debt.Transaction.InterestPayment".Translate(Label));
+            DebtHandler.SetAccruedInterest(this, 0f);
+
+            // 成功还款降低违规热度
+            if (ConsecutiveCollectionFails > 0) ConsecutiveCollectionFails--;
             comp.CreditScore = Mathf.Min(100, comp.CreditScore + 5);
-            comp.AddTransaction(USACTransactionType.Payment,
-                paid,
-                "USAC.Debt.Transaction.InterestPayment".Translate(Label));
+
+            DebtHandler.NotifyFinancialStateChanged();
             return true;
         }
 
@@ -160,19 +159,13 @@ namespace USAC
             CheckQuarterReset();
 
             float payAmount = bondCount * 1000f;
-            float freeLimit = Principal * 0.10f;
-            float remaining = freeLimit - PrincipalPaidThisQuarter;
-            if (remaining < 0) remaining = 0;
-
+            
             // 计算手续费
             float totalThisQuarter = PrincipalPaidThisQuarter + payAmount;
-            float surcharge = SurchargeTable.Calculate(
-                Principal, totalThisQuarter);
-            float prevSurcharge = SurchargeTable.Calculate(
-                Principal, PrincipalPaidThisQuarter);
+            float surcharge = SurchargeTable.Calculate(Principal, totalThisQuarter);
+            float prevSurcharge = SurchargeTable.Calculate(Principal, PrincipalPaidThisQuarter);
             float incrementalFee = surcharge - prevSurcharge;
 
-            // 计算总成本
             int feeBonds = Mathf.CeilToInt(incrementalFee / 1000f);
             int totalBonds = bondCount + feeBonds;
 
@@ -180,30 +173,21 @@ namespace USAC
             int bondsAvail = comp?.GetBondCountOnMap() ?? 0;
 
             if (bondsAvail < totalBonds)
-                return "USAC.Debt.Error.NotEnoughBondsWithFee"
-                    .Translate(totalBonds, feeBonds);
+                return "USAC.Debt.Error.NotEnoughBondsWithFee".Translate(totalBonds, feeBonds);
 
             comp.ConsumeBonds(map, totalBonds);
-            Principal = Mathf.Max(0, Principal - payAmount);
-            PrincipalPaidThisQuarter += payAmount;
-            comp.CreditScore = Mathf.Min(100, comp.CreditScore + 2);
+            
+            // 通过Handler执行
+            DebtHandler.AdjustPrincipal(this, -payAmount, 
+                "USAC.Debt.Transaction.PrincipalRepay".Translate(Label), 
+                USACTransactionType.Payment);
 
-            comp.AddTransaction(USACTransactionType.Payment,
-                payAmount,
-                "USAC.Debt.Transaction.PrincipalRepay".Translate(Label));
+            PrincipalPaidThisQuarter += payAmount;
+
             if (incrementalFee > 0)
             {
-                comp.AddTransaction(USACTransactionType.Surcharge,
-                    feeBonds * 1000f,
+                comp.AddTransaction(USACTransactionType.Surcharge, feeBonds * 1000f, 
                     "USAC.Debt.Transaction.RepaySurcharge".Translate(Label));
-            }
-
-            // 检查结清状态
-            if (Principal <= 0)
-            {
-                IsActive = false;
-                Messages.Message("USAC.Debt.Message.ContractSettled".Translate(Label),
-                    MessageTypeDefOf.PositiveEvent);
             }
 
             return null;
@@ -256,6 +240,9 @@ namespace USAC
                 "PrincipalPaidThisQuarter");
             Scribe_Values.Look(ref QuarterStartTick, "QuarterStartTick");
             Scribe_Values.Look(ref IsActive, "IsActive", true);
+            
+            Scribe_Values.Look(ref ConsecutiveCollectionFails, "ConsecutiveCollectionFails");
+            Scribe_Values.Look(ref HasActiveDebtSite, "HasActiveDebtSite");
         }
         #endregion
     }

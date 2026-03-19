@@ -7,42 +7,42 @@ using Verse.AI.Group;
 
 namespace USAC
 {
-    // 定义重型采矿机建筑类
+    // 重型采矿机建筑
     public partial class Building_HeavyMiningRig : Building, IThingHolder
     {
         #region 字段
 
-        // 记录当前挖掘进度数值
+        // 挖掘进度数值
         private float portionProgress;
 
-        // 记录当前产出收益比率
+        // 产出收益比率
         private float portionYieldPct;
 
-        // 记录撤离逻辑剩余时长
+        // 撤离逻辑剩余时长
         private int extractionCountdown = -1;
 
-        // 记录已采集矿物映射数据
+        // 已采集矿物映射
         private Dictionary<ThingDef, int> storedMinerals = new Dictionary<ThingDef, int>();
 
-        // 记录资源扫描完成状态
+        // 资源扫描完成状态
         private bool hasScanned;
 
-        // 记录区域资源存续状态
+        // 区域资源存续状态
         private bool hasResources;
 
-        // 记录当前挖掘目标点坐标
+        // 挖掘目标点坐标
         private IntVec3 currentMiningCell = IntVec3.Invalid;
 
-        // 定义舱内守卫存储容器
+        // 舱内守卫存储容器
         private ThingOwner innerContainer;
 
-        // 引用关联守卫主控逻辑
+        // 关联守卫主控逻辑
         private Lord guardLord;
 
-        // 记录粒子喷射剩余时长
+        // 粒子喷射剩余时长
         private int sprayTicksLeft;
 
-        // 记录下次扬尘特效触发时刻
+        // 下次扬尘特效触发时刻
         private int nextDustEffectTick;
 
         // 租赁剩余时长
@@ -54,29 +54,29 @@ namespace USAC
 
         #region 常量
 
-        // 记录挖掘作业覆盖半径
+        // 挖掘作业覆盖半径
         private const int MiningRadius = 6;
 
-        // 记录单次产出所需工作量
+        // 单次产出所需工作量
         private const float WorkPerPortion = 10000f;
 
-        // 记录每帧执行工作量常数
+        // 每帧执行工作量常数
         private const float WorkPerTick = 2.44f;
 
-        // 记录撤离动画持续时长
+        // 撤离动画持续时长
         private const int ExtractionTicks = 2500;
 
-        // 记录粒子喷射时间间隔
+        // 粒子喷射时间间隔
         private const int SprayInterval = 60;
 
-        // 记录单次喷射粒子总数
+        // 单次喷射粒子总数
         private const int SprayParticleCount = 8;
 
-        // 记录扬尘特效触发间隔
+        // 扬尘特效触发间隔
         private const int DustEffectIntervalMin = 110;
         private const int DustEffectIntervalMax = 210;
 
-        // 大型设备单次扬尘爆发点位数量
+        // 扬尘爆发点位数量
         private const int DustBurstCountMin = 4;
         private const int DustBurstCountMax = 7;
 
@@ -171,7 +171,7 @@ namespace USAC
 
             if (!Spawned) return;
 
-            // 检测并执行撤离倒计时
+            // 撤离倒计时检测
             if (extractionCountdown > 0)
             {
                 extractionCountdown--;
@@ -184,7 +184,7 @@ namespace USAC
             }
             else
             {
-                // 检测租赁到期撤离点
+                // 租赁到期撤离检测
                 if (leaseTicksLeft > 0)
                 {
                     leaseTicksLeft--;
@@ -192,20 +192,20 @@ namespace USAC
                     if (leaseTicksLeft <= 0) StartExtraction();
                 }
 
-                // 执行常规资源挖掘逻辑
+                // 常规资源挖掘逻辑
                 if (hasResources)
                 {
                     DoMiningWork();
                 }
             }
 
-            // 刷新粒子喷射计时状态
+            // 粒子喷射计时状态
             if (sprayTicksLeft > 0)
             {
                 sprayTicksLeft--;
                 if (Map != null)
                 {
-                    // 计算粒子发射点空间坐标
+                    // 计算粒子发射点坐标
                     Vector3 pos = this.DrawPos;
                     pos.y = AltitudeLayer.MoteOverhead.AltitudeFor();
                     pos.x += 0.65f;
@@ -216,7 +216,7 @@ namespace USAC
                 }
             }
 
-            // 周期性在设备周边触发扬尘特效
+            // 周期性设备周边扬尘特效
             TrySpawnPeripheralDustEffect();
         }
 
@@ -462,7 +462,7 @@ namespace USAC
             }
             else
             {
-                // CPU Fallback 每次必定喷出多个水滴
+                // CPU每次喷出多个水滴
                 for (int i = 0; i < SprayParticleCount; i++)
                 {
                     SpawnWastewaterFleck();
@@ -503,7 +503,7 @@ namespace USAC
 
             nextDustEffectTick = now + Rand.RangeInclusive(DustEffectIntervalMin, DustEffectIntervalMax);
 
-            // 仅在正常采矿阶段触发，撤离或资源耗尽时停止
+            // 仅正常采矿阶段触发
             if (extractionCountdown > 0 || !hasResources) return;
 
             CellRect rigRect = this.OccupiedRect();
@@ -538,7 +538,7 @@ namespace USAC
                 Effecter dustEffecter = EffecterDefOf.ImpactSmallDustCloud.Spawn(dustCell, Map);
                 dustEffecter?.Cleanup();
 
-                // 使用厚尘 fleck 增强大型机械震地感
+                // 厚尘增强震地感
                 FleckMaker.ThrowDustPuffThick(
                     dustCell.ToVector3Shifted() + Gen.RandomHorizontalVector(0.35f),
                     Map,
@@ -742,7 +742,12 @@ namespace USAC
 
         public override string GetInspectString()
         {
-            string text = base.GetInspectString();
+            var sb = new System.Text.StringBuilder();
+            string baseText = base.GetInspectString();
+            if (!string.IsNullOrEmpty(baseText))
+            {
+                sb.Append(baseText);
+            }
 
             if (hasScanned)
             {
@@ -755,9 +760,9 @@ namespace USAC
                 );
                 if (allResources.Count > 0)
                 {
-                    if (!string.IsNullOrEmpty(text)) text += "\n";
+                    if (sb.Length > 0) sb.AppendLine();
 
-                    List<string> resStrings = new List<string>();
+                    var resStrings = new List<string>();
                     foreach (var kvp in allResources)
                     {
                         // 估算预估采矿剩余时长
@@ -770,12 +775,14 @@ namespace USAC
                         resStrings.Add($"{kvp.Key.LabelCap}: {kvp.Value} ({estTicks.ToStringTicksToPeriod(allowSeconds: false)})");
                     }
 
-                    text += "USAC_ResourcesInRange".Translate() + ": " + string.Join(", ", resStrings);
+                    sb.Append("USAC_ResourcesInRange".Translate());
+                    sb.Append(": ");
+                    sb.Append(string.Join(", ", resStrings));
                 }
                 else
                 {
-                    if (!string.IsNullOrEmpty(text)) text += "\n";
-                    text += "USAC_NoResourcesInRange".Translate();
+                    if (sb.Length > 0) sb.AppendLine();
+                    sb.Append("USAC_NoResourcesInRange".Translate());
                 }
 
                 // 拼接当前挖掘状态文本
@@ -784,36 +791,41 @@ namespace USAC
                     ThingDef currentRes = Map.deepResourceGrid.ThingDefAt(currentMiningCell);
                     if (currentRes != null)
                     {
-                        text += "\n" + "USAC_MiningTarget".Translate(currentRes.LabelCap);
-                        text += "\n" + "USAC_MiningPortionProgress".Translate(ProgressToNextPortionPercent.ToStringPercent("F0"));
+                        sb.AppendLine();
+                        sb.Append("USAC_MiningTarget".Translate(currentRes.LabelCap));
+                        sb.AppendLine();
+                        sb.Append("USAC_MiningPortionProgress".Translate(ProgressToNextPortionPercent.ToStringPercent("F0")));
                     }
                 }
 
                 // 拼接已存矿物资源文本
                 if (storedMinerals.Count > 0)
                 {
-                    List<string> storedStrings = new List<string>();
+                    var storedStrings = new List<string>();
                     foreach (var kvp in storedMinerals)
                     {
                         storedStrings.Add($"{kvp.Key.LabelCap}: {kvp.Value}");
                     }
-                    text += "\n" + "USAC_StoredMineralsHeader".Translate() + ": " + string.Join(", ", storedStrings);
+                    sb.AppendLine();
+                    sb.Append("USAC_StoredMineralsHeader".Translate());
+                    sb.Append(": ");
+                    sb.Append(string.Join(", ", storedStrings));
                 }
             }
 
             if (extractionCountdown > 0)
             {
-                if (!string.IsNullOrEmpty(text)) text += "\n";
-                text += "USAC_ExtractionCountdown".Translate(extractionCountdown.ToStringTicksToPeriod());
+                if (sb.Length > 0) sb.AppendLine();
+                sb.Append("USAC_ExtractionCountdown".Translate(extractionCountdown.ToStringTicksToPeriod()));
             }
 
             if (leaseTicksLeft > 0)
             {
-                if (!string.IsNullOrEmpty(text)) text += "\n";
-                text += "USAC_LeaseDurationLeft".Translate(leaseTicksLeft.ToStringTicksToPeriod());
+                if (sb.Length > 0) sb.AppendLine();
+                sb.Append("USAC_LeaseDurationLeft".Translate(leaseTicksLeft.ToStringTicksToPeriod()));
             }
 
-            return text;
+            return sb.ToString();
         }
 
         public void SetLease(int ticks, bool auto)

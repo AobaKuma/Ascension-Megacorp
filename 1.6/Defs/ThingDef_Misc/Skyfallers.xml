@@ -93,4 +93,31 @@
     </projectile>
   </ThingDef>
 
+  <!-- USAC 轨道运输夹 Skyfaller -->
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>USAC_TransportIncoming</defName>
+    <label>orbital transport (incoming)</label>
+    <thingClass>USAC.Skyfaller_USACTransport</thingClass>
+    <graphicData>
+      <texPath>USAC/Debt/OrbitalGripper</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2, 2)</drawSize>
+    </graphicData>
+    <skyfaller>
+      <movementType>Decelerate</movementType>
+      <ticksToImpactRange>120~150</ticksToImpactRange>
+      <speed>1.0</speed>
+      <shadowSize>(2,2)</shadowSize>
+      <anticipationSound>DropPod_Fall</anticipationSound>
+      <impactSound>DropPod_Open</impactSound>
+      <cameraShake>0</cameraShake>
+      <angleCurve>
+        <points>
+          <li>(0, 0)</li>
+          <li>(1, 0)</li>
+        </points>
+      </angleCurve>
+    </skyfaller>
+  </ThingDef>
+
 </Defs>

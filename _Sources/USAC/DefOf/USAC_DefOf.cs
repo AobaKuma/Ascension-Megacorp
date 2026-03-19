@@ -14,6 +14,9 @@ namespace USAC
 
         // 轨道夹具定义
         public static ThingDef USAC_GripperIncoming;
+        
+        // 轨道运输夹定义
+        public static ThingDef USAC_TransportIncoming;
 
         // 破拆钻地弹定义
         public static ThingDef USAC_DrillShellProjectile;
@@ -40,6 +43,11 @@ namespace USAC
 
         // 引用轨道商船种类定义
         public static TraderKindDef USAC_Trader_Orbital;
+
+        public static SitePartDef USAC_CommercialOutpost;
+        public static SitePartDef USAC_ArtilleryPosition;
+        public static SitePartDef USAC_Airbase;
+        public static WorldObjectDef USAC_DebtSite;
 
         static USAC_DefOf()
         {
