@@ -20,7 +20,11 @@
 		<statBases>
 			<MarketValue>0.25</MarketValue>
 		</statBases>
-		<tradeTags>
+		<tradeTags Inherit="False">
+			<li>CE_Ammo</li>
+			<li>CE_AmmoInjector</li>
+			<li>CE_AutoEnableTrade</li>
+			<li MayRequire="aoba.fortress.industrial.nucleardawn">CE_AutoEnableCrafting</li>
 			<li>USAC_Ammunition</li>
 		</tradeTags>
 		<cookOffProjectile>USAC_Bullet_277Fury_DU</cookOffProjectile>
@@ -92,7 +96,11 @@
 		<statBases>
 			<MarketValue>0.24</MarketValue>
 		</statBases>
-		<tradeTags>
+		<tradeTags Inherit="False">
+			<li>CE_Ammo</li>
+			<li>CE_AmmoInjector</li>
+			<li>CE_AutoEnableTrade</li>
+			<li MayRequire="aoba.fortress.industrial.nucleardawn">CE_AutoEnableCrafting</li>
 			<li>USAC_Ammunition</li>
 		</tradeTags>
 		<cookOffProjectile>USAC_Bullet_762x51mmNATO_DU</cookOffProjectile>
@@ -164,7 +172,11 @@
 		<statBases>
 			<MarketValue>0.65</MarketValue>
 		</statBases>
-		<tradeTags>
+		<tradeTags Inherit="False">
+			<li>CE_Ammo</li>
+			<li>CE_AmmoInjector</li>
+			<li>CE_AutoEnableTrade</li>
+			<li MayRequire="aoba.fortress.industrial.nucleardawn">CE_AutoEnableCrafting</li>
 			<li>USAC_Ammunition</li>
 		</tradeTags>
 		<cookOffProjectile>USAC_Bullet_338Lapua_DU</cookOffProjectile>
@@ -235,7 +247,11 @@
 		<statBases>
 			<MarketValue>2.30</MarketValue>
 		</statBases>
-		<tradeTags>
+		<tradeTags Inherit="False">
+			<li>CE_MediumAmmo</li>
+			<li>CE_AmmoInjector</li>
+			<li>CE_AutoEnableTrade</li>
+			<li MayRequire="aoba.fortress.industrial.nucleardawn">CE_AutoEnableCrafting</li>
 			<li>USAC_Ammunition</li>
 		</tradeTags>
 		<cookOffProjectile>USAC_Bullet_20x102mmNATO_DU</cookOffProjectile>
@@ -306,7 +322,11 @@
 		<statBases>
 			<MarketValue>13.60</MarketValue>
 		</statBases>
-		<tradeTags>
+		<tradeTags Inherit="False">
+			<li>CE_MediumAmmo</li>
+			<li>CE_AmmoInjector</li>
+			<li>CE_AutoEnableTrade</li>
+			<li MayRequire="aoba.fortress.industrial.nucleardawn">CE_AutoEnableCrafting</li>
 			<li>USAC_Ammunition</li>
 		</tradeTags>
 		<cookOffProjectile>USAC_Bullet_35x228mmNATO_DU</cookOffProjectile>

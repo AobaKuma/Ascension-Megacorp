@@ -201,6 +201,8 @@
     <race>USAC_Mech_Omaha</race>
     <combatPower>500</combatPower>
     <aiAvoidCover>true</aiAvoidCover>
+    <allowInMechClusters>false</allowInMechClusters>
+    <maxPerGroup>5</maxPerGroup>
     <lifeStages>
       <li>
         <bodyGraphicData>
