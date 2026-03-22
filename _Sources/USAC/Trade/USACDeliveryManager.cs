@@ -17,6 +17,7 @@ namespace USAC
         #region 属性
         public static USACDeliveryManager Instance => instance;
         public bool HasPendingDeliveries => pendingDeliveries.Any();
+        public List<PendingDelivery> PendingDeliveries => pendingDeliveries;
         #endregion
 
         #region 生命周期
@@ -105,7 +106,8 @@ namespace USAC
                 currentDeliveryIndex++;
             }
             
-            // 所有建筑都已放置完成
+            // 放置完成 清除指示器
+            Find.DesignatorManager.Deselect();
             ExecuteAllDeliveries();
         }
 
@@ -138,7 +140,7 @@ namespace USAC
         #endregion
 
         #region 内部类
-        private class PendingDelivery : IExposable
+        public class PendingDelivery : IExposable
         {
             public Thing thing;
             public Map map;

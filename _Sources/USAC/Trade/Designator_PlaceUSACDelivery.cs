@@ -3,6 +3,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
+using Fortified;
 
 namespace USAC
 {
@@ -63,14 +64,52 @@ namespace USAC
             if (!baseReport.Accepted)
                 return baseReport;
             
+            // 检查待确认空投重叠
+            if (USACDeliveryManager.Instance != null)
+            {
+                CellRect myRect = GenAdj.OccupiedRect(loc, placementRot, PlacingDef.size);
+                foreach (var delivery in USACDeliveryManager.Instance.PendingDeliveries)
+                {
+                    if (delivery.confirmed && delivery.thing != null)
+                    {
+                        CellRect otherRect = GenAdj.OccupiedRect(delivery.targetPos, delivery.targetRot, delivery.thing.def.size);
+                        if (myRect.Overlaps(otherRect))
+                        {
+                            return "USAC.Trade.CannotOverlapWithPending".Translate();
+                        }
+                    }
+                }
+            }
+
             // 检查厚岩顶
-            CellRect occupiedRect = GenAdj.OccupiedRect(loc, placementRot, PlacingDef.Size);
+            CellRect occupiedRect = GenAdj.OccupiedRect(loc, placementRot, PlacingDef.size);
             foreach (IntVec3 cell in occupiedRect)
             {
                 RoofDef roof = cell.GetRoof(Find.CurrentMap);
                 if (roof != null && roof.isThickRoof)
                 {
                     return "USAC.Trade.CannotPlaceUnderThickRoof".Translate();
+                }
+            }
+
+            // 检查现有建筑物
+            Map map = Find.CurrentMap;
+            foreach (IntVec3 cell in occupiedRect)
+            {
+                foreach (Thing existing in cell.GetThingList(map))
+                {
+                    // 允许压盖植物
+                    if (existing.def.category == ThingCategory.Plant)
+                        continue;
+                    
+                    // 排除存放物本身
+                        continue;
+
+                    // 存在建筑物则拒绝
+                    if (existing.def.category == ThingCategory.Building)
+                    {
+                        return "USAC.Trade.CannotLandOnBuilding".Translate();
+                    }
                 }
             }
             
@@ -80,61 +119,78 @@ namespace USAC
         public override void DesignateSingleCell(IntVec3 loc)
         {
             USACDeliveryManager.Instance?.ConfirmPlacement(thingToPlace, loc, placementRot);
-            Find.DesignatorManager.Deselect();
         }
 
         public override void SelectedUpdate()
         {
             GenDraw.DrawNoBuildEdgeLines();
             
-            // 处理旋转快捷键
-            HandleRotationShortcuts();
-            
+            // 绘制已确认交付虚影
+            DrawConfirmedDeliveries();
+
             IntVec3 cell = UI.MouseCell();
             if (!cell.InBounds(Find.CurrentMap))
                 return;
             
-            // 绘制幽灵预览
+            // 绘制选点虚像
             Color ghostCol = CanDesignateCell(cell).Accepted ? CanPlaceColor : CannotPlaceColor;
             DrawGhost(ghostCol);
             
-            // 绘制交互格子
+            // 绘制交互格子提示
             if (PlacingDef != null)
             {
                 GenDraw.DrawInteractionCells(PlacingDef, cell, placementRot);
             }
         }
 
-        private void HandleRotationShortcuts()
+        private void DrawConfirmedDeliveries()
         {
-            RotationDirection rotationDirection = RotationDirection.None;
-            
-            // Q键逆时针旋转
+            var manager = USACDeliveryManager.Instance;
+            if (manager == null) return;
+
+            // 统一使用公共的安全虚影渲染通道
+            foreach (var delivery in manager.PendingDeliveries)
+            {
+                if (delivery.confirmed && delivery.thing != null)
+                {
+                    USAC_GhostRenderUtility.DrawGhost(
+                        delivery.targetPos, 
+                        delivery.targetRot, 
+                        delivery.thing, 
+                        USAC_GhostRenderUtility.ConfirmedGray);
+                }
+            }
+        }
+
+        public override void Selected()
+        {
+            base.Selected();
+            // 清除选择防止冲突
+            Find.Selector.ClearSelection();
+        }
+
+        public override void SelectedProcessInput(Event ev)
+        {
+            // 拦截键盘输入响应旋转一线说明
             if (KeyBindingDefOf.Designator_RotateLeft.KeyDownEvent)
             {
-                rotationDirection = RotationDirection.Counterclockwise;
-                Event.current.Use();
+                HandleRotation(RotationDirection.Counterclockwise);
+                ev.Use();
+                return;
             }
-            
-            // E键顺时针旋转
             if (KeyBindingDefOf.Designator_RotateRight.KeyDownEvent)
             {
-                rotationDirection = RotationDirection.Clockwise;
-                Event.current.Use();
+                HandleRotation(RotationDirection.Clockwise);
+                ev.Use();
+                return;
             }
-            
-            // 中键点击旋转
-            if (Event.current.type == EventType.MouseDown && Event.current.button == 2)
+
+            // 中键旋转支持
+            if (ev.type == EventType.MouseDown && ev.button == 2)
             {
-                rotationDirection = RotationDirection.Clockwise;
-                Event.current.Use();
-            }
-            
-            if (rotationDirection != RotationDirection.None)
-            {
-                HandleRotation(rotationDirection);
-                // 强制消耗事件防止双向触发
-                Event.current.Use();
+                HandleRotation(RotationDirection.Clockwise);
+                ev.Use();
+                return;
             }
         }
 
@@ -143,27 +199,26 @@ namespace USAC
             SoundDefOf.DragSlider.PlayOneShotOnCamera();
             placementRot.Rotate(dir);
             
-            // 更新物品实体旋转
+            // 同步物品旋转
             if (thingToPlace != null)
             {
+                // 同步打包物品旋转
+                if (thingToPlace is MinifiedThing minified && minified.InnerThing != null)
+                {
+                    minified.InnerThing.Rotation = placementRot;
+                }
                 thingToPlace.Rotation = placementRot;
             }
         }
 
+        #endregion
+
+        #region DrawGhostSystem
         protected virtual void DrawGhost(Color ghostCol)
         {
-            IntVec3 cell = UI.MouseCell();
-            
-            if (PlacingDef != null)
-            {
-                GhostDrawer.DrawGhostThing(
-                    cell, 
-                    placementRot, 
-                    PlacingDef, 
-                    null, 
-                    ghostCol, 
-                    AltitudeLayer.Blueprint);
-            }
+            if (thingToPlace == null) return;
+            // 接入公共渲染引擎
+            USAC_GhostRenderUtility.DrawGhost(UI.MouseCell(), placementRot, thingToPlace, ghostCol);
         }
 
         public override void ProcessInput(Event ev)

@@ -7,7 +7,7 @@ using Verse;
 
 namespace USAC.Endings
 {
-    // 处理摧毁据点后的防御胜利结局流程
+    // 处理防御胜利流程
     public class GameComponent_DebtTransfer : GameComponent
     {
         #region 阶段定义
@@ -15,8 +15,8 @@ namespace USAC.Endings
         {
             None,
             Negotiation,     // 谈判期
-            Countdown,       // 备战倒计时 (15天)
-            UnderSiege,      // 正在防守 (3-5天)
+            Countdown,       // 备战倒计时
+            UnderSiege,      // 正在防守
             Resolved         // 已解决
         }
         #endregion
@@ -73,7 +73,7 @@ namespace USAC.Endings
             var inst = Instance;
             if (inst == null || inst.Phase != TransferPhase.None) return;
 
-            // 选取一个敌对派系作为买方
+            // 渲染独立图标
             inst.BuyerFaction = PickBuyerFaction();
             if (inst.BuyerFaction == null) return;
 
@@ -81,11 +81,11 @@ namespace USAC.Endings
             inst.OriginalDebtAmount = debtComp?.TotalDebt ?? 0f;
             inst.SilverBuyout = Mathf.CeilToInt(inst.OriginalDebtAmount * 1.5f);
 
-            // 清空USAC债务但锁定系统
+            // 放置完成
             ClearUSACDebt(debtComp);
 
             inst.Phase = TransferPhase.Negotiation;
-            
+
             // 弹出谈判弹窗
             LongEventHandler.ExecuteWhenFinished(() => ShowNegotiationDialog(inst));
         }
@@ -105,7 +105,7 @@ namespace USAC.Endings
                 resolveTree = true
             };
 
-            // 拒绝执行
+            // 资产汇总行
             DiaOption optRefuse = new DiaOption("USAC.Ending.Transfer.Option.Refuse".Translate(CountdownDays))
             {
                 action = () => StartCountdown(inst),
@@ -180,13 +180,13 @@ namespace USAC.Endings
             Map map = GameComponent_USACDebt.GetRichestPlayerHomeMap();
             if (map == null) return;
 
-            // 每 1.2 天触发一次“袭击簇”，包含 2-5 个独立波次
+            // 子波次袭击 周期性触发
             int raidCount = Rand.RangeInclusive(2, 5);
             bool launchedAny = false;
 
             for (int i = 0; i < raidCount; i++)
             {
-                // 强度倍率随波次显著提升 (1.2x 起步)
+                // 强度随波次提升
                 float points = StorytellerUtility.DefaultThreatPointsNow(map) * (1.2f + WavesLaunched * 0.25f);
                 points = Mathf.Max(1000f, points);
 
@@ -196,7 +196,7 @@ namespace USAC.Endings
                     points = points,
                     faction = BuyerFaction,
                     forced = true,
-                    // 混合进攻模式：第一波步行，后续波次可能空投
+                    // 绘制文本 带左边距波步行
                     raidArrivalMode = (i == 0) ? PawnsArrivalModeDefOf.EdgeWalkIn : PawnsArrivalModeDefOf.RandomDrop
                 };
 
@@ -213,7 +213,7 @@ namespace USAC.Endings
             }
             else
             {
-                // 失败保护：若生成失败，1小时后重试
+                // 底部横穿全宽区域时重试
                 NextWaveTick = Find.TickManager.TicksGame + 2500;
             }
         }

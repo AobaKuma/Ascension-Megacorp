@@ -3,6 +3,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 using Verse.Sound;
+using Fortified;
 
 namespace USAC
 {
@@ -80,21 +81,60 @@ namespace USAC
         #region 渲染
         protected override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
+            float offsetX = 0f;
+            float offsetZ = 0f;
+
+            // 计算偶数建筑对齐偏移
+            if (innerContainer.Count > 0)
+            {
+                Thing cargo = innerContainer[0];
+                offsetX = (cargo.def.size.x % 2 == 0) ? 0.5f : 0f;
+                offsetZ = (cargo.def.size.z % 2 == 0) ? 0.5f : 0f;
+
+                if (cargoRotation.IsHorizontal)
+                {
+                    float temp = offsetX;
+                    offsetX = offsetZ;
+                    offsetZ = temp;
+                }
+            }
+
+            // 绘制地面落点虚像
+            DrawGroundBlueprint();
+
             // 绘制被夹着的货物
             if (innerContainer.Count > 0)
             {
                 Thing cargo = innerContainer[0];
                 Vector3 cargoPos = drawLoc;
+                cargoPos.x += offsetX;
+                cargoPos.z += offsetZ;
                 cargoPos.y = Altitudes.AltitudeFor(AltitudeLayer.Building);
                 DrawCargo(cargo, cargoPos);
             }
             
             // 绘制夹具本体
             Vector3 gripperPos = drawLoc;
+            gripperPos.x += offsetX;
+            gripperPos.z += offsetZ;
             gripperPos.z += GripperOffsetZ * (gripperScale / 1.5f);
             gripperPos.y = Altitudes.AltitudeFor(AltitudeLayer.Skyfaller);
             
             GetScaledGraphic()?.Draw(gripperPos, Rot4.North, this);
+        }
+
+        private void DrawGroundBlueprint()
+        {
+            if (innerContainer == null || innerContainer.Count == 0) return;
+            
+            Thing cargo = innerContainer[0];
+            
+            // 调用安全虚影渲染
+            USAC_GhostRenderUtility.DrawGhost(
+                Position, 
+                cargoRotation, 
+                cargo, 
+                USAC_GhostRenderUtility.BlueprintBlue);
         }
 
         private void DrawCargo(Thing cargo, Vector3 drawLoc)
@@ -102,34 +142,24 @@ namespace USAC
             if (cargo == null)
                 return;
             
-            Vector3 finalCargoPos = drawLoc;
-            // 计算渲染网格偏移
-            float offsetX = (cargo.def.size.x % 2 == 0) ? 0.5f : 0f;
-            float offsetZ = (cargo.def.size.z % 2 == 0) ? 0.5f : 0f;
-            
-            // 考虑货物旋转偏移
-            if (cargoRotation == Rot4.East || cargoRotation == Rot4.West)
+            // 递归渲染嵌套容器
+            if (cargo is Building_MechCapsule capsule)
             {
-                float temp = offsetX;
-                offsetX = offsetZ;
-                offsetZ = temp;
+                capsule.DynamicDrawPhaseAt(DrawPhase.Draw, drawLoc, false);
+                return;
             }
-            
-            finalCargoPos.x += offsetX;
-            finalCargoPos.z += offsetZ;
-            
-            // 绘制货物保留高度值
+
             if (cargo is Building building)
             {
-                building.Graphic?.Draw(finalCargoPos, cargoRotation, building);
+                building.Graphic?.Draw(drawLoc, cargoRotation, building);
             }
             else if (cargo is MinifiedThing minified && minified.InnerThing != null)
             {
-                minified.InnerThing.Graphic?.Draw(finalCargoPos, cargoRotation, minified.InnerThing);
+                minified.InnerThing.Graphic?.Draw(drawLoc, cargoRotation, minified.InnerThing);
             }
             else
             {
-                cargo.Graphic?.Draw(finalCargoPos, cargoRotation, cargo);
+                cargo.Graphic?.Draw(drawLoc, cargoRotation, cargo);
             }
         }
 
@@ -149,30 +179,31 @@ namespace USAC
         #endregion
 
         #region 辅助方法
+        public static float CalculateGripperScaleFor(Thing cargo)
+        {
+            if (cargo == null) return 1.5f;
+
+            IntVec2 size = cargo.def.size;
+            if (cargo is MinifiedThing minified)
+                size = minified.InnerThing.def.size;
+            
+            // 基于建筑最窄轴进行缩放
+            float minAxis = Mathf.Min(size.x, size.z);
+            return minAxis * 1.5f + 0.5f;
+        }
+
         private void CalculateGripperScale()
         {
             if (innerContainer.Count == 0)
                 return;
             
             Thing cargo = innerContainer[0];
-            
-            // 提取实际建筑物
-            Building building = cargo as Building;
-            if (cargo is MinifiedThing minified)
-                building = minified.InnerThing as Building;
-            
-            if (building != null)
-            {
-                // 根据建筑物尺寸计算缩放
-                gripperScale = Mathf.Max(
-                    building.def.size.x, 
-                    building.def.size.z) * 1.2f;
+            gripperScale = CalculateGripperScaleFor(cargo);
+
+            if (cargo is Building building)
                 cargoRotation = building.Rotation;
-            }
-            else
-            {
-                gripperScale = 1.2f;
-            }
+            else if (cargo is MinifiedThing minified)
+                cargoRotation = minified.InnerThing.Rotation;
         }
 
         private void SpawnContents(IntVec3 pos, Map map)
@@ -180,7 +211,6 @@ namespace USAC
             if (innerContainer == null || innerContainer.Count == 0)
                 return;
             
-            // 生成所有内容物
             List<Thing> toSpawn = new List<Thing>();
             foreach (Thing thing in innerContainer)
             {
@@ -193,13 +223,8 @@ namespace USAC
             {
                 if (thing != null)
                 {
-                    // 恢复物品的旋转
                     thing.Rotation = cargoRotation;
-                    
-                    // 直接生成在目标位置
                     GenPlace.TryPlaceThing(thing, pos, map, ThingPlaceMode.Direct);
-                    
-                    // 强制纠正最终旋转状态
                     if (thing is Building b)
                         b.Rotation = cargoRotation;
                 }
