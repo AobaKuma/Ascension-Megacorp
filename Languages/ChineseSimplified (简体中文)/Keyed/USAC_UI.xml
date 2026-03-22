@@ -333,6 +333,8 @@
   <USAC.Trade.CannotPlaceUnderThickRoof>无法在厚岩顶下部署</USAC.Trade.CannotPlaceUnderThickRoof>
   <USAC.Trade.SelectPlacement>请为 {0} 选择部署位置（按Q/E键旋转）</USAC.Trade.SelectPlacement>
   <USAC.Trade.DeliveriesDispatched>所有建筑已派遣运输夹投送</USAC.Trade.DeliveriesDispatched>
+  <USAC.Trade.CannotOverlapWithPending>无法与已预定的空投区域重叠</USAC.Trade.CannotOverlapWithPending>
+  <USAC.Trade.CannotLandOnBuilding>无法降落在现有建筑上</USAC.Trade.CannotLandOnBuilding>
 
   <USAC.Trade.NotEnoughCurrency>支付失败：您的信标范围内没有足够的货币（尸体袋或债券）来结清此账单。</USAC.Trade.NotEnoughCurrency>
 </LanguageData>

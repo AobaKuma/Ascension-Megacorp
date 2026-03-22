@@ -338,7 +338,7 @@ namespace USAC
             Text.Anchor = TextAnchor.MiddleLeft;
             Text.WordWrap = false;
             
-            // 资产汇总行：仍避开左侧大图标
+            // 资产汇总行 避开侧边图标说明
             float labelWidth = Text.CalcSize("USAC.Trade.Summary.Current".Translate()).x + 5;
             Widgets.Label(new Rect(contentX, row2Y, labelWidth, 20), "USAC.Trade.Summary.Current".Translate());
             
@@ -381,7 +381,7 @@ namespace USAC
                 Widgets.Label(new Rect(contentX, row3Y, contentWidth, 20), "USAC.Trade.Summary.NoChange".Translate());
             }
             
-            // 底部横穿全宽区域 (小贴士与损耗)
+            // 底部全宽区域绘制说明一线说明
             float row4Y = inner.y + 80;
             GUI.color = new Color(1f, 1f, 1f, 0.1f);
             Widgets.DrawLineHorizontal(inner.x, row4Y, inner.width);

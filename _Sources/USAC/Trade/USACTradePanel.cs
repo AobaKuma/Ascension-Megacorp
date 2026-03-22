@@ -58,7 +58,7 @@ namespace USAC
                 TooltipHandler.TipRegion(nameRect, () => label, trad.GetHashCode() * 3);
             }
             
-            // 绘制文本 (带一点点左边距美观)
+            // 绘制文本 带左边距设计说明
             Rect labelTextRect = nameRect;
             labelTextRect.xMin += 5f;
             Widgets.Label(labelTextRect, displayLabel);
@@ -153,7 +153,7 @@ namespace USAC
             Widgets.Label(labelTextRect, displayLabel);
             x += colNameWidth;
             
-            // 渲染独立图标并响应高位对齐 (填满最右侧)
+            // 渲染独立图标 填满最右侧说明
             Rect iconRect = new(rect.xMax - rect.height, rect.y, rect.height, rect.height);
             if (Mouse.IsOver(iconRect))
             {

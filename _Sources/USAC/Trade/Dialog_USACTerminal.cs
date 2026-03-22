@@ -379,7 +379,7 @@ namespace USAC
                 }
             }
 
-            // 动态选择字体以适应多语言 (如果太长则用 Tiny)
+            // 动态选择字体 适应多语言
             Text.Font = GameFont.Tiny;
             float labelWidth = Text.CalcSize(label).x;
             if (labelWidth > rect.width - (isActive ? 12 : 0))
@@ -392,11 +392,11 @@ namespace USAC
             Text.Anchor = TextAnchor.MiddleCenter;
             Text.WordWrap = false;
             
-            // 绘制标签 (留一点点缝隙给箭头，但不影响整体居中感)
+            // 绘制标签 预留箭头缝隙
             Rect labelRect = rect;
             if (isActive)
             {
-                labelRect.xMax -= 8; // 稍微压缩一点宽度，而非偏移起始位置，以保持视觉中心
+                labelRect.xMax -= 8; // 压缩宽度 保持视觉中心
             }
             Widgets.Label(labelRect, label);
 
@@ -459,11 +459,11 @@ namespace USAC
             Text.Font = GameFont.Tiny;
             GUI.color = ColAccentCamo3;
 
-            float x = rect.x; // 现在 Row 没有 ContractedBy(4) 了，直接对齐
+            float x = rect.x; // 直接对齐 排除内缩量
             float rowInnerWidth = rect.width - 16f; // 仅减去滚动条宽度
             float nameWidth = USACTradePanel.CalcNameWidth(rowInnerWidth);
 
-            // 图标列 (对应 45px 行高)
+            // 预留图标列空间
             x += USACTradePanel.COL_ICON;
 
             // 计算物品列宽
@@ -485,8 +485,8 @@ namespace USAC
             Rect countRect = new(x, rect.y, USACTradePanel.COL_COUNT - USACTradePanel.COL_SPACING, rect.height);
             if (DrawSortableHeader(countRect, "USAC.Trade.Header.Held".Translate(), playerSortColumn == SortColumn.Count, playerSortAscending))
             {
-                playerSortColumn = SortColumn.Count; // Simplified logic
-                playerSortAscending = !playerSortAscending; // Simplified logic
+                playerSortColumn = SortColumn.Count; // 更新排序状态
+                playerSortAscending = !playerSortAscending; // 更新排序状态
                 ApplySearchFilter();
             }
             x += USACTradePanel.COL_COUNT;
@@ -495,8 +495,8 @@ namespace USAC
             Rect priceRect = new(x, rect.y, USACTradePanel.COL_PRICE - USACTradePanel.COL_SPACING, rect.height);
             if (DrawSortableHeader(priceRect, "USAC.Trade.Header.Price".Translate(), playerSortColumn == SortColumn.Price, playerSortAscending))
             {
-                playerSortColumn = SortColumn.Price; // Simplified logic
-                playerSortAscending = !playerSortAscending; // Simplified logic
+                playerSortColumn = SortColumn.Price; // 更新排序状态
+                playerSortAscending = !playerSortAscending; // 更新排序状态
                 ApplySearchFilter();
             }
 
@@ -519,8 +519,8 @@ namespace USAC
             Rect priceRect = new(x, rect.y, USACTradePanel.COL_PRICE - USACTradePanel.COL_SPACING, rect.height);
             if (DrawSortableHeader(priceRect, "USAC.Trade.Header.Price".Translate(), traderSortColumn == SortColumn.Price, traderSortAscending))
             {
-                traderSortColumn = SortColumn.Price; // Simplified logic
-                traderSortAscending = !traderSortAscending; // Simplified logic
+                traderSortColumn = SortColumn.Price; // 更新排序状态
+                traderSortAscending = !traderSortAscending; // 更新排序状态
                 ApplySearchFilter();
             }
             x += USACTradePanel.COL_PRICE;
