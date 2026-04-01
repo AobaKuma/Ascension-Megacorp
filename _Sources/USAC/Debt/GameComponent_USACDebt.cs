@@ -230,11 +230,14 @@ namespace USAC
         {
             Map map = GetRichestPlayerHomeMap();
 
+            // 确定基准时间 防止漂移
+            int baseTick = Math.Max(contract.NextCycleTick, Find.TickManager.TicksGame);
+
             // 连续抗缴2次跳过结算
             if (contract.ConsecutiveCollectionFails >= 2)
             {
                 contract.ProcessCycle(map); 
-                contract.NextCycleTick = Find.TickManager.TicksGame + DebtContract.CycleTicks;
+                contract.NextCycleTick = baseTick + DebtContract.CycleTicks;
                 
                 // 重新调度下次周期
                 scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
@@ -248,7 +251,7 @@ namespace USAC
             ShowRepaymentDialog(contract, map);
 
             // 重置周期
-            contract.NextCycleTick = Find.TickManager.TicksGame + DebtContract.CycleTicks;
+            contract.NextCycleTick = baseTick + DebtContract.CycleTicks;
             
             // 重新调度下次周期
             scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));

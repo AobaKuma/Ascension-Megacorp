@@ -68,9 +68,10 @@ namespace USAC
         {
             if (cachedNext == null) return "USAC.Alert.DebtRepayment.Label".Translate();
             int ticksLeft = cachedNext.NextCycleTick - Find.TickManager.TicksGame;
-            float days = Mathf.Max(0f, ticksLeft / 60000f);
+            float days = ticksLeft / 60000f;
+            if (days < 0.1f && ticksLeft > 0) days = 0.1f;
             return "USAC.Alert.DebtRepayment.LabelWithTime"
-                .Translate(days.ToString("F1"), cachedActiveCount);
+                .Translate(Mathf.Max(0f, days).ToString("F1"), cachedActiveCount);
         }
 
         public override TaggedString GetExplanation()
@@ -91,7 +92,8 @@ namespace USAC
                 if (!c.IsActive) continue;
 
                 int ticksLeft = c.NextCycleTick - Find.TickManager.TicksGame;
-                float days = Mathf.Max(0f, ticksLeft / 60000f);
+                float days = ticksLeft / 60000f;
+                if (days < 0.1f && ticksLeft > 0) days = 0.1f;
                 float estInterest = DebtContract.CeilTo1000(c.Principal * c.InterestRate);
 
                 result += "USAC.Alert.DebtRepayment.Explanation.ContractEntry"
@@ -99,7 +101,7 @@ namespace USAC
                         c.Label,
                         c.Principal.ToString("N0"),
                         estInterest.ToString("N0"),
-                        days.ToString("F1"),
+                        Mathf.Max(0f, days).ToString("F1"),
                         c.MissedPayments);
             }
 
