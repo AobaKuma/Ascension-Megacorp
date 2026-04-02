@@ -64,6 +64,14 @@ namespace USAC
             }
         }
 
+        // 检查合同是否已注册
+        public bool IsContractScheduled(string contractId)
+        {
+            for (int i = 0; i < scheduledEvents.Count; i++)
+                if (scheduledEvents[i].contractId == contractId) return true;
+            return false;
+        }
+
         // 检查并触发到期事件
         public void CheckAndTrigger(int currentTick)
         {

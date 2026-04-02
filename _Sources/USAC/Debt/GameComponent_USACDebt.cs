@@ -13,7 +13,7 @@ namespace USAC
         public int CreditScore = 50;
         public List<DebtContract> ActiveContracts = new();
         public List<USACDebtTransaction> Transactions = new();
-        
+
         // 债务系统被死锁标志
         public bool IsSystemLocked;
 
@@ -140,9 +140,12 @@ namespace USAC
                 LiquidatedPawns = new List<Pawn>();
 
             MigrateLegacyData();
-            
+
             // 重建调度器回调
             scheduler.RebuildCallbacks(this);
+
+            // 尝试修复旧版卡死存档的孤儿合同
+            RepairOrphanedSchedules();
         }
 
         public override void GameComponentTick()
@@ -190,7 +193,7 @@ namespace USAC
                     break;
                 }
             }
-            
+
             if (!hasEscalated) return;
 
             int count = Rand.RangeInclusive(1, 2);
@@ -244,9 +247,9 @@ namespace USAC
             // 连续抗缴2次跳过结算
             if (contract.ConsecutiveCollectionFails >= 2)
             {
-                contract.ProcessCycle(map); 
+                contract.ProcessCycle(map);
                 contract.NextCycleTick = baseTick + DebtContract.CycleTicks;
-                
+
                 // 重新调度下次周期
                 scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
                 return;
@@ -260,7 +263,7 @@ namespace USAC
 
             // 重置周期
             contract.NextCycleTick = baseTick + DebtContract.CycleTicks;
-            
+
             // 重新调度下次周期
             scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
         }
@@ -347,15 +350,15 @@ namespace USAC
         public void HandleCollectionFailure(DebtContract contract, Map map)
         {
             contract.ConsecutiveCollectionFails++;
-            
+
             // 第1轮抗缴警告锁定
             if (contract.ConsecutiveCollectionFails == 1)
             {
                 IsSystemLocked = true;
-                CreditScore = 0; 
+                CreditScore = 0;
                 Find.LetterStack.ReceiveLetter(
-                    "USAC_DebtSite_WarningLetterLabel".Translate(), 
-                    "USAC_DebtSite_WarningLetterText".Translate(contract.Label), 
+                    "USAC_DebtSite_WarningLetterLabel".Translate(),
+                    "USAC_DebtSite_WarningLetterText".Translate(contract.Label),
                     LetterDefOf.NegativeEvent);
             }
             // 抗缴升级据点模式并弹窗
@@ -415,7 +418,7 @@ namespace USAC
                 // 当前夹子在Destroy中
                 if (!grippers[i].Destroyed) activeGrippers++;
             }
-            
+
             // 等待最后一个夹子结束
             if (activeGrippers > 1) return;
 
@@ -475,7 +478,7 @@ namespace USAC
 
             if (choices.Count == 0) return;
             var siteDef = choices.RandomElement();
-            
+
             Log.Message($"[USAC] 为订单 {contract.Label} 随机选择了据点类型: {siteDef.defName}");
 
             var sitePartDefWithParams = new RimWorld.Planet.SitePartDefWithParams(siteDef, new RimWorld.Planet.SitePartParams());
@@ -489,7 +492,7 @@ namespace USAC
             {
                 site.AddPart(new RimWorld.Planet.SitePart(site, part.def, part.parms));
             }
-            
+
             Find.WorldObjects.Add(site);
 
             Find.LetterStack.ReceiveLetter("USAC_DebtSite_LetterLabel".Translate(), "USAC_DebtSite_LetterText".Translate(contract.Label), LetterDefOf.ThreatBig, site);
@@ -707,6 +710,32 @@ namespace USAC
         #endregion
 
         #region 调试接口
+        // 修复旧版卡死导致的孤儿合同调度
+        private void RepairOrphanedSchedules()
+        {
+            int now = Find.TickManager.TicksGame;
+            for (int i = 0; i < ActiveContracts.Count; i++)
+            {
+                var c = ActiveContracts[i];
+                if (!c.IsActive) continue;
+
+                // NextCycleTick损坏修复
+                if (c.NextCycleTick <= 0)
+                {
+                    c.NextCycleTick = now + 1;
+                    Log.Warning($"[USAC] 合同 {c.Label}({c.ContractId}) NextCycleTick损坏 已修复为立即触发");
+                }
+
+                // 补注缺失的调度事件
+                if (!scheduler.IsContractScheduled(c.ContractId))
+                {
+                    var contract = c;
+                    scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
+                    Log.Warning($"[USAC] 合同 {c.Label}({c.ContractId}) 调度事件缺失 已自动补注");
+                }
+            }
+        }
+
         // 开发者接口
         public void Debug_SkipCycle()
         {
@@ -767,7 +796,7 @@ namespace USAC
                 "Transactions", LookMode.Deep);
             Scribe_Collections.Look(ref LiquidatedPawns,
                 "LiquidatedPawns", LookMode.Reference);
-            
+
             // 调度器存档
             Scribe_Deep.Look(ref scheduler, "scheduler");
             if (scheduler == null)
@@ -793,10 +822,10 @@ namespace USAC
             legacy.AccruedInterest = legacyInterest;
 
             ActiveContracts.Add(legacy);
-            
+
             // 注册到调度器
             scheduler.ScheduleContractCycle(legacy, () => ProcessContractCycle(legacy));
-            
+
             legacyTotalDebt = 0;
             legacyInterest = 0;
 
