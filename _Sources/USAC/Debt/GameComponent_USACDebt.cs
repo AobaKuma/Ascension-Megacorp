@@ -32,8 +32,8 @@ namespace USAC
         // 锁定期还款次数
         public int RepayCountDuringLock;
 
-        // 下次据点生成倒计时
-        public int TicksUntilNextSiteBatch = -1;
+        // 下次据点批量生成的绝对游戏Tick
+        private int nextSiteBatchTick = -1;
 
         // 合同调度器
         private DebtScheduler scheduler = new DebtScheduler();
@@ -46,6 +46,22 @@ namespace USAC
         public GameComponent_USACDebt(Game game) { }
 
         #region 属性
+        // 供Alert读取的剩余tick数（换算值）与外部接口兼容
+        public int TicksUntilNextSiteBatch
+        {
+            get
+            {
+                if (nextSiteBatchTick < 0) return -1;
+                return Math.Max(0, nextSiteBatchTick - Find.TickManager.TicksGame);
+            }
+            set
+            {
+                if (value < 0)
+                    nextSiteBatchTick = -1;
+                else
+                    nextSiteBatchTick = Find.TickManager.TicksGame + value;
+            }
+        }
         // 总负债
         public float TotalDebt
         {
@@ -169,15 +185,11 @@ namespace USAC
                 }
             }
 
-            // 据点生成倒计时
-            if (IsSystemLocked && TicksUntilNextSiteBatch > 1)
+            // 据点批量生成计时检查（while补偿跳天积压）
+            while (IsSystemLocked && nextSiteBatchTick > 0 && now >= nextSiteBatchTick)
             {
-                TicksUntilNextSiteBatch--;
-                if (TicksUntilNextSiteBatch <= 1)
-                {
-                    GenerateSiteBatch();
-                    TicksUntilNextSiteBatch = 900000;
-                }
+                GenerateSiteBatch();
+                nextSiteBatchTick += 900000;
             }
         }
 
@@ -364,8 +376,8 @@ namespace USAC
                 // 标记为据点模式（不可逆）
                 contract.IsInSiteMode = true;
 
-                // 初始化据点生成倒计时
-                TicksUntilNextSiteBatch = 900000;
+                // 初始化据点生成绝对触发时刻
+                nextSiteBatchTick = Find.TickManager.TicksGame + 900000;
 
                 Find.LetterStack.ReceiveLetter(
                     "USAC_DebtSite_EscalationLetterLabel".Translate(),
@@ -786,7 +798,7 @@ namespace USAC
             Scribe_Values.Look(ref IsSystemLocked, "IsSystemLocked", false);
             Scribe_Values.Look(ref RepayCountDuringLock, "RepayCountDuringLock", 0);
             Scribe_Values.Look(ref EndingTriggered, "EndingTriggered", false);
-            Scribe_Values.Look(ref TicksUntilNextSiteBatch, "TicksUntilNextSiteBatch", -1);
+            Scribe_Values.Look(ref nextSiteBatchTick, "TicksUntilNextSiteBatch", -1);
 
             // 旧版兼容读取
             Scribe_Values.Look(ref legacyTotalDebt, "TotalDebt");
