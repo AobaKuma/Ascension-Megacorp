@@ -337,4 +337,10 @@
   <USAC.Trade.CannotLandOnBuilding>无法降落在现有建筑上</USAC.Trade.CannotLandOnBuilding>
 
   <USAC.Trade.NotEnoughCurrency>支付失败：您的信标范围内没有足够的货币（尸体袋或债券）来结清此账单。</USAC.Trade.NotEnoughCurrency>
+
+  
+  <!-- USAC 据点行动倒计时 -->
+  <USAC.Alert.SiteBatch.Label>USAC据点行动预警</USAC.Alert.SiteBatch.Label>
+  <USAC.Alert.SiteBatch.LabelWithTime>计划行动：{0}天后</USAC.Alert.SiteBatch.LabelWithTime>
+  <USAC.Alert.SiteBatch.Explanation>根据情报，USAC将在接下来的 {0} 内在您的定居点附近部署 1~2 个武装据点，用于强制资产清算。</USAC.Alert.SiteBatch.Explanation>
 </LanguageData>
