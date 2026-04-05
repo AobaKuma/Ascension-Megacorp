@@ -170,10 +170,10 @@ namespace USAC
             }
 
             // 据点生成倒计时
-            if (IsSystemLocked && TicksUntilNextSiteBatch > 0)
+            if (IsSystemLocked && TicksUntilNextSiteBatch > 1)
             {
                 TicksUntilNextSiteBatch--;
-                if (TicksUntilNextSiteBatch <= 0)
+                if (TicksUntilNextSiteBatch <= 1)
                 {
                     GenerateSiteBatch();
                     TicksUntilNextSiteBatch = 900000;
@@ -187,7 +187,7 @@ namespace USAC
             bool hasEscalated = false;
             for (int i = 0; i < ActiveContracts.Count; i++)
             {
-                if (ActiveContracts[i].IsActive && ActiveContracts[i].ConsecutiveCollectionFails >= 2)
+                if (ActiveContracts[i].IsActive && ActiveContracts[i].IsInSiteMode)
                 {
                     hasEscalated = true;
                     break;
@@ -245,7 +245,7 @@ namespace USAC
             int baseTick = Math.Max(contract.NextCycleTick, Find.TickManager.TicksGame);
 
             // 已升级为据点模式 仅维持调度不执行税收
-            if (contract.ConsecutiveCollectionFails >= 2)
+            if (contract.IsInSiteMode)
             {
                 contract.NextCycleTick = baseTick + DebtContract.CycleTicks;
                 scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
@@ -361,6 +361,9 @@ namespace USAC
             // 抗缴升级据点模式并弹窗
             else if (contract.ConsecutiveCollectionFails == 2)
             {
+                // 标记为据点模式（不可逆）
+                contract.IsInSiteMode = true;
+
                 // 初始化据点生成倒计时
                 TicksUntilNextSiteBatch = 900000;
 

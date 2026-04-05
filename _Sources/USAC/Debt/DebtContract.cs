@@ -37,6 +37,9 @@ namespace USAC
         // 强制征收连续失败与据点管控
         public int ConsecutiveCollectionFails;
         public bool HasActiveDebtSite;
+
+        // 已升级为据点收缴模式（不可逆）
+        public bool IsInSiteMode;
         #endregion
 
         #region 时间常量
@@ -243,6 +246,7 @@ namespace USAC
             
             Scribe_Values.Look(ref ConsecutiveCollectionFails, "ConsecutiveCollectionFails");
             Scribe_Values.Look(ref HasActiveDebtSite, "HasActiveDebtSite");
+            Scribe_Values.Look(ref IsInSiteMode, "IsInSiteMode");
         }
         #endregion
     }
