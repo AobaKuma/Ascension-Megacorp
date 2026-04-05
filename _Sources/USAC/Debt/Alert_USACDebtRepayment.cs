@@ -41,7 +41,7 @@ namespace USAC
                 var contracts = cachedComp.ActiveContracts;
                 for (int i = 0; i < contracts.Count; i++)
                 {
-                    if (contracts[i].IsActive && contracts[i].ConsecutiveCollectionFails >= 2)
+                    if (contracts[i].IsActive && contracts[i].IsInSiteMode)
                         return false;
                 }
             }

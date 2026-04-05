@@ -282,8 +282,10 @@ namespace USAC.Endings
                 c.IsActive = false;
                 c.Principal = 0;
                 c.AccruedInterest = 0;
+                c.IsInSiteMode = false;
             }
             comp.IsSystemLocked = true;
+            comp.TicksUntilNextSiteBatch = -1;
         }
         #endregion
 

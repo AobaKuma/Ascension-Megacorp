@@ -306,7 +306,11 @@ namespace USAC.InternalUI
                     foreach(var c in comp.ActiveContracts)
                     {
                         if (c.ConsecutiveCollectionFails > 0) c.ConsecutiveCollectionFails = 0;
+                        // 同步退出据点收缴模式 恢复正常税收周期
+                        c.IsInSiteMode = false;
                     }
+                    // 重置倒计时防止和解后仍生成据点
+                    comp.TicksUntilNextSiteBatch = -1;
                     
                     Messages.Message("USAC.UI.Assets.Negotiation.Success".Translate(), MessageTypeDefOf.PositiveEvent);
                 }

@@ -40,6 +40,7 @@ namespace USAC.Endings
                     c.IsActive = false;
                     c.Principal = 0;
                     c.AccruedInterest = 0;
+                    c.IsInSiteMode = false;
                 }
             }
 
@@ -47,6 +48,7 @@ namespace USAC.Endings
             comp.CreditScore = 50;
             comp.IsSystemLocked = false;
             comp.EndingTriggered = false;
+            comp.TicksUntilNextSiteBatch = -1;
         }
         #endregion
 

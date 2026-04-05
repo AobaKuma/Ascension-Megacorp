@@ -18,16 +18,29 @@ namespace USAC.Patch
             var debtComp = GameComponent_USACDebt.Instance;
             if (debtComp == null) return;
 
-            // 找到关联的合同
+            // 优先关联处于据点模式的合同
             DebtContract contract = null;
             if (debtComp.ActiveContracts != null)
             {
                 for (int i = 0; i < debtComp.ActiveContracts.Count; i++)
                 {
-                    if (debtComp.ActiveContracts[i].IsActive)
+                    var c = debtComp.ActiveContracts[i];
+                    if (c.IsActive && c.IsInSiteMode)
                     {
-                        contract = debtComp.ActiveContracts[i];
+                        contract = c;
                         break;
+                    }
+                }
+                // 降级回退取第一个活跃合同
+                if (contract == null)
+                {
+                    for (int i = 0; i < debtComp.ActiveContracts.Count; i++)
+                    {
+                        if (debtComp.ActiveContracts[i].IsActive)
+                        {
+                            contract = debtComp.ActiveContracts[i];
+                            break;
+                        }
                     }
                 }
             }

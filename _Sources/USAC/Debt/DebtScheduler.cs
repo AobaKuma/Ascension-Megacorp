@@ -86,7 +86,12 @@ namespace USAC
 
                 // 移除并触发
                 scheduledEvents.RemoveAt(0);
-                evt.callback?.Invoke();
+                if (evt.callback == null)
+                {
+                    Log.Warning($"[USAC] 调度ID {evt.contractId} 回调丢失 已跳过");
+                    continue;
+                }
+                evt.callback.Invoke();
             }
         }
 

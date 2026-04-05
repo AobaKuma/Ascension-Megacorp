@@ -763,7 +763,7 @@ namespace USAC
             {
                 var c = ActiveContracts[i];
                 if (!c.IsActive) continue;
-                if (c.ConsecutiveCollectionFails > 0 || c.HasActiveDebtSite)
+                if (c.ConsecutiveCollectionFails > 0 || c.HasActiveDebtSite || c.IsInSiteMode)
                 {
                     anyViolation = true;
                     break;
