@@ -61,8 +61,8 @@ namespace USAC
             if (cachedNext == null) return "USAC.Alert.DebtRepayment.Label".Translate();
             int ticksLeft = cachedNext.NextCycleTick - Find.TickManager.TicksGame;
             float days = ticksLeft / 60000f;
-            // 确保至少显示0.1天 避免显示0.0天造成困惑
-            if (days < 0.1f) days = 0.1f;
+            // 直接显示实际剩余天数
+            if (days < 0f) days = 0f;
             return "USAC.Alert.DebtRepayment.LabelWithTime"
                 .Translate(days.ToString("F1"), cachedActiveCount);
         }
@@ -86,8 +86,8 @@ namespace USAC
 
                 int ticksLeft = c.NextCycleTick - Find.TickManager.TicksGame;
                 float days = ticksLeft / 60000f;
-                // 确保至少显示0.1天
-                if (days < 0.1f) days = 0.1f;
+                // 直接显示实际剩余天数
+                if (days < 0f) days = 0f;
                 float estInterest = DebtContract.CeilTo1000(c.Principal * c.InterestRate);
 
                 // 检查是否有本金增长

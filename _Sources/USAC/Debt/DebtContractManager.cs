@@ -119,6 +119,15 @@ namespace USAC
                 {
                     contract.IsActive = false;
                     scheduler.UnscheduleContract(contract.ContractId);
+
+                    // 发布合同结清事件
+                    DebtEventBus.Instance.Publish(new DebtEventArgs
+                    {
+                        EventType = DebtEventType.ContractSettled,
+                        Contract = contract,
+                        Amount = 0,
+                        Reason = "Contract settled"
+                    });
                 }
             }
         }
@@ -145,16 +154,21 @@ namespace USAC
                 return;
             }
 
-            // 计算错过的周期数
-            int missedCycles = 0;
-            int tempNextTick = contract.NextCycleTick;
-            while (tempNextTick <= now && missedCycles < 10) // 最多补偿10个周期
+            // 计算实际经过的tick数
+            int elapsedTicks = now - contract.NextCycleTick;
+
+            // 如果还没到期 不处理
+            if (elapsedTicks < 0)
             {
-                missedCycles++;
-                tempNextTick += DebtContract.CycleTicks;
+                scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
+                return;
             }
 
-            // 如果错过超过2个周期 批量处理
+            // 计算错过的周期数
+            int missedCycles = 1 + (elapsedTicks / DebtContract.CycleTicks);
+            if (missedCycles > 10) missedCycles = 10; // 最多补偿10个周期
+
+            // 如果错过超过1个周期 批量处理
             if (missedCycles > 1)
             {
                 Log.Warning($"[USAC] 合同 {contract.Label} 错过了 {missedCycles} 个周期 正在批量处理");
@@ -184,14 +198,13 @@ namespace USAC
                     ShowRepaymentDialog(contract, map);
                 }
 
-                contract.NextCycleTick = tempNextTick;
+                // 推进到下一个周期
+                contract.NextCycleTick = contract.NextCycleTick + (missedCycles * DebtContract.CycleTicks);
                 scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
                 return;
             }
 
             // 正常单周期处理
-            int nextTick = contract.NextCycleTick + DebtContract.CycleTicks;
-
             // 据点模式下继续周期结算但自动将利息并入本金
             if (contract.IsInSiteMode)
             {
@@ -206,7 +219,7 @@ namespace USAC
                     DebtHandler.SetAccruedInterest(contract, 0f);
                 }
 
-                contract.NextCycleTick = nextTick;
+                contract.NextCycleTick = contract.NextCycleTick + DebtContract.CycleTicks;
                 scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
                 return;
             }
@@ -217,8 +230,8 @@ namespace USAC
             // 弹窗询问还款
             ShowRepaymentDialog(contract, map);
 
-            // 重置周期
-            contract.NextCycleTick = nextTick;
+            // 推进到下一个周期
+            contract.NextCycleTick = contract.NextCycleTick + DebtContract.CycleTicks;
 
             // 重新调度下次周期
             scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));

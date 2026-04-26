@@ -37,7 +37,7 @@ namespace USAC
             if (comp == null) return base.GetLabel();
 
             float days = comp.TicksUntilNextSiteBatch / 60000f;
-            if (days < 0.1f) days = 0.1f;
+            if (days < 0f) days = 0f;
             return "USAC.Alert.SiteBatch.LabelWithTime".Translate(days.ToString("F1"));
         }
 

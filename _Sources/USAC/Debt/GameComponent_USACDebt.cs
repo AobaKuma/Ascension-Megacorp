@@ -156,7 +156,7 @@ namespace USAC
             int now = Find.TickManager.TicksGame;
 
             // 据点批量生成计时检查
-            while (IsSystemLocked && nextSiteBatchTick > 0 && now >= nextSiteBatchTick)
+            if (IsSystemLocked && nextSiteBatchTick > 0 && now >= nextSiteBatchTick)
             {
                 GenerateSiteBatch();
                 nextSiteBatchTick = nextSiteBatchTick + 900000;
