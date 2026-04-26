@@ -326,6 +326,19 @@ namespace USAC
                 {
                     var debtComp = GameComponent_USACDebt.Instance;
                     var target = debtComp?.NextDueContract;
+                    // 如果没有非据点模式合同 使用第一个据点模式合同
+                    if (target == null && debtComp != null)
+                    {
+                        for (int i = 0; i < debtComp.ActiveContracts.Count; i++)
+                        {
+                            if (debtComp.ActiveContracts[i].IsActive && debtComp.ActiveContracts[i].IsInSiteMode)
+                            {
+                                target = debtComp.ActiveContracts[i];
+                                break;
+                            }
+                        }
+                    }
+
                     if (debtComp != null && target != null)
                     {
                         float penalty = 3000f;
