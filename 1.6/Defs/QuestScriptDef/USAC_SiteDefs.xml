@@ -6,8 +6,11 @@
     <label>outpost</label>
     <description>an outpost</description>
     <gravShipsCanLandOn>true</gravShipsCanLandOn>
-    <tags Inherit="False">
+    <tags>
       <li>USAC_NeutralOutpost</li>
+      <li>Outpost</li>
+      <li>QuestActiveThreatDefense</li>
+      <li>QuestActiveThreatDefenseNoHidden</li>
     </tags>
   </SitePartDef>
 

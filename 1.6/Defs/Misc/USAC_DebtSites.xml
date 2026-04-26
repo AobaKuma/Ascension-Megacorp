@@ -8,6 +8,9 @@
     <expandingIconTexture>World/WorldObjects/Expanding/USAC_Icon</expandingIconTexture>
     <tags>
       <li>USAC_DebtSite</li>
+      <li>Outpost</li>
+      <li>QuestActiveThreatDefense</li>
+      <li>QuestActiveThreatDefenseNoHidden</li>
     </tags>
     <requiresFaction>true</requiresFaction>
     <wantsThreatPoints>true</wantsThreatPoints>
