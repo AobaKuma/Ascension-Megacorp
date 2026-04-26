@@ -170,35 +170,28 @@ namespace USAC
         {
             Log.Message($"[USAC] GenerateSiteBatch 开始执行");
 
-            // 检查是否有升级合同
-            bool hasEscalated = false;
+            // 检查是否有升级合同并找到第一个据点模式合同
+            DebtContract siteContract = null;
             for (int i = 0; i < ActiveContracts.Count; i++)
             {
                 if (ActiveContracts[i].IsActive && ActiveContracts[i].IsInSiteMode)
                 {
-                    hasEscalated = true;
-                    Log.Message($"[USAC] 发现据点模式合同: {ActiveContracts[i].Label}");
+                    siteContract = ActiveContracts[i];
+                    Log.Message($"[USAC] 发现据点模式合同: {siteContract.Label}");
                     break;
                 }
             }
 
-            if (!hasEscalated)
+            if (siteContract == null)
             {
                 Log.Warning($"[USAC] 没有据点模式合同 取消生成");
                 return;
             }
 
             int count = Rand.RangeInclusive(1, 2);
-            var contract = NextDueContract;
-            if (contract == null)
-            {
-                Log.Warning($"[USAC] NextDueContract为空 取消生成");
-                return;
-            }
-
             Map map = GetRichestPlayerHomeMap();
-            Log.Message($"[USAC] 准备生成 {count} 个据点 合同={contract.Label} 地图={map?.Parent?.Label}");
-            SiteGenerator.GenerateSiteBatch(contract, map, count);
+            Log.Message($"[USAC] 准备生成 {count} 个据点 合同={siteContract.Label} 地图={map?.Parent?.Label}");
+            SiteGenerator.GenerateSiteBatch(siteContract, map, count);
         }
 
         // 检查剧本债务是否全部清偿
