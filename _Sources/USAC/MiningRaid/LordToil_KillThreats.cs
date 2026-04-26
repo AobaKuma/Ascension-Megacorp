@@ -13,7 +13,7 @@ namespace USAC
 
         private IntVec3 defendPoint;
         private float maxChaseRadius;
-        private int noEnemyTicks;
+        private int noEnemySinceTick;
 
         // 无敌人多久后返回防守长
         private const int ReturnToDefendDelay = 300;
@@ -74,12 +74,11 @@ namespace USAC
 
             if (hasEnemy)
             {
-                noEnemyTicks = 0;
+                noEnemySinceTick = Find.TickManager.TicksGame;
             }
             else
             {
-                noEnemyTicks += 15;
-                if (noEnemyTicks >= ReturnToDefendDelay)
+                if (noEnemySinceTick > 0 && Find.TickManager.TicksGame - noEnemySinceTick >= ReturnToDefendDelay)
                     lord.ReceiveMemo("ThreatsCleared");
             }
         }

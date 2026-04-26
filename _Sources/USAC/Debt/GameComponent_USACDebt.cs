@@ -144,7 +144,7 @@ namespace USAC
             while (IsSystemLocked && nextSiteBatchTick > 0 && now >= nextSiteBatchTick)
             {
                 GenerateSiteBatch();
-                nextSiteBatchTick += 900000;
+                nextSiteBatchTick = nextSiteBatchTick + 900000;
             }
         }
 

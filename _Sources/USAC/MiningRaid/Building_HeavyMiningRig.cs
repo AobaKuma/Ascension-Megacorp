@@ -39,8 +39,8 @@ namespace USAC
         // 关联守卫主控逻辑
         private Lord guardLord;
 
-        // 粒子喷射剩余时长
-        private int sprayTicksLeft;
+        // 粒子喷射结束时刻
+        private int sprayEndTick;
 
         // 下次扬尘特效触发时刻
         private int nextDustEffectTick;
@@ -180,7 +180,7 @@ namespace USAC
                     DoExtraction();
                 }
                 // 撤离阶段停止粒子喷射
-                sprayTicksLeft = 0;
+                sprayEndTick = 0;
             }
             else
             {
@@ -200,9 +200,8 @@ namespace USAC
             }
 
             // 粒子喷射计时状态
-            if (sprayTicksLeft > 0)
+            if (sprayEndTick > 0 && Find.TickManager.TicksGame < sprayEndTick)
             {
-                sprayTicksLeft--;
                 if (Map != null)
                 {
                     // 计算粒子发射点坐标
@@ -452,7 +451,7 @@ namespace USAC
             // GPU 粒子路径
             if (USAC_AssetBundleLoader.IsLoaded)
             {
-                sprayTicksLeft = 90;
+                sprayEndTick = Find.TickManager.TicksGame + 90;
 
                 // 生成随机离散水滴特效
                 if (Rand.Chance(0.1f))
