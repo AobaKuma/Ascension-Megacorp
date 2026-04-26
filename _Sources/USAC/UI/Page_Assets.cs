@@ -135,10 +135,14 @@ namespace USAC.InternalUI
             DrawColoredLabel(new Rect(inner.x, inner.y + 26, inner.width - 110, 20),
                 statusLine, ColTextMuted, GameFont.Tiny);
 
-            if (danger)
+            // 据点模式时不显示欠缴警告
+            if (danger && !contract.IsInSiteMode)
             {
+                string warningMsg = contract.MissedPayments >= 2
+                    ? "USAC.UI.Assets.Warning.FinalWarning".Translate()
+                    : $"⚠ {"USAC.UI.Assets.MissedWarning".Translate(contract.MissedPayments)}";
                 DrawColoredLabel(new Rect(inner.x, inner.y + 46, inner.width - 110, 20),
-                    $"⚠ {"USAC.UI.Assets.MissedWarning".Translate(contract.MissedPayments)}", ColAccentRed, GameFont.Tiny);
+                    warningMsg, ColAccentRed, GameFont.Tiny);
             }
 
             if (DrawTacticalButton(new Rect(r.xMax - 100, r.y + 25, 85, 40),
@@ -358,7 +362,8 @@ namespace USAC.InternalUI
 
         private void DrawWarningBanner(ref float y, float width, DebtContract contract)
         {
-            if (contract.MissedPayments <= 0) return;
+            // 据点模式时不显示警告横幅
+            if (contract.MissedPayments <= 0 || contract.IsInSiteMode) return;
 
             bool critical = contract.MissedPayments >= 2;
             Color bg = critical ? new Color(0.45f, 0.04f, 0.04f, 1f) : new Color(0.35f, 0.2f, 0.0f, 1f);
@@ -367,7 +372,7 @@ namespace USAC.InternalUI
 
             string icon = critical ? "⚠⚠" : "⚠";
             string msg = critical
-                ? "USAC.UI.Assets.Warning.Critical".Translate(contract.MissedPayments)
+                ? "USAC.UI.Assets.Warning.FinalWarning".Translate()
                 : "USAC.UI.Assets.Warning.Caution".Translate(contract.MissedPayments);
             DrawColoredLabel(new Rect(15, y + 8, width - 30, 34),
                 $"{icon}  {msg}", ColAccentRed, GameFont.Small, TextAnchor.MiddleLeft);

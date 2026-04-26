@@ -68,8 +68,11 @@ namespace USAC
             // 抗缴升级据点模式并弹窗
             else if (contract.ConsecutiveCollectionFails == 2)
             {
-                // 标记为据点模式
-                contract.IsInSiteMode = true;
+                // 标记所有活跃合同进入据点模式
+                foreach (var c in debtComp.ActiveContracts)
+                {
+                    if (c.IsActive) c.IsInSiteMode = true;
+                }
 
                 // 初始化据点生成绝对触发时刻
                 debtComp.TicksUntilNextSiteBatch = 900000;

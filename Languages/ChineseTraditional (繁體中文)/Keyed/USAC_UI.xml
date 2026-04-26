@@ -247,7 +247,23 @@
 
   <USAC.Ending.Transfer.Victory.Title>WAR_OF_DEBT//債務終戰</USAC.Ending.Transfer.Victory.Title>
   <USAC.Ending.Transfer.Victory.Body>您用最原始也最徹底的方式解決了財務問題：消滅債權人。\n\n在數日的血腥防禦後，債權持有者終於意識到，向一群武裝到牙齒的狂熱殖民者討債是一筆虧本買賣。隨著最後一支突擊隊的潰退，那些由於債務產生的枷鎖正式崩斷。\n\n自由是有代價的，而您已經在血泊中支付了全額。</USAC.Ending.Transfer.Victory.Body>
-  <USAC.Ending.Transfer.Victory.Close>“債務已消亡。”</USAC.Ending.Transfer.Victory.Close>
+  <USAC.Ending.Transfer.Victory.Close>”債務已消亡。”</USAC.Ending.Transfer.Victory.Close>
+
+  <!-- 白銀贖買結局 -->
+  <USAC.Ending.Transfer.SilverBuyout.Title>SILVER_SETTLEMENT//白銀清償報告</USAC.Ending.Transfer.SilverBuyout.Title>
+  <USAC.Ending.Transfer.SilverBuyout.Body>派系 {0} 已確認收到 {1} 白銀的全額支付。您的債務狀態已更新為”已核銷”。
+
+軌道結算網絡的數據流在這一刻陷入了短暫的停滯。債務管理部門的風控算法反覆驗證著這筆交易的合法性，卻始終無法理解其中的邏輯：您手握如此龐大的白銀儲備，本有無數種方式將其轉化為我們認可的支付手段，卻在數個結算週期內選擇按兵不動，反而死扛到債權轉移，然後用現金一次性買斷。
+
+白銀本身對USAC的軌道結算網絡毫無價值——我們的系統只認可特定的支付憑證。但 {0} 顯然不介意這一點。他們會將這批白銀投入本地貿易網絡，通過漫長而低效的轉手流程，最終回收成本。對於一個剛剛接手”不良資產”的派系來說，這筆意外之財足以讓他們的財務主管當場愣住三分鐘。
+
+這種操作在我們的歷史記錄中極為罕見。通常只有兩種人會這麼做：要麼是精於計算的金融天才，在債權轉移的灰色地帶中找到了套利空間；要麼是單純享受被追債刺激感的賭徒，用最昂貴的方式證明”只要錢夠多，規則就只是個建議”。
+
+無論您屬於哪一種，至少證明了一件事：在這片邊緣世界，總有人能用最離譜的方式達成目的。</USAC.Ending.Transfer.SilverBuyout.Body>
+  <USAC.Ending.Transfer.SilverBuyout.Close>債務管理部門已將此案例歸檔為”非典型清償行為”，並建議未來的風控模型增加”蓄意拖延但有支付能力”這一評估維度。
+
+塵埃落定。您的信貸記錄已從系統中抹除，取而代之的是一個標註著”已核銷（白銀買斷）”的冷冰冰的數據條目。</USAC.Ending.Transfer.SilverBuyout.Close>
+  <USAC.Ending.Transfer.SilverBuyout.Ending>”有錢，任性。”</USAC.Ending.Transfer.SilverBuyout.Ending>
 
   <!-- 圍攻相關提示 -->
   <USAC.Alert.SiegeCountdown.Label>資產收繳倒計時</USAC.Alert.SiegeCountdown.Label>

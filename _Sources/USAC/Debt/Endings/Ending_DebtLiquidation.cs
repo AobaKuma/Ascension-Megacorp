@@ -72,24 +72,23 @@ namespace USAC.Endings
                 sb.AppendLine("USAC.Ending.Liquidation.FinancialReport".Translate());
                 sb.AppendLine($"   - {"USAC.UI.Assets.CreditScore".Translate()}: {comp.CreditScore}");
                 sb.AppendLine($"   - {"USAC.Ending.Liquidation.TotalDebtLiquidated".Translate()}: ₿{comp.TotalDebt:N0}");
+
+                // 被抓取的资产列表作为清算汇总的一部分
+                if (comp.LiquidatedPawns != null && comp.LiquidatedPawns.Count > 0)
+                {
+                    string namesList = comp.LiquidatedPawns.Select(p => p.LabelCap.ToString()).ToList().ToCommaList(true);
+                    sb.AppendLine($"   - {"USAC.Ending.Liquidation.CapturedAssets".Translate(namesList)}");
+                }
                 sb.AppendLine();
             }
 
             sb.AppendLine("USAC.Ending.Liquidation.Close".Translate());
 
-            // 利用插槽显示人员并自定义文案
-            string namesList = string.Empty;
-            if (comp?.LiquidatedPawns != null && comp.LiquidatedPawns.Count > 0)
-            {
-                namesList = comp.LiquidatedPawns.Select(p => p.LabelCap.ToString()).ToList().ToCommaList(true);
-            }
-
+            // 不传递colonistList避免原版纪念段落
             return GameVictoryUtility.MakeEndCredits(
-                sb.ToString(), 
+                sb.ToString(),
                 "USAC.Ending.Liquidation.Ending".Translate(),
-                namesList, 
-                "USAC.Ending.Liquidation.CapturedAssets",
-                comp?.LiquidatedPawns);
+                string.Empty);
         }
         #endregion
     }

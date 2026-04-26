@@ -29,7 +29,7 @@ namespace USAC
             }
         }
 
-        // 最近到期的合同
+        // 最近到期的合同 排除据点模式
         public DebtContract NextDueContract
         {
             get
@@ -38,7 +38,7 @@ namespace USAC
                 for (int i = 0; i < ActiveContracts.Count; i++)
                 {
                     var c = ActiveContracts[i];
-                    if (c.IsActive && (best == null || c.NextCycleTick < best.NextCycleTick))
+                    if (c.IsActive && !c.IsInSiteMode && (best == null || c.NextCycleTick < best.NextCycleTick))
                         best = c;
                 }
                 return best;
@@ -138,9 +138,22 @@ namespace USAC
             // 确定基准时间 防止漂移
             int baseTick = Mathf.Max(contract.NextCycleTick, Find.TickManager.TicksGame);
 
-            // 已升级为据点模式 仅维持调度不执行税收
+            // 据点模式下继续周期结算但自动将利息并入本金
             if (contract.IsInSiteMode)
             {
+                // 执行周期结算 本金增长和利息计算
+                contract.ProcessCycle(map);
+
+                // 自动将利息并入本金 不弹窗不收利息
+                if (contract.AccruedInterest > 0)
+                {
+                    float interest = contract.AccruedInterest;
+                    DebtHandler.AdjustPrincipal(contract, interest,
+                        "USAC.Debt.Transaction.MissedPayment".Translate(contract.Label, contract.MissedPayments),
+                        USACTransactionType.Penalty);
+                    DebtHandler.SetAccruedInterest(contract, 0f);
+                }
+
                 contract.NextCycleTick = baseTick + DebtContract.CycleTicks;
                 scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
                 return;

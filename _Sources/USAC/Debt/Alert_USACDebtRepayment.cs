@@ -35,16 +35,8 @@ namespace USAC
             RefreshCache();
             if (cachedComp == null || cachedActiveCount <= 0) return false;
 
-            // 系统锁定时不显示提醒
-            if (cachedComp.IsSystemLocked)
-            {
-                var contracts = cachedComp.ActiveContracts;
-                for (int i = 0; i < contracts.Count; i++)
-                {
-                    if (contracts[i].IsActive && contracts[i].IsInSiteMode)
-                        return false;
-                }
-            }
+            // 全局据点模式下完全隐藏债务Alert
+            if (cachedComp.IsInGlobalSiteMode) return false;
 
             return true;
         }

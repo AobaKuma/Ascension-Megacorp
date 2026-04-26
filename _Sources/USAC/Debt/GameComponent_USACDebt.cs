@@ -60,6 +60,21 @@ namespace USAC
         public int ActiveCount => ContractManager.ActiveCount;
         public List<DebtContract> ActiveContracts => ContractManager.ActiveContracts;
 
+        // 全局据点模式判断
+        public bool IsInGlobalSiteMode
+        {
+            get
+            {
+                if (!IsSystemLocked) return false;
+                for (int i = 0; i < ActiveContracts.Count; i++)
+                {
+                    if (ActiveContracts[i].IsActive && ActiveContracts[i].IsInSiteMode)
+                        return true;
+                }
+                return false;
+            }
+        }
+
         public static GameComponent_USACDebt Instance =>
             Current.Game?.GetComponent<GameComponent_USACDebt>();
 

@@ -242,6 +242,22 @@
   <USAC.Ending.Transfer.Victory.Body>You solved your financial problems in the most primitive and thorough way: By eliminating the creditors.\n\nAfter days of bloody defense, the creditors finally realized that collecting debts from a group of armed to teeth, fanatical colonists was a losing proposition. With the retreat of the last commando unit, the shackles of debt officially snapped. Freedom comes with a price, you have paid in full by creditor blood.</USAC.Ending.Transfer.Victory.Body>
   <USAC.Ending.Transfer.Victory.Close>"The debt is gone."</USAC.Ending.Transfer.Victory.Close>
 
+  <!-- Silver Buyout Ending -->
+  <USAC.Ending.Transfer.SilverBuyout.Title>SILVER_SETTLEMENT//Silver Repayment Report</USAC.Ending.Transfer.SilverBuyout.Title>
+  <USAC.Ending.Transfer.SilverBuyout.Body>Faction {0} has confirmed receipt of the full payment of {1} silver. Your debt status has been updated to "Settled."
+
+The data flow of the orbital settlement network came to a brief halt at this moment. The debt management department's risk control algorithm repeatedly verified the legality of this transaction, yet could never understand the logic behind it: You held such a massive silver reserve and had countless ways to convert it into payment methods we recognize, yet chose to remain inactive for multiple settlement cycles, instead enduring until debt transfer, then buying out the entire debt with cash in one go.
+
+Silver itself has no value to USAC's orbital settlement network—our system only recognizes specific payment credentials. But {0} clearly doesn't mind. They will inject this batch of silver into the local trade network, ultimately recovering costs through a long and inefficient resale process. For a faction that just took over a "non-performing asset," this windfall was enough to make their financial director freeze for three minutes.
+
+This operation is extremely rare in our historical records. Usually only two types of people do this: either financial geniuses skilled in calculation who found arbitrage opportunities in the gray area of debt transfer, or gamblers who simply enjoy the thrill of being chased for debt, proving in the most expensive way that "when you have enough money, rules are just suggestions."
+
+Whichever category you belong to, at least it proves one thing: in this rimworld, there are always people who can achieve their goals in the most absurd ways.</USAC.Ending.Transfer.SilverBuyout.Body>
+  <USAC.Ending.Transfer.SilverBuyout.Close>The debt management department has filed this case as "atypical settlement behavior" and recommends that future risk control models add the assessment dimension of "deliberate delay with payment capacity."
+
+The dust has settled. Your credit record has been erased from the system, replaced by a cold data entry marked "Settled (Silver Buyout)."</USAC.Ending.Transfer.SilverBuyout.Close>
+  <USAC.Ending.Transfer.SilverBuyout.Ending>"Rich and willful."</USAC.Ending.Transfer.SilverBuyout.Ending>
+
   <!-- 围攻相关提示 -->
   <USAC.Alert.SiegeCountdown.Label>Asset seizure countdown</USAC.Alert.SiegeCountdown.Label>
   <USAC.Alert.SiegeCountdown.LabelActive>Final defense in progress</USAC.Alert.SiegeCountdown.LabelActive>

@@ -78,6 +78,7 @@
   <USAC.UI.Assets.Imminent>即将结算</USAC.UI.Assets.Imminent>
   <USAC.UI.Assets.Warning.Caution>已欠缴 {0} 次，信用评分持续下滑，请尽快缴纳。</USAC.UI.Assets.Warning.Caution>
   <USAC.UI.Assets.Warning.Critical>⚠ 已欠缴 {0} 次！再次欠缴将立即触发强制徵收程序！</USAC.UI.Assets.Warning.Critical>
+  <USAC.UI.Assets.Warning.FinalWarning>⚠⚠ 再次欠缴将立即触发强制徵收程序！</USAC.UI.Assets.Warning.FinalWarning>
   <USAC.UI.Assets.InterestPanel.Title>INTEREST_SETTLEMENT//利息结算</USAC.UI.Assets.InterestPanel.Title>
   <USAC.UI.Assets.InterestPaid>✓ 本期无挂账利息</USAC.UI.Assets.InterestPaid>
   <USAC.UI.Assets.BondsNeeded>需 {0} 张债券</USAC.UI.Assets.BondsNeeded>
@@ -242,7 +243,23 @@
 
   <USAC.Ending.Transfer.Victory.Title>WAR_OF_DEBT//债务终战</USAC.Ending.Transfer.Victory.Title>
   <USAC.Ending.Transfer.Victory.Body>您用最原始也最彻底的方式解决了财务问题：消灭债权人。\n\n在数日的血腥防御后，债权持有者终于意识到，向一群武装到牙齿的狂热殖民者讨债是一笔亏本买卖。随着最后一支突击队的溃退，那些由于债务产生的枷锁正式崩断。\n\n自由是有代价的，而您已经在血泊中支付了全额。</USAC.Ending.Transfer.Victory.Body>
-  <USAC.Ending.Transfer.Victory.Close>“债务已消亡。”</USAC.Ending.Transfer.Victory.Close>
+  <USAC.Ending.Transfer.Victory.Close>”债务已消亡。”</USAC.Ending.Transfer.Victory.Close>
+
+  <!-- 白银赎买结局 -->
+  <USAC.Ending.Transfer.SilverBuyout.Title>SILVER_SETTLEMENT//白银清偿报告</USAC.Ending.Transfer.SilverBuyout.Title>
+  <USAC.Ending.Transfer.SilverBuyout.Body>派系 {0} 已确认收到 {1} 白银的全额支付。您的债务状态已更新为”已核销”。
+
+USAC网络的数据流似乎在这一刻陷入了短暂的停滞。债务管理部门的风控算法反复验证着这笔交易的合法性，却始终无法理解其中的逻辑：您手握如此庞大的白银储备，本有无数种方式将其转化为我们认可的支付手段，却在数个结算周期内选择按兵不动，反而死扛到债权转移，然后用现金一次性买断。
+
+白银本身对USAC的轨道结算网络毫无价值——我们的系统只认可特定的支付凭证。但 {0} 显然不介意这一点。他们会将这批白银投入本地贸易网络，通过漫长而低效的转手流程，最终回收成本。对于一个刚刚接手”不良资产”的派系来说，这笔意外之财足以让他们的财务主管当场愣住三分钟。
+
+这种操作在我们的历史记录中极为罕见。通常只有两种人会这么做：要么是精于计算的金融天才，在债权转移的灰色地带中找到了套利空间；要么是单纯享受被追债刺激感的赌徒，用最昂贵的方式证明”只要钱够多，规则就只是个建议”。
+
+无论您属于哪一种，至少证明了一件事：在这片边缘世界，总有人能用最离谱的方式达成目的。</USAC.Ending.Transfer.SilverBuyout.Body>
+  <USAC.Ending.Transfer.SilverBuyout.Close>债务管理部门已将此案例归档为”非典型清偿行为”，并建议未来的风控模型增加”蓄意拖延但有支付能力”这一评估维度。
+
+尘埃落定。您的信贷记录已从系统中抹除，取而代之的是一个标注着”已核销（白银买断）”的冷冰冰的数据条目。</USAC.Ending.Transfer.SilverBuyout.Close>
+  <USAC.Ending.Transfer.SilverBuyout.Ending>”有钱，任性。”</USAC.Ending.Transfer.SilverBuyout.Ending>
 
   <!-- 围攻相关提示 -->
   <USAC.Alert.SiegeCountdown.Label>资产收缴倒计时</USAC.Alert.SiegeCountdown.Label>

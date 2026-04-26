@@ -3,13 +3,20 @@
 
   <!-- 债务据点共用基础 -->
   <SitePartDef Name="USAC_DebtSiteBase" Abstract="True">
-    <workerClass>SitePartWorker</workerClass>
+    <workerClass>SitePartWorker_Outpost</workerClass>
     <siteTexture>World/WorldObjects/USAC_Settlement</siteTexture>
     <expandingIconTexture>World/WorldObjects/Expanding/USAC_Icon</expandingIconTexture>
     <tags>
       <li>USAC_DebtSite</li>
     </tags>
     <requiresFaction>true</requiresFaction>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <approachOrderString>Attack {0}</approachOrderString>
+    <approachingReportString>Attacking {0}.</approachingReportString>
+    <arrivedLetter>There is a USAC debt collection outpost in this area.</arrivedLetter>
+    <arrivedLetterDef>NegativeEvent</arrivedLetterDef>
+    <minThreatPoints>300</minThreatPoints>
   </SitePartDef>
   
   <SitePartDef ParentName="USAC_DebtSiteBase">

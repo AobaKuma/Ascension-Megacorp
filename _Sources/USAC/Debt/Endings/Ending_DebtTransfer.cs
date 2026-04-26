@@ -148,6 +148,9 @@ namespace USAC.Endings
 
             inst.Phase = TransferPhase.Resolved;
             Messages.Message("USAC.Ending.Transfer.BuyoutSuccess".Translate(inst.BuyerFaction.Name), MessageTypeDefOf.PositiveEvent);
+
+            // 显示白银还款结局字幕
+            LongEventHandler.ExecuteWhenFinished(() => ShowSilverBuyoutCredits(inst));
         }
 
         private static void StartCountdown(GameComponent_DebtTransfer inst)
@@ -261,6 +264,19 @@ namespace USAC.Endings
             sb.AppendLine("USAC.Ending.Transfer.Victory.Body".Translate());
 
             string full = GameVictoryUtility.MakeEndCredits(sb.ToString(), "USAC.Ending.Transfer.Victory.Close".Translate(), string.Empty);
+            GameVictoryUtility.ShowCredits(full, null, exitToMainMenu: false);
+        }
+
+        private static void ShowSilverBuyoutCredits(GameComponent_DebtTransfer inst)
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine("USAC.Ending.Transfer.SilverBuyout.Title".Translate());
+            sb.AppendLine();
+            sb.AppendLine("USAC.Ending.Transfer.SilverBuyout.Body".Translate(inst.BuyerFaction.Name, inst.SilverBuyout));
+            sb.AppendLine();
+            sb.AppendLine("USAC.Ending.Transfer.SilverBuyout.Close".Translate());
+
+            string full = GameVictoryUtility.MakeEndCredits(sb.ToString(), "USAC.Ending.Transfer.SilverBuyout.Ending".Translate(), string.Empty);
             GameVictoryUtility.ShowCredits(full, null, exitToMainMenu: false);
         }
 

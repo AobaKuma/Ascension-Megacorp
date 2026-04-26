@@ -29,10 +29,13 @@ namespace USAC
 
             Log.Message($"[USAC] 为订单 {contract.Label} 随机选择了据点类型: {siteDef.defName}");
 
-            var sitePartDefWithParams = new SitePartDefWithParams(siteDef, new SitePartParams());
+            Faction faction = Find.FactionManager.RandomEnemyFaction(false, false, true, TechLevel.Industrial);
+            float threatPoints = StorytellerUtility.DefaultThreatPointsNow(map);
+
+            SitePartParams siteParams = siteDef.Worker.GenerateDefaultParams(threatPoints, siteTile, faction);
+            var sitePartDefWithParams = new SitePartDefWithParams(siteDef, siteParams);
             var parts = new List<SitePartDefWithParams> { sitePartDefWithParams };
 
-            Faction faction = Find.FactionManager.RandomEnemyFaction(false, false, true, TechLevel.Industrial);
             Site site = (Site)WorldObjectMaker.MakeWorldObject(USAC_DefOf.USAC_DebtSite);
             site.Tile = siteTile;
             site.SetFaction(faction);

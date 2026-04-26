@@ -61,12 +61,13 @@ namespace USAC
         public static void ConsumeBonds(Map map, int count)
         {
             int remaining = count;
-            foreach (var b in map.listerThings.ThingsOfDef(USAC_DefOf.USAC_Bond))
+            var bonds = map.listerThings.ThingsOfDef(USAC_DefOf.USAC_Bond);
+            for (int i = bonds.Count - 1; i >= 0 && remaining > 0; i--)
             {
+                var b = bonds[i];
                 int take = Math.Min(remaining, b.stackCount);
                 b.SplitOff(take).Destroy();
                 remaining -= take;
-                if (remaining <= 0) break;
             }
         }
         #endregion

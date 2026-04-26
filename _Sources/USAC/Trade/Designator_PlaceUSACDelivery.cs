@@ -101,9 +101,6 @@ namespace USAC
                     // 允许压盖植物
                     if (existing.def.category == ThingCategory.Plant)
                         continue;
-                    
-                    // 排除存放物本身
-                        continue;
 
                     // 存在建筑物则拒绝
                     if (existing.def.category == ThingCategory.Building)
