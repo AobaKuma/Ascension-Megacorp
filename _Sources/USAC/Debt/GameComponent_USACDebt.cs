@@ -110,6 +110,7 @@ namespace USAC
                 LiquidatedPawns = new List<Pawn>();
 
             MigrateLegacyData();
+            MigrateSiteBatchTick();
             ContractManager.LoadedGame(this);
 
             // 订阅债务事件
@@ -408,6 +409,27 @@ namespace USAC
             legacyInterest = 0;
 
             Log.Message("USAC.Debt.Log.LegacyMigrated".Translate());
+        }
+
+        // 迁移据点批量生成计时器
+        private void MigrateSiteBatchTick()
+        {
+            if (nextSiteBatchTick <= 0) return;
+
+            int now = Find.TickManager.TicksGame;
+
+            // 如果nextSiteBatchTick小于当前时间且小于900000 说明是旧版相对tick数
+            if (nextSiteBatchTick < now && nextSiteBatchTick < 900000)
+            {
+                Log.Warning($"[USAC] 检测到旧版据点计时器数据 ({nextSiteBatchTick}) 正在迁移为绝对tick");
+                nextSiteBatchTick = now + nextSiteBatchTick;
+            }
+            // 如果nextSiteBatchTick远小于当前时间 说明已经过期很久 重置
+            else if (nextSiteBatchTick < now - 900000)
+            {
+                Log.Warning($"[USAC] 据点计时器已过期 重置为15天后");
+                nextSiteBatchTick = now + 900000;
+            }
         }
         #endregion
     }

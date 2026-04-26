@@ -154,87 +154,58 @@ namespace USAC
                 return;
             }
 
-            // 计算实际经过的tick数
-            int elapsedTicks = now - contract.NextCycleTick;
-
-            // 如果还没到期 不处理
-            if (elapsedTicks < 0)
-            {
-                scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
-                return;
-            }
-
             // 计算错过的周期数
-            int missedCycles = 1 + (elapsedTicks / DebtContract.CycleTicks);
-            if (missedCycles > 10) missedCycles = 10; // 最多补偿10个周期
+            int missedCycles = 0;
+            int nextTick = contract.NextCycleTick;
 
-            // 如果错过超过1个周期 批量处理
-            if (missedCycles > 1)
+            while (nextTick <= now && missedCycles < 10)
             {
-                Log.Warning($"[USAC] 合同 {contract.Label} 错过了 {missedCycles} 个周期 正在批量处理");
+                missedCycles++;
+                nextTick += DebtContract.CycleTicks;
+            }
 
-                // 批量累积本金增长和利息
-                for (int i = 0; i < missedCycles; i++)
-                {
-                    contract.ProcessCycle(map);
-
-                    // 据点模式或错过周期自动将利息并入本金
-                    if (contract.IsInSiteMode || i < missedCycles - 1)
-                    {
-                        if (contract.AccruedInterest > 0)
-                        {
-                            float interest = contract.AccruedInterest;
-                            DebtHandler.AdjustPrincipal(contract, interest,
-                                "USAC.Debt.Transaction.MissedPayment".Translate(contract.Label, contract.MissedPayments),
-                                USACTransactionType.Penalty);
-                            DebtHandler.SetAccruedInterest(contract, 0f);
-                        }
-                    }
-                }
-
-                // 最后一个周期如果不是据点模式 弹窗
-                if (!contract.IsInSiteMode)
-                {
-                    ShowRepaymentDialog(contract, map);
-                }
-
-                // 推进到下一个周期
-                contract.NextCycleTick = contract.NextCycleTick + (missedCycles * DebtContract.CycleTicks);
+            // 如果没有错过周期 说明被提前触发 重新调度
+            if (missedCycles == 0)
+            {
                 scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
                 return;
             }
 
-            // 正常单周期处理
-            // 据点模式下继续周期结算但自动将利息并入本金
-            if (contract.IsInSiteMode)
+            // 批量处理错过的周期
+            for (int i = 0; i < missedCycles; i++)
             {
                 contract.ProcessCycle(map);
 
-                if (contract.AccruedInterest > 0)
+                // 据点模式或非最后一个周期 自动将利息并入本金
+                if (contract.IsInSiteMode || i < missedCycles - 1)
                 {
-                    float interest = contract.AccruedInterest;
-                    DebtHandler.AdjustPrincipal(contract, interest,
-                        "USAC.Debt.Transaction.MissedPayment".Translate(contract.Label, contract.MissedPayments),
-                        USACTransactionType.Penalty);
-                    DebtHandler.SetAccruedInterest(contract, 0f);
+                    if (contract.AccruedInterest > 0)
+                    {
+                        float interest = contract.AccruedInterest;
+                        DebtHandler.AdjustPrincipal(contract, interest,
+                            "USAC.Debt.Transaction.MissedPayment".Translate(contract.Label, contract.MissedPayments),
+                            USACTransactionType.Penalty);
+                        DebtHandler.SetAccruedInterest(contract, 0f);
+                    }
                 }
-
-                contract.NextCycleTick = contract.NextCycleTick + DebtContract.CycleTicks;
-                scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
-                return;
             }
 
-            // 执行周期结算
-            contract.ProcessCycle(map);
-
-            // 弹窗询问还款
-            ShowRepaymentDialog(contract, map);
+            // 最后一个周期如果不是据点模式 弹窗
+            if (!contract.IsInSiteMode)
+            {
+                ShowRepaymentDialog(contract, map);
+            }
 
             // 推进到下一个周期
-            contract.NextCycleTick = contract.NextCycleTick + DebtContract.CycleTicks;
+            contract.NextCycleTick = nextTick;
 
             // 重新调度下次周期
             scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
+
+            if (missedCycles > 1)
+            {
+                Log.Warning($"[USAC] 合同 {contract.Label} 错过了 {missedCycles} 个周期 已批量处理");
+            }
         }
 
         private void ShowRepaymentDialog(DebtContract contract, Map map)
