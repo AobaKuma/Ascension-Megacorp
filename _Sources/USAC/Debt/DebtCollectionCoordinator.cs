@@ -68,14 +68,21 @@ namespace USAC
             // 抗缴升级据点模式并弹窗
             else if (contract.ConsecutiveCollectionFails == 2)
             {
+                Log.Message($"[USAC] 合同 {contract.Label} 连续抗缴2次 升级为据点模式");
+
                 // 标记所有活跃合同进入据点模式
                 foreach (var c in debtComp.ActiveContracts)
                 {
-                    if (c.IsActive) c.IsInSiteMode = true;
+                    if (c.IsActive)
+                    {
+                        c.IsInSiteMode = true;
+                        Log.Message($"[USAC] 合同 {c.Label} 进入据点模式");
+                    }
                 }
 
                 // 初始化据点生成绝对触发时刻
                 debtComp.TicksUntilNextSiteBatch = 900000;
+                Log.Message($"[USAC] 设置据点生成计时器 当前tick={Find.TickManager.TicksGame} 触发tick={Find.TickManager.TicksGame + 900000}");
 
                 Find.LetterStack.ReceiveLetter(
                     "USAC_DebtSite_EscalationLetterLabel".Translate(),
