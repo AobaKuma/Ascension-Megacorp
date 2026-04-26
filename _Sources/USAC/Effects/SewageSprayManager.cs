@@ -174,17 +174,14 @@ namespace USAC
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!disposed && disposing)
+            if (!disposed)
             {
-                CleanUp();
+                if (disposing)
+                {
+                    CleanUp();
+                }
                 disposed = true;
             }
-        }
-
-        // 析构函数确保资源释放
-        ~SewageSprayManager()
-        {
-            Dispose(false);
         }
 
         #endregion
@@ -299,31 +296,37 @@ namespace USAC
 
         public void CleanUp()
         {
+            if (disposed) return;
+
             try
             {
-                particleBuffer?.Release();
-                argsBuffer?.Release();
-                
+                if (particleBuffer != null && particleBuffer.IsValid())
+                {
+                    particleBuffer.Release();
+                    particleBuffer = null;
+                }
+
+                if (argsBuffer != null && argsBuffer.IsValid())
+                {
+                    argsBuffer.Release();
+                    argsBuffer = null;
+                }
+
                 if (instanceMaterial != null)
                 {
                     UnityEngine.Object.DestroyImmediate(instanceMaterial);
+                    instanceMaterial = null;
                 }
-                
+
                 if (particleMesh != null)
                 {
                     UnityEngine.Object.DestroyImmediate(particleMesh);
+                    particleMesh = null;
                 }
             }
             catch (System.Exception ex)
             {
                 Log.Error($"[USAC] 清理GPU资源时出错: {ex}");
-            }
-            finally
-            {
-                particleBuffer = null;
-                argsBuffer = null;
-                instanceMaterial = null;
-                particleMesh = null;
             }
         }
 

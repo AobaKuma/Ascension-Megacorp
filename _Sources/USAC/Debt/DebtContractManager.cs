@@ -1,0 +1,280 @@
+using System.Collections.Generic;
+using RimWorld;
+using UnityEngine;
+using Verse;
+
+namespace USAC
+{
+    // 合同生命周期管理
+    public class DebtContractManager : IExposable
+    {
+        #region 字段
+        public List<DebtContract> ActiveContracts = new();
+        private DebtScheduler scheduler = new();
+        #endregion
+
+        #region 属性
+        // 总负债
+        public float TotalDebt
+        {
+            get
+            {
+                float sum = 0f;
+                for (int i = 0; i < ActiveContracts.Count; i++)
+                {
+                    var c = ActiveContracts[i];
+                    if (c.IsActive) sum += c.Principal + c.AccruedInterest;
+                }
+                return sum;
+            }
+        }
+
+        // 最近到期的合同
+        public DebtContract NextDueContract
+        {
+            get
+            {
+                DebtContract best = null;
+                for (int i = 0; i < ActiveContracts.Count; i++)
+                {
+                    var c = ActiveContracts[i];
+                    if (c.IsActive && (best == null || c.NextCycleTick < best.NextCycleTick))
+                        best = c;
+                }
+                return best;
+            }
+        }
+
+        // 活跃合同数量
+        public int ActiveCount
+        {
+            get
+            {
+                int count = 0;
+                for (int i = 0; i < ActiveContracts.Count; i++)
+                    if (ActiveContracts[i].IsActive) count++;
+                return count;
+            }
+        }
+        #endregion
+
+        #region 合同管理
+        // 申请贷款
+        public void ApplyForLoan(DebtType type, float amount,
+            float growthRate, float interestRate,
+            DebtGrowthMode growthMode = DebtGrowthMode.PrincipalBased)
+        {
+            var contract = new DebtContract(
+                type, amount, growthRate, interestRate, growthMode);
+
+            ActiveContracts.Add(contract);
+
+            // 注册到调度器
+            scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
+
+            // 投放债券
+            Map map = GameComponent_USACDebt.GetRichestPlayerHomeMap();
+            if (map != null)
+            {
+                int bondCount = Mathf.FloorToInt(amount / 1000f);
+                if (bondCount > 0)
+                {
+                    Thing bonds = ThingMaker.MakeThing(USAC_DefOf.USAC_Bond);
+                    bonds.stackCount = bondCount;
+                    DropPodUtility.DropThingsNear(
+                        DropCellFinder.TradeDropSpot(map),
+                        map, new[] { bonds });
+                }
+            }
+        }
+
+        // 增加债务本金
+        public void AddDebt(float amount, string reason)
+        {
+            if (ActiveContracts.Count == 0)
+            {
+                ApplyForLoan(DebtType.DynamicLoan, amount, 0.05f, 0.02f);
+                return;
+            }
+            DebtHandler.AdjustPrincipal(ActiveContracts[0], amount, reason, USACTransactionType.Initial);
+        }
+        #endregion
+
+        #region 周期处理
+        public void Tick()
+        {
+            if (ActiveContracts == null || ActiveContracts.Count == 0)
+                return;
+
+            int now = Find.TickManager.TicksGame;
+
+            // 调度器检查并触发到期事件
+            scheduler.CheckAndTrigger(now);
+
+            // 清理已结清的合同
+            for (int i = ActiveContracts.Count - 1; i >= 0; i--)
+            {
+                var contract = ActiveContracts[i];
+                if (contract.IsActive && contract.Principal <= 0)
+                {
+                    contract.IsActive = false;
+                    scheduler.UnscheduleContract(contract.ContractId);
+                }
+            }
+        }
+
+        internal void ProcessContractCycle(DebtContract contract)
+        {
+            // 合同已结清则立即退出
+            if (!contract.IsActive || contract.Principal <= 0)
+            {
+                contract.IsActive = false;
+                scheduler.UnscheduleContract(contract.ContractId);
+                return;
+            }
+
+            Map map = GameComponent_USACDebt.GetRichestPlayerHomeMap();
+
+            // 确定基准时间 防止漂移
+            int baseTick = Mathf.Max(contract.NextCycleTick, Find.TickManager.TicksGame);
+
+            // 已升级为据点模式 仅维持调度不执行税收
+            if (contract.IsInSiteMode)
+            {
+                contract.NextCycleTick = baseTick + DebtContract.CycleTicks;
+                scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
+                return;
+            }
+
+            // 执行周期结算
+            contract.ProcessCycle(map);
+
+            // 弹窗询问还款
+            ShowRepaymentDialog(contract, map);
+
+            // 重置周期
+            contract.NextCycleTick = baseTick + DebtContract.CycleTicks;
+
+            // 重新调度下次周期
+            scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
+        }
+
+        private void ShowRepaymentDialog(DebtContract contract, Map map)
+        {
+            float toPay = contract.AccruedInterest;
+            int bondsNeeded = Mathf.CeilToInt(toPay / 1000f);
+
+            string text =
+                "USAC.Debt.Dialog.Repayment.Text".Translate(
+                    contract.Label,
+                    toPay.ToString("N0"),
+                    bondsNeeded,
+                    contract.Principal.ToString("N0"),
+                    contract.MissedPayments);
+            if (contract.MissedPayments >= 2) text += "USAC.Debt.Dialog.Repayment.Warning".Translate();
+
+            DiaNode diaNode = new DiaNode(text);
+
+            // 确认缴纳
+            DiaOption optPay = new DiaOption(
+                "USAC.Debt.Dialog.Repayment.Option.Pay".Translate())
+            {
+                action = () =>
+                {
+                    if (contract.TryPayInterest(map))
+                    {
+                        Messages.Message(
+                            "USAC.Debt.Message.InterestPaid".Translate(contract.Label),
+                            MessageTypeDefOf.PositiveEvent);
+                    }
+                    else
+                    {
+                        // 通知债务组件处理失败还款
+                        var debtComp = GameComponent_USACDebt.Instance;
+                        if (debtComp != null)
+                        {
+                            debtComp.HandleFailedPayment(contract, map);
+                        }
+                    }
+                },
+                resolveTree = true
+            };
+
+            // 拒绝/无力偿还
+            DiaOption optRefuse = new DiaOption(
+                "USAC.Debt.Dialog.Repayment.Option.Refuse".Translate())
+            {
+                action = () =>
+                {
+                    var debtComp = GameComponent_USACDebt.Instance;
+                    if (debtComp != null)
+                    {
+                        debtComp.HandleFailedPayment(contract, map);
+                    }
+                },
+                resolveTree = true
+            };
+
+            diaNode.options.Add(optPay);
+            diaNode.options.Add(optRefuse);
+
+            Find.WindowStack.Add(new Dialog_NodeTree(
+                diaNode, true, false,
+                "USAC.Debt.Dialog.Repayment.Title".Translate(contract.Label)));
+        }
+        #endregion
+
+        #region 加载与存档
+        public void LoadedGame(GameComponent_USACDebt debtComp)
+        {
+            if (ActiveContracts == null)
+                ActiveContracts = new List<DebtContract>();
+
+            // 重建调度器回调
+            scheduler.RebuildCallbacks(debtComp);
+
+            // 尝试修复旧版卡死存档的孤儿合同
+            RepairOrphanedSchedules();
+        }
+
+        private void RepairOrphanedSchedules()
+        {
+            int now = Find.TickManager.TicksGame;
+            for (int i = 0; i < ActiveContracts.Count; i++)
+            {
+                var c = ActiveContracts[i];
+                if (!c.IsActive) continue;
+
+                // NextCycleTick损坏修复
+                if (c.NextCycleTick <= 0)
+                {
+                    c.NextCycleTick = now + 1;
+                    Log.Warning($"[USAC] 合同 {c.Label}({c.ContractId}) NextCycleTick损坏 已修复为立即触发");
+                }
+
+                // 补注缺失的调度事件
+                if (!scheduler.IsContractScheduled(c.ContractId))
+                {
+                    var contract = c;
+                    scheduler.ScheduleContractCycle(contract, () => ProcessContractCycle(contract));
+                    Log.Warning($"[USAC] 合同 {c.Label}({c.ContractId}) 调度事件缺失 已自动补注");
+                }
+            }
+        }
+
+        public void ExposeData()
+        {
+            Scribe_Collections.Look(ref ActiveContracts, "ActiveContracts", LookMode.Deep);
+            Scribe_Deep.Look(ref scheduler, "scheduler");
+
+            if (Scribe.mode == LoadSaveMode.LoadingVars)
+            {
+                if (ActiveContracts == null)
+                    ActiveContracts = new List<DebtContract>();
+                if (scheduler == null)
+                    scheduler = new DebtScheduler();
+            }
+        }
+        #endregion
+    }
+}

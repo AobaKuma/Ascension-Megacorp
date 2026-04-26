@@ -149,7 +149,15 @@ namespace USAC
             if (ConsecutiveCollectionFails > 0) ConsecutiveCollectionFails--;
             comp.CreditScore = Mathf.Min(100, comp.CreditScore + 5);
 
-            DebtHandler.NotifyFinancialStateChanged();
+            // 发布还款成功事件
+            DebtEventBus.Instance.Publish(new DebtEventArgs
+            {
+                EventType = DebtEventType.PaymentMade,
+                Contract = this,
+                Amount = paid,
+                Reason = "Interest payment successful"
+            });
+
             return true;
         }
 

@@ -408,7 +408,7 @@ namespace USAC.InternalUI
 
         private void DrawPrincipalRepayPanel(ref float y, float width, DebtContract contract, GameComponent_USACDebt comp)
         {
-            Rect r = new(0, y, width, 140);
+            Rect r = new(0, y, width, 160);
             DrawBentoBox(r, (box) =>
             {
                 Rect inner = box.ContractedBy(15);
@@ -416,6 +416,9 @@ namespace USAC.InternalUI
 
                 float freeLimit = contract.Principal * 0.10f;
                 float used = contract.PrincipalPaidThisQuarter;
+                float remaining = Mathf.Max(0, freeLimit - used);
+                float usedByThisPayment = Mathf.Min(curRepayAmount, remaining);
+                float remainingAfter = remaining - usedByThisPayment;
 
                 Rect adjRow = new(inner.x, inner.y + 44, inner.width - 185, 32);
                 float maxRepayK = Mathf.Ceil(contract.Principal / 1000f) * 1000f;
@@ -431,10 +434,10 @@ namespace USAC.InternalUI
                 float fee = SurchargeTable.Calculate(contract.Principal, totalThisQ) - SurchargeTable.Calculate(contract.Principal, used);
                 float actualTotal = curRepayAmount + fee;
 
-                // 动态手续费提示 含{0}=免费额 {1}=已用 {2}=本次手续费 {3}=实付总额
+                // 动态手续费提示 含{0}=免费额 {1}=本次使用免费额 {2}=本次手续费 {3}=实付总额 {4}=剩余免费额
                 string feeHint = "USAC.UI.Assets.SurchargeHint"
-                    .Translate(freeLimit.ToString("N0"), used.ToString("N0"),
-                               fee.ToString("N0"), actualTotal.ToString("N0"));
+                    .Translate(freeLimit.ToString("N0"), usedByThisPayment.ToString("N0"),
+                               fee.ToString("N0"), actualTotal.ToString("N0"), remainingAfter.ToString("N0"));
                 Color hintColor = fee > 0 ? ColAccentRed.ToTransp(0.85f) : ColTextMuted;
                 DrawColoredLabel(new Rect(inner.x, inner.y + 22, inner.width - 185, 18), feeHint, hintColor, GameFont.Tiny);
                 int totalBonds = Mathf.CeilToInt((curRepayAmount + fee) / 1000f);
@@ -447,23 +450,50 @@ namespace USAC.InternalUI
                     if (err != null) Messages.Message(err, MessageTypeDefOf.RejectInput);
                 }
             }, false);
-            y += 148;
+            y += 168;
         }
 
         private void DrawGrowthForecastCard(ref float y, float width, DebtContract contract)
         {
-            if (contract.GrowthRate <= 0f) return;
-            float predicted = GameComponent_USACDebt.PredictNextGrowth(contract);
-            Rect r = new(0, y, width, 80);
+            if (contract.GrowthRate <= 0f && contract.InterestRate <= 0f) return;
+
+            float predictedGrowth = contract.GrowthRate > 0f ? GameComponent_USACDebt.PredictNextGrowth(contract) : 0f;
+            float predictedInterest = contract.Principal * contract.InterestRate;
+
+            Rect r = new(0, y, width, 120);
             DrawBentoBox(r, (box) =>
             {
                 Rect bInner = box.ContractedBy(15);
-                DrawColoredLabel(bInner.TopPartPixels(20), "USAC.UI.Assets.GrowthForecast".Translate(), ColTextMuted, GameFont.Tiny);
-                string modeKey = "USAC.UI.Assets.GrowthMode." + contract.GrowthMode;
-                DrawColoredLabel(new Rect(bInner.x, bInner.y + 22, 250, 20), modeKey.Translate((int)(contract.GrowthRate * 100)), ColTextMuted, GameFont.Tiny);
-                DrawColoredLabel(new Rect(bInner.xMax - 150, bInner.y + 20, 140, 30), $"+₿{predicted:N0}", ColAccentRed, GameFont.Medium, TextAnchor.MiddleRight);
+                DrawColoredLabel(bInner.TopPartPixels(20), "USAC.UI.Assets.CycleForecast".Translate(), ColTextMuted, GameFont.Tiny);
+
+                float rowY = bInner.y + 24;
+
+                // 周期利息预测
+                if (contract.InterestRate > 0f)
+                {
+                    DrawColoredLabel(new Rect(bInner.x, rowY, 200, 20),
+                        "USAC.UI.Assets.NextInterest".Translate(), ColTextMuted, GameFont.Tiny);
+                    DrawColoredLabel(new Rect(bInner.xMax - 150, rowY, 140, 20),
+                        $"₿{predictedInterest:N0}", ColAccentRed, GameFont.Small, TextAnchor.MiddleRight);
+                    rowY += 24;
+                }
+
+                // 本金增长预测
+                if (contract.GrowthRate > 0f)
+                {
+                    string modeKey = "USAC.UI.Assets.GrowthMode." + contract.GrowthMode;
+                    DrawColoredLabel(new Rect(bInner.x, rowY, 250, 20),
+                        modeKey.Translate((int)(contract.GrowthRate * 100)), ColTextMuted, GameFont.Tiny);
+                    DrawColoredLabel(new Rect(bInner.xMax - 150, rowY, 140, 20),
+                        $"+₿{predictedGrowth:N0}", ColAccentRed, GameFont.Small, TextAnchor.MiddleRight);
+                    rowY += 24;
+
+                    // 说明文本
+                    DrawColoredLabel(new Rect(bInner.x, rowY, bInner.width, 18),
+                        "USAC.UI.Assets.GrowthNote".Translate(), ColTextMuted.ToTransp(0.7f), GameFont.Tiny);
+                }
             }, false);
-            y += 88;
+            y += 128;
         }
 
         // 查找指定ID的合约

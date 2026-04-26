@@ -107,4 +107,49 @@
     </comps>
   </WorldObjectDef>
 
+  <!-- 商业据点地图生成器 -->
+  <GenStepDef>
+    <defName>USAC_CommercialOutpostGen</defName>
+    <linkWithSite>USAC_CommercialOutpost</linkWithSite>
+    <order>400</order>
+    <genStep Class="GenStep_Outpost"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>USAC_CommercialOutpostPower</defName>
+    <linkWithSite>USAC_CommercialOutpost</linkWithSite>
+    <order>401</order>
+    <genStep Class="GenStep_Power"/>
+  </GenStepDef>
+
+  <!-- 火炮阵地地图生成器 -->
+  <GenStepDef>
+    <defName>USAC_ArtilleryPositionGen</defName>
+    <linkWithSite>USAC_ArtilleryPosition</linkWithSite>
+    <order>400</order>
+    <genStep Class="GenStep_Outpost"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>USAC_ArtilleryPositionPower</defName>
+    <linkWithSite>USAC_ArtilleryPosition</linkWithSite>
+    <order>401</order>
+    <genStep Class="GenStep_Power"/>
+  </GenStepDef>
+
+  <!-- 空军基地地图生成器 -->
+  <GenStepDef>
+    <defName>USAC_AirbaseGen</defName>
+    <linkWithSite>USAC_Airbase</linkWithSite>
+    <order>400</order>
+    <genStep Class="GenStep_Outpost"/>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>USAC_AirbasePower</defName>
+    <linkWithSite>USAC_Airbase</linkWithSite>
+    <order>401</order>
+    <genStep Class="GenStep_Power"/>
+  </GenStepDef>
+
 </Defs>

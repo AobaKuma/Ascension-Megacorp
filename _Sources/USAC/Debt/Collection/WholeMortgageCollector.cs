@@ -129,15 +129,12 @@ namespace USAC
         #region 屋顶辅助
         protected static int GetRoofPriority(IntVec3 c, Map map)
         {
-            if (!c.Roofed(map)) return 0;
-            if (c.GetRoof(map).isThickRoof) return 2;
-            return 1;
+            return MapRoofUtility.GetRoofPriority(c, map);
         }
 
         protected static bool IsUnderThickRoof(IntVec3 c, Map map)
         {
-            RoofDef roof = c.GetRoof(map);
-            return roof != null && roof.isThickRoof;
+            return MapRoofUtility.IsUnderThickRoof(c, map);
         }
         #endregion
 

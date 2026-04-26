@@ -96,13 +96,29 @@ namespace USAC
                 if (days < 0.1f && ticksLeft > 0) days = 0.1f;
                 float estInterest = DebtContract.CeilTo1000(c.Principal * c.InterestRate);
 
-                result += "USAC.Alert.DebtRepayment.Explanation.ContractEntry"
-                    .Translate(
-                        c.Label,
-                        c.Principal.ToString("N0"),
-                        estInterest.ToString("N0"),
-                        Mathf.Max(0f, days).ToString("F1"),
-                        c.MissedPayments);
+                // 检查是否有本金增长
+                if (c.GrowthRate > 0f)
+                {
+                    float predictedGrowth = GameComponent_USACDebt.PredictNextGrowth(c);
+                    result += "USAC.Alert.DebtRepayment.Explanation.ContractEntryWithGrowth"
+                        .Translate(
+                            c.Label,
+                            c.Principal.ToString("N0"),
+                            estInterest.ToString("N0"),
+                            Mathf.Max(0f, days).ToString("F1"),
+                            c.MissedPayments,
+                            predictedGrowth.ToString("N0"));
+                }
+                else
+                {
+                    result += "USAC.Alert.DebtRepayment.Explanation.ContractEntry"
+                        .Translate(
+                            c.Label,
+                            c.Principal.ToString("N0"),
+                            estInterest.ToString("N0"),
+                            Mathf.Max(0f, days).ToString("F1"),
+                            c.MissedPayments);
+                }
             }
 
             if (cachedNext != null)

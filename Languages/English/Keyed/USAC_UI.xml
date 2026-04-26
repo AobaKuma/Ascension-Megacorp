@@ -59,8 +59,8 @@
   <USAC.UI.Assets.NextSettlement>Time Until Settlement</USAC.UI.Assets.NextSettlement>
   <USAC.UI.Assets.MissedWarning>⚠ Missed payments: {0}! One more miss will trigger forced collection!</USAC.UI.Assets.MissedWarning>
   <USAC.UI.Assets.Cycle>Per Cycle</USAC.UI.Assets.Cycle>
-  <USAC.UI.Assets.GrowthMode.WealthBased>Grows by Map Wealth (Wealth ×{0}%/cycle)</USAC.UI.Assets.GrowthMode.WealthBased>
-  <USAC.UI.Assets.GrowthMode.PrincipalBased>Grows by Current Principal (Principal ×{0}%/cycle)</USAC.UI.Assets.GrowthMode.PrincipalBased>
+  <USAC.UI.Assets.GrowthMode.WealthBased>Grows by Map Wealth (×{0}%/cycle)</USAC.UI.Assets.GrowthMode.WealthBased>
+  <USAC.UI.Assets.GrowthMode.PrincipalBased>Grows by Current Principal (×{0}%/cycle)</USAC.UI.Assets.GrowthMode.PrincipalBased>
   <USAC.UI.Assets.Block.LowCredit>Credit score too low (requires ≥30). Financing channel has been disabled.</USAC.UI.Assets.Block.LowCredit>
   <USAC.UI.Assets.Block.LowWealth>Current asset valuation is insufficient for the requested limit. Increase the rate plan to pass assessment.</USAC.UI.Assets.Block.LowWealth>
   <USAC.UI.Assets.Stat.CreditScore>Credit Score</USAC.UI.Assets.Stat.CreditScore>
@@ -91,8 +91,11 @@
   <USAC.UI.Assets.Repay>Repay Principal ({0} Credit Bonds)</USAC.UI.Assets.Repay>
   <USAC.UI.Assets.RepaySurcharge>Repay Principal ({0} Credit Bonds, incl. surcharge {1})</USAC.UI.Assets.RepaySurcharge>
   <USAC.UI.Assets.GrowthForecast>GROWTH_FORECAST // Principal Growth Forecast</USAC.UI.Assets.GrowthForecast>
-  <USAC.UI.Assets.GrowthMode.Wealth>Increase = Map Wealth × {0}% / cycle</USAC.UI.Assets.GrowthMode.Wealth>
-  <USAC.UI.Assets.GrowthMode.Principal>Increase = Current Principal × {0}% / cycle</USAC.UI.Assets.GrowthMode.Principal>
+  <USAC.UI.Assets.CycleForecast>CYCLE_FORECAST // Cycle Forecast</USAC.UI.Assets.CycleForecast>
+  <USAC.UI.Assets.NextInterest>Next Cycle Interest</USAC.UI.Assets.NextInterest>
+  <USAC.UI.Assets.GrowthNote>Principal growth will be added directly to principal each cycle</USAC.UI.Assets.GrowthNote>
+  <USAC.UI.Assets.GrowthMode.Wealth>Principal increase = Map Wealth × {0}% / cycle</USAC.UI.Assets.GrowthMode.Wealth>
+  <USAC.UI.Assets.GrowthMode.Principal>Principal increase = Current Principal × {0}% / cycle</USAC.UI.Assets.GrowthMode.Principal>
   <USAC.UI.Assets.CurrentWealth>Current Map Wealth: ₿{0}</USAC.UI.Assets.CurrentWealth>
   <USAC.UI.Nav.Home>Strategic Overview</USAC.UI.Nav.Home>
   <USAC.UI.Nav.Assets>Asset Terminal</USAC.UI.Nav.Assets>
@@ -152,6 +155,7 @@
   <USAC.Alert.DebtRepayment.LabelWithTime>USAC Settlement: {0} days ({1} contracts)</USAC.Alert.DebtRepayment.LabelWithTime>
   <USAC.Alert.DebtRepayment.Explanation.Header>Credit Score: {0}\nBeacon Bond Count: {1}\n\n</USAC.Alert.DebtRepayment.Explanation.Header>
   <USAC.Alert.DebtRepayment.Explanation.ContractEntry>▸ {0}\n  Principal: ₿{1}  Est. Interest: ₿{2}\n  Due In: {3} days  Missed: {4}\n\n</USAC.Alert.DebtRepayment.Explanation.ContractEntry>
+  <USAC.Alert.DebtRepayment.Explanation.ContractEntryWithGrowth>▸ {0}\n  Principal: ₿{1}  Est. Interest: ₿{2}\n  Est. Principal Growth: +₿{5}\n  Due In: {3} days  Missed: {4}\n\n</USAC.Alert.DebtRepayment.Explanation.ContractEntryWithGrowth>
   <USAC.Alert.DebtRepayment.Explanation.ImminentWarning>⚠ The nearest contract is due soon! Please prepare enough USAC bonds.</USAC.Alert.DebtRepayment.Explanation.ImminentWarning>
   <USAC.Debt.Dialog.Repayment.Text>[USAC Financial Node] {0} audit completed\n\nInterest due this cycle: ₿{1} (requires {2} bonds)\nCurrent principal: ₿{3}\nMissed payments: {4}\n\nConfirm using "USAC Credit Bonds" within trade beacon range for settlement.\n</USAC.Debt.Dialog.Repayment.Text>
   <USAC.Debt.Dialog.Repayment.Warning>⚠ One more missed payment will trigger forced collection!</USAC.Debt.Dialog.Repayment.Warning>
@@ -193,7 +197,7 @@
   <USAC.Debt.Message.PawnDemolished>[USAC] Debt liquidation executed: {0} has been fully dismantled.</USAC.Debt.Message.PawnDemolished>
   <USAC.Debt.Message.CreditDanger>[USAC] Credit rating has dropped to dangerous levels. USAC trade channel will soon be closed.</USAC.Debt.Message.CreditDanger>
   <USAC.Debt.Message.CreditPenalty>[USAC] Credit-loan missed payment: Credit score -25 (current: {0})</USAC.Debt.Message.CreditPenalty>
-  <USAC.UI.Assets.SurchargeHint>Quarterly free allowance ₿{0} (used ₿{1})  ▸  This surcharge ₿{2}  →  Total cost ₿{3}</USAC.UI.Assets.SurchargeHint>
+  <USAC.UI.Assets.SurchargeHint>Quarterly free allowance ₿{0} (remaining ₿{4})  ▸  This surcharge ₿{2}  →  Total cost ₿{3}</USAC.UI.Assets.SurchargeHint>
 <USAC.UI.Assets.AccessDenied>ACCESS_DENIED//ACCESS DENIED.\n\n Insufficient permission to access...</USAC.UI.Assets.AccessDenied>
 
   <!-- 债务清偿结局 (Settled) -->
@@ -284,10 +288,14 @@ Once the countdown ends, this faction will launch an unlimited forced seizure. P
   <USAC.Trade.Summary.Sell>Sell Amounts</USAC.Trade.Summary.Sell>
   <USAC.Trade.Summary.Net>Net expenditure</USAC.Trade.Summary.Net>
   <USAC.Trade.Summary.Current>Current assets</USAC.Trade.Summary.Current>
+  <USAC.Trade.Summary.CurrentAssets>Current</USAC.Trade.Summary.CurrentAssets>
   <USAC.Trade.Summary.After>After the transaction</USAC.Trade.Summary.After>
-  <USAC.Trade.Summary.NoChange>Asset stock remains constant</USAC.Trade.Summary.NoChange>
-  <USAC.Trade.Summary.Wastage>Current unit write-off asset loss: ₿{0}</USAC.Trade.Summary.Wastage>
-  
+  <USAC.Trade.Summary.AfterTransaction>After</USAC.Trade.Summary.AfterTransaction>
+  <USAC.Trade.Summary.NoChange>No asset change</USAC.Trade.Summary.NoChange>
+  <USAC.Trade.Summary.Wastage>Change loss: ₿{0}</USAC.Trade.Summary.Wastage>
+  <USAC.Trade.Summary.BuyingFrom>Buying from: {0}</USAC.Trade.Summary.BuyingFrom>
+  <USAC.Trade.Summary.SellingTo>Selling to: {0}</USAC.Trade.Summary.SellingTo>
+
   <USAC.Trade.Summary.Tip_0>Click on the item icon to view details.</USAC.Trade.Summary.Tip_0>
   <USAC.Trade.Summary.Tip_1>You said you didn't want to be here~ (Selected Works of the Chairman of USAC, 3:43)</USAC.Trade.Summary.Tip_1>
   <USAC.Trade.Summary.Tip_2>USAC does not offer currency splitting or change services.</USAC.Trade.Summary.Tip_2>
@@ -309,13 +317,13 @@ Once the countdown ends, this faction will launch an unlimited forced seizure. P
   <USAC.Trade.Currency.Bond>Credit bonds</USAC.Trade.Currency.Bond>
   <USAC.Trade.Currency.Empty>Orbital network did not detect any legitimate assets within the trade beacon range of the area.</USAC.Trade.Currency.Empty>
   
-  <USAC_Currency_Breakdown>Asset settlement details:</USAC_Currency_Breakdown>
-  <USAC_Currency_CorpseBagValue>Total body bag value: ₿{0}</USAC_Currency_CorpseBagValue>
-  <USAC_Currency_BondValue>Credit bond holdings ({0} slips of bond): ₿{1}</USAC_Currency_BondValue>
-  <USAC_Currency_TotalValue>Maximum payment authorization limit: ₿{0}</USAC_Currency_TotalValue>
-  <USAC_Currency_SmallestBag>The smallest settlement unit in the current inventory: ₿{0}</USAC_Currency_SmallestBag>
-  <USAC_Currency_Desc>These assets are directly identifiable by the Orbit Clearing System. USAC will prioritize write-offs via storage units unless you specify priority consumption of physical bonds in your preferences.</USAC_Currency_Desc>
-  <USAC_Currency_LabelEmpty>Offshore assets</USAC_Currency_LabelEmpty>
+  <USAC_Currency_Breakdown>Asset details:</USAC_Currency_Breakdown>
+  <USAC_Currency_CorpseBagValue>Body bag value: ₿{0}</USAC_Currency_CorpseBagValue>
+  <USAC_Currency_BondValue>Credit bonds ({0} bonds): ₿{1}</USAC_Currency_BondValue>
+  <USAC_Currency_TotalValue>Available payment: ₿{0}</USAC_Currency_TotalValue>
+  <USAC_Currency_SmallestBag>Smallest body bag value: ₿{0}</USAC_Currency_SmallestBag>
+  <USAC_Currency_Desc>USAC prioritizes body bags for payment unless you enable "Prioritize payment using bonds". Note: USAC does not provide change, excess value will be lost.</USAC_Currency_Desc>
+  <USAC_Currency_LabelEmpty>USAC Currency</USAC_Currency_LabelEmpty>
   
   <USAC.UI.Storage.Capacity>Capacity: {0}/{1}</USAC.UI.Storage.Capacity>
   <USAC.UI.Storage.RefrigerationActive>Refrigeration Active</USAC.UI.Storage.RefrigerationActive>

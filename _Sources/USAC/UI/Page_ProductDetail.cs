@@ -41,7 +41,8 @@ namespace USAC.InternalUI
 
         private void DrawWithSharedElementAnim(Rect localRect, USACProductDef product, Dialog_USACPortal parent, PortalAnimator anim)
         {
-            float progress = anim.Progress;
+            // 使用统一的曲线进度
+            float curvedT = anim.CurvedProgress;
 
             // 建立物理坐标系
             float leftPanelWidth = 420;
@@ -59,12 +60,8 @@ namespace USAC.InternalUI
             Rect startI = anim.IsBack ? detImg : listImg;
             Rect endI = anim.IsBack ? listImg : detImg;
 
-            // 进度曲线与分相控制
-            float curvedT = progress * progress * (3f - 2f * progress);
-
-            // UI面板分相动画
-            float tUi = anim.IsBack ? Mathf.Clamp01(1f - progress / 0.4f) : Mathf.Clamp01((progress - 0.5f) / 0.5f);
-            float curvedUi = tUi * tUi * (3f - 2f * tUi);
+            // UI面板统一使用相同曲线
+            float tUi = anim.IsBack ? Mathf.Clamp01((1f - curvedT) * 1.5f) : Mathf.Clamp01((curvedT - 0.3f) / 0.7f);
 
             // 执行插值绘制
             Rect currentBento = new(
@@ -81,8 +78,8 @@ namespace USAC.InternalUI
                 Mathf.Lerp(startI.height, endI.height, curvedT)
             );
 
-            // 卡片文字淡入淡出
-            float textAlp = anim.IsBack ? Mathf.Clamp01(progress / 0.7f) : Mathf.Clamp01(1f - progress / 0.4f);
+            // 卡片文字淡入淡出 延长过渡时间
+            float textAlp = anim.IsBack ? Mathf.Clamp01(curvedT * 1.5f) : Mathf.Clamp01((1f - curvedT) * 1.5f);
 
             DrawBentoBox(currentBento, (boxRect) =>
             {
@@ -102,9 +99,9 @@ namespace USAC.InternalUI
                 }
             }, false);
 
-            if (curvedUi > 0.01f)
+            if (tUi > 0.01f)
             {
-                DrawDetailLayout(localRect, product, parent, curvedUi);
+                DrawDetailLayout(localRect, product, parent, tUi);
             }
         }
 
@@ -190,6 +187,33 @@ namespace USAC.InternalUI
             DrawRow("USAC.UI.Stat.Identifier".Translate(), identifier);
             DrawRow("USAC.UI.Stat.Category".Translate(), product.category.ToUpper());
             DrawRow("USAC.UI.Stat.SubType".Translate(), product.subLabel);
+
+            // 通用属性
+            if (orderItemDef != null)
+            {
+                // 市场价值
+                float marketValue = orderItemDef.GetStatValueAbstract(StatDefOf.MarketValue);
+                if (marketValue > 0)
+                    DrawRow("USAC.UI.Stat.MarketValue".Translate(), "$" + marketValue.ToString("F0"));
+
+                // 最大生命值
+                float maxHp = orderItemDef.GetStatValueAbstract(StatDefOf.MaxHitPoints);
+                if (maxHp > 0)
+                    DrawRow("USAC.UI.Stat.MaxHitPoints".Translate(), maxHp.ToString("F0"));
+
+                // 易燃性
+                float flammability = orderItemDef.GetStatValueAbstract(StatDefOf.Flammability);
+                if (flammability > 0)
+                    DrawRow("USAC.UI.Stat.Flammability".Translate(), (flammability * 100f).ToString("F0") + "%");
+
+                // 腐烂速度
+                if (orderItemDef.HasComp(typeof(CompRottable)))
+                {
+                    float deterioration = orderItemDef.GetStatValueAbstract(StatDefOf.DeteriorationRate);
+                    if (deterioration > 0)
+                        DrawRow("USAC.UI.Stat.DeteriorationRate".Translate(), deterioration.ToString("F2") + "/day");
+                }
+            }
 
             // 机兵专属数据
             if (product.category == "MECH" && mechRace != null)

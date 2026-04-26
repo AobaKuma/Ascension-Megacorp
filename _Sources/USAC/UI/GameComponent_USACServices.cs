@@ -14,6 +14,9 @@ namespace USAC
         // 轨道商船预约到达时刻
         public int traderArrivalTick = -1;
 
+        // 轨道商船目标地图ID
+        public int traderTargetMapId = -1;
+
         // 复用移除列表避免每次分配
         private static readonly List<Pawn> tmpRemove = new List<Pawn>();
         #endregion
@@ -33,6 +36,7 @@ namespace USAC
             {
                 SpawnScheduledTrader();
                 traderArrivalTick = -1;
+                traderTargetMapId = -1;
             }
         }
 
@@ -42,6 +46,7 @@ namespace USAC
             Scribe_Collections.Look(ref autoRenewPawns, "autoRenewPawns", LookMode.Reference);
             if (autoRenewPawns == null) autoRenewPawns = new HashSet<Pawn>();
             Scribe_Values.Look(ref traderArrivalTick, "traderArrivalTick", -1);
+            Scribe_Values.Look(ref traderTargetMapId, "traderTargetMapId", -1);
         }
         #endregion
 
@@ -95,7 +100,20 @@ namespace USAC
         // 刷新预约的轨道商船
         private void SpawnScheduledTrader()
         {
-            Map map = Find.AnyPlayerHomeMap;
+            Map map = null;
+
+            // 优先使用记录的目标地图
+            if (traderTargetMapId >= 0)
+            {
+                map = Find.Maps.FirstOrDefault(m => m.uniqueID == traderTargetMapId);
+            }
+
+            // 回退到任意玩家地图
+            if (map == null)
+            {
+                map = Find.AnyPlayerHomeMap;
+            }
+
             if (map == null) return;
 
             // 使用DefOf静态引用

@@ -395,6 +395,7 @@ namespace USAC.InternalUI
 
             debtComp.ConsumeBondsNearBeacons(Find.CurrentMap, 4);
             comp.traderArrivalTick = Find.TickManager.TicksGame + 2500;
+            comp.traderTargetMapId = Find.CurrentMap.uniqueID;
             Messages.Message("USAC.Message.TraderCalled".Translate(), MessageTypeDefOf.NeutralEvent);
         }
     }

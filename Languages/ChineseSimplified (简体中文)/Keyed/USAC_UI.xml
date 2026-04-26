@@ -89,6 +89,9 @@
   <USAC.UI.Assets.Repay>偿还本金 ({0} 张债券)</USAC.UI.Assets.Repay>
   <USAC.UI.Assets.RepaySurcharge>偿还本金 ({0} 张, 含手续费 {1} 张)</USAC.UI.Assets.RepaySurcharge>
   <USAC.UI.Assets.GrowthForecast>GROWTH_FORECAST//本金增长预测</USAC.UI.Assets.GrowthForecast>
+  <USAC.UI.Assets.CycleForecast>CYCLE_FORECAST//周期预测</USAC.UI.Assets.CycleForecast>
+  <USAC.UI.Assets.NextInterest>下周期利息</USAC.UI.Assets.NextInterest>
+  <USAC.UI.Assets.GrowthNote>本金增长将在每个周期直接加到本金中</USAC.UI.Assets.GrowthNote>
   <USAC.UI.Assets.GrowthMode.Wealth>本金增加 = 地图财富 × {0}% / 周期</USAC.UI.Assets.GrowthMode.Wealth>
   <USAC.UI.Assets.GrowthMode.Principal>本金增加 = 当前本金 × {0}% / 周期</USAC.UI.Assets.GrowthMode.Principal>
   <USAC.UI.Assets.CurrentWealth>当前地图财富: ₿{0}</USAC.UI.Assets.CurrentWealth>
@@ -154,6 +157,7 @@
   <USAC.Alert.DebtRepayment.LabelWithTime>USAC结算：{0}天（{1}笔）</USAC.Alert.DebtRepayment.LabelWithTime>
   <USAC.Alert.DebtRepayment.Explanation.Header>信用评分：{0}\n信标范围债券：{1}张\n\n</USAC.Alert.DebtRepayment.Explanation.Header>
   <USAC.Alert.DebtRepayment.Explanation.ContractEntry>▸ {0}\n  本金：₿{1}  预估利息：₿{2}\n  到期：{3}天  欠缴：{4}次\n\n</USAC.Alert.DebtRepayment.Explanation.ContractEntry>
+  <USAC.Alert.DebtRepayment.Explanation.ContractEntryWithGrowth>▸ {0}\n  本金：₿{1}  预估利息：₿{2}\n  预计本金增长：+₿{5}\n  到期：{3}天  欠缴：{4}次\n\n</USAC.Alert.DebtRepayment.Explanation.ContractEntryWithGrowth>
   <USAC.Alert.DebtRepayment.Explanation.ImminentWarning>⚠ 最近合同即将到期！请准备足够USAC债券。</USAC.Alert.DebtRepayment.Explanation.ImminentWarning>
   <USAC.Debt.Dialog.Repayment.Text>[USAC 金融节点] {0}审计完成\n\n本期应付利息：₿{1}（需 {2} 张债券）\n当前合同本金：₿{3}\n累计欠缴：{4} 次\n\n请确认是否使用贸易信标范围内的“USAC信用债券”进行核销。\n</USAC.Debt.Dialog.Repayment.Text>
   <USAC.Debt.Dialog.Repayment.Warning>⚠ 再次违约将导致信用评估系统判定常规回收失效，进而转入自动化资产保全程序。</USAC.Debt.Dialog.Repayment.Warning>
@@ -195,7 +199,7 @@
   <USAC.Debt.Message.PawnDemolished>[USAC]债务清算执行：{0} 已被完全拆解。</USAC.Debt.Message.PawnDemolished>
   <USAC.Debt.Message.CreditDanger>[USAC]信用等级已触发风险警报，债务管理部门将对审批通道采取预防性冻结。</USAC.Debt.Message.CreditDanger>
   <USAC.Debt.Message.CreditPenalty>[USAC]信用贷欠缴，信用分 -25（当前：{0}）</USAC.Debt.Message.CreditPenalty>
-  <USAC.UI.Assets.SurchargeHint>季度免费额 ₿{0}（已用 ₿{1}）  ▸  本次手续费 ₿{2}  →  实付 ₿{3}</USAC.UI.Assets.SurchargeHint>
+  <USAC.UI.Assets.SurchargeHint>季度免费额 ₿{0}（剩余 ₿{4}）  ▸  本次手续费 ₿{2}  →  实付 ₿{3}</USAC.UI.Assets.SurchargeHint>
   <USAC.UI.Assets.AccessDenied>ACCESS_DENIED//拒绝访问\n\n您的权限无法访问此页面。。</USAC.UI.Assets.AccessDenied>
 
   <!-- 债务清偿结局 (Settled) -->
@@ -286,10 +290,14 @@
   <USAC.Trade.Summary.Sell>出售总额</USAC.Trade.Summary.Sell>
   <USAC.Trade.Summary.Net>净支出</USAC.Trade.Summary.Net>
   <USAC.Trade.Summary.Current>当前资产</USAC.Trade.Summary.Current>
-  <USAC.Trade.Summary.After>交易后</USAC.Trade.Summary.After>
-  <USAC.Trade.Summary.NoChange>资产存量保持恒定</USAC.Trade.Summary.NoChange>
-  <USAC.Trade.Summary.Wastage>当前单元核销后资产损失：₿{0}</USAC.Trade.Summary.Wastage>
-  
+  <USAC.Trade.Summary.CurrentAssets>资产</USAC.Trade.Summary.CurrentAssets>
+  <USAC.Trade.Summary.After>交易后资产</USAC.Trade.Summary.After>
+  <USAC.Trade.Summary.AfterTransaction>交易后</USAC.Trade.Summary.AfterTransaction>
+  <USAC.Trade.Summary.NoChange>无资产变动</USAC.Trade.Summary.NoChange>
+  <USAC.Trade.Summary.Wastage>找零损失: ₿{0}</USAC.Trade.Summary.Wastage>
+  <USAC.Trade.Summary.BuyingFrom>购自: {0}</USAC.Trade.Summary.BuyingFrom>
+  <USAC.Trade.Summary.SellingTo>售予: {0}</USAC.Trade.Summary.SellingTo>
+
   <USAC.Trade.Summary.Tip_0>点击物品图标可查看详情</USAC.Trade.Summary.Tip_0>
   <USAC.Trade.Summary.Tip_1>你说你不想在这里~《USAC董事长选集3:43》</USAC.Trade.Summary.Tip_1>
   <USAC.Trade.Summary.Tip_2>USAC不提供货币拆分与找零服务</USAC.Trade.Summary.Tip_2>
@@ -311,13 +319,13 @@
   <USAC.Trade.Currency.Bond>信用债券</USAC.Trade.Currency.Bond>
   <USAC.Trade.Currency.Empty>轨道网络未检测到在该区域信标范围内的合法资产</USAC.Trade.Currency.Empty>
   
-  <USAC_Currency_Breakdown>资产结算明细：</USAC_Currency_Breakdown>
-  <USAC_Currency_CorpseBagValue>存储单元总值：₿{0}</USAC_Currency_CorpseBagValue>
-  <USAC_Currency_BondValue>信用债券持有（{0}张）：₿{1}</USAC_Currency_BondValue>
-  <USAC_Currency_TotalValue>最大支付授权额度：₿{0}</USAC_Currency_TotalValue>
-  <USAC_Currency_SmallestBag>当前库存中最小结算单元：₿{0}</USAC_Currency_SmallestBag>
-  <USAC_Currency_Desc>该部分资产可直接被轨道清算系统识别。USAC将优先通过存储单元进行核销，除非您在偏好设置中指定优先消耗实物债券。</USAC_Currency_Desc>
-  <USAC_Currency_LabelEmpty>未离岸资产</USAC_Currency_LabelEmpty>
+  <USAC_Currency_Breakdown>资产明细：</USAC_Currency_Breakdown>
+  <USAC_Currency_CorpseBagValue>尸体袋总值：₿{0}</USAC_Currency_CorpseBagValue>
+  <USAC_Currency_BondValue>信用债券（{0}张）：₿{1}</USAC_Currency_BondValue>
+  <USAC_Currency_TotalValue>可用支付额度：₿{0}</USAC_Currency_TotalValue>
+  <USAC_Currency_SmallestBag>最小尸体袋价值：₿{0}</USAC_Currency_SmallestBag>
+  <USAC_Currency_Desc>USAC优先使用尸体袋支付，除非你启用"优先使用债券支付"选项。注意：USAC不提供找零服务，多余价值会损失。</USAC_Currency_Desc>
+  <USAC_Currency_LabelEmpty>USAC货币</USAC_Currency_LabelEmpty>
   
   <USAC.UI.Storage.Capacity>容量: {0}/{1}</USAC.UI.Storage.Capacity>
   <USAC.UI.Storage.RefrigerationActive>冷藏运行中</USAC.UI.Storage.RefrigerationActive>

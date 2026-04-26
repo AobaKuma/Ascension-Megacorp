@@ -38,7 +38,7 @@ namespace USAC
             if (Mouse.IsOver(iconRect))
             {
                 Widgets.DrawHighlight(iconRect);
-                TooltipHandler.TipRegion(iconRect, () => label, trad.GetHashCode() * 2);
+                USAC.TooltipHandler.DrawInstantTooltip(label);
             }
             DrawItemIcon(iconRect, trad);
             x += COL_ICON;
@@ -55,7 +55,7 @@ namespace USAC
             if (Mouse.IsOver(nameRect))
             {
                 Widgets.DrawHighlight(nameRect);
-                TooltipHandler.TipRegion(nameRect, () => label, trad.GetHashCode() * 3);
+                USAC.TooltipHandler.DrawInstantTooltip(label);
             }
             
             // 绘制文本 带左边距设计说明
@@ -143,7 +143,7 @@ namespace USAC
             if (Mouse.IsOver(nameRect))
             {
                 Widgets.DrawHighlight(nameRect);
-                TooltipHandler.TipRegion(nameRect, () => label, trad.GetHashCode() * 4);
+                USAC.TooltipHandler.DrawInstantTooltip(label);
             }
             
             // 文本右对齐一点
@@ -151,14 +151,13 @@ namespace USAC
             labelTextRect.xMax -= 5f;
             Text.Anchor = TextAnchor.MiddleRight;
             Widgets.Label(labelTextRect, displayLabel);
-            x += colNameWidth;
-            
+
             // 渲染独立图标 填满最右侧说明
             Rect iconRect = new(rect.xMax - rect.height, rect.y, rect.height, rect.height);
             if (Mouse.IsOver(iconRect))
             {
                 Widgets.DrawHighlight(iconRect);
-                TooltipHandler.TipRegion(iconRect, () => label, trad.GetHashCode() * 5);
+                USAC.TooltipHandler.DrawInstantTooltip(label);
             }
             DrawItemIcon(iconRect, trad);
             
@@ -194,10 +193,10 @@ namespace USAC
             }
 
             Widgets.ThingIcon(iconRect.ScaledBy(scale), trad.AnyThing);
-            
+
             if (Mouse.IsOver(iconRect))
             {
-                TooltipHandler.TipRegionByKey(iconRect, "DefInfoTip");
+                Verse.TooltipHandler.TipRegionByKey(iconRect, "DefInfoTip");
                 if (Widgets.ButtonInvisible(iconRect))
                     Find.WindowStack.Add(new Dialog_InfoCard(trad.AnyThing));
             }

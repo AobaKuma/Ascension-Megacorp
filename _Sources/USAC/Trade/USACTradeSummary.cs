@@ -56,16 +56,16 @@ namespace USAC
         public static void Draw(Rect rect, Tradeable currency, System.Action onChanged)
         {
             Widgets.DrawBoxSolidWithOutline(rect, new Color(0, 0, 0, 0.2f), ColBorder);
-            
+
             Rect headerRect = new(rect.x, rect.y, rect.width, 35);
             DrawHeader(headerRect);
-            
+
             Rect valueRect = new(rect.x, rect.y + 40, rect.width, 80);
             DrawValueSummary(valueRect);
-            
+
             Rect listRect = new(rect.x, rect.y + 125, rect.width, rect.height - 275);
             DrawTradeList(listRect, onChanged);
-            
+
             Rect footerRect = new(rect.x, rect.yMax - 145, rect.width, 145);
             DrawCurrencyFooter(footerRect, currency);
         }
@@ -85,15 +85,19 @@ namespace USAC
         private static void DrawValueSummary(Rect rect)
         {
             Rect inner = rect.ContractedBy(5);
-            
+
             float netCost = totalBuyValue - totalSellValue;
-            
+
             Text.Font = GameFont.Tiny;
             Text.Anchor = TextAnchor.MiddleLeft;
-            
-            float labelWidth = 60f;
+
+            // 计算最大标签宽度
+            float buyLabelWidth = Text.CalcSize("USAC.Trade.Summary.Buy".Translate()).x;
+            float sellLabelWidth = Text.CalcSize("USAC.Trade.Summary.Sell".Translate()).x;
+            float netLabelWidth = Text.CalcSize("USAC.Trade.Summary.Net".Translate()).x;
+            float labelWidth = Mathf.Max(buyLabelWidth, Mathf.Max(sellLabelWidth, netLabelWidth)) + 10f;
             float valueWidth = inner.width - labelWidth - 5;
-            
+
             // 购买总额
             GUI.color = ColTextMuted;
             Widgets.Label(new Rect(inner.x, inner.y, labelWidth, 20), "USAC.Trade.Summary.Buy".Translate());
@@ -101,7 +105,7 @@ namespace USAC
             Text.Anchor = TextAnchor.MiddleRight;
             GUI.color = ColAccentCamo3;
             Widgets.Label(new Rect(inner.x + labelWidth, inner.y, valueWidth, 20), totalBuyValue.ToString("F0"));
-            
+
             // 出售总额
             Text.Font = GameFont.Tiny;
             Text.Anchor = TextAnchor.MiddleLeft;
@@ -111,7 +115,7 @@ namespace USAC
             Text.Anchor = TextAnchor.MiddleRight;
             GUI.color = ColAccentCamo3;
             Widgets.Label(new Rect(inner.x + labelWidth, inner.y + 25, valueWidth, 20), totalSellValue.ToString("F0"));
-            
+
             // 净支出
             Text.Font = GameFont.Tiny;
             Text.Anchor = TextAnchor.MiddleLeft;
@@ -122,7 +126,7 @@ namespace USAC
             GUI.color = netCost > 0 ? new Color(1f, 0.4f, 0.4f) : ColAccentCamo3;
             string netText = netCost > 0 ? $"-{netCost:F0}" : $"+{-netCost:F0}";
             Widgets.Label(new Rect(inner.x + labelWidth, inner.y + 50, valueWidth, 20), netText);
-            
+
             GUI.color = Color.white;
             Text.Anchor = TextAnchor.UpperLeft;
         }
@@ -160,23 +164,47 @@ namespace USAC
         private static void DrawSummaryRow(Rect rect, Tradeable trad, System.Action onChanged)
         {
             Widgets.DrawBoxSolidWithOutline(rect, new Color(0, 0, 0, 0.3f), ColBorder);
-            
+
             Rect inner = rect.ContractedBy(4);
             bool isSelling = trad.CountToTransfer < 0;
-            
+
             int tradeableId = trad.GetHashCode();
             if (!inputValues.ContainsKey(tradeableId))
                 inputValues[tradeableId] = 0;
-            
+
             int inputCount = inputValues[tradeableId];
-            
+
+            // 调整器区域（需要排除在Tooltip外）
+            float adjustWidth = 80f;
+            float adjustX = inner.xMax - adjustWidth;
+            Rect adjustRect = new(adjustX, inner.y + 4, adjustWidth, 28);
+
+            // 可交互区域（整行除了调整器）
+            Rect interactiveRect = new(inner.x, inner.y, adjustX - inner.x - 2, inner.height);
+
+            // 即时Tooltip 无延迟显示
+            if (Mouse.IsOver(interactiveRect))
+            {
+                Widgets.DrawHighlight(interactiveRect);
+
+                string tip = trad.LabelCap;
+                if (!trad.TipDescription.NullOrEmpty())
+                    tip += "\n\n" + trad.TipDescription;
+                tip += "\n\n" + (isSelling
+                    ? "USAC.Trade.Summary.SellingTo".Translate(TradeSession.trader.TraderName)
+                    : "USAC.Trade.Summary.BuyingFrom".Translate(TradeSession.trader.TraderName));
+
+                // 使用即时显示模式 绕过延迟
+                TooltipHandler.DrawInstantTooltip(tip);
+            }
+
             // 图标
             if (trad.AnyThing != null)
             {
                 Rect iconRect = new(inner.x + 5, inner.y, 32, 32);
                 Widgets.ThingIcon(iconRect, trad.AnyThing);
             }
-            
+
             // 方向箭头
             GUI.color = isSelling ? new Color(1f, 0.6f, 0.6f) : new Color(0.6f, 1f, 0.6f);
             string directionArrow = isSelling ? "↑" : "↓";
@@ -184,22 +212,61 @@ namespace USAC
             Text.Anchor = TextAnchor.MiddleCenter;
             Widgets.Label(new Rect(inner.x + 42, inner.y, 20, inner.height), directionArrow);
             GUI.color = Color.white;
-            
+
             // 数量显示
             int absCount = Mathf.Abs(trad.CountToTransfer);
             Text.Font = GameFont.Small;
             Text.Anchor = TextAnchor.MiddleCenter;
             Widgets.Label(new Rect(inner.x + 67, inner.y, 35, inner.height), absCount.ToString());
-            
+
+            // 物品名称缩略
+            float nameStartX = inner.x + 107;
+            float nameWidth = adjustX - nameStartX - 5;
+
+            if (nameWidth > 30)
+            {
+                Text.Font = GameFont.Tiny;
+                Text.Anchor = TextAnchor.MiddleLeft;
+                GUI.color = ColTextMuted;
+                Text.WordWrap = false;
+
+                string label = trad.Label;
+                string truncated = TruncateLabel(label, nameWidth);
+
+                Rect nameRect = new(nameStartX, inner.y, nameWidth, inner.height);
+                Widgets.Label(nameRect, truncated);
+
+                GUI.color = Color.white;
+            }
+
             // 调整器
-            float adjustWidth = 80f;
-            float adjustX = inner.xMax - adjustWidth;
-            Rect adjustRect = new(adjustX, inner.y + 4, adjustWidth, 28);
             DrawReduceAdjuster(adjustRect, trad, isSelling, onChanged);
-            
+
             Text.Anchor = TextAnchor.UpperLeft;
+            Text.WordWrap = true;
         }
-        
+
+        private static string TruncateLabel(string label, float maxWidth)
+        {
+            if (string.IsNullOrEmpty(label)) return "";
+
+            Text.Font = GameFont.Tiny;
+            float fullWidth = Text.CalcSize(label).x;
+
+            if (fullWidth <= maxWidth) return label;
+
+            // 截断并添加省略号
+            int len = label.Length;
+            for (int i = len - 1; i > 0; i--)
+            {
+                string truncated = label.Substring(0, i) + "...";
+                if (Text.CalcSize(truncated).x <= maxWidth)
+                    return truncated;
+            }
+
+            return "...";
+        }
+
         private static void DrawReduceAdjuster(Rect rect, Tradeable trad, bool isSelling, System.Action onChanged)
         {
             int tradeableId = trad.GetHashCode();
@@ -277,128 +344,151 @@ namespace USAC
         private static void DrawCurrencyFooter(Rect rect, Tradeable currency)
         {
             if (currency == null) return;
-            
+
             Widgets.DrawBoxSolid(rect, new Color(0.15f, 0.15f, 0.16f, 1f));
             GUI.color = ColAccentCamo3;
             Widgets.DrawLineHorizontal(rect.x, rect.y, rect.width);
             GUI.color = Color.white;
-            
+
             Rect inner = rect.ContractedBy(12);
-            
-            // 图标
+
+            // 货币名称和图标
+            float contentX = inner.x;
+            float contentWidth = inner.width;
+
+            // 小图标尺寸与文本相同
+            float iconSize = 22f;
+            float iconPadding = 4f;
+
+            Rect iconRect = new(contentX, inner.y, iconSize, iconSize);
+            Rect labelRect = new(contentX + iconSize + iconPadding, inner.y, contentWidth - iconSize - iconPadding, 22);
+            Rect interactiveRect = new(contentX, inner.y, contentWidth, 22);
+
+            // 绘制小图标
             if (currency.AnyThing != null)
             {
-                Rect iconRect = new(inner.x, inner.y + 10, 50, 50);
+                GUI.color = Color.white;
                 Widgets.ThingIcon(iconRect, currency.AnyThing);
-                
-                if (Mouse.IsOver(iconRect))
-                {
-                    TooltipHandler.TipRegionByKey(iconRect, "DefInfoTip");
-                    if (Widgets.ButtonInvisible(iconRect))
-                        Find.WindowStack.Add(new Dialog_InfoCard(currency.AnyThing));
-                }
             }
-            // 货币名称
-            float contentX = inner.x + 60;
-            float contentWidth = inner.width - 65;
-            
+
             // 输出货币名称
             Text.Font = GameFont.Small;
             Text.Anchor = TextAnchor.UpperLeft;
             GUI.color = ColAccentCamo3;
             Text.WordWrap = false;
-            
-            Rect labelRect = new(contentX, inner.y, contentWidth, 22);
             Widgets.Label(labelRect, currency.Label);
-            
-            if (Mouse.IsOver(labelRect))
+
+            // 整行交互区域
+            if (Mouse.IsOver(interactiveRect))
             {
-                Widgets.DrawHighlight(labelRect);
-                TooltipHandler.TipRegion(labelRect, () =>
-                {
-                    string text = currency.LabelCap;
-                    string tipDescription = currency.TipDescription;
-                    if (!tipDescription.NullOrEmpty())
-                        text = text + ": " + tipDescription;
-                    return text;
-                }, currency.GetHashCode());
+                Widgets.DrawHighlight(interactiveRect);
+
+                string text = currency.LabelCap;
+                string tipDescription = currency.TipDescription;
+                if (!tipDescription.NullOrEmpty())
+                    text = text + ": " + tipDescription;
+
+                TooltipHandler.DrawInstantTooltip(text);
+
+                if (Widgets.ButtonInvisible(interactiveRect) && currency.AnyThing != null)
+                    Find.WindowStack.Add(new Dialog_InfoCard(currency.AnyThing));
             }
-            
+
+            GUI.color = Color.white;
+
             // 获取当前资产总量
             int currentTotal = currency.CountHeldBy(Transactor.Colony);
             float netBill = totalBuyValue - totalSellValue;
-            
+
             // 预计结算后剩余资产
             int afterBalance = (netBill > 0) ? (int)(currentTotal - projectedConsumableValue) : (int)(currentTotal + netBill);
             int visualChange = afterBalance - currentTotal;
-            
-            float row2Y = inner.y + 28;
+
+            float currentY = inner.y + 28;
             Text.Font = GameFont.Tiny;
             GUI.color = ColTextMuted;
             Text.Anchor = TextAnchor.MiddleLeft;
             Text.WordWrap = false;
-            
-            // 资产汇总行 避开侧边图标说明
-            float labelWidth = Text.CalcSize("USAC.Trade.Summary.Current".Translate()).x + 5;
-            Widgets.Label(new Rect(contentX, row2Y, labelWidth, 20), "USAC.Trade.Summary.Current".Translate());
-            
+
+            // 当前资产 标签和数值同行显示
+            string currentLabelFull = "USAC.Trade.Summary.Current".Translate();
+            string currentLabelShort = "USAC.Trade.Summary.CurrentAssets".Translate();
+            float labelWidth = Text.CalcSize(currentLabelFull).x;
+            string currentLabel = (labelWidth + 60 <= contentWidth) ? currentLabelFull : currentLabelShort;
+
+            Widgets.Label(new Rect(contentX, currentY, contentWidth, 20), currentLabel);
+
             Text.Font = GameFont.Small;
+            Text.Anchor = TextAnchor.MiddleRight;
             GUI.color = Color.white;
-            Widgets.Label(new Rect(contentX + labelWidth, row2Y, contentWidth - labelWidth, 20), currentTotal.ToString());
-            
+            Text.WordWrap = false;
+            Widgets.Label(new Rect(contentX, currentY, contentWidth, 20), currentTotal.ToString());
+
+            currentY += 24;
+
             // 实际变动提示
             if (visualChange != 0)
             {
-                float row3Y = inner.y + 52;
                 Text.Font = GameFont.Tiny;
                 GUI.color = ColTextMuted;
                 Text.Anchor = TextAnchor.MiddleLeft;
                 Text.WordWrap = false;
-                
-                float afterLabelWidth = Text.CalcSize("USAC.Trade.Summary.After".Translate()).x + 5;
-                Widgets.Label(new Rect(contentX, row3Y, afterLabelWidth, 20), "USAC.Trade.Summary.After".Translate());
-                
-                Text.Font = GameFont.Small;
-                GUI.color = visualChange < 0 ? ColAccentRed : ColAccentCamo3;
-                
-                string afterText = afterBalance.ToString();
-                float afterValueWidth = Text.CalcSize(afterText).x + 10;
-                Widgets.Label(new Rect(contentX + afterLabelWidth, row3Y, afterValueWidth, 20), afterText);
-                
-                // 标注支出对资产的影响
-                Text.Font = GameFont.Tiny;
-                GUI.color = ColTextMuted;
+
+                // 计算数值和括号的总宽度
                 string changeText = visualChange > 0 ? $"(+{visualChange})" : $"({visualChange})";
-                Widgets.Label(new Rect(contentX + afterLabelWidth + afterValueWidth, row3Y, contentWidth - afterLabelWidth - afterValueWidth, 20), changeText);
+                Text.Font = GameFont.Small;
+                float valueWidth = Text.CalcSize($"{afterBalance} {changeText}").x;
+
+                // 根据总宽度选择标签格式
+                Text.Font = GameFont.Tiny;
+                string afterLabelFull = "USAC.Trade.Summary.After".Translate();
+                string afterLabelShort = "USAC.Trade.Summary.AfterTransaction".Translate();
+                float afterLabelWidth = Text.CalcSize(afterLabelFull).x;
+
+                // 如果标签+数值总宽度超过可用宽度 使用短标签
+                string afterLabel = (afterLabelWidth + valueWidth + 10 <= contentWidth) ? afterLabelFull : afterLabelShort;
+
+                Widgets.Label(new Rect(contentX, currentY, contentWidth, 20), afterLabel);
+
+                Text.Font = GameFont.Small;
+                Text.Anchor = TextAnchor.MiddleRight;
+                GUI.color = visualChange < 0 ? ColAccentRed : ColAccentCamo3;
+                Text.WordWrap = false;
+
+                // 合并数值和括号为一个字符串 避免重叠
+                string afterText = $"{afterBalance} {changeText}";
+                Widgets.Label(new Rect(contentX, currentY, contentWidth, 20), afterText);
+
+                currentY += 24;
             }
             else
             {
-                float row3Y = inner.y + 52;
                 Text.Font = GameFont.Tiny;
                 GUI.color = new Color(0.5f, 0.5f, 0.5f);
                 Text.Anchor = TextAnchor.MiddleLeft;
-                Text.WordWrap = false;
-                Widgets.Label(new Rect(contentX, row3Y, contentWidth, 20), "USAC.Trade.Summary.NoChange".Translate());
+                Widgets.Label(new Rect(contentX, currentY, contentWidth, 18), "USAC.Trade.Summary.NoChange".Translate());
+
+                currentY += 20;
             }
-            
+
             // 底部全宽区域绘制说明一线说明
-            float row4Y = inner.y + 80;
+            float row4Y = currentY + 8;
             GUI.color = new Color(1f, 1f, 1f, 0.1f);
             Widgets.DrawLineHorizontal(inner.x, row4Y, inner.width);
-            
+
             Text.Font = GameFont.Tiny;
             GUI.color = new Color(0.6f, 0.6f, 0.6f);
             Text.Anchor = TextAnchor.MiddleCenter;
             Text.WordWrap = true;
-            
+
             float wastage = projectedConsumableValue - (totalBuyValue - totalSellValue);
             string footerText = (visualChange < 0 && wastage > 0.01f)
                 ? "USAC.Trade.Summary.Wastage".Translate(wastage.ToString("F0"))
                 : $"USAC.Trade.Summary.Tip_{currentTipIndex}".Translate();
-                
+
             Rect footerTextRect = new(inner.x, row4Y + 5, inner.width, 50);
             Widgets.Label(footerTextRect, footerText);
-            
+
             GUI.color = Color.white;
             Text.Anchor = TextAnchor.UpperLeft;
             Text.WordWrap = true;

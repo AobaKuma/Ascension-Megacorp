@@ -14,10 +14,21 @@ namespace USAC
         {
             if (contract == null) return;
 
+            float oldPrincipal = contract.Principal;
             contract.Principal = Mathf.Max(0, contract.Principal + amount);
-            
+
             // 记录交易
             GameComponent_USACDebt.Instance?.AddTransaction(type, amount, reason);
+
+            // 发布本金变更事件
+            DebtEventBus.Instance.Publish(new DebtEventArgs
+            {
+                EventType = DebtEventType.PrincipalChanged,
+                Contract = contract,
+                Amount = amount,
+                Reason = reason,
+                Data = new { OldPrincipal = oldPrincipal, NewPrincipal = contract.Principal }
+            });
 
             // 联动反应
             if (amount < 0) // 还款行为
@@ -30,9 +41,6 @@ namespace USAC
                 }
                 OnDebtReduced(contract, Math.Abs(amount));
             }
-
-            // 触发状态检测
-            NotifyFinancialStateChanged();
         }
 
         // 修改利息
@@ -40,7 +48,14 @@ namespace USAC
         {
             if (contract == null) return;
             contract.AccruedInterest = amount;
-            NotifyFinancialStateChanged();
+
+            // 发布利息累积事件
+            DebtEventBus.Instance.Publish(new DebtEventArgs
+            {
+                EventType = DebtEventType.InterestAccrued,
+                Contract = contract,
+                Amount = amount
+            });
         }
         #endregion
 
@@ -63,7 +78,16 @@ namespace USAC
             {
                 contract.IsActive = false;
                 Messages.Message("USAC.Debt.Message.ContractSettled".Translate(contract.Label), MessageTypeDefOf.PositiveEvent);
-                
+
+                // 发布合同结清事件
+                DebtEventBus.Instance.Publish(new DebtEventArgs
+                {
+                    EventType = DebtEventType.ContractSettled,
+                    Contract = contract,
+                    Amount = 0,
+                    Reason = "Contract fully paid"
+                });
+
                 // 解除系统锁定
                 if (contract.ConsecutiveCollectionFails > 0)
                 {
@@ -71,19 +95,6 @@ namespace USAC
                     comp.RefreshSystemLockStatus();
                 }
             }
-        }
-
-        // 金融状态变更通知
-        public static void NotifyFinancialStateChanged()
-        {
-            var comp = GameComponent_USACDebt.Instance;
-            if (comp == null) return;
-
-            // 检查结局触发
-            comp.CheckDebtSettledEnding();
-
-            // 刷新锁定状态
-            comp.RefreshSystemLockStatus();
         }
         #endregion
     }

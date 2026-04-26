@@ -69,6 +69,15 @@ namespace USAC.InternalUI
             string detailUrl = isSharedTrans ? (anim.IsBack ? anim.FromUrl : anim.ToUrl) : null;
             string animatingDef = detailUrl != null ? Dialog_USACPortal.GetParamFrom(detailUrl, "def") : null;
 
+            // 计算屏幕可见坐标
+            float visY = y - scrollPos.y + scrollRect.y;
+
+            // 始终更新返回目标坐标 确保滚动时同步
+            if (isSharedTrans && animatingDef == product.defName && anim.IsBack)
+            {
+                anim.SharedElementTarget = new Rect(x, visY, w, 160f);
+            }
+
             float visualAlpha = 1f;
             float offsetX = 0f;
 
@@ -76,7 +85,7 @@ namespace USAC.InternalUI
             {
                 if (animatingDef == product.defName) return; // 主角由详情页绘制
 
-                float t = anim.IsBack ? (1f - anim.CurvedProgress) : anim.CurvedProgress;
+                float t = anim.CurvedProgress;
                 visualAlpha = 1f - t;
                 offsetX = ((x < 100f) ? -150f : 150f) * t;
             }
@@ -104,13 +113,6 @@ namespace USAC.InternalUI
                 GUI.color = Color.white;
             }, true, key))
             {
-                // 更新返回目标坐标
-                float visY = y - scrollPos.y + scrollRect.y;
-                if (isSharedTrans && animatingDef == product.defName && anim.IsBack)
-                {
-                    anim.SharedElementTarget = new Rect(x, visY, w, 160f);
-                }
-
                 if (!anim.IsPlaying)
                 {
                     float dist = Vector2.Distance(new Vector2(x + w / 2f, visY + 80f), new Vector2(210f, 280f));

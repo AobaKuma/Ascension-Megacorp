@@ -89,6 +89,9 @@
   <USAC.UI.Assets.Repay>償還本金 ({0} 張債券)</USAC.UI.Assets.Repay>
   <USAC.UI.Assets.RepaySurcharge>償還本金 ({0} 張, 含手續費 {1} 張)</USAC.UI.Assets.RepaySurcharge>
   <USAC.UI.Assets.GrowthForecast>GROWTH_FORECAST // 本金增長預測</USAC.UI.Assets.GrowthForecast>
+  <USAC.UI.Assets.CycleForecast>CYCLE_FORECAST//週期預測</USAC.UI.Assets.CycleForecast>
+  <USAC.UI.Assets.NextInterest>下週期利息</USAC.UI.Assets.NextInterest>
+  <USAC.UI.Assets.GrowthNote>本金增長將在每個週期直接加到本金中</USAC.UI.Assets.GrowthNote>
   <USAC.UI.Assets.GrowthMode.Wealth>本金增加 = 地圖財富 × {0}% / 週期</USAC.UI.Assets.GrowthMode.Wealth>
   <USAC.UI.Assets.GrowthMode.Principal>本金增加 = 當前本金 × {0}% / 週期</USAC.UI.Assets.GrowthMode.Principal>
   <USAC.UI.Assets.CurrentWealth>當前地圖財富: ₿{0}</USAC.UI.Assets.CurrentWealth>
@@ -154,6 +157,7 @@
   <USAC.Alert.DebtRepayment.LabelWithTime>USAC結算：{0}天（{1}筆）</USAC.Alert.DebtRepayment.LabelWithTime>
   <USAC.Alert.DebtRepayment.Explanation.Header>信用評分：{0}\n信標範圍債券：{1}張\n\n</USAC.Alert.DebtRepayment.Explanation.Header>
   <USAC.Alert.DebtRepayment.Explanation.ContractEntry>▸ {0}\n 本金：₿{1} 預估利息：₿{2}\n 到期：{3}天 欠繳：{4}次\n\n</USAC.Alert.DebtRepayment.Explanation.ContractEntry>
+  <USAC.Alert.DebtRepayment.Explanation.ContractEntryWithGrowth>▸ {0}\n 本金：₿{1} 預估利息：₿{2}\n 預計本金增長：+₿{5}\n 到期：{3}天 欠繳：{4}次\n\n</USAC.Alert.DebtRepayment.Explanation.ContractEntryWithGrowth>
   <USAC.Alert.DebtRepayment.Explanation.ImminentWarning>⚠ 最近合同即將到期！請準備足夠USAC債券。</USAC.Alert.DebtRepayment.Explanation.ImminentWarning>
   <USAC.Debt.Dialog.Repayment.Text>[USAC 金融節點] {0}審計完成\n\n本期應付利息：₿{1}（需 {2} 張債券）\n當前合同本金：₿{3}\n累計欠繳：{4} 次\n\n請確認是否使用貿易信標範圍內的“USAC信用債券”進行核銷。\n</USAC.Debt.Dialog.Repayment.Text>
   <USAC.Debt.Dialog.Repayment.Warning>⚠ 再次違約將導致信用評估系統判定常規回收失效，進而轉入自動化資產保全程序。</USAC.Debt.Dialog.Repayment.Warning>
@@ -200,7 +204,7 @@
   <USAC.Debt.Message.PawnDemolished>[USAC]債務清算執行：{0} 已被完全拆解。</USAC.Debt.Message.PawnDemolished>
   <USAC.Debt.Message.CreditDanger>[USAC]信用等級已觸發風險警報，債務管理部門將對審批通道採取預防性凍結。</USAC.Debt.Message.CreditDanger>
   <USAC.Debt.Message.CreditPenalty>[USAC]信用貸欠繳，信用分 -25（當前：{0}）</USAC.Debt.Message.CreditPenalty>
-  <USAC.UI.Assets.SurchargeHint>本季免費額度 ₿{0} | 已使用 ₿{1} | 10%▸免費 20%▸50% 30%▸100% 50%+▸200%</USAC.UI.Assets.SurchargeHint>
+  <USAC.UI.Assets.SurchargeHint>季度免費額 ₿{0}（剩餘 ₿{4}）  ▸  本次手續費 ₿{2}  →  實付 ₿{3}</USAC.UI.Assets.SurchargeHint>
   <USAC.UI.Assets.AccessDenied>ACCESS_DENIED//拒絕訪問\n\n您的權限無法訪問此頁面。。</USAC.UI.Assets.AccessDenied>
 
   <!-- 債務清償結局 (Settled) -->
@@ -291,9 +295,13 @@
   <USAC.Trade.Summary.Sell>出售總額</USAC.Trade.Summary.Sell>
   <USAC.Trade.Summary.Net>淨支出</USAC.Trade.Summary.Net>
   <USAC.Trade.Summary.Current>當前資產</USAC.Trade.Summary.Current>
-  <USAC.Trade.Summary.After>交易後</USAC.Trade.Summary.After>
-  <USAC.Trade.Summary.NoChange>資產存量保持恆定</USAC.Trade.Summary.NoChange>
-  <USAC.Trade.Summary.Wastage>當前單元核銷後資產損失：₿{0}</USAC.Trade.Summary.Wastage>
+  <USAC.Trade.Summary.CurrentAssets>資產</USAC.Trade.Summary.CurrentAssets>
+  <USAC.Trade.Summary.After>交易後資產</USAC.Trade.Summary.After>
+  <USAC.Trade.Summary.AfterTransaction>交易後</USAC.Trade.Summary.AfterTransaction>
+  <USAC.Trade.Summary.NoChange>無資產變動</USAC.Trade.Summary.NoChange>
+  <USAC.Trade.Summary.Wastage>貨幣找零損失：₿{0}</USAC.Trade.Summary.Wastage>
+  <USAC.Trade.Summary.BuyingFrom>購自: {0}</USAC.Trade.Summary.BuyingFrom>
+  <USAC.Trade.Summary.SellingTo>售予: {0}</USAC.Trade.Summary.SellingTo>
 
   <USAC.Trade.Summary.Tip_0>點擊物品圖標可查看詳情</USAC.Trade.Summary.Tip_0>
   <USAC.Trade.Summary.Tip_1>你說你不想在這裡~《USAC董事長選集3:43》</USAC.Trade.Summary.Tip_1>
@@ -316,13 +324,13 @@
   <USAC.Trade.Currency.Bond>信用債券</USAC.Trade.Currency.Bond>
   <USAC.Trade.Currency.Empty>軌道網絡未檢測到在該區域信標範圍內的合法資產</USAC.Trade.Currency.Empty>
 
-  <USAC_Currency_Breakdown>資產結算明細：</USAC_Currency_Breakdown>
-  <USAC_Currency_CorpseBagValue>存儲單元總值：₿{0}</USAC_Currency_CorpseBagValue>
-  <USAC_Currency_BondValue>信用債券持有（{0}張）：₿{1}</USAC_Currency_BondValue>
-  <USAC_Currency_TotalValue>最大支付授權額度：₿{0}</USAC_Currency_TotalValue>
-  <USAC_Currency_SmallestBag>當前庫存中最小結算單元：₿{0}</USAC_Currency_SmallestBag>
-  <USAC_Currency_Desc>該部分資產可直接被軌道清算系統識別。USAC將優先通過存儲單元進行核銷，除非您在偏好設置中指定優先消耗實物債券。</USAC_Currency_Desc>
-  <USAC_Currency_LabelEmpty>未離岸資產</USAC_Currency_LabelEmpty>
+  <USAC_Currency_Breakdown>資產明細：</USAC_Currency_Breakdown>
+  <USAC_Currency_CorpseBagValue>屍體袋總值：₿{0}</USAC_Currency_CorpseBagValue>
+  <USAC_Currency_BondValue>信用債券（{0}張）：₿{1}</USAC_Currency_BondValue>
+  <USAC_Currency_TotalValue>可用支付額度：₿{0}</USAC_Currency_TotalValue>
+  <USAC_Currency_SmallestBag>最小屍體袋價值：₿{0}</USAC_Currency_SmallestBag>
+  <USAC_Currency_Desc>USAC優先使用屍體袋支付，除非你啟用「優先使用債券支付」選項。注意：USAC不提供找零服務，多餘價值會損失。</USAC_Currency_Desc>
+  <USAC_Currency_LabelEmpty>USAC貨幣</USAC_Currency_LabelEmpty>
 
   <USAC.UI.Storage.Capacity>容量: {0}/{1}</USAC.UI.Storage.Capacity>
   <USAC.UI.Storage.RefrigerationActive>冷藏運行中</USAC.UI.Storage.RefrigerationActive>

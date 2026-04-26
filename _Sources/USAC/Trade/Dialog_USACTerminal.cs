@@ -272,8 +272,13 @@ namespace USAC
 
             // 选项区域
             float optionsX = 30f;
-            float optionWidth = 200f;
             float rowHeight = 24f;
+
+            // 计算选项宽度以适应文本
+            Text.Font = GameFont.Small;
+            float enableBondsWidth = Text.CalcSize("USAC.Trade.EnableBonds".Translate()).x + 40f;
+            float priorityBondsWidth = Text.CalcSize("USAC.Trade.PriorityBonds".Translate()).x + 40f;
+            float optionWidth = Mathf.Max(200f, Mathf.Max(enableBondsWidth, priorityBondsWidth));
 
             // 是否启用债券支付
             Rect useBondsRect = new(optionsX, rect.y + 10, optionWidth, rowHeight);
