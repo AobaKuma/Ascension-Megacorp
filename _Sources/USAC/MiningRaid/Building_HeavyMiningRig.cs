@@ -50,6 +50,9 @@ namespace USAC
 
         // 开启自动续费
         public bool autoRenew;
+
+        // 矿物有效性缓存
+        private static Dictionary<ThingDef, bool> validYieldCache = new Dictionary<ThingDef, bool>();
         #endregion
 
         #region 常量
@@ -304,6 +307,47 @@ namespace USAC
 
         #region 挖掘逻辑
 
+        private bool HasValidYield(ThingDef mineralDef)
+        {
+            if (mineralDef == null) return false;
+
+            // 检查缓存
+            if (validYieldCache.TryGetValue(mineralDef, out bool cached))
+                return cached;
+
+            // 计算有效性
+            bool isValid = true;
+
+            // 检查是否被标记为掉落时销毁
+            if (mineralDef.destroyOnDrop)
+            {
+                isValid = false;
+            }
+            // 检查VEF扩展是否禁止深层钻探
+            else if (mineralDef.modExtensions != null)
+            {
+                foreach (var ext in mineralDef.modExtensions)
+                {
+                    if (ext == null) continue;
+
+                    var allowDeepDrillField = ext.GetType().GetField("allowDeepDrill");
+                    if (allowDeepDrillField != null)
+                    {
+                        var value = allowDeepDrillField.GetValue(ext);
+                        if (value is bool allowDrill && !allowDrill)
+                        {
+                            isValid = false;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            // 缓存结果
+            validYieldCache[mineralDef] = isValid;
+            return isValid;
+        }
+
         private void ScanForResources()
         {
             hasScanned = true;
@@ -319,7 +363,7 @@ namespace USAC
                 if (!c.InBounds(Map) || c.DistanceToSquared(Position) > radiusSq) continue;
 
                 ThingDef mineralDef = Map.deepResourceGrid.ThingDefAt(c);
-                if (mineralDef != null)
+                if (mineralDef != null && HasValidYield(mineralDef))
                 {
                     int count = Map.deepResourceGrid.CountAt(c);
                     if (count > 0)
@@ -347,7 +391,7 @@ namespace USAC
                 if (!c.InBounds(Map) || c.DistanceToSquared(Position) > radiusSq) continue;
 
                 ThingDef mineralDef = Map.deepResourceGrid.ThingDefAt(c);
-                if (mineralDef != null)
+                if (mineralDef != null && HasValidYield(mineralDef))
                 {
                     int count = Map.deepResourceGrid.CountAt(c);
                     if (count > 0)
@@ -640,7 +684,7 @@ namespace USAC
             base.DrawExtraSelectionOverlays();
 
             // 绘制采矿作业有效半径
-            GenDraw.DrawRadiusRing(Position, MiningRadius + 0.5f);
+            GenDraw.DrawRadiusRing(Position, MiningRadius);
 
             // 同步显示深层资源网格
             if (Map != null)
@@ -852,3 +896,5 @@ namespace USAC
         #endregion
     }
 }
+//愛して　愛して　愛してやまない
+//自分がいなくなったって本望
