@@ -310,10 +310,13 @@
   <USAC.Trade.Summary.Buy>購買總額</USAC.Trade.Summary.Buy>
   <USAC.Trade.Summary.Sell>出售總額</USAC.Trade.Summary.Sell>
   <USAC.Trade.Summary.Net>淨支出</USAC.Trade.Summary.Net>
+  <USAC.Trade.Summary.Settlement>本次結算</USAC.Trade.Summary.Settlement>
+  <USAC.Trade.Summary.IncludeWastage>含找零損失 ₿{0}</USAC.Trade.Summary.IncludeWastage>
   <USAC.Trade.Summary.Current>當前資產</USAC.Trade.Summary.Current>
   <USAC.Trade.Summary.CurrentAssets>資產</USAC.Trade.Summary.CurrentAssets>
   <USAC.Trade.Summary.After>交易後資產</USAC.Trade.Summary.After>
   <USAC.Trade.Summary.AfterTransaction>交易後</USAC.Trade.Summary.AfterTransaction>
+  <USAC.Trade.Summary.AfterRemain>交易後剩餘</USAC.Trade.Summary.AfterRemain>
   <USAC.Trade.Summary.NoChange>無資產變動</USAC.Trade.Summary.NoChange>
   <USAC.Trade.Summary.Wastage>貨幣找零損失：₿{0}</USAC.Trade.Summary.Wastage>
   <USAC.Trade.Summary.BuyingFrom>購自: {0}</USAC.Trade.Summary.BuyingFrom>

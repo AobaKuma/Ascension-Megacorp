@@ -303,10 +303,13 @@ Once the countdown ends, this faction will launch an unlimited forced seizure. P
   <USAC.Trade.Summary.Buy>Buy Amounts</USAC.Trade.Summary.Buy>
   <USAC.Trade.Summary.Sell>Sell Amounts</USAC.Trade.Summary.Sell>
   <USAC.Trade.Summary.Net>Net expenditure</USAC.Trade.Summary.Net>
+  <USAC.Trade.Summary.Settlement>Settlement</USAC.Trade.Summary.Settlement>
+  <USAC.Trade.Summary.IncludeWastage>incl. change loss ₿{0}</USAC.Trade.Summary.IncludeWastage>
   <USAC.Trade.Summary.Current>Current assets</USAC.Trade.Summary.Current>
   <USAC.Trade.Summary.CurrentAssets>Current</USAC.Trade.Summary.CurrentAssets>
   <USAC.Trade.Summary.After>After the transaction</USAC.Trade.Summary.After>
   <USAC.Trade.Summary.AfterTransaction>After</USAC.Trade.Summary.AfterTransaction>
+  <USAC.Trade.Summary.AfterRemain>Remaining</USAC.Trade.Summary.AfterRemain>
   <USAC.Trade.Summary.NoChange>No asset change</USAC.Trade.Summary.NoChange>
   <USAC.Trade.Summary.Wastage>Change loss: ₿{0}</USAC.Trade.Summary.Wastage>
   <USAC.Trade.Summary.BuyingFrom>Buying from: {0}</USAC.Trade.Summary.BuyingFrom>
