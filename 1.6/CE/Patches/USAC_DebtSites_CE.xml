@@ -38,38 +38,4 @@
     </operations>
   </Operation>
 
-  <!-- 替换空中支援弹药为CE兼容版本 -->
-  <Operation Class="PatchOperationSequence">
-    <operations>
-      <!-- 替换扫射机炮弹 -->
-      <li Class="PatchOperationReplace">
-        <xpath>Defs/Fortified.AirSupportDef[defName="USAC_StrafingRun"]/comps/li[@Class="Fortified.AirSupportComp_StrafeII" and ProjectileDef="USAC_Bullet_CASAC"]/ProjectileDef</xpath>
-        <value>
-          <ProjectileDef>Bullet_20x102mmNATO_AP</ProjectileDef>
-        </value>
-      </li>
-      <!-- 替换火箭弹 -->
-      <li Class="PatchOperationReplace">
-        <xpath>Defs/Fortified.AirSupportDef[defName="USAC_StrafingRun"]/comps/li[@Class="Fortified.AirSupportComp_StrafeII" and ProjectileDef="USAC_Proj_RocketCAS"]/ProjectileDef</xpath>
-        <value>
-          <ProjectileDef>Bullet_70mmAPKWS_HEAT</ProjectileDef>
-        </value>
-      </li>
-      <!-- 替换制导炸弹 -->
-      <li Class="PatchOperationReplace">
-        <xpath>Defs/Fortified.AirSupportDef[defName="USAC_GuidedBomb"]/comps/li[@Class="Fortified.AirSupportComp_StrafeII"]/ProjectileDef</xpath>
-        <value>
-          <ProjectileDef>Bullet_81mmMortarShell_HE</ProjectileDef>
-        </value>
-      </li>
-      <!-- 替换EMP机炮弹 -->
-      <li Class="PatchOperationReplace">
-        <xpath>Defs/Fortified.AirSupportDef[defName="USAC_EMPStrike"]/comps/li[@Class="Fortified.AirSupportComp_StrafeII"]/ProjectileDef</xpath>
-        <value>
-          <ProjectileDef>Bullet_20x102mmNATO_AP</ProjectileDef>
-        </value>
-      </li>
-    </operations>
-  </Operation>
-
 </Patch>
