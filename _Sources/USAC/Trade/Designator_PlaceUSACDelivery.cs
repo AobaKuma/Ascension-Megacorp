@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -164,6 +165,17 @@ namespace USAC
             base.Selected();
             // 清除选择防止冲突
             Find.Selector.ClearSelection();
+        }
+
+        public override void Deselected()
+        {
+            base.Deselected();
+            var manager = USACDeliveryManager.Instance;
+            if (manager == null) return;
+            // 未确认则请求重新选位
+            var delivery = manager.PendingDeliveries.FirstOrDefault(d => d.thing == thingToPlace);
+            if (delivery != null && !delivery.confirmed)
+                manager.RequestReselect();
         }
 
         public override void SelectedProcessInput(Event ev)

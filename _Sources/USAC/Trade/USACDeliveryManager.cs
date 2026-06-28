@@ -12,6 +12,8 @@ namespace USAC
         private static USACDeliveryManager instance;
         private List<PendingDelivery> pendingDeliveries = new();
         private int currentDeliveryIndex = 0;
+        private bool needsReselect = false;
+        private bool needsStartPlacement = false;
         #endregion
 
         #region 属性
@@ -31,10 +33,24 @@ namespace USAC
             base.ExposeData();
             Scribe_Collections.Look(ref pendingDeliveries, "pendingDeliveries", LookMode.Deep);
             Scribe_Values.Look(ref currentDeliveryIndex, "currentDeliveryIndex", 0);
-            
+
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 pendingDeliveries ??= new List<PendingDelivery>();
+            }
+        }
+
+        public override void GameComponentUpdate()
+        {
+            if (needsStartPlacement)
+            {
+                needsStartPlacement = false;
+                StartPlacementProcess();
+            }
+            if (needsReselect)
+            {
+                needsReselect = false;
+                ProcessNextDelivery();
             }
         }
         #endregion
@@ -66,6 +82,10 @@ namespace USAC
             // 开始第一个建筑的放置
             ProcessNextDelivery();
         }
+
+        public void RequestReselect() => needsReselect = true;
+
+        public void RequestStartPlacement() => needsStartPlacement = true;
 
         public void ConfirmPlacement(Thing thing, IntVec3 pos, Rot4 rot)
         {

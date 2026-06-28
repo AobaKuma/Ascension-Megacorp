@@ -45,6 +45,8 @@ namespace USAC
                         TradeUtility.SpawnDropPod(DropCellFinder.TradeDropSpot(map), map, thing);
                     }
                 }
+                // 延迟一帧启动放置流程
+                USACDeliveryManager.Instance?.RequestStartPlacement();
             }
             else
             {
