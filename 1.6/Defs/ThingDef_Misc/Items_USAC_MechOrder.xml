@@ -4,6 +4,9 @@
   <!-- 机兵订单基础 -->
   <ThingDef Name="USAC_BaseMechOrder" ParentName="ResourceBase" Abstract="True">
     <thingClass>ThingWithComps</thingClass>
+    <comps>
+      <li Class="USAC.CompProperties_USACMechOrderRegistration"/>
+    </comps>
     <category>Item</category>
     <drawerType>MapMeshOnly</drawerType>
     <resourceReadoutPriority>Middle</resourceReadoutPriority>

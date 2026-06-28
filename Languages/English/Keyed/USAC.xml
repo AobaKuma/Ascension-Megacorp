@@ -164,4 +164,9 @@ You are four survivors from different contract chains: debt inheritance, automat
   <USAC_AirbaseSupport_LetterLabel>Incoming airstrike detected</USAC_AirbaseSupport_LetterLabel>
   <USAC_AirbaseSupport_LetterText>A nearby temporary USAC airfield has dispatched a tactical bombing wing to your coordinates in support of the current ground offensive. The airstrike is about to reach the designated target area!</USAC_AirbaseSupport_LetterText>
 
+  <!-- Mech Order Registration -->
+  <USAC_MechOrder_Register>Pay USAC registration fee for {0} ({1} bonds)</USAC_MechOrder_Register>
+  <USAC_MechOrder_NoFunds>Insufficient bonds: {0}/{1}</USAC_MechOrder_NoFunds>
+  <USAC_MechOrder_Registered>{0} registered with USAC, drop pod inbound ({1} bonds consumed)</USAC_MechOrder_Registered>
+
 </LanguageData>

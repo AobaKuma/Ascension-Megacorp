@@ -209,4 +209,10 @@ You are four survivors from different contract chains: debt inheritance, automat
   
   <USAC_AirbaseSupport_LetterLabel>检测到来袭空袭</USAC_AirbaseSupport_LetterLabel>
   <USAC_AirbaseSupport_LetterText>一个临近的 USAC 临时机场已向您的坐标派遣了战术轰炸队，以配合当前的地面攻势。空袭即将抵达预定目标区！</USAC_AirbaseSupport_LetterText>
+
+  <!-- Mech Order Registration -->
+  <USAC_MechOrder_Register>向USAC补交注册手续费：{0}（{1} 张债券）</USAC_MechOrder_Register>
+  <USAC_MechOrder_NoFunds>债券不足，现有 {0}/{1}</USAC_MechOrder_NoFunds>
+  <USAC_MechOrder_Registered>{0} 已完成USAC注册，空投准备中（消耗 {1} 张债券）</USAC_MechOrder_Registered>
+
 </LanguageData>
