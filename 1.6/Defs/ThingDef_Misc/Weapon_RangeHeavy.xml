@@ -356,7 +356,7 @@
         </offsets>
       </li>
       <li Class="Fortified.HeavyEquippableExtension">
-        <EquippableDef>BulkyAutomatroid</EquippableDef>
+        <EquippableDef>TransHeavyAutomatroid</EquippableDef>
       </li>
     </modExtensions>
   </ThingDef>
