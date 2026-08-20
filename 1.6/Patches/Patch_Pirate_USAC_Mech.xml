@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    讓海盜派系也會開出搶來的 USAC Rocky / Cobalt。
+    塗裝（銹蝕雜色）由 Defs/Misc/FFF_PiratePaints.xml 負責。
+    Rocky 用海盜專屬兵種 USAC_Mech_Rocky_Pirate / _Pirate_Heavy
+    （見 Defs/PawnkindDef/PawnKindDef_USAC_Mech_Pirate.xml），裝備與武器都是隨機拼湊。
+    Cobalt 不穿裝備，直接沿用原兵種。
+
+    涵蓋的海盜派系：
+      Pirate（Core，同時是抽象基底 PirateBandBase）
+      PirateYttakin / PirateWaster（Biotech，兩者都用 pawnGroupMakers Inherit="False" 自訂隊組）
+      CannibalPirate（Ideology）沒有自己的 pawnGroupMakers，會直接繼承 Pirate 的，
+      所以不需要另外開 xpath。
+
+    只挑「一般遠程」與「據點防禦」隊組，刻意避開海盜的純近戰組、純狙擊組、
+    純爆破組與流浪漢組，免得破壞那些隊組的設計意圖。
+
+    沒裝對應 DLC 時 xpath 單純比對不到，配合 success=Always 靜默跳過，
+    所以整個檔案放在永遠載入的 1.6/Patches 也不會出錯。
+-->
+<Patch>
+
+    <!-- 1. 一般遠程混編組（commonality 100） -->
+    <Operation Class="PatchOperationAdd">
+        <success>Always</success>
+        <xpath>Defs/FactionDef[defName="Pirate" or defName="PirateYttakin" or defName="PirateWaster"]/pawnGroupMakers/li[kindDef="Combat"][commonality="100"]/options</xpath>
+        <value>
+            <USAC_Mech_Rocky_Pirate>4.5</USAC_Mech_Rocky_Pirate>
+            <USAC_Mech_Rocky_Pirate_Heavy>1.5</USAC_Mech_Rocky_Pirate_Heavy>
+            <USAC_Mech_Cobalt>3</USAC_Mech_Cobalt>
+        </value>
+    </Operation>
+
+    <!-- 2. 純遠程組（commonality 20；Yttakin 沒有這一組，會自動跳過） -->
+    <Operation Class="PatchOperationAdd">
+        <success>Always</success>
+        <xpath>Defs/FactionDef[defName="Pirate" or defName="PirateYttakin" or defName="PirateWaster"]/pawnGroupMakers/li[kindDef="Combat"][commonality="20"]/options</xpath>
+        <value>
+            <USAC_Mech_Rocky_Pirate>4.5</USAC_Mech_Rocky_Pirate>
+            <USAC_Mech_Rocky_Pirate_Heavy>1.5</USAC_Mech_Rocky_Pirate_Heavy>
+            <USAC_Mech_Cobalt>3</USAC_Mech_Cobalt>
+        </value>
+    </Operation>
+
+    <!-- 3. 據點防禦組 -->
+    <Operation Class="PatchOperationAdd">
+        <success>Always</success>
+        <xpath>Defs/FactionDef[defName="Pirate" or defName="PirateYttakin" or defName="PirateWaster"]/pawnGroupMakers/li[kindDef="Settlement"]/options</xpath>
+        <value>
+            <USAC_Mech_Rocky_Pirate>6</USAC_Mech_Rocky_Pirate>
+            <USAC_Mech_Rocky_Pirate_Heavy>2</USAC_Mech_Rocky_Pirate_Heavy>
+            <USAC_Mech_Cobalt>4</USAC_Mech_Cobalt>
+        </value>
+    </Operation>
+
+</Patch>

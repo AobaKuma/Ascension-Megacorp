@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- 帝國(Royalty DLC)所屬的 USAC 機兵：純白塗裝 -->
+  <!-- CompPaintable.ApplyFactionPreset 會以 faction + pawnKind 比對，
+       pawnKind 留空代表套用到該派系所有可塗裝的 Pawn。 -->
+  <Fortified.FFF_FactionPaintDef>
+    <defName>USAC_Mech_PaintPreset_Empire</defName>
+    <faction>Empire</faction>
+    <options>
+      <!-- 純白 (100% 機率)，不使用迷彩與疊加層 -->
+      <li>
+        <weight>100</weight>
+        <color1>(255, 255, 255)</color1>
+        <color2>(255, 255, 255)</color2>
+        <color3>(255, 255, 255)</color3>
+      </li>
+    </options>
+  </Fortified.FFF_FactionPaintDef>
+
+</Defs>

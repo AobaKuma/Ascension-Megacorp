@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    海盜版 M88 "Rocky"：搶來的機兵，裝備與武器都是東拼西湊。
+
+    重點是「隨機」：
+      - weaponTags 開很寬（含原版 Gun 這種大池），weaponMoney 範圍拉大，
+        所以同一場突襲可能出現手槍、霰彈槍、狙擊槍、USAC 制式步槍……
+      - apparelTags 從平民衣物到工業軍用裝一起丟進池子，apparelMoney 範圍同樣拉大，
+        窮的時候幾乎只有一件破外套，運氣好才穿得起整套防彈衣。
+      - gearHealthRange 壓低 → 裝備本身就是破的。
+      - 顏色改用多選項的 ColorGenerator：SpecificApparelRequirement.GetColor() 內部是
+        colorGenerator.NewRandomizedColor()，而 PostProcessApparel 是「每件裝備各呼叫一次」，
+        所以每一件衣服會各自抽色 —— 拼湊感就是這樣來的（母類鎖死單一 USAC 米褐則不會）。
+
+    注意：Rocky 的 MechWeaponExtension 限定 Spacer / Industrial / Medieval 技術等級，
+    所以武器池刻意不放 Neolithic 標籤（弓箭類），免得生出拿不動武器的空手機兵。
+    重武器同理：帶 HeavyEquippableDef 的槍（USAC_OICW 等）只給有外骨骼的重裝型。
+  -->
+
+  <!-- ==================== 海盜版 Rocky 共用底 ==================== -->
+  <PawnKindDef ParentName="USAC_BaseRockyKind" Name="USAC_BaseRockyKind_Pirate" Abstract="true">
+    <defaultFactionDef>Pirate</defaultFactionDef>
+    <maxApparelQuality>Good</maxApparelQuality>
+    <biocodeWeaponChance>0</biocodeWeaponChance>
+    <!-- Inherit="False"：清掉母類鎖死的 USAC 米褐 (192,175,158)，換成一組雜色，每件裝備各自抽 -->
+    <specificApparelRequirements Inherit="False">
+      <li>
+        <colorGenerator Class="ColorGenerator_Options">
+          <options>
+            <!-- 剝落的原廠 USAC 米褐 -->
+            <li>
+              <weight>20</weight>
+              <only>(150, 138, 122)</only>
+            </li>
+            <!-- 髒卡其 -->
+            <li>
+              <weight>20</weight>
+              <only>(92, 84, 74)</only>
+            </li>
+            <!-- 暗橄欖 -->
+            <li>
+              <weight>18</weight>
+              <only>(86, 92, 72)</only>
+            </li>
+            <!-- 炭灰 -->
+            <li>
+              <weight>18</weight>
+              <only>(70, 66, 62)</only>
+            </li>
+            <!-- 鏽紅 -->
+            <li>
+              <weight>14</weight>
+              <only>(120, 78, 60)</only>
+            </li>
+            <!-- 近黑 -->
+            <li>
+              <weight>10</weight>
+              <only>(48, 48, 52)</only>
+            </li>
+          </options>
+        </colorGenerator>
+      </li>
+    </specificApparelRequirements>
+  </PawnKindDef>
+
+  <!-- ==================== 拾荒型：什麼都可能拿 ==================== -->
+  <PawnKindDef ParentName="USAC_BaseRockyKind_Pirate">
+    <defName>USAC_Mech_Rocky_Pirate</defName>
+    <label>scavenged M88 Rocky</label>
+    <combatPower>85</combatPower>
+    <gearHealthRange>0.4~1.6</gearHealthRange>
+    <apparelAllowHeadgearChance>0.65</apparelAllowHeadgearChance>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+      <li>BeltDefensePop</li>
+      <li>USAC_HelmetAssault</li>
+      <li>USAC_HelmetNV</li>
+      <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Tactical</li>
+    </apparelTags>
+    <apparelMoney>300~2600</apparelMoney>
+    <!--
+      Gun 是原版最寬的武器池（左輪、自動手槍、機關手槍、栓動步槍、霰彈槍、衝鋒槍、
+      輕機槍、突擊步槍、狙擊槍、燃燒彈發射器…全都靠 BaseHumanMakeableGun 帶這個標籤），
+      拾荒感就是它給的。但 Gun_DoomsdayRocket / Gun_TripleRocket 也掛著 Gun，
+      兩者 MarketValue 都正好是 1000，所以 weaponMoney 上限刻意壓在 975 —
+      預算永遠買不到那兩把，海盜就不會扛著末日火箭筒上門。
+    -->
+    <weaponTags>
+      <li>Gun</li>
+      <li>SimpleGun</li>
+      <li>ShortShots</li>
+      <li>USAC_AR</li>
+      <li>USAC_DMR</li>
+    </weaponTags>
+    <weaponMoney>250~975</weaponMoney>
+  </PawnKindDef>
+
+  <!-- ==================== 重裝型：靠搶來的外骨骼扛得動重武器 ==================== -->
+  <PawnKindDef ParentName="USAC_BaseRockyKind_Pirate">
+    <defName>USAC_Mech_Rocky_Pirate_Heavy</defName>
+    <label>scavenged M88 Rocky gunner</label>
+    <combatPower>125</combatPower>
+    <gearHealthRange>0.5~1.6</gearHealthRange>
+    <apparelAllowHeadgearChance>0.8</apparelAllowHeadgearChance>
+    <!-- 外骨骼同時是 USAC_OICW（HeavyEquippableDef = LightAutomatroid）的解鎖條件 -->
+    <apparelRequired>
+      <li>USAC_Apparel_ExoSkeleton</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+      <li>SpacerMilitary</li>
+      <li>BeltDefensePop</li>
+      <li>USAC_HelmetHeavy</li>
+      <li>USAC_HelmetAssault</li>
+      <li MayRequire="Aoba.DeadManSwitch.Core">DMS_Tactical</li>
+    </apparelTags>
+    <apparelMoney>1200~4500</apparelMoney>
+    <!--
+      這裡刻意不用 Gun 標籤（避開末日火箭筒），改列具體的軍規標籤。
+      Minigun 而不是 GunHeavy：GunHeavy 還包含 Odyssey 的 Gun_BeamRepeater，
+      技術等級不確定是否落在 Rocky 可用的 Spacer/Industrial/Medieval 內，
+      抽到不能裝的武器會變成空手機兵。
+    -->
+    <weaponTags>
+      <li>IndustrialGunAdvanced</li>
+      <li>AssaultRifle</li>
+      <li>SniperRifle</li>
+      <li>Minigun</li>
+      <li>SpacerGun</li>
+      <li>USAC_AR</li>
+      <li>USAC_LMG</li>
+      <li>USAC_OICW</li>
+    </weaponTags>
+    <weaponMoney>900~4000</weaponMoney>
+  </PawnKindDef>
+
+</Defs>

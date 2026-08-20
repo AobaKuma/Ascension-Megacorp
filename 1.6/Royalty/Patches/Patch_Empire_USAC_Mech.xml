@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    讓 Royalty DLC 的帝國(Empire)派系部隊攜帶 USAC 機兵。
+
+    - 機體純白塗裝：Defs/FFF_EmpirePaints.xml → USAC_Mech_PaintPreset_Empire
+    - Rocky（唯一可穿裝備的機兵）改用帝國制式裝甲的專用兵種：
+      Defs/PawnKindDef_USAC_Mech_Empire.xml → USAC_Mech_Rocky_*_Empire
+    - Cobalt / Paraman / Gonk / Omaha 不穿裝備，直接沿用原兵種，塗裝由派系預設處理。
+
+    本檔案位於 1.6/Royalty，僅在 Royalty DLC 啟用時載入，
+    因此不需要額外的 MayRequire / PatchOperationFindMod 保護。
+    每個 Operation 皆設為 success=Always，避免其他模組改寫帝國
+    pawnGroupMakers 時噴紅字。
+-->
+<Patch>
+
+    <!-- ============================================================ -->
+    <!-- 1. 混入帝國既有隊組                                            -->
+    <!-- ============================================================ -->
+
+    <!-- 1-1 戰鬥組（一般突襲 + breach 突襲，兩個 li 都會被套用） -->
+    <Operation Class="PatchOperationAdd">
+        <success>Always</success>
+        <xpath>Defs/FactionDef[defName="Empire"]/pawnGroupMakers/li[kindDef="Combat"]/options</xpath>
+        <value>
+            <USAC_Mech_Rocky_AR_Empire>0.8</USAC_Mech_Rocky_AR_Empire>
+            <USAC_Mech_Rocky_DMR_Empire>0.35</USAC_Mech_Rocky_DMR_Empire>
+            <USAC_Mech_Cobalt>0.6</USAC_Mech_Cobalt>
+            <USAC_Mech_Paraman>0.2</USAC_Mech_Paraman>
+            <USAC_Mech_Gonk>0.05</USAC_Mech_Gonk>
+        </value>
+    </Operation>
+
+    <!-- 1-2 據點防禦組 -->
+    <Operation Class="PatchOperationAdd">
+        <success>Always</success>
+        <xpath>Defs/FactionDef[defName="Empire"]/pawnGroupMakers/li[kindDef="Settlement"]/options</xpath>
+        <value>
+            <USAC_Mech_Rocky_AR_Empire>1.0</USAC_Mech_Rocky_AR_Empire>
+            <USAC_Mech_Rocky_LMG_Empire>0.5</USAC_Mech_Rocky_LMG_Empire>
+            <USAC_Mech_Cobalt>0.8</USAC_Mech_Cobalt>
+            <USAC_Mech_Paraman>0.4</USAC_Mech_Paraman>
+            <USAC_Mech_Gonk>0.15</USAC_Mech_Gonk>
+            <USAC_Mech_Omaha>0.1</USAC_Mech_Omaha>
+        </value>
+    </Operation>
+
+    <!-- 1-3 商隊護衛 -->
+    <Operation Class="PatchOperationAdd">
+        <success>Always</success>
+        <xpath>Defs/FactionDef[defName="Empire"]/pawnGroupMakers/li[kindDef="Trader"]/guards</xpath>
+        <value>
+            <USAC_Mech_Rocky_AR_Empire>1.5</USAC_Mech_Rocky_AR_Empire>
+            <USAC_Mech_Cobalt>1.0</USAC_Mech_Cobalt>
+            <USAC_Mech_Paraman>0.5</USAC_Mech_Paraman>
+        </value>
+    </Operation>
+
+    <!-- ============================================================ -->
+    <!-- 2. 新增獨立的帝國機兵隊組                                       -->
+    <!-- ============================================================ -->
+    <Operation Class="PatchOperationAdd">
+        <success>Always</success>
+        <xpath>Defs/FactionDef[defName="Empire"]/pawnGroupMakers</xpath>
+        <value>
+
+            <!-- 機甲支援分隊：以機兵為主，少量帝國士兵隨行 -->
+            <li>
+                <kindDef>Combat</kindDef>
+                <commonality>12</commonality>
+                <options>
+                    <Empire_Fighter_Trooper>3</Empire_Fighter_Trooper>
+                    <Empire_Fighter_Janissary>1.5</Empire_Fighter_Janissary>
+                    <USAC_Mech_Rocky_AR_Empire>8</USAC_Mech_Rocky_AR_Empire>
+                    <USAC_Mech_Rocky_DMR_Empire>3</USAC_Mech_Rocky_DMR_Empire>
+                    <USAC_Mech_Rocky_LMG_Empire>3</USAC_Mech_Rocky_LMG_Empire>
+                    <USAC_Mech_Rocky_Heavy_Empire>1.5</USAC_Mech_Rocky_Heavy_Empire>
+                    <USAC_Mech_Cobalt>6</USAC_Mech_Cobalt>
+                    <USAC_Mech_Paraman>3</USAC_Mech_Paraman>
+                    <USAC_Mech_Gonk>0.8</USAC_Mech_Gonk>
+                    <USAC_Mech_Omaha>0.5</USAC_Mech_Omaha>
+                </options>
+            </li>
+
+            <!-- 機甲駐防分隊：據點守軍版本 -->
+            <li>
+                <kindDef>Settlement</kindDef>
+                <commonality>15</commonality>
+                <options>
+                    <Empire_Fighter_Trooper>3</Empire_Fighter_Trooper>
+                    <Empire_Fighter_Cataphract>1</Empire_Fighter_Cataphract>
+                    <USAC_Mech_Rocky_AR_Empire>8</USAC_Mech_Rocky_AR_Empire>
+                    <USAC_Mech_Rocky_LMG_Empire>4</USAC_Mech_Rocky_LMG_Empire>
+                    <USAC_Mech_Rocky_Heavy_Empire>2</USAC_Mech_Rocky_Heavy_Empire>
+                    <USAC_Mech_Cobalt>6</USAC_Mech_Cobalt>
+                    <USAC_Mech_Paraman>4</USAC_Mech_Paraman>
+                    <USAC_Mech_Gonk>1</USAC_Mech_Gonk>
+                    <USAC_Mech_Omaha>0.8</USAC_Mech_Omaha>
+                </options>
+            </li>
+
+        </value>
+    </Operation>
+
+</Patch>

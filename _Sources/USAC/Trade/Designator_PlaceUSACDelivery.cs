@@ -71,7 +71,7 @@ namespace USAC
                 CellRect myRect = GenAdj.OccupiedRect(loc, placementRot, PlacingDef.size);
                 foreach (var delivery in USACDeliveryManager.Instance.PendingDeliveries)
                 {
-                    if (delivery.confirmed && delivery.thing != null)
+                    if (delivery != null && delivery.confirmed && delivery.thing != null && delivery.thing != thingToPlace)
                     {
                         CellRect otherRect = GenAdj.OccupiedRect(delivery.targetPos, delivery.targetRot, delivery.thing.def.size);
                         if (myRect.Overlaps(otherRect))
@@ -116,6 +116,14 @@ namespace USAC
 
         public override void DesignateSingleCell(IntVec3 loc)
         {
+            // 物件已失效则直接结束当前放置 交由管理器清理
+            if (thingToPlace == null || thingToPlace.Destroyed)
+            {
+                Find.DesignatorManager.Deselect();
+                USACDeliveryManager.Instance?.RequestReselect();
+                return;
+            }
+
             USACDeliveryManager.Instance?.ConfirmPlacement(thingToPlace, loc, placementRot);
         }
 
@@ -149,7 +157,7 @@ namespace USAC
             // 统一使用公共的安全虚影渲染通道
             foreach (var delivery in manager.PendingDeliveries)
             {
-                if (delivery.confirmed && delivery.thing != null)
+                if (delivery != null && delivery.confirmed && delivery.thing != null)
                 {
                     USAC_GhostRenderUtility.DrawGhost(
                         delivery.targetPos, 
@@ -172,8 +180,10 @@ namespace USAC
             base.Deselected();
             var manager = USACDeliveryManager.Instance;
             if (manager == null) return;
+            // 物件为空时不做匹配 防止与失效条目误配导致反复重选
+            if (thingToPlace == null) return;
             // 未确认则请求重新选位
-            var delivery = manager.PendingDeliveries.FirstOrDefault(d => d.thing == thingToPlace);
+            var delivery = manager.PendingDeliveries.FirstOrDefault(d => d != null && d.thing == thingToPlace);
             if (delivery != null && !delivery.confirmed)
                 manager.RequestReselect();
         }

@@ -166,6 +166,7 @@
     <defaultFactionType>USAC_Faction</defaultFactionType>
     <aiAvoidCover>false</aiAvoidCover>
     <destroyGearOnDrop>false</destroyGearOnDrop>
+    <allowInMechClusters>false</allowInMechClusters>
     <isFighter>true</isFighter>
   </PawnKindDef>
 

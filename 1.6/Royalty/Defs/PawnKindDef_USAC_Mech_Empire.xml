@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    帝國(Royalty DLC)專用的 M88 "Rocky" 變體。
+    Rocky 是 USAC 唯一具備 CompProperties_MechApparel 的機兵（可穿人類裝備），
+    因此帝國版改穿帝國制式裝甲，而不是 USAC 的防彈衣。
+
+    - AR / DMR ：斥候裝甲 Apparel_ArmorRecon  + 斥候盔（對應禁衛軍 Janissary 規格）
+    - LMG / Heavy：重裝甲 Apparel_ArmorCataphract + 重裝盔（對應鐵衛 Cataphract 規格）
+
+    注意：USAC_OICW（USAC_Gun_BattleRifle）帶有 HeavyEquippableDef "LightAutomatroid"，
+    需要 baseBodySize >= 1.1 或穿著清單內的裝備才能持有；Rocky 的 baseBodySize 為 1.0，
+    原版靠 USAC_Apparel_ExoSkeleton 過關。Apparel_ArmorCataphract 本來就在
+    LightAutomatroid 的 EquippableWithApparel 清單內，所以重裝甲同樣能解鎖 OICW。
+    Apparel_ArmorRecon 不在該清單內，故斥候甲變體只配 AR / DMR。
+
+    機體本身的純白塗裝由 FFF_EmpirePaints.xml 的 USAC_Mech_PaintPreset_Empire 負責；
+    這裡用 specificApparelRequirements 的 colorGenerator 把「衣服」也鎖成帝國白。
+  -->
+
+  <!-- ==================== 帝國版 Rocky 基底 ==================== -->
+  <PawnKindDef ParentName="USAC_BaseRockyKind" Name="USAC_BaseRockyKind_Empire" Abstract="true">
+    <defaultFactionDef>Empire</defaultFactionDef>
+    <apparelAllowHeadgearChance>1.0</apparelAllowHeadgearChance>
+    <!-- Inherit="False"：清掉母類鎖 USAC 米褐色 (192,175,158) 的 colorGenerator -->
+    <specificApparelRequirements Inherit="False">
+      <li>
+        <colorGenerator Class="ColorGenerator_Options">
+          <options>
+            <li>
+              <only>(250, 250, 250)</only>
+            </li>
+          </options>
+        </colorGenerator>
+      </li>
+    </specificApparelRequirements>
+  </PawnKindDef>
+
+  <!-- 斥候裝甲型：對應禁衛軍規格 -->
+  <PawnKindDef ParentName="USAC_BaseRockyKind_Empire" Name="USAC_RockyKind_Empire_Recon" Abstract="true">
+    <combatPower>110</combatPower>
+    <apparelRequired>
+      <li>Apparel_ArmorHelmetRecon</li>
+      <li>Apparel_ArmorRecon</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelMoney>6000~9000</apparelMoney>
+  </PawnKindDef>
+
+  <!-- 重裝甲型：對應鐵衛規格 -->
+  <PawnKindDef ParentName="USAC_BaseRockyKind_Empire" Name="USAC_RockyKind_Empire_Cataphract" Abstract="true">
+    <combatPower>145</combatPower>
+    <apparelRequired>
+      <li>Apparel_ArmorHelmetCataphract</li>
+      <li>Apparel_ArmorCataphract</li>
+    </apparelRequired>
+    <apparelTags>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelMoney>7000~10000</apparelMoney>
+  </PawnKindDef>
+
+  <!-- ==================== 實際兵種 ==================== -->
+
+  <PawnKindDef ParentName="USAC_RockyKind_Empire_Recon">
+    <defName>USAC_Mech_Rocky_AR_Empire</defName>
+    <label>imperial M88 Rocky</label>
+    <weaponTags>
+      <li>USAC_AR</li>
+    </weaponTags>
+    <weaponMoney>1000~2500</weaponMoney>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="USAC_RockyKind_Empire_Recon">
+    <defName>USAC_Mech_Rocky_DMR_Empire</defName>
+    <label>imperial M88 Rocky marksman</label>
+    <weaponTags>
+      <li>USAC_DMR</li>
+    </weaponTags>
+    <weaponMoney>1000~9999</weaponMoney>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="USAC_RockyKind_Empire_Cataphract">
+    <defName>USAC_Mech_Rocky_LMG_Empire</defName>
+    <label>imperial M88 Rocky gunner</label>
+    <weaponTags>
+      <li>USAC_LMG</li>
+    </weaponTags>
+    <weaponMoney>1000~2500</weaponMoney>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="USAC_RockyKind_Empire_Cataphract">
+    <defName>USAC_Mech_Rocky_Heavy_Empire</defName>
+    <label>imperial M88 Rocky heavy</label>
+    <weaponTags>
+      <li>USAC_OICW</li>
+    </weaponTags>
+    <weaponMoney>1500~3500</weaponMoney>
+  </PawnKindDef>
+
+</Defs>

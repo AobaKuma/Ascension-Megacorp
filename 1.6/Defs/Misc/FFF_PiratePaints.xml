@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--
+    海盜派系的 USAC 機兵塗裝：銹蝕雜色。
+    設定成「搶來的機兵，用手邊有的漆隨便補」的感覺 —— 每次生成從加權選項中隨機抽一組。
+
+    CompPaintable.ApplyFactionPreset 的比對規則：
+      1) 先找 faction == 該派系 且 pawnKind == 該兵種 的定義
+      2) 找不到才退回 faction 相同、pawnKind 為空的定義
+    所以下面「Rocky 用的」其實是派系通用底（pawnKind 留空，Rocky 的 5 個兵種都吃得到），
+    Cobalt 則另外給 pawnKind 專屬定義，配色更暗更髒，兩者視覺上可以分辨。
+
+    FFF_FactionPaintDef.faction 是 FactionDef 的交叉參照，DLC 派系必須用 MayRequire
+    擋掉，否則沒裝該 DLC 時會噴「could not resolve cross-reference」。
+    MayRequire 掛在 Def 根節點上是支援的（LoadedModManager.ParseAndProcessXML 會檢查）。
+
+    涵蓋的海盜派系（皆繼承自 Core 的 PirateBandBase）：
+      Pirate（Core）／CannibalPirate（Ideology）／PirateYttakin、PirateWaster（Biotech）
+  -->
+
+  <!-- ==================== 通用底：銹蝕雜色 ==================== -->
+  <Fortified.FFF_FactionPaintDef Name="USAC_MechPaint_PirateBase" Abstract="True">
+    <options>
+      <!-- 鏽紅鐵皮 -->
+      <li>
+        <weight>25</weight>
+        <color1>(120, 78, 60)</color1>
+      </li>
+      <!-- 剝落的原廠 USAC 米褐 -->
+      <li>
+        <weight>20</weight>
+        <color1>(150, 138, 122)</color1>
+      </li>
+      <!-- 曬白沙黃 -->
+      <li>
+        <weight>20</weight>
+        <color1>(168, 148, 112)</color1>
+      </li>
+      <!-- 垢污橄欖 + 暗色軍用迷彩 -->
+      <li>
+        <weight>20</weight>
+        <color1>(92, 96, 74)</color1>
+        <color2>(70, 68, 58)</color2>
+        <color3>(58, 54, 48)</color3>
+        <camoDef>FFF_Camo_ArmyDark</camoDef>
+      </li>
+      <!-- 炭灰 + 暗色數位迷彩 -->
+      <li>
+        <weight>15</weight>
+        <color1>(78, 78, 80)</color1>
+        <color2>(58, 58, 60)</color2>
+        <color3>(44, 44, 46)</color3>
+        <camoDef>FFF_Camo_DigitalDark</camoDef>
+      </li>
+    </options>
+  </Fortified.FFF_FactionPaintDef>
+
+  <!-- ==================== Cobalt 專屬：更暗更髒 ==================== -->
+  <Fortified.FFF_FactionPaintDef Name="USAC_MechPaint_PirateCobaltBase" Abstract="True">
+    <pawnKind>USAC_Mech_Cobalt</pawnKind>
+    <options>
+      <!-- 炭黑 -->
+      <li>
+        <weight>30</weight>
+        <color1>(60, 60, 62)</color1>
+      </li>
+      <!-- 鏽紅棕 -->
+      <li>
+        <weight>25</weight>
+        <color1>(105, 68, 52)</color1>
+      </li>
+      <!-- 暗橄欖 + 暗色軍用迷彩 -->
+      <li>
+        <weight>25</weight>
+        <color1>(84, 88, 70)</color1>
+        <color2>(64, 62, 54)</color2>
+        <color3>(50, 48, 44)</color3>
+        <camoDef>FFF_Camo_ArmyDark</camoDef>
+      </li>
+      <!-- 髒沙黃 -->
+      <li>
+        <weight>20</weight>
+        <color1>(140, 124, 96)</color1>
+      </li>
+    </options>
+  </Fortified.FFF_FactionPaintDef>
+
+  <!-- ==================== Pirate（Core：海盜幫） ==================== -->
+  <Fortified.FFF_FactionPaintDef ParentName="USAC_MechPaint_PirateBase">
+    <defName>USAC_Mech_PaintPreset_Pirate</defName>
+    <faction>Pirate</faction>
+  </Fortified.FFF_FactionPaintDef>
+
+  <Fortified.FFF_FactionPaintDef ParentName="USAC_MechPaint_PirateCobaltBase">
+    <defName>USAC_Mech_PaintPreset_Pirate_Cobalt</defName>
+    <faction>Pirate</faction>
+  </Fortified.FFF_FactionPaintDef>
+
+  <!-- ==================== CannibalPirate（Ideology：食人海盜幫） ==================== -->
+  <Fortified.FFF_FactionPaintDef ParentName="USAC_MechPaint_PirateBase" MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>USAC_Mech_PaintPreset_CannibalPirate</defName>
+    <faction>CannibalPirate</faction>
+  </Fortified.FFF_FactionPaintDef>
+
+  <Fortified.FFF_FactionPaintDef ParentName="USAC_MechPaint_PirateCobaltBase" MayRequire="Ludeon.RimWorld.Ideology">
+    <defName>USAC_Mech_PaintPreset_CannibalPirate_Cobalt</defName>
+    <faction>CannibalPirate</faction>
+  </Fortified.FFF_FactionPaintDef>
+
+  <!-- ==================== PirateYttakin（Biotech：亞塔金海盜） ==================== -->
+  <Fortified.FFF_FactionPaintDef ParentName="USAC_MechPaint_PirateBase" MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>USAC_Mech_PaintPreset_PirateYttakin</defName>
+    <faction>PirateYttakin</faction>
+  </Fortified.FFF_FactionPaintDef>
+
+  <Fortified.FFF_FactionPaintDef ParentName="USAC_MechPaint_PirateCobaltBase" MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>USAC_Mech_PaintPreset_PirateYttakin_Cobalt</defName>
+    <faction>PirateYttakin</faction>
+  </Fortified.FFF_FactionPaintDef>
+
+  <!-- ==================== PirateWaster（Biotech：廢土海盜） ==================== -->
+  <Fortified.FFF_FactionPaintDef ParentName="USAC_MechPaint_PirateBase" MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>USAC_Mech_PaintPreset_PirateWaster</defName>
+    <faction>PirateWaster</faction>
+  </Fortified.FFF_FactionPaintDef>
+
+  <Fortified.FFF_FactionPaintDef ParentName="USAC_MechPaint_PirateCobaltBase" MayRequire="Ludeon.RimWorld.Biotech">
+    <defName>USAC_Mech_PaintPreset_PirateWaster_Cobalt</defName>
+    <faction>PirateWaster</faction>
+  </Fortified.FFF_FactionPaintDef>
+
+</Defs>

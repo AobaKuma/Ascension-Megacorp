@@ -63,10 +63,9 @@
         <pos>(26, 0, 3)</pos>
         <stuff>Steel</stuff>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+      <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>USAC_Crate_Medium</def>
         <pos>(20, 0, 3)</pos>
-        <size>(2, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>ToolCabinet</def>
@@ -93,11 +92,6 @@
         <def>Wall</def>
         <pos>(26, 0, 4)</pos>
         <stuff>Steel</stuff>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>ToolCabinet</def>
-        <pos>(25, 0, 4)</pos>
-        <rot>1</rot>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>Fence</def>
@@ -129,10 +123,9 @@
         <pos>(26, 0, 5)</pos>
         <stuff>Steel</stuff>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+      <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>USAC_Crate_Large</def>
         <pos>(24, 0, 5)</pos>
-        <size>(2, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>Fence</def>
@@ -165,11 +158,6 @@
         <rot>1</rot>
         <stuff>Steel</stuff>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingRect">
-        <def>USAC_Crate_Large</def>
-        <pos>(24, 0, 6)</pos>
-        <size>(2, 1)</size>
-      </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>Fence</def>
         <pos>(0, 0, 7)</pos>
@@ -183,12 +171,6 @@
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>Wall</def>
         <pos>(26, 0, 7)</pos>
-        <stuff>Steel</stuff>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>Shelf</def>
-        <pos>(20, 0, 7)</pos>
-        <rot>1</rot>
         <stuff>Steel</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
@@ -228,12 +210,6 @@
         <rot>3</rot>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>Shelf</def>
-        <pos>(25, 0, 8)</pos>
-        <rot>3</rot>
-        <stuff>Steel</stuff>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>Fence</def>
         <pos>(0, 0, 9)</pos>
         <stuff>WoodLog</stuff>
@@ -261,21 +237,15 @@
         <def>Battery</def>
         <pos>(4, 0, 9)</pos>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+      <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>WoodFiredGenerator</def>
         <pos>(5, 0, 9)</pos>
-        <size>(2, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>Door</def>
         <pos>(7, 0, 9)</pos>
         <rot>1</rot>
         <stuff>Steel</stuff>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>ToolCabinet</def>
-        <pos>(20, 0, 9)</pos>
-        <rot>3</rot>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>USAC_Crate_Small</def>
@@ -311,15 +281,6 @@
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>HiddenConduit</def>
         <pos>(3, 0, 10)</pos>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>Battery</def>
-        <pos>(4, 0, 10)</pos>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingRect">
-        <def>WoodFiredGenerator</def>
-        <pos>(5, 0, 10)</pos>
-        <size>(2, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>Door</def>
@@ -421,12 +382,6 @@
         <pos>(14, 0, 15)</pos>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>Dresser</def>
-        <pos>(4, 0, 15)</pos>
-        <rot>1</rot>
-        <stuff>WoodLog</stuff>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>Door</def>
         <pos>(14, 0, 15)</pos>
         <rot>1</rot>
@@ -511,22 +466,6 @@
         <size>(5, 1)</size>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>FlatscreenTelevision</def>
-        <pos>(4, 0, 17)</pos>
-        <rot>1</rot>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>Table1x2c</def>
-        <pos>(7, 0, 17)</pos>
-        <stuff>WoodLog</stuff>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>Couch</def>
-        <pos>(9, 0, 17)</pos>
-        <rot>3</rot>
-        <stuff>Cloth</stuff>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>WallLamp</def>
         <pos>(11, 0, 17)</pos>
         <rot>1</rot>
@@ -605,19 +544,12 @@
         <pos>(18, 0, 19)</pos>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>Shelf</def>
-        <pos>(4, 0, 19)</pos>
-        <rot>1</rot>
-        <stuff>WoodLog</stuff>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>WallLamp</def>
         <pos>(5, 0, 19)</pos>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+      <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>Couch</def>
         <pos>(7, 0, 19)</pos>
-        <size>(2, 1)</size>
         <rot>2</rot>
         <stuff>Cloth</stuff>
       </li>
@@ -654,11 +586,6 @@
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>HiddenConduit</def>
         <pos>(18, 0, 20)</pos>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>ElectricStove</def>
-        <pos>(10, 0, 20)</pos>
-        <rot>3</rot>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>Fence</def>
@@ -703,10 +630,9 @@
         <rot>1</rot>
         <stuff>WoodLog</stuff>
       </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingRect">
+      <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>RoyalBed</def>
         <pos>(15, 0, 21)</pos>
-        <size>(2, 1)</size>
         <rot>2</rot>
         <stuff>WoodLog</stuff>
       </li>
@@ -741,26 +667,8 @@
         <stuff>WoodLog</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>ElectricStove</def>
-        <pos>(10, 0, 22)</pos>
-        <rot>3</rot>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>PassiveCooler</def>
         <pos>(11, 0, 22)</pos>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_Thing">
-        <def>Dresser</def>
-        <pos>(13, 0, 22)</pos>
-        <rot>1</rot>
-        <stuff>WoodLog</stuff>
-      </li>
-      <li Class="Fortified.Structures.FFF_Element_ThingRect">
-        <def>RoyalBed</def>
-        <pos>(15, 0, 22)</pos>
-        <size>(2, 1)</size>
-        <rot>2</rot>
-        <stuff>WoodLog</stuff>
       </li>
       <li Class="Fortified.Structures.FFF_Element_Thing">
         <def>WallLamp</def>

@@ -117,7 +117,7 @@
       <AccuracyShort>0.78</AccuracyShort>
       <AccuracyMedium>0.85</AccuracyMedium>
       <AccuracyLong>0.46</AccuracyLong>
-      <RangedWeapon_Cooldown>1.55</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>1.75</RangedWeapon_Cooldown>
     </statBases>
     <equippedStatOffsets>
       <HuntingStealth>0.1</HuntingStealth>
