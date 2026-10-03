@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    海盜 / 帝國版 M88 "Rocky" 兵種的 CE 彈藥配置。
+    （PawnKindDef_USAC_Mech_Pirate.xml、Royalty/Defs/PawnKindDef_USAC_Mech_Empire.xml）
+
+    - 海盜版：拾荒來的武器、補給也差，彈匣數比 USAC 原版少。
+    - 帝國版：直接比照 Automatroid_Rocky_CE.xml 中對應的 USAC 原版兵種。
+      帝國兵種只在 Royalty 啟用時存在，所以用 PatchOperationFindMod 包起來，
+      避免沒有 Royalty 時 xpath 找不到而噴紅字。
+-->
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+
+			<!-- ========== Pirate Rocky (scavenged) ========== -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_Pirate"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>3</min>
+							<max>6</max>
+						</primaryMagazineCount>
+						<sidearms>
+							<li>
+								<generateChance>0.15</generateChance>
+								<sidearmMoney>
+									<min>80</min>
+									<max>160</max>
+								</sidearmMoney>
+								<weaponTags>
+									<li>GrenadeSmoke</li>
+								</weaponTags>
+								<magazineCount>
+									<min>0</min>
+									<max>1</max>
+								</magazineCount>
+							</li>
+						</sidearms>
+					</li>
+				</value>
+			</li>
+
+			<!-- ========== Pirate Rocky Heavy ========== -->
+			<li Class="PatchOperationAddModExtension">
+				<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_Pirate_Heavy"]</xpath>
+				<value>
+					<li Class="CombatExtended.LoadoutPropertiesExtension">
+						<primaryMagazineCount>
+							<min>5</min>
+							<max>8</max>
+						</primaryMagazineCount>
+						<sidearms>
+							<li>
+								<generateChance>0.25</generateChance>
+								<sidearmMoney>
+									<min>80</min>
+									<max>160</max>
+								</sidearmMoney>
+								<weaponTags>
+									<li>GrenadeSmoke</li>
+								</weaponTags>
+								<magazineCount>
+									<min>0</min>
+									<max>1</max>
+								</magazineCount>
+							</li>
+						</sidearms>
+					</li>
+				</value>
+			</li>
+
+		</operations>
+	</Operation>
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Royalty</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+
+				<!-- ========== Empire Rocky AR ========== -->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_AR_Empire"]</xpath>
+					<value>
+						<li Class="CombatExtended.LoadoutPropertiesExtension">
+							<primaryMagazineCount>
+								<min>6</min>
+								<max>8</max>
+							</primaryMagazineCount>
+							<sidearms>
+								<li>
+									<generateChance>0.5</generateChance>
+									<sidearmMoney>
+										<min>80</min>
+										<max>160</max>
+									</sidearmMoney>
+									<weaponTags>
+										<li>GrenadeSmoke</li>
+									</weaponTags>
+									<magazineCount>
+										<min>0</min>
+										<max>1</max>
+									</magazineCount>
+								</li>
+							</sidearms>
+						</li>
+					</value>
+				</li>
+
+				<!-- ========== Empire Rocky DMR ========== -->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_DMR_Empire"]</xpath>
+					<value>
+						<li Class="CombatExtended.LoadoutPropertiesExtension">
+							<primaryMagazineCount>
+								<min>9</min>
+								<max>11</max>
+							</primaryMagazineCount>
+							<sidearms>
+								<li>
+									<generateChance>0.35</generateChance>
+									<sidearmMoney>
+										<min>80</min>
+										<max>160</max>
+									</sidearmMoney>
+									<weaponTags>
+										<li>GrenadeSmoke</li>
+									</weaponTags>
+									<magazineCount>
+										<min>0</min>
+										<max>1</max>
+									</magazineCount>
+								</li>
+							</sidearms>
+						</li>
+					</value>
+				</li>
+
+				<!-- ========== Empire Rocky LMG ========== -->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_LMG_Empire"]</xpath>
+					<value>
+						<li Class="CombatExtended.LoadoutPropertiesExtension">
+							<primaryMagazineCount>
+								<min>9</min>
+								<max>11</max>
+							</primaryMagazineCount>
+							<sidearms>
+								<li>
+									<generateChance>0.35</generateChance>
+									<sidearmMoney>
+										<min>80</min>
+										<max>160</max>
+									</sidearmMoney>
+									<weaponTags>
+										<li>GrenadeSmoke</li>
+									</weaponTags>
+									<magazineCount>
+										<min>0</min>
+										<max>1</max>
+									</magazineCount>
+								</li>
+							</sidearms>
+						</li>
+					</value>
+				</li>
+
+				<!-- ========== Empire Rocky Heavy ========== -->
+				<li Class="PatchOperationAddModExtension">
+					<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_Heavy_Empire"]</xpath>
+					<value>
+						<li Class="CombatExtended.LoadoutPropertiesExtension">
+							<primaryMagazineCount>
+								<min>9</min>
+								<max>11</max>
+							</primaryMagazineCount>
+							<sidearms>
+								<li>
+									<generateChance>0.35</generateChance>
+									<sidearmMoney>
+										<min>80</min>
+										<max>160</max>
+									</sidearmMoney>
+									<weaponTags>
+										<li>GrenadeSmoke</li>
+									</weaponTags>
+									<magazineCount>
+										<min>0</min>
+										<max>1</max>
+									</magazineCount>
+								</li>
+							</sidearms>
+						</li>
+					</value>
+				</li>
+
+				<!-- 比照 USAC_Mech_Rocky_Heavy：CE 下加入 ACSW。
+				     Apparel_ArmorCataphract 在 LightAutomatroid 清單內，可持有 ACSW。 -->
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/PawnKindDef[defName="USAC_Mech_Rocky_Heavy_Empire"]/weaponTags</xpath>
+					<value>
+						<li>USAC_ACSW</li>
+					</value>
+				</li>
+
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>
