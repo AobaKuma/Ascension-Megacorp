@@ -6,6 +6,20 @@ using System.Collections.Generic;
 
 namespace USAC
 {
+#if RW_1_7
+    // 1.7（Waylith）不支持 ComputeShader，GPU 粒子路径不可用
+    // 保留同名 MapComponent 以兼容存档，污水特效由 CPU Fleck 方案负责
+    public class SewageSprayManager : MapComponent
+    {
+        public SewageSprayManager(Map map) : base(map)
+        {
+        }
+
+        public static void RegisterEmissionSource(Map map, Vector3 pos, int thingID)
+        {
+        }
+    }
+#else
     [StaticConstructorOnStartup]
     public class SewageSprayManager : MapComponent, System.IDisposable
     {
@@ -332,6 +346,7 @@ namespace USAC
 
         #endregion
     }
+#endif
 
     public static class USAC_GlobalEffectManager
     {

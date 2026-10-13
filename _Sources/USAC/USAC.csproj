@@ -1,12 +1,31 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <!--
+    同一份原始码同时建置两个游戏版本：
+      net472   → RimWorld 1.6（.NET Framework / Unity / Harmony 2）→ 1.6/Assemblies
+      net10.0  → RimWorld 1.7（.NET 10 / Waylith / Harmony 3）    → 1.7/Assemblies，并定义 RW_1_7
+    1.7 没有参考组件包，直接参考游戏本体的 DLL；默认本模组位于 <RimWorld>/Mods/<模组>/，
+    游戏装在别处时以 -p:RimWorldDir=<游戏目录>\ 覆写。
+  -->
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net472</TargetFramework>
-    <OutputPath>$(MSBuildThisFileDirectory)/../../1.6/Assemblies</OutputPath>
+    <TargetFrameworks>net472;net10.0</TargetFrameworks>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <LangVersion>10.0</LangVersion>
+    <RimWorldDir Condition="'$(RimWorldDir)' == ''">$(MSBuildThisFileDirectory)..\..\..\..\</RimWorldDir>
+    <FortifiedDir Condition="'$(FortifiedDir)' == ''">$(MSBuildThisFileDirectory)..\..\..\_Fortified-Framework\</FortifiedDir>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net472'">
+    <OutputPath>$(MSBuildThisFileDirectory)/../../1.6/Assemblies</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <OutputPath>$(MSBuildThisFileDirectory)/../../1.7/Assemblies</OutputPath>
+    <DefineConstants>$(DefineConstants);RW_1_7</DefineConstants>
+    <!-- 游戏只加载 Assemblies 内的 .dll，不需要 USAC.deps.json -->
+    <GenerateDependencyFile>false</GenerateDependencyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -17,14 +36,34 @@
     <DebugType>none</DebugType>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
     <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4565-beta" />
     <PackageReference Include="Lib.Harmony" Version="2.4.1" PrivateAssets="all" ExcludeAssets="runtime" />
+    <Reference Include="Fortified">
+      <HintPath>$(FortifiedDir)1.6\Assemblies\Fortified.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <!-- 与 Harmony 模组 1.7 资料夹内的 0Harmony.dll 相同（3.0.0-rc.2） -->
+    <PackageReference Include="Lib.Harmony" Version="3.0.0-rc.2" PrivateAssets="all" ExcludeAssets="runtime" />
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldDir)Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <!-- 1.7 的 UnityEngine.* 类型全部由 UnityStubs 提供 -->
+    <Reference Include="UnityStubs">
+      <HintPath>$(RimWorldDir)UnityStubs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Waylith">
+      <HintPath>$(RimWorldDir)Waylith.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Fortified">
-      <HintPath>..\..\..\_Fortified-Framework\1.6\Assemblies\Fortified.dll</HintPath>
+      <HintPath>$(FortifiedDir)1.7\Assemblies\Fortified.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
 

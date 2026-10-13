@@ -99,7 +99,6 @@
     </tools>
   </ThingDef>
 
-
   <PawnRenderTreeDef>
     <defName>USAC_LargeMech</defName>
     <root Class="PawnRenderNodeProperties_Parent">

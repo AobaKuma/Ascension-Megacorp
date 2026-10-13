@@ -10,4 +10,19 @@
         <li IfModActive="WRK.THIGAPPE">1.6/Realistic_Body/THIGAPPE</li>
         <li IfModNotActive="aoba.deadmanswitch.core">1.6/NoDeadmanSwitch</li>
     </v1.6>
+    <!--
+        1.7 沿用 1.6 的 Defs / Patches；后列的 1.7 优先，相同相对路径的文件会覆盖 1.6 的版本
+        （Assemblies 的 .NET 10 程序集）。
+    -->
+    <v1.7>
+        <li>/</li>
+        <li>1.6</li>
+        <li IfModActive="Ludeon.RimWorld.Ideology">1.6/Ideology</li>
+        <li IfModActive="ludeon.rimworld.royalty">1.6/Royalty</li>
+        <li IfModActive="CETeam.CombatExtended,CETeam.CombatExtended_steam">1.6/CE</li>
+        <li IfModActive="Nals.RealisticBody,Nals.CompatibleBody2">1.6/Realistic_Body</li>
+        <li IfModActive="WRK.THIGAPPE">1.6/Realistic_Body/THIGAPPE</li>
+        <li IfModNotActive="aoba.deadmanswitch.core">1.6/NoDeadmanSwitch</li>
+        <li>1.7</li>
+    </v1.7>
 </loadFolders>

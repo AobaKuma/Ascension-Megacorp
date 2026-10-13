@@ -50,6 +50,10 @@ UnityProject/*.IDB
 # Unity test results
 UnityProject/[Tt]est[Rr]esults/
 
+# RimWorld 1.7 asset packs baked on Workshop upload (and their local sidecars)
+Assets.zip
+Assets.zip.*
+
 # RimWorld Mod Specific
 [Aa]ssemblies/*.pdb
 1.6/[Aa]ssemblies/*.pdb

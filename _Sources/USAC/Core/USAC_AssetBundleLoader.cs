@@ -22,7 +22,10 @@ namespace USAC
 
         static USAC_AssetBundleLoader()
         {
+#if !RW_1_7
+            // 1.7（Waylith）不支持 ComputeShader，不加载 bundle，IsLoaded 保持 false 走 CPU Fleck 方案
             LongEventHandler.ExecuteWhenFinished(LoadAssetBundle);
+#endif
         }
 
         private static void LoadAssetBundle()
