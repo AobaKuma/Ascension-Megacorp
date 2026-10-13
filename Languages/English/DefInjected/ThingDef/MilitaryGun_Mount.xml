@@ -5,10 +5,6 @@
   <USAC_HeavyMachineGunMounted.label>Foxhound GPMG</USAC_HeavyMachineGunMounted.label>
   <!-- EN: A general-purpose heavy machine gun built on a lightweight composite frame, found on weapon platforms and fixed defenses everywhere. Long ago, before the war choked off the materials it needed, it was a highly successful replacement for the M2 heavy machine gun. -->
   <USAC_HeavyMachineGunMounted.description>A general-purpose heavy machine gun built on a lightweight composite frame, found on weapon platforms and fixed defenses everywhere. Long ago, before the war choked off the materials it needed, it was a highly successful replacement for the M2 heavy machine gun.</USAC_HeavyMachineGunMounted.description>
-  <!-- EN: Foxhound GPMG -->
-  <USAC_HeavyMachineGunMounted.verbs.Verb_ShootCE.label>Foxhound GPMG</USAC_HeavyMachineGunMounted.verbs.Verb_ShootCE.label>
-  
-  <!-- UNUSED -->
   <USAC_HeavyMachineGunMounted.verbs.Verb_Shoot.label>Foxhound GPMG</USAC_HeavyMachineGunMounted.verbs.Verb_Shoot.label>
   
 </LanguageData>

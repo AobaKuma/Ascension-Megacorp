@@ -12,11 +12,11 @@
   <USAC_Mech_Omaha.label>M110 "Omaha"</USAC_Mech_Omaha.label>
   <!-- EN: An amphibious assault mech equally at home on land and in water, providing close and mid-range fire support for USAC operations. Built on the Krepost heavy walker chassis. -->
   <USAC_Mech_Omaha.description>An amphibious assault mech equally at home on land and in water, providing close and mid-range fire support for USAC operations. Built on the Krepost heavy walker chassis.</USAC_Mech_Omaha.description>
+  <!-- EN: mechanical head -->
+  <USAC_Mech_Omaha.tools.mechanical_head.label>mechanical head</USAC_Mech_Omaha.tools.mechanical_head.label>
   <!-- EN: left leg -->
   <USAC_Mech_Omaha.tools.left_leg.label>left leg</USAC_Mech_Omaha.tools.left_leg.label>
   <!-- EN: right leg -->
   <USAC_Mech_Omaha.tools.right_leg.label>right leg</USAC_Mech_Omaha.tools.right_leg.label>
-  <!-- EN: head -->
-  <USAC_Mech_Omaha.tools.head.label>head</USAC_Mech_Omaha.tools.head.label>
   
 </LanguageData>

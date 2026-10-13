@@ -12,20 +12,12 @@
   <USAC_Gun_ACSW.tools.stock.label>枪托</USAC_Gun_ACSW.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_ACSW.tools.barrel.label>枪管</USAC_Gun_ACSW.tools.barrel.label>
-  <!-- EN: advanced support weapon -->
-  <USAC_Gun_ACSW.verbs.Verb_ShootCE.label>先进支援武器</USAC_Gun_ACSW.verbs.Verb_ShootCE.label>
-  
-  <!-- UNUSED -->
   <USAC_Gun_ACSW.verbs.Verb_Shoot.label>先进支援武器</USAC_Gun_ACSW.verbs.Verb_Shoot.label>
   
   <!-- EN: Advanced battle rifle -->
   <USAC_Gun_BattleRifle.label>先进战斗步枪</USAC_Gun_BattleRifle.label>
   <!-- EN: M29 "SABR", an infantry weapon platform integrated automatic rifle and grenade launcher, capable of both direct fire suppression and indirect fire support. Although heavy, it boasts excellent aiming accuracy, making it ideal for use as a gunner's weapon in small units. -->
   <USAC_Gun_BattleRifle.description>M29 "SABR"，是一种同时整合了自动步枪和榴弹发射器的步兵武器平台，能够进行直接火力压制和间接火力支援。虽然很重但具有出色的瞄准精度，是小编制作战队伍中的理想射手武器。</USAC_Gun_BattleRifle.description>
-  <!-- EN: Advanced battle rifle -->
-  <USAC_Gun_BattleRifle.verbs.Verb_ShootCE.label>先进战斗步枪</USAC_Gun_BattleRifle.verbs.Verb_ShootCE.label>
-  
-  <!-- UNUSED -->
   <USAC_Gun_BattleRifle.verbs.Verb_Shoot.label>先进战斗步枪</USAC_Gun_BattleRifle.verbs.Verb_Shoot.label>
   
   <!-- EN: objective sniper weapon -->
@@ -36,10 +28,6 @@
   <USAC_Gun_OSW.tools.stock.label>枪托</USAC_Gun_OSW.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_OSW.tools.barrel.label>枪管</USAC_Gun_OSW.tools.barrel.label>
-  <!-- EN: objective sniper weapon -->
-  <USAC_Gun_OSW.verbs.Verb_ShootCE.label>目标狙击手武器</USAC_Gun_OSW.verbs.Verb_ShootCE.label>
-  
-  <!-- UNUSED -->
   <USAC_Gun_OSW.verbs.Verb_Shoot.label>目标狙击手武器</USAC_Gun_OSW.verbs.Verb_Shoot.label>
   
 </LanguageData>

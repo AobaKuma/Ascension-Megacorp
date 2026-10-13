@@ -101,12 +101,4 @@
   <!-- EN: You have eliminated the target outpost!\n\nUSAC has sent the agreed compensation from [asker_faction_name]. -->
   <USAC_OpportunitySite_OutpostRaid.root.nodes.allKilledSignal.node.nodes.GiveRewards.customLetterText.slateRef>你已成功消灭了目标前哨站！\n\nUSAC已从[asker_faction_name]发出了约定的报酬。</USAC_OpportunitySite_OutpostRaid.root.nodes.allKilledSignal.node.nodes.GiveRewards.customLetterText.slateRef>
   
-  <!-- UNUSED -->
-  <USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.label>行动泄漏：[resolvedQuestName]</USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.label>
-  <USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.text>敌方人员已从目标地点逃脱。行动已失败。[siteFaction_name]将会得知你的攻击行为。</USAC_OpportunitySite_OutpostRaid.root.nodes.EnemyEscaped.node.nodes.Letter.text>
-  <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_NeutralOutpost>root(priority=1,sitePart==USAC_NeutralOutpost)->该地点有一个前哨站，驻守着(*Threat)[enemiesCount]名[enemiesLabel](/Threat)</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_NeutralOutpost>
-  <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_BanditCamp>root(priority=1,sitePart==BanditCamp)->该地点有一个驻紮着(*Threat)[enemiesCount]名敌人的匪徒营地</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_BanditCamp>
-  <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Outpost>root(priority=1,sitePart==Outpost)->该地点有一个被(*Threat)[enemiesCount]名敌人防守的前哨站</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Outpost>
-  <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Fallback>root->有个[label]</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Fallback>
-  
 </LanguageData>

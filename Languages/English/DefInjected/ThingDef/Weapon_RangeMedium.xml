@@ -12,17 +12,11 @@
   <USAC_Gun_ACSW.tools.stock.label>stock</USAC_Gun_ACSW.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_ACSW.tools.barrel.label>barrel</USAC_Gun_ACSW.tools.barrel.label>
-  <!-- EN: advanced support weapon -->
-  <USAC_Gun_ACSW.verbs.Verb_ShootCE.label>advanced support weapon</USAC_Gun_ACSW.verbs.Verb_ShootCE.label>
   
   <!-- EN: Advanced battle rifle -->
   <USAC_Gun_BattleRifle.label>advanced battle rifle</USAC_Gun_BattleRifle.label>
   <!-- EN: The M29 "SABR", an infantry weapon platform combining an automatic rifle with a grenade launcher, capable of direct suppression and indirect support alike. It is heavy, but remarkably accurate - an ideal weapon for a small unit's designated gunner. -->
   <USAC_Gun_BattleRifle.description>The M29 "SABR", an infantry weapon platform combining an automatic rifle with a grenade launcher, capable of direct suppression and indirect support alike. It is heavy, but remarkably accurate - an ideal weapon for a small unit's designated gunner.</USAC_Gun_BattleRifle.description>
-  <!-- EN: Advanced battle rifle -->
-  <USAC_Gun_BattleRifle.verbs.Verb_ShootCE.label>advanced battle rifle</USAC_Gun_BattleRifle.verbs.Verb_ShootCE.label>
-  
-  <!-- UNUSED -->
   <USAC_Gun_BattleRifle.verbs.Verb_Shoot.label>advanced battle rifle</USAC_Gun_BattleRifle.verbs.Verb_Shoot.label>
   
   <!-- EN: objective sniper weapon -->
@@ -33,7 +27,5 @@
   <USAC_Gun_OSW.tools.stock.label>stock</USAC_Gun_OSW.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_OSW.tools.barrel.label>barrel</USAC_Gun_OSW.tools.barrel.label>
-  <!-- EN: objective sniper weapon -->
-  <USAC_Gun_OSW.verbs.Verb_ShootCE.label>objective sniper weapon</USAC_Gun_OSW.verbs.Verb_ShootCE.label>
   
 </LanguageData>
