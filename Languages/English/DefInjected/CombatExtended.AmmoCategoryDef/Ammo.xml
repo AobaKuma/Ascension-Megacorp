@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-  
-  <!-- EN: Depleted uranium -->
-  <USAC_DU.label>Depleted uranium</USAC_DU.label>
-  <!-- EN: Uses a depleted uranium penetrator core. Chemically toxic and slightly radioactive, but far better at defeating armor. -->
-  <USAC_DU.description>Uses a depleted uranium penetrator core. Chemically toxic and slightly radioactive, but far better at defeating armor.</USAC_DU.description>
-  
-</LanguageData>

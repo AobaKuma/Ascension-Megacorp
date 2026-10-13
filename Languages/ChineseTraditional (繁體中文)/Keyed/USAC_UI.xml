@@ -182,16 +182,11 @@
   <USAC.Debt.Transaction.PrincipalRepay>{0} 本金償還</USAC.Debt.Transaction.PrincipalRepay>
   <USAC.Debt.Transaction.RepaySurcharge>{0} 超額還款手續費</USAC.Debt.Transaction.RepaySurcharge>
   <USAC.Debt.Message.ContractSettled>[USAC] {0} 已結清！</USAC.Debt.Message.ContractSettled>
-  <USAC.Debt.GrowthMode.WealthBase>財富基準</USAC.Debt.GrowthMode.WealthBase>
-  <USAC.Debt.GrowthMode.PrincipalBase>本金基準</USAC.Debt.GrowthMode.PrincipalBase>
   <USAC.Debt.ScenPart.Summary>USAC{0}：₿{1}\n週期增長：{2}%（{3}）\n週期利率：{4}%</USAC.Debt.ScenPart.Summary>
   <USAC.Debt.ScenPart.InitialDebt>初始債務本金：</USAC.Debt.ScenPart.InitialDebt>
   <USAC.Debt.ScenPart.DebtType>貸款類型：</USAC.Debt.ScenPart.DebtType>
   <USAC.Debt.GrowthMode.WealthBase>按地圖財富</USAC.Debt.GrowthMode.WealthBase>
   <USAC.Debt.GrowthMode.PrincipalBase>按當前本金</USAC.Debt.GrowthMode.PrincipalBase>
-  <USAC.Debt.ScenPart.Summary>USAC {0}：₿{1}\n週期增長：{2}%（{3}）\n週期利率：{4}%</USAC.Debt.ScenPart.Summary>
-  <USAC.Debt.ScenPart.InitialDebt>初始債務本金： </USAC.Debt.ScenPart.InitialDebt>
-  <USAC.Debt.ScenPart.DebtType>貸款類型： </USAC.Debt.ScenPart.DebtType>
   <USAC.Debt.ScenPart.DynamicLoanReserved>動態信貸（預留）</USAC.Debt.ScenPart.DynamicLoanReserved>
   <USAC.Debt.ScenPart.GrowthBase>增長基準：</USAC.Debt.ScenPart.GrowthBase>
   <USAC.Debt.ScenPart.GrowthRatePct>週期增長率（%）：</USAC.Debt.ScenPart.GrowthRatePct>

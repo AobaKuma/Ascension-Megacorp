@@ -50,19 +50,19 @@
   <!-- EN: left leg -->
   <USAC_Bipedal.corePart.parts.left_leg.customLabel>左腿</USAC_Bipedal.corePart.parts.left_leg.customLabel>
   <!-- EN: leg armour plate -->
-  <USAC_Bipedal.corePart.parts.left_leg.parts.leg_armour_plate.customLabel>腿部装甲板</USAC_Bipedal.corePart.parts.left_leg.parts.leg_armour_plate.customLabel>
+  <USAC_Bipedal.corePart.parts.left_leg.parts.leg_armor_plate.customLabel>腿部装甲板</USAC_Bipedal.corePart.parts.left_leg.parts.leg_armor_plate.customLabel>
   <!-- EN: left foot -->
   <USAC_Bipedal.corePart.parts.left_leg.parts.left_foot.customLabel>左脚</USAC_Bipedal.corePart.parts.left_leg.parts.left_foot.customLabel>
   <!-- EN: right leg -->
   <USAC_Bipedal.corePart.parts.right_leg.customLabel>右腿</USAC_Bipedal.corePart.parts.right_leg.customLabel>
   <!-- EN: leg armour plate -->
-  <USAC_Bipedal.corePart.parts.right_leg.parts.leg_armour_plate.customLabel>腿部装甲板</USAC_Bipedal.corePart.parts.right_leg.parts.leg_armour_plate.customLabel>
+  <USAC_Bipedal.corePart.parts.right_leg.parts.leg_armor_plate.customLabel>腿部装甲板</USAC_Bipedal.corePart.parts.right_leg.parts.leg_armor_plate.customLabel>
   <!-- EN: right foot -->
   <USAC_Bipedal.corePart.parts.right_leg.parts.right_foot.customLabel>右脚</USAC_Bipedal.corePart.parts.right_leg.parts.right_foot.customLabel>
   <!-- EN: waist armour plate -->
-  <USAC_Bipedal.corePart.parts.waist_armour_plate.customLabel>腰部装甲板</USAC_Bipedal.corePart.parts.waist_armour_plate.customLabel>
+  <USAC_Bipedal.corePart.parts.waist_armor_plate.customLabel>腰部装甲板</USAC_Bipedal.corePart.parts.waist_armor_plate.customLabel>
   <!-- EN: chest armour plate -->
-  <USAC_Bipedal.corePart.parts.chest_armour_plate.customLabel>胸部装甲板</USAC_Bipedal.corePart.parts.chest_armour_plate.customLabel>
+  <USAC_Bipedal.corePart.parts.chest_armor_plate.customLabel>胸部装甲板</USAC_Bipedal.corePart.parts.chest_armor_plate.customLabel>
   <!-- EN: main battery array -->
   <USAC_Bipedal.corePart.parts.main_battery_array.customLabel>主电池阵列</USAC_Bipedal.corePart.parts.main_battery_array.customLabel>
   <!-- EN: secondary battery array -->
@@ -158,9 +158,9 @@
   <!-- EN: right foot -->
   <USAC_Humanoid_Soldat.corePart.parts.right_leg.parts.right_foot.customLabel>右脚</USAC_Humanoid_Soldat.corePart.parts.right_leg.parts.right_foot.customLabel>
   <!-- EN: waist armour plate -->
-  <USAC_Humanoid_Soldat.corePart.parts.waist_armour_plate.customLabel>腰部装甲板</USAC_Humanoid_Soldat.corePart.parts.waist_armour_plate.customLabel>
+  <USAC_Humanoid_Soldat.corePart.parts.waist_armor_plate.customLabel>腰部装甲板</USAC_Humanoid_Soldat.corePart.parts.waist_armor_plate.customLabel>
   <!-- EN: chest armour plate -->
-  <USAC_Humanoid_Soldat.corePart.parts.chest_armour_plate.customLabel>胸部装甲板</USAC_Humanoid_Soldat.corePart.parts.chest_armour_plate.customLabel>
+  <USAC_Humanoid_Soldat.corePart.parts.chest_armor_plate.customLabel>胸部装甲板</USAC_Humanoid_Soldat.corePart.parts.chest_armor_plate.customLabel>
   <!-- EN: main battery -->
   <USAC_Humanoid_Soldat.corePart.parts.main_battery.customLabel>主电池</USAC_Humanoid_Soldat.corePart.parts.main_battery.customLabel>
   <!-- EN: secondary battery -->

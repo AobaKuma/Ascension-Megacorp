@@ -21,12 +21,6 @@
   <USAC_Gun_BushmasterAC.tools.stock.label>枪托</USAC_Gun_BushmasterAC.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_BushmasterAC.tools.barrel.label>枪管</USAC_Gun_BushmasterAC.tools.barrel.label>
-  <!-- EN: muzzle -->
-  <USAC_Gun_BushmasterAC.tools.muzzle.label>枪口</USAC_Gun_BushmasterAC.tools.muzzle.label>
-  <!-- EN: Bushmaster autocannon -->
-  <USAC_Gun_BushmasterAC.verbs.Verb_ShootCE.label>巨蝮蛇链炮</USAC_Gun_BushmasterAC.verbs.Verb_ShootCE.label>
-  
-  <!-- UNUSED -->
   <USAC_Gun_BushmasterAC.verbs.Verb_Shoot.label>巨蝮蛇链炮</USAC_Gun_BushmasterAC.verbs.Verb_Shoot.label>
   
   <!-- EN: Cobra assault cannon -->
@@ -37,12 +31,6 @@
   <USAC_Gun_CobraAC.tools.stock.label>枪托</USAC_Gun_CobraAC.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_CobraAC.tools.barrel.label>枪管</USAC_Gun_CobraAC.tools.barrel.label>
-  <!-- EN: muzzle -->
-  <USAC_Gun_CobraAC.tools.muzzle.label>枪口</USAC_Gun_CobraAC.tools.muzzle.label>
-  <!-- EN: Cobra assault cannon -->
-  <USAC_Gun_CobraAC.verbs.Verb_ShootCE.label>眼镜蛇突击炮</USAC_Gun_CobraAC.verbs.Verb_ShootCE.label>
-  
-  <!-- UNUSED -->
   <USAC_Gun_CobraAC.verbs.Verb_Shoot.label>眼镜蛇突击炮</USAC_Gun_CobraAC.verbs.Verb_Shoot.label>
   
   <!-- EN: Torchwood recoilless rifle -->
@@ -53,12 +41,6 @@
   <USAC_Gun_TorchwoodRR.tools.stock.label>枪托</USAC_Gun_TorchwoodRR.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_TorchwoodRR.tools.barrel.label>枪管</USAC_Gun_TorchwoodRR.tools.barrel.label>
-  <!-- EN: muzzle -->
-  <USAC_Gun_TorchwoodRR.tools.muzzle.label>枪口</USAC_Gun_TorchwoodRR.tools.muzzle.label>
-  <!-- EN: Torchwood recoilless rifle -->
-  <USAC_Gun_TorchwoodRR.verbs.Verb_ShootCE.label>火炬木无后座力炮</USAC_Gun_TorchwoodRR.verbs.Verb_ShootCE.label>
-  
-  <!-- UNUSED -->
   <USAC_Gun_TorchwoodRR.verbs.Verb_Shoot.label>火炬木无后座力炮</USAC_Gun_TorchwoodRR.verbs.Verb_Shoot.label>
   
   <!-- EN: Viper DMR -->
@@ -69,12 +51,6 @@
   <USAC_Gun_ViperDMR.tools.stock.label>枪托</USAC_Gun_ViperDMR.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_ViperDMR.tools.barrel.label>枪管</USAC_Gun_ViperDMR.tools.barrel.label>
-  <!-- EN: muzzle -->
-  <USAC_Gun_ViperDMR.tools.muzzle.label>枪口</USAC_Gun_ViperDMR.tools.muzzle.label>
-  <!-- EN: Viper DMR -->
-  <USAC_Gun_ViperDMR.verbs.Verb_ShootCE.label>蝮蛇射手步枪</USAC_Gun_ViperDMR.verbs.Verb_ShootCE.label>
-  
-  <!-- UNUSED -->
   <USAC_Gun_ViperDMR.verbs.Verb_Shoot.label>蝮蛇射手步枪</USAC_Gun_ViperDMR.verbs.Verb_Shoot.label>
   
 </LanguageData>

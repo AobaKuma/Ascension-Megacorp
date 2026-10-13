@@ -12,10 +12,6 @@
   <USAC_Gun_AssaultRifle.tools.stock.label>槍托</USAC_Gun_AssaultRifle.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_AssaultRifle.tools.barrel.label>槍管</USAC_Gun_AssaultRifle.tools.barrel.label>
-  <!-- EN: advanced auto rifle -->
-  <USAC_Gun_AssaultRifle.verbs.Verb_ShootCE.label>先進自動步槍</USAC_Gun_AssaultRifle.verbs.Verb_ShootCE.label>
-  
-  <!-- UNUSED -->
   <USAC_Gun_AssaultRifle.verbs.Verb_Shoot.label>先進自動步槍</USAC_Gun_AssaultRifle.verbs.Verb_Shoot.label>
   
   <!-- EN: Advanced LMG -->
@@ -26,10 +22,6 @@
   <USAC_Gun_LightMachinegun.tools.stock.label>槍托</USAC_Gun_LightMachinegun.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_LightMachinegun.tools.barrel.label>槍管</USAC_Gun_LightMachinegun.tools.barrel.label>
-  <!-- EN: Advanced LMG -->
-  <USAC_Gun_LightMachinegun.verbs.Verb_ShootCE.label>先進輕機槍</USAC_Gun_LightMachinegun.verbs.Verb_ShootCE.label>
-  
-  <!-- UNUSED -->
   <USAC_Gun_LightMachinegun.verbs.Verb_Shoot.label>先進輕機槍</USAC_Gun_LightMachinegun.verbs.Verb_Shoot.label>
   
   <!-- EN: advanced marksman rifle -->
@@ -40,10 +32,6 @@
   <USAC_Gun_MarksmanRifle.tools.stock.label>槍托</USAC_Gun_MarksmanRifle.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_MarksmanRifle.tools.barrel.label>槍管</USAC_Gun_MarksmanRifle.tools.barrel.label>
-  <!-- EN: advanced marksman rifle -->
-  <USAC_Gun_MarksmanRifle.verbs.Verb_ShootCE.label>先進射手步槍</USAC_Gun_MarksmanRifle.verbs.Verb_ShootCE.label>
-  
-  <!-- UNUSED -->
   <USAC_Gun_MarksmanRifle.verbs.Verb_Shoot.label>先進射手步槍</USAC_Gun_MarksmanRifle.verbs.Verb_Shoot.label>
   
 </LanguageData>

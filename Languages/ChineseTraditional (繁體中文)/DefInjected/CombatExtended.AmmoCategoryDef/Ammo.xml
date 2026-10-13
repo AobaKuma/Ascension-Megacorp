@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<LanguageData>
-  
-  <!-- EN: Depleted uranium -->
-  <USAC_DU.label>貧鈾</USAC_DU.label>
-  <!-- EN: Uses depleted uranium as projectile core, It has chemical toxicity and radioactivity., greatly improving armor penetration. -->
-  <USAC_DU.description>採用貧鈾作為彈芯，具有化學毒性和放射性，並具備優異的穿甲能力。</USAC_DU.description>
-  
-</LanguageData>

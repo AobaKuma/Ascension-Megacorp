@@ -21,10 +21,6 @@
   <USAC_Gun_BushmasterAC.tools.stock.label>stock</USAC_Gun_BushmasterAC.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_BushmasterAC.tools.barrel.label>barrel</USAC_Gun_BushmasterAC.tools.barrel.label>
-  <!-- EN: muzzle -->
-  <USAC_Gun_BushmasterAC.tools.muzzle.label>muzzle</USAC_Gun_BushmasterAC.tools.muzzle.label>
-  <!-- EN: Bushmaster autocannon -->
-  <USAC_Gun_BushmasterAC.verbs.Verb_ShootCE.label>Bushmaster autocannon</USAC_Gun_BushmasterAC.verbs.Verb_ShootCE.label>
   
   <!-- EN: Cobra assault cannon -->
   <USAC_Gun_CobraAC.label>Cobra assault cannon</USAC_Gun_CobraAC.label>
@@ -34,10 +30,6 @@
   <USAC_Gun_CobraAC.tools.stock.label>stock</USAC_Gun_CobraAC.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_CobraAC.tools.barrel.label>barrel</USAC_Gun_CobraAC.tools.barrel.label>
-  <!-- EN: muzzle -->
-  <USAC_Gun_CobraAC.tools.muzzle.label>muzzle</USAC_Gun_CobraAC.tools.muzzle.label>
-  <!-- EN: Cobra assault cannon -->
-  <USAC_Gun_CobraAC.verbs.Verb_ShootCE.label>Cobra assault cannon</USAC_Gun_CobraAC.verbs.Verb_ShootCE.label>
   
   <!-- EN: Torchwood recoilless rifle -->
   <USAC_Gun_TorchwoodRR.label>Torchwood recoilless rifle</USAC_Gun_TorchwoodRR.label>
@@ -47,10 +39,6 @@
   <USAC_Gun_TorchwoodRR.tools.stock.label>stock</USAC_Gun_TorchwoodRR.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_TorchwoodRR.tools.barrel.label>barrel</USAC_Gun_TorchwoodRR.tools.barrel.label>
-  <!-- EN: muzzle -->
-  <USAC_Gun_TorchwoodRR.tools.muzzle.label>muzzle</USAC_Gun_TorchwoodRR.tools.muzzle.label>
-  <!-- EN: Torchwood recoilless rifle -->
-  <USAC_Gun_TorchwoodRR.verbs.Verb_ShootCE.label>Torchwood recoilless rifle</USAC_Gun_TorchwoodRR.verbs.Verb_ShootCE.label>
   
   <!-- EN: Viper DMR -->
   <USAC_Gun_ViperDMR.label>Viper DMR</USAC_Gun_ViperDMR.label>
@@ -60,9 +48,5 @@
   <USAC_Gun_ViperDMR.tools.stock.label>stock</USAC_Gun_ViperDMR.tools.stock.label>
   <!-- EN: barrel -->
   <USAC_Gun_ViperDMR.tools.barrel.label>barrel</USAC_Gun_ViperDMR.tools.barrel.label>
-  <!-- EN: muzzle -->
-  <USAC_Gun_ViperDMR.tools.muzzle.label>muzzle</USAC_Gun_ViperDMR.tools.muzzle.label>
-  <!-- EN: Viper DMR -->
-  <USAC_Gun_ViperDMR.verbs.Verb_ShootCE.label>Viper DMR</USAC_Gun_ViperDMR.verbs.Verb_ShootCE.label>
   
 </LanguageData>

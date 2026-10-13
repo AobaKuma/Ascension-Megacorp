@@ -104,10 +104,4 @@
 
 USAC has sent the agreed compensation from [asker_faction_name].</USAC_OpportunitySite_OutpostRaid.root.nodes.allKilledSignal.node.nodes.GiveRewards.customLetterText.slateRef>
   
-  <!-- UNUSED -->
-  <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_NeutralOutpost>root(priority=1,sitePart==USAC_NeutralOutpost)->there's an outpost at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_NeutralOutpost>
-  <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_BanditCamp>root(priority=1,sitePart==BanditCamp)->there's a bandit camp at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_BanditCamp>
-  <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Outpost>root(priority=1,sitePart==Outpost)->there's an enemy outpost at the site guarded by (*Threat)[enemiesCount] [enemiesLabel](/Threat)</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Outpost>
-  <USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Fallback>root->there's a [label]</USAC_OpportunitySite_OutpostRaid.USAC_SitePart_Fallback>
-  
 </LanguageData>
